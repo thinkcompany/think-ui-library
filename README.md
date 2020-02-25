@@ -10,6 +10,14 @@ Built with the following:
 - [Webpack v4](https://github.com/webpack/webpack)
 - [Jest v25](https://jestjs.io/docs/en/getting-started)
 
+## Deployment
+
+On every push to the bitbucket `master`, this site deploys to [https://ui.thinkcompany.dev](ui.thinkcompany.dev).
+
+Successful deployments are announced to channel [#tcolas](https://app.slack.com/client/T024FSQ8N/CTU9SV820) in the Think Company Slack.
+
+## Files
+
 | File                                                            | Purpose                                                                            |
 | --------------------------------------------------------------- | ---------------------------------------------------------------------------------- |
 | [.storybook/main.js](.storybook/main.js)                        | Setup Storybook addons                                                             |
