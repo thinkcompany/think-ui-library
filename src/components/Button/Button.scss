@@ -1,0 +1,17 @@
+.ui-btn {
+  min-width: 64px;
+  padding: 12px 16px;
+  transition: background-color 0.4s;
+  border: 0;
+  border-radius: 4px;
+  background-color: $color-brand-blue-50;
+  color: $color-system-white;
+  letter-spacing: 0.025em;
+  cursor: pointer;
+
+  &:hover,
+  &:focus,
+  &:active {
+    background-color: $color-brand-blue-70;
+  }
+}

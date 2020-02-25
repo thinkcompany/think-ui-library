@@ -1,0 +1,9 @@
+// Vendor styles
+@import "~normalize.css";
+
+// Global settings and variables
+@import "./styles/settings";
+@import "./styles/global";
+
+// Component styles
+@import "./components";

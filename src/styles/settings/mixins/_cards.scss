@@ -1,0 +1,14 @@
+@mixin card-style-1 {
+    background: $color-system-gray-10;
+    @include spacing-inset-12;
+    box-shadow: $box-shadow-default;
+    width: 100%;
+}
+
+@mixin card-style-2 {
+    background: $color-brand-blue-10;
+    @include spacing-inset-24;
+    border: $border-default;
+    width: 100%;
+    border-radius: $border-radius-large;
+}

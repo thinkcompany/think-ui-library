@@ -1,0 +1,13 @@
+{
+  "radius": {
+    "small": "4px",
+    "large": "16px",
+    "round": "50%"
+  },
+  "shadow": {
+    "default": "2px 2px 2px 1px rgba(0, 0, 0, 0.2)"
+  },
+  "border": {
+    "default": "1px solid #000"
+  }
+}

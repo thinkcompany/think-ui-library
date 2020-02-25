@@ -1,0 +1,20 @@
+.grid-layout-1 {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-gap: $spacing-inline-24;
+  width: 100%;
+}
+
+.grid-layout-2 {
+  display: grid;
+  grid-template-columns: 1fr 4fr;
+  grid-gap: $spacing-inline-24;
+  width: 100%;
+}
+
+.grid-layout-3 {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: $spacing-inline-24;
+  width: 100%;
+}

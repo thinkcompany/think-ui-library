@@ -1,0 +1,16 @@
+/* START: storybook specific styles */
+$documentation-black: #000;
+$documentation-white: #fff;
+$documentation-gray: #efefef;
+$documentation-pink: #fb0091;
+$documentation-padding: 20px;
+
+@import "./Generic/Global";
+@import "./Generic/Grid";
+@import "./Generic/Block";
+@import "./Colors/Colors";
+@import "./Spacing/Spacing";
+@import "./Typography/Typography";
+@import "./Cards/Cards";
+@import "./Grids/Grids";
+/* END: storybook specific styles */

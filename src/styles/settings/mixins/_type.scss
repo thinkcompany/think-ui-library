@@ -1,0 +1,14 @@
+@mixin type-style-body {
+  font-family: $font-stack-system;
+  font-size: $font-size-16;
+  line-height: 1.5;
+  color: $color-system-gray-70;
+}
+
+@mixin type-style-1 {
+  font-size: $font-size-24;
+  line-height: 1.5;
+  color: $color-brand-blue-90;
+  margin-bottom: $spacing-stack-24;
+  font-weight: $font-weight-500;
+}
