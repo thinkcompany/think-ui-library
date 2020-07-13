@@ -3,8 +3,9 @@
 }
 
 body {
-  background-color: $color-system-white;
-  @include type-style-body;
+  background-color: $color-background-primary;
+
+  @include type-body-default;
 }
 
 p,
@@ -22,20 +23,20 @@ h6 {
 }
 
 img {
-  max-width: 100%;
   display: block;
+  max-width: 100%;
 }
 
 svg {
   max-width: 100%;
 }
 
-.accessibly-hidden {
-  position: absolute !important;
-  height: 1px;
+.accessibly-hidden,
+%accessibly-hidden {
+  position: absolute;
   width: 1px;
-  overflow: hidden;
-  clip: rect(1px 1px 1px 1px);
-  clip: rect(1px, 1px, 1px, 1px);
+  height: 1px;
   white-space: nowrap;
+  overflow: hidden;
+  clip: rect(1px, 1px, 1px, 1px);
 }

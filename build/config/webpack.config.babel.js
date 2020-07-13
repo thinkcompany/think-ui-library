@@ -2,23 +2,25 @@ import path from 'path';
 import optimization from './webpack.optimization';
 import plugins from './webpack.plugins';
 import rules from './webpack.rules';
+import common from './webpack.common';
 
-const config = {
-  entry: './src/index.js',
+export default {
+  entry: ['./src/index.js'],
+  mode: 'production',
+  module: {
+    rules: rules.concat(common.rules)
+  },
   output: {
     path: path.resolve(__dirname, '../../dist'),
-    filename: '[name].js',
-    publicPath: '/'
+    publicPath: '/assets', // Explicitly set for background images in CSS
+    libraryTarget: 'umd',
+    filename: 'bundle.js',
+    chunkFilename: '[name].js'
   },
-  module: {
-    rules
-  },
-  plugins,
+  plugins: plugins.concat(common.plugins),
   resolve: {
-    extensions: ['.js', '.jsx', '.json'],
+    extensions: ['.js'],
     modules: ['node_modules', 'src']
   },
-  optimization
+  optimization: {...optimization, ...common.optimization}
 };
-
-module.exports = config;

@@ -4,22 +4,14 @@ import TerserPlugin from 'terser-webpack-plugin';
 export default {
   minimizer: [
     new TerserPlugin({
-      extractComments: {
-        filename: 'LICENSE.txt'
-      },
-      sourceMap: true
+      cache: true,
+      parallel: true,
+      sourceMap: true,
+      terserOptions: {
+        /* eslint-disable-next-line camelcase */
+        keep_fnames: true
+      }
     }),
     new OptimizeCSSAssetsPlugin({})
-  ],
-  splitChunks: {
-    cacheGroups: {
-      default: false,
-      vendors: false,
-      vendor: {
-        name: 'vendor',
-        chunks: 'all',
-        test: /[\\/]node_modules[\\/](.(?!.*\.css$))*$/
-      }
-    }
-  }
+  ]
 };

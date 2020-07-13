@@ -1,11 +1,6 @@
-import autoprefixer from 'autoprefixer';
-import flexbugFixes from 'postcss-flexbugs-fixes';
-import sass from 'sass';
-import MiniCSSExtractPlugin from 'mini-css-extract-plugin';
-
 const rules = [
   {
-    test: /\.jsx?$/,
+    test: /\.js$/,
     exclude: /node_modules/,
     use: [
       'babel-loader',
@@ -18,22 +13,25 @@ const rules = [
     ]
   },
   {
-    test: /\.(sa|sc|c)ss$/,
+    test: /\.(png|jpe?g|gif|svg)$/i,
     use: [
-      MiniCSSExtractPlugin.loader,
-      'css-loader',
       {
-        loader: 'postcss-loader',
+        loader: 'file-loader',
         options: {
-          ident: 'postcss',
-          plugins: [autoprefixer, flexbugFixes]
+          outputPath: 'assets/img',
+          name: '[name].[ext]'
         }
-      },
+      }
+    ]
+  },
+  {
+    test: /\.(woff|woff2|eot|ttf|otf)$/,
+    use: [
       {
-        loader: 'sass-loader',
+        loader: 'file-loader',
         options: {
-          // Prefer `dart-sass`
-          implementation: sass
+          name: '[name].[ext]',
+          outputPath: 'fonts/'
         }
       }
     ]

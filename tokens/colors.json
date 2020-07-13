@@ -1,137 +1,93 @@
 [
   {
-    "name": "black",
-    "section": "system",
-    "color": "#000"
-  },
-  {
-    "name": "white",
-    "section": "system",
-    "color": "#fff"
-  },
-  {
-    "name": "error",
-    "section": "system",
-    "color": "#d93757"
-  },
-  {
-    "name": "success",
-    "section": "system",
-    "color": "#64c933"
-  },
-  {
-    "name": "warning",
-    "section": "system",
-    "color": "#e98a3b"
-  },
-  {
-    "name": "info",
-    "section": "system",
-    "color": "#238c8c"
-  },
-  {
-    "name": "gray",
-    "section": "system",
-    "alias": "grey",
+    "name": "blue",
+    "section": "tint",
     "variants": [
       {
-        "name": "10",
-        "color": "#dcdbdb"
+        "name": "primary",
+        "color": "#4640ed"
       },
       {
-        "name": "30",
-        "color": "#ababab"
-      },
-      {
-        "name": "50",
-        "color": "#7f7f7f"
-      },
-      {
-        "name": "70",
-        "color": "#4d4d4d"
-      },
-      {
-        "name": "90",
-        "color": "#080808"
+        "name": "secondary",
+        "color": "#ededfa"
       }
     ]
   },
   {
-    "name": "blue",
-    "section": "brand",
+    "name": "green",
+    "section": "tint",
     "variants": [
       {
-        "name": "10",
-        "color": "#3ba7b6"
+        "name": "primary",
+        "color": "#77d59d"
       },
       {
-        "name": "30",
-        "color": "#179bad"
-      },
-      {
-        "name": "50",
-        "color": "#028395"
-      },
-      {
-        "name": "70",
-        "color": "#026977"
-      },
-      {
-        "name": "90",
-        "color": "#01515d"
+        "name": "secondary",
+        "color": "#e4f6eb"
       }
     ]
   },
   {
     "name": "red",
-    "section": "brand",
+    "section": "tint",
     "variants": [
       {
-        "name": "10",
-        "color": "#e44787"
+        "name": "primary",
+        "color": "#d5403c"
       },
       {
-        "name": "30",
-        "color": "#e11b6b"
-      },
-      {
-        "name": "50",
-        "color": "#d10055"
-      },
-      {
-        "name": "70",
-        "color": "#a70044"
-      },
-      {
-        "name": "90",
-        "color": "#820035"
+        "name": "secondary",
+        "color": "#fbe3e2"
       }
     ]
   },
   {
-    "name": "yellow",
-    "section": "brand",
+    "name": "orange",
+    "section": "tint",
     "variants": [
       {
-        "name": "10",
-        "color": "#ffee4f"
+        "name": "primary",
+        "color": "#ffaf62"
       },
       {
-        "name": "30",
-        "color": "#ffe91e"
-      },
-      {
-        "name": "50",
-        "color": "#f4dc00"
-      },
-      {
-        "name": "70",
-        "color": "#c3b000"
-      },
-      {
-        "name": "90",
-        "color": "#978900"
+        "name": "secondary",
+        "color": "#faecde"
       }
     ]
+  },
+  {
+    "name": "primary",
+    "section": "background",
+    "color": "#ffffff"
+  },
+  {
+    "name": "secondary",
+    "section": "background",
+    "color": "#eeeff3"
+  },
+  {
+    "name": "tertiary",
+    "section": "background",
+    "color": "#dee0e8"
+  },
+  {
+    "name": "primary",
+    "section": "foreground",
+    "color": "#333333"
+  },
+  {
+    "name": "secondary",
+    "section": "foreground",
+    "color": "#666666"
+  },
+  {
+    "name": "tertiary",
+    "section": "foreground",
+    "color": "#939ab4"
+  },
+  {
+    "name": "on-tint",
+    "section": "foreground",
+    "color": "#ffffff"
   }
 ]

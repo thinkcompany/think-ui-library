@@ -1,5 +1,5 @@
 {
-  "size": [10, 11, 12, 14, 16, 18, 21, 24, 30, 36, 48, 60, 72],
+  "size": [10, 12, 14, 16, 24, 32, 40],
   "weight": [200, 500, 900],
   "stack": {
     "system": "system, -apple-system, '.SFNSText-Regular', 'San Francisco', 'Roboto', 'Segoe UI', 'Helvetica Neue', 'Lucida Grande', sans-serif",

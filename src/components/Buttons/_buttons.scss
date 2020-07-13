@@ -1,0 +1,229 @@
+/* ----------------------------------------------*\
+    Buttons
+\*---------------------------------------------- */
+
+.btn {
+  @include spacing-squish-8-16();
+  @include type-body-small;
+  @include type-style-bold;
+  position: relative;
+  cursor: pointer;
+  border: none;
+  appearance: none;
+  text-align: center;
+  text-decoration: none;
+
+  &.btn--large {
+    @include spacing-squish-16-24();
+  }
+
+  &.btn--medium {
+    @include spacing-squish-8-16();
+  }
+  
+  &.btn--small {
+    @include spacing-squish-4-8();
+    font-size: $font-size-12;
+  }
+}
+
+/* ----------------------------------------------*\
+    Primary Button
+\*---------------------------------------------- */
+
+.btn--primary {
+  border: 1px solid $color-tint-blue-primary;
+  border-radius: 4px;
+  background: $color-tint-blue-primary;
+  color: $color-foreground-on-tint;
+
+  > svg {
+    fill: $color-foreground-on-tint;
+  }
+
+  &:hover,
+  &:focus {
+    background: darken($color-tint-blue-primary, 10%);
+
+    &::after {
+      border-radius: 4px;
+      border-color: $color-tint-blue-primary;
+    }
+  }
+
+  &:active {
+    background: darken($color-tint-blue-primary, 15%);
+  }
+
+  &[disabled],
+  &:disabled {
+    cursor: default;
+    background: $color-tint-blue-secondary;
+    border-color: $color-tint-blue-secondary;
+  }
+}
+
+/* ----------------------------------------------*\
+    Secondary Button
+\*---------------------------------------------- */
+
+.btn--secondary {
+  border: 1px solid $color-foreground-tertiary;
+  border-radius: 4px;
+  background: none;
+  color: $color-tint-blue-primary;
+
+  > svg {
+    fill: $color-tint-blue-primary;
+  }
+
+  &:hover,
+  &:focus {
+    background-color: rgba(0, 0, 0, 0.05);
+
+    &::after {
+      border-radius: 4px;
+      border-color: $color-tint-blue-primary;
+    }
+  }
+
+  &:active {
+    color: $color-tint-blue-primary;
+    border-color: $color-tint-blue-primary;
+    background-color: rgba(0, 0, 0, 0.1);
+  }
+
+  &[disabled],
+  &:disabled {
+    cursor: default;
+    color: $color-tint-blue-secondary;
+    border-color: $color-tint-blue-secondary;
+
+    &:hover {
+      background: none;
+    }
+  }
+}
+
+/* ----------------------------------------------*\
+    Link Button
+\*---------------------------------------------- */
+
+.btn--link {
+  @include type-body-default($color-tint-blue-primary);
+  @include spacing-squish-4-8();
+  text-decoration: underline;
+  background: none;
+  border-radius: 0;
+
+  &:hover,
+  &:focus {
+    color: $color-tint-blue-primary;
+
+    &::after {
+      border-radius: 2px;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      border-color: $color-tint-blue-primary;
+    }
+  }
+
+  &:active {
+    color: $color-tint-blue-primary;
+  }
+
+  &.btn-link--small {
+    font-size: $font-size-14;
+  }
+
+  &.btn-link--xsmall {
+    font-size: $font-size-12;
+  }
+
+  &.btn-link--tiny {
+    font-size: $font-size-10;
+  }
+
+  &[disabled],
+  &:disabled {
+    cursor: default;
+    color: $color-tint-blue-secondary;
+  }
+}
+
+/* ----------------------------------------------*\
+    Danger Button
+\*---------------------------------------------- */
+
+.btn--danger {
+  border: 1px solid $color-tint-red-primary;
+  border-radius: 4px;
+  background: $color-tint-red-primary;
+  color: $color-foreground-on-tint;
+
+  > svg {
+    fill: $color-foreground-on-tint;
+  }
+
+  &:hover,
+  &:focus {
+    background: darken($color-tint-red-primary, 10%);
+
+    &::after {
+      border-radius: 4px;
+      border-color: $color-tint-red-primary;
+    }
+  }
+
+  &:active {
+    background: darken($color-tint-red-primary, 15%);
+  }
+
+  &[disabled],
+  &:disabled {
+    cursor: default;
+    background: $color-tint-red-secondary;
+    border-color: $color-tint-red-secondary;
+  }
+}
+
+/* ----------------------------------------------*\
+    Icon Button Variant
+\*---------------------------------------------- */
+
+.btn--icon, .btn--icon-text {
+  @include spacing-inset-8();
+  line-height: 0;
+  border-radius: $border-radius-small;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &.btn--small {
+    @include spacing-inset-8();
+
+    > svg {
+      height: 10px;
+      width: 10px;
+    }
+  }
+
+  &.btn--medium {
+    @include spacing-inset-12();
+
+    > svg {
+      height: 14px;
+      width: 14px;
+    }
+  }
+
+  &.btn--large {
+    @include spacing-inset-16();
+  }
+}
+
+.btn--icon-text > svg {
+  margin-right: 8px;
+}

@@ -1,6 +1,23 @@
-.card-style-1 {
-    @include card-style-1;
+.card-container--border {
+  @include card-container-border;
 }
-.card-style-2 {
-    @include card-style-2;
+
+.card-container--shadow {
+  @include card-container-shadow;
+}
+
+.card-communication--neutral {
+  @include card-communication-neutral;
+}
+
+.card-communication--success {
+  @include card-communication-success;
+}
+
+.card-communication--warning {
+  @include card-communication-warning;
+}
+
+.card-communication--error {
+  @include card-communication-error;
 }

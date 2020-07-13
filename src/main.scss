@@ -1,9 +1,9 @@
-// Vendor styles
-@import "~normalize.css";
+@import '~normalize.css';
+@import './styles/settings';
+@import './styles/global';
 
-// Global settings and variables
-@import "./styles/settings";
-@import "./styles/global";
+// Primitive styles [[TO BE REMOVED FROM PROD BUILD]]
+@import './primitives';
 
 // Component styles
-@import "./components";
+@import './components';

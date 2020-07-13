@@ -50,7 +50,7 @@ const genSpacingTokens = input => {
           output += `@mixin spacing-${item}-${subitem}() {\n  padding: ${subitem}px;\n} \n\n`;
           break;
         case 'squish':
-          output += `@mixin spacing-${item}-${subitem.y}() {\n  padding: ${subitem.y}px ${subitem.x}px;\n} \n\n`;
+          output += `@mixin spacing-${item}-${subitem.y}-${subitem.x}() {\n  padding: ${subitem.y}px ${subitem.x}px;\n} \n\n`;
           break;
         case 'stack':
         case 'inline':

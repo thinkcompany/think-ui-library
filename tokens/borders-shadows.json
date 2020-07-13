@@ -1,5 +1,6 @@
 {
   "radius": {
+    "xsmall": "2px",
     "small": "4px",
     "large": "16px",
     "round": "50%"

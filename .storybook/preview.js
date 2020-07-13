@@ -1,15 +1,16 @@
-import { addDecorator, addParameters, configure } from '@storybook/react';
+import { addDecorator, addParameters, configure } from '@storybook/html';
 import { withA11y } from '@storybook/addon-a11y';
 import { withKnobs } from '@storybook/addon-knobs';
+import { withMarkup } from '@stormid/storybook-html-addon-markup';
 import { INITIAL_VIEWPORTS } from '@storybook/addon-viewport';
 
 // Import local styles
 import 'main.scss';
-import 'primitives/_index.scss';
 
 // Add global decorators
 addDecorator(withA11y);
 addDecorator(withKnobs);
+addDecorator(withMarkup);
 
 addParameters({
   options: {
@@ -39,6 +40,10 @@ addParameters({
      */
     showPanel: true,
     /**
+     * display top-level grouping as a "root" in the sidebar
+     */
+    showRoots: true,
+    /**
      * show addon panel as a vertical panel on the right
      * @type {Boolean}
      */
@@ -57,22 +62,19 @@ addParameters({
      * sidebar tree animations
      * @type {Boolean}
      */
-    sidebarAnimations: true,
-    /**
-     * Display top-level grouping as a "root" in the sidebar
-     */
-    showRoots: null
+    sidebarAnimations: true
   },
   viewport: {
     viewports: INITIAL_VIEWPORTS
   }
 });
 
+const loadStories = () => {
+  return [
+    require.context('../src/primitives', true, /\.stories\.([jt]sx?|mdx)$/),
+    require.context('../src/components', true, /\.stories\.([jt]sx?|mdx)$/),
+  ];
+};
+
 // Configure story load order
-configure(
-  [
-    require.context('../src/primitives', true, /\.stories\.js$/),
-    require.context('../src/components', true, /\.stories\.js$/)
-  ],
-  module
-);
+configure(loadStories(), module);

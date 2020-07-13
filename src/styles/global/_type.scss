@@ -1,3 +1,31 @@
-.type-style-1 {
-  @include type-style-1;
+.type-display--large {
+  @include type-display-large;
+}
+
+.type-display--medium {
+  @include type-display-medium;
+}
+
+.type-display--small {
+  @include type-display-small;
+}
+
+.type-body--default {
+  @include type-body-default;
+}
+
+.type-body--small {
+  @include type-body-small;
+}
+
+.type-body--xsmall {
+  @include type-body-xsmall;
+}
+
+.type-body--tiny {
+  @include type-body-tiny;
+}
+
+.type-style--bold {
+  @include type-style-bold;
 }

@@ -1,5 +1,4 @@
-import React from 'react';
-import colors from 'colors.json';
+import colors from '../../../tokens/colors.json';
 
 const LEVEL_AA = 4.5;
 const LEVEL_AA_LARGE = 3;
@@ -38,6 +37,7 @@ const luminance = color => {
 const contrast = (color1, color2) => {
   const l1 = luminance(color1) + 0.05;
   const l2 = luminance(color2) + 0.05;
+
   return Math.max(l1, l2) / Math.min(l1, l2);
 };
 const initialCap = str => {
@@ -50,8 +50,8 @@ const getColorList = data => {
     if (item.variants) {
       item.variants.map(variant => {
         list.push({
-          name: `${initialCap(item.section)}
-          ${initialCap(item.name)}
+          name: `${initialCap(item.section)} 
+          ${initialCap(item.name)} 
           ${initialCap(variant.name)}`,
           color: variant.color,
           var: `$color-${item.section}-${item.name}-${variant.name}`
@@ -69,34 +69,26 @@ const getColorList = data => {
   return list;
 };
 const allColors = getColorList(colors);
-const systemColors = getColorList(
+const tintColors = getColorList(
   colors.filter(item => {
-    return item.section === 'system';
+    return item.section === 'tint';
   })
 );
-const brandColors = getColorList(
+const foregroundColors = getColorList(
   colors.filter(item => {
-    return item.section === 'brand';
+    return item.section === 'foreground';
+  })
+);
+const backgroundColors = getColorList(
+  colors.filter(item => {
+    return item.section === 'background';
   })
 );
 const nameBlock = input =>
-  input.name ? (
-    <p>
-      <strong>{input.name}</strong>
-    </p>
-  ) : null;
-const varBlock = input =>
-  input.var ? (
-    <p>
-      <code>{input.var}</code>
-    </p>
-  ) : null;
+  input.name ? `<p><strong>${input.name}</strong></p>` : '';
+const varBlock = input => (input.var ? `<p><code>${input.var}</code></p>` : '');
 const hexBlock = input =>
-  input.color ? (
-    <p>
-      <code>{input.color}</code>
-    </p>
-  ) : null;
+  input.color ? `<p><code>${input.color}</code></p>` : '';
 const a11yBlock = ratio => {
   let a11y = [];
 
@@ -110,78 +102,85 @@ const a11yBlock = ratio => {
     a11y = ['AAA'];
   }
 
-  return a11y.map(item => (
-    <span key={item} className="a11y-tag">
-      {item}
-    </span>
-  ));
+  return a11y.map(item => `<span class="a11y-tag">${item}</span> `).join('');
 };
 
 const swatch = (item, over) => {
   const ratio = over && contrast(item.color, over.color);
 
   if (over && ratio <= LEVEL_AA_LARGE) {
-    return null;
+    return '';
   }
 
+  let response = `<div class="documentation-grid--item documentation-block documentation-color" style="background: ${item.color};">`;
+
   if (over) {
-    return (
-      <div
-        className="documentation-block documentation-color"
-        style={{ background: item.color }}
-      >
-        <div className="text" style={{ color: over.color }}>
-          <span>Aa</span>
-        </div>
-        <footer>
-          {nameBlock(over)}
-          {varBlock(over)}
-          {hexBlock(over)}
-          <div className="a11y-tag-container">{a11yBlock(ratio)}</div>
-        </footer>
+    response += `
+    <div class="text" style="color: ${over.color}"><span>Aa</span></div>
+    <footer>
+      ${nameBlock(over)}
+      ${varBlock(over)}
+      ${hexBlock(over)}
+      <div class="a11y-tag-container">
+        ${a11yBlock(ratio)}
       </div>
-    );
-  }
-  return (
-    <div
-      className="documentation-block documentation-color"
-      style={{ background: item.color }}
-    >
-      <div className="color-block"></div>
+    </footer>
+    `;
+  } else {
+    response += `
+    <div class="color-block"></div>
       <footer>
-        {nameBlock(item)}
-        {varBlock(item)}
-        {hexBlock(item)}
-      </footer>
-    </div>
-  );
+      ${nameBlock(item)}
+      ${varBlock(item)}
+      ${hexBlock(item)}
+    </footer>`;
+  }
+  response += `</div>`;
+
+  return response;
 };
 const swatchGrid = (item, list) => {
-  return (
-    <div key={item} className="documentation-grid--feature">
-      {swatch(item)}
-      <div className="documentation-grid">
-        {list.map(color => swatch(item, color))}
-      </div>
-    </div>
-  );
+  let response = '<div class="documentation-grid--feature">';
+
+  response += swatch(item);
+  response += '<div class="documentation-grid">';
+
+  list.map(color => {
+    response += swatch(item, color);
+  });
+
+  response += '</div>';
+  response += '</div>';
+
+  return response;
 };
 const genAllColors = list => {
-  return (
-    <div className="documentation-grid">{list.map(item => swatch(item))}</div>
-  );
+  let response = '<div class="documentation-grid--large">';
+
+  list.map(item => {
+    response += swatch(item);
+  });
+
+  response += '</div>';
+
+  return response;
 };
 const genColorType = list => {
-  return (
-    <div className="documentation-grid--list">
-      {list.map(item => swatchGrid(item, allColors))}
-    </div>
-  );
+  let response = '<div class="documentation-grid--list">';
+
+  list.map(item => {
+    response += swatchGrid(item, allColors);
+  });
+
+  response += '</div>';
+
+  return response;
 };
 
 export const all = () => genAllColors(allColors);
-export const brand = () => genColorType(brandColors);
-export const system = () => genColorType(systemColors);
+export const tints = () => genColorType(tintColors);
+export const foregrounds = () => genColorType(foregroundColors);
+export const backgrounds = () => genColorType(backgroundColors);
 export default {
   title: 'Primitives / Colors'
 };
