@@ -26,40 +26,59 @@
   @include wider-than($breakpoint-tablet-portrait) {
     font-size: $font-size-48;
   }
-
-  // should have breakpoint for desktop or tablet and set font size
 }
 
 @mixin type-display-medium($font-color: $color-foreground-primary) {
   @include type-base-style($font-color);
-  font-size: $font-size-34;
+  font-size: $font-size-28;
+  @include wider-than($breakpoint-tablet-portrait) {
+    font-size: $font-size-34;
+  }
 }
 
 @mixin type-display-small($font-color: $color-foreground-primary) {
   @include type-base-style($font-color);
-  font-size: $font-size-24;
+  font-size: $font-size-22;
+  @include wider-than($breakpoint-tablet-portrait) {
+    font-size: $font-size-24;
+  }
 }
 
 @mixin type-body-default($font-color: $color-foreground-primary) {
   @include type-base-style($font-color);
+  @include wider-than($breakpoint-tablet-portrait) {
+    font-size: $font-size-48;
+  }
 }
 
 @mixin type-body-small($font-color: $color-foreground-primary) {
   @include type-base-style($font-color);
-  font-size: $font-size-14;
+  font-size: $font-size-12;
+  @include wider-than($breakpoint-tablet-portrait) {
+    font-size: $font-size-14;
+  }
 }
 
 @mixin type-body-medium($font-color: $color-foreground-primary) {
   @include type-base-style($font-color);
-  font-size: $font-size-18;
+  font-size: $font-size-16;
+  @include wider-than($breakpoint-tablet-portrait) {
+    font-size: $font-size-18;
+  }
 }
 
 @mixin type-body-large($font-color: $color-foreground-primary) {
   @include type-base-style($font-color);
-  font-size: $font-size-22;
+  font-size: $font-size-18;
+  @include wider-than($breakpoint-tablet-portrait) {
+    font-size: $font-size-22;
+  }
 }
 
 @mixin type-eyebrow($font-color: $color-foreground-primary) {
   @include type-base-style($font-color);
   font-size: $font-size-16;
+  @include wider-than($breakpoint-tablet-portrait) {
+    font-size: $font-size-18;
+  }
 }
