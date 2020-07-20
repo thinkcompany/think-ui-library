@@ -46,6 +46,10 @@ const config = [
   {
     name: 'Trash',
     id: 'icon-trash'
+  },
+  {
+    name: 'Blog Post',
+    id: 'icon-blog-post'
   }
 ];
 

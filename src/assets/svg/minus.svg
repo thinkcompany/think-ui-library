@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-    <title>Minus</title>
-    <g id="minus" >
-        <path d="M22.2857143,9.5 L1.71428571,9.5 C0.767678571,9.5 0,10.2463542 0,11.1666667 L0,12.8333333 C0,13.7536458 0.767678571,14.5 1.71428571,14.5 L22.2857143,14.5 C23.2323214,14.5 24,13.7536458 24,12.8333333 L24,11.1666667 C24,10.2463542 23.2323214,9.5 22.2857143,9.5 Z" />
+    <title>915573ff-890f-4ed2-b78e-3030ef7a0a05@1.00x</title>
+    <g id="Iconography" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="1.-Primitives/Icons/1.-Foreground-Primary/Minus" fill="#173145">
+            <path d="M23,11 C23.5522847,11 24,11.4477153 24,12 C24,12.5128358 23.6139598,12.9355072 23.1166211,12.9932723 L23,13 L1,13 C0.44771525,13 0,12.5522847 0,12 C0,11.4871642 0.38604019,11.0644928 0.883378875,11.0067277 L1,11 L23,11 Z" id="Path"></path>
+        </g>
     </g>
 </svg>
