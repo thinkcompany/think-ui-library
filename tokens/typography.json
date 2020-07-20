@@ -1,9 +1,9 @@
 {
-  "size": [10, 12, 14, 16, 24, 32, 40],
-  "weight": [200, 500, 900],
+  "size": [12, 14, 16, 18, 20, 22, 24, 28, 34, 42, 48],
+  "weight": [400, 600, 700, 800],
   "stack": {
-    "system": "system, -apple-system, '.SFNSText-Regular', 'San Francisco', 'Roboto', 'Segoe UI', 'Helvetica Neue', 'Lucida Grande', sans-serif",
-    "serif": "'Crimson Pro', serif",
-    "sans": "'Roboto', sans-serif"
+    "system": "system, -apple-system,'Kievit Pro' ",
+    "serif": "'Kievit Slab', georgia, serif",
+    "sans": "'Kievit Pro', helvetica, sans-serif"
   }
 }
