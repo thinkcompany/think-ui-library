@@ -8,6 +8,14 @@ const config = [
     id: 'icon-alert'
   },
   {
+    name: 'Blog Post',
+    id: 'icon-blog-post'
+  },
+  {
+    name: 'Calendar',
+    id: 'icon-calendar'
+  },
+  {
     name: 'Check',
     id: 'icon-check'
   },
@@ -28,12 +36,32 @@ const config = [
     id: 'icon-chevron-up'
   },
   {
+    name: 'Clock',
+    id: 'icon-clock'
+  },
+  {
     name: 'Close',
     id: 'icon-close'
   },
   {
+    name: 'Error',
+    id: 'icon-error'
+  },
+  {
+    name: 'Facebook',
+    id: 'icon-facebook'
+  },
+  {
     name: 'File',
     id: 'icon-file'
+  },
+  {
+    name: 'Instagram',
+    id: 'icon-instagram'
+  },
+  {
+    name: 'LinkedIn',
+    id: 'icon-linkedin'
   },
   {
     name: 'Minus',
@@ -44,12 +72,32 @@ const config = [
     id: 'icon-search'
   },
   {
+    name: 'Success',
+    id: 'icon-success'
+  },
+  {
     name: 'Trash',
     id: 'icon-trash'
   },
   {
-    name: 'Blog Post',
-    id: 'icon-blog-post'
+    name: 'Twitter',
+    id: 'icon-twitter'
+  },
+  {
+    name: 'Warning',
+    id: 'icon-warning'
+  },
+  {
+    name: 'Webinars',
+    id: 'icon-webinars'
+  },
+  {
+    name: 'Workshops',
+    id: 'icon-workshops'
+  },
+  {
+    name: 'Youtube',
+    id: 'icon-youtube'
   }
 ];
 
@@ -58,7 +106,7 @@ const icons = list => {
 
   list.map(item => {
     const url = `/img/icons.svg#${item.id}`;
-
+    console.log(item);
     response += `
     <div class="documentation-spacing--internal documentation-block documentation-grid--item">
     <div class="icon-block">
