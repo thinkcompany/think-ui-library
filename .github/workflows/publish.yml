@@ -26,7 +26,7 @@ jobs:
       - uses: tool3/bump@v1
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          branch: develop
+          branch: master
       - uses: actions/setup-node@v1
         with:
           node-version: 12
