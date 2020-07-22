@@ -31,6 +31,11 @@ const bodyStyles = [
     class: 'type-body--small',
     sass: '@include type-body-small',
     textLength: 1
+  },
+  {
+    name: 'Body Text Large',
+    class: 'type-body--large',
+    sass: '@include type-body-large'
   }
 ];
 
