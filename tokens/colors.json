@@ -9,6 +9,10 @@
       },
       {
         "name": "secondary",
+        "color": "#1f4a80"
+      },
+      {
+        "name": "tertiary",
         "color": "#f2f8fa"
       }
     ]
@@ -23,6 +27,10 @@
       },
       {
         "name": "secondary",
+        "color": "#27794d"
+      },
+      {
+        "name": "tertiary",
         "color": "#d7f5e5"
       }
     ]
@@ -37,6 +45,10 @@
       },
       {
         "name": "secondary",
+        "color": "#8c3c4a"
+      },
+      {
+        "name": "tertiary",
         "color": "#f7dadd"
       }
     ]
@@ -51,6 +63,10 @@
       },
       {
         "name": "secondary",
+        "color": "#c4853e"
+      },
+      {
+        "name": "tertiary",
         "color": "#f6e7d7"
       }
     ]
@@ -84,6 +100,11 @@
     "name": "tertiary",
     "section": "foreground",
     "color": "#a2adbb"
+  },
+  {
+    "name": "quanternary",
+    "section": "foreground",
+    "color": "#dadee4"
   },
   {
     "name": "on-tint",

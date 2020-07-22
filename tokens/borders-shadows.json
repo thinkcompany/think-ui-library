@@ -2,6 +2,7 @@
   "radius": {
     "xsmall": "2px",
     "small": "4px",
+    "medium": "10px",
     "large": "16px",
     "round": "50%"
   },

@@ -52,6 +52,7 @@
 @mixin type-body-default($font-color: $color-foreground-primary) {
   @include type-base-style($font-color);
   font-size: $font-size-16;
+  font-weight: normal;
   @include wider-than($breakpoint-tablet-portrait) {
     font-size: $font-size-18;
   }
