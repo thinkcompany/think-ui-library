@@ -106,7 +106,7 @@ const icons = list => {
 
   list.map(item => {
     const url = `/img/icons.svg#${item.id}`;
-    console.log(item);
+
     response += `
     <div class="documentation-spacing--internal documentation-block documentation-grid--item">
     <div class="icon-block">
