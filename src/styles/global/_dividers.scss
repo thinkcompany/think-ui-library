@@ -1,7 +1,3 @@
-.divider--vertical {
-    @include divider-vertical;
-}
-
 .divider--horizontal {
-    @include divider-horizontal;
+  @include divider-horizontal;
 }

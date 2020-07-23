@@ -5,11 +5,15 @@
     "variants": [
       {
         "name": "primary",
-        "color": "#4640ed"
+        "color": "#0062c3"
       },
       {
         "name": "secondary",
-        "color": "#ededfa"
+        "color": "#1f4a80"
+      },
+      {
+        "name": "tertiary",
+        "color": "#f2f8fa"
       }
     ]
   },
@@ -19,11 +23,15 @@
     "variants": [
       {
         "name": "primary",
-        "color": "#77d59d"
+        "color": "#1fa75d"
       },
       {
         "name": "secondary",
-        "color": "#e4f6eb"
+        "color": "#27794d"
+      },
+      {
+        "name": "tertiary",
+        "color": "#d7f5e5"
       }
     ]
   },
@@ -33,11 +41,15 @@
     "variants": [
       {
         "name": "primary",
-        "color": "#d5403c"
+        "color": "#dc4a56"
       },
       {
         "name": "secondary",
-        "color": "#fbe3e2"
+        "color": "#8c3c4a"
+      },
+      {
+        "name": "tertiary",
+        "color": "#f7dadd"
       }
     ]
   },
@@ -47,11 +59,15 @@
     "variants": [
       {
         "name": "primary",
-        "color": "#ffaf62"
+        "color": "#ffa53f"
       },
       {
         "name": "secondary",
-        "color": "#faecde"
+        "color": "#c4853e"
+      },
+      {
+        "name": "tertiary",
+        "color": "#f6e7d7"
       }
     ]
   },
@@ -63,27 +79,32 @@
   {
     "name": "secondary",
     "section": "background",
-    "color": "#eeeff3"
+    "color": "#f4f3f0"
   },
   {
     "name": "tertiary",
     "section": "background",
-    "color": "#dee0e8"
+    "color": "#173145"
   },
   {
     "name": "primary",
     "section": "foreground",
-    "color": "#333333"
+    "color": "#173145"
   },
   {
     "name": "secondary",
     "section": "foreground",
-    "color": "#666666"
+    "color": "#0062c3"
   },
   {
     "name": "tertiary",
     "section": "foreground",
-    "color": "#939ab4"
+    "color": "#a2adbb"
+  },
+  {
+    "name": "quanternary",
+    "section": "foreground",
+    "color": "#dadee4"
   },
   {
     "name": "on-tint",

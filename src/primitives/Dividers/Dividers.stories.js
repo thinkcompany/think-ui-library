@@ -3,11 +3,6 @@ const config = [
     name: 'Horizontal',
     class: 'divider--horizontal',
     sass: '@include divider-horizontal'
-  },
-  {
-    name: 'Vertical',
-    class: 'divider--vertical',
-    sass: '@include divider-vertical'
   }
 ];
 

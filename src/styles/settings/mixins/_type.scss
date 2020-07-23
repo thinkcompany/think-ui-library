@@ -5,7 +5,7 @@
 // The base style for all fonts. Accepts an optional font color parameter
 @mixin type-base-style($font-color: $color-foreground-primary) {
   color: $font-color;
-  font-family: $font-stack-system;
+  font-family: $font-stack-sans;
   font-size: $font-size-16;
   line-height: 1.5;
 }
@@ -14,7 +14,7 @@
      Styling mixins
 \*---------------------------------------------- */
 @mixin type-style-bold {
-  font-weight: $font-weight-900;
+  font-weight: $font-weight-800;
 }
 
 /* ----------------------------------------------*\
@@ -22,34 +22,76 @@
 \*---------------------------------------------- */
 @mixin type-display-large($font-color: $color-foreground-primary) {
   @include type-base-style($font-color);
-  font-size: $font-size-40;
+  @include type-style-bold;
+  font-size: $font-size-34;
+  font-family: $font-stack-serif;
+
+  @include wider-than($breakpoint-tablet-portrait) {
+    font-size: $font-size-48;
+  }
 }
 
 @mixin type-display-medium($font-color: $color-foreground-primary) {
   @include type-base-style($font-color);
-  font-size: $font-size-32;
+  font-size: $font-size-28;
+  font-weight: bold;
+  @include wider-than($breakpoint-tablet-portrait) {
+    font-size: $font-size-34;
+  }
 }
 
 @mixin type-display-small($font-color: $color-foreground-primary) {
   @include type-base-style($font-color);
-  font-size: $font-size-24;
+  font-size: $font-size-22;
+  font-weight: bold;
+  @include wider-than($breakpoint-tablet-portrait) {
+    font-size: $font-size-24;
+  }
 }
 
 @mixin type-body-default($font-color: $color-foreground-primary) {
   @include type-base-style($font-color);
+  font-size: $font-size-16;
+  font-weight: normal;
+  @include wider-than($breakpoint-tablet-portrait) {
+    font-size: $font-size-18;
+  }
 }
 
 @mixin type-body-small($font-color: $color-foreground-primary) {
   @include type-base-style($font-color);
-  font-size: $font-size-14;
-}
-
-@mixin type-body-xsmall($font-color: $color-foreground-primary) {
-  @include type-base-style($font-color);
   font-size: $font-size-12;
+  font-weight: normal;
+  @include wider-than($breakpoint-tablet-portrait) {
+    font-size: $font-size-14;
+  }
 }
 
-@mixin type-body-tiny($font-color: $color-foreground-primary) {
+@mixin type-body-medium($font-color: $color-foreground-primary) {
   @include type-base-style($font-color);
-  font-size: $font-size-10;
+  font-size: $font-size-16;
+  font-weight: normal;
+  @include wider-than($breakpoint-tablet-portrait) {
+    font-size: $font-size-18;
+  }
+}
+
+@mixin type-body-large($font-color: $color-foreground-primary) {
+  @include type-base-style($font-color);
+  font-size: $font-size-18;
+  font-weight: normal;
+  @include wider-than($breakpoint-tablet-portrait) {
+    font-size: $font-size-22;
+  }
+}
+
+@mixin type-eyebrow($font-color: $color-foreground-primary) {
+  @include type-base-style($font-color);
+  font-size: $font-size-16;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  @include wider-than($breakpoint-tablet-portrait) {
+    font-size: $font-size-18;
+  }
 }

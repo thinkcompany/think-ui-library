@@ -1,33 +1,13 @@
 const config = [
   {
-    name: 'Card Container Border',
-    class: 'card-container--border',
-    sass: '@include card-container-border'
+    name: 'Card Container Flat',
+    class: 'card-container--flat',
+    sass: '@include card-container-flat'
   },
   {
     name: 'Card Container Shadow',
     class: 'card-container--shadow',
     sass: '@include card-container-shadow'
-  },
-  {
-    name: 'Card Communication Neutral',
-    class: 'card-communication--neutral',
-    sass: '@include card-communication-neutral'
-  },
-  {
-    name: 'Card Communication Success',
-    class: 'card-communication--success',
-    sass: '@include card-communication-success'
-  },
-  {
-    name: 'Card Communication Warning',
-    class: 'card-communication--warning',
-    sass: '@include card-communication-warning'
-  },
-  {
-    name: 'Card Communication Error',
-    class: 'card-communication--error',
-    sass: '@include card-communication-error'
   }
 ];
 

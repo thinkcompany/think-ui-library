@@ -1,15 +1,8 @@
 @mixin divider {
-    border: 1px solid $color-background-tertiary;
-}
-
-@mixin divider-vertical {
-    @include divider;
-    display: inline-block;
-    height: 100%;
-    transform: scaleX(0.5);
+  border: 1px solid $color-foreground-tertiary;
 }
 
 @mixin divider-horizontal {
-    @include divider;
-    transform: scaleY(0.5);
+  @include divider;
+  transform: scaleY(0.5);
 }

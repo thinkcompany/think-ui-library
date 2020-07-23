@@ -14,16 +14,13 @@
   @include type-body-default;
 }
 
+
+.type-body--large {
+  @include type-body-large;
+}
+
 .type-body--small {
   @include type-body-small;
-}
-
-.type-body--xsmall {
-  @include type-body-xsmall;
-}
-
-.type-body--tiny {
-  @include type-body-tiny;
 }
 
 .type-style--bold {

@@ -33,16 +33,9 @@ const bodyStyles = [
     textLength: 1
   },
   {
-    name: 'Body Text Extra Small',
-    class: 'type-body--xsmall',
-    sass: '@include type-body-xsmall',
-    textLength: 1
-  },
-  {
-    name: 'Body Text Tiny',
-    class: 'type-body--tiny',
-    sass: '@include type-body-tiny',
-    textLength: 1
+    name: 'Body Text Large',
+    class: 'type-body--large',
+    sass: '@include type-body-large'
   }
 ];
 

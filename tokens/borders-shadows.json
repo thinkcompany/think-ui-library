@@ -2,11 +2,12 @@
   "radius": {
     "xsmall": "2px",
     "small": "4px",
+    "medium": "10px",
     "large": "16px",
     "round": "50%"
   },
   "shadow": {
-    "default": "2px 2px 2px 1px rgba(0, 0, 0, 0.2)"
+    "default": "0 0 8px 0 rgba(23, 49, 69, 0.3)"
   },
   "border": {
     "default": "1px solid #000"
