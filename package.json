@@ -1,7 +1,14 @@
 {
-  "name": "storybook-template-html",
-  "version": "1.0.0",
-  "description": "",
+  "name": "@thinkcompany/think-ui-library",
+  "version": "1.1.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/thinkcompany/think-ui-library"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/thinkcompany"
+  },
+  "description": "Pattern Library for the Think Company Website",
   "main": "index.js",
   "scripts": {
     "start": "npm run storybook",
