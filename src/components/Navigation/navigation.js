@@ -8,7 +8,6 @@ export default class Nav {
   setupEventHandler() {
     const openNavText = 'Open Mobile Navigation';
     const closeNavText = 'Close Mobile Navigation';
-    console.log(this.$mobileMenuBtn);
 
     this.$mobileMenuBtn.addEventListener(
       'click',
