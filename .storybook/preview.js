@@ -7,6 +7,8 @@ import { INITIAL_VIEWPORTS } from '@storybook/addon-viewport';
 // Import local styles
 import 'main.scss';
 
+import 'index.js';
+
 // Add global decorators
 addDecorator(withA11y);
 addDecorator(withKnobs);

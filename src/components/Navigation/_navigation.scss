@@ -1,0 +1,241 @@
+/* Site Header (logo and navigation only)
+-------------------------------------------------- */
+
+.site-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 999;
+  width: 100%;
+  background: $color-background-primary;
+  box-shadow: 0 5px 10px 0 rgba(75, 75, 75, 0.05);
+
+  @include wider-than($breakpoint-xl) {
+    padding: 20px 0 $spacing-stack-16;
+  }
+}
+
+.site-header-wrapper {
+  @extend %wrapper--xwide;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  @include wider-than($breakpoint-xl) {
+    justify-content: space-around;
+  }
+}
+
+.site-header-logo {
+  // Background image should come from theme
+  background: url('/img/think-company-logo-horizontal-blue.svg') no-repeat
+    center center;
+  width: 200px;
+  height: 42px;
+  flex: 0 0 auto;
+  display: block;
+  margin: $spacing-stack-12 0;
+
+  @include wider-than($breakpoint-phone-landscape) {
+    margin: $spacing-stack-8 0;
+    width: 266px;
+    height: 68px;
+  }
+
+  @include wider-than($breakpoint-xl) {
+    width: 322px;
+    height: 64px;
+    margin: 0;
+  }
+}
+
+.site-header-nav-toggle {
+  line-height: 1;
+  padding: 0;
+  width: 36px;
+  height: 36px;
+
+  @include wider-than($breakpoint-phone-landscape) {
+    margin: 0;
+    width: 60px;
+    height: 60px;
+  }
+
+  @include wider-than($breakpoint-xl) {
+    display: none;
+  }
+}
+
+.site-header-nav-toggle-icon {
+  stroke: $color-foreground-secondary;
+  stroke-width: 3;
+  width: 36px;
+  height: 36px;
+  top: 14px;
+  stroke-width: 3;
+  stroke-linecap: square;
+  vertical-align: middle;
+
+  .tco-hamburger-line-4 {
+    opacity: 0;
+  }
+
+  path {
+    transition: opacity 0.2s ease-in-out, transform 0.2s ease-in-out;
+  }
+
+  path,
+  main {
+    backface-visibility: hidden;
+  }
+
+  .open & {
+    transform: rotate(225deg);
+
+    .tco-hamburger-line-1 {
+      transform: translateY(8px);
+    }
+
+    .tco-hamburger-line-3 {
+      transform: translateY(-8px);
+    }
+
+    .tco-hamburger-line-1,
+    .tco-hamburger-line-3 {
+      opacity: 0;
+    }
+
+    .tco-hamburger-line-4 {
+      opacity: 1;
+    }
+  }
+
+  @include wider-than($breakpoint-phone-landscape) {
+    width: 60px;
+    height: 60px;
+  }
+}
+
+.menu-site-nav {
+  @include list-plain();
+  display: none;
+
+  .open + & {
+    @include spacing-squish-32-64;
+    top: 66px;
+    left: 0;
+    display: block;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: $color-tint-blue-tertiary;
+
+    @include wider-than($breakpoint-phone-landscape) {
+      top: 84px;
+    }
+
+    @include wider-than($breakpoint-xl) {
+      background: none;
+      position: static;
+      display: flex;
+      padding: 0;
+    }
+  }
+
+  @include wider-than($breakpoint-xl) {
+    flex: 0 0 auto;
+    display: flex;
+    position: relative;
+    background: none;
+  }
+}
+
+.menu-site-nav-item {
+  flex: 0 0 auto;
+  position: relative;
+}
+
+.menu-site-nav-link,
+.menu-site-nav-submenu-link {
+  @include type-display-small($color-foreground-primary);
+  @include spacing-inset-24;
+  position: relative;
+  display: block;
+  text-align: center;
+  font-weight: $font-weight-500;
+  text-transform: uppercase;
+  letter-spacing: 2.2px;
+  text-decoration: none;
+  border-bottom: 1px solid $color-foreground-quanternary;
+
+  &:hover,
+  &:focus {
+    color: $color-foreground-secondary;
+  }
+
+  @include wider-than($breakpoint-xl) {
+    @include spacing-squish-8-16;
+    font-size: $font-size-18;
+    border-bottom: 0;
+  }
+}
+
+.menu-item-has-children {
+  .menu-site-nav-link {
+    &::after {
+      content: '';
+      width: 14px;
+      height: 24px;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 24 24' id='icon-chevron-down' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M.293 5.293a1 1 0 011.32-.083l.094.083L12 15.585 22.293 5.293a1 1 0 011.32-.083l.094.083a1 1 0 01.083 1.32l-.083.094-11 11a1 1 0 01-1.32.083l-.094-.083-11-11a1 1 0 010-1.414z' /%3E%3C/svg%3E");
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: 12px;
+      vertical-align: middle;
+      display: inline-block;
+      margin-left: $spacing-inline-8;
+    }
+  }
+}
+
+.menu-site-nav-submenu {
+  @include list-plain();
+  display: none;
+
+  @include wider-than($breakpoint-xl) {
+    .menu-item-has-children:hover &,
+    .menu-item-has-children:focus & {
+      display: block;
+      position: absolute;
+      background-color: $color-background-primary;
+      border-radius: 4px;
+      padding: 0 $spacing-inline-12;
+      min-width: 250px;
+      left: 50%;
+      margin-left: -125px;
+      top: 100%;
+
+      &::before {
+        content: '';
+        position: absolute;
+        bottom: 100%;
+        left: 50%;
+        margin-left: -6px;
+        display: inline-block;
+        width: 0;
+        height: 0;
+        border-style: solid;
+        border-width: 0 12px 12px 12px;
+        border-color: transparent transparent $color-background-primary
+          transparent;
+      }
+    }
+  }
+}
+
+.menu-site-nav-submenu-item {
+  border-bottom: 1px solid $color-foreground-quanternary;
+}
+
+.menu-site-nav-submenu-link {
+  padding: $spacing-stack-16 $spacing-stack-8;
+}

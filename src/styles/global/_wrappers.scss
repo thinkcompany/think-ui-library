@@ -1,0 +1,9 @@
+.wrapper,
+%wrapper {
+    @include wrapper();
+}
+
+.wrapper--xwide,
+%wrapper--xwide {
+    @include wrapper(98%, 1600px);
+}
