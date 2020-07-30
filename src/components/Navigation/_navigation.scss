@@ -180,15 +180,19 @@
 .tco-menu-site-nav-link {
   .current-menu-item & {
     color: $color-tint-blue-primary;
-    background: linear-gradient(180deg,transparent 20%, rgba($color-tint-blue-primary, 0.15) 0);
+    background: linear-gradient(
+      180deg,
+      transparent 20%,
+      rgba($color-tint-blue-primary, 0.15) 0
+    );
     background-size: 100% 44%;
     background-repeat: no-repeat;
     background-position: bottom;
   }
-  
 }
 
-.menu-item-has-children { // Wordpress automated class
+.menu-item-has-children {
+  // Wordpress automated class
   .tco-menu-site-nav-link {
     &::after {
       content: '';
@@ -216,7 +220,8 @@
 
   @include wider-than($breakpoint-xl) {
     .menu-item-has-children:hover &,
-    .menu-item-has-children:focus & {  // Wordpress automated class
+    .menu-item-has-children:focus & {
+      // Wordpress automated class
       position: absolute;
       background-color: $color-background-primary;
       border-bottom-left-radius: 4px;
@@ -226,7 +231,7 @@
       left: 50%;
       margin-left: -125px;
       top: 100%; // height of arrow on submenu
-      box-shadow: inset 0px 5px 10px 0px rgba(75,75,75,.05)
+      box-shadow: inset 0px 5px 10px 0px rgba(75, 75, 75, 0.05);
     }
   }
 }

@@ -40,7 +40,6 @@ $spacing-image: 120px;
       }
     }
 
-
     &--align-right {
       flex-direction: column-reverse;
 
@@ -125,7 +124,7 @@ $spacing-image: 120px;
   &--background-glass {
     background-color: $color-tint-blue-tertiary;
   }
-  
+
   &--background-primary-blue {
     background-color: $color-tint-blue-primary;
   }

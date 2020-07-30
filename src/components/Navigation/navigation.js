@@ -26,9 +26,7 @@ export default class Nav {
 
   init() {
     document.addEventListener('DOMContentLoaded', () => {
-      this.$mobileMenuBtn = document.querySelector(
-        '[data-mobile-menu-button]'
-      );
+      this.$mobileMenuBtn = document.querySelector('[data-mobile-menu-button]');
       this.$mobileMenuTitle = document.querySelector(
         '[data-mobile-menu-title]'
       );
