@@ -120,7 +120,9 @@ export const All = () => {
       Object.keys(sizes)
         .map(sizeKey =>
           itemWrapper(`
-            <button type="button" class="btn ${styles[styleKey]} ${sizes[sizeKey]}">
+            <button type="button" class="btn ${styles[styleKey]} ${
+            sizes[sizeKey]
+          }">
               ${buttonText}
             </button>
             <footer style="${showInfo ? '' : 'display: none'}">
@@ -129,15 +131,19 @@ export const All = () => {
               <span>size: ${sizeKey}</span>
             </footer>
           `)
-        ).join('')
-    ).join('');
+        )
+        .join('')
+    )
+    .join('');
 
   const iconButtonExamples = Object.keys(styles)
     .map(styleKey =>
       Object.keys(sizes)
         .map(sizeKey =>
           itemWrapper(`
-            <button type="button" class="btn btn--icon ${styles[styleKey]} ${sizes[sizeKey]}">
+            <button type="button" class="btn btn--icon ${styles[styleKey]} ${
+            sizes[sizeKey]
+          }">
               <svg class="icon" width="16" height="16" viewBox="0 0 16 16">
                 <use xlink:href="/img/svg-sprite.svg#${iconId}"></use>
               </svg>
@@ -149,15 +155,19 @@ export const All = () => {
               <span>size: ${sizeKey}</span>
             </footer>
           `)
-        ).join('')
-    ).join('');
+        )
+        .join('')
+    )
+    .join('');
 
   const iconTextButtonExamples = Object.keys(styles)
     .map(styleKey =>
       Object.keys(sizes)
         .map(sizeKey =>
           itemWrapper(`
-            <button type="button" class="btn btn--icon-text ${styles[styleKey]} ${sizes[sizeKey]}">
+            <button type="button" class="btn btn--icon-text ${
+              styles[styleKey]
+            } ${sizes[sizeKey]}">
               <svg class="icon" width="16" height="16" viewBox="0 0 16 16">
                 <use xlink:href="/img/svg-sprite.svg#${iconId}"></use>
               </svg>
@@ -169,13 +179,17 @@ export const All = () => {
               <span>size: ${sizeKey}</span>
             </footer>
           `)
-        ).join('')
-    ).join('');
+        )
+        .join('')
+    )
+    .join('');
 
   const linkButtonExamples = Object.keys(linkSizes)
     .map(sizeKey =>
       itemWrapper(`
-        <button type="button" class="btn btn--link ${sizeKey !== 'Default' ? linkSizes[sizeKey] : ''}">
+        <button type="button" class="btn btn--link ${
+          sizeKey !== 'Default' ? linkSizes[sizeKey] : ''
+        }">
           ${buttonText}
         </button>
         <footer style="${showInfo ? '' : 'display: none'}">
@@ -183,7 +197,8 @@ export const All = () => {
           <span>size: ${sizeKey}</span>
         </footer>
       `)
-    ).join('');
+    )
+    .join('');
 
   const buttonExamples = [
     textButtonExamples,

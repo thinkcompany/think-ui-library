@@ -1,0 +1,242 @@
+/* Site Header (logo and navigation only)
+-------------------------------------------------- */
+
+.tco-site-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: $z-index-overlay;
+  width: 100%;
+  background: $color-background-primary;
+  box-shadow: 0 5px 10px 0 rgba(75, 75, 75, 0.05);
+}
+
+.tco-site-header-wrapper {
+  @extend %wrapper--xwide;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  @include wider-than($breakpoint-xl) {
+    justify-content: space-around;
+  }
+}
+
+.tco-site-header-logo {
+  // Background image should come from theme
+  background: url('/img/think-company-logo-horizontal-blue.svg') no-repeat
+    center center;
+  width: 200px;
+  height: 42px;
+  flex: 0 0 auto;
+  display: block;
+  margin: $spacing-stack-12 0;
+
+  @include wider-than($breakpoint-phone-landscape) {
+    margin: $spacing-stack-8 0;
+    width: 266px;
+    height: 68px;
+  }
+
+  @include wider-than($breakpoint-xl) {
+    width: 322px;
+    height: 64px;
+    margin: 0;
+  }
+}
+
+.tco-site-header-nav-toggle {
+  line-height: 1;
+  padding: 0;
+  width: 36px;
+  height: 36px;
+
+  @include wider-than($breakpoint-phone-landscape) {
+    margin: 0;
+    width: 60px;
+    height: 60px;
+  }
+
+  @include wider-than($breakpoint-xl) {
+    display: none;
+  }
+}
+
+.tco-site-header-nav-toggle-icon {
+  stroke: $color-foreground-secondary;
+  width: 36px;
+  height: 36px;
+  top: 14px;
+  stroke-width: 3;
+  stroke-linecap: square;
+  vertical-align: middle;
+
+  .tco-hamburger-line-4 {
+    opacity: 0;
+  }
+
+  path {
+    transition: opacity 0.2s ease-in-out, transform 0.2s ease-in-out;
+  }
+
+  path,
+  main {
+    backface-visibility: hidden;
+  }
+
+  .tco-menu-site-nav--open & {
+    transform: rotate(225deg);
+
+    .tco-hamburger-line-1 {
+      transform: translateY(8px);
+    }
+
+    .tco-hamburger-line-3 {
+      transform: translateY(-8px);
+    }
+
+    .tco-hamburger-line-1,
+    .tco-hamburger-line-3 {
+      opacity: 0;
+    }
+
+    .tco-hamburger-line-4 {
+      opacity: 1;
+    }
+  }
+
+  @include wider-than($breakpoint-phone-landscape) {
+    width: 60px;
+    height: 60px;
+  }
+}
+
+.tco-menu-site-nav {
+  @include list-plain();
+  display: none;
+
+  .tco-menu-site-nav--open + & {
+    @include spacing-squish-32-64;
+    top: 66px;
+    left: 0;
+    display: block;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: $color-tint-blue-tertiary;
+
+    @include wider-than($breakpoint-phone-landscape) {
+      top: 84px;
+    }
+
+    @include wider-than($breakpoint-xl) {
+      background: none;
+      position: static;
+      display: flex;
+      padding: 0;
+    }
+  }
+
+  @include wider-than($breakpoint-xl) {
+    flex: 0 0 auto;
+    display: flex;
+    position: relative;
+    background: none;
+  }
+}
+
+.tco-menu-site-nav-item {
+  flex: 0 0 auto;
+  position: relative;
+}
+
+.tco-menu-site-nav-link,
+.tco-menu-site-nav-submenu-link {
+  @include type-display-small($color-foreground-primary);
+  @include spacing-inset-24;
+  position: relative;
+  display: block;
+  text-align: center;
+  font-weight: $font-weight-500;
+  text-transform: uppercase;
+  letter-spacing: 2.2px;
+  text-decoration: none;
+  border-bottom: 1px solid $color-foreground-quanternary;
+  line-height: 1.4;
+
+  &:hover,
+  &:focus {
+    color: $color-foreground-secondary;
+  }
+
+  @include wider-than($breakpoint-xl) {
+    margin: 40px $spacing-inline-12 $spacing-stack-32;
+    padding: 0 $spacing-inline-4;
+    font-size: $font-size-18;
+    border-bottom: 0;
+  }
+}
+
+.tco-menu-site-nav-link {
+  .current-menu-item & {
+    color: $color-tint-blue-primary;
+    background: linear-gradient(180deg,transparent 20%, rgba($color-tint-blue-primary, 0.15) 0);
+    background-size: 100% 44%;
+    background-repeat: no-repeat;
+    background-position: bottom;
+  }
+  
+}
+
+.menu-item-has-children { // Wordpress automated class
+  .tco-menu-site-nav-link {
+    &::after {
+      content: '';
+      width: 14px;
+      height: 24px;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 24 24' id='icon-chevron-down' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M.293 5.293a1 1 0 011.32-.083l.094.083L12 15.585 22.293 5.293a1 1 0 011.32-.083l.094.083a1 1 0 01.083 1.32l-.083.094-11 11a1 1 0 01-1.32.083l-.094-.083-11-11a1 1 0 010-1.414z' /%3E%3C/svg%3E");
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: 12px;
+      vertical-align: middle;
+      display: inline-block;
+      margin-left: $spacing-inline-8;
+    }
+  }
+}
+
+.tco-menu-site-nav-submenu {
+  @include list-plain();
+  display: none;
+
+  .menu-item-has-children:hover &,
+  .menu-item-has-children:focus & {
+    display: block;
+  }
+
+  @include wider-than($breakpoint-xl) {
+    .menu-item-has-children:hover &,
+    .menu-item-has-children:focus & {  // Wordpress automated class
+      position: absolute;
+      background-color: $color-background-primary;
+      border-bottom-left-radius: 4px;
+      border-bottom-right-radius: 4px;
+      padding: 0 $spacing-inline-12;
+      min-width: 250px;
+      left: 50%;
+      margin-left: -125px;
+      top: 100%; // height of arrow on submenu
+      box-shadow: inset 0px 5px 10px 0px rgba(75,75,75,.05)
+    }
+  }
+}
+
+.tco-menu-site-nav-submenu-link {
+  border-bottom: 1px solid $color-foreground-quanternary;
+  padding: $spacing-stack-16 $spacing-stack-8;
+  margin: 0;
+
+  .tco-menu-site-nav-submenu-item:last-of-type & {
+    border-bottom: 0;
+  }
+}

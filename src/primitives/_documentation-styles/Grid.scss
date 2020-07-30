@@ -12,19 +12,18 @@
   &--list {
     display: flex;
     flex-direction: column;
-    
+
     > .documentation-grid--item {
       flex: 0 0 auto;
       margin-bottom: $documentation-padding;
     }
-    
   }
 
   &--large {
     display: flex;
     flex-wrap: wrap;
     margin-left: -$documentation-padding;
-  
+
     > .documentation-grid--item {
       flex: 0 0 300px;
       margin: 0 0 $documentation-padding $documentation-padding;
