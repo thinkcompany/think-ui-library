@@ -3,7 +3,8 @@ import './main.scss';
 
 // Components for Site
 import { Nav } from './components/Navigation/navigation';
-console.log('hi');
 
+// Load Components
 const nav = new Nav();
+
 nav.init();

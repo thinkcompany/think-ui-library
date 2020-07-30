@@ -129,7 +129,7 @@ module.exports = {
     'no-unexpected-multiline': 2,
     'no-unneeded-ternary': 0,
     'no-unreachable': 2,
-    'no-unused-expressions': 2,
+    'no-unused-expressions': 0,
     'no-unused-vars': 2,
     'no-use-before-define': 2,
     'no-useless-call': 2,

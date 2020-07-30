@@ -9,10 +9,11 @@ class Nav {
   setupEventHandler() {
     const openNavText = 'Open Mobile Navigation';
     const closeNavText = 'Close Mobile Navigation';
+
     this.$mobileMenuBtn[0].addEventListener(
       'click',
       () => {
-        let currentText = this.$mobileMenuTitle[0].textContent;
+        const currentText = this.$mobileMenuTitle[0].textContent;
 
         this.$mobileMenuBtn[0].classList.toggle('menu-site-nav--open');
 
