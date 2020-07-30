@@ -162,6 +162,7 @@
   letter-spacing: 2.2px;
   text-decoration: none;
   border-bottom: 1px solid $color-foreground-quanternary;
+  line-height: 1.4;
 
   &:hover,
   &:focus {
@@ -169,10 +170,22 @@
   }
 
   @include wider-than($breakpoint-xl) {
-    padding: 40px $spacing-inline-16 $spacing-stack-32;
+    margin: 40px $spacing-inline-12 $spacing-stack-32;
+    padding: 0 $spacing-inline-4;
     font-size: $font-size-18;
     border-bottom: 0;
   }
+}
+
+.tco-menu-site-nav-link {
+  .current-menu-item & {
+    color: $color-tint-blue-primary;
+    background: linear-gradient(180deg,transparent 20%, rgba($color-tint-blue-primary, 0.15) 0);
+    background-size: 100% 44%;
+    background-repeat: no-repeat;
+    background-position: bottom;
+  }
+  
 }
 
 .menu-item-has-children { // Wordpress automated class
@@ -221,6 +234,7 @@
 .tco-menu-site-nav-submenu-link {
   border-bottom: 1px solid $color-foreground-quanternary;
   padding: $spacing-stack-16 $spacing-stack-8;
+  margin: 0;
 
   .tco-menu-site-nav-submenu-item:last-of-type & {
     border-bottom: 0;
