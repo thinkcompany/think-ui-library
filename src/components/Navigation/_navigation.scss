@@ -1,17 +1,17 @@
 /* Site Header (logo and navigation only)
 -------------------------------------------------- */
 
-.site-header {
+.tco-site-header {
   position: fixed;
   top: 0;
   left: 0;
-  z-index: 999;
+  z-index: $z-index-overlay;
   width: 100%;
   background: $color-background-primary;
   box-shadow: 0 5px 10px 0 rgba(75, 75, 75, 0.05);
 }
 
-.site-header-wrapper {
+.tco-site-header-wrapper {
   @extend %wrapper--xwide;
   display: flex;
   justify-content: space-between;
@@ -22,7 +22,7 @@
   }
 }
 
-.site-header-logo {
+.tco-site-header-logo {
   // Background image should come from theme
   background: url('/img/think-company-logo-horizontal-blue.svg') no-repeat
     center center;
@@ -45,7 +45,7 @@
   }
 }
 
-.site-header-nav-toggle {
+.tco-site-header-nav-toggle {
   line-height: 1;
   padding: 0;
   width: 36px;
@@ -62,7 +62,7 @@
   }
 }
 
-.site-header-nav-toggle-icon {
+.tco-site-header-nav-toggle-icon {
   stroke: $color-foreground-secondary;
   width: 36px;
   height: 36px;
@@ -84,7 +84,7 @@
     backface-visibility: hidden;
   }
 
-  .menu-site-nav--open & {
+  .tco-menu-site-nav--open & {
     transform: rotate(225deg);
 
     .tco-hamburger-line-1 {
@@ -111,11 +111,11 @@
   }
 }
 
-.menu-site-nav {
+.tco-menu-site-nav {
   @include list-plain();
   display: none;
 
-  .menu-site-nav--open + & {
+  .tco-menu-site-nav--open + & {
     @include spacing-squish-32-64;
     top: 66px;
     left: 0;
@@ -145,13 +145,13 @@
   }
 }
 
-.menu-site-nav-item {
+.tco-menu-site-nav-item {
   flex: 0 0 auto;
   position: relative;
 }
 
-.menu-site-nav-link,
-.menu-site-nav-submenu-link {
+.tco-menu-site-nav-link,
+.tco-menu-site-nav-submenu-link {
   @include type-display-small($color-foreground-primary);
   @include spacing-inset-24;
   position: relative;
@@ -175,8 +175,8 @@
   }
 }
 
-.menu-item-has-children {
-  .menu-site-nav-link {
+.menu-item-has-children { // Wordpress automated class
+  .tco-menu-site-nav-link {
     &::after {
       content: '';
       width: 14px;
@@ -192,14 +192,18 @@
   }
 }
 
-.menu-site-nav-submenu {
+.tco-menu-site-nav-submenu {
   @include list-plain();
   display: none;
 
+  .menu-item-has-children:hover &,
+  .menu-item-has-children:focus & {
+    display: block;
+  }
+
   @include wider-than($breakpoint-xl) {
     .menu-item-has-children:hover &,
-    .menu-item-has-children:focus & {
-      display: block;
+    .menu-item-has-children:focus & {  // Wordpress automated class
       position: absolute;
       background-color: $color-background-primary;
       border-radius: 4px;
@@ -207,7 +211,7 @@
       min-width: 250px;
       left: 50%;
       margin-left: -125px;
-      top: calc(100% + 6px); // height of arrow on submenu
+      top: 100%; // height of arrow on submenu
 
       &::before {
         content: '';
@@ -227,10 +231,11 @@
   }
 }
 
-.menu-site-nav-submenu-item {
+.tco-menu-site-nav-submenu-link {
   border-bottom: 1px solid $color-foreground-quanternary;
-}
-
-.menu-site-nav-submenu-link {
   padding: $spacing-stack-16 $spacing-stack-8;
+
+  .tco-menu-site-nav-submenu-item:last-of-type & {
+    border-bottom: 0;
+  }
 }

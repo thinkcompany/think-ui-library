@@ -1,25 +1,25 @@
-class Nav {
+export default class Nav {
   constructor() {
     this.$mobileMenuBtn;
     this.$mobileMenuTitle;
     this.$siteNav;
-    this.$body;
   }
 
   setupEventHandler() {
     const openNavText = 'Open Mobile Navigation';
     const closeNavText = 'Close Mobile Navigation';
+    console.log(this.$mobileMenuBtn);
 
-    this.$mobileMenuBtn[0].addEventListener(
+    this.$mobileMenuBtn.addEventListener(
       'click',
       () => {
-        const currentText = this.$mobileMenuTitle[0].textContent;
+        const currentText = this.$mobileMenuTitle.textContent;
 
-        this.$mobileMenuBtn[0].classList.toggle('menu-site-nav--open');
+        this.$mobileMenuBtn.classList.toggle('tco-menu-site-nav--open');
 
         currentText === openNavText
-          ? (this.$mobileMenuTitle[0].textContent = closeNavText)
-          : (this.$mobileMenuTitle[0].textContent = openNavText);
+          ? (this.$mobileMenuTitle.textContent = closeNavText)
+          : (this.$mobileMenuTitle.textContent = openNavText);
       },
       false
     );
@@ -27,20 +27,16 @@ class Nav {
 
   init() {
     document.addEventListener('DOMContentLoaded', () => {
-      this.$mobileMenuBtn = document.querySelectorAll(
+      this.$mobileMenuBtn = document.querySelector(
         '[data-mobile-menu-button]'
       );
-      this.$mobileMenuTitle = document.querySelectorAll(
+      this.$mobileMenuTitle = document.querySelector(
         '[data-mobile-menu-title]'
       );
 
-      this.$siteNav = document.querySelectorAll('.menu-site-nav');
-
-      this.$body = document.getElementsByTagName('body');
+      this.$siteNav = document.querySelector('.menu-site-nav');
 
       this.setupEventHandler();
     });
   }
 }
-
-export { Nav };
