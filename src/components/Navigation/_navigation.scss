@@ -68,7 +68,6 @@
 
 .site-header-nav-toggle-icon {
   stroke: $color-foreground-secondary;
-  stroke-width: 3;
   width: 36px;
   height: 36px;
   top: 14px;
@@ -89,7 +88,7 @@
     backface-visibility: hidden;
   }
 
-  .open & {
+  .menu-site-nav--open & {
     transform: rotate(225deg);
 
     .tco-hamburger-line-1 {
@@ -120,7 +119,7 @@
   @include list-plain();
   display: none;
 
-  .open + & {
+  .menu-site-nav--open + & {
     @include spacing-squish-32-64;
     top: 66px;
     left: 0;
