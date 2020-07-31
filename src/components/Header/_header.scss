@@ -113,28 +113,8 @@ $spacing-image: 120px;
     }
   }
 
-  &--background-white {
-    background-color: $color-background-primary;
-  }
-
-  &--background-tan {
-    background-color: $color-background-secondary;
-  }
-
-  &--background-glass {
-    background-color: $color-tint-blue-tertiary;
-  }
-
-  &--background-primary-blue {
-    background-color: $color-tint-blue-primary;
-  }
-
-  &--background-midnight-blue {
-    background-color: $color-background-tertiary;
-  }
-
-  &--background-primary-blue,
-  &--background-midnight-blue {
+  &.tco-background--primary-blue,
+  &.tco-background--midnight-blue {
     .tco-header-eyebrow,
     .tco-header-heading,
     .tco-header-lede,

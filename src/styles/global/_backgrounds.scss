@@ -1,0 +1,21 @@
+.tco-background {
+  &--white {
+    background-color: $color-background-primary;
+  }
+
+  &--tan {
+    background-color: $color-background-secondary;
+  }
+
+  &--glass {
+    background-color: $color-tint-blue-tertiary;
+  }
+
+  &--primary-blue {
+    background-color: $color-tint-blue-primary;
+  }
+
+  &--midnight-blue {
+    background-color: $color-background-tertiary;
+  }
+}

@@ -13,7 +13,7 @@ export const centered = () => {
   const image = text('Image', 'https://placekitten.com/800/400');
 
   return `
-  <div class="tco-header tco-header--background-${background}">
+  <div class="tco-header tco-background--${background}">
     <div class="tco-header-container">
       <div class="tco-header-content">
         <span class="tco-header-eyebrow">${eyebrow}</span>
@@ -38,7 +38,7 @@ export const textLeft = () => {
   const image = text('Image', 'https://placekitten.com/580/580');
 
   return `
-  <div class="tco-header tco-header--background-${background}">
+  <div class="tco-header tco-background--${background}">
     <div class="tco-header-container tco-header-container--align-left">
       <div class="tco-header-content">
         <span class="tco-header-eyebrow">${eyebrow}</span>
@@ -63,7 +63,7 @@ export const textRight = () => {
   const image = text('Image', 'https://placekitten.com/580/580');
 
   return `
-  <div class="tco-header tco-header--background-${background}">
+  <div class="tco-header tco-background--${background}">
     <div class="tco-header-container tco-header-container--align-right">
       <div class="tco-header-content">
         <span class="tco-header-eyebrow">${eyebrow}</span>
@@ -85,7 +85,7 @@ export const withBreadcrumb = () => {
   const image = text('Image', 'https://placekitten.com/1180/785');
 
   return `
-  <div class="tco-header tco-header--with-back-link tco-header--background-${background}">
+  <div class="tco-header tco-header--with-back-link tco-background--${background}">
     <div class="tco-header-container">
       <div class="tco-header-content">
         <a class="tco-header-back-link" href="#">
