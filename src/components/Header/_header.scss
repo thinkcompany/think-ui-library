@@ -4,7 +4,7 @@ $spacing-lede: 60px;
 $spacing-image: 120px;
 
 .tco-header {
-  padding: $spacing-header 0 $spacing-stack-64;
+  padding: $spacing-header $spacing-inline-24 $spacing-stack-64;
 
   &-container {
     display: flex;
@@ -23,8 +23,7 @@ $spacing-image: 120px;
       @include wider-than($breakpoint-tablet-portrait) {
         flex-wrap: nowrap;
 
-        > .tco-header-content,
-        > .tco-header-image {
+        > .tco-header-content {
           flex-basis: 50%;
         }
       }
