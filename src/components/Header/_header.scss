@@ -1,0 +1,128 @@
+$max-width-lede: 780px;
+$spacing-header: 56px;
+$spacing-lede: 60px;
+$spacing-image: 120px;
+
+.tco-header {
+  padding: $spacing-header $spacing-inline-24 $spacing-stack-64;
+
+  &-container {
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+    max-width: $container-max;
+    margin: auto;
+
+    &--align-left,
+    &--align-right {
+      text-align: left;
+
+      @include wider-than($breakpoint-tablet-portrait) {
+        flex-wrap: nowrap;
+
+        > .tco-header-content {
+          flex-basis: 50%;
+        }
+      }
+    }
+
+    &--align-left {
+      @include wider-than($breakpoint-tablet-portrait) {
+        flex-direction: row;
+
+        > .tco-header-image {
+          margin-left: $spacing-image;
+        }
+      }
+    }
+
+    &--align-right {
+      flex-direction: column-reverse;
+
+      > .tco-header-image {
+        margin-bottom: $spacing-stack-32;
+      }
+
+      .tco-header-lede {
+        margin-bottom: 0;
+      }
+
+      @include wider-than($breakpoint-tablet-portrait) {
+        flex-direction: row-reverse;
+
+        > .tco-header-image {
+          margin-right: $spacing-image;
+        }
+      }
+    }
+  }
+
+  &-content {
+    width: 100%;
+  }
+
+  &-eyebrow {
+    @include type-eyebrow;
+    margin-bottom: $spacing-stack-16;
+  }
+
+  &-heading {
+    @include type-display-large;
+    margin-bottom: $spacing-stack-24;
+    line-height: 1.2;
+  }
+
+  &-lede {
+    @include type-body-large;
+    max-width: $max-width-lede;
+    margin: 0 auto $spacing-stack-32;
+
+    @include wider-than($breakpoint-tablet-portrait) {
+      margin-bottom: $spacing-lede;
+    }
+  }
+
+  &--with-back-link {
+    > .tco-header-container {
+      align-items: flex-start;
+      text-align: left;
+    }
+
+    .tco-header-back-link {
+      @include type-link;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+    }
+
+    .tco-header-heading {
+      margin-bottom: $spacing-stack-8;
+    }
+
+    .tco-header-back-link,
+    .tco-header-date {
+      display: inline-block;
+      margin-bottom: $spacing-stack-16;
+    }
+
+    .tco-header-date {
+      @include type-body-default;
+    }
+  }
+
+  &.tco-background--primary-blue,
+  &.tco-background--midnight-blue {
+    .tco-header-eyebrow,
+    .tco-header-heading,
+    .tco-header-lede,
+    .tco-header-date {
+      color: $color-foreground-on-tint;
+    }
+
+    .tco-header-back-link {
+      @include type-link($color-foreground-on-tint, $color-background-primary);
+    }
+  }
+}

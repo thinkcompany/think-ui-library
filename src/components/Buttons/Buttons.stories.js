@@ -212,6 +212,6 @@ export const All = () => {
 // #endregion
 
 export default {
-  title: 'Controls / Buttons',
+  title: 'Controls & Inputs / Buttons',
   decorators: [withKnobs]
 };
