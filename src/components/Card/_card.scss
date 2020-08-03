@@ -1,0 +1,20 @@
+.tco-card {
+  @include card-container-shadow;
+  @include spacing-inset-32;
+  max-width: 380px;
+
+  &-link {
+    @include card-image-scale;
+  }
+
+  &-content-heading {
+    @include type-display-medium;
+    @include type-link;
+    display: inline;
+    line-height: 1.2;
+  }
+
+  &-content-description {
+    margin-top: $spacing-stack-16;
+  }
+}
