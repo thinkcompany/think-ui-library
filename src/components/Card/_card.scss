@@ -4,7 +4,17 @@
   max-width: 380px;
 
   &-link {
+    @include type-not-link;
     @include card-image-scale;
+  }
+
+  &-content-container {
+    display: flex;
+    height: 100%;
+    flex-flow: column wrap;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
   }
 
   &-content-heading {
@@ -15,6 +25,33 @@
   }
 
   &-content-description {
-    margin-top: $spacing-stack-16;
+    margin: $spacing-stack-16 0;
+  }
+
+  &--cta {
+    background-color: $color-tint-blue-primary;
+    color: $color-foreground-on-tint;
+
+    > .tco-card-content-container {
+      min-height: 515px;
+    }
+  }
+
+  &--person {
+    @include spacing-inset-16;
+    width: 215px;
+    background-position: 50%;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    .tco-card-content-container {
+      align-self: flex-end;
+      text-align: left;
+    }
+
+    .tco-card-content-heading {
+      @include type-link($color-foreground-on-tint, $color-background-primary);
+      display: inline;
+    }
   }
 }

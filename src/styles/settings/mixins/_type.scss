@@ -118,6 +118,9 @@
   background-position: bottom;
 }
 
+ /**
+  * Link style with highlight transition
+  */
 @mixin type-link(
   $font-color: $color-tint-blue-primary,
   $bg-color: $color-tint-blue-primary
@@ -135,4 +138,14 @@
   &:active {
     background-size: 100% 106%;
   }
+}
+
+ /**
+  * Makes type wrapped in an anchor
+  * NOT have the standard link style
+  */
+@mixin type-not-link {
+  color: inherit;
+  font-weight: inherit;
+  text-decoration: none;
 }

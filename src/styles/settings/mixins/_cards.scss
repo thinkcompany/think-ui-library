@@ -15,6 +15,10 @@
   box-shadow: 0px 10px 18px 0px rgba(0, 0, 0, 0.15);
 }
 
+ /**
+  * When applied to a parent anchor or button
+  * Gives the zoom effect to image elements
+  */
 @mixin card-image-scale {
   img {
     transform: scale(0.98);
