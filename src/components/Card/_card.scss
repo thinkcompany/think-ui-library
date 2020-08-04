@@ -9,11 +9,6 @@
   }
 
   &-content-container {
-    display: flex;
-    height: 100%;
-    flex-flow: column wrap;
-    justify-content: center;
-    align-items: center;
     text-align: center;
   }
 
@@ -33,24 +28,57 @@
     color: $color-foreground-on-tint;
 
     > .tco-card-content-container {
+      display: flex;
+      height: 100%;
+      flex-flow: column wrap;
+      justify-content: center;
+      align-items: center;
       min-height: 515px;
     }
   }
 
-  &--person {
+  &--person,
+  &--cta-small {
     @include spacing-inset-16;
+    @include card-scale;
     width: 215px;
     background-position: 50%;
     background-repeat: no-repeat;
     background-size: cover;
 
+    > .tco-card-link {
+      display: flex;
+      flex-flow: column wrap;
+      justify-content: center;
+      min-height: 300px;
+    }
+
+    .tco-card-content-description {
+      color: $color-foreground-on-tint;
+    }
+  }
+
+  &--person {
     .tco-card-content-container {
-      align-self: flex-end;
+      margin-top: auto;
       text-align: left;
     }
 
     .tco-card-content-heading {
       @include type-link($color-foreground-on-tint, $color-background-primary);
+      display: inline;
+    }
+  }
+
+  &--cta-small {
+    background-color: $color-tint-blue-primary;
+
+    &:hover {
+      background-color: $color-tint-blue-secondary;
+    }
+
+    .tco-card-content-description {
+      @include type-link($color-foreground-on-tint, $color-background-primary, $font-size-24);
       display: inline;
     }
   }

@@ -16,8 +16,19 @@
 }
 
  /**
-  * When applied to a parent anchor or button
-  * Gives the zoom effect to image elements
+  * Applies zoom effect on hover
+  */
+@mixin card-scale {
+  transition: transform 0.6s ease-out, background-color 0.2s linear;
+
+  &:hover {
+    transform: scale(1.03);
+  }
+}
+
+ /**
+  * Applies zoom effect to image elements
+  * When hovering over parent anchor or button
   */
 @mixin card-image-scale {
   img {
