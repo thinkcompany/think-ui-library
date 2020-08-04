@@ -123,9 +123,11 @@
   */
 @mixin type-link(
   $font-color: $color-tint-blue-primary,
-  $bg-color: $color-tint-blue-primary
+  $bg-color: $color-tint-blue-primary,
+  $font-size: inherit
 ) {
   @include type-highlight($font-color, $bg-color);
+  font-size: $font-size;
   font-weight: $font-weight-600;
 
   &:link,
