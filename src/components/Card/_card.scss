@@ -78,7 +78,11 @@
     }
 
     .tco-card-content-description {
-      @include type-link($color-foreground-on-tint, $color-background-primary, $font-size-24);
+      @include type-link(
+        $color-foreground-on-tint,
+        $color-background-primary,
+        $font-size-24
+      );
       display: inline;
     }
   }
