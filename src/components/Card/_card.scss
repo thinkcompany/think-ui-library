@@ -1,0 +1,91 @@
+.tco-card {
+  @include card-container-shadow;
+  @include spacing-inset-32;
+  max-width: 380px;
+
+  &-link {
+    @include type-not-link;
+    @include card-image-scale;
+  }
+
+  &-content-container {
+    text-align: center;
+  }
+
+  &-content-heading {
+    @include type-display-medium;
+    @include type-link;
+    display: inline;
+    line-height: 1.2;
+  }
+
+  &-content-description {
+    margin: $spacing-stack-16 0;
+  }
+
+  &--cta {
+    background-color: $color-tint-blue-primary;
+    color: $color-foreground-on-tint;
+
+    > .tco-card-content-container {
+      display: flex;
+      height: 100%;
+      flex-flow: column wrap;
+      justify-content: center;
+      align-items: center;
+      min-height: 515px;
+    }
+  }
+
+  &--person,
+  &--cta-small {
+    @include spacing-inset-16;
+    @include card-scale;
+    width: 215px;
+    background-position: 50%;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    > .tco-card-link {
+      display: flex;
+      flex-flow: column wrap;
+      justify-content: center;
+      min-height: 300px;
+    }
+
+    .tco-card-content-description {
+      margin-top: 0;
+      color: $color-foreground-on-tint;
+    }
+  }
+
+  &--person {
+    .tco-card-content-container {
+      margin-top: auto;
+      text-align: left;
+    }
+
+    .tco-card-content-heading {
+      @include type-link($color-foreground-on-tint, $color-background-primary);
+      display: inline;
+      font-size: $font-size-24;
+    }
+  }
+
+  &--cta-small {
+    background-color: $color-tint-blue-primary;
+
+    &:hover {
+      background-color: $color-tint-blue-secondary;
+    }
+
+    .tco-card-content-description {
+      @include type-link(
+        $color-foreground-on-tint,
+        $color-background-primary,
+        $font-size-24
+      );
+      display: inline;
+    }
+  }
+}
