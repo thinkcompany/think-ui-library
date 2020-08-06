@@ -73,7 +73,7 @@ const genTypeTokens = input => {
       input[item].map(subitem => {
         switch (item) {
           case 'size':
-            output += `$font-size-${subitem}: rem(${subitem}); \n`;
+            output += `$font-size-${subitem}: ${subitem}px; \n`;
             break;
           case 'weight':
             output += `$font-weight-${subitem}: ${subitem}; \n`;

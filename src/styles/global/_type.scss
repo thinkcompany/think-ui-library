@@ -1,27 +1,27 @@
-.type-display--large {
+.tco-type-display--large {
   @include type-display-large;
 }
 
-.type-display--medium {
+.tco-type-display--medium {
   @include type-display-medium;
 }
 
-.type-display--small {
+.tco-type-display--small {
   @include type-display-small;
 }
 
-.type-body--default {
+.tco-type-body--default {
   @include type-body-default;
 }
 
-.type-body--large {
+.tco-type-body--large {
   @include type-body-large;
 }
 
-.type-body--small {
+.tco-type-body--small {
   @include type-body-small;
 }
 
-.type-style--bold {
+.tco-type-style--bold {
   @include type-style-bold;
 }

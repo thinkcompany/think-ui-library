@@ -10,9 +10,9 @@ const radioButton = () => {
   const state = select('State', stateOptions, stateOptions.unchecked);
 
   return `
-  <div class="form-group">
-    <input class="form-radio" id="radio-1" type="radio" name="radio-default" value="1" ${state} />
-    <label class="form-label" for="radio-1">${label}</label>
+  <div class="tco-form-group">
+    <input class="tco-form-radio" id="radio-1" type="radio" name="radio-default" value="1" ${state} />
+    <label class="tco-form-label" for="radio-1">${label}</label>
   </div>`;
 };
 

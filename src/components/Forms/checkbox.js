@@ -18,9 +18,9 @@ const checkbox = () => {
   });
 
   return `
-<div class="form-group">
-    <input class="form-checkbox" id="checkbox-1" type="checkbox" name="checkbox-1" value="1" ${state} />
-    <label class="form-label" for="checkbox-1">${label}</label>
+<div class="tco-form-group">
+    <input class="tco-form-checkbox" id="checkbox-1" type="checkbox" name="checkbox-1" value="1" ${state} />
+    <label class="tco-form-label" for="checkbox-1">${label}</label>
 </div>`;
 };
 

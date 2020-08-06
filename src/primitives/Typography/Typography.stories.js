@@ -1,19 +1,19 @@
 const displayStyles = [
   {
     name: 'Display Large',
-    class: 'type-display--large',
+    class: 'tco-type-display--large',
     sass: '@include type-display-large',
     textLength: 1
   },
   {
     name: 'Display Medium ',
-    class: 'type-display--medium',
+    class: 'tco-type-display--medium',
     sass: '@include type-display-medium',
     textLength: 1
   },
   {
     name: 'Display Small',
-    class: 'type-display--small',
+    class: 'tco-type-display--small',
     sass: '@include type-display-small',
     textLength: 1
   }
@@ -22,19 +22,19 @@ const displayStyles = [
 const bodyStyles = [
   {
     name: 'Body Text Default',
-    class: 'type-body',
+    class: 'tco-type-body',
     sass: '@include type-body',
     textLength: 1
   },
   {
     name: 'Body Text Small',
-    class: 'type-body--small',
+    class: 'tco-type-body--small',
     sass: '@include type-body-small',
     textLength: 1
   },
   {
     name: 'Body Text Large',
-    class: 'type-body--large',
+    class: 'tco-type-body--large',
     sass: '@include type-body-large'
   }
 ];

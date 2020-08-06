@@ -6,9 +6,9 @@ const toggle = () => {
   const disabled = boolean('Disabled', false);
 
   return `
-  <div class="form-group">
+  <div class="tco-form-group">
     <input 
-        class="form-toggle"
+        class="tco-form-toggle"
         id="toggle-1"
         type="checkbox"
         name="toggle-default"
@@ -16,7 +16,7 @@ const toggle = () => {
         ${state ? 'checked' : ''}
         ${disabled ? 'disabled' : ''}
     />
-    <label class="form-label" for="toggle-1">${label}</label>
+    <label class="tco-form-label" for="toggle-1">${label}</label>
   </div>`;
 };
 

@@ -15,22 +15,22 @@ const textarea = () => {
   const disabled = boolean('Disabled', false);
 
   return `
-    <div class="form-row">
+    <div class="tco-form-row">
       <label
         for="textarea-1"
-        class="form-label"
+        class="tco-form-label"
       >
         ${label}
       </label>
       <textarea 
         placeholder="${placeholder}"
-        class="form-textarea ${state}"
+        class="tco-form-textarea ${state}"
         id="textarea-1"
         name="textarea-1" ${disabled ? '\n\tdisabled' : ''}
       ></textarea>
       ${stateIcon(state)}${
     state === stateOptions.error
-      ? `<p class="form-input-error-msg">${errorMessage}</p>`
+      ? `<p class="tco-form-input-error-msg">${errorMessage}</p>`
       : ''
   }
     </div>`;
