@@ -1,10 +1,11 @@
 import { select, text, boolean, withKnobs } from '@storybook/addon-knobs';
+import { useEffect } from '@storybook/client-api';
 
 // #region knob option objects
 const styles = {
   Primary: 'btn--primary',
   Secondary: 'btn--secondary',
-  Danger: 'btn--danger'
+  Tertiary: 'btn--tertiary'
 };
 
 const states = {
@@ -20,9 +21,13 @@ const sizes = {
 
 const linkSizes = {
   Default: '',
-  Small: 'btn-link--small',
-  XSmall: 'btn-link--xsmall',
-  Tiny: 'btn-link--tiny'
+  Large: 'btn-link--large',
+  Small: 'btn-link--small'
+};
+
+const linkColors = {
+  Default: '',
+  'On Tint': 'on-tint'
 };
 
 const icons = {
@@ -58,9 +63,21 @@ export const Link = () => {
   const buttonText = text('Button Text', 'Button Text');
   const buttonSize = select('Size', linkSizes, sizes.Default);
   const buttonState = select('State', states, states.Active);
+  const linkColor = select('Color', linkColors, linkColors.Default);
+
+  // set background color to $color-background-tertiary for white link
+  useEffect(() => {
+    const storyBackground = document.querySelector('.sb-show-main');
+
+    if (linkColor === 'on-tint') {
+      storyBackground.style.background = '#173145';
+    } else {
+      storyBackground.style.background = '';
+    }
+  });
 
   return `
-    <button type="button" class="btn btn--link ${buttonSize}" ${buttonState}>
+    <button type="button" class="btn btn--link ${buttonSize} ${linkColor}" ${buttonState}>
       ${buttonText}
     </button>`;
 };
@@ -75,7 +92,7 @@ export const Icon = () => {
   return `
     <button type="button" class="btn btn--icon ${buttonStyle} ${buttonSize}" ${buttonState}>
       <svg class="icon" width="16" height="16" viewBox="0 0 16 16">
-        <use xlink:href="/img/svg-sprite.svg#${iconId}"></use>
+        <use xlink:href="img/icons.svg#${iconId}"></use>
       </svg>
       <span class="accessibly-hidden">${buttonText}</span>
     </button>`;
@@ -91,7 +108,7 @@ export const IconWithText = () => {
   return `
     <button type="button" class="btn btn--icon-text ${buttonStyle} ${buttonSize}" ${buttonState}>
       <svg class="icon" width="16" height="16" viewBox="0 0 16 16">
-        <use xlink:href="/img/svg-sprite.svg#${iconId}"></use>
+        <use xlink:href="img/icons.svg#${iconId}"></use>
       </svg>
       ${buttonText}
     </button>`;
