@@ -10,7 +10,7 @@ $opacity--disabled: 0.4;
     Form Row
 \*---------------------------------------------- */
 
-.form-row {
+.tco-form-row {
   margin-bottom: 1rem;
   position: relative;
 
@@ -19,7 +19,7 @@ $opacity--disabled: 0.4;
   }
 }
 
-.form-row--group {
+.tco-form-row--group {
   margin-bottom: $spacing-inline-12;
   position: relative;
 
@@ -28,7 +28,7 @@ $opacity--disabled: 0.4;
   }
 }
 
-.form-fieldset {
+.tco-form-fieldset {
   &.disabled {
     opacity: $opacity--disabled;
   }
@@ -38,8 +38,8 @@ $opacity--disabled: 0.4;
       Form controls
 \*---------------------------------------------- */
 
-.form-input,
-%form-input {
+.tco-form-input,
+%tco-form-input {
   @include type-body-small;
   width: 100%;
   border-radius: $border-radius-small;
@@ -76,7 +76,7 @@ $opacity--disabled: 0.4;
   }
 }
 
-.form-state-icon {
+.tco-form-state-icon {
   position: absolute;
   left: rem(8px);
   width: rem(16px);
@@ -95,27 +95,27 @@ $opacity--disabled: 0.4;
   }
 }
 
-.form-input--large {
+.tco-form-input--large {
   @include spacing-inset-16();
 
-  + .form-state-icon {
+  + .tco-form-state-icon {
     top: rem(44px);
   }
 }
 
-.form-input--medium {
+.tco-form-input--medium {
   @include spacing-inset-8();
 
-  + .form-state-icon {
+  + .tco-form-state-icon {
     top: rem(36px);
   }
 }
 
-.form-input--small {
+.tco-form-input--small {
   @include spacing-squish-4-8();
   font-size: $font-size-12;
 
-  + .form-state-icon {
+  + .tco-form-state-icon {
     top: rem(30px);
   }
 }
@@ -124,11 +124,11 @@ $opacity--disabled: 0.4;
       Text Area
 \*---------------------------------------------- */
 
-.form-textarea {
-  @extend %form-input;
+.tco-form-textarea {
+  @extend %tco-form-input;
   @include spacing-inset-8();
 
-  + .form-state-icon {
+  + .tco-form-state-icon {
     top: rem(34px);
   }
 }
@@ -137,17 +137,17 @@ $opacity--disabled: 0.4;
       Form controls for labels and legends
 \*---------------------------------------------- */
 
-.form-label {
+.tco-form-label {
   display: block;
   position: relative;
   font-weight: $font-weight-600;
 
-  .form-label-text {
+  .tco-form-label-text {
     display: block;
     margin-bottom: 0.5rem;
   }
 
-  .form-label-optional {
+  .tco-form-label-optional {
     font-style: italic;
   }
 }
@@ -156,8 +156,8 @@ $opacity--disabled: 0.4;
       Checkbox
 \*---------------------------------------------- */
 
-.form-checkbox {
-  @extend %accessibly-hidden;
+.tco-form-checkbox {
+  @extend %tco-accessibly-hidden;
 
   &:focus + label::after {
     content: '';
@@ -256,8 +256,8 @@ $opacity--disabled: 0.4;
       Radio Buttons
 \*---------------------------------------------- */
 
-.form-radio {
-  @extend %accessibly-hidden;
+.tco-form-radio {
+  @extend %tco-accessibly-hidden;
 
   &:checked + label::after {
     opacity: 1;
@@ -352,8 +352,8 @@ $opacity--disabled: 0.4;
       Toggle
 \*---------------------------------------------- */
 
-.form-toggle {
-  @extend %accessibly-hidden;
+.tco-form-toggle {
+  @extend %tco-accessibly-hidden;
 
   + label {
     position: relative;
@@ -467,12 +467,12 @@ $opacity--disabled: 0.4;
   background-image: url("data:image/svg+xml, %3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23939ab4' fill-rule='evenodd' viewBox='0 0 24 24'%3E%3Cpath d='M11.0673126,19.1021479 L0.386350391,8.10198065 C-0.128783464,7.57145453 -0.128783464,6.71133772 0.386350391,6.18086821 L1.63211366,4.89788139 C2.14636816,4.3682609 2.97982649,4.36724207 3.4952901,4.89561733 L12.0000275,13.6134412 L20.5047099,4.89561733 C21.0201735,4.36724207 21.8536318,4.3682609 22.3678863,4.89788139 L23.6136496,6.18086821 C24.1287835,6.71139433 24.1287835,7.57151113 23.6136496,8.10198065 L12.9327424,19.1021479 C12.4176085,19.6326174 11.5824464,19.6326174 11.0673126,19.1021479 Z' /%3E%3C/svg%3E");
 
   // inherits inset spacing from text input
-  &.form-input--large {
+  &.tco-form-input--large {
     background-size: 16px;
     background-position-x: calc(100% - 16px);
   }
 
-  &.form-input--medium {
+  &.tco-form-input--medium {
     background-size: 14px;
     background-position-x: calc(100% - 12px);
   }
@@ -482,14 +482,14 @@ $opacity--disabled: 0.4;
       Error States
 \*---------------------------------------------- */
 
-.form-input-error-msg {
+.tco-form-input-error-msg {
   color: $color-tint-red-primary;
   border-radius: $border-radius-xsmall;
   text-transform: none;
   font-weight: 400;
   margin-top: $spacing-stack-4;
 
-  + .form-row {
+  + .tco-form-row {
     margin-top: rem(8px);
   }
 

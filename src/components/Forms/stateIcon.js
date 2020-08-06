@@ -7,9 +7,9 @@
 const stateIcon = state => {
   switch (state) {
     case 'is-success':
-      return '<svg class="form-state-icon form-state-icon--success"><use xlink:href="/img/icons.svg#icon-check"></use></svg>';
+      return '<svg class="tco-form-state-icon tco-form-state-icon--success"><use xlink:href="/img/icons.svg#icon-check"></use></svg>';
     case 'is-error':
-      return '<svg class="form-state-icon form-state-icon--error"><use xlink:href="/img/icons.svg#icon-alert"></use></svg>';
+      return '<svg class="tco-form-state-icon tco-form-state-icon--error"><use xlink:href="/img/icons.svg#icon-alert"></use></svg>';
     default:
       return '';
   }

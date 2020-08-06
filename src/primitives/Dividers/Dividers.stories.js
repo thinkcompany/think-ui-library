@@ -1,7 +1,7 @@
 const config = [
   {
     name: 'Horizontal',
-    class: 'divider--horizontal',
+    class: 'tco-divider--horizontal',
     sass: '@include divider-horizontal'
   }
 ];

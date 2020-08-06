@@ -12,7 +12,7 @@
 }
 
 .tco-site-header-wrapper {
-  @extend %wrapper--xwide;
+  @extend %tco-wrapper--xwide;
   display: flex;
   justify-content: space-between;
   align-items: center;
