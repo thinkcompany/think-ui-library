@@ -12,6 +12,13 @@ export default {
         keep_fnames: true
       }
     }),
-    new OptimizeCSSAssetsPlugin({})
+    new OptimizeCSSAssetsPlugin({
+      cssProcessorOptions: {
+        map: {
+          inline: false,
+          annotation: true,
+        }
+      }
+    })
   ]
 };
