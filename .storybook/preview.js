@@ -5,7 +5,7 @@ import { withMarkup } from '@stormid/storybook-html-addon-markup';
 import { INITIAL_VIEWPORTS } from '@storybook/addon-viewport';
 
 // Styles just for Storybook
-import 'styles/global/_fonts.scss';
+import 'fonts/_fonts.scss';
 import 'primitives/_index.scss';
 
 // Import local styles
