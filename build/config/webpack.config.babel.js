@@ -7,6 +7,7 @@ import common from './webpack.common';
 export default {
   entry: ['./src/index.js'],
   mode: 'production',
+  devtool: 'source-map',
   module: {
     rules: rules.concat(common.rules)
   },
