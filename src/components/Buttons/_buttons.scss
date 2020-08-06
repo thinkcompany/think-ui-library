@@ -113,18 +113,18 @@
 
   &:hover,
   &:focus {
-    background-color: $color-tint-orange-secondary;
+    border-color: lighten($color-tint-orange-secondary, 15%);
+    background-color: lighten($color-tint-orange-secondary, 15%);
 
     &::after {
       border-radius: 4px;
-      border-color: $color-tint-blue-primary;
+      border-color: lighten($color-tint-orange-secondary, 15%);
     }
   }
 
   &:active {
-    border-color: $color-tint-blue-primary;
-    background-color: rgba(0, 0, 0, 0.1);
-    color: $color-tint-blue-primary;
+    background-color: lighten($color-tint-orange-secondary, 15%);
+    border-color: lighten($color-tint-orange-secondary, 5%);
   }
 
   &[disabled],
