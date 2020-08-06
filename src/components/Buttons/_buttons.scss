@@ -157,6 +157,11 @@
   background-position: 0px 84%;
   background-repeat: no-repeat;
 
+  &.on-tint {
+    background-image: linear-gradient(180deg,transparent 20%,hsla(0,0%,100%,.18) 0);
+    color: $color-foreground-on-tint;
+  }
+
   &.btn-link--large {
     @include type-display-small;
     background-position: 0px 82%;
