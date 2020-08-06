@@ -1,7 +1,7 @@
-.card-container--flat {
+.tco-card-container--flat {
   @include card-container-flat;
 }
 
-.card-container--shadow {
+.tco-card-container--shadow {
   @include card-container-shadow;
 }

@@ -2,9 +2,9 @@ import { text, select, boolean, array } from '@storybook/addon-knobs';
 
 const selectOptions = ['Red', 'Green', 'Blue'];
 const sizeOptions = {
-  large: 'form-input--large',
-  medium: 'form-input--medium',
-  small: 'form-input--small'
+  large: 'tco-form-input--large',
+  medium: 'tco-form-input--medium',
+  small: 'tco-form-input--small'
 };
 
 const selectInput = () => {
@@ -14,11 +14,11 @@ const selectInput = () => {
   const disabled = boolean('Disabled', false);
 
   return `
-    <div class="form-row">
-      <label for="select-1" class="form-label">${label}</label>
-      <div class="form-select">
+    <div class="tco-form-row">
+      <label for="select-1" class="tco-form-label">${label}</label>
+      <div class="tco-form-select">
         <select
-          class="select form-input ${size}"
+          class="select tco-form-input ${size}"
           id="select-1"
           name="select-1"
           ${disabled ? 'disabled' : ''}

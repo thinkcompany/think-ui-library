@@ -2,7 +2,7 @@
     Buttons
 \*---------------------------------------------- */
 
-.btn {
+.tco-btn {
   @include spacing-squish-8-16();
   @include type-body-small;
   @include type-style-bold;
@@ -13,15 +13,15 @@
   text-align: center;
   text-decoration: none;
 
-  &.btn--large {
+  &.tco-btn--large {
     @include spacing-squish-16-24();
   }
 
-  &.btn--medium {
+  &.tco-btn--medium {
     @include spacing-squish-8-16();
   }
 
-  &.btn--small {
+  &.tco-btn--small {
     @include spacing-squish-4-8();
     font-size: $font-size-12;
   }
@@ -31,7 +31,7 @@
     Primary Button
 \*---------------------------------------------- */
 
-.btn--primary {
+.tco-btn--primary {
   border: 1px solid $color-tint-blue-primary;
   border-radius: 4px;
   background: $color-tint-blue-primary;
@@ -67,7 +67,7 @@
     Secondary Button
 \*---------------------------------------------- */
 
-.btn--secondary {
+.tco-btn--secondary {
   border: 1px solid $color-foreground-tertiary;
   border-radius: 4px;
   background: none;
@@ -109,7 +109,7 @@
     Link Button
 \*---------------------------------------------- */
 
-.btn--link {
+.tco-btn--link {
   @include type-body-default($color-tint-blue-primary);
   @include spacing-squish-4-8();
   text-decoration: underline;
@@ -134,15 +134,15 @@
     color: $color-tint-blue-primary;
   }
 
-  &.btn-link--small {
+  &.tco-btn-link--small {
     font-size: $font-size-14;
   }
 
-  &.btn-link--xsmall {
+  &.tco-btn-link--xsmall {
     font-size: $font-size-12;
   }
 
-  &.btn-link--tiny {
+  &.tco-btn-link--tiny {
     font-size: $font-size-12;
   }
 
@@ -157,7 +157,7 @@
     Danger Button
 \*---------------------------------------------- */
 
-.btn--danger {
+.tco-btn--danger {
   border: 1px solid $color-tint-red-primary;
   border-radius: 4px;
   background: $color-tint-red-primary;
@@ -193,8 +193,8 @@
     Icon Button Variant
 \*---------------------------------------------- */
 
-.btn--icon,
-.btn--icon-text {
+.tco-btn--icon,
+.tco-btn--icon-text {
   @include spacing-inset-8();
   line-height: 0;
   border-radius: $border-radius-small;
@@ -202,7 +202,7 @@
   justify-content: center;
   align-items: center;
 
-  &.btn--small {
+  &.tco-btn--small {
     @include spacing-inset-8();
 
     > svg {
@@ -211,7 +211,7 @@
     }
   }
 
-  &.btn--medium {
+  &.tco-btn--medium {
     @include spacing-inset-12();
 
     > svg {
@@ -220,11 +220,11 @@
     }
   }
 
-  &.btn--large {
+  &.tco-btn--large {
     @include spacing-inset-16();
   }
 }
 
-.btn--icon-text > svg {
+.tco-btn--icon-text > svg {
   margin-right: 8px;
 }

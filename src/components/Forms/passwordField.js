@@ -2,9 +2,9 @@ import { text, select, boolean } from '@storybook/addon-knobs';
 import stateIcon from './stateIcon';
 
 const sizeOptions = {
-  large: 'form-input--large',
-  medium: 'form-input--medium',
-  small: 'form-input--small'
+  large: 'tco-form-input--large',
+  medium: 'tco-form-input--medium',
+  small: 'tco-form-input--small'
 };
 
 const stateOptions = {
@@ -22,18 +22,18 @@ const password = () => {
   const disabled = boolean('Disabled', false);
 
   return `
-  <div class="form-row">
-    <label for="password-1" class="form-label">${label}</label>
+  <div class="tco-form-row">
+    <label for="password-1" class="tco-form-label">${label}</label>
     <input 
       type="password"
       placeholder="${placeholder}"
-      class="form-input ${size} ${state}"
+      class="tco-form-input ${size} ${state}"
       id="password-1"
       name="password-1" ${disabled ? '\n\tdisabled' : ''}
     >
     ${stateIcon(state)}${
     state === stateOptions.error
-      ? `<p class="form-input-error-msg">${errorMessage}</p>`
+      ? `<p class="tco-form-input-error-msg">${errorMessage}</p>`
       : ''
   }
 </div>`;

@@ -112,7 +112,7 @@ const icons = list => {
     <div class="icon-block">
         <span style="padding:4px">
             <span class="accessibly-hidden">${item.name}</span>
-            <svg class="icon" width="16" height="16" viewBox="0 0 16 16" >
+            <svg class="tco-icon" width="16" height="16" viewBox="0 0 16 16" >
                 <use xlink:href="${url}"></use>
             </svg>
         </span>

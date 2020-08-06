@@ -2,9 +2,9 @@ import { select, text, boolean, withKnobs } from '@storybook/addon-knobs';
 
 // #region knob option objects
 const styles = {
-  Primary: 'btn--primary',
-  Secondary: 'btn--secondary',
-  Danger: 'btn--danger'
+  Primary: 'tco-btn--primary',
+  Secondary: 'tco-btn--secondary',
+  Danger: 'tco-btn--danger'
 };
 
 const states = {
@@ -13,16 +13,16 @@ const states = {
 };
 
 const sizes = {
-  Large: 'btn--large',
-  Medium: 'btn--medium',
-  Small: 'btn--small'
+  Large: 'tco-btn--large',
+  Medium: 'tco-btn--medium',
+  Small: 'tco-btn--small'
 };
 
 const linkSizes = {
   Default: '',
-  Small: 'btn-link--small',
-  XSmall: 'btn-link--xsmall',
-  Tiny: 'btn-link--tiny'
+  Small: 'tco-btn-link--small',
+  XSmall: 'tco-btn-link--xsmall',
+  Tiny: 'tco-btn-link--tiny'
 };
 
 const icons = {
@@ -49,7 +49,7 @@ export const Text = () => {
   const buttonSize = select('Size', sizes, sizes.Large);
 
   return `
-    <button type="button" class="btn ${buttonStyle} ${buttonSize}" ${buttonState}>
+    <button type="button" class="tco-btn ${buttonStyle} ${buttonSize}" ${buttonState}>
       ${buttonText}
     </button>`;
 };
@@ -60,7 +60,7 @@ export const Link = () => {
   const buttonState = select('State', states, states.Active);
 
   return `
-    <button type="button" class="btn btn--link ${buttonSize}" ${buttonState}>
+    <button type="button" class="tco-btn tco-btn--link ${buttonSize}" ${buttonState}>
       ${buttonText}
     </button>`;
 };
@@ -73,7 +73,7 @@ export const Icon = () => {
   const buttonState = select('State', states, states.Active);
 
   return `
-    <button type="button" class="btn btn--icon ${buttonStyle} ${buttonSize}" ${buttonState}>
+    <button type="button" class="tco-btn tco-btn--icon ${buttonStyle} ${buttonSize}" ${buttonState}>
       <svg class="icon" width="16" height="16" viewBox="0 0 16 16">
         <use xlink:href="/img/svg-sprite.svg#${iconId}"></use>
       </svg>
@@ -89,7 +89,7 @@ export const IconWithText = () => {
   const buttonState = select('State', states, states.Active);
 
   return `
-    <button type="button" class="btn btn--icon-text ${buttonStyle} ${buttonSize}" ${buttonState}>
+    <button type="button" class="tco-btn tco-btn--icon-text ${buttonStyle} ${buttonSize}" ${buttonState}>
       <svg class="icon" width="16" height="16" viewBox="0 0 16 16">
         <use xlink:href="/img/svg-sprite.svg#${iconId}"></use>
       </svg>
@@ -120,7 +120,7 @@ export const All = () => {
       Object.keys(sizes)
         .map(sizeKey =>
           itemWrapper(`
-            <button type="button" class="btn ${styles[styleKey]} ${
+            <button type="button" class="tco-btn ${styles[styleKey]} ${
             sizes[sizeKey]
           }">
               ${buttonText}
@@ -141,7 +141,7 @@ export const All = () => {
       Object.keys(sizes)
         .map(sizeKey =>
           itemWrapper(`
-            <button type="button" class="btn btn--icon ${styles[styleKey]} ${
+            <button type="button" class="tco-btn tco-btn--icon ${styles[styleKey]} ${
             sizes[sizeKey]
           }">
               <svg class="icon" width="16" height="16" viewBox="0 0 16 16">
@@ -165,7 +165,7 @@ export const All = () => {
       Object.keys(sizes)
         .map(sizeKey =>
           itemWrapper(`
-            <button type="button" class="btn btn--icon-text ${
+            <button type="button" class="tco-btn tco-btn--icon-text ${
               styles[styleKey]
             } ${sizes[sizeKey]}">
               <svg class="icon" width="16" height="16" viewBox="0 0 16 16">
@@ -187,7 +187,7 @@ export const All = () => {
   const linkButtonExamples = Object.keys(linkSizes)
     .map(sizeKey =>
       itemWrapper(`
-        <button type="button" class="btn btn--link ${
+        <button type="button" class="tco-btn tco-btn--link ${
           sizeKey !== 'Default' ? linkSizes[sizeKey] : ''
         }">
           ${buttonText}
