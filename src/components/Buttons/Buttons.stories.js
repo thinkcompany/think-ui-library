@@ -27,7 +27,7 @@ const linkSizes = {
 
 const linkColors = {
   Default: '',
-  'On Tint': 'on-tint'
+  'On Tint': 'tco-btn-link--on-tint'
 };
 
 const icons = {
@@ -69,7 +69,7 @@ export const Link = () => {
   useEffect(() => {
     const storyBackground = document.querySelector('.sb-show-main');
 
-    if (linkColor === 'on-tint') {
+    if (linkColor === 'tco-btn-link--on-tint') {
       storyBackground.style.background = '#173145';
     } else {
       storyBackground.style.background = '';
@@ -77,7 +77,7 @@ export const Link = () => {
   });
 
   return `
-    <button type="button" class="tco-btn tco-btn--link ${buttonSize} ${linkColor}" ${buttonState}>
+    <button type="button" class="tco-btn tco-btn-link${linkColor ? ` ${linkColor}` : ''}${buttonSize ? ` ${buttonSize}` : ''}" ${buttonState}>
       ${buttonText}
     </button>`;
 };
