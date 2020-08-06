@@ -3,7 +3,7 @@
 \*---------------------------------------------- */
 
 .tco-btn {
-  @include spacing-squish-8-16();
+  @include spacing-squish-8-16;
   @include type-body-small;
   @include type-style-bold;
   position: relative;
@@ -205,7 +205,7 @@
 
 .tco-btn--icon,
 .tco-btn--icon-text {
-  @include spacing-inset-8();
+  @include spacing-inset-8;
   line-height: 0;
   border-radius: $border-radius-small;
   display: flex;
@@ -213,7 +213,7 @@
   align-items: center;
 
   &.tco-btn--small {
-    @include spacing-inset-8();
+    @include spacing-inset-8;
 
     > svg {
       height: 10px;
@@ -222,7 +222,7 @@
   }
 
   &.tco-btn--medium {
-    @include spacing-inset-12();
+    @include spacing-inset-12;
 
     > svg {
       height: 14px;
@@ -231,7 +231,7 @@
   }
 
   &.tco-btn--large {
-    @include spacing-inset-16();
+    @include spacing-inset-16;
   }
 }
 
