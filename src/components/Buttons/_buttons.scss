@@ -3,7 +3,7 @@
 \*---------------------------------------------- */
 
 .btn {
-  @include spacing-squish-8-16();
+  @include spacing-inset-16;
   @include type-body-small;
   @include type-style-bold;
   position: relative;
@@ -13,17 +13,8 @@
   text-align: center;
   text-decoration: none;
 
-  &.btn--large {
-    @include spacing-squish-16-24();
-  }
-
-  &.btn--medium {
-    @include spacing-squish-8-16();
-  }
-
-  &.btn--small {
-    @include spacing-squish-4-8();
-    font-size: $font-size-12;
+  @include wider-than($breakpoint-tablet-portrait) {
+    @include spacing-inset-24;
   }
 }
 
@@ -43,16 +34,18 @@
 
   &:hover,
   &:focus {
-    background: darken($color-tint-blue-primary, 10%);
+    background: $color-tint-blue-secondary;
+    border-color: $color-tint-blue-secondary;
 
     &::after {
       border-radius: 4px;
-      border-color: $color-tint-blue-primary;
+      border-color: $color-tint-blue-secondary;
     }
   }
 
   &:active {
-    background: darken($color-tint-blue-primary, 15%);
+    background: $color-tint-blue-secondary;
+    border-color: $color-foreground-primary;
   }
 
   &[disabled],
@@ -68,18 +61,59 @@
 \*---------------------------------------------- */
 
 .btn--secondary {
-  border: 1px solid $color-foreground-tertiary;
+  border: 1px solid $color-background-primary;
   border-radius: 4px;
   background: none;
-  color: $color-tint-blue-primary;
+  color: $color-foreground-primary;
 
   > svg {
-    fill: $color-tint-blue-primary;
+    fill: $color-foreground-primary;
   }
 
   &:hover,
   &:focus {
-    background-color: rgba(0, 0, 0, 0.05);
+    background-color: $color-foreground-quanternary;
+
+    &::after {
+      border-radius: 4px;
+      border-color: $color-foreground-quanternary;
+    }
+  }
+
+  &:active {
+    border-color: $color-foreground-tertiary;
+    background-color: $color-foreground-quanternary;
+  }
+
+  &[disabled],
+  &:disabled {
+    cursor: default;
+    color: $color-foreground-primary;
+    border-color: $color-background-primary;
+
+    &:hover {
+      background: none;
+    }
+  }
+}
+
+/* ----------------------------------------------*\
+    Tertiary Button
+\*---------------------------------------------- */
+
+.btn--tertiary {
+  border: 1px solid $color-tint-orange-primary;
+  border-radius: 4px;
+  background-color: $color-tint-orange-primary;
+  color: $color-foreground-primary;
+
+  > svg {
+    fill: $color-foreground-primary;
+  }
+
+  &:hover,
+  &:focus {
+    background-color: $color-tint-orange-secondary;
 
     &::after {
       border-radius: 4px;
@@ -88,7 +122,6 @@
   }
 
   &:active {
-    color: $color-tint-blue-primary;
     border-color: $color-tint-blue-primary;
     background-color: rgba(0, 0, 0, 0.1);
   }
@@ -96,8 +129,8 @@
   &[disabled],
   &:disabled {
     cursor: default;
-    color: $color-tint-blue-secondary;
-    border-color: $color-tint-blue-secondary;
+    color: $color-foreground-primary;
+    border-color: $color-tint-orange-primary;
 
     &:hover {
       background: none;
@@ -110,15 +143,34 @@
 \*---------------------------------------------- */
 
 .btn--link {
-  @include type-body-default($color-tint-blue-primary);
-  @include spacing-squish-4-8();
-  text-decoration: underline;
-  background: none;
+  @include type-body-default;
+  @include type-style-bold;
+  padding: 0;
+  text-decoration: none;
   border-radius: 0;
+  color: $color-tint-blue-primary;
+
+  background-color: transparent;
+  background-image: linear-gradient(180deg, transparent 20%, rgba($color-foreground-secondary, 18%) 0);
+  transition: background-size 0.3s ease-in, color 0.2s ease-in;
+  background-size: 100% 6px;
+  background-position: 0px 84%;
+  background-repeat: no-repeat;
+
+  &.btn-link--large {
+    @include type-display-small;
+    background-position: 0px 82%;
+  }
+
+  &.btn-link--small {
+    @include type-body-small;
+    background-position: 0px 87%;
+    background-size: 100% 4px;
+  }
 
   &:hover,
   &:focus {
-    color: $color-tint-blue-primary;
+    background-size: 100% 106%;
 
     &::after {
       border-radius: 2px;
@@ -134,58 +186,10 @@
     color: $color-tint-blue-primary;
   }
 
-  &.btn-link--small {
-    font-size: $font-size-14;
-  }
-
-  &.btn-link--xsmall {
-    font-size: $font-size-12;
-  }
-
-  &.btn-link--tiny {
-    font-size: $font-size-12;
-  }
-
   &[disabled],
   &:disabled {
     cursor: default;
     color: $color-tint-blue-secondary;
-  }
-}
-
-/* ----------------------------------------------*\
-    Danger Button
-\*---------------------------------------------- */
-
-.btn--danger {
-  border: 1px solid $color-tint-red-primary;
-  border-radius: 4px;
-  background: $color-tint-red-primary;
-  color: $color-foreground-on-tint;
-
-  > svg {
-    fill: $color-foreground-on-tint;
-  }
-
-  &:hover,
-  &:focus {
-    background: darken($color-tint-red-primary, 10%);
-
-    &::after {
-      border-radius: 4px;
-      border-color: $color-tint-red-primary;
-    }
-  }
-
-  &:active {
-    background: darken($color-tint-red-primary, 15%);
-  }
-
-  &[disabled],
-  &:disabled {
-    cursor: default;
-    background: $color-tint-red-secondary;
-    border-color: $color-tint-red-secondary;
   }
 }
 
