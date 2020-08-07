@@ -37,7 +37,7 @@ export const callToActionCard = () => {
     <div class="tco-card-content-container">
       <p class="tco-card-content-description">${description}</p>
       
-    <button type="button" class="btn btn--secondary btn--large">
+    <button type="button" class="tc-btn tco-btn--secondary tco-btn--large">
     ${cta}
   </button>
     </div>
