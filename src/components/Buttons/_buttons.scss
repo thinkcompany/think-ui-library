@@ -144,14 +144,16 @@
 \*---------------------------------------------- */
 
 .tco-btn-link {
-  @include type-link;
-  font-weight: $font-weight-500;
+  @include type-link($font-weight: $font-weight-500);
   background-color: transparent;
   padding: 0 4px;
 
   &--on-tint {
-    @include type-link($color-foreground-on-tint, $color-foreground-on-tint);
-    font-weight: $font-weight-500;
+    @include type-link(
+      $font-color: $color-foreground-on-tint,
+      $bg-color: $color-foreground-on-tint,
+      $font-weight: $font-weight-500
+    );
   }
 
   &.tco-btn-link--large {
