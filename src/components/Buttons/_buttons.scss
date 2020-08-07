@@ -157,12 +157,12 @@
   }
 
   &.tco-btn-link--large {
-    font-size: $font-size-22;
+    @include type-display-small($color-foreground-on-tint);
     font-weight: $font-weight-600;
   }
 
   &.tco-btn-link--small {
-    font-size: $font-size-12;
+    @include type-body-small($color-foreground-on-tint);
   }
 }
 
