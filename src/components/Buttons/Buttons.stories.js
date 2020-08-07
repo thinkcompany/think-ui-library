@@ -133,6 +133,16 @@ export const All = () => {
   const showInfo = boolean('Show Component Info', false); // shows or hides component info
   const buttonText = text('Button Text', 'Button');
   const iconId = select('Icon', icons, icons.Add);
+  const backgroundColor = select(
+    'Background Color',
+    {
+      Dark: 'dark',
+      Light: 'light'
+    },
+    'light'
+  );
+
+  toggleBackground(() => backgroundColor === 'dark', '.sb-show-main');
 
   // wrapper div for each button example
   const itemWrapper = children => `
