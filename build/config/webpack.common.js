@@ -29,10 +29,17 @@ const rules = [{
     use: [
       'style-loader',
       MiniCSSExtractPlugin.loader,
-      'css-loader',
+      {
+        loader: 'css-loader',
+        options: {
+          importLoaders: 2,
+          sourceMap: true
+        }
+      },
       {
         loader: 'postcss-loader',
         options: {
+          sourceMap: true,
           ident: 'postcss',
           plugins: [
             autoprefixer({grid: 'autoplace'}),
@@ -43,6 +50,7 @@ const rules = [{
       {
         loader: 'sass-loader',
         options: {
+          sourceMap: true,
           implementation: require('sass')
         }
       }
@@ -57,7 +65,7 @@ const optimization = {
       vendor: {
         name: 'vendor',
         chunks: 'all',
-        test: /node_modules/
+        test: /[\\/]node_modules[\\/](.(?!.*\.css$))*$/
       }
     }
   }
