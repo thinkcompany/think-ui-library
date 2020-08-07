@@ -174,7 +174,7 @@ export const All = () => {
               styles[styleKey]
             } ${sizes[sizeKey]}">
               <svg class="icon" width="16" height="16" viewBox="0 0 16 16">
-                <use xlink:href="/img/svg-sprite.svg#${iconId}"></use>
+                <use xlink:href="/img/icons.svg#${iconId}"></use>
               </svg>
               <span class="tco-accessibly-hidden">${buttonText}</span>
             </button>
@@ -198,7 +198,7 @@ export const All = () => {
               styles[styleKey]
             } ${sizes[sizeKey]}">
               <svg class="icon" width="16" height="16" viewBox="0 0 16 16">
-                <use xlink:href="/img/svg-sprite.svg#${iconId}"></use>
+                <use xlink:href="/img/icons.svg#${iconId}"></use>
               </svg>
               ${buttonText}
             </button>
@@ -213,19 +213,23 @@ export const All = () => {
     )
     .join('');
 
-  const linkButtonExamples = Object.keys(linkSizes)
-    .map(sizeKey =>
-      itemWrapper(`
-        <button type="button" class="tco-btn tco-btn--link ${
-          sizeKey !== 'Default' ? linkSizes[sizeKey] : ''
-        }">
-          ${buttonText}
-        </button>
-        <footer style="${showInfo ? '' : 'display: none'}">
-          <span class="type-style--bold">Link Button</span>
-          <span>size: ${sizeKey}</span>
-        </footer>
-      `)
+  const linkButtonExamples = Object.keys(linkColors)
+    .map(colorKey =>
+      Object.keys(linkSizes)
+        .map(sizeKey =>
+          itemWrapper(`
+          <button type="button" class="tco-btn tco-btn-link ${
+            linkColors[colorKey]
+          } ${sizeKey !== 'Default' ? linkSizes[sizeKey] : ''}">
+            ${buttonText}
+          </button>
+          <footer style="${showInfo ? '' : 'display: none'}">
+            <span class="type-style--bold">Link Button</span>
+            <span>size: ${sizeKey}</span>
+          </footer>
+        `)
+        )
+        .join('')
     )
     .join('');
 
