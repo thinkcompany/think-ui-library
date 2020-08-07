@@ -1,6 +1,23 @@
 import { select, text, boolean, withKnobs } from '@storybook/addon-knobs';
 import { useEffect } from '@storybook/client-api';
 
+// sets the background to $color-background-tertiary based on the function result
+const toggleBackground = (equalityFunc, targetSelector) => {
+  useEffect(() => {
+    const storyBackground = document.querySelector(targetSelector);
+
+    if (equalityFunc()) {
+      storyBackground.style.background = '#173145';
+    } else {
+      storyBackground.style.background = '';
+    }
+
+    return () => {
+      storyBackground.style.background = '';
+    };
+  });
+};
+
 // #region knob option objects
 const styles = {
   Primary: 'tco-btn--primary',
@@ -53,6 +70,8 @@ export const Text = () => {
   const buttonState = select('State', states, states.Active);
   const buttonSize = select('Size', sizes, sizes.Large);
 
+  toggleBackground(() => buttonStyle === styles.Secondary, '.sb-show-main');
+
   return `
     <button type="button" class="tco-btn ${buttonStyle} ${buttonSize}" ${buttonState}>
       ${buttonText}
@@ -65,16 +84,7 @@ export const Link = () => {
   const buttonState = select('State', states, states.Active);
   const linkColor = select('Color', linkColors, linkColors.Default);
 
-  // set background color to $color-background-tertiary for white link
-  useEffect(() => {
-    const storyBackground = document.querySelector('.sb-show-main');
-
-    if (linkColor === 'tco-btn-link--on-tint') {
-      storyBackground.style.background = '#173145';
-    } else {
-      storyBackground.style.background = '';
-    }
-  });
+  toggleBackground(() => linkColor === linkColors['On Tint'], '.sb-show-main');
 
   return `
     <button type="button" class="tco-btn tco-btn-link${
