@@ -53,6 +53,7 @@ export const personCard = () => {
   );
 
   return `
+  <div class="documentation-grid-container">
   <div class="tco-card tco-card--person" style="background-image: url(${image})">
     <a href="#" class="tco-card-link">
       <div class="tco-card-content-container">
@@ -60,6 +61,15 @@ export const personCard = () => {
         <p class="tco-card-content-description">${title}</p>
       </div>
     </a>
+  </div>
+  <div class="tco-card tco-card--person" style="background-image: url(${image})">
+  <a href="#" class="tco-card-link">
+    <div class="tco-card-content-container">
+      <h3 class="tco-card-content-heading">${name}</h3>
+      <p class="tco-card-content-description">${title}</p>
+    </div>
+  </a>
+  </div>
   </div>`;
 };
 
