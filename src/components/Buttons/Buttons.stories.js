@@ -141,9 +141,9 @@ export const All = () => {
       Object.keys(sizes)
         .map(sizeKey =>
           itemWrapper(`
-            <button type="button" class="tco-btn tco-btn--icon ${styles[styleKey]} ${
-            sizes[sizeKey]
-          }">
+            <button type="button" class="tco-btn tco-btn--icon ${
+              styles[styleKey]
+            } ${sizes[sizeKey]}">
               <svg class="icon" width="16" height="16" viewBox="0 0 16 16">
                 <use xlink:href="/img/svg-sprite.svg#${iconId}"></use>
               </svg>

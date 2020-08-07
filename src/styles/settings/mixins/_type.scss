@@ -2,9 +2,12 @@
      Compositional mixins
 \*---------------------------------------------- */
 
-// The base style for all fonts. 
+// The base style for all fonts.
 // Accepts an optional font color parameter and font weight (defaults to normal)
-@mixin type-base-style($font-color: $color-foreground-primary, $font-weight: normal) {
+@mixin type-base-style(
+  $font-color: $color-foreground-primary,
+  $font-weight: normal
+) {
   color: $font-color;
   font-family: $font-stack-sans;
   font-size: $font-size-16;
@@ -48,7 +51,7 @@
   @include type-base-style($font-color, bold);
   font-size: $font-size-22;
   line-height: 1.27;
-  
+
   @include wider-than($breakpoint-tablet-portrait) {
     font-size: $font-size-24;
     line-height: 1.25;
@@ -59,7 +62,7 @@
   @include type-base-style($font-color);
   font-size: $font-size-18;
   line-height: 1.33;
-  
+
   @include wider-than($breakpoint-tablet-portrait) {
     font-size: $font-size-22;
     line-height: 1.45;
@@ -72,7 +75,7 @@
   text-transform: uppercase;
   letter-spacing: 3px;
   line-height: 1.25;
-  
+
   @include wider-than($breakpoint-tablet-portrait) {
     font-size: $font-size-18;
     line-height: 1.77;
@@ -83,7 +86,7 @@
   @include type-base-style($font-color);
   font-size: $font-size-16;
   line-height: 1.25;
-  
+
   @include wider-than($breakpoint-tablet-portrait) {
     font-size: $font-size-18;
     line-height: 1.44;
@@ -94,7 +97,7 @@
   @include type-base-style($font-color);
   font-size: $font-size-16;
   line-height: 1.25;
-  
+
   @include wider-than($breakpoint-tablet-portrait) {
     font-size: $font-size-18;
     line-height: 1.44;
@@ -105,7 +108,7 @@
   @include type-base-style($font-color);
   font-size: $font-size-12;
   line-height: 1.33;
-  
+
   @include wider-than($breakpoint-tablet-portrait) {
     font-size: $font-size-14;
     line-height: 1.28;
