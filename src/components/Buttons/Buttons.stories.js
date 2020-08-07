@@ -77,7 +77,9 @@ export const Link = () => {
   });
 
   return `
-    <button type="button" class="tco-btn tco-btn-link${linkColor ? ` ${linkColor}` : ''}${buttonSize ? ` ${buttonSize}` : ''}" ${buttonState}>
+    <button type="button" class="tco-btn tco-btn-link${
+      linkColor ? ` ${linkColor}` : ''
+    }${buttonSize ? ` ${buttonSize}` : ''}" ${buttonState}>
       ${buttonText}
     </button>`;
 };
@@ -94,7 +96,7 @@ export const Icon = () => {
       <svg class="icon" width="16" height="16" viewBox="0 0 16 16">
         <use xlink:href="img/icons.svg#${iconId}"></use>
       </svg>
-      <span class="accessibly-hidden">${buttonText}</span>
+      <span class="tco-accessibly-hidden">${buttonText}</span>
     </button>`;
 };
 
