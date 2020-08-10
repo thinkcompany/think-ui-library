@@ -2,12 +2,16 @@
      Compositional mixins
 \*---------------------------------------------- */
 
-// The base style for all fonts. Accepts an optional font color parameter
-@mixin type-base-style($font-color: $color-foreground-primary) {
+// The base style for all fonts.
+// Accepts an optional font color parameter and font weight (defaults to normal)
+@mixin type-base-style(
+  $font-color: $color-foreground-primary,
+  $font-weight: normal
+) {
   color: $font-color;
   font-family: $font-stack-sans;
   font-size: $font-size-16;
-  line-height: 1.5;
+  font-weight: $font-weight;
 }
 
 /* ----------------------------------------------*\
@@ -21,82 +25,97 @@
     Type mixins
 \*---------------------------------------------- */
 @mixin type-display-large($font-color: $color-foreground-primary) {
-  @include type-base-style($font-color);
-  @include type-style-bold;
+  @include type-base-style($font-color, $font-weight-600);
   font-size: $font-size-34;
   font-family: $font-stack-serif;
+  line-height: 1.17;
 
   @include wider-than($breakpoint-tablet-portrait) {
     font-size: $font-size-48;
+    line-height: 1.2;
   }
 }
 
 @mixin type-display-medium($font-color: $color-foreground-primary) {
-  @include type-base-style($font-color);
+  @include type-base-style($font-color, bold);
   font-size: $font-size-28;
-  font-weight: bold;
+  line-height: 1.35;
+
   @include wider-than($breakpoint-tablet-portrait) {
     font-size: $font-size-34;
+    line-height: 1.23;
   }
 }
 
 @mixin type-display-small($font-color: $color-foreground-primary) {
-  @include type-base-style($font-color);
+  @include type-base-style($font-color, bold);
   font-size: $font-size-22;
-  font-weight: bold;
+  line-height: 1.27;
+
   @include wider-than($breakpoint-tablet-portrait) {
     font-size: $font-size-24;
-  }
-}
-
-@mixin type-body-default($font-color: $color-foreground-primary) {
-  @include type-base-style($font-color);
-  font-size: $font-size-16;
-  font-weight: normal;
-  @include wider-than($breakpoint-tablet-portrait) {
-    font-size: $font-size-18;
-  }
-}
-
-@mixin type-body-small($font-color: $color-foreground-primary) {
-  @include type-base-style($font-color);
-  font-size: $font-size-12;
-  font-weight: normal;
-  @include wider-than($breakpoint-tablet-portrait) {
-    font-size: $font-size-14;
-  }
-}
-
-@mixin type-body-medium($font-color: $color-foreground-primary) {
-  @include type-base-style($font-color);
-  font-size: $font-size-16;
-  font-weight: normal;
-  @include wider-than($breakpoint-tablet-portrait) {
-    font-size: $font-size-18;
+    line-height: 1.25;
   }
 }
 
 @mixin type-body-large($font-color: $color-foreground-primary) {
   @include type-base-style($font-color);
   font-size: $font-size-18;
-  font-weight: normal;
+  line-height: 1.33;
+
   @include wider-than($breakpoint-tablet-portrait) {
     font-size: $font-size-22;
+    line-height: 1.45;
   }
 }
 
 @mixin type-eyebrow($font-color: $color-foreground-primary) {
-  @include type-base-style($font-color);
+  @include type-base-style($font-color, bold);
   font-size: $font-size-16;
-  font-weight: bold;
   text-transform: uppercase;
   letter-spacing: 3px;
+  line-height: 1.25;
+
   @include wider-than($breakpoint-tablet-portrait) {
     font-size: $font-size-18;
+    line-height: 1.77;
   }
 }
 
-@mixin list-plain() {
+@mixin type-body-medium($font-color: $color-foreground-primary) {
+  @include type-base-style($font-color);
+  font-size: $font-size-16;
+  line-height: 1.25;
+
+  @include wider-than($breakpoint-tablet-portrait) {
+    font-size: $font-size-18;
+    line-height: 1.44;
+  }
+}
+
+@mixin type-body-default($font-color: $color-foreground-primary) {
+  @include type-base-style($font-color);
+  font-size: $font-size-16;
+  line-height: 1.25;
+
+  @include wider-than($breakpoint-tablet-portrait) {
+    font-size: $font-size-18;
+    line-height: 1.44;
+  }
+}
+
+@mixin type-body-small($font-color: $color-foreground-primary) {
+  @include type-base-style($font-color);
+  font-size: $font-size-12;
+  line-height: 1.33;
+
+  @include wider-than($breakpoint-tablet-portrait) {
+    font-size: $font-size-14;
+    line-height: 1.28;
+  }
+}
+
+@mixin list-plain {
   list-style: none;
   padding: 0;
   margin: 0;
