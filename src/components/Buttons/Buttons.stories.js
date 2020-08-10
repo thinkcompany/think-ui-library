@@ -93,6 +93,8 @@ export const Icon = () => {
   const buttonStyle = select('Style', styles, styles.Primary);
   const buttonState = select('State', states, states.Active);
 
+  toggleBackground(() => buttonStyle === styles.Secondary, '.sb-show-main');
+
   return `
     <button type="button" class="tco-btn tco-btn--icon ${buttonStyle}" ${buttonState}>
       <svg class="icon" width="16" height="16" viewBox="0 0 16 16">
@@ -107,6 +109,8 @@ export const IconWithText = () => {
   const buttonText = text('Button Text', 'Button Text');
   const buttonStyle = select('Style', styles, styles.Primary);
   const buttonState = select('State', states, states.Active);
+
+  toggleBackground(() => buttonStyle === styles.Secondary, '.sb-show-main');
 
   return `
     <button type="button" class="tco-btn tco-btn--icon-text ${buttonStyle}" ${buttonState}>
