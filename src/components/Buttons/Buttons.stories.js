@@ -1,10 +1,28 @@
 import { select, text, boolean, withKnobs } from '@storybook/addon-knobs';
+import { useEffect } from '@storybook/client-api';
+
+// sets the background to $color-background-tertiary based on the function result
+const toggleBackground = (equalityFunc, targetSelector) => {
+  useEffect(() => {
+    const storyBackground = document.querySelector(targetSelector);
+
+    if (equalityFunc()) {
+      storyBackground.style.background = '#173145';
+    } else {
+      storyBackground.style.background = '';
+    }
+
+    return () => {
+      storyBackground.style.background = '';
+    };
+  });
+};
 
 // #region knob option objects
 const styles = {
   Primary: 'tco-btn--primary',
   Secondary: 'tco-btn--secondary',
-  Danger: 'tco-btn--danger'
+  Tertiary: 'tco-btn--tertiary'
 };
 
 const states = {
@@ -12,17 +30,15 @@ const states = {
   Disabled: 'disabled'
 };
 
-const sizes = {
-  Large: 'tco-btn--large',
-  Medium: 'tco-btn--medium',
-  Small: 'tco-btn--small'
-};
-
 const linkSizes = {
   Default: '',
-  Small: 'tco-btn-link--small',
-  XSmall: 'tco-btn-link--xsmall',
-  Tiny: 'tco-btn-link--tiny'
+  Large: 'tco-btn-link--large',
+  Small: 'tco-btn-link--small'
+};
+
+const linkColors = {
+  Default: '',
+  'On Tint': 'tco-btn-link--on-tint'
 };
 
 const icons = {
@@ -46,21 +62,27 @@ export const Text = () => {
   const buttonText = text('Button Text', 'Button Text');
   const buttonStyle = select('Style', styles, styles.Primary);
   const buttonState = select('State', states, states.Active);
-  const buttonSize = select('Size', sizes, sizes.Large);
+
+  toggleBackground(() => buttonStyle === styles.Secondary, '.sb-show-main');
 
   return `
-    <button type="button" class="tco-btn ${buttonStyle} ${buttonSize}" ${buttonState}>
+    <button type="button" class="tco-btn ${buttonStyle}" ${buttonState}>
       ${buttonText}
     </button>`;
 };
 
 export const Link = () => {
   const buttonText = text('Button Text', 'Button Text');
-  const buttonSize = select('Size', linkSizes, sizes.Default);
+  const buttonSize = select('Size', linkSizes, linkSizes.Default);
   const buttonState = select('State', states, states.Active);
+  const linkColor = select('Color', linkColors, linkColors.Default);
+
+  toggleBackground(() => linkColor === linkColors['On Tint'], '.sb-show-main');
 
   return `
-    <button type="button" class="tco-btn tco-btn--link ${buttonSize}" ${buttonState}>
+    <button type="button" class="tco-btn tco-btn-link${
+      linkColor ? ` ${linkColor}` : ''
+    }${buttonSize ? ` ${buttonSize}` : ''}" ${buttonState}>
       ${buttonText}
     </button>`;
 };
@@ -69,15 +91,16 @@ export const Icon = () => {
   const iconId = select('Icon', icons, icons.Add);
   const buttonText = text('Button Title', 'Button Title');
   const buttonStyle = select('Style', styles, styles.Primary);
-  const buttonSize = select('Size', sizes, sizes.Large);
   const buttonState = select('State', states, states.Active);
 
+  toggleBackground(() => buttonStyle === styles.Secondary, '.sb-show-main');
+
   return `
-    <button type="button" class="tco-btn tco-btn--icon ${buttonStyle} ${buttonSize}" ${buttonState}>
+    <button type="button" class="tco-btn tco-btn--icon ${buttonStyle}" ${buttonState}>
       <svg class="icon" width="16" height="16" viewBox="0 0 16 16">
-        <use xlink:href="/img/svg-sprite.svg#${iconId}"></use>
+        <use xlink:href="img/icons.svg#${iconId}"></use>
       </svg>
-      <span class="accessibly-hidden">${buttonText}</span>
+      <span class="tco-accessibly-hidden">${buttonText}</span>
     </button>`;
 };
 
@@ -85,13 +108,14 @@ export const IconWithText = () => {
   const iconId = select('Icon', icons, icons.Add);
   const buttonText = text('Button Text', 'Button Text');
   const buttonStyle = select('Style', styles, styles.Primary);
-  const buttonSize = select('Size', sizes, sizes.Large);
   const buttonState = select('State', states, states.Active);
 
+  toggleBackground(() => buttonStyle === styles.Secondary, '.sb-show-main');
+
   return `
-    <button type="button" class="tco-btn tco-btn--icon-text ${buttonStyle} ${buttonSize}" ${buttonState}>
+    <button type="button" class="tco-btn tco-btn--icon-text ${buttonStyle}" ${buttonState}>
       <svg class="icon" width="16" height="16" viewBox="0 0 16 16">
-        <use xlink:href="/img/svg-sprite.svg#${iconId}"></use>
+        <use xlink:href="img/icons.svg#${iconId}"></use>
       </svg>
       ${buttonText}
     </button>`;
@@ -104,6 +128,16 @@ export const All = () => {
   const showInfo = boolean('Show Component Info', false); // shows or hides component info
   const buttonText = text('Button Text', 'Button');
   const iconId = select('Icon', icons, icons.Add);
+  const backgroundColor = select(
+    'Background Color',
+    {
+      Dark: 'dark',
+      Light: 'light'
+    },
+    'light'
+  );
+
+  toggleBackground(() => backgroundColor === 'dark', '.sb-show-main');
 
   // wrapper div for each button example
   const itemWrapper = children => `
@@ -117,86 +151,71 @@ export const All = () => {
   // iterate over style and size objects to get all button examples
   const textButtonExamples = Object.keys(styles)
     .map(styleKey =>
-      Object.keys(sizes)
-        .map(sizeKey =>
-          itemWrapper(`
-            <button type="button" class="tco-btn ${styles[styleKey]} ${
-            sizes[sizeKey]
-          }">
-              ${buttonText}
-            </button>
-            <footer style="${showInfo ? '' : 'display: none'}">
-              <span class="type-style--bold">Text Button</span>
-              <span>style: ${styleKey}</span>
-              <span>size: ${sizeKey}</span>
-            </footer>
-          `)
-        )
-        .join('')
+      itemWrapper(`
+      <button type="button" class="tco-btn ${styles[styleKey]}">
+        ${buttonText}
+      </button>
+      <footer style="${showInfo ? '' : 'display: none'}">
+        <span class="type-style--bold">Text Button</span>
+        <span>style: ${styleKey}</span>
+      </footer>
+    `)
     )
     .join('');
 
   const iconButtonExamples = Object.keys(styles)
     .map(styleKey =>
-      Object.keys(sizes)
-        .map(sizeKey =>
-          itemWrapper(`
-            <button type="button" class="tco-btn tco-btn--icon ${
-              styles[styleKey]
-            } ${sizes[sizeKey]}">
-              <svg class="icon" width="16" height="16" viewBox="0 0 16 16">
-                <use xlink:href="/img/svg-sprite.svg#${iconId}"></use>
-              </svg>
-              <span class="accessibly-hidden">${buttonText}</span>
-            </button>
-            <footer style="${showInfo ? '' : 'display: none'}">
-              <span class="type-style--bold">Icon Button</span>
-              <span>style: ${styleKey}</span>
-              <span>size: ${sizeKey}</span>
-            </footer>
-          `)
-        )
-        .join('')
+      itemWrapper(`
+      <button type="button" class="tco-btn tco-btn--icon ${styles[styleKey]}">
+        <svg class="icon" width="16" height="16" viewBox="0 0 16 16">
+          <use xlink:href="/img/icons.svg#${iconId}"></use>
+        </svg>
+        <span class="tco-accessibly-hidden">${buttonText}</span>
+      </button>
+      <footer style="${showInfo ? '' : 'display: none'}">
+        <span class="type-style--bold">Icon Button</span>
+        <span>style: ${styleKey}</span>
+      </footer>
+    `)
     )
     .join('');
 
   const iconTextButtonExamples = Object.keys(styles)
     .map(styleKey =>
-      Object.keys(sizes)
-        .map(sizeKey =>
-          itemWrapper(`
-            <button type="button" class="tco-btn tco-btn--icon-text ${
-              styles[styleKey]
-            } ${sizes[sizeKey]}">
-              <svg class="icon" width="16" height="16" viewBox="0 0 16 16">
-                <use xlink:href="/img/svg-sprite.svg#${iconId}"></use>
-              </svg>
-              ${buttonText}
-            </button>
-            <footer style="${showInfo ? '' : 'display: none'}">
-              <span class="type-style--bold">Icon Button With Text</span>
-              <span>style: ${styleKey}</span>
-              <span>size: ${sizeKey}</span>
-            </footer>
-          `)
-        )
-        .join('')
+      itemWrapper(`
+      <button type="button" class="tco-btn tco-btn--icon-text ${
+        styles[styleKey]
+      }">
+        <svg class="icon" width="16" height="16" viewBox="0 0 16 16">
+          <use xlink:href="/img/icons.svg#${iconId}"></use>
+        </svg>
+        ${buttonText}
+      </button>
+      <footer style="${showInfo ? '' : 'display: none'}">
+        <span class="type-style--bold">Icon Button With Text</span>
+        <span>style: ${styleKey}</span>
+      </footer>
+    `)
     )
     .join('');
 
-  const linkButtonExamples = Object.keys(linkSizes)
-    .map(sizeKey =>
-      itemWrapper(`
-        <button type="button" class="tco-btn tco-btn--link ${
-          sizeKey !== 'Default' ? linkSizes[sizeKey] : ''
-        }">
-          ${buttonText}
-        </button>
-        <footer style="${showInfo ? '' : 'display: none'}">
-          <span class="type-style--bold">Link Button</span>
-          <span>size: ${sizeKey}</span>
-        </footer>
-      `)
+  const linkButtonExamples = Object.keys(linkColors)
+    .map(colorKey =>
+      Object.keys(linkSizes)
+        .map(sizeKey =>
+          itemWrapper(`
+          <button type="button" class="tco-btn tco-btn-link ${
+            linkColors[colorKey]
+          } ${sizeKey !== 'Default' ? linkSizes[sizeKey] : ''}">
+            ${buttonText}
+          </button>
+          <footer style="${showInfo ? '' : 'display: none'}">
+            <span class="type-style--bold">Link Button</span>
+            <span>size: ${sizeKey}</span>
+          </footer>
+        `)
+        )
+        .join('')
     )
     .join('');
 

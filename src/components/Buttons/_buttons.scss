@@ -3,7 +3,7 @@
 \*---------------------------------------------- */
 
 .tco-btn {
-  @include spacing-squish-8-16();
+  @include spacing-squish-8-16;
   @include type-body-small;
   @include type-style-bold;
   position: relative;
@@ -13,17 +13,8 @@
   text-align: center;
   text-decoration: none;
 
-  &.tco-btn--large {
-    @include spacing-squish-16-24();
-  }
-
-  &.tco-btn--medium {
-    @include spacing-squish-8-16();
-  }
-
-  &.tco-btn--small {
-    @include spacing-squish-4-8();
-    font-size: $font-size-12;
+  @include wider-than($breakpoint-tablet-portrait) {
+    @include spacing-inset-24;
   }
 }
 
@@ -33,7 +24,7 @@
 
 .tco-btn--primary {
   border: 1px solid $color-tint-blue-primary;
-  border-radius: 4px;
+  border-radius: $border-radius-small;
   background: $color-tint-blue-primary;
   color: $color-foreground-on-tint;
 
@@ -43,16 +34,18 @@
 
   &:hover,
   &:focus {
-    background: darken($color-tint-blue-primary, 10%);
+    background: $color-tint-blue-secondary;
+    border-color: $color-tint-blue-secondary;
 
     &::after {
-      border-radius: 4px;
-      border-color: $color-tint-blue-primary;
+      border-radius: $border-radius-small;
+      border-color: $color-tint-blue-secondary;
     }
   }
 
   &:active {
-    background: darken($color-tint-blue-primary, 15%);
+    background: $color-tint-blue-secondary;
+    border-color: $color-foreground-primary;
   }
 
   &[disabled],
@@ -68,36 +61,77 @@
 \*---------------------------------------------- */
 
 .tco-btn--secondary {
-  border: 1px solid $color-foreground-tertiary;
-  border-radius: 4px;
-  background: none;
-  color: $color-tint-blue-primary;
+  border: 1px solid $color-background-primary;
+  border-radius: $border-radius-small;
+  background: $color-background-primary;
+  color: $color-foreground-primary;
 
   > svg {
-    fill: $color-tint-blue-primary;
+    fill: $color-foreground-primary;
   }
 
   &:hover,
   &:focus {
-    background-color: rgba(0, 0, 0, 0.05);
+    background-color: $color-foreground-quanternary;
 
     &::after {
-      border-radius: 4px;
-      border-color: $color-tint-blue-primary;
+      border-radius: $border-radius-small;
+      border-color: $color-foreground-quanternary;
     }
   }
 
   &:active {
-    color: $color-tint-blue-primary;
-    border-color: $color-tint-blue-primary;
-    background-color: rgba(0, 0, 0, 0.1);
+    border-color: $color-foreground-tertiary;
+    background-color: $color-foreground-quanternary;
   }
 
   &[disabled],
   &:disabled {
     cursor: default;
-    color: $color-tint-blue-secondary;
-    border-color: $color-tint-blue-secondary;
+    color: $color-foreground-primary;
+    border-color: $color-background-primary;
+
+    &:hover {
+      background: none;
+    }
+  }
+}
+
+/* ----------------------------------------------*\
+    Tertiary Button
+\*---------------------------------------------- */
+
+.tco-btn--tertiary {
+  border: 1px solid $color-tint-orange-primary;
+  border-radius: $border-radius-small;
+  background-color: $color-tint-orange-primary;
+  color: $color-foreground-primary;
+
+  > svg {
+    fill: $color-foreground-primary;
+  }
+
+  &:hover,
+  &:focus {
+    border-color: lighten($color-tint-orange-secondary, 15%);
+    background-color: lighten($color-tint-orange-secondary, 15%);
+
+    &::after {
+      border-radius: $border-radius-small;
+      border-color: lighten($color-tint-orange-secondary, 15%);
+    }
+  }
+
+  &:active {
+    background-color: lighten($color-tint-orange-secondary, 15%);
+    border-color: lighten($color-tint-orange-secondary, 5%);
+  }
+
+  &[disabled],
+  &:disabled {
+    cursor: default;
+    color: $color-foreground-primary;
+    border-color: $color-tint-orange-primary;
 
     &:hover {
       background: none;
@@ -109,93 +143,36 @@
     Link Button
 \*---------------------------------------------- */
 
-.tco-btn--link {
-  @include type-body-default($color-tint-blue-primary);
-  @include spacing-squish-4-8();
-  text-decoration: underline;
-  background: none;
-  border-radius: 0;
+.tco-btn-link {
+  @include type-link($font-weight: $font-weight-500);
+  background-color: transparent;
+  padding: 0 4px;
 
-  &:hover,
-  &:focus {
-    color: $color-tint-blue-primary;
-
-    &::after {
-      border-radius: 2px;
-      top: 0;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      border-color: $color-tint-blue-primary;
-    }
+  &--on-tint {
+    @include type-link(
+      $font-color: $color-foreground-on-tint,
+      $bg-color: $color-foreground-on-tint,
+      $font-weight: $font-weight-500
+    );
   }
 
-  &:active {
-    color: $color-tint-blue-primary;
+  &.tco-btn-link--large {
+    @include type-display-small($color-foreground-on-tint);
+    font-weight: $font-weight-600;
   }
 
   &.tco-btn-link--small {
-    font-size: $font-size-14;
-  }
-
-  &.tco-btn-link--xsmall {
-    font-size: $font-size-12;
-  }
-
-  &.tco-btn-link--tiny {
-    font-size: $font-size-12;
-  }
-
-  &[disabled],
-  &:disabled {
-    cursor: default;
-    color: $color-tint-blue-secondary;
+    @include type-body-small($color-foreground-on-tint);
   }
 }
 
 /* ----------------------------------------------*\
-    Danger Button
-\*---------------------------------------------- */
-
-.tco-btn--danger {
-  border: 1px solid $color-tint-red-primary;
-  border-radius: 4px;
-  background: $color-tint-red-primary;
-  color: $color-foreground-on-tint;
-
-  > svg {
-    fill: $color-foreground-on-tint;
-  }
-
-  &:hover,
-  &:focus {
-    background: darken($color-tint-red-primary, 10%);
-
-    &::after {
-      border-radius: 4px;
-      border-color: $color-tint-red-primary;
-    }
-  }
-
-  &:active {
-    background: darken($color-tint-red-primary, 15%);
-  }
-
-  &[disabled],
-  &:disabled {
-    cursor: default;
-    background: $color-tint-red-secondary;
-    border-color: $color-tint-red-secondary;
-  }
-}
-
-/* ----------------------------------------------*\
-    Icon Button Variant
+    Icon Button
 \*---------------------------------------------- */
 
 .tco-btn--icon,
 .tco-btn--icon-text {
-  @include spacing-inset-8();
+  @include spacing-inset-8;
   line-height: 0;
   border-radius: $border-radius-small;
   display: flex;
@@ -203,7 +180,7 @@
   align-items: center;
 
   &.tco-btn--small {
-    @include spacing-inset-8();
+    @include spacing-inset-8;
 
     > svg {
       height: 10px;
@@ -212,7 +189,7 @@
   }
 
   &.tco-btn--medium {
-    @include spacing-inset-12();
+    @include spacing-inset-12;
 
     > svg {
       height: 14px;
@@ -221,7 +198,7 @@
   }
 
   &.tco-btn--large {
-    @include spacing-inset-16();
+    @include spacing-inset-16;
   }
 }
 
