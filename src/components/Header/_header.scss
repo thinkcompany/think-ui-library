@@ -1,10 +1,8 @@
 $max-width-lede: 780px;
-$spacing-header: 56px;
-$spacing-lede: 60px;
 $spacing-image: 120px;
 
 .tco-header {
-  padding: $spacing-header $spacing-inline-24 $spacing-stack-64;
+  padding: $spacing-stack-64 $spacing-inline-24 $spacing-stack-64;
 
   &-container {
     display: flex;
@@ -66,12 +64,13 @@ $spacing-image: 120px;
 
   &-eyebrow {
     @include type-eyebrow;
-    margin-bottom: $spacing-stack-16;
+    display: block;
+    margin-bottom: $spacing-stack-12;
   }
 
   &-heading {
     @include type-display-large;
-    margin-bottom: $spacing-stack-24;
+    margin-bottom: $spacing-stack-12;
     line-height: 1.2;
   }
 
@@ -81,7 +80,7 @@ $spacing-image: 120px;
     margin: 0 auto $spacing-stack-32;
 
     @include wider-than($breakpoint-tablet-portrait) {
-      margin-bottom: $spacing-lede;
+      margin-bottom: $spacing-stack-64;
     }
   }
 
@@ -91,24 +90,21 @@ $spacing-image: 120px;
       text-align: left;
     }
 
+    .tco-header-content {
+      margin-bottom: $spacing-stack-64;
+    }
+
     .tco-header-back-link {
       @include type-link;
+      display: inline-block;
+      margin-bottom: $spacing-stack-32;
       letter-spacing: 3px;
       text-transform: uppercase;
     }
 
-    .tco-header-heading {
-      margin-bottom: $spacing-stack-8;
-    }
-
-    .tco-header-back-link,
-    .tco-header-date {
-      display: inline-block;
-      margin-bottom: $spacing-stack-16;
-    }
-
     .tco-header-date {
       @include type-body-default;
+      display: inline-block;
     }
   }
 
