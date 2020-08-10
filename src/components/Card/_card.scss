@@ -13,10 +13,9 @@
   }
 
   &-content-heading {
-    @include type-display-medium;
     @include type-link;
+    @include type-display-medium($color-tint-blue-primary);
     display: inline;
-    line-height: 1.2;
   }
 
   &-content-description {
@@ -41,10 +40,13 @@
   &--cta-small {
     @include spacing-inset-16;
     @include card-scale;
-    width: 215px;
     background-position: 50%;
     background-repeat: no-repeat;
     background-size: cover;
+
+    @include wider-than($breakpoint-tablet-portrait) {
+      width: 215px;
+    }
 
     > .tco-card-link {
       display: flex;
