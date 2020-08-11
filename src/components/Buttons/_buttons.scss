@@ -3,8 +3,8 @@
 \*---------------------------------------------- */
 
 .tco-btn {
-  @include spacing-squish-8-16;
-  @include type-body-small;
+  @include spacing-inset-16;
+  @include type-body-medium;
   @include type-style-bold;
   position: relative;
   cursor: pointer;
@@ -12,10 +12,6 @@
   appearance: none;
   text-align: center;
   text-decoration: none;
-
-  @include wider-than($breakpoint-tablet-portrait) {
-    @include spacing-inset-24;
-  }
 }
 
 /* ----------------------------------------------*\
