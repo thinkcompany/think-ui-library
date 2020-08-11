@@ -1,0 +1,48 @@
+.tco-site-footer {
+  @include spacing-inset-64;
+  @include type-body-large($color-foreground-on-tint);
+  background-color: $color-background-tertiary;
+  text-align: center;
+
+  p {
+    margin-bottom: 0;
+  }
+}
+
+.tco-site-footer-content {
+  margin: 0 auto;
+  max-width: 600px;
+  text-align: center;
+}
+
+.tco-site-footer-social {
+  @include spacing-inset-32;
+  padding-bottom: 0;
+
+  &-icon {
+    @include spacing-inset-4;
+    color: $color-foreground-on-tint;
+    text-decoration: none;
+     
+    > svg {
+      height: 40px;
+      width: 40px;
+     }
+  }
+}
+
+.tco-site-footer-divider {
+  @include spacing-inset-32;
+
+  > hr {
+    border: 1px solid $color-tint-blue-primary;
+    width: 80px;
+    margin: 0 auto;
+  }
+}
+
+.tco-site-footer-copyright {
+  @include type-body-medium($color-foreground-on-tint);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
