@@ -149,7 +149,7 @@
   }
 }
 
-.tco-card--post-small {
+.tco-card--post--small {
   @include wider-than($breakpoint-tablet-portrait) {
     max-width: 280px;
   }
@@ -167,14 +167,30 @@
   }
 }
 
-.tco-card--post-medium {
+.tco-card--post--medium {
   @include wider-than($breakpoint-tablet-portrait) {
     max-width: 380px;
   }
 }
 
-.tco-card--post-large {
+.tco-card--post--large {
   @include wider-than($breakpoint-tablet-portrait) {
     max-width: 480px;
+  }
+}
+
+.tco-card--post--xlarge {
+  @include wider-than($breakpoint-tablet-portrait) {
+    max-width: 880px;
+    min-height: 0;
+
+    > .tco-card-link {
+      display: flex;
+    }
+
+    .tco-card-image-container,
+    .tco-card-content-container {
+      flex-basis: 50%;
+    }
   }
 }

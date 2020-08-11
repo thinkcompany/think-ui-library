@@ -1,6 +1,6 @@
 import { select, text } from '@storybook/addon-knobs';
 
-const sizes = ['large', 'medium', 'small'];
+const sizes = ['xlarge', 'large', 'medium', 'small'];
 
 export const summaryCard = () => {
   const heading = text('Heading', 'Full Experience & Service Design');
@@ -104,7 +104,7 @@ export const postCard = () => {
   const date = text('Post date', 'May 21, 2020');
 
   return `
-  <div class="tco-card tco-card--post tco-card--post-${size}">
+  <div class="tco-card tco-card--post tco-card--post--${size}">
     <a href="#" class="tco-card-link">
       <div class="tco-card-image-container">
         <img class="tco-card-image" alt="Card image" src="${image}" />
