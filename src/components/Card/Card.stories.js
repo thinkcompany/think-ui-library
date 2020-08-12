@@ -17,7 +17,7 @@ export const summaryCard = () => {
   <div class="tco-card tco-card--summary">
     <a href="#" class="tco-card-link">
       <div class="tco-card-image-container">
-        <img class="tco-card-image" alt="An adorable kitten" src="${image}" />
+        <img class="tco-card-image" alt="Card image" src="${image}" />
       </div>
       <div class="tco-card-content-container">
         <h3 class="tco-card-content-heading">${heading}</h3>
@@ -131,6 +131,34 @@ export const postCard = () => {
   </div>`;
 };
 
+export const calloutCard = () => {
+  const size = select('Callout size', ['large', 'medium', 'small'], 'medium');
+  const heading = text(
+    'Callout heading',
+    'Problem Solving Workshops for COVID-19 Support'
+  );
+  const description = text(
+    'Callout description',
+    'We want to help organizations supporting the frontline response'
+  );
+  const image = text(
+    'Callout image',
+    'https://thinkstaging.wpengine.com/wp-content/themes/tbiv3/img/svgs/icon-sync.svg'
+  );
+
+  return `
+  <div class="tco-card tco-card--callout tco-card--callout--${size}">
+    <div class="tco-card-image-container">
+      <img class="tco-card-image" alt="Card image" src="${image}" />
+    </div>
+    <div class="tco-card-content-container">
+      <h3 class="tco-card-content-heading">${heading}</h3>
+      <p class="tco-card-content-description">${description}</p>
+      <a class="tco-card-content-link" href="#">Tell us about your challenge</a>
+    </div>
+  </div>`;
+};
+
 export const all = () => {
   const itemWrapper = children => `
     <div
@@ -145,7 +173,8 @@ export const all = () => {
     callToActionCard,
     postCard,
     personCard,
-    smallCallToAction
+    smallCallToAction,
+    calloutCard
   ];
 
   const examples = variations.map(variation => itemWrapper(variation()));

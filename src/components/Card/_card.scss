@@ -9,6 +9,12 @@
 
   &-link {
     @include type-not-link;
+
+    .tco-card-content-heading {
+      @include type-link;
+      @include type-display-medium($color-tint-blue-primary);
+      display: inline;
+    }
   }
 
   &-content-container {
@@ -22,13 +28,15 @@
   }
 
   &-content-heading {
-    @include type-link;
-    @include type-display-medium($color-tint-blue-primary);
-    display: inline;
+    @include type-display-medium;
   }
 
   &-content-description {
     margin: $spacing-stack-16 0;
+  }
+
+  &-content-link {
+    @include type-link($font-weight: $font-weight-600);
   }
 
   &-info {
@@ -115,8 +123,8 @@
 
   .tco-card-content-heading {
     @include type-link($color-foreground-on-tint, $color-background-primary);
+    @include type-display-small($color-foreground-on-tint);
     display: inline;
-    font-size: $font-size-24;
   }
 }
 
@@ -192,6 +200,56 @@
     .tco-card-image-container,
     .tco-card-content-container {
       flex-basis: 50%;
+    }
+  }
+}
+
+// ========================================================
+// = CALLOUT CARD
+// ========================================================
+.tco-card--callout {
+  @include spacing-inset-24;
+  display: grid;
+  grid-template-columns: 44px auto;
+  grid-gap: $spacing-inline-12;
+  max-width: none;
+  min-height: 0;
+
+  .tco-card-content-container {
+    text-align: left;
+  }
+
+  @include wider-than($breakpoint-tablet-portrait) {
+    @include spacing-inset-32;
+    grid-gap: $spacing-inline-24;
+  }
+
+  &--large {
+    @include wider-than($breakpoint-tablet-portrait) {
+      max-width: 980px;
+    }
+
+    .tco-card-content-description {
+      @include type-body-large;
+    }
+  }
+
+  &--medium,
+  &--small {
+    .tco-card-content-heading {
+      @include type-display-small;
+    }
+  }
+
+  &--medium {
+    @include wider-than($breakpoint-tablet-portrait) {
+      max-width: 680px;
+    }
+  }
+
+  &--small {
+    @include wider-than($breakpoint-tablet-portrait) {
+      max-width: 555px;
     }
   }
 }
