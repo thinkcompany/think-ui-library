@@ -5,6 +5,7 @@
   @include card-container-shadow;
   @include spacing-inset-32;
   max-width: 380px;
+  overflow: hidden;
 
   &-link {
     @include type-not-link;
