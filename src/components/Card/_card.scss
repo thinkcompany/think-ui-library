@@ -1,3 +1,6 @@
+// ========================================================
+// = BASE CARD
+// ========================================================
 .tco-card {
   @include card-container-shadow;
   @include spacing-inset-32;
@@ -5,11 +8,16 @@
 
   &-link {
     @include type-not-link;
-    @include card-image-scale;
   }
 
   &-content-container {
     text-align: center;
+  }
+
+  &-content-eyebrow {
+    @include type-eyebrow;
+    display: block;
+    margin-bottom: $spacing-stack-12;
   }
 
   &-content-heading {
@@ -22,72 +30,167 @@
     margin: $spacing-stack-16 0;
   }
 
-  &--cta {
-    background-color: $color-tint-blue-primary;
-    color: $color-foreground-on-tint;
+  &-info {
+    display: grid;
+    grid-template-columns: 64px 1fr;
+    grid-gap: $spacing-inline-16;
+    align-items: center;
 
-    > .tco-card-content-container {
-      display: flex;
-      height: 100%;
-      flex-flow: column wrap;
-      justify-content: center;
-      align-items: center;
-      min-height: 515px;
+    &-author-name,
+    &-author-date {
+      margin-bottom: 0;
+    }
+
+    &-author-name {
+      @include type-style-bold;
     }
   }
 
-  &--person,
-  &--cta-small {
-    @include spacing-inset-16;
-    @include card-scale;
-    background-position: 50%;
-    background-repeat: no-repeat;
-    background-size: cover;
+  &-info-image-container {
+    border-radius: $border-radius-round;
+    overflow: hidden;
+  }
+}
 
-    @include wider-than($breakpoint-tablet-portrait) {
-      width: 215px;
-    }
+// ========================================================
+// = SUMMARY CARD
+// ========================================================
+.tco-card--summary {
+  > .tco-card-link {
+    @include card-image-scale;
+  }
+}
+
+// ========================================================
+// = CTA CARD
+// ========================================================
+.tco-card--cta {
+  background-color: $color-tint-blue-primary;
+  color: $color-foreground-on-tint;
+
+  > .tco-card-content-container {
+    display: flex;
+    height: 100%;
+    flex-flow: column wrap;
+    justify-content: center;
+    align-items: center;
+    min-height: 515px;
+  }
+}
+
+// ========================================================
+// = SMALL CTA CARD, PERSON CARD
+// ========================================================
+.tco-card--person,
+.tco-card--cta-small {
+  @include spacing-inset-16;
+  @include card-scale;
+  background-position: 50%;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  @include wider-than($breakpoint-tablet-portrait) {
+    width: 215px;
+  }
+
+  > .tco-card-link {
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    min-height: 300px;
+  }
+
+  .tco-card-content-description {
+    margin-top: 0;
+    color: $color-foreground-on-tint;
+  }
+}
+
+.tco-card--person {
+  .tco-card-content-container {
+    margin-top: auto;
+    text-align: left;
+  }
+
+  .tco-card-content-heading {
+    @include type-link($color-foreground-on-tint, $color-background-primary);
+    display: inline;
+    font-size: $font-size-24;
+  }
+}
+
+.tco-card--cta-small {
+  background-color: $color-tint-blue-primary;
+
+  &:hover {
+    background-color: $color-tint-blue-secondary;
+  }
+
+  .tco-card-content-description {
+    @include type-link(
+      $color-foreground-on-tint,
+      $color-background-primary,
+      $font-size-24
+    );
+    display: inline;
+  }
+}
+
+// ========================================================
+// = POST CARD
+// ========================================================
+.tco-card--post {
+  max-width: 327px;
+  padding: 0;
+
+  .tco-card-content-container {
+    @include spacing-inset-32;
+    text-align: left;
+  }
+}
+
+.tco-card--post--small {
+  @include wider-than($breakpoint-tablet-portrait) {
+    max-width: 280px;
+  }
+
+  .tco-card-content-container {
+    @include spacing-inset-24;
+  }
+
+  .tco-card-content-heading {
+    @include type-display-small($color-tint-blue-primary);
+  }
+
+  .tco-card-info {
+    display: none; // Hidden at small size
+  }
+}
+
+.tco-card--post--medium {
+  @include wider-than($breakpoint-tablet-portrait) {
+    max-width: 380px;
+  }
+}
+
+.tco-card--post--large {
+  @include wider-than($breakpoint-tablet-portrait) {
+    max-width: 480px;
+  }
+}
+
+.tco-card--post--xlarge {
+  @include wider-than($breakpoint-tablet-portrait) {
+    max-width: 880px;
+    min-height: 0;
 
     > .tco-card-link {
       display: flex;
-      flex-flow: column wrap;
-      justify-content: center;
-      min-height: 300px;
     }
 
-    .tco-card-content-description {
-      margin-top: 0;
-      color: $color-foreground-on-tint;
-    }
-  }
-
-  &--person {
+    .tco-card-image-container,
     .tco-card-content-container {
-      margin-top: auto;
-      text-align: left;
-    }
-
-    .tco-card-content-heading {
-      @include type-link($color-foreground-on-tint, $color-background-primary);
-      display: inline;
-      font-size: $font-size-24;
-    }
-  }
-
-  &--cta-small {
-    background-color: $color-tint-blue-primary;
-
-    &:hover {
-      background-color: $color-tint-blue-secondary;
-    }
-
-    .tco-card-content-description {
-      @include type-link(
-        $color-foreground-on-tint,
-        $color-background-primary,
-        $font-size-24
-      );
-      display: inline;
+      flex-basis: 50%;
     }
   }
 }
