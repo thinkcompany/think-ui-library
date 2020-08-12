@@ -12,6 +12,7 @@
   appearance: none;
   text-align: center;
   text-decoration: none;
+  text-transform: uppercase;
 }
 
 /* ----------------------------------------------*\
@@ -142,6 +143,7 @@
 .tco-btn-link {
   @include type-link($font-weight: $font-weight-500);
   background-color: transparent;
+  text-transform: none;
   padding: 0 4px;
 
   &--on-tint {
