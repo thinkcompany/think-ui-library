@@ -58,5 +58,5 @@ const footer = () => {
 export { footer };
 
 export default {
-  title: 'Components / Footer'
+  title: 'Navigation / Global'
 };
