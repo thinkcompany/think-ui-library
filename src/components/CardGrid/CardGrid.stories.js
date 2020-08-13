@@ -23,7 +23,7 @@ const summaryCard = () => {
 
 const postCard = size => {
   const image =
-    'https://thinkstaging.wpengine.com/wp-content/uploads/2015/12/ss-internetprovider-mobile-top.jpg';
+    'https://thinkcompany.com/wp-content/uploads/2015/12/ss-internetprovider-mobile-top.jpg';
   const eyebrow = 'Case Study';
   const heading = 'Mobile Product Strategy';
   const description =
