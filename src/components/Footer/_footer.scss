@@ -10,15 +10,14 @@
 }
 
 .tco-site-footer-content {
+  @include spacing-inset-32;
+  padding-top: 0;
   margin: 0 auto;
   max-width: 600px;
   text-align: center;
 }
 
 .tco-site-footer-social {
-  @include spacing-inset-32;
-  padding-bottom: 0;
-
   &-icon {
     @include spacing-inset-4;
     color: $color-foreground-on-tint;
