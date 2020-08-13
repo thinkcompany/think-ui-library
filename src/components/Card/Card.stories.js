@@ -1,4 +1,6 @@
-import { text } from '@storybook/addon-knobs';
+import { select, text } from '@storybook/addon-knobs';
+
+const sizes = ['xlarge', 'large', 'medium', 'small'];
 
 export const summaryCard = () => {
   const heading = text('Heading', 'Full Experience & Service Design');
@@ -53,7 +55,6 @@ export const personCard = () => {
   );
 
   return `
-  <div class="documentation-grid-container">
   <div class="tco-card tco-card--person" style="background-image: url(${image})">
     <a href="#" class="tco-card-link">
       <div class="tco-card-content-container">
@@ -61,15 +62,6 @@ export const personCard = () => {
         <p class="tco-card-content-description">${title}</p>
       </div>
     </a>
-  </div>
-  <div class="tco-card tco-card--person" style="background-image: url(${image})">
-  <a href="#" class="tco-card-link">
-    <div class="tco-card-content-container">
-      <h3 class="tco-card-content-heading">${name}</h3>
-      <p class="tco-card-content-description">${title}</p>
-    </div>
-  </a>
-  </div>
   </div>`;
 };
 
@@ -89,6 +81,56 @@ export const smallCallToAction = () => {
   </div>`;
 };
 
+export const postCard = () => {
+  const size = select('Size', sizes, 'medium');
+  const image = text(
+    'Post image',
+    'https://thinkstaging.wpengine.com/wp-content/uploads/2020/07/BlogImage-LGM-9-Kanban-708x472.png'
+  );
+  const eyebrow = text('Post type', '');
+  const heading = text(
+    'Post title',
+    'How to Use Kanban to Manage a Design System'
+  );
+  const description = text(
+    'Post excerpt',
+    'Kanban originated in the world of automotive manufacturing at Toyota, by way of Japanese industrial engineer Taiichi Ohno.'
+  );
+  const author = text('Post author', 'Keith Rich');
+  const authorImage = text(
+    'Post author image',
+    'https://thinkstaging.wpengine.com/wp-content/uploads/2018/05/KeithRich_Web.jpg'
+  );
+  const date = text('Post date', 'May 21, 2020');
+
+  return `
+  <div class="tco-card tco-card--post tco-card--post--${size}">
+    <a href="#" class="tco-card-link">
+      <div class="tco-card-image-container">
+        <img class="tco-card-image" alt="Card image" src="${image}" />
+      </div>
+      <div class="tco-card-content-container">
+        ${
+          eyebrow
+            ? '<span class="tco-card-content-eyebrow">' + eyebrow + '</span>'
+            : ''
+        }
+        <h3 class="tco-card-content-heading">${heading}</h3>
+        <p class="tco-card-content-description">${description}</p>
+        <div class="tco-card-info">
+          <div class="tco-card-info-image-container">
+            <img alt="${author} photo" class="tco-card-info-image" src="${authorImage}">
+          </div>
+          <div class="tco-card-info-author">
+            <p class="tco-card-info-author-name">By ${author}</p>
+            <p class="tco-card-info-author-date">${date}</p>
+          </div>
+        </div>
+      </div>
+    </a>
+  </div>`;
+};
+
 export const all = () => {
   const itemWrapper = children => `
     <div
@@ -101,6 +143,7 @@ export const all = () => {
   const variations = [
     summaryCard,
     callToActionCard,
+    postCard,
     personCard,
     smallCallToAction
   ];
