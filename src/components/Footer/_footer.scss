@@ -1,6 +1,6 @@
 .tco-site-footer {
-  @include spacing-inset-64;
   @include type-body-large($color-foreground-on-tint);
+  padding: $spacing-stack-64 $spacing-inline-24;
   background-color: $color-background-tertiary;
   text-align: center;
 
