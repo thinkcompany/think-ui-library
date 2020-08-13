@@ -85,7 +85,7 @@ export const postCard = () => {
   const size = select('Size', sizes, 'medium');
   const image = text(
     'Post image',
-    'https://thinkstaging.wpengine.com/wp-content/uploads/2020/07/BlogImage-LGM-9-Kanban-708x472.png'
+    'https://thinkcompany.com/wp-content/uploads/2020/07/BlogImage-LGM-9-Kanban-708x472.png'
   );
   const eyebrow = text('Post type', '');
   const heading = text(
@@ -99,7 +99,7 @@ export const postCard = () => {
   const author = text('Post author', 'Keith Rich');
   const authorImage = text(
     'Post author image',
-    'https://thinkstaging.wpengine.com/wp-content/uploads/2018/05/KeithRich_Web.jpg'
+    'https://thinkcompany.com/wp-content/uploads/2018/05/KeithRich_Web.jpg'
   );
   const date = text('Post date', 'May 21, 2020');
 
