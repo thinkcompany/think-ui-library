@@ -4,8 +4,8 @@
 .tco-card {
   @include card-container-shadow;
   @include spacing-inset-32;
-  max-width: 380px;
   overflow: hidden;
+  max-width: 380px;
 
   &-link {
     @include type-not-link;
@@ -56,8 +56,8 @@
   }
 
   &-info-image-container {
-    border-radius: $border-radius-round;
     overflow: hidden;
+    border-radius: $border-radius-round;
   }
 }
 
@@ -79,10 +79,10 @@
 
   > .tco-card-content-container {
     display: flex;
-    height: 100%;
     flex-flow: column wrap;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
+    height: 100%;
     min-height: 515px;
   }
 }
@@ -94,13 +94,13 @@
 .tco-card--cta-small {
   @include spacing-inset-16;
   @include card-scale;
-  background-position: 50%;
-  background-repeat: no-repeat;
-  background-size: cover;
 
   @include wider-than($breakpoint-tablet-portrait) {
     width: 215px;
   }
+  background-position: 50%;
+  background-size: cover;
+  background-repeat: no-repeat;
 
   > .tco-card-link {
     display: flex;
@@ -208,6 +208,11 @@
 // ========================================================
 .tco-card--callout {
   @include spacing-inset-24;
+
+  @include wider-than($breakpoint-tablet-portrait) {
+    @include spacing-inset-32;
+    grid-gap: $spacing-inline-24;
+  }
   display: grid;
   grid-template-columns: 44px auto;
   grid-gap: $spacing-inline-12;
@@ -216,11 +221,6 @@
 
   .tco-card-content-container {
     text-align: left;
-  }
-
-  @include wider-than($breakpoint-tablet-portrait) {
-    @include spacing-inset-32;
-    grid-gap: $spacing-inline-24;
   }
 
   &--large {

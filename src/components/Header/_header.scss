@@ -7,17 +7,15 @@ $spacing-image: 120px;
   &-container {
     display: flex;
     flex-flow: column wrap;
-    justify-content: center;
     align-items: center;
-    text-align: center;
+    justify-content: center;
     width: 100%;
     max-width: $container-max;
     margin: auto;
+    text-align: center;
 
     &--align-left,
     &--align-right {
-      text-align: left;
-
       @include wider-than($breakpoint-tablet-portrait) {
         flex-wrap: nowrap;
 
@@ -25,6 +23,7 @@ $spacing-image: 120px;
           flex-basis: 50%;
         }
       }
+      text-align: left;
     }
 
     &--align-left {
@@ -38,6 +37,13 @@ $spacing-image: 120px;
     }
 
     &--align-right {
+      @include wider-than($breakpoint-tablet-portrait) {
+        flex-direction: row-reverse;
+
+        > .tco-header-image {
+          margin-right: $spacing-image;
+        }
+      }
       flex-direction: column-reverse;
 
       > .tco-header-image {
@@ -46,14 +52,6 @@ $spacing-image: 120px;
 
       .tco-header-lede {
         margin-bottom: 0;
-      }
-
-      @include wider-than($breakpoint-tablet-portrait) {
-        flex-direction: row-reverse;
-
-        > .tco-header-image {
-          margin-right: $spacing-image;
-        }
       }
     }
   }
@@ -76,12 +74,12 @@ $spacing-image: 120px;
 
   &-lede {
     @include type-body-large;
-    max-width: $max-width-lede;
-    margin: 0 auto $spacing-stack-32;
 
     @include wider-than($breakpoint-tablet-portrait) {
       margin-bottom: $spacing-stack-64;
     }
+    max-width: $max-width-lede;
+    margin: 0 auto $spacing-stack-32;
   }
 
   &--with-back-link {

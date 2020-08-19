@@ -1,5 +1,5 @@
 @mixin wrapper($width: 90%, $max-width: 980px) {
-  max-width: $max-width;
   width: $width;
+  max-width: $max-width;
   margin: 0 auto;
 }

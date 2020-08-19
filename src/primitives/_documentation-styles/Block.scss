@@ -1,3 +1,4 @@
+/* stylelint-disable property-blacklist */
 .documentation-block {
   display: flex;
   flex-flow: column wrap;
@@ -10,20 +11,20 @@
   footer {
     display: flex;
     flex-flow: column wrap;
+    justify-self: flex-end;
     width: 100%;
     margin-top: $documentation-padding;
     padding: $documentation-padding / 2;
     border-top: 1px solid $documentation-gray;
     background: rgba($documentation-white, 0.8);
-    font-family: sans-serif;
     font-size: rem(12);
-    justify-self: flex-end;
+    font-family: sans-serif;
 
     p {
+      overflow: auto;
       margin: 0 0 2px;
       text-overflow: ellipsis;
       white-space: nowrap;
-      overflow: auto;
     }
   }
 }

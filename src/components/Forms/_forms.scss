@@ -1,9 +1,10 @@
+/* stylelint-disable max-line-length, max-nesting-depth , selector-max-combinators, selector-max-compound-selectors, selector-max-specificity */
 /* ----------------------------------------------*\
     Variables
 \*---------------------------------------------- */
 
 $form-input-border: 1px solid rgb(208, 214, 219);
-$form-input-box-shadow: inset 0px 1px 3px 0 rgba(0, 0, 0, 0.2);
+$form-input-box-shadow: inset 0 1px 3px 0 rgba(0, 0, 0, 0.2);
 $opacity--disabled: 0.4;
 
 /* ----------------------------------------------*\
@@ -11,8 +12,8 @@ $opacity--disabled: 0.4;
 \*---------------------------------------------- */
 
 .tco-form-row {
-  margin-bottom: 1rem;
   position: relative;
+  margin-bottom: 1rem;
 
   &:last-of-type {
     margin-bottom: 0;
@@ -20,8 +21,8 @@ $opacity--disabled: 0.4;
 }
 
 .tco-form-row--group {
-  margin-bottom: $spacing-inline-12;
   position: relative;
+  margin-bottom: $spacing-inline-12;
 
   &:last-of-type {
     margin-bottom: 0;
@@ -42,11 +43,11 @@ $opacity--disabled: 0.4;
 %tco-form-input {
   @include type-body-small;
   width: 100%;
-  border-radius: $border-radius-small;
   border: $form-input-border;
-  box-shadow: $form-input-box-shadow;
+  border-radius: $border-radius-small;
   background-color: #fff;
   background-image: none;
+  box-shadow: $form-input-box-shadow;
 
   &::placeholder {
     color: $color-foreground-primary;
@@ -58,8 +59,8 @@ $opacity--disabled: 0.4;
   }
 
   &:disabled {
-    pointer-events: none;
     opacity: $opacity--disabled;
+    pointer-events: none;
   }
 
   &.is-error,
@@ -81,8 +82,8 @@ $opacity--disabled: 0.4;
   left: rem(8px);
   width: rem(16px);
   height: rem(16px);
-  border-radius: 100%;
   padding: rem(3px);
+  border-radius: 100%;
 
   &--error {
     background-color: $color-tint-red-primary;
@@ -96,7 +97,7 @@ $opacity--disabled: 0.4;
 }
 
 .tco-form-input--large {
-  @include spacing-inset-16();
+  @include spacing-inset-16;
 
   + .tco-form-state-icon {
     top: rem(44px);
@@ -104,7 +105,7 @@ $opacity--disabled: 0.4;
 }
 
 .tco-form-input--medium {
-  @include spacing-inset-8();
+  @include spacing-inset-8;
 
   + .tco-form-state-icon {
     top: rem(36px);
@@ -112,7 +113,7 @@ $opacity--disabled: 0.4;
 }
 
 .tco-form-input--small {
-  @include spacing-squish-4-8();
+  @include spacing-squish-4-8;
   font-size: $font-size-12;
 
   + .tco-form-state-icon {
@@ -126,7 +127,8 @@ $opacity--disabled: 0.4;
 
 .tco-form-textarea {
   @extend %tco-form-input;
-  @include spacing-inset-8();
+
+  @include spacing-inset-8;
 
   + .tco-form-state-icon {
     top: rem(34px);
@@ -138,8 +140,8 @@ $opacity--disabled: 0.4;
 \*---------------------------------------------- */
 
 .tco-form-label {
-  display: block;
   position: relative;
+  display: block;
   font-weight: $font-weight-600;
 
   .tco-form-label-text {
@@ -160,7 +162,7 @@ $opacity--disabled: 0.4;
   @extend %tco-accessibly-hidden;
 
   &:focus + label::after {
-    content: '';
+    content: "";
     position: absolute;
     top: -2px;
     left: -2px;
@@ -174,20 +176,20 @@ $opacity--disabled: 0.4;
     position: relative;
     margin-right: $spacing-inline-32;
     padding-left: rem(20px);
-    font-size: $font-size-14;
     font-weight: 400;
+    font-size: $font-size-14;
 
     &::before {
-      content: '';
+      content: "";
       position: absolute;
       top: 0;
       left: 0;
       width: rem(16px);
       height: rem(16px);
-      border-radius: 2px;
       border: $form-input-border;
+      border-radius: 2px;
+      background: none;
       box-shadow: $form-input-box-shadow;
-      background-color: none;
     }
   }
 
@@ -196,9 +198,9 @@ $opacity--disabled: 0.4;
     // sass-lint:disable-block nesting-depth
     &::before {
       content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='7'%3E%3Cpath fill='none' fill-rule='evenodd' stroke='%23FFF' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M1 3.35l2.82 2.83L9 1'/%3E%3C/svg%3E");
-      text-align: center;
-      line-height: 13px;
       background-color: $color-tint-blue-primary;
+      line-height: 1;
+      text-align: center;
     }
   }
 
@@ -206,9 +208,9 @@ $opacity--disabled: 0.4;
   &:indeterminate + input + label {
     &::before {
       content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='7'%3E%3Cpath fill='none' fill-rule='evenodd' stroke='%23FFF' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M1 1L8.5 1'/%3E%3C/svg%3E");
-      line-height: 19px;
-      text-align: center;
       background-color: $color-tint-blue-primary;
+      line-height: 1.44;
+      text-align: center;
     }
   }
 
@@ -245,8 +247,8 @@ $opacity--disabled: 0.4;
       color: #000;
 
       &::before {
-        background-color: #000;
         border-color: #000;
+        background-color: #000;
       }
     }
   }
@@ -265,61 +267,61 @@ $opacity--disabled: 0.4;
 
   + label {
     position: relative;
-    padding-left: rem(24px);
-    font-size: $font-size-14;
-    font-weight: 400;
     margin-right: $spacing-inline-32;
+    padding-left: rem(24px);
+    font-weight: 400;
+    font-size: $font-size-14;
 
     &::before {
-      content: '';
+      content: "";
       position: absolute;
       top: rem(2px);
       left: 0;
       width: rem(16px);
       height: rem(16px);
-      border-radius: 50%;
       border: $form-input-border;
+      border-radius: 50%;
       box-shadow: $form-input-box-shadow;
     }
 
     &::after {
-      content: '';
-      opacity: 0;
+      content: "";
       position: absolute;
       top: rem(6px);
       left: rem(4px);
       width: rem(10px);
       height: rem(10px);
-      background-color: $color-tint-blue-primary;
       border-radius: 100%;
+      background-color: $color-tint-blue-primary;
+      opacity: 0;
     }
   }
 
   .is-error & {
     + label {
       &::before {
-        content: '';
+        content: "";
         position: absolute;
         top: rem(2px);
         left: 0;
         width: rem(16px);
         height: rem(16px);
-        border-radius: $border-radius-round;
         border: 1px solid $color-foreground-tertiary;
+        border-radius: $border-radius-round;
         box-shadow: $form-input-box-shadow;
       }
     }
 
     &::after {
-      content: '';
-      opacity: 0;
+      content: "";
       position: absolute;
       top: rem(6px);
       left: rem(4px);
       width: rem(10px);
       height: rem(10px);
-      background-color: $color-tint-blue-primary;
       border-radius: $border-radius-round;
+      background-color: $color-tint-blue-primary;
+      opacity: 0;
     }
   }
 
@@ -341,9 +343,10 @@ $opacity--disabled: 0.4;
         }
       }
     }
+
     &:disabled + label::before {
-      background-color: #000;
       border-color: #000;
+      background-color: #000;
     }
   }
 }
@@ -357,13 +360,13 @@ $opacity--disabled: 0.4;
 
   + label {
     position: relative;
-    padding-left: rem(48px);
-    font-size: $font-size-14;
-    font-weight: 400;
     margin-right: $spacing-inline-32;
+    padding-left: rem(48px);
+    font-weight: 400;
+    font-size: $font-size-14;
 
     &::before {
-      content: '';
+      content: "";
       position: absolute;
       top: rem(2px);
       left: 0;
@@ -374,7 +377,7 @@ $opacity--disabled: 0.4;
     }
 
     &::after {
-      content: '';
+      content: "";
       position: absolute;
       top: rem(4px);
       left: rem(2px);
@@ -390,6 +393,7 @@ $opacity--disabled: 0.4;
     + label::after {
       left: rem(18px);
     }
+
     + label::before {
       background-color: $color-tint-blue-primary;
     }
@@ -398,7 +402,7 @@ $opacity--disabled: 0.4;
   .is-error & {
     + label {
       &::before {
-        content: '';
+        content: "";
         position: absolute;
         top: rem(2px);
         left: 0;
@@ -409,7 +413,7 @@ $opacity--disabled: 0.4;
       }
 
       &::after {
-        content: '';
+        content: "";
         position: absolute;
         top: rem(4px);
         left: rem(2px);
@@ -425,6 +429,7 @@ $opacity--disabled: 0.4;
       + label::after {
         left: rem(18px);
       }
+
       + label::before {
         background-color: $color-tint-blue-primary;
       }
@@ -456,25 +461,25 @@ $opacity--disabled: 0.4;
       Select
 \*---------------------------------------------- */
 .select {
+  background-image: url("data:image/svg+xml, %3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23939ab4' fill-rule='evenodd' viewBox='0 0 24 24'%3E%3Cpath d='M11.0673126,19.1021479 L0.386350391,8.10198065 C-0.128783464,7.57145453 -0.128783464,6.71133772 0.386350391,6.18086821 L1.63211366,4.89788139 C2.14636816,4.3682609 2.97982649,4.36724207 3.4952901,4.89561733 L12.0000275,13.6134412 L20.5047099,4.89561733 C21.0201735,4.36724207 21.8536318,4.3682609 22.3678863,4.89788139 L23.6136496,6.18086821 C24.1287835,6.71139433 24.1287835,7.57151113 23.6136496,8.10198065 L12.9327424,19.1021479 C12.4176085,19.6326174 11.5824464,19.6326174 11.0673126,19.1021479 Z' /%3E%3C/svg%3E");
+  background-position-x: calc(100% - 8px);
+  background-position-y: 50%;
+  background-size: 10px;
+  background-repeat: no-repeat;
+  box-shadow: none;
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
-  box-shadow: none;
-  background-repeat: no-repeat;
-  background-size: 10px;
-  background-position-x: calc(100% - 8px);
-  background-position-y: 50%;
-  background-image: url("data:image/svg+xml, %3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23939ab4' fill-rule='evenodd' viewBox='0 0 24 24'%3E%3Cpath d='M11.0673126,19.1021479 L0.386350391,8.10198065 C-0.128783464,7.57145453 -0.128783464,6.71133772 0.386350391,6.18086821 L1.63211366,4.89788139 C2.14636816,4.3682609 2.97982649,4.36724207 3.4952901,4.89561733 L12.0000275,13.6134412 L20.5047099,4.89561733 C21.0201735,4.36724207 21.8536318,4.3682609 22.3678863,4.89788139 L23.6136496,6.18086821 C24.1287835,6.71139433 24.1287835,7.57151113 23.6136496,8.10198065 L12.9327424,19.1021479 C12.4176085,19.6326174 11.5824464,19.6326174 11.0673126,19.1021479 Z' /%3E%3C/svg%3E");
 
   // inherits inset spacing from text input
   &.tco-form-input--large {
-    background-size: 16px;
     background-position-x: calc(100% - 16px);
+    background-size: 16px;
   }
 
   &.tco-form-input--medium {
-    background-size: 14px;
     background-position-x: calc(100% - 12px);
+    background-size: 14px;
   }
 }
 
@@ -483,11 +488,11 @@ $opacity--disabled: 0.4;
 \*---------------------------------------------- */
 
 .tco-form-input-error-msg {
-  color: $color-tint-red-primary;
-  border-radius: $border-radius-xsmall;
-  text-transform: none;
-  font-weight: 400;
   margin-top: $spacing-stack-4;
+  border-radius: $border-radius-xsmall;
+  color: $color-tint-red-primary;
+  font-weight: 400;
+  text-transform: none;
 
   + .tco-form-row {
     margin-top: rem(8px);
