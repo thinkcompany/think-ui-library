@@ -7,12 +7,12 @@
   @include type-body-medium;
   @include type-style-bold;
   position: relative;
-  cursor: pointer;
   border: none;
-  appearance: none;
   text-align: center;
   text-decoration: none;
   text-transform: uppercase;
+  cursor: pointer;
+  appearance: none;
 }
 
 /* ----------------------------------------------*\
@@ -31,25 +31,25 @@
 
   &:hover,
   &:focus {
-    background: $color-tint-blue-secondary;
     border-color: $color-tint-blue-secondary;
+    background: $color-tint-blue-secondary;
 
     &::after {
-      border-radius: $border-radius-small;
       border-color: $color-tint-blue-secondary;
+      border-radius: $border-radius-small;
     }
   }
 
   &:active {
-    background: $color-tint-blue-secondary;
     border-color: $color-foreground-primary;
+    background: $color-tint-blue-secondary;
   }
 
   &[disabled],
   &:disabled {
-    cursor: default;
-    background: $color-tint-blue-secondary;
     border-color: $color-tint-blue-secondary;
+    background: $color-tint-blue-secondary;
+    cursor: default;
   }
 }
 
@@ -72,8 +72,8 @@
     background-color: $color-foreground-quanternary;
 
     &::after {
-      border-radius: $border-radius-small;
       border-color: $color-foreground-quanternary;
+      border-radius: $border-radius-small;
     }
   }
 
@@ -84,9 +84,9 @@
 
   &[disabled],
   &:disabled {
-    cursor: default;
-    color: $color-foreground-primary;
     border-color: $color-background-primary;
+    color: $color-foreground-primary;
+    cursor: default;
 
     &:hover {
       background: none;
@@ -114,21 +114,21 @@
     background-color: lighten($color-tint-orange-secondary, 15%);
 
     &::after {
-      border-radius: $border-radius-small;
       border-color: lighten($color-tint-orange-secondary, 15%);
+      border-radius: $border-radius-small;
     }
   }
 
   &:active {
-    background-color: lighten($color-tint-orange-secondary, 15%);
     border-color: lighten($color-tint-orange-secondary, 5%);
+    background-color: lighten($color-tint-orange-secondary, 15%);
   }
 
   &[disabled],
   &:disabled {
-    cursor: default;
-    color: $color-foreground-primary;
     border-color: $color-tint-orange-primary;
+    color: $color-foreground-primary;
+    cursor: default;
 
     &:hover {
       background: none;
@@ -142,9 +142,9 @@
 
 .tco-btn-link {
   @include type-link($font-weight: $font-weight-500);
+  padding: 0 4px;
   background-color: transparent;
   text-transform: none;
-  padding: 0 4px;
 
   &--on-tint {
     @include type-link(
@@ -171,18 +171,18 @@
 .tco-btn--icon,
 .tco-btn--icon-text {
   @include spacing-inset-8;
-  line-height: 0;
-  border-radius: $border-radius-small;
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
+  border-radius: $border-radius-small;
+  line-height: 0;
 
   &.tco-btn--small {
     @include spacing-inset-8;
 
     > svg {
-      height: 10px;
       width: 10px;
+      height: 10px;
     }
   }
 
@@ -190,8 +190,8 @@
     @include spacing-inset-12;
 
     > svg {
-      height: 14px;
       width: 14px;
+      height: 14px;
     }
   }
 

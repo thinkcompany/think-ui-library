@@ -12,7 +12,7 @@
 
 @mixin card-container-shadow {
   @include card-base;
-  box-shadow: 0px 10px 18px 0px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 10px 18px 0 rgba(0, 0, 0, 0.15);
 }
 
 /**
@@ -32,8 +32,8 @@
   */
 @mixin card-image-scale {
   img {
-    transform: scale(0.98);
     transition: 0.6s ease-out;
+    transform: scale(0.98);
   }
 
   &:hover {

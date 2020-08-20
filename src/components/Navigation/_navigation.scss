@@ -13,29 +13,20 @@
 
 .tco-site-header-wrapper {
   @extend %tco-wrapper--xwide;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
 
   @include wider-than($breakpoint-xl) {
     justify-content: space-around;
   }
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .tco-site-header-logo {
-  // Background image should come from theme
-  background: url('/img/think-company-logo-horizontal-blue.svg') no-repeat
-    center center;
-  width: 200px;
-  height: 42px;
-  flex: 0 0 auto;
-  display: block;
-  margin: $spacing-stack-12 0;
-
   @include wider-than($breakpoint-phone-landscape) {
-    margin: $spacing-stack-8 0;
     width: 266px;
     height: 68px;
+    margin: $spacing-stack-8 0;
   }
 
   @include wider-than($breakpoint-xl) {
@@ -43,33 +34,44 @@
     height: 64px;
     margin: 0;
   }
+  display: block;
+  flex: 0 0 auto;
+  width: 200px;
+  height: 42px;
+  margin: $spacing-stack-12 0;
+  // Background image should come from theme
+  background: url("/img/think-company-logo-horizontal-blue.svg") no-repeat
+    center center;
 }
 
 .tco-site-header-nav-toggle {
-  line-height: 1;
-  padding: 0;
-  width: 36px;
-  height: 36px;
-
   @include wider-than($breakpoint-phone-landscape) {
-    margin: 0;
     width: 60px;
     height: 60px;
+    margin: 0;
   }
 
   @include wider-than($breakpoint-xl) {
     display: none;
   }
+  width: 36px;
+  height: 36px;
+  padding: 0;
+  line-height: 1;
 }
 
 .tco-site-header-nav-toggle-icon {
-  stroke: $color-foreground-secondary;
+  @include wider-than($breakpoint-phone-landscape) {
+    width: 60px;
+    height: 60px;
+  }
+  top: 14px;
+  vertical-align: middle;
   width: 36px;
   height: 36px;
-  top: 14px;
+  stroke: $color-foreground-secondary;
   stroke-width: 3;
   stroke-linecap: square;
-  vertical-align: middle;
 
   .tco-hamburger-line-4 {
     opacity: 0;
@@ -104,90 +106,81 @@
       opacity: 1;
     }
   }
-
-  @include wider-than($breakpoint-phone-landscape) {
-    width: 60px;
-    height: 60px;
-  }
 }
 
 .tco-menu-site-nav {
-  @include list-plain();
+  @include list-plain;
+
+  @include wider-than($breakpoint-xl) {
+    position: relative;
+    display: flex;
+    flex: 0 0 auto;
+    background: none;
+  }
   display: none;
 
   .tco-menu-site-nav--open + & {
     @include spacing-squish-32-64;
-    top: 66px;
-    left: 0;
-    display: block;
-    position: fixed;
-    width: 100%;
-    height: 100%;
-    background: $color-tint-blue-tertiary;
 
     @include wider-than($breakpoint-phone-landscape) {
       top: 84px;
     }
 
     @include wider-than($breakpoint-xl) {
-      background: none;
       position: static;
       display: flex;
       padding: 0;
+      background: none;
     }
-  }
-
-  @include wider-than($breakpoint-xl) {
-    flex: 0 0 auto;
-    display: flex;
-    position: relative;
-    background: none;
+    position: fixed;
+    top: 66px;
+    left: 0;
+    display: block;
+    width: 100%;
+    height: 100%;
+    background: $color-tint-blue-tertiary;
   }
 }
 
 .tco-menu-site-nav-item {
-  flex: 0 0 auto;
   position: relative;
+  flex: 0 0 auto;
 }
 
 .tco-menu-site-nav-link,
 .tco-menu-site-nav-submenu-link {
   @include type-display-small($color-foreground-primary);
   @include spacing-inset-24;
+
+  @include wider-than($breakpoint-xl) {
+    margin: 40px $spacing-inline-12 $spacing-stack-32;
+    padding: 0 $spacing-inline-4;
+    border-bottom: 0;
+    font-size: $font-size-18;
+  }
   position: relative;
   display: block;
-  text-align: center;
-  font-weight: $font-weight-500;
-  text-transform: uppercase;
-  letter-spacing: 2.2px;
-  text-decoration: none;
   border-bottom: 1px solid $color-foreground-quanternary;
+  font-weight: $font-weight-500;
   line-height: 1.4;
+  letter-spacing: 2.2px;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
 
   &:hover,
   &:focus {
     color: $color-foreground-secondary;
   }
-
-  @include wider-than($breakpoint-xl) {
-    margin: 40px $spacing-inline-12 $spacing-stack-32;
-    padding: 0 $spacing-inline-4;
-    font-size: $font-size-18;
-    border-bottom: 0;
-  }
 }
 
 .tco-menu-site-nav-link {
   .current-menu-item & {
-    color: $color-tint-blue-primary;
-    background: linear-gradient(
-      180deg,
-      transparent 20%,
-      rgba($color-tint-blue-primary, 0.15) 0
-    );
+    background: linear-gradient(180deg, transparent 20%, rgba($color-tint-blue-primary, 0.15) 0);
+    background-position: bottom;
     background-size: 100% 44%;
     background-repeat: no-repeat;
-    background-position: bottom;
+    color: $color-tint-blue-primary;
   }
 }
 
@@ -195,51 +188,51 @@
   // Wordpress automated class
   .tco-menu-site-nav-link {
     &::after {
-      content: '';
+      content: "";
+      display: inline-block;
+      vertical-align: middle;
       width: 14px;
       height: 24px;
+      margin-left: $spacing-inline-8;
       background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 24 24' id='icon-chevron-down' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M.293 5.293a1 1 0 011.32-.083l.094.083L12 15.585 22.293 5.293a1 1 0 011.32-.083l.094.083a1 1 0 01.083 1.32l-.083.094-11 11a1 1 0 01-1.32.083l-.094-.083-11-11a1 1 0 010-1.414z' /%3E%3C/svg%3E");
       background-position: center;
-      background-repeat: no-repeat;
       background-size: 12px;
-      vertical-align: middle;
-      display: inline-block;
-      margin-left: $spacing-inline-8;
+      background-repeat: no-repeat;
     }
   }
 }
 
 .tco-menu-site-nav-submenu {
-  @include list-plain();
-  display: none;
-
-  .menu-item-has-children:hover &,
-  .menu-item-has-children:focus & {
-    display: block;
-  }
+  @include list-plain;
 
   @include wider-than($breakpoint-xl) {
     .menu-item-has-children:hover &,
     .menu-item-has-children:focus & {
       // Wordpress automated class
       position: absolute;
-      background-color: $color-background-primary;
-      border-bottom-left-radius: 4px;
-      border-bottom-right-radius: 4px;
-      padding: 0 $spacing-inline-12;
-      min-width: 250px;
-      left: 50%;
-      margin-left: -125px;
       top: 100%; // height of arrow on submenu
-      box-shadow: inset 0px 5px 10px 0px rgba(75, 75, 75, 0.05);
+      left: 50%;
+      min-width: 250px;
+      margin-left: -125px;
+      padding: 0 $spacing-inline-12;
+      border-bottom-right-radius: 4px;
+      border-bottom-left-radius: 4px;
+      background-color: $color-background-primary;
+      box-shadow: inset 0 5px 10px 0 rgba(75, 75, 75, 0.05);
     }
+  }
+  display: none;
+
+  .menu-item-has-children:hover &,
+  .menu-item-has-children:focus & {
+    display: block;
   }
 }
 
 .tco-menu-site-nav-submenu-link {
-  border-bottom: 1px solid $color-foreground-quanternary;
-  padding: $spacing-stack-16 $spacing-stack-8;
   margin: 0;
+  padding: $spacing-stack-16 $spacing-stack-8;
+  border-bottom: 1px solid $color-foreground-quanternary;
 
   .tco-menu-site-nav-submenu-item:last-of-type & {
     border-bottom: 0;

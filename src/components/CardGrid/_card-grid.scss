@@ -23,10 +23,9 @@
   }
 
   &--5-column {
-    grid-template-columns: repeat(2, auto);
-
     @include wider-than($breakpoint-tablet-portrait) {
       grid-template-columns: repeat(5, auto);
     }
+    grid-template-columns: repeat(2, auto);
   }
 }
