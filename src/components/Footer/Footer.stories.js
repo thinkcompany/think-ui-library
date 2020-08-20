@@ -6,6 +6,7 @@ const footer = () => {
         <p>Give us a call at <a class="tco-btn-link tco-btn-link--on-tint" href="tel:+18002969190">800.296.9190</a> or <a class="tco-btn-link tco-btn-link--on-tint" href="#">send us a message.</a></p>
         <p>Visit us in <a class="tco-btn-link tco-btn-link--on-tint" href="#">Philadelphia, Conshohocken, or Denver.</a></p>
         <p>Sign up for our <a class="tco-btn-link tco-btn-link--on-tint" href="#">quarterly email newsletter.</a></p>
+        <p>Read our recent <a class="tco-btn-link tco-btn-link--on-tint" href="#">news and announcements.</a></p>
       </div>
       
       <div class="tco-site-footer-social">  
@@ -58,5 +59,10 @@ const footer = () => {
 export { footer };
 
 export default {
-  title: 'Navigation / Global'
+  title: 'Navigation / Global',
+  parameters: {
+    options: {
+      showPanel: false
+    }
+  }
 };

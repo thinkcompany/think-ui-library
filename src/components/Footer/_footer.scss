@@ -3,18 +3,28 @@
   padding: $spacing-stack-64 $spacing-inline-24;
   background-color: $color-background-tertiary;
   text-align: center;
-
-  p {
-    margin-bottom: 0;
-  }
 }
 
 .tco-site-footer-content {
-  @include spacing-inset-32;
+  @include wider-than($breakpoint-tablet-portrait) {
+    @include spacing-inset-32;
+    padding-top: 0;
+  }
   max-width: 600px;
   margin: 0 auto;
-  padding-top: 0;
+  padding-bottom: $spacing-stack-32;
   text-align: center;
+
+  p {
+    @include wider-than($breakpoint-tablet-portrait) {
+      margin-bottom: 0;
+    }
+    margin-bottom: $spacing-stack-24;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
 }
 
 .tco-site-footer-social {
@@ -22,6 +32,11 @@
     @include spacing-inset-4;
     color: $color-foreground-on-tint;
     text-decoration: none;
+
+    &:hover,
+    &:focus {
+      opacity: 0.8;
+    }
 
     > svg {
       width: 40px;
@@ -44,4 +59,13 @@
   @include type-body-medium($color-foreground-on-tint);
   letter-spacing: 2px;
   text-transform: uppercase;
+
+  > p {
+    margin-bottom: 0;
+  }
+
+  .tco-btn-link {
+    letter-spacing: 2px;
+    text-transform: uppercase;
+  }
 }
