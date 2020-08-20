@@ -55,13 +55,17 @@
   }
 }
 
-.tco-site-footer-copyright,
-.tco-site-footer-copyright .tco-btn-link {
+.tco-site-footer-copyright {
   @include type-body-medium($color-foreground-on-tint);
   letter-spacing: 2px;
   text-transform: uppercase;
 
-  p {
+  > p {
     margin-bottom: 0;
+  }
+
+  .tco-btn-link {
+    letter-spacing: 2px;
+    text-transform: uppercase;
   }
 }
