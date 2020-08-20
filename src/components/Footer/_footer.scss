@@ -23,6 +23,11 @@
     color: $color-foreground-on-tint;
     text-decoration: none;
 
+    &:hover,
+    &:focus {
+      opacity: 0.8;
+    }
+
     > svg {
       width: 40px;
       height: 40px;
@@ -40,7 +45,8 @@
   }
 }
 
-.tco-site-footer-copyright {
+.tco-site-footer-copyright,
+.tco-site-footer-copyright .tco-btn-link {
   @include type-body-medium($color-foreground-on-tint);
   letter-spacing: 2px;
   text-transform: uppercase;
