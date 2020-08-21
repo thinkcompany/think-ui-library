@@ -7,8 +7,9 @@
 
   // Size variants
   .tco-container {
+    width: 90%;
     margin: 0 auto;
-    padding: $spacing-stack-64 ($spacing-inline-64 * 2);
+    padding: $spacing-stack-64 0;
 
     &--default {
       max-width: $container-large;
