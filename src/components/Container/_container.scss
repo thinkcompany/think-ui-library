@@ -1,0 +1,48 @@
+// ========================================================
+// = BASE CONTAINER
+// ========================================================
+.tco-container {
+  @include type-base-style;
+  max-width: $container-large;
+  padding: $spacing-stack-64 ($spacing-inline-64 * 2);
+  background-color: $color-background-primary;
+
+  // Size variants
+  &--mid {
+    max-width: $container-medium;
+  }
+
+  &--narrow {
+    max-width: $container-xsmall;
+  }
+
+  // Color variants
+  &--tan {
+    background-color: $color-background-secondary;
+  }
+
+  &--glass {
+    background-color: $color-tint-blue-tertiary;
+  }
+
+  &--blue {
+    @include type-base-style($color-background-primary);
+    background-color: $color-tint-blue-primary;
+
+    a {
+      @include type-link;
+      @include type-highlight($color-background-primary, $color-background-primary);
+    }
+  }
+
+  &--navy {
+    @include type-base-style($color-background-primary);
+    background-color: $color-background-tertiary;
+
+    a {
+      @include type-link;
+      @include type-highlight($color-background-primary, $color-background-primary);
+    }
+  }
+}
+
