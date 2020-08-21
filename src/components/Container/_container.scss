@@ -1,19 +1,26 @@
 // ========================================================
 // = BASE CONTAINER
 // ========================================================
-.tco-container {
+.tco-container-wrapper {
   @include type-base-style;
-  max-width: $container-large;
-  padding: $spacing-stack-64 ($spacing-inline-64 * 2);
   background-color: $color-background-primary;
 
   // Size variants
-  &--mid {
-    max-width: $container-medium;
-  }
+  .tco-container {
+    margin: 0 auto;
+    padding: $spacing-stack-64 ($spacing-inline-64 * 2);
 
-  &--narrow {
-    max-width: $container-xsmall;
+    &--default {
+      max-width: $container-large;
+    }
+
+    &--mid {
+      max-width: $container-medium;
+    }
+
+    &--narrow {
+      max-width: $container-xsmall;
+    }
   }
 
   // Color variants
