@@ -1,0 +1,10 @@
+.tco-content-item {
+  @include spacing-inset-32;
+  display: flex;
+  flex-flow: row wrap;
+
+  &-image {
+    width: 100%;
+    height: auto;
+  }
+}
