@@ -151,6 +151,7 @@
 .tco-menu-site-nav-submenu-link {
   @include type-display-small($color-foreground-primary);
   @include spacing-inset-24;
+  @include type-not-link;
 
   @include wider-than($breakpoint-xl) {
     margin: 40px $spacing-inline-12 $spacing-stack-32;
