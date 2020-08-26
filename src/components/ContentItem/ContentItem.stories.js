@@ -57,7 +57,7 @@ export const Default = () => {
 };
 export const Featured = () => {
   return `
-  <article class="tco-content-item tco-content-item--featured">
+  <article class="tco-content-item tco-content-item--featured tco-content-item--media-left">
   <div class="tco-content-column tco-content-column-media">
     <div class="tco-content-item-image">
       <img alt="Card image" src="${imageSrc}" />
