@@ -1,37 +1,13 @@
 .tco-content-item {
   @include spacing-inset-24;
   @include wider-than($breakpoint-tablet-portrait) {
-    grid-template-areas: "media body" "media body";
+    grid-template-areas: "body media" "body media";
   }
   display: grid;
   grid-template-areas: "media" "body";
   align-items: center;
   justify-content: space-between;
   background: $color-tint-blue-tertiary;
-
-  .tco-content-column {
-    @include wider-than($breakpoint-tablet-portrait) {
-      margin-top: 0;
-      margin-right: $spacing-inline-64;
-
-      &:last-child {
-        margin-right: 0;
-      }
-    }
-    margin-top: $spacing-stack-16;
-
-    &:first-child {
-      margin-top: 0;
-    }
-
-    &-media {
-      grid-area: media;
-    }
-
-    &-body {
-      grid-area: body;
-    }
-  }
 
   &-image {
     @include wider-than($breakpoint-tablet-portrait) {
@@ -69,6 +45,30 @@
   }
 }
 
+.tco-content-column {
+  @include wider-than($breakpoint-tablet-portrait) {
+    margin-top: 0;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+  margin-top: $spacing-stack-16;
+
+  &:first-child {
+    margin-top: 0;
+  }
+
+  &-media {
+    grid-area: media;
+    margin-left: $spacing-inline-64;
+  }
+
+  &-body {
+    grid-area: body;
+  }
+}
+
 .tco-content-category {
   @include wider-than($breakpoint-tablet-portrait) {
     width: auto;
@@ -100,7 +100,7 @@
   @include type-display-small;
 }
 
-// Dark color
+// Modifiers ==============
 .tco-content-item--featured {
   background: $color-background-tertiary;
 
@@ -119,4 +119,7 @@
   .tco-link {
     @include type-link($color-foreground-on-tint, $color-foreground-on-tint);
   }
+}
+
+.tco-content-item--media-left {
 }
