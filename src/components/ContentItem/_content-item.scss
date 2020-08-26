@@ -41,7 +41,11 @@
   }
 
   &-meta {
+    @include wider-than($breakpoint-phone-portrait) {
+      flex-wrap: nowrap;
+    }
     display: inline-flex;
+    flex-wrap: wrap;
     align-items: center;
     justify-content: space-between;
 
@@ -56,11 +60,33 @@
   }
 }
 
+.tco-content-category {
+  @include wider-than($breakpoint-phone-portrait) {
+    width: auto;
+    margin-right: $spacing-inline-12;
+    margin-bottom: 0;
+  }
+  display: block;
+  width: 100%;
+}
+
 // These should be their own components
 
 .tco-tag {
   @include spacing-squish-4-8;
-  display: inline-block;
   border-radius: $border-radius-large;
   background: $color-foreground-quanternary;
+}
+
+.tco-heading {
+  @include type-display-medium;
+  margin-top: $spacing-stack-16;
+}
+
+.tco-content-hosts {
+  margin-top: $spacing-stack-16;
+}
+
+.tco-content-authors {
+  @include type-display-small;
 }

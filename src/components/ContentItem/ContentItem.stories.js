@@ -26,7 +26,7 @@ const contentItem = () => {
     <div class="tco-content-column">
       <header class="tco-content-item-header">
         <div class="tco-content-item-meta">
-          <span class="tco-tag"> ${category}</span>
+          <p class="tco-content-category"><span class="tco-tag">${category}</span></p>
           <div class="tco-content-item-date">
             <span>June 2, 2020</span> &bull; <span>Malvern, PA</span>
           </div>
@@ -44,9 +44,9 @@ const contentItem = () => {
               </div>`
             : ''
         }
-        <div class="tco-content-item-authors">
-          <p>Hosted by</p>
-          <p>${displayAuthors()}</p>
+        <div class="tco-content-byline">
+          <p class="tco-content-hosts">Hosted by</p>
+          <p class="tco-content-authors">${displayAuthors()}</p>
         </div>
       </header>
       <footer class="tco-content-item-footer">
