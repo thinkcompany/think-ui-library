@@ -1,4 +1,4 @@
-import { text } from '@storybook/addon-knobs';
+import { text, boolean } from '@storybook/addon-knobs';
 
 const title = text('Title', 'Become a Digital Disruptor in a Changing World');
 const category = text('Category', 'Workshop');
@@ -12,12 +12,16 @@ const authors = [
   ' Benicio Monserrate Rafael del Toro Sánchez',
   ' Julia Scarlett Elizabeth Louis-Dreyfus'
 ];
+
+const mediaLeft = boolean('Media on Left?', false);
 const displayAuthors = () =>
   authors.map(author => `<strong>${author}</strong>`);
 
 export const Default = () => {
   return `
-  <article class="tco-content-item">
+  <article class="tco-content-item ${
+    mediaLeft ? 'tco-content-item--media-left' : ''
+  }">
   <div class="tco-content-column">
     <div class="tco-content-item-image">
       <img class="tco-card-image" alt="Card image" src="${imageSrc}" />
@@ -57,7 +61,9 @@ export const Default = () => {
 };
 export const Featured = () => {
   return `
-  <article class="tco-content-item tco-content-item--featured tco-content-item--media-left">
+  <article class="tco-content-item tco-content-item--featured ${
+    mediaLeft ? 'tco-content-item--media-left' : ''
+  }">
   <div class="tco-content-column tco-content-column-media">
     <div class="tco-content-item-image">
       <img alt="Card image" src="${imageSrc}" />
