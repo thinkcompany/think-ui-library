@@ -1,6 +1,6 @@
 .tco-content-item {
   @include spacing-inset-24;
-  @include wider-than($breakpoint-phone-portrait) {
+  @include wider-than($breakpoint-tablet-portrait) {
     flex-flow: row nowrap;
   }
   display: flex;
@@ -10,7 +10,7 @@
   background: $color-tint-blue-tertiary;
 
   .tco-content-column {
-    @include wider-than($breakpoint-phone-portrait) {
+    @include wider-than($breakpoint-tablet-portrait) {
       margin-top: 0;
       margin-right: $spacing-inline-64;
 
@@ -26,12 +26,13 @@
   }
 
   &-image {
-    @include wider-than($breakpoint-phone-portrait) {
-      min-width: 200px;
+    @include wider-than($breakpoint-tablet-portrait) {
+      min-width: 245px;
       max-width: 380px;
     }
     overflow: hidden;
     width: 100%;
+    min-width: 100px;
     height: auto;
     border-radius: $border-radius-medium;
   }
@@ -41,7 +42,7 @@
   }
 
   &-meta {
-    @include wider-than($breakpoint-phone-portrait) {
+    @include wider-than($breakpoint-tablet-portrait) {
       flex-wrap: nowrap;
     }
     display: inline-flex;
@@ -61,7 +62,7 @@
 }
 
 .tco-content-category {
-  @include wider-than($breakpoint-phone-portrait) {
+  @include wider-than($breakpoint-tablet-portrait) {
     width: auto;
     margin-right: $spacing-inline-12;
     margin-bottom: 0;

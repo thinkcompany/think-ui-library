@@ -3,7 +3,7 @@ import { text } from '@storybook/addon-knobs';
 const contentItem = () => {
   const title = text('Title', 'Become a Digital Disruptor in a Changing World');
   const category = text('Category', 'Workshop');
-  const imageSrc = text('Image Src', 'https://placekitten.com/800/400');
+  const imageSrc = text('Image Src', 'https://placekitten.com/325/245');
   const excerpt = text(
     'Excerpt',
     'Learn more about best practices for achieving internal alignment and framing conversations for the best possible outcome.'
