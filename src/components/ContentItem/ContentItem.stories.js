@@ -26,7 +26,10 @@ const contentItem = () => {
     <div class="tco-content-column">
       <header class="tco-content-item-header">
         <div class="tco-content-item-meta">
-            ${category}
+          <span class="tco-tag"> ${category}</span>
+          <div class="tco-content-item-date">
+            <span>June 2, 2020</span> &bull; <span>Malvern, PA</span>
+          </div>
         </div>
         <h3 class="tco-heading">
           <a href="#">

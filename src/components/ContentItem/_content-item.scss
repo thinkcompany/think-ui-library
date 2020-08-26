@@ -36,15 +36,31 @@
     border-radius: $border-radius-medium;
   }
 
-  &-body {
-  }
-
   &-footer {
     margin-top: $spacing-stack-16;
+  }
+
+  &-meta {
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-between;
+
+    > span {
+      margin-right: $spacing-inline-12;
+    }
   }
 
   &-excerpt {
     @include type-body-large;
     margin-top: $spacing-stack-16;
   }
+}
+
+// These should be their own components
+
+.tco-tag {
+  @include spacing-squish-4-8;
+  display: inline-block;
+  border-radius: $border-radius-large;
+  background: $color-foreground-quanternary;
 }
