@@ -58,12 +58,12 @@ export const Default = () => {
 export const Featured = () => {
   return `
   <article class="tco-content-item tco-content-item--featured">
-  <div class="tco-content-column">
+  <div class="tco-content-column tco-content-column-media">
     <div class="tco-content-item-image">
-      <img class="tco-card-image" alt="Card image" src="${imageSrc}" />
+      <img alt="Card image" src="${imageSrc}" />
     </div>
   </div>
-    <div class="tco-content-column">
+    <div class="tco-content-column tco-content-column-body">
       <header class="tco-content-item-header">
         <div class="tco-content-item-meta">
           <p class="tco-content-category"><span class="tco-tag">${category}</span></p>
