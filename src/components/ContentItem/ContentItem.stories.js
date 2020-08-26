@@ -68,11 +68,11 @@ export const Featured = () => {
         <div class="tco-content-item-meta">
           <p class="tco-content-category"><span class="tco-tag">${category}</span></p>
           <div class="tco-content-item-date">
-            <span>June 2, 2020</span> &bull; <span>Malvern, PA</span>
+            <span class="tco-type-body">June 2, 2020</span> &bull; <span class="tco-type-body">Malvern, PA</span>
           </div>
         </div>
         <h3 class="tco-heading">
-          <a href="#">
+          <a href="#" class="tco-link">
               ${title}
           </a>
         </h3>
@@ -80,13 +80,13 @@ export const Featured = () => {
           // If excerpt exists, display it
           excerpt
             ? `<div class="tco-content-item-excerpt">
-                <p>${excerpt}</p>
+                <p class="tco-type-body">${excerpt}</p>
               </div>`
             : ''
         }
         <div class="tco-content-byline">
-          <p class="tco-content-hosts">Hosted by</p>
-          <p class="tco-content-authors">${displayAuthors()}</p>
+          <p class="tco-type-body tco-content-hosts">Hosted by</p>
+          <p class="tco-type-body tco-content-authors">${displayAuthors()}</p>
         </div>
       </header>
       <footer class="tco-content-item-footer">
