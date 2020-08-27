@@ -256,6 +256,21 @@
     "value-list-comma-space-before": "never",
     "value-list-max-empty-lines": 0,
     "value-no-vendor-prefix": true,
-    "scss/at-mixin-argumentless-call-parentheses": "never"
+    "scss/at-mixin-argumentless-call-parentheses": "never",
+    "order/order": [
+      "custom-properties",
+      "dollar-variables",
+      {
+				"type": "at-rule",
+				"name": "mixin",
+				"hasBlock": false
+			},
+      "declarations",
+      {
+				"type": "at-rule",
+				"name": "mixin",
+				"hasBlock": true
+			}
+    ]
     }
 }
