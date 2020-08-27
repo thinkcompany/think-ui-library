@@ -7,7 +7,14 @@
   grid-template-areas: "media" "body";
   align-items: flex-start;
   justify-content: space-between;
-  background: $color-tint-blue-tertiary;
+  padding-top: $spacing-stack-64;
+  padding-bottom: $spacing-stack-64;
+  border-bottom: $border-tertiary;
+
+  &:last-child {
+    padding-bottom: 0;
+    border-bottom: 0;
+  }
 
   &-image {
     @include wider-than($breakpoint-tablet-portrait) {
