@@ -5,7 +5,7 @@
   }
   display: grid;
   grid-template-areas: "media" "body";
-  align-items: center;
+  align-items: flex-start;
   justify-content: space-between;
   background: $color-tint-blue-tertiary;
 
