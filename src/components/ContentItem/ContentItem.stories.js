@@ -3,6 +3,19 @@ import data from './content-item.json';
 
 const { title, authors, category, imageSrc, excerpt } = data[0];
 
+// Should be its own component
+const tag = item => {
+  return item.category
+    ? `<p class="tco-content-category">
+      <span class="tco-tag">    
+        <svg class="icon" width="16" height="16" viewBox="0 0 16 16">
+          <use xlink:href="/img/icons.svg#${item.iconId}"></use>
+        </svg>
+        ${item.category}</span>
+      </p>`
+    : '';
+};
+
 const template = item => {
   const displayAuthors = () =>
     item.authors.map(author => `<strong>${author}</strong>`).join(', ');
@@ -19,11 +32,7 @@ const template = item => {
     <div class="tco-content-column tco-content-column-body">
       <header class="tco-content-item-header">
         <div class="tco-content-item-meta">
-          ${
-            item.category
-              ? `<p class="tco-content-category"><span class="tco-tag">${item.category}</span></p>`
-              : ''
-          }
+          ${tag(item)}
           <div class="tco-content-item-date">
             ${
               item.date ? `<span class="tco-type-body">${item.date}</span>` : ''
