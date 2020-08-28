@@ -1,4 +1,4 @@
-import { array, text, boolean } from '@storybook/addon-knobs';
+import { array, object, text, boolean } from '@storybook/addon-knobs';
 import data from './content-item.json';
 
 // Should be its own component
@@ -16,6 +16,7 @@ const tag = (item, groupId) => {
 
 const template = (item, groupId = 'Item 1') => {
   const {
+    action,
     authors,
     date,
     excerpt,
@@ -27,6 +28,7 @@ const template = (item, groupId = 'Item 1') => {
   } = item;
 
   // Bind knobs to stories
+  const actionKnob = object('Action', action, groupId);
   const authorsKnob = array('Authors', authors, ', ', groupId);
   const dateKnob = text('Date', date, groupId);
   const excerptKnob = text('Excerpt', excerpt, groupId);
@@ -79,7 +81,11 @@ const template = (item, groupId = 'Item 1') => {
         </div>
       </header>
       <footer class="tco-content-item-footer">
-        <button class="tco-btn tco-btn--primary">Read more</button>
+      ${
+        actionKnob
+          ? `<button class="tco-btn tco-btn--primary">${actionKnob.text}</button>`
+          : ''
+      }
       </footer>
     </div>
   </article>`;
