@@ -60,7 +60,7 @@ const template = (item, groupId = 'Item 1') => {
             }
           </div>
         </div>
-        <h3 class="tco-heading">
+        <h3 class="tco-heading tco-type-display--medium">
           <a href="#" class="tco-link">
               ${titleKnob}
           </a>
@@ -69,13 +69,13 @@ const template = (item, groupId = 'Item 1') => {
           // If excerpt exists, display it
           excerptKnob
             ? `<div class="tco-content-item-excerpt">
-                <p class="tco-type-body">${excerptKnob}</p>
+                <p class="tco-type-body tco-type-body--large">${excerptKnob}</p>
               </div>`
             : ''
         }
         <div class="tco-content-byline">
           <p class="tco-type-body tco-content-hosts">Hosted by</p>
-          <p class="tco-type-body tco-content-authors">${authorsKnob.join(
+          <p class="tco-type-body tco-content-authors tco-type-display--small">${authorsKnob.join(
             ', '
           )}</p>
         </div>

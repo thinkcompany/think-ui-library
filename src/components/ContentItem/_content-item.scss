@@ -44,7 +44,6 @@
     }
   }
 
-  // TODO: Split into a text-list component with separator prop
   &-date {
     .tco-type-body {
       &::after {
@@ -61,7 +60,6 @@
   }
 
   &-excerpt {
-    @include type-body-large;
     margin-top: $spacing-stack-16;
   }
 }
@@ -115,7 +113,6 @@
 }
 
 .tco-heading {
-  @include type-display-medium;
   margin-top: $spacing-stack-12;
 }
 
@@ -123,19 +120,9 @@
   margin-top: $spacing-stack-16;
 }
 
-.tco-content-authors {
-  @include type-display-small;
-}
-
 // Modifiers ==============
 .tco-content-item--featured {
   background: $color-background-tertiary;
-
-  .tco-heading {
-    @include type-display-medium;
-    // Changes font type when featured
-    font-family: $font-stack-serif;
-  }
 
   .tco-heading,
   .tco-type-body,
