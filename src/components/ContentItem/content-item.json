@@ -1,0 +1,30 @@
+[
+  {
+    "title": "Become a Digital Disruptor in a Changing World",
+    "category": "Workshop",
+    "location": "Kleinfeltersville, PA",
+    "imageSrc": "https://placekitten.com/325/245",
+    "excerpt": "Learn more about best practices for achieving internal alignment and framing conversations for the best possible outcome.",
+    "featured": true,
+    "authors": [
+      " Kiefer William Frederick Dempsey George Rufus Sutherland",
+      " Benicio Monserrate Rafael del Toro Sánchez",
+      " Julia Scarlett Elizabeth Louis-Dreyfus"
+    ]
+  },
+  {
+    "title": "The Answer to Life, the Universe, and Everything",
+    "category": "Workshop",
+    "location": "Kleinfeltersville, PA",
+    "imageSrc": "https://placekitten.com/425/240",
+    "authors": ["Deep Thought"]
+  },
+  {
+    "title": "Design for Cognitive Bias: Using Mental Shortcuts for Good Instead of Evil",
+    "category": "Webinar",
+    "location": "Kleinfeltersville, PA",
+    "imageSrc": "https://3vwizk2qtr8l3diwrm3r2ba0-wpengine.netdna-ssl.com/wp-content/uploads/2020/04/Landing-Page-Illo-LGM-4-Dave-Thomas.png",
+    "excerpt": "In this webinar recording, learn from real-world examples to identify some particularly nasty biases that frequently lead users to make bad decisions.",
+    "authors": ["Dave Thomas"]
+  }
+]
