@@ -11,8 +11,7 @@
   padding-bottom: $spacing-stack-64;
   border-bottom: $border-tertiary;
 
-  &:last-child {
-    padding-bottom: 0;
+  &:last-of-type {
     border-bottom: 0;
   }
 
@@ -45,6 +44,7 @@
     }
   }
 
+  // TODO: Split into a text-list component with separator prop
   &-date {
     .tco-type-body {
       &::after {
