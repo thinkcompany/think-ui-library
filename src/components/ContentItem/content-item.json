@@ -2,7 +2,7 @@
   {
     "title": "Become a Digital Disruptor in a Changing World",
     "category": "Workshop",
-    "iconId": "workshops",
+    "iconId": "icon-workshops",
     "location": "Kleinfeltersville, PA",
     "date": "September 30, 2020",
     "imageSrc": "https://placekitten.com/325/245",
@@ -17,6 +17,7 @@
   {
     "title": "The Answer to Life, the Universe, and Everything",
     "category": "Workshop",
+    "iconId": "icon-workshops",
     "location": "Kleinfeltersville, PA",
     "date": "September 30, 2020",
     "imageSrc": "https://placekitten.com/425/240",
@@ -25,6 +26,7 @@
   {
     "title": "Design for Cognitive Bias: Using Mental Shortcuts for Good Instead of Evil",
     "category": "Webinar",
+    "iconId": "icon-webinars",
     "location": "Kleinfeltersville, PA",
     "date": "September 30, 2020",
     "imageSrc": "https://3vwizk2qtr8l3diwrm3r2ba0-wpengine.netdna-ssl.com/wp-content/uploads/2020/04/Landing-Page-Illo-LGM-4-Dave-Thomas.png",

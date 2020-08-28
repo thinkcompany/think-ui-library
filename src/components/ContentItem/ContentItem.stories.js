@@ -8,7 +8,7 @@ const tag = item => {
   return item.category
     ? `<p class="tco-content-category">
       <span class="tco-tag">    
-        <svg class="icon" width="16" height="16" viewBox="0 0 16 16">
+        <svg class="icon icon-sm" width="16" height="16" viewBox="0 0 16 16">
           <use xlink:href="/img/icons.svg#${item.iconId}"></use>
         </svg>
         ${item.category}</span>
