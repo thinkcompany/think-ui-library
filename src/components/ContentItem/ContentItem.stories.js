@@ -27,7 +27,7 @@ const template = (item, groupId = 'Item 1') => {
   } = item;
 
   // Bind knobs to stories
-  const authorsKnob = array('Authors', authors, groupId);
+  const authorsKnob = array('Authors', authors, ', ', groupId);
   const dateKnob = text('Date', date, groupId);
   const excerptKnob = text('Excerpt', excerpt, groupId);
   const featuredKnob = boolean('Featured?', featured, groupId);
@@ -35,9 +35,6 @@ const template = (item, groupId = 'Item 1') => {
   const locationKnob = text('Location', location, groupId);
   const mediaLeftKnob = boolean('Media on Left?', mediaLeft, groupId);
   const titleKnob = text('Title', title, groupId);
-
-  const displayAuthors = () =>
-    authorsKnob.map(author => `<strong>${author}</strong>`).join(', ');
 
   return `
   <article class="tco-content-item ${
@@ -76,7 +73,9 @@ const template = (item, groupId = 'Item 1') => {
         }
         <div class="tco-content-byline">
           <p class="tco-type-body tco-content-hosts">Hosted by</p>
-          <p class="tco-type-body tco-content-authors">${displayAuthors()}</p>
+          <p class="tco-type-body tco-content-authors">${authorsKnob.join(
+            ', '
+          )}</p>
         </div>
       </header>
       <footer class="tco-content-item-footer">
