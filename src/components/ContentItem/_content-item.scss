@@ -45,6 +45,21 @@
     }
   }
 
+  &-date {
+    .tco-type-body {
+      &::after {
+        content: " • ";
+        display: inline;
+      }
+
+      &:last-of-type {
+        &::after {
+          content: "";
+        }
+      }
+    }
+  }
+
   &-excerpt {
     @include type-body-large;
     margin-top: $spacing-stack-16;

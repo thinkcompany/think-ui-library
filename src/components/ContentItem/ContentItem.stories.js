@@ -4,6 +4,9 @@ import data from './content-item.json';
 const { title, authors, category, imageSrc, excerpt } = data[0];
 
 const template = item => {
+  const displayAuthors = () =>
+    item.authors.map(author => `<strong>${author}</strong>`).join(', ');
+
   return `
   <article class="tco-content-item ${
     item.mediaLeft ? 'tco-content-item--media-left' : ''
@@ -16,11 +19,20 @@ const template = item => {
     <div class="tco-content-column tco-content-column-body">
       <header class="tco-content-item-header">
         <div class="tco-content-item-meta">
-          <p class="tco-content-category"><span class="tco-tag">${
+          ${
             item.category
-          }</span></p>
+              ? `<p class="tco-content-category"><span class="tco-tag">${item.category}</span></p>`
+              : ''
+          }
           <div class="tco-content-item-date">
-            <span class="tco-type-body">June 2, 2020</span> &bull; <span class="tco-type-body">Malvern, PA</span>
+            ${
+              item.date ? `<span class="tco-type-body">${item.date}</span>` : ''
+            }
+            ${
+              item.location
+                ? `<span class="tco-type-body">${item.location}</span>`
+                : ''
+            }
           </div>
         </div>
         <h3 class="tco-heading">
@@ -38,7 +50,7 @@ const template = item => {
         }
         <div class="tco-content-byline">
           <p class="tco-type-body tco-content-hosts">Hosted by</p>
-          <p class="tco-type-body tco-content-authors">${item.authors}</p>
+          <p class="tco-type-body tco-content-authors">${displayAuthors()}</p>
         </div>
       </header>
       <footer class="tco-content-item-footer">
@@ -54,11 +66,6 @@ export const Default = () => {
   const excerptKnob = text('Excerpt', excerpt);
   const authorKnob = array('Authors', authors);
   const mediaLeft = boolean('Media on Left?', false);
-  const displayAuthors = () => {
-    const list = authorKnob.map(author => `<strong>${author}</strong>`);
-
-    return list.join(', ');
-  };
 
   return template({
     title: text('Title', title),
@@ -66,7 +73,7 @@ export const Default = () => {
     imageSrc: imageSrcKnob,
     excerpt: excerptKnob,
     mediaLeft: mediaLeft,
-    authors: displayAuthors()
+    authors: authorKnob
   });
 };
 
@@ -76,11 +83,6 @@ export const Featured = () => {
   const excerptKnob = text('Excerpt', excerpt);
   const authorKnob = array('Authors', authors);
   const mediaLeft = boolean('Media on Left?', false);
-  const displayAuthors = () => {
-    const list = authorKnob.map(author => `<strong>${author}</strong>`);
-
-    return list.join(', ');
-  };
 
   return template({
     title: text('Title', title),
@@ -89,24 +91,17 @@ export const Featured = () => {
     excerpt: excerptKnob,
     mediaLeft: mediaLeft,
     featured: true,
-    authors: displayAuthors()
+    authors: authorKnob
   });
 };
 
 export const List = () => {
-  const output = data.map(item => {
-    const displayAuthors = () =>
-      item.authors.map(author => `<strong>${author}</strong>`).join('');
-
-    return template({
-      title: item.title,
-      category: item.category,
-      imageSrc: item.imageSrc,
-      excerpt: item.excerpt,
-      mediaLeft: false,
-      authors: displayAuthors()
-    });
-  });
+  const output = data.map(item =>
+    template({
+      ...item,
+      mediaLeft: false
+    })
+  );
 
   return output.join('');
 };
