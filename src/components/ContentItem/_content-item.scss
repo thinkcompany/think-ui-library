@@ -2,9 +2,11 @@
   @include spacing-inset-24;
   @include wider-than($breakpoint-tablet-portrait) {
     grid-template-areas: "body media" "body media";
+    grid-template-columns: 1fr 1fr;
   }
   display: grid;
   grid-template-areas: "media" "body";
+  grid-template-columns: 1fr;
   align-items: flex-start;
   justify-content: space-between;
   padding-top: $spacing-stack-64;
@@ -13,6 +15,10 @@
 
   &:last-of-type {
     border-bottom: 0;
+  }
+
+  .tco-type-display {
+    margin-top: $spacing-stack-12;
   }
 
   &-image {
@@ -31,9 +37,6 @@
   }
 
   &-meta {
-    @include wider-than($breakpoint-tablet-portrait) {
-      flex-wrap: nowrap;
-    }
     display: inline-flex;
     flex-wrap: wrap;
     align-items: center;
@@ -104,18 +107,6 @@
   width: 100%;
 }
 
-// These should be their own components
-
-.tco-tag {
-  @include spacing-squish-4-8;
-  border-radius: $border-radius-large;
-  background: $color-foreground-quanternary;
-}
-
-.tco-heading {
-  margin-top: $spacing-stack-12;
-}
-
 .tco-content-hosts {
   margin-top: $spacing-stack-16;
 }
@@ -144,4 +135,12 @@
       margin-left: 0;
     }
   }
+}
+
+// This should probably be its own component
+
+.tco-tag {
+  @include spacing-squish-4-8;
+  border-radius: $border-radius-large;
+  background: $color-foreground-quanternary;
 }

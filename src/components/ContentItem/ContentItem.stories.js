@@ -60,7 +60,7 @@ const template = (item, groupId = 'Item 1') => {
             }
           </div>
         </div>
-        <h3 class="tco-heading tco-type-display--medium">
+        <h3 class="tco-type-display tco-type-display--medium">
           <a href="#" class="tco-link">
               ${titleKnob}
           </a>
