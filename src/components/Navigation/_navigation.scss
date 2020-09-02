@@ -40,7 +40,7 @@
   height: 42px;
   margin: $spacing-stack-12 0;
   // Background image should come from theme
-  background: url('/img/think-company-logo-horizontal-blue.svg') no-repeat
+  background: url("/img/think-company-logo-horizontal-blue.svg") no-repeat
     center center;
 }
 
@@ -177,11 +177,7 @@
 
 .tco-menu-site-nav-link {
   .current-menu-item & {
-    background: linear-gradient(
-      180deg,
-      transparent 20%,
-      rgba($color-tint-blue-primary, 0.15) 0
-    );
+    background: linear-gradient(180deg, transparent 20%, rgba($color-tint-blue-primary, 0.15) 0);
     background-position: bottom;
     background-size: 100% 44%;
     background-repeat: no-repeat;
@@ -193,7 +189,7 @@
   // Wordpress automated class
   .tco-menu-site-nav-link {
     &::after {
-      content: '';
+      content: "";
       display: inline-block;
       vertical-align: middle;
       width: 14px;

@@ -1,0 +1,37 @@
+.tco-byline {
+  display: flex;
+  align-items: center;
+}
+
+.tco-byline-name {
+  @include type-display-small(inherit);
+  @include type-style-bold;
+  margin-bottom: 0;
+
+  @include wider-than($breakpoint-phone-landscape) {
+    margin-bottom: $spacing-stack-4;
+  }
+}
+
+.tco-byline-description {
+  @include type-body-medium(inherit);
+}
+
+.tco-byline-image {
+  flex: 0 0 64px;
+  overflow: hidden;
+  width: 64px;
+  margin-right: $spacing-inline-12;
+  border-radius: 50%;
+}
+
+.tco-byline-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: $spacing-inline-12;
+
+  @include wider-than($breakpoint-phone-landscape) {
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: $spacing-inline-24;
+  }
+}
