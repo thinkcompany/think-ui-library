@@ -20,7 +20,7 @@
 
     &::before {
       @include type-display-extra-large;
-      content: "\201c";
+      content: '\201c';
       position: relative;
       top: 16px;
       display: block;

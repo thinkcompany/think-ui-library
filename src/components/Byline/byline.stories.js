@@ -74,7 +74,6 @@ export const multipleAuthors = () => {
   const bylineName = text('Author Name', 'FirstName LastName');
   const bylineDesc = text('Byline Description', 'July 8, 2020');
   const numberAuthors = number('Number of Authors', 5, { min: 1, max: 5 });
-  
 
   const authorMarkup = () => {
     let authors = '';
