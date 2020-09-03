@@ -24,6 +24,17 @@
 /* ----------------------------------------------*\
     Type mixins
 \*---------------------------------------------- */
+@mixin type-display-extra-large($font-color: $color-foreground-primary) {
+  @include type-base-style($font-color, 800);
+  @include wider-than($breakpoint-tablet-portrait) {
+    font-size: 90px;
+    line-height: 1.2;
+  }
+  font-family: $font-stack-serif;
+  font-size: 70px;
+  line-height: 1.17;
+}
+
 @mixin type-display-large($font-color: $color-foreground-primary) {
   @include type-base-style($font-color, $font-weight-600);
 
@@ -170,4 +181,5 @@
   color: inherit;
   font-weight: inherit;
   text-decoration: none;
+  background: none;
 }
