@@ -3,10 +3,9 @@ import { select, text } from '@storybook/addon-knobs';
 const backgrounds = ['white', 'tan', 'glass', 'blue', 'navy'];
 const directions = ['default', 'left', 'right'];
 
-
 export const withKnobs = () => {
   const background = select('Background', backgrounds, 'white');
-  const direction = select('Text Position', directions, 'default')
+  const direction = select('Text Position', directions, 'default');
   const eyebrow = text('Eyebrow', 'Eyebrow');
   const heading = text('Heading', 'Page Title');
   const lede = text(
@@ -39,10 +38,13 @@ export const homepage = () => {
   const heading = text('Heading', 'Welcome to Think Company');
   const lede = text(
     'Lede',
-    'We\'re a team of business-minded designers, developers, and thinkers who help you create great products and services for your customers and employees.'
+    "We're a team of business-minded designers, developers, and thinkers who help you create great products and services for your customers and employees."
   );
-  const image = text('Image', 'https://3vwizk2qtr8l3diwrm3r2ba0-wpengine.netdna-ssl.com/wp-content/themes/tbiv3/img/home/homepage-hero.svg');
-  const linkText = text('Link Text', 'Let\'s Think Together');
+  const image = text(
+    'Image',
+    'https://3vwizk2qtr8l3diwrm3r2ba0-wpengine.netdna-ssl.com/wp-content/themes/tbiv3/img/home/homepage-hero.svg'
+  );
+  const linkText = text('Link Text', "Let's Think Together");
 
   return `
   <div class="tco-container-wrapper tco-container-wrapper--${background}" style="margin: -20px;">
@@ -65,7 +67,6 @@ export const homepage = () => {
   </div>
   </div>`;
 };
-
 
 export const withBreadcrumb = () => {
   const background = select('Background', backgrounds, 'white');
