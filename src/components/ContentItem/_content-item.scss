@@ -1,0 +1,146 @@
+.tco-content-item {
+  @include spacing-inset-24;
+  @include wider-than($breakpoint-tablet-portrait) {
+    grid-template-areas: "body media" "body media";
+    grid-template-columns: 1fr 1fr;
+  }
+  display: grid;
+  grid-template-areas: "media" "body";
+  grid-template-columns: 1fr;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding-top: $spacing-stack-64;
+  padding-bottom: $spacing-stack-64;
+  border-bottom: $border-tertiary;
+
+  &:last-of-type {
+    border-bottom: 0;
+  }
+
+  .tco-type-display {
+    margin-top: $spacing-stack-12;
+  }
+
+  &-image {
+    @include wider-than($breakpoint-tablet-portrait) {
+      min-width: 245px;
+      max-width: 380px;
+    }
+    overflow: hidden;
+    min-width: 100px;
+    height: auto;
+    border-radius: $border-radius-medium;
+  }
+
+  &-footer {
+    margin-top: $spacing-stack-16;
+  }
+
+  &-meta {
+    display: inline-flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+
+    > .tco-type-body {
+      margin-right: $spacing-inline-12;
+    }
+  }
+
+  &-date {
+    .tco-type-body {
+      &::after {
+        content: " • ";
+        display: inline;
+      }
+
+      &:last-of-type {
+        &::after {
+          content: "";
+        }
+      }
+    }
+  }
+
+  &-excerpt {
+    margin-top: $spacing-stack-16;
+  }
+}
+
+.tco-content-column {
+  @include wider-than($breakpoint-tablet-portrait) {
+    margin-top: 0;
+
+    &:last-child {
+      margin-left: 0;
+    }
+
+    &-media {
+      margin-left: $spacing-inline-64;
+    }
+  }
+  margin-top: $spacing-stack-16;
+
+  &:first-child {
+    margin-top: 0;
+  }
+
+  &-media {
+    display: flex;
+    grid-area: media;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &-body {
+    grid-area: body;
+  }
+}
+
+.tco-content-category {
+  @include wider-than($breakpoint-tablet-portrait) {
+    width: auto;
+    margin-right: $spacing-inline-12;
+    margin-bottom: 0;
+  }
+  display: block;
+  width: 100%;
+}
+
+.tco-content-hosts {
+  margin-top: $spacing-stack-16;
+}
+
+// Modifiers ==============
+.tco-content-item--featured {
+  background: $color-background-tertiary;
+
+  .tco-heading,
+  .tco-type-body,
+  .tco-content-item-date {
+    color: $color-foreground-on-tint;
+  }
+
+  .tco-link {
+    @include type-link($color-foreground-on-tint, $color-foreground-on-tint);
+  }
+}
+
+.tco-content-item--media-left {
+  @include wider-than($breakpoint-tablet-portrait) {
+    grid-template-areas: "media body";
+
+    .tco-content-column-media {
+      margin-right: $spacing-inline-64;
+      margin-left: 0;
+    }
+  }
+}
+
+// This should probably be its own component
+
+.tco-tag {
+  @include spacing-squish-4-8;
+  border-radius: $border-radius-large;
+  background: $color-foreground-quanternary;
+}
