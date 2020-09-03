@@ -16,6 +16,7 @@ export const all = () => {
 
   return `
 <div class="tco-container-wrapper  ${containerColor} ">
+<div class="tco-container">
   <div class="tco-byline">
     ${
       showImage
@@ -31,6 +32,8 @@ export const all = () => {
       <p class="tco-byline-description">${bylineDesc}</p>
     </div>
   </div>
+  </div>
+  </div>
 `;
 };
 
@@ -41,6 +44,7 @@ export const withImage = () => {
 
   return `
   <div class="tco-container-wrapper  ${containerColor}">
+  <div class="tco-container">
   <div class="tco-byline">
       <div class="tco-byline-image">
         <img src="https://3vwizk2qtr8l3diwrm3r2ba0-wpengine.netdna-ssl.com/wp-content/uploads/2020/03/AbbyDePrimo_Web.jpg" alt="${bylineName}">
@@ -49,6 +53,7 @@ export const withImage = () => {
         <p class="tco-byline-name">${bylineName}</p>
         <p class="tco-byline-description">${bylineDesc}</p>
       </div>
+    </div>
     </div>
   `;
 };
@@ -60,11 +65,13 @@ export const withLink = () => {
 
   return `
 <div class="tco-container-wrapper  ${containerColor}">
+<div class="tco-container">
 <div class="tco-byline">
     <div class="tco-byline-text">
       <p class="tco-byline-name"> <a href="#">${bylineName}</a></p>
       <p class="tco-byline-description">${bylineDesc}</p>
     </div>
+</div>
 </div>
 `;
 };
@@ -89,6 +96,7 @@ export const multipleAuthors = () => {
 
   return `
 <div class="tco-container-wrapper  ${containerColor}">
+<div class="tco-container">
 <div class="tco-byline">
     <div class="tco-byline-text">
       <p class="tco-byline-name">
@@ -96,6 +104,7 @@ export const multipleAuthors = () => {
       </p>
       <p class="tco-byline-description">${bylineDesc}</p>
     </div>
+</div>
 </div>
 `;
 };
@@ -134,8 +143,10 @@ export const multipleBylines = () => {
 
   return `
 <div class="tco-container-wrapper  ${containerColor}">
+<div class="tco-container">
 <div class="tco-byline-grid">
 ${authorMarkup()}
+</div>
 </div>
 </div>
 `;
