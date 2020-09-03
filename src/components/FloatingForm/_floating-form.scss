@@ -1,0 +1,200 @@
+$color-box-shadow: rgba(0, 0, 0, 0.45);
+$floating-form-gutter: 20px;
+
+// ========================================================
+// = FLOATING BUTTON
+// ========================================================
+.tco-floating-btn {
+  display: inline-flex;
+  align-items: center;
+  width: auto;
+  padding: 14px;
+  border: 0;
+  border-radius: 33px;
+  background: $color-tint-blue-primary;
+  transition: 0.2s ease-in-out;
+  animation: 5s infinite pulse;
+
+  @include wider-than($breakpoint-tablet-portrait) {
+    padding: $floating-form-gutter;
+    border-radius: 40px;
+  }
+
+  &-icon-img {
+    width: 28px;
+    height: auto;
+
+    @include wider-than($breakpoint-tablet-portrait) {
+      width: 33px;
+    }
+  }
+
+  &-icon--close {
+    display: none; // Hidden by default
+  }
+
+  &-label {
+    @include type-display-small($color-foreground-on-tint);
+    display: inline-block;
+    margin: 0 $spacing-inline-12;
+    text-transform: none;
+
+    &:empty {
+      display: none;
+    }
+  }
+
+  &--close {
+    .tco-floating-btn-icon {
+      &--chat {
+        display: none;
+      }
+
+      &--close {
+        display: block;
+      }
+    }
+
+    .tco-floating-btn-label {
+      display: none;
+    }
+  }
+}
+
+// ========================================================
+// = FLOATING MODAL
+// ========================================================
+.tco-floating-modal {
+  position: relative;
+  z-index: $z-index-modal;
+  width: auto;
+  height: auto;
+}
+
+.tco-floating-modal-body {
+  @include spacing-inset-24;
+  position: absolute;
+  right: $floating-form-gutter;
+  bottom: 100px;
+  overflow-x: hidden;
+  overflow-y: auto;
+  max-width: 90vw;
+  max-height: 75vh;
+  border-radius: $border-radius-small;
+  background-color: $color-tint-blue-primary;
+  color: $color-foreground-on-tint;
+  box-shadow: 0 2px 12px $color-box-shadow;
+  text-align: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: visibility 0s linear 0.25s, opacity 0.25s 0s, transform 0.25s;
+
+  @media only screen and (orientation: landscape) {
+    @include narrower-than($breakpoint-tablet-portrait) {
+      right: auto;
+      bottom: $floating-form-gutter;
+      left: $floating-form-gutter;
+      max-width: 78vw;
+      max-height: 40vw;
+    }
+  }
+
+  @include wider-than($breakpoint-tablet-portrait) {
+    @include spacing-inset-32;
+    bottom: 116px;
+    max-width: 400px;
+  }
+
+  .tco-type-display--small {
+    color: $color-foreground-on-tint;
+
+    + .tco-type-body {
+      margin-bottom: $spacing-stack-24;
+    }
+  }
+
+  .tco-type-body,
+  .tco-type-body--small,
+  .tco-btn-link {
+    color: $color-foreground-on-tint;
+  }
+
+  .tco-type-body--small {
+    > a {
+      @include type-link($color-foreground-on-tint, $color-background-primary);
+    }
+  }
+
+  .tco-btn-link {
+    margin-bottom: $spacing-stack-24;
+  }
+}
+
+.tco-floating-modal--show {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
+  .tco-floating-modal-body {
+    opacity: 1;
+    visibility: visible;
+    transition: visibility 0s linear 0s, opacity 0.25s 0s, transform 0.25s;
+    transform: scale(1);
+  }
+
+  .tco-floating-btn {
+    position: fixed;
+    right: $floating-form-gutter;
+    bottom: $floating-form-gutter;
+  }
+
+  .tco-floating-btn-icon--chat {
+    display: none;
+  }
+
+  .tco-floating-btn-icon--close {
+    display: inline-block;
+  }
+}
+
+// ========================================================
+// = FLOATING FORM
+// ========================================================
+.tco-floating-form {
+  .tco-form-row {
+    margin-bottom: $spacing-stack-24;
+    text-align: left;
+  }
+
+  .tco-form-label {
+    @include type-style-bold;
+    margin-bottom: $spacing-stack-12;
+    letter-spacing: 2.33px;
+    text-transform: uppercase;
+
+    @include wider-than($breakpoint-tablet-portrait) {
+      @include type-body-default($color-foreground-on-tint);
+      @include type-style-bold;
+    }
+  }
+
+  .tco-form-textarea {
+    min-height: 114px;
+  }
+
+  .tco-btn--secondary {
+    margin: $spacing-stack-24 auto;
+  }
+}
+
+@keyframes pulse {
+  50% {
+    box-shadow: 0 2px 10px $color-box-shadow, 0 0 0 0 rgba(90, 150, 255, 0.5);
+  }
+
+  100% {
+    box-shadow: 0 2px 10px $color-box-shadow, 0 0 0 15px rgba(90, 150, 255, 0);
+  }
+}

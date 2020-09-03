@@ -11,7 +11,7 @@
   "description": "Pattern Library for the Think Company Website",
   "main": "index.js",
   "scripts": {
-    "start": "npm run storybook",
+    "start": "npm run storybook -s ./src/assets",
     "test": "echo \"Error: no test specified\" && exit 1",
     "storybook": "start-storybook -p 6006 -s ./src/assets ./src",
     "build-storybook": "build-storybook -s ./src/assets",
