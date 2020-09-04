@@ -38,6 +38,7 @@ $images-per-row-desktop: 4;
 
   &-caption {
     @include spacing-inset-8;
+    @include type-eyebrow;
     display: block;
     margin-top: $spacing-stack-8;
     text-align: center;
