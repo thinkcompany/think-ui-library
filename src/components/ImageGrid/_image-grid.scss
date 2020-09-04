@@ -2,6 +2,22 @@
 $images-per-row: 2;
 $images-per-row-desktop: 4;
 
+// IMPORTANT: Assumes an even-number for items in a full row.
+@mixin internal-grid-border($items-per-row) {
+  border-top: $border-tertiary;
+  border-left: $border-tertiary;
+
+  // Selects only top-most row of $items-per-row
+  &:nth-child(-n + #{$items-per-row}) {
+    border-top-color: transparent;
+  }
+
+  // Selects only the first child on each row of $items-per-row (left-most column)
+  &:nth-child(#{$items-per-row}n + 1):nth-child(odd) {
+    border-left-color: transparent;
+  }
+}
+
 .tco-image-grid {
   display: grid;
   grid-template-columns: repeat($images-per-row, 1fr);
@@ -10,6 +26,10 @@ $images-per-row-desktop: 4;
   margin-top: $spacing-stack-64;
   margin-bottom: $spacing-stack-64;
   grid-template-row: auto;
+
+  @include wider-than($breakpoint-tablet-portrait) {
+    grid-template-columns: repeat($images-per-row-desktop, 1fr);
+  }
 
   &-container {
     @include spacing-inset-8;
@@ -25,17 +45,13 @@ $images-per-row-desktop: 4;
 
   &--border {
     .tco-image-grid-container {
-      border-top: $border-tertiary;
-      border-left: $border-tertiary;
-
-      // Selects only top-most row of 4
-      &:nth-child(-n + #{$images-per-row}) {
-        border-top-color: transparent;
+      // Mobile nth-child selection seems to carry over to desktop
+      @include narrower-than($breakpoint-tablet-portrait) {
+        @include internal-grid-border($images-per-row);
       }
 
-      // Selects only the first child on each row of 4 (left-most column)
-      &:nth-child(#{$images-per-row}n + 1):nth-child(odd) {
-        border-left-color: transparent;
+      @include wider-than($breakpoint-tablet-portrait) {
+        @include internal-grid-border($images-per-row-desktop);
       }
     }
   }
