@@ -1,8 +1,14 @@
+// The math assumes an even number
+$images-per-row: 2;
+$images-per-row-desktop: 4;
+
 .tco-image-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat($images-per-row, 1fr);
   align-items: center;
   justify-content: center;
+  margin-top: $spacing-stack-64;
+  margin-bottom: $spacing-stack-64;
   grid-template-row: auto;
 
   &-container {
@@ -15,5 +21,22 @@
     display: block;
     margin-top: $spacing-stack-8;
     text-align: center;
+  }
+
+  &--border {
+    .tco-image-grid-container {
+      border-top: $border-tertiary;
+      border-left: $border-tertiary;
+
+      // Selects only top-most row of 4
+      &:nth-child(-n + #{$images-per-row}) {
+        border-top-color: transparent;
+      }
+
+      // Selects only the first child on each row of 4 (left-most column)
+      &:nth-child(#{$images-per-row}n + 1):nth-child(odd) {
+        border-left-color: transparent;
+      }
+    }
   }
 }

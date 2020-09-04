@@ -35,6 +35,25 @@ export const Main = () => {
   </div>`;
 };
 
+export const withBorder = () => {
+  const imageItems = () => {
+    const imageCount = number('Image count', 15);
+
+    let output = '';
+
+    for (let index = 0; index < imageCount; index++) {
+      output += imageItem();
+    }
+
+    return output;
+  };
+
+  return `
+  <div class="tco-image-grid tco-image-grid--border">
+    ${imageItems()}
+  </div>`;
+};
+
 export default {
   title: 'Components / Image Grid'
 };
