@@ -25,7 +25,6 @@ $images-per-row-desktop: 4;
   justify-content: center;
   margin-top: $spacing-stack-64;
   margin-bottom: $spacing-stack-64;
-  grid-template-row: auto;
 
   @include wider-than($breakpoint-tablet-portrait) {
     grid-template-columns: repeat($images-per-row-desktop, 1fr);
