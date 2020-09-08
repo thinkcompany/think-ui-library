@@ -40,6 +40,20 @@ export const Mid = () => {
   </div>`;
 };
 
+
+export const Narrow = () => {
+  const containerSize = select('Size', sizes, sizes.Narrow);
+  const containerColor = select('State', colors, colors.Navy);
+
+  return `
+  <div class="tco-container-wrapper ${containerColor}">
+    <div class="tco-container ${containerSize}"> 
+      <p>I'm accessible text!</p>
+      <a href="#">I'm an accessible link!</a>
+    </div>
+  </div>`;
+};
+
 export const Tan = () => {
   const containerSize = select('Size', sizes, sizes.Default);
   const containerColor = select('State', colors, colors.Tan);
@@ -69,19 +83,6 @@ export const Navy = () => {
 export const Blue = () => {
   const containerSize = select('Size', sizes, sizes.Default);
   const containerColor = select('State', colors, colors.Blue);
-
-  return `
-  <div class="tco-container-wrapper ${containerColor}">
-    <div class="tco-container ${containerSize}"> 
-      <p>I'm accessible text!</p>
-      <a href="#">I'm an accessible link!</a>
-    </div>
-  </div>`;
-};
-
-export const Narrow = () => {
-  const containerSize = select('Size', sizes, sizes.Narrow);
-  const containerColor = select('State', colors, colors.Navy);
 
   return `
   <div class="tco-container-wrapper ${containerColor}">

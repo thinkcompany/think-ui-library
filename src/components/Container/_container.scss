@@ -44,6 +44,12 @@
         $color-background-primary
       );
     }
+
+    .tco-btn {
+      // unset "link" style on buttons
+      background-image: none;
+      @include type-style-bold;
+    }
   }
 
   &--navy {
@@ -56,6 +62,12 @@
         $color-background-primary,
         $color-background-primary
       );
+    }
+
+    .tco-btn {
+      // unset link style on buttons
+      background-image: none;
+      @include type-style-bold;
     }
   }
 }
