@@ -1,11 +1,11 @@
 .tco-content-item {
   @include spacing-inset-24;
   @include wider-than($breakpoint-tablet-portrait) {
-    grid-template-areas: "body media" "body media";
+    grid-template-areas: 'body media' 'body media';
     grid-template-columns: 1fr 1fr;
   }
   display: grid;
-  grid-template-areas: "media" "body";
+  grid-template-areas: 'media' 'body';
   grid-template-columns: 1fr;
   align-items: flex-start;
   justify-content: space-between;
@@ -50,13 +50,13 @@
   &-date {
     .tco-type-body {
       &::after {
-        content: " • ";
+        content: ' • ';
         display: inline;
       }
 
       &:last-of-type {
         &::after {
-          content: "";
+          content: '';
         }
       }
     }
@@ -128,7 +128,7 @@
 
 .tco-content-item--media-left {
   @include wider-than($breakpoint-tablet-portrait) {
-    grid-template-areas: "media body";
+    grid-template-areas: 'media body';
 
     .tco-content-column-media {
       margin-right: $spacing-inline-64;

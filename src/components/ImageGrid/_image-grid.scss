@@ -1,0 +1,58 @@
+// The math assumes an even number
+$images-per-row: 2;
+$images-per-row-desktop: 4;
+
+// IMPORTANT: Assumes an even-number for items in a full row.
+@mixin internal-grid-border($items-per-row) {
+  border-top: $border-tertiary;
+  border-left: $border-tertiary;
+
+  // Selects only top-most row of $items-per-row
+  &:nth-child(-n + #{$items-per-row}) {
+    border-top-color: transparent;
+  }
+
+  // Selects only the first child on each row of $items-per-row (left-most column)
+  &:nth-child(#{$items-per-row}n + 1):nth-child(odd) {
+    border-left-color: transparent;
+  }
+}
+
+.tco-image-grid {
+  display: grid;
+  grid-template-columns: repeat($images-per-row, 1fr);
+  align-items: center;
+  justify-content: center;
+  margin-top: $spacing-stack-64;
+  margin-bottom: $spacing-stack-64;
+
+  @include wider-than($breakpoint-tablet-portrait) {
+    grid-template-columns: repeat($images-per-row-desktop, 1fr);
+  }
+
+  &-container {
+    @include spacing-inset-8;
+    margin: 0;
+  }
+
+  &-caption {
+    @include spacing-inset-8;
+    @include type-eyebrow;
+    display: block;
+    margin-top: $spacing-stack-8;
+    text-align: center;
+  }
+
+  &--border {
+    .tco-image-grid-container {
+      // Mobile nth-child selection seems to carry over to desktop
+      @include narrower-than($breakpoint-tablet-portrait) {
+        @include internal-grid-border($images-per-row);
+      }
+
+      @include wider-than($breakpoint-tablet-portrait) {
+        @include internal-grid-border($images-per-row-desktop);
+      }
+    }
+  }
+}
