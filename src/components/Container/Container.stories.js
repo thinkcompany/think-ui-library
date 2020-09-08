@@ -40,7 +40,6 @@ export const Mid = () => {
   </div>`;
 };
 
-
 export const Narrow = () => {
   const containerSize = select('Size', sizes, sizes.Narrow);
   const containerColor = select('State', colors, colors.Navy);
