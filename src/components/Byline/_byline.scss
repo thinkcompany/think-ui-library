@@ -35,3 +35,11 @@
     grid-gap: $spacing-inline-24;
   }
 }
+
+.tco-byline--small {
+  .tco-byline-name {
+    @include type-body-default(inherit);
+    margin-bottom: 0;
+    font-weight: $font-weight-600;
+  }
+}
