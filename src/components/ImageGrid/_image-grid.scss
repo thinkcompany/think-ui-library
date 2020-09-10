@@ -5,7 +5,7 @@ $images-per-row-desktop: 4;
 // IMPORTANT: Assumes an even-number for items in a full row.
 @mixin internal-grid-border($items-per-row) {
   border-top: $border-tertiary;
-  border-left: $border-tertiary;
+  border-right: $border-tertiary;
 
   // Selects only top-most row of $items-per-row
   &:nth-child(-n + #{$items-per-row}) {
@@ -13,8 +13,8 @@ $images-per-row-desktop: 4;
   }
 
   // Selects only the first child on each row of $items-per-row (left-most column)
-  &:nth-child(#{$items-per-row}n + 1):nth-child(odd) {
-    border-left-color: transparent;
+  &:nth-child(#{$items-per-row}n):nth-child(even) {
+    border-right-color: transparent;
   }
 }
 
