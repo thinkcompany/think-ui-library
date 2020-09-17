@@ -5,7 +5,7 @@
 // The base style for all fonts.
 // Accepts an optional font color parameter and font weight (defaults to normal)
 @mixin type-base-style(
-  $font-color: $color-foreground-primary,
+  $font-color: inherit,
   $font-weight: normal
 ) {
   color: $font-color;
@@ -24,7 +24,7 @@
 /* ----------------------------------------------*\
     Type mixins
 \*---------------------------------------------- */
-@mixin type-display-extra-large($font-color: $color-foreground-primary) {
+@mixin type-display-extra-large($font-color: inherit) {
   @include type-base-style($font-color, 800);
   @include wider-than($breakpoint-tablet-portrait) {
     font-size: 90px;
@@ -35,7 +35,7 @@
   line-height: 1.17;
 }
 
-@mixin type-display-large($font-color: $color-foreground-primary) {
+@mixin type-display-large($font-color: inherit) {
   @include type-base-style($font-color, $font-weight-600);
 
   @include wider-than($breakpoint-tablet-portrait) {
@@ -47,7 +47,7 @@
   line-height: 1.17;
 }
 
-@mixin type-display-medium($font-color: $color-foreground-primary) {
+@mixin type-display-medium($font-color: inherit) {
   @include type-base-style($font-color, bold);
 
   @include wider-than($breakpoint-tablet-portrait) {
@@ -58,7 +58,7 @@
   line-height: 1.35;
 }
 
-@mixin type-display-small($font-color: $color-foreground-primary) {
+@mixin type-display-small($font-color: inherit) {
   @include type-base-style($font-color, bold);
 
   @include wider-than($breakpoint-tablet-portrait) {
@@ -69,7 +69,7 @@
   line-height: 1.27;
 }
 
-@mixin type-body-large($font-color: $color-foreground-primary) {
+@mixin type-body-large($font-color: inherit) {
   @include type-base-style($font-color);
 
   @include wider-than($breakpoint-tablet-portrait) {
@@ -80,7 +80,7 @@
   line-height: 1.33;
 }
 
-@mixin type-eyebrow($font-color: $color-foreground-primary) {
+@mixin type-eyebrow($font-color: inherit) {
   @include type-base-style($font-color, bold);
 
   @include wider-than($breakpoint-tablet-portrait) {
@@ -93,7 +93,7 @@
   text-transform: uppercase;
 }
 
-@mixin type-body-medium($font-color: $color-foreground-primary) {
+@mixin type-body-medium($font-color: inherit) {
   @include type-base-style($font-color);
 
   @include wider-than($breakpoint-tablet-portrait) {
@@ -104,7 +104,7 @@
   line-height: 1.25;
 }
 
-@mixin type-body-default($font-color: $color-foreground-primary) {
+@mixin type-body-default($font-color: inherit) {
   @include type-base-style($font-color);
 
   @include wider-than($breakpoint-tablet-portrait) {
@@ -115,7 +115,7 @@
   line-height: 1.25;
 }
 
-@mixin type-body-small($font-color: $color-foreground-primary) {
+@mixin type-body-small($font-color: inherit) {
   @include type-base-style($font-color);
 
   @include wider-than($breakpoint-tablet-portrait) {

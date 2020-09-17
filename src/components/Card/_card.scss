@@ -28,11 +28,12 @@
   }
 
   &-content-heading {
-    @include type-display-medium;
+    @include type-display-medium($color-foreground-primary);
   }
 
   &-content-description {
     margin: $spacing-stack-16 0;
+    color: $color-foreground-primary;
   }
 
   &-content-link {
