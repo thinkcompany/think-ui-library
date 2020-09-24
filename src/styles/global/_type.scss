@@ -25,3 +25,15 @@
 .tco-type-style--bold {
   @include type-style-bold;
 }
+
+.tco-type--align-left {
+  text-align: left;
+}
+
+.tco-type--align-right {
+  text-align: right;
+}
+
+.tco-type--align-center {
+  text-align: center;
+}
