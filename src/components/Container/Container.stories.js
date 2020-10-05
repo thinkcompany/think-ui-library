@@ -122,7 +122,8 @@ export const WithComponent = () => {
   return `
   <div class="tco-container ${containerSize} ${containerColor}">
     ${summaryCardWithGrid()}
-  </div>`;
+  </div>
+  `;
 };
 
 export default {

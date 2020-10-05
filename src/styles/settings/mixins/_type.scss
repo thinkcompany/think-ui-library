@@ -4,10 +4,7 @@
 
 // The base style for all fonts.
 // Accepts an optional font color parameter and font weight (defaults to normal)
-@mixin type-base-style(
-  $font-color: inherit,
-  $font-weight: normal
-) {
+@mixin type-base-style($font-color: inherit, $font-weight: normal) {
   color: $font-color;
   font-weight: $font-weight;
   font-size: $font-size-16;
