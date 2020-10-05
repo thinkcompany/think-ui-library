@@ -14,7 +14,7 @@ const colors = {
   Glass: 'tco-container-wrapper--glass'
 };
 
-const summaryCard = () => {
+const summaryCardWithGrid = () => {
   const heading = 'Full Experience & Service Design';
   const summary =
     'The best experiences are consistent across all channels, so we always consider the entire ecosystem your users interact within—designing for people wherever they click, tap, talk, touch, work, or play.';
@@ -22,16 +22,18 @@ const summaryCard = () => {
     'https://3vwizk2qtr8l3diwrm3r2ba0-wpengine.netdna-ssl.com/wp-content/themes/tbiv3/img/svgs/services-full-experience-service.svg';
 
   return `
-  <div class="tco-card tco-card--summary">
-    <a href="#" class="tco-card-link">
-      <div class="tco-card-image-container">
-        <img class="tco-card-image" alt="An adorable kitten" src="${image}" />
-      </div>
-      <div class="tco-card-content-container">
-        <h3 class="tco-card-content-heading">${heading}</h3>
-        <p class="tco-card-content-description">${summary}</p>
-      </div>
-    </a>
+  <div class="tco-card-grid tco-card-grid--3-column">
+    <div class="tco-card tco-card--summary">
+      <a href="#" class="tco-card-link">
+        <div class="tco-card-image-container">
+          <img class="tco-card-image" alt="An adorable kitten" src="${image}" />
+        </div>
+        <div class="tco-card-content-container">
+          <h3 class="tco-card-content-heading">${heading}</h3>
+          <p class="tco-card-content-description">${summary}</p>
+        </div>
+      </a>
+    </div>
   </div>`;
 };
 
@@ -119,7 +121,7 @@ export const WithComponent = () => {
 
   return `
   <div class="tco-container ${containerSize} ${containerColor}">
-    ${summaryCard()}
+    ${summaryCardWithGrid()}
   </div>`;
 };
 
