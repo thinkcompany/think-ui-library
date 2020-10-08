@@ -89,7 +89,7 @@ $spacing-image: 120px;
     text-align: left;
 
     .tco-text-media-back-link {
-      @include type-link($font-size: $font-size-18);
+      @include type-link($font-size: $font-size-18, $font-weight: $font-weight-600);
       display: inline-block;
       margin-bottom: $spacing-stack-32;
       letter-spacing: 3px;
