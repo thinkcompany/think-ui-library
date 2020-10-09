@@ -82,15 +82,11 @@
     }
   },
   "lint-staged": {
-    "*.{js,jsx,json,scss}": [
-      "--config ./prettier.config.js --ignore-path ./.prettierignore",
-      "git add"
-    ],
     "*.scss": [
       "stylelint --syntax=scss --fix",
       "git add"
     ],
-    "*.{js,jsx}": [
+    "*.js": [
       "eslint --ext .js.,jsx --fix",
       "git add"
     ]
