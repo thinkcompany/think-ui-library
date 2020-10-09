@@ -41,7 +41,7 @@
     grid-gap: $spacing-inline-24;
   }
 
-  @include wider-than($breakpoint-tablet-portrait) { 
+  @include wider-than($breakpoint-tablet-portrait) {
     margin-bottom: 0;
   }
 }

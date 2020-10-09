@@ -18,7 +18,7 @@ export const all = () => {
   return `
 <div class="tco-container-wrapper  ${containerColor} ">
 <div class="tco-container">
-  <div class="tco-byline ${smallType ? 'tco-byline--small' : '' }">
+  <div class="tco-byline ${smallType ? 'tco-byline--small' : ''}">
     ${
       showImage
         ? `
