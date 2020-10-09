@@ -82,8 +82,10 @@
     }
   },
   "lint-staged": {
-    "*.js": "eslint 'src/**/*.js' --cache --fix",
-    "*.scss": "stylelint 'src/**/*.scss' --fix",
-    "*.{js,json,scss,css}": "prettier --config ./prettier.config.js --ignore-path ./.prettierignore \"src/**/*.{js,json,scss,css}\" --write"
+    "*.{js,scss}": [
+      "eslint 'src/**/*.js' --cache --fix",
+      "stylelint 'src/**/*.scss' --fix",
+      "prettier --config ./prettier.config.js --ignore-path ./.prettierignore \"src/**/*.{js,json,scss,css}\" --write"
+    ]
   }
 }
