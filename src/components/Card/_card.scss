@@ -160,7 +160,7 @@
 
 .tco-card--post--small {
   @include wider-than($breakpoint-tablet-portrait) {
-    max-width: 280px;
+    max-width: 280px
   }
 
   .tco-card-content-container {
