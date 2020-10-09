@@ -22,7 +22,7 @@ export const summaryCard = () => {
       </div>
       <div class="tco-card-content-container">
         <h3 class="tco-card-content-heading">${heading}</h3>
-        <span class="tco-card-content-description">${summary}</span>
+        <p class="tco-card-content-description">${summary}</p>
       </div>
     
   </div>`;
@@ -38,7 +38,7 @@ export const callToActionCard = () => {
   return `
   <div class="tco-card tco-card--cta">
     <div class="tco-card-content-container">
-      <span class="tco-card-content-description">${description}</span>
+      <p class="tco-card-content-description">${description}</p>
       
     <button type="button" class="tco-btn tco-btn--secondary tco-btn--large">
     ${cta}
@@ -60,7 +60,7 @@ export const personCard = () => {
     <a href="#" class="tco-card-link">
       <div class="tco-card-content-container">
         <h3 class="tco-card-content-heading">${name}</h3>
-        <span class="tco-card-content-description">${title}</span>
+        <p class="tco-card-content-description">${title}</p>
       </div>
     </a>
   </div>`;
@@ -76,7 +76,7 @@ export const smallCallToAction = () => {
   <div class="tco-card tco-card--cta-small">
     <a href="#" class="tco-card-link">
       <div class="tco-card-content-container">
-        <span class="tco-card-content-description">${cta}</span>
+        <p class="tco-card-content-description">${cta}</p>
       </div>
     </a>
   </div>`;
@@ -117,7 +117,7 @@ export const postCard = () => {
             : ''
         }
         <h3 class="tco-card-content-heading">${heading}</h3>
-        <span class="tco-card-content-description">${description}</span>
+        <p class="tco-card-content-description">${description}</p>
         <div class="tco-card-info">
           <div class="tco-card-info-image-container">
             <img alt="${author} photo" class="tco-card-info-image" src="${authorImage}">
@@ -154,7 +154,7 @@ export const calloutCard = () => {
     </div>
     <div class="tco-card-content-container">
       <h3 class="tco-card-content-heading">${heading}</h3>
-      <span class="tco-card-content-description">${description}</span>
+      <p class="tco-card-content-description">${description}</p>
       <a class="tco-card-content-link" href="#">Tell us about your challenge</a>
     </div>
   </div>`;
