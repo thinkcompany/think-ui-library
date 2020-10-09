@@ -3,8 +3,13 @@
   align-items: center;
 }
 
+.tco-byline-label {
+  @include type-body-small;
+  margin-top: $spacing-stack-12;
+}
+
 .tco-byline-name {
-  @include type-display-small(inherit);
+  @include type-display-small;
   @include type-style-bold;
   margin-bottom: 0;
 
@@ -14,7 +19,7 @@
 }
 
 .tco-byline-description {
-  @include type-body-medium(inherit);
+  @include type-body-medium;
 }
 
 .tco-byline-image {
@@ -29,16 +34,21 @@
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-gap: $spacing-inline-12;
+  margin-bottom: $spacing-stack-24;
 
   @include wider-than($breakpoint-phone-landscape) {
     grid-template-columns: repeat(3, 1fr);
     grid-gap: $spacing-inline-24;
   }
+
+  @include wider-than($breakpoint-tablet-portrait) {
+    margin-bottom: 0;
+  }
 }
 
 .tco-byline--small {
   .tco-byline-name {
-    @include type-body-default(inherit);
+    @include type-body-default;
     margin-bottom: 0;
     font-weight: $font-weight-600;
   }

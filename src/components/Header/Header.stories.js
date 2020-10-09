@@ -81,7 +81,7 @@ export const withBreadcrumb = () => {
   <div class="tco-text-media tco-text-media--with-back-link">
       <div class="tco-text-media-content">
         <a class="tco-text-media-back-link" href="#">
-          <svg class="icon icon--sm" width="16" height="16" viewBox="0 0 16 16">
+          <svg class="tco-icon tco-icon--sm" width="16" height="16" viewBox="0 0 16 16">
             <use xlink:href="/img/icons.svg#icon-chevron-left"></use>
            </svg>
            ${breadcrumb}
