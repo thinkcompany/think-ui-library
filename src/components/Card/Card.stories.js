@@ -16,6 +16,7 @@ export const summaryCard = () => {
   return `
   <div class="tco-card tco-card--summary">
     <a href="#" class="tco-card-link">
+    </a>
       <div class="tco-card-image-container">
         <img class="tco-card-image" alt="Card image" src="${image}" />
       </div>
@@ -23,7 +24,7 @@ export const summaryCard = () => {
         <h3 class="tco-card-content-heading">${heading}</h3>
         <p class="tco-card-content-description">${summary}</p>
       </div>
-    </a>
+    
   </div>`;
 };
 

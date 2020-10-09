@@ -33,6 +33,7 @@
   }
 
   &-content-description {
+    display: block;
     margin: $spacing-stack-16 0;
     color: $color-foreground-primary;
   }
@@ -46,6 +47,7 @@
     grid-template-columns: 64px 1fr;
     grid-gap: $spacing-inline-16;
     align-items: center;
+    margin-top: $spacing-stack-16;
 
     &-author-name,
     &-author-date {
@@ -87,6 +89,10 @@
     height: 100%;
     min-height: 515px;
   }
+
+  .tco-card-content-description {
+    color: $color-foreground-on-tint;
+  }
 }
 
 // ========================================================
@@ -109,6 +115,7 @@
     flex-flow: column wrap;
     justify-content: center;
     min-height: 300px;
+    background: none;
   }
 
   .tco-card-content-description {
@@ -157,11 +164,18 @@
     @include spacing-inset-32;
     text-align: left;
   }
+
+  .tco-card-image-container {
+    img {
+      object-fit: cover;
+      width: 100%;
+      height: 300px;
+    }
+  }
 }
 
 .tco-card--post--small {
   @include wider-than($breakpoint-tablet-portrait) {
-    max-width: 280px;
   }
 
   .tco-card-content-container {
@@ -170,10 +184,6 @@
 
   .tco-card-content-heading {
     @include type-display-small($color-tint-blue-primary);
-  }
-
-  .tco-card-info {
-    display: none; // Hidden at small size
   }
 }
 
@@ -201,6 +211,11 @@
     .tco-card-image-container,
     .tco-card-content-container {
       flex-basis: 50%;
+
+      img {
+        width: 100%;
+        height: 100%;
+      }
     }
   }
 }
