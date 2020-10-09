@@ -164,7 +164,8 @@
   }
 
   .tco-card-content-container {
-@include spacing-inset-24
+
+  @include spacing-inset-24
   }
 
   .tco-card-content-heading {
