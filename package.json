@@ -82,8 +82,8 @@
     }
   },
   "lint-staged": {
-    "*.{js,scss}": [
-      "prettier --config ./prettier.config.js --ignore-path ./.prettierignore \"src/**/*.{js,json,scss,css}\" --write",
+    "src/**/*.{js,json,scss,css}": [
+      "prettier --config ./prettier.config.js --ignore-path ./.prettierignore --write",
       "eslint 'src/**/*.js' --cache --fix",
       "stylelint 'src/**/*.scss' --fix",
       "git add"
