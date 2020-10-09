@@ -16,14 +16,15 @@ export const summaryCard = () => {
   return `
   <div class="tco-card tco-card--summary">
     <a href="#" class="tco-card-link">
+    </a>
       <div class="tco-card-image-container">
         <img class="tco-card-image" alt="Card image" src="${image}" />
       </div>
       <div class="tco-card-content-container">
         <h3 class="tco-card-content-heading">${heading}</h3>
-        <p class="tco-card-content-description">${summary}</p>
+        <span class="tco-card-content-description">${summary}</span>
       </div>
-    </a>
+    
   </div>`;
 };
 
@@ -37,7 +38,7 @@ export const callToActionCard = () => {
   return `
   <div class="tco-card tco-card--cta">
     <div class="tco-card-content-container">
-      <p class="tco-card-content-description">${description}</p>
+      <span class="tco-card-content-description">${description}</span>
       
     <button type="button" class="tco-btn tco-btn--secondary tco-btn--large">
     ${cta}
@@ -59,7 +60,7 @@ export const personCard = () => {
     <a href="#" class="tco-card-link">
       <div class="tco-card-content-container">
         <h3 class="tco-card-content-heading">${name}</h3>
-        <p class="tco-card-content-description">${title}</p>
+        <span class="tco-card-content-description">${title}</span>
       </div>
     </a>
   </div>`;
@@ -75,7 +76,7 @@ export const smallCallToAction = () => {
   <div class="tco-card tco-card--cta-small">
     <a href="#" class="tco-card-link">
       <div class="tco-card-content-container">
-        <p class="tco-card-content-description">${cta}</p>
+        <span class="tco-card-content-description">${cta}</span>
       </div>
     </a>
   </div>`;
@@ -116,7 +117,7 @@ export const postCard = () => {
             : ''
         }
         <h3 class="tco-card-content-heading">${heading}</h3>
-        <p class="tco-card-content-description">${description}</p>
+        <span class="tco-card-content-description">${description}</span>
         <div class="tco-card-info">
           <div class="tco-card-info-image-container">
             <img alt="${author} photo" class="tco-card-info-image" src="${authorImage}">
@@ -153,7 +154,7 @@ export const calloutCard = () => {
     </div>
     <div class="tco-card-content-container">
       <h3 class="tco-card-content-heading">${heading}</h3>
-      <p class="tco-card-content-description">${description}</p>
+      <span class="tco-card-content-description">${description}</span>
       <a class="tco-card-content-link" href="#">Tell us about your challenge</a>
     </div>
   </div>`;
