@@ -64,6 +64,18 @@ const config = [
     id: 'icon-linkedin'
   },
   {
+    name: 'Github',
+    id: 'icon-github'
+  },
+  {
+    name: 'Dribbble',
+    id: 'icon-dribbble'
+  },
+  {
+    name: 'Flickr',
+    id: 'icon-flickr'
+  },
+  {
     name: 'Minus',
     id: 'icon-minus'
   },
