@@ -90,8 +90,9 @@
   text-transform: uppercase;
 }
 
-@mixin type-body-medium($font-color: inherit) {
+@mixin type-body-medium($font-color: inherit, $font-weight: $font-weight-400) {
   @include type-base-style($font-color);
+  font-weight: $font-weight;
 
   @include wider-than($breakpoint-tablet-portrait) {
     font-size: $font-size-18;
