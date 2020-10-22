@@ -28,10 +28,9 @@
 }
 
 .tco-site-footer-social {
-  @include type-not-link;
-
   &-icon {
     @include spacing-inset-4;
+    @include type-not-link;
     color: $color-foreground-on-tint;
     text-decoration: none;
 
