@@ -49,6 +49,10 @@
       // unset "link" style on buttons
       background-image: none;
       @include type-style-bold;
+
+      &--secondary {
+        color: $color-foreground-primary;
+      }
     }
   }
 
@@ -68,6 +72,10 @@
       // unset link style on buttons
       background-image: none;
       @include type-style-bold;
+
+      &--secondary {
+        color: $color-foreground-primary;
+      }
     }
   }
 }
