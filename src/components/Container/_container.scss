@@ -27,15 +27,18 @@
   // Color variants
   &--tan {
     background-color: $color-background-secondary;
+    color: $color-foreground-primary;
   }
 
   &--glass {
     background-color: $color-tint-blue-tertiary;
+    color: $color-background-secondary;
   }
 
   &--blue {
     @include type-base-style($color-background-primary);
     background-color: $color-tint-blue-primary;
+    color: $color-background-primary;
 
     a {
       @include type-link;

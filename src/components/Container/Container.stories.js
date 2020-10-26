@@ -83,6 +83,7 @@ export const Tan = () => {
   return `
   <div class="tco-container-wrapper ${containerColor}">
     <div class="tco-container ${containerSize}"> 
+      <h2 class="tco-type-display--large">I am a heading</h2>
       <p>I'm accessible text!</p>
       <a href="#">I'm an accessible link!</a>
       <a href="#" class="tco-btn tco-btn--primary" target="">I am a primary link button</a>
@@ -98,6 +99,7 @@ export const Navy = () => {
   return `
   <div class="tco-container-wrapper ${containerColor}">
     <div class="tco-container ${containerSize}"> 
+      <h2 class="tco-type-display--large">I am a heading</h2>
       <p>I'm accessible text!</p>
       <a href="#">I'm an accessible link!</a>
       <a href="#" class="tco-btn tco-btn--primary" target="">I am a primary link button</a>
