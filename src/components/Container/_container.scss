@@ -56,6 +56,10 @@
       &--secondary {
         color: $color-foreground-primary;
       }
+
+      &--tertiary {
+        color: $color-foreground-primary;
+      }
     }
   }
 
@@ -77,6 +81,10 @@
       @include type-style-bold;
 
       &--secondary {
+        color: $color-foreground-primary;
+      }
+
+      &--tertiary {
         color: $color-foreground-primary;
       }
     }
