@@ -83,8 +83,11 @@ export const Tan = () => {
   return `
   <div class="tco-container-wrapper ${containerColor}">
     <div class="tco-container ${containerSize}"> 
+      <h2 class="tco-type-display--large">I am a heading</h2>
       <p>I'm accessible text!</p>
       <a href="#">I'm an accessible link!</a>
+      <a href="#" class="tco-btn tco-btn--primary" target="">I am a primary link button</a>
+      <a href="#" class="tco-btn tco-btn--secondary" target="">I am a secondary link button</a>
     </div>
   </div>`;
 };
@@ -96,8 +99,12 @@ export const Navy = () => {
   return `
   <div class="tco-container-wrapper ${containerColor}">
     <div class="tco-container ${containerSize}"> 
+      <h2 class="tco-type-display--large">I am a heading</h2>
       <p>I'm accessible text!</p>
       <a href="#">I'm an accessible link!</a>
+      <a href="#" class="tco-btn tco-btn--primary" target="">I am a primary link button</a>
+      <a href="#" class="tco-btn tco-btn--secondary" target="">I am a secondary link button</a>
+      <a href="#" class="tco-btn tco-btn--tertiary" target="">I am a tertiary link button</a>
     </div>
   </div>`;
 };
@@ -111,6 +118,7 @@ export const Blue = () => {
     <div class="tco-container ${containerSize}"> 
       <p>I'm accessible text!</p>
       <a href="#">I'm an accessible link!</a>
+      <a href="#" class="tco-btn tco-btn--secondary" target="">I am a link button</a>
     </div>
   </div>`;
 };
