@@ -21,7 +21,7 @@ $images-per-row-desktop: 4;
 .tco-image-grid {
   display: grid;
   grid-template-columns: repeat($images-per-row, 1fr);
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
   margin-top: $spacing-stack-64;
   margin-bottom: $spacing-stack-64;
