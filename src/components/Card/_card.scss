@@ -3,7 +3,6 @@
 // ========================================================
 .tco-card {
   @include card-container-shadow;
-  @include spacing-inset-32;
   overflow: hidden;
   max-width: 380px;
 
@@ -14,6 +13,21 @@
       @include type-link;
       @include type-display-medium($color-tint-blue-primary);
       display: inline;
+    }
+  }
+
+  > {
+    .tco-card-link {
+      @include spacing-inset-32;
+      display: block;
+
+      &:hover,
+      &:focus,
+      &:active {
+        .tco-card-content-heading {
+          background-size: 100% 106%;
+        }
+      }
     }
   }
 
@@ -100,7 +114,6 @@
 // ========================================================
 .tco-card--person,
 .tco-card--cta-small {
-  @include spacing-inset-16;
   @include card-scale;
 
   @include wider-than($breakpoint-tablet-portrait) {
@@ -111,11 +124,20 @@
   background-repeat: no-repeat;
 
   > .tco-card-link {
+    @include spacing-inset-16;
     display: flex;
     flex-flow: column wrap;
     justify-content: center;
-    min-height: 300px;
+    min-height: 332px;
     background: none;
+
+    &:hover,
+    &:focus,
+    &:active {
+      .tco-card-content-description {
+        background-size: 100% 106%;
+      }
+    }
   }
 
   .tco-card-content-description {
@@ -125,7 +147,23 @@
 }
 
 .tco-card--person {
+  .tco-card-link {
+    position: relative;
+
+    &::before {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      display: block;
+      width: 100%;
+      height: 50%;
+      background-image: linear-gradient(180deg, transparent, #051824);
+    }
+  }
+
   .tco-card-content-container {
+    z-index: 1;
     margin-top: auto;
     text-align: left;
   }
@@ -158,7 +196,9 @@
 // = POST CARD
 // ========================================================
 .tco-card--post {
-  padding: 0;
+  .tco-card-link {
+    padding: 0;
+  }
 
   .tco-card-content-container {
     @include spacing-inset-32;
