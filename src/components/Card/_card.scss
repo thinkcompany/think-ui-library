@@ -76,7 +76,8 @@
   &-image-container {
     margin: $spacing-stack-32;
 
-    .tco-card--callout & {
+    .tco-card--callout &,
+    .tco-card--post & {
       margin: 0;
     }
   }
