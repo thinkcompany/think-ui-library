@@ -73,6 +73,14 @@
     }
   }
 
+  &-image-container {
+    margin: $spacing-stack-32;
+
+    .tco-card--callout & {
+      margin: 0;
+    }
+  }
+
   &-info-image-container {
     overflow: hidden;
     border-radius: $border-radius-round;
