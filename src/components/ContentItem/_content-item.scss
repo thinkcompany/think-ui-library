@@ -1,5 +1,4 @@
 .tco-content-item {
-  @include spacing-inset-24;
   @include wider-than($breakpoint-tablet-portrait) {
     grid-template-areas: 'body media' 'body media';
     grid-template-columns: 1fr 1fr;
@@ -9,8 +8,7 @@
   grid-template-columns: 1fr;
   align-items: flex-start;
   justify-content: space-between;
-  padding-top: $spacing-stack-64;
-  padding-bottom: $spacing-stack-64;
+  padding: $spacing-stack-64 0;
   border-bottom: $border-tertiary;
 
   &:last-of-type {
@@ -109,6 +107,7 @@
 
 .tco-content-hosts {
   margin-top: $spacing-stack-16;
+  margin-bottom: $spacing-stack-4;
 }
 
 // Modifiers ==============
@@ -141,7 +140,9 @@
 
 .tco-tag {
   @include spacing-squish-4-8;
+  @include type-eyebrow;
   border-radius: $border-radius-large;
   background: $color-foreground-quanternary;
   color: $color-foreground-primary;
+  font-size: $font-size-16;
 }
