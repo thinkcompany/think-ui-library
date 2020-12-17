@@ -11,11 +11,22 @@ $spacing-image: 120px;
 
   &--align-left,
   &--align-right {
+    align-items: start;
     @include wider-than($breakpoint-tablet-portrait) {
       flex-wrap: nowrap;
 
       > .tco-text-media-content {
-        flex-basis: 50%;
+        flex: 1 1 50%;
+      }
+
+      .tco-text-media-lede {
+        max-width: none;
+      }
+
+      .tco-text-media-image {
+        flex: 0 0 50%;
+        width: 50%;
+        max-width: 450px;
       }
 
       .tco-text-media-lede {
@@ -120,6 +131,10 @@ $spacing-image: 120px;
         background-size: contain;
       }
     }
+  }
+
+  @include wider-than($breakpoint-tablet-portrait) {
+    align-items: center;
   }
 }
 
