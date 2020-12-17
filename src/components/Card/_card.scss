@@ -233,9 +233,6 @@
 }
 
 .tco-card--post--small {
-  @include wider-than($breakpoint-tablet-portrait) {
-  }
-
   .tco-card-content-container {
     @include spacing-inset-24;
   }
