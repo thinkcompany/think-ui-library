@@ -88,7 +88,7 @@ $spacing-image: 120px;
 
   &-image {
     @include wider-than($breakpoint-tablet-portrait) {
-      margin-top: $spacing-stack-64;
+      margin-top: $spacing-stack-32;
     }
   }
 
