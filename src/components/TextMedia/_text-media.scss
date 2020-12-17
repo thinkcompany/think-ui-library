@@ -9,12 +9,6 @@ $spacing-image: 120px;
   margin: auto;
   text-align: center;
 
-  // .tco-text-media-image {
-  //   @include wider-than($breakpoint-tablet-portrait) {
-  //     margin-top: $spacing-stack-32;
-  //   }
-  // }
-
   &--align-left,
   &--align-right {
     @include wider-than($breakpoint-tablet-portrait) {
