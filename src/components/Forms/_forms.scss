@@ -4,7 +4,6 @@
 \*---------------------------------------------- */
 
 $form-input-border: 1px solid $color-background-secondary;
-
 $opacity--disabled: 0.4;
 
 /* ----------------------------------------------*\
@@ -43,12 +42,12 @@ $opacity--disabled: 0.4;
 %tco-form-input {
   @include spacing-inset-12;
   @include type-body-default;
-  color: $color-foreground-primary;
   width: 100%;
   border: $form-input-border;
   border-radius: $border-radius-small;
   background-color: $color-background-primary;
   background-image: none;
+  color: $color-foreground-primary;
 
   &::placeholder {
     color: $color-foreground-primary;

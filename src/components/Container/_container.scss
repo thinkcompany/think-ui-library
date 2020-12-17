@@ -8,9 +8,9 @@
   // Size variants
   .tco-container {
     width: 90%;
+    max-width: $container-max;
     margin: 0 auto;
     padding: $spacing-stack-64 0;
-    max-width: $container-max;
 
     &--default {
       max-width: $container-large;
@@ -80,8 +80,8 @@
       background-image: none;
       @include type-style-bold;
     }
-  } 
-  
+  }
+
   &--blue,
   &--navy {
     a {
