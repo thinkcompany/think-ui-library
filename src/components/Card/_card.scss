@@ -3,7 +3,6 @@
 // ========================================================
 .tco-card {
   @include card-container-shadow;
-  @include spacing-inset-32;
   overflow: hidden;
   max-width: 380px;
 
@@ -17,7 +16,22 @@
     }
   }
 
+  > {
+    .tco-card-link {
+      display: block;
+
+      &:hover,
+      &:focus,
+      &:active {
+        .tco-card-content-heading {
+          background-size: 100% 106%;
+        }
+      }
+    }
+  }
+
   &-content-container {
+    @include spacing-inset-32;
     color: $color-foreground-primary;
     text-align: center;
   }
@@ -59,9 +73,24 @@
     }
   }
 
+  &-image-container {
+    margin: $spacing-stack-32;
+
+    .tco-card--callout &,
+    .tco-card--post & {
+      margin: 0;
+    }
+  }
+
   &-info-image-container {
     overflow: hidden;
     border-radius: $border-radius-round;
+  }
+
+  .tco-card-grid--nolink & {
+    border-radius: 0;
+    background: transparent;
+    box-shadow: none;
   }
 }
 
@@ -87,7 +116,7 @@
     align-items: center;
     justify-content: center;
     height: 100%;
-    min-height: 515px;
+    min-height: 579px;
   }
 
   .tco-card-content-description {
@@ -100,7 +129,6 @@
 // ========================================================
 .tco-card--person,
 .tco-card--cta-small {
-  @include spacing-inset-16;
   @include card-scale;
 
   @include wider-than($breakpoint-tablet-portrait) {
@@ -114,18 +142,46 @@
     display: flex;
     flex-flow: column wrap;
     justify-content: center;
-    min-height: 300px;
+    min-height: 332px;
     background: none;
+
+    &:hover,
+    &:focus,
+    &:active {
+      .tco-card-content-description {
+        background-size: 100% 106%;
+      }
+    }
   }
 
   .tco-card-content-description {
     margin-top: 0;
     color: $color-foreground-on-tint;
   }
+
+  .tco-card-content-container {
+    @include spacing-inset-16;
+  }
 }
 
 .tco-card--person {
+  .tco-card-link {
+    position: relative;
+
+    &::before {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      display: block;
+      width: 100%;
+      height: 50%;
+      background-image: linear-gradient(180deg, transparent, #051824);
+    }
+  }
+
   .tco-card-content-container {
+    z-index: 1;
     margin-top: auto;
     text-align: left;
   }
@@ -158,7 +214,9 @@
 // = POST CARD
 // ========================================================
 .tco-card--post {
-  padding: 0;
+  .tco-card-link {
+    padding: 0;
+  }
 
   .tco-card-content-container {
     @include spacing-inset-32;
@@ -237,6 +295,7 @@
   min-height: 0;
 
   .tco-card-content-container {
+    padding: 0;
     text-align: left;
   }
 
