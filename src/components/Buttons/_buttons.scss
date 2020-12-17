@@ -19,7 +19,8 @@
     Primary Button
 \*---------------------------------------------- */
 
-.tco-btn--primary {
+.tco-btn--primary,
+%tco-btn--primary {
   border: 1px solid $color-tint-blue-primary;
   border-radius: $border-radius-small;
   background: $color-tint-blue-primary;
@@ -57,7 +58,8 @@
     Secondary Button
 \*---------------------------------------------- */
 
-.tco-btn--secondary {
+.tco-btn--secondary,
+%tco-btn--secondary {
   border: 1px solid $color-background-primary;
   border-radius: $border-radius-small;
   background: $color-background-primary;
@@ -98,7 +100,8 @@
     Tertiary Button
 \*---------------------------------------------- */
 
-.tco-btn--tertiary {
+.tco-btn--tertiary,
+%tco-btn--tertiary {
   border: 1px solid $color-tint-orange-primary;
   border-radius: $border-radius-small;
   background-color: $color-tint-orange-primary;

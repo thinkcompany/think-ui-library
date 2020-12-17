@@ -5,7 +5,7 @@ $spacing-image: 120px;
   display: flex;
   flex-flow: column wrap;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
   margin: auto;
   text-align: center;
 
@@ -17,11 +17,19 @@ $spacing-image: 120px;
       > .tco-text-media-content {
         flex-basis: 50%;
       }
+
+      .tco-text-media-lede {
+        max-width: none;
+      }
     }
     text-align: left;
   }
 
   &--align-left {
+    .tco-text-media-image {
+      margin-top: $spacing-stack-32;
+    }
+
     @include wider-than($breakpoint-tablet-portrait) {
       flex-direction: row;
 

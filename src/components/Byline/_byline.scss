@@ -4,12 +4,12 @@
 }
 
 .tco-byline-label {
-  @include type-body-small;
+  @include type-body-small(inherit);
   margin-top: $spacing-stack-12;
 }
 
 .tco-byline-name {
-  @include type-display-small;
+  @include type-display-small(inherit);
   @include type-style-bold;
   margin-bottom: 0;
 
@@ -19,7 +19,7 @@
 }
 
 .tco-byline-description {
-  @include type-body-medium;
+  @include type-body-medium(inherit);
 }
 
 .tco-byline-image {
@@ -48,7 +48,7 @@
 
 .tco-byline--small {
   .tco-byline-name {
-    @include type-body-default;
+    @include type-body-default(inherit);
     margin-bottom: 0;
     font-weight: $font-weight-600;
   }

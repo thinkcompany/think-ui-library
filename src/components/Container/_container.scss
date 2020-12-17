@@ -8,6 +8,7 @@
   // Size variants
   .tco-container {
     width: 90%;
+    max-width: $container-max;
     margin: 0 auto;
     padding: $spacing-stack-64 0;
 
@@ -36,22 +37,14 @@
   }
 
   &--blue {
-    @include type-base-style($color-background-primary);
     background-color: $color-tint-blue-primary;
     color: $color-background-primary;
 
-    a {
-      @include type-link;
-      @include type-highlight(
-        $color-background-primary,
-        $color-background-primary
-      );
-    }
 
     .tco-btn {
-      // unset "link" style on buttons
-      background-image: none;
-      @include type-style-bold;
+      &--primary {
+        @extend %tco-btn--secondary;
+      }
 
       &--secondary {
         color: $color-foreground-primary;
@@ -67,19 +60,7 @@
     @include type-base-style($color-background-primary);
     background-color: $color-background-tertiary;
 
-    a {
-      @include type-link;
-      @include type-highlight(
-        $color-background-primary,
-        $color-background-primary
-      );
-    }
-
     .tco-btn {
-      // unset link style on buttons
-      background-image: none;
-      @include type-style-bold;
-
       &--secondary {
         color: $color-foreground-primary;
       }
@@ -87,6 +68,28 @@
       &--tertiary {
         color: $color-foreground-primary;
       }
+    }
+  }
+
+  &--tan,
+  &--glass,
+  &--blue,
+  &--navy {
+    .tco-btn {
+      // unset "link" style on buttons
+      background-image: none;
+      @include type-style-bold;
+    }
+  }
+
+  &--blue,
+  &--navy {
+    a {
+      @include type-link;
+      @include type-highlight(
+        $color-background-primary,
+        $color-background-primary
+      );
     }
   }
 }
