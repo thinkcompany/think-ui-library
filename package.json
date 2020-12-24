@@ -56,6 +56,8 @@
     "file-loader": "^6.0.0",
     "fs-extra": "^9.0.1",
     "html-webpack-plugin": "^4.0.4",
+    "husky": "^4.3.0",
+    "lint-staged": "^10.4.0",
     "mini-css-extract-plugin": "^0.9.0",
     "optimize-css-assets-webpack-plugin": "^5.0.3",
     "postcss": "^7.0.27",
@@ -73,5 +75,21 @@
     "terser-webpack-plugin": "^2.3.5",
     "webpack": "^4.42.1",
     "webpack-cli": "^3.3.11"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "src/**/*.{js,scss}": [
+      "prettier --config ./prettier.config.js --ignore-path ./.prettierignore --write"
+    ],
+    "*.scss": [
+      "stylelint --syntax=scss --fix"
+    ],
+    "*.{js}": [
+      "eslint --ext .js.,jsx --fix"
+    ]
   }
 }
