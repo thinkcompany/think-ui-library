@@ -3,7 +3,7 @@ import { select, text } from '@storybook/addon-knobs';
 const backgrounds = ['white', 'tan', 'glass', 'blue', 'navy'];
 const directions = ['default', 'left', 'right'];
 
-export const withKnobs = () => {
+export const Default = () => {
   const background = select('Background', backgrounds, 'white');
   const direction = select('Text Position', directions, 'default');
   const eyebrow = text('Eyebrow', 'Eyebrow');

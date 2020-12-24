@@ -12,6 +12,8 @@ $spacing-image: 120px;
   &--align-left,
   &--align-right {
     align-items: start;
+    text-align: left;
+
     @include wider-than($breakpoint-tablet-portrait) {
       flex-wrap: nowrap;
 
@@ -28,12 +30,7 @@ $spacing-image: 120px;
         width: 50%;
         max-width: 450px;
       }
-
-      .tco-text-media-lede {
-        max-width: none;
-      }
     }
-    text-align: left;
   }
 
   &--align-left {
@@ -139,10 +136,7 @@ $spacing-image: 120px;
 }
 
 .tco-text-media-back-link {
-  @include type-link(
-    $font-size: $font-size-18,
-    $font-weight: $font-weight-600
-  );
+  @include type-link($font-size: $font-size-18, $font-weight: $font-weight-600);
   display: inline-block;
   margin-bottom: $spacing-stack-32;
   letter-spacing: 3px;
