@@ -5,26 +5,26 @@
 
   &--2-column {
     @include wider-than($breakpoint-tablet-portrait) {
-      grid-template-columns: repeat(2, auto);
+      grid-template-columns: repeat(2, 1fr);
     }
   }
 
   &--3-column {
     @include wider-than($breakpoint-tablet-portrait) {
-      grid-template-columns: repeat(3, auto);
+      grid-template-columns: repeat(3, 1fr);
     }
   }
 
   &--4-column {
     @include wider-than($breakpoint-tablet-portrait) {
-      grid-template-columns: repeat(4, auto);
+      grid-template-columns: repeat(4, 1fr);
     }
   }
 
   &--5-column {
     @include wider-than($breakpoint-tablet-portrait) {
-      grid-template-columns: repeat(5, auto);
+      grid-template-columns: repeat(5, 1fr);
     }
-    grid-template-columns: repeat(2, auto);
+    grid-template-columns: repeat(2, 1fr);
   }
 }
