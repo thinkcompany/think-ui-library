@@ -57,12 +57,3 @@ const footer = () => {
 };
 
 export { footer };
-
-export default {
-  title: 'Navigation / Global',
-  parameters: {
-    options: {
-      showPanel: false
-    }
-  }
-};

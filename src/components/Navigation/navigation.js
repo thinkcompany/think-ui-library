@@ -33,7 +33,9 @@ export default class Nav {
 
       this.$siteNav = document.querySelector('.tco-menu-site-nav');
 
-      this.setupEventHandler();
+      if (this.$mobileMenuBtn) {
+        this.setupEventHandler();
+      }
     });
   }
 }
