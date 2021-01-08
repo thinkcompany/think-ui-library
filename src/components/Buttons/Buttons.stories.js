@@ -80,11 +80,11 @@ export const Link = () => {
   toggleBackground(() => linkColor === linkColors['On Tint'], '.sb-show-main');
 
   return `
-    <button type="button" class="tco-btn tco-btn-link${
-      linkColor ? ` ${linkColor}` : ''
-    }${buttonSize ? ` ${buttonSize}` : ''}" ${buttonState}>
+    <a href="/" class="tco-btn tco-btn-link${linkColor ? ` ${linkColor}` : ''}${
+    buttonSize ? ` ${buttonSize}` : ''
+  }" ${buttonState}>
       ${buttonText}
-    </button>`;
+    </a>`;
 };
 
 export const Icon = () => {
@@ -204,11 +204,11 @@ export const All = () => {
       Object.keys(linkSizes)
         .map(sizeKey =>
           itemWrapper(`
-          <button type="button" class="tco-btn tco-btn-link ${
-            linkColors[colorKey]
-          } ${sizeKey !== 'Default' ? linkSizes[sizeKey] : ''}">
+          <a href="/" class="tco-btn tco-btn-link ${linkColors[colorKey]} ${
+            sizeKey !== 'Default' ? linkSizes[sizeKey] : ''
+          }">
             ${buttonText}
-          </button>
+          </a>
           <footer style="${showInfo ? '' : 'display: none'}">
             <span class="type-style--bold">Link Button</span>
             <span>size: ${sizeKey}</span>
