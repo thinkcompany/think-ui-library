@@ -16,7 +16,7 @@ const imageItem = () => {
     </div>`;
 };
 
-export const Main = () => {
+export const Default = () => {
   const imageItems = () => {
     const imageCount = number('Image count', 4);
 

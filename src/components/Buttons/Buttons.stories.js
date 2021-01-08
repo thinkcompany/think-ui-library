@@ -1,4 +1,4 @@
-import { select, text, boolean, withKnobs } from '@storybook/addon-knobs';
+import { select, text, boolean } from '@storybook/addon-knobs';
 import { useEffect } from '@storybook/client-api';
 
 // sets the background to $color-background-tertiary based on the function result
@@ -231,6 +231,5 @@ export const All = () => {
 // #endregion
 
 export default {
-  title: 'Controls & Inputs / Buttons',
-  decorators: [withKnobs]
+  title: 'Controls & Inputs / Buttons'
 };
