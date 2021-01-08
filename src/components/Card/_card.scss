@@ -101,6 +101,22 @@
   > .tco-card-link {
     @include card-image-scale;
   }
+
+  .tco-card-grid--nolink & {
+    .tco-card-image-container {
+      display: flex;
+      height: 250px;
+      margin-bottom: 0;
+    }
+
+    img {
+      width: 100%;
+    }
+
+    .tco-card-content-heading {
+      font-size: $font-size-24;
+    }
+  }
 }
 
 // ========================================================
