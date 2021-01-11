@@ -80,7 +80,7 @@ export const Link = () => {
   toggleBackground(() => linkColor === linkColors['On Tint'], '.sb-show-main');
 
   return `
-    <a href="/" class="tco-btn tco-btn-link${linkColor ? ` ${linkColor}` : ''}${
+    <a href="#" class="tco-btn tco-btn-link${linkColor ? ` ${linkColor}` : ''}${
     buttonSize ? ` ${buttonSize}` : ''
   }" ${buttonState}>
       ${buttonText}
