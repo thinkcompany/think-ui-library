@@ -12,7 +12,9 @@
 }
 
 .tco-social-icons-link {
-  background: none;
+  .tco-container-wrapper & {
+    background-image: none;
+  }
 
   > .tco-icon {
     width: 45px;
