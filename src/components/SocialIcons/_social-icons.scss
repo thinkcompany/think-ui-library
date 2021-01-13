@@ -1,0 +1,27 @@
+.tco-social-icons-list {
+  padding: 0;
+  list-style-type: none;
+
+  > li {
+    display: inline-block;
+
+    &:not(:first-child) {
+      margin-left: 10px;
+    }
+  }
+}
+
+.tco-social-icons-link {
+  .tco-container-wrapper & {
+    background-image: none;
+  }
+
+  > .tco-icon {
+    width: 45px;
+    height: 45px;
+  }
+
+  &:hover {
+    opacity: 0.8;
+  }
+}

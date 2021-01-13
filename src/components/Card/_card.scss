@@ -87,7 +87,7 @@
     border-radius: $border-radius-round;
   }
 
-  .tco-card-grid--nolink & {
+  .tco-card-grid--no-link & {
     border-radius: 0;
     background: transparent;
     box-shadow: none;
@@ -100,6 +100,22 @@
 .tco-card--summary {
   > .tco-card-link {
     @include card-image-scale;
+  }
+
+  .tco-card-grid--no-link & {
+    .tco-card-image-container {
+      display: flex;
+      height: 250px;
+      margin-bottom: 0;
+    }
+
+    img {
+      width: 100%;
+    }
+
+    .tco-card-content-heading {
+      font-size: $font-size-24;
+    }
   }
 }
 
