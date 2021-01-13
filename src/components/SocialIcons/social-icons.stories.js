@@ -58,11 +58,4 @@ export const Default = () => {
   `;
 };
 
-export default {
-  title: 'Components / Social Icons',
-  parameters: {
-    options: {
-      showPanel: true
-    }
-  }
-};
+export default { title: 'Components / Social Icons' };

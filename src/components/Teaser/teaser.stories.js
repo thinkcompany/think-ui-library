@@ -9,9 +9,9 @@ const colors = {
 };
 
 const alignment = {
-  Default: 'tco-from-blog--align-left',
-  Center: 'tco-from-blog--align-center',
-  Right: 'tco-from-blog--align-right'
+  Default: 'tco-post-teaser--align-left',
+  Center: 'tco-post-teaser--align-center',
+  Right: 'tco-post-teaser--align-right'
 };
 
 export const Default = () => {
@@ -25,10 +25,10 @@ export const Default = () => {
   return `
     <div class="tco-container-wrapper ${containerColor} ">
       <div class="tco-container">
-        <div class="tco-from-blog ${teaserAlignment}">
-          <div class=" tco-from-blog-content">
+        <div class="tco-post-teaser ${teaserAlignment}">
+          <div class=" tco-post-teaser-content">
             <span class="tco-type-display--small">${teaserHeader}</span>
-            <h4 class="tco-from-blog-title"><a href="#" >${teaserTitle}</a></h4>
+            <h4 class="tco-post-teaser-title"><a href="#" >${teaserTitle}</a></h4>
             <p class="tco-byline-description">by ${teaserAuthor}, ${teaserPosition}</p>
           </div>
         </div>
@@ -37,11 +37,4 @@ export const Default = () => {
   `;
 };
 
-export default {
-  title: 'Components / Teaser',
-  parameters: {
-    options: {
-      showPanel: true
-    }
-  }
-};
+export default { title: 'Components / Teaser' };

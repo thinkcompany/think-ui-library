@@ -1,20 +1,20 @@
-.tco-from-blog {
+.tco-post-teaser {
   margin-top: -$spacing-stack-64;
 
   @include wider-than($breakpoint-tablet-portrait) {
     display: flex;
     flex-flow: row nowrap;
 
-    &.tco-from-blog--align-right {
+    &.tco---align-right {
       justify-content: flex-end;
     }
 
-    &.tco-from-blog--align-center {
+    &.tco---align-center {
       justify-content: center;
     }
   }
 
-  .tco-from-blog-content {
+  .tco--content {
     @include wider-than($breakpoint-tablet-portrait) {
       width: 50%;
     }
@@ -26,7 +26,7 @@
     font-size: $font-size-14;
   }
 
-  .tco-from-blog-title {
+  .tco--title {
     margin-bottom: 0;
     font-weight: $font-weight-500;
     font-size: $font-size-18;
