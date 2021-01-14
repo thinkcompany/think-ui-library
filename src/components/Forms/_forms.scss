@@ -156,21 +156,11 @@ $opacity--disabled: 0.4;
 }
 
 /* ----------------------------------------------*\
-      Checkbox
+      Controls for pseudo element inputs
 \*---------------------------------------------- */
-
-.tco-form-checkbox {
-  @extend %tco-accessibly-hidden;
-
-  &:focus + label::after {
-    content: '';
-    position: absolute;
-    top: -2px;
-    left: -2px;
-    width: rem(20px);
-    height: rem(20px);
-    border: 1px solid $color-background-primary;
-    border-radius: 2px;
+%tco-form-input--pseudo {
+  &:focus + label::before {
+    outline: 2px solid $color-tint-blue-primary;
   }
 
   + label {
@@ -178,7 +168,11 @@ $opacity--disabled: 0.4;
     margin-right: $spacing-inline-32;
     padding-left: rem(24px);
     font-weight: 400;
-    font-size: $font-size-18;
+    font-size: $font-size-14;
+
+    @include wider-than($breakpoint-phone-landscape) {
+      line-height: initial;
+    }
 
     &::before {
       content: '';
@@ -187,11 +181,20 @@ $opacity--disabled: 0.4;
       left: 0;
       width: rem(16px);
       height: rem(16px);
-      border: $form-input-border;
+      border: 1px solid $color-foreground-primary;
       border-radius: 2px;
       background: $color-background-primary;
     }
   }
+}
+
+/* ----------------------------------------------*\
+      Checkbox
+\*---------------------------------------------- */
+
+.tco-form-checkbox {
+  @extend %tco-accessibly-hidden;
+  @extend %tco-form-input--pseudo;
 
   &:checked + label,
   &:checked + input + label {
@@ -260,34 +263,21 @@ $opacity--disabled: 0.4;
 
 .tco-form-radio {
   @extend %tco-accessibly-hidden;
+  @extend %tco-form-input--pseudo;
 
   &:checked + label::after {
     opacity: 1;
   }
 
   + label {
-    position: relative;
-    margin-right: $spacing-inline-32;
-    padding-left: rem(24px);
-    font-weight: 400;
-    font-size: $font-size-14;
-
     &::before {
-      content: '';
-      position: absolute;
-      top: rem(2px);
-      left: 0;
-      width: rem(16px);
-      height: rem(16px);
-      border: 1px solid $color-foreground-primary;
       border-radius: 50%;
-      background-color: $color-background-primary;
     }
 
     &::after {
       content: '';
       position: absolute;
-      top: rem(6px);
+      top: rem(4px);
       left: rem(4px);
       width: rem(10px);
       height: rem(10px);
@@ -356,6 +346,10 @@ $opacity--disabled: 0.4;
 
 .tco-form-toggle {
   @extend %tco-accessibly-hidden;
+
+  &:focus + label::before {
+    outline: 2px solid $color-tint-blue-primary;
+  }
 
   + label {
     position: relative;
