@@ -5,6 +5,10 @@ $floating-form-gutter: 20px;
 // = FLOATING BUTTON
 // ========================================================
 .tco-floating-btn {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  z-index: 31;
   display: inline-flex;
   align-items: center;
   width: auto;
@@ -20,17 +24,44 @@ $floating-form-gutter: 20px;
     border-radius: 40px;
   }
 
-  &-icon-img {
-    width: 28px;
-    height: auto;
+  &-icon {
+    line-height: 0;
 
-    @include wider-than($breakpoint-tablet-portrait) {
-      width: 33px;
+    svg,
+    img {
+      width: 28px;
+      height: 27px;
+
+      @media (min-width: $breakpoint-tablet-portrait) {
+        width: 33px;
+        height: 32px;
+      }
+    }
+
+    &--chat {
+      svg,
+      img {
+        height: 29px;
+
+        @media (min-width: $breakpoint-tablet-portrait) {
+          height: 34px;
+        }
+      }
+    }
+
+    &--close {
+      display: none; // Hidden by default
     }
   }
 
-  &-icon--close {
-    display: none; // Hidden by default
+  .tco-floating-modal--show & {
+    &-icon--chat {
+      display: none;
+    }
+
+    &-icon--close {
+      display: block;
+    }
   }
 
   &-label {
@@ -45,16 +76,6 @@ $floating-form-gutter: 20px;
   }
 
   &--close {
-    .tco-floating-btn-icon {
-      &--chat {
-        display: none;
-      }
-
-      &--close {
-        display: block;
-      }
-    }
-
     .tco-floating-btn-label {
       display: none;
     }
@@ -142,20 +163,6 @@ $floating-form-gutter: 20px;
     visibility: visible;
     transition: visibility 0s linear 0s, opacity 0.25s 0s, transform 0.25s;
     transform: scale(1);
-  }
-
-  .tco-floating-btn {
-    position: fixed;
-    right: $floating-form-gutter;
-    bottom: $floating-form-gutter;
-  }
-
-  .tco-floating-btn-icon--chat {
-    display: none;
-  }
-
-  .tco-floating-btn-icon--close {
-    display: inline-block;
   }
 }
 
