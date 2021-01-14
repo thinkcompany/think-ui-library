@@ -346,25 +346,17 @@ $opacity--disabled: 0.4;
 
 .tco-form-toggle {
   @extend %tco-accessibly-hidden;
-
-  &:focus + label::before {
-    outline: 2px solid $color-tint-blue-primary;
-  }
+  @extend %tco-form-input--pseudo;
 
   + label {
-    position: relative;
-    margin-right: $spacing-inline-32;
     padding-left: rem(48px);
-    font-weight: 400;
-    font-size: $font-size-14;
+    line-height: 1.7;
 
     &::before {
-      content: '';
-      position: absolute;
       top: rem(2px);
-      left: 0;
       width: rem(36px);
       height: rem(20px);
+      border-width: 0;
       border-radius: rem(100px);
       background-color: $color-foreground-tertiary;
     }
