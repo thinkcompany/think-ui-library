@@ -10,14 +10,14 @@ export const Default = () => {
 
   return `
   <div class="tco-container-wrapper">
-    <div class="tco-container tco-container--mid"> 
+    <div class="tco-container tco-container--mid">
       <div class="tco-quote-wrapper">
         <blockquote class="tco-quote">
           <p class="tco-quote-text">${quote}</p>
-          <footer class="tco-quote-footer">
+          <div class="tco-quote-footer">
             <cite class="tco-quote-author-name">${authorName}</cite>
             <span class="tco-quote-author-title">${authorTitle}</span>
-          </footer>
+          </div>
         </blockquote>
       </div>
     </div>
@@ -35,7 +35,7 @@ export const Multiple = () => {
 
   return `
   <div class="tco-container-wrapper">
-    <div class="tco-container tco-container--mid"> 
+    <div class="tco-container tco-container--mid">
       <div class="tco-quote-wrapper">
         <blockquote class="tco-quote">
           <p class="tco-quote-text">${quote}</p>
@@ -73,7 +73,7 @@ export const WithThinker = () => {
 
   return `
   <div class="tco-container-wrapper">
-    <div class="tco-container tco-container--mid"> 
+    <div class="tco-container tco-container--mid">
       <div class="tco-quote-wrapper">
         <blockquote class="tco-quote">
           <p class="tco-quote-text">${quote}</p>
