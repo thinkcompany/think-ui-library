@@ -12,9 +12,11 @@ export const floatingButton = () => {
   <button class="tco-floating-btn ${closeClass} tco-btn">
     <span class="tco-floating-btn-icon tco-floating-btn-icon--chat">
       <img class="tco-floating-btn-icon-img" src="${chatIcon}" alt="Open contact form" />
+      <span class="tco-accessibly-hidden">Open contact form</span>
     </span>
     <span class="tco-floating-btn-icon tco-floating-btn-icon--close">
       <img class="tco-floating-btn-icon-img" src="${closeIcon}" alt="Close contact form" />
+      <span class="tco-accessibly-hidden">Close contact form</span>
     </span>
     <span class="tco-floating-btn-label">${contactLabel}</span>
   </button>

@@ -5,8 +5,10 @@ import data from './content-item.json';
 const tag = (item, groupId) => {
   return item.category
     ? `<p class="tco-content-category">
-  <span class="tco-tag">    
-  <svg class="icon icon-sm" width="16" height="16" viewBox="0 0 16 16">
+  <span class="tco-tag">
+  <svg class="icon icon-sm" width="16" height="16" viewBox="0 0 16 16" role="img" aria-labelledby="${
+    item.category
+  }">
   <use xlink:href="/img/icons.svg#${item.iconId}"></use>
   </svg>
   ${text('Category', item.category, groupId)}</span>
