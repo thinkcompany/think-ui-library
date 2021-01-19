@@ -23,7 +23,7 @@ export const summaryCard = () => {
           <img class="tco-card-image" alt="Card image" src="${image}" />
         </div>
         <div class="tco-card-content-container">
-          <h3 class="tco-card-content-heading">${heading}</h3>
+          <h2 class="tco-card-content-heading">${heading}</h2>
           <p class="tco-card-content-description">${summary}</p>
         </div>
       </a>
@@ -62,7 +62,7 @@ export const personCard = () => {
   <div class="tco-card tco-card--person" style="background-image: url(${image})">
     <a href="#" class="tco-card-link">
       <div class="tco-card-content-container">
-        <h3 class="tco-card-content-heading">${name}</h3>
+        <h2 class="tco-card-content-heading">${name}</h2>
         <p class="tco-card-content-description">${title}</p>
       </div>
     </a>
@@ -119,7 +119,7 @@ export const postCard = () => {
             ? '<span class="tco-card-content-eyebrow">' + eyebrow + '</span>'
             : ''
         }
-        <h3 class="tco-card-content-heading">${heading}</h3>
+        <h2 class="tco-card-content-heading">${heading}</h2>
         <p class="tco-card-content-description">${description}</p>
         <div class="tco-card-info">
           <div class="tco-card-info-image-container">
@@ -156,7 +156,7 @@ export const calloutCard = () => {
       <img class="tco-card-image" alt="Card image" src="${image}" />
     </div>
     <div class="tco-card-content-container">
-      <h3 class="tco-card-content-heading">${heading}</h3>
+      <h2 class="tco-card-content-heading">${heading}</h2>
       <p class="tco-card-content-description">${description}</p>
       <a class="tco-card-content-link" href="#">Tell us about your challenge</a>
     </div>
