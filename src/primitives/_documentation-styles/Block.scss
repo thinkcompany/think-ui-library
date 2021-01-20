@@ -23,8 +23,14 @@
     p {
       overflow: auto;
       margin: 0 0 2px;
+      line-height: 1.5;
       text-overflow: ellipsis;
       white-space: nowrap;
+    }
+
+    strong,
+    b {
+      font-weight: 900;
     }
   }
 }

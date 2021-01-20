@@ -1,5 +1,11 @@
 const displayStyles = [
   {
+    name: 'Display Extra Large',
+    class: 'tco-type-display--extra-large',
+    sass: '@include type-display-extra-large',
+    textLength: 1
+  },
+  {
     name: 'Display Large',
     class: 'tco-type-display--large',
     sass: '@include type-display-large',
@@ -16,6 +22,12 @@ const displayStyles = [
     class: 'tco-type-display--small',
     sass: '@include type-display-small',
     textLength: 1
+  },
+  {
+    name: 'Eyebrow',
+    class: 'tco-type-eyebrow',
+    sass: '@include type-eyebrow',
+    textLength: 1
   }
 ];
 
@@ -24,7 +36,7 @@ const bodyStyles = [
     name: 'Body Text Default',
     class: 'tco-type-body',
     sass: '@include type-body',
-    textLength: 1
+    textLength: 10
   },
   {
     name: 'Body Text Small',
@@ -35,7 +47,14 @@ const bodyStyles = [
   {
     name: 'Body Text Large',
     class: 'tco-type-body--large',
-    sass: '@include type-body-large'
+    sass: '@include type-body-large',
+    textLength: 1
+  },
+  {
+    name: 'Body Text Large & Tall',
+    class: 'tco-type-body--large-tall',
+    sass: '@include type-body-large-tall',
+    textLength: 1
   }
 ];
 

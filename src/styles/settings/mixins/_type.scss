@@ -19,75 +19,154 @@
 }
 
 /* ----------------------------------------------*\
+     Size mixin
+\*---------------------------------------------- */
+
+// scale relative to viewport width. same units required
+@mixin clamp($properties, $min-vw, $max-vw, $min-value, $max-value) {
+  & {
+    @each $property in $properties {
+      #{$property}: $min-value;
+    }
+
+    @media screen and (min-width: $min-vw) {
+      @each $property in $properties {
+        #{$property}: calc(
+          #{$min-value} +
+            #{strip-unit($max-value - $min-value)} *
+            (100vw - #{$min-vw}) /
+            #{strip-unit($max-vw - $min-vw)}
+        );
+      }
+    }
+
+    @media screen and (min-width: $max-vw) {
+      @each $property in $properties {
+        #{$property}: $max-value;
+      }
+    }
+  }
+}
+
+@function strip-unit($value) {
+  @return $value / ($value * 0 + 1);
+}
+
+/* ----------------------------------------------*\
     Type mixins
 \*---------------------------------------------- */
 @mixin type-display-extra-large($font-color: inherit) {
-  @include type-base-style($font-color, 800);
-  @include wider-than($breakpoint-tablet-portrait) {
-    font-size: 90px;
-    line-height: 1.2;
-  }
-  font-family: $font-stack-serif;
-  font-size: 70px;
-  line-height: 1.17;
+  @include type-base-style($font-color, 400);
+  @include clamp(
+    font-size,
+    $breakpoint-phone-portrait,
+    $breakpoint-full-width,
+    $font-size-53,
+    $font-size-160
+  );
+  @include clamp(
+    line-height,
+    $breakpoint-phone-portrait,
+    $breakpoint-full-width,
+    60px,
+    175px
+  );
+  font-family: $font-stack-serif-light;
 }
 
 @mixin type-display-large($font-color: inherit) {
-  @include type-base-style($font-color, $font-weight-600);
-
-  @include wider-than($breakpoint-tablet-portrait) {
-    font-size: $font-size-48;
-    line-height: 1.2;
-  }
-  font-size: $font-size-34;
-  font-family: $font-stack-serif;
-  line-height: 1.17;
+  @include type-base-style($font-color, 400);
+  @include clamp(
+    font-size,
+    $breakpoint-phone-portrait,
+    $breakpoint-full-width,
+    $font-size-53,
+    $font-size-120
+  );
+  @include clamp(
+    line-height,
+    $breakpoint-phone-portrait,
+    $breakpoint-full-width,
+    60px,
+    128px
+  );
+  font-family: $font-stack-serif-light;
 }
 
 @mixin type-display-medium($font-color: inherit) {
-  @include type-base-style($font-color, bold);
-
-  @include wider-than($breakpoint-tablet-portrait) {
-    font-size: $font-size-34;
-    line-height: 1.23;
-  }
-  font-size: $font-size-28;
-  line-height: 1.35;
+  @include type-base-style($font-color, 400);
+  @include clamp(
+    font-size,
+    $breakpoint-phone-portrait,
+    $breakpoint-full-width,
+    $font-size-43,
+    $font-size-80
+  );
+  @include clamp(
+    line-height,
+    $breakpoint-phone-portrait,
+    $breakpoint-full-width,
+    52px,
+    92px
+  );
+  font-family: $font-stack-serif-light;
 }
 
 @mixin type-display-small($font-color: inherit) {
-  @include type-base-style($font-color, bold);
-
-  @include wider-than($breakpoint-tablet-portrait) {
-    font-size: $font-size-24;
-    line-height: 1.25;
-  }
-  font-size: $font-size-22;
-  line-height: 1.27;
-}
-
-@mixin type-body-large($font-color: inherit) {
-  @include type-base-style($font-color);
-
-  @include wider-than($breakpoint-tablet-portrait) {
-    font-size: $font-size-22;
-    line-height: 1.45;
-  }
-  font-size: $font-size-18;
-  line-height: 1.33;
+  @include type-base-style($font-color, 400);
+  @include clamp(
+    font-size,
+    $breakpoint-phone-portrait,
+    $breakpoint-full-width,
+    $font-size-30,
+    $font-size-36
+  );
+  @include clamp(
+    line-height,
+    $breakpoint-phone-portrait,
+    $breakpoint-full-width,
+    40px,
+    46px
+  );
+  font-family: $font-stack-serif-book;
 }
 
 @mixin type-eyebrow($font-color: inherit) {
-  @include type-base-style($font-color, bold);
-
-  @include wider-than($breakpoint-tablet-portrait) {
-    font-size: $font-size-18;
-    line-height: 1.77;
-  }
-  font-size: $font-size-16;
-  line-height: 1.25;
+  @include type-base-style($font-color, 900);
+  font-size: $font-size-14;
+  font-family: $font-stack-serif-black;
+  line-height: 18px;
   letter-spacing: 3px;
   text-transform: uppercase;
+}
+
+@mixin type-body-large($font-color: inherit, $height: default) {
+  @include type-base-style($font-color, 400);
+  @include clamp(
+    font-size,
+    $breakpoint-phone-portrait,
+    $breakpoint-full-width,
+    $font-size-24,
+    $font-size-28
+  );
+  @include clamp(
+    line-height,
+    $breakpoint-phone-portrait,
+    $breakpoint-full-width,
+    32px,
+    36px
+  );
+  font-family: $font-stack-serif;
+
+  @if $height != default {
+    @include clamp(
+      line-height,
+      $breakpoint-phone-portrait,
+      $breakpoint-full-width,
+      38px,
+      46px
+    );
+  }
 }
 
 @mixin type-body-medium($font-color: inherit, $font-weight: $font-weight-400) {
@@ -103,25 +182,17 @@
 }
 
 @mixin type-body-default($font-color: inherit) {
-  @include type-base-style($font-color);
-
-  @include wider-than($breakpoint-tablet-portrait) {
-    font-size: $font-size-18;
-    line-height: 1.44;
-  }
-  font-size: $font-size-16;
-  line-height: 1.25;
+  @include type-base-style($font-color, 300);
+  font-size: $font-size-18;
+  font-family: $font-stack-serif-book;
+  line-height: 32px;
 }
 
 @mixin type-body-small($font-color: inherit) {
-  @include type-base-style($font-color);
-
-  @include wider-than($breakpoint-tablet-portrait) {
-    font-size: $font-size-14;
-    line-height: 1.28;
-  }
-  font-size: $font-size-12;
-  line-height: 1.33;
+  @include type-base-style($font-color, 500);
+  font-size: $font-size-16;
+  font-family: $font-stack-serif-medium;
+  line-height: 20px;
 }
 
 @mixin list-plain {

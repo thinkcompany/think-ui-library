@@ -1,3 +1,7 @@
+.tco-type-display--extra-large {
+  @include type-display-extra-large;
+}
+
 .tco-type-display--large {
   @include type-display-large;
 }
@@ -10,12 +14,20 @@
   @include type-display-small;
 }
 
+.tco-type-eyebrow {
+  @include type-eyebrow;
+}
+
 .tco-type-body--default {
   @include type-body-default;
 }
 
 .tco-type-body--large {
   @include type-body-large;
+}
+
+.tco-type-body--large-tall {
+  @include type-body-large($height: tall);
 }
 
 .tco-type-body--small {
