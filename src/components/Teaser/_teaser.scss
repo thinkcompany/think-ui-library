@@ -1,15 +1,32 @@
 .tco-post-teaser {
   margin-top: -$spacing-stack-64;
 
+  &-eyebrow {
+    display: block;
+    margin-bottom: 9px;
+  }
+
+  &-title {
+    margin-bottom: 0;
+  }
+
+  &-link {
+    @include type-link(
+      $font-family: $font-stack-serif-bold,
+      $line-height: 25px
+    );
+    display: block;
+  }
+
   @include wider-than($breakpoint-tablet-portrait) {
     display: flex;
     flex-flow: row nowrap;
 
-    &.tco---align-right {
+    &.tco-post-teaser--align-right {
       justify-content: flex-end;
     }
 
-    &.tco---align-center {
+    &.tco-post-teaser--align-center {
       justify-content: center;
     }
   }
@@ -18,17 +35,5 @@
     @include wider-than($breakpoint-tablet-portrait) {
       width: 50%;
     }
-  }
-
-  .tco-type-display--small {
-    display: block;
-    margin-bottom: $spacing-stack-12;
-    font-size: $font-size-14;
-  }
-
-  .tco--title {
-    margin-bottom: 0;
-    font-weight: $font-weight-500;
-    font-size: $font-size-18;
   }
 }

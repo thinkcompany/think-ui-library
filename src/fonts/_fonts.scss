@@ -105,6 +105,32 @@
 
 @font-face {
   font-style: normal;
+  font-family: 'KievitWeb W07 Bold';
+  src: url('./1473259/bb94c1b9-8e3a-4be4-9806-a334a6211ddc.eot?#iefix');
+  src: url('./1473259/bb94c1b9-8e3a-4be4-9806-a334a6211ddc.eot?#iefix')
+    format('eot'),
+    url('./1473259/0d096877-d31b-4b43-b54c-18eefae0a26a.woff2') format('woff2'),
+    url('./1473259/a2dc5105-304a-4e4a-8b33-afb9153b36cc.woff') format('woff'),
+    url('./1473259/23954f93-7c28-47d1-ba24-1684bfa076e0.ttf') format('truetype');
+  font-variant-numeric: lining-nums;
+  font-display: swap;
+}
+
+@font-face {
+  font-style: italic;
+  font-family: 'KievitWeb W07 BoldIta';
+  src: url('./1473263/b5d7ce7d-e8e2-446c-afcd-be3182d95c04.eot?#iefix');
+  src: url('./1473263/b5d7ce7d-e8e2-446c-afcd-be3182d95c04.eot?#iefix')
+    format('eot'),
+    url('./1473263/bcfae296-4ebb-456c-bcd0-69a79086451e.woff2') format('woff2'),
+    url('./1473263/6db49c8f-12f2-4a5e-a9c3-72210c26c773.woff') format('woff'),
+    url('./1473263/643c404d-0899-4639-ad20-467a8ac5ac17.ttf') format('truetype');
+  font-variant-numeric: lining-nums;
+  font-display: swap;
+}
+
+@font-face {
+  font-style: normal;
   font-family: 'KievitWeb W07 Black'; // KievitPro-Black
   src: url('./1473251/59eab69b-68f2-4d29-ae25-e836b5dd6a70.eot?#iefix');
   src: url('./1473251/59eab69b-68f2-4d29-ae25-e836b5dd6a70.eot?#iefix')

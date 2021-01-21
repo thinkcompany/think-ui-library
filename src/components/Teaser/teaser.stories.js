@@ -21,15 +21,22 @@ export const Default = () => {
   const teaserTitle = text('Post Title', 'Reflections on 2020');
   const teaserAuthor = text('Author Name', 'Russ Starke');
   const teaserPosition = text('Position', 'Chief Executive Officer');
+  const teaserShowByline = boolean('Show Author', true);
 
   return `
     <div class="tco-container-wrapper ${containerColor} ">
       <div class="tco-container">
         <div class="tco-post-teaser ${teaserAlignment}">
           <div class=" tco-post-teaser-content">
-            <span class="tco-type-display--small">${teaserHeader}</span>
-            <h4 class="tco-post-teaser-title"><a href="#" >${teaserTitle}</a></h4>
-            <p class="tco-byline-description">by ${teaserAuthor}, ${teaserPosition}</p>
+            <span class="tco-post-teaser-eyebrow tco-type-display--extra-small">${teaserHeader}</span>
+            <h4 class="tco-post-teaser-title"><a href="#" class="tco-post-teaser-link">${teaserTitle}</a></h4>
+            ${
+              teaserShowByline
+                ? `
+              <p class="tco-post-teaser-author">by ${teaserAuthor}, ${teaserPosition}</p>
+              `
+                : ``
+            }
           </div>
         </div>
       </div>

@@ -152,7 +152,6 @@
   &--on-tint {
     @include type-link(
       $font-color: $color-foreground-on-tint,
-      $bg-color: $color-foreground-on-tint,
       $font-weight: $font-weight-500
     );
   }
