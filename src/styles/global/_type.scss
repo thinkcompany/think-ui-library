@@ -1,37 +1,69 @@
 .tco-type-display--extra-large {
   @include type-display-extra-large;
+
+  &-italic {
+    @include type-display-extra-large($italic: true);
+  }
 }
 
 .tco-type-display--large {
   @include type-display-large;
+
+  &-italic {
+    @include type-display-large($italic: true);
+  }
 }
 
 .tco-type-display--medium {
   @include type-display-medium;
+
+  &-italic {
+    @include type-display-medium($italic: true);
+  }
 }
 
 .tco-type-display--small {
   @include type-display-small;
+
+  &-italic {
+    @include type-display-small($italic: true);
+  }
 }
 
 .tco-type-eyebrow {
   @include type-eyebrow;
+
+  &-italic {
+    @include type-eyebrow($italic: true);
+  }
 }
 
 .tco-type-body--default {
   @include type-body-default;
+
+  &-italic {
+    @include type-body-default($italic: true);
+  }
 }
 
 .tco-type-body--large {
   @include type-body-large;
-}
 
-.tco-type-body--large-tall {
-  @include type-body-large($height: tall);
+  &-italic {
+    @include type-body-large($italic: true);
+  }
+
+  &-tall {
+    @include type-body-large($height: tall);
+  }
 }
 
 .tco-type-body--sans-small {
   @include type-body-small;
+
+  &-italic {
+    @include type-body-small($italic: true);
+  }
 }
 
 .tco-type-style--bold {
