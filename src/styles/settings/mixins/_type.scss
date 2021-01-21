@@ -8,7 +8,7 @@
   color: $font-color;
   font-weight: $font-weight;
   font-size: $font-size-16;
-  font-family: $font-stack-sans;
+  font-family: $font-stack-serif-book;
 }
 
 /* ----------------------------------------------*\
@@ -60,14 +60,14 @@
   @include clamp(
     font-size,
     $breakpoint-phone-portrait,
-    $breakpoint-full-width,
+    $breakpoint-desktop,
     $font-size-53,
     $font-size-160
   );
   @include clamp(
     line-height,
     $breakpoint-phone-portrait,
-    $breakpoint-full-width,
+    $breakpoint-desktop,
     60px,
     175px
   );
@@ -79,14 +79,14 @@
   @include clamp(
     font-size,
     $breakpoint-phone-portrait,
-    $breakpoint-full-width,
+    $breakpoint-desktop,
     $font-size-53,
     $font-size-120
   );
   @include clamp(
     line-height,
     $breakpoint-phone-portrait,
-    $breakpoint-full-width,
+    $breakpoint-desktop,
     60px,
     128px
   );
@@ -98,14 +98,14 @@
   @include clamp(
     font-size,
     $breakpoint-phone-portrait,
-    $breakpoint-full-width,
+    $breakpoint-desktop,
     $font-size-43,
     $font-size-80
   );
   @include clamp(
     line-height,
     $breakpoint-phone-portrait,
-    $breakpoint-full-width,
+    $breakpoint-desktop,
     52px,
     92px
   );
@@ -117,14 +117,14 @@
   @include clamp(
     font-size,
     $breakpoint-phone-portrait,
-    $breakpoint-full-width,
+    $breakpoint-desktop,
     $font-size-30,
     $font-size-36
   );
   @include clamp(
     line-height,
     $breakpoint-phone-portrait,
-    $breakpoint-full-width,
+    $breakpoint-desktop,
     40px,
     46px
   );
@@ -145,14 +145,14 @@
   @include clamp(
     font-size,
     $breakpoint-phone-portrait,
-    $breakpoint-full-width,
+    $breakpoint-desktop,
     $font-size-24,
     $font-size-28
   );
   @include clamp(
     line-height,
     $breakpoint-phone-portrait,
-    $breakpoint-full-width,
+    $breakpoint-desktop,
     32px,
     36px
   );
@@ -162,7 +162,7 @@
     @include clamp(
       line-height,
       $breakpoint-phone-portrait,
-      $breakpoint-full-width,
+      $breakpoint-desktop,
       38px,
       46px
     );
@@ -191,7 +191,7 @@
 @mixin type-body-small($font-color: inherit) {
   @include type-base-style($font-color, 500);
   font-size: $font-size-16;
-  font-family: $font-stack-serif-medium;
+  font-family: $font-stack-sans-medium;
   line-height: 20px;
 }
 

@@ -39,8 +39,8 @@ const bodyStyles = [
     textLength: 10
   },
   {
-    name: 'Body Text Small',
-    class: 'tco-type-body--small',
+    name: 'Body Text Sans Small',
+    class: 'tco-type-body--sans-small',
     sass: '@include type-body-small',
     textLength: 1
   },

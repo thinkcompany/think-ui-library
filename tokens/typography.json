@@ -1,13 +1,12 @@
 {
-  "size": [12, 14, 16, 18, 20, 22, 24, 28, 30, 34, 36, 42, 43, 48, 53, 80, 120, 160],
+  "size": [12, 14, 16, 18, 20, 24, 28, 30, 36, 43, 53, 80, 120, 160],
   "weight": [400, 500, 600, 900],
   "stack": {
     "system": "system, -apple-system,'Kievit Pro' ",
     "serif": "'KievitSlabPro', georgia, serif",
     "serif-light": "'KievitSlabPro-Extlight', georgia, serif",
-    "serif-medium": "'KievitPro-Medium', georgia, serif",
     "serif-book": "'KievitSlabPro-Book', georgia, serif",
     "serif-black": "'KievitPro-Black', georgia, serif",
-    "sans": "'Kievit Pro', helvetica, sans-serif"
+    "sans-medium": "'KievitPro-Medium', helvetica, sans-serif"
   }
 }
