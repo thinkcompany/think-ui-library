@@ -228,6 +228,17 @@
   }
 }
 
+@mixin type-sans-bold($font-color: inherit, $italic: false) {
+  @include type-base-style($font-color);
+  font-size: $font-size-16;
+  font-family: $font-stack-serif-bold;
+  line-height: 25px;
+
+  @if $italic {
+    font-family: $font-stack-serif-bold-italic;
+  }
+}
+
 // trash once button styles are updated
 @mixin type-body-medium($font-color: inherit, $font-weight: $font-weight-400) {
   @include type-base-style($font-color);

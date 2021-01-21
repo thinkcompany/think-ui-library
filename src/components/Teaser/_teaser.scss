@@ -16,6 +16,10 @@
     display: block;
   }
 
+  &-author {
+    @include type-sans-bold;
+  }
+
   @include wider-than($breakpoint-tablet-portrait) {
     display: flex;
     flex-flow: row nowrap;
