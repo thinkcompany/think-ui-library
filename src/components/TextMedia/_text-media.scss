@@ -3,11 +3,27 @@ $spacing-image: 120px;
 
 .tco-text-media {
   display: flex;
-  flex-flow: column wrap;
-  align-items: center;
-  justify-content: space-between;
-  margin: auto;
-  text-align: center;
+  flex-flow: row wrap;
+  //align-items: center;
+  //justify-content: space-between;
+  //margin: auto;
+
+  &--align-center {
+    text-align: center;
+
+    [class*='tco-text-media-content--'] {
+      flex: 1 100%;
+    }
+
+    .tco-text-media-content--text {
+      order: 1;
+    }
+
+    .tco-text-media-content--media {
+      order: 0;
+      margin-bottom: $spacing-stack-24;
+    }
+  }
 
   &--align-left,
   &--align-right {
@@ -77,27 +93,25 @@ $spacing-image: 120px;
   }
 
   &-eyebrow {
-    @include type-eyebrow($font-color: inherit);
+    @include type-eyebrow;
     display: block;
     margin-bottom: $spacing-stack-12;
   }
 
   &-heading {
-    @include type-display-large($font-color: inherit);
-    margin-bottom: $spacing-stack-12;
-    line-height: 1.2;
+    @include type-display-small;
+    margin-bottom: $spacing-stack-18;
+    //line-height: 1.2;
   }
 
   &-lede {
-    @include type-body-large($font-color: inherit);
+    @include type-body-default;
     max-width: $max-width-lede;
     margin: 0 auto $spacing-stack-32;
   }
 
   &-image {
-    @include wider-than($breakpoint-tablet-portrait) {
-      margin-top: $spacing-stack-32;
-    }
+    margin: 0 auto;
   }
 
   &--with-back-link {
