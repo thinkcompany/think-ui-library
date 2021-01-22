@@ -2,6 +2,7 @@
 *.log*
 
 .eslintcache
+.scannerwork
 .vscode
 
 coverage/
