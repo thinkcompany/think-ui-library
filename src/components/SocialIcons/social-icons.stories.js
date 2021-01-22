@@ -1,4 +1,4 @@
-import { select, boolean, text, number } from '@storybook/addon-knobs';
+import { select, boolean } from '@storybook/addon-knobs';
 
 const colors = {
   Default: '',
@@ -8,8 +8,7 @@ const colors = {
   Glass: 'tco-container-wrapper--glass'
 };
 
-export const Default = () => {
-  const containerColor = select('Background Color', colors, colors.Default);
+export const socialLinks = () => {
   const iconSet = [];
   const icons = [
     {
@@ -46,13 +45,21 @@ export const Default = () => {
   });
 
   return `
+    <div class="tco-social-icons">
+      <ul class="tco-social-icons-list">
+        ${iconSet.join('')}
+      </ul>
+    </div>
+  `;
+};
+
+export const WithContainer = () => {
+  const containerColor = select('Background Color', colors, colors.Default);
+
+  return `
     <div class="tco-container-wrapper ${containerColor}">
       <div class="tco-container">
-      <div class="tco-social-icons">
-          <ul class="tco-social-icons-list">
-            ${iconSet.join('')}
-          </ul>
-        </div>
+        ${socialLinks()}
       </div>
     </div>
   `;
