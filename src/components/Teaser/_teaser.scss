@@ -9,10 +9,7 @@
   }
 
   &-link {
-    @include type-link(
-      $font-family: $font-stack-serif-bold,
-      $line-height: 1.5
-    );
+    @include type-link($font-family: $font-stack-serif-bold, $line-height: 1.5);
     display: block;
   }
 
