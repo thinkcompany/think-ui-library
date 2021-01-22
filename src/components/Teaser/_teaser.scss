@@ -11,7 +11,7 @@
   &-link {
     @include type-link(
       $font-family: $font-stack-serif-bold,
-      $line-height: 25px
+      $line-height: 1.5
     );
     display: block;
   }
