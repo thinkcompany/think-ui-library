@@ -30,6 +30,14 @@
   }
 }
 
+.tco-type-display--extra-small {
+  @include type-display-extra-small;
+
+  &-italic {
+    @include type-display-extra-small($italic: true);
+  }
+}
+
 .tco-type-eyebrow {
   @include type-eyebrow;
 
