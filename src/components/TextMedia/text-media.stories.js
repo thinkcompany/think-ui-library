@@ -63,9 +63,7 @@ export const Default = () => {
           }
 
           <h1 class="tco-text-media-heading tco-type-display--${headingSize}">${heading}</h1>
-          <div class="tco-text-media-lede">
-            <p>${lede}</p>
-          </div>
+          <p class="tco-text-media-lede">${lede}</p>
           ${
             showCta
               ? `
