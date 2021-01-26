@@ -3,14 +3,19 @@
 // ========================================================
 .tco-container-wrapper {
   @include type-base-style;
+  padding: 0 $spacing-stack-24;
   background-color: $color-background-primary;
 
   // Size variants
   .tco-container {
-    width: 90%;
+    width: 100%;
     max-width: $container-max;
     margin: 0 auto;
-    padding: $spacing-stack-64 0;
+    padding: $spacing-stack-50 0;
+
+    @include wider-than($breakpoint-desktop) {
+      padding: $spacing-stack-100 0;
+    }
 
     &--default {
       max-width: $container-large;
