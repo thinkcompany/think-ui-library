@@ -60,7 +60,13 @@ $bubble-max: 600px;
 
     &.tco-text-only--right {
       &::before {
-        left: 100%;
+        right: 0;
+        left: auto;
+        transform: translate(50%, -50%);
+
+        @include wider-than($breakpoint-desktop) {
+          transform: translate(28%, -50%);
+        }
       }
     }
   }
