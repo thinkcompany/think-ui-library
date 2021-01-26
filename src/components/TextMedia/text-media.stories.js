@@ -40,7 +40,7 @@ export const Default = () => {
     mediaOrientation = 'tall';
   }
 
-  return `
+  return /*html*/ `
   <div class="tco-container-wrapper ${containerColor}">
     <div class="tco-container tco-container--default">
       <div class="tco-text-media tco-text-media--align-${alignment}">
@@ -48,7 +48,12 @@ export const Default = () => {
           ${
             numbered
               ? `
-            <span class="tco-text-media--numbered">1</span>
+            <div class="tco-background-blob">
+              <span class="tco-background-blob-content">1</span>
+              <svg class="tco-background-blob-icon" width="40" viewBox="0 0 40 40" role="img" aria-labelledby="1">
+                <use xlink:href="/img/icons.svg#icon-blob-1"></use>
+              </svg>
+            </div>
           `
               : ''
           }

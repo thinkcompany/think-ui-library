@@ -214,16 +214,23 @@ $max-width-mobile: 524px;
     @include type-body-default;
     margin: 0 auto $spacing-stack-32;
   }
+}
 
-  &--numbered {
-    display: inline-block;
-    width: $spacing-stack-32;
-    height: $spacing-stack-32;
-    margin-bottom: $spacing-stack-12;
-    border-radius: 50%;
-    background-color: $color-tint-blue-primary;
-    color: $color-background-primary;
-    font-size: $font-size-18;
-    text-align: center;
+.tco-background-blob {
+  position: relative;
+  display: inline-block;
+  width: $spacing-stack-36;
+  height: $spacing-stack-36;
+  margin-bottom: $spacing-stack-12;
+  color: $color-background-primary;
+  font-size: $font-size-18;
+  text-align: center;
+
+  &-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: 1;
+    transform: translate(-50%, -50%);
   }
 }
