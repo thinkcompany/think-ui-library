@@ -1,14 +1,19 @@
-$max-width-lede: 780px;
-$max-width-mobile: 524px;
-
 .tco-text-only {
   width: 100%;
 
+  &--right,
+  &--center {
+    display: flex;
+    flex-flow: column nowrap;
+  }
+
   &--right {
+    align-items: flex-end;
     text-align: right;
   }
 
   &--center {
+    align-items: center;
     text-align: center;
   }
 
@@ -23,10 +28,32 @@ $max-width-mobile: 524px;
   }
 
   &-heading {
-    margin-bottom: $spacing-stack-12;
+    margin-bottom: $spacing-stack-24;
   }
 
-  &-lede {
-    @include type-body-default;
+  &--bubble {
+    position: relative;
+    z-index: 1;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 0;
+      z-index: -1;
+      display: block;
+      width: 62%;
+      height: 0;
+      padding-bottom: 62%;
+      border-radius: 50%;
+      background-color: $color-tint-blue-tertiary;
+      transform: translate(-50%, -50%);
+    }
+
+    &.tco-text-only--right {
+      &::before {
+        left: 100%;
+      }
+    }
   }
 }
