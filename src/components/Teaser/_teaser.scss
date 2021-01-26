@@ -17,6 +17,18 @@
     @include type-sans-bold;
   }
 
+  .tco-text-media-content & {
+    margin-top: $spacing-stack-32;
+  }
+
+  .tco-text-media-content-text--right & {
+    justify-content: flex-end;
+  }
+
+  .tco-text-media-content-text--center & {
+    justify-content: center;
+  }
+
   @include wider-than($breakpoint-tablet-portrait) {
     display: flex;
     flex-flow: row nowrap;
