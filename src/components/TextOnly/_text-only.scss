@@ -1,0 +1,32 @@
+$max-width-lede: 780px;
+$max-width-mobile: 524px;
+
+.tco-text-only {
+  width: 100%;
+
+  &--right {
+    text-align: right;
+  }
+
+  &--center {
+    text-align: center;
+  }
+
+  &-cta {
+    margin-top: $spacing-stack-24;
+  }
+
+  &-eyebrow {
+    @include type-eyebrow;
+    display: block;
+    margin-bottom: $spacing-stack-12;
+  }
+
+  &-heading {
+    margin-bottom: $spacing-stack-12;
+  }
+
+  &-lede {
+    @include type-body-default;
+  }
+}
