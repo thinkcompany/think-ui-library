@@ -46,7 +46,7 @@ export const Default = () => {
   <div class="tco-container-wrapper ${containerColor}">
     <div class="tco-container tco-container--default">
       <div class="tco-text-media tco-text-media--align-${alignment}">
-        <div class="tco-text-media-content tco-text-media-content--text tco-text-media-content--text-${textAlignment}">
+        <div class="tco-text-media-content tco-text-media-content-text tco-text-media-content-text-${textAlignment}">
           ${
             numbered
               ? `
@@ -63,9 +63,7 @@ export const Default = () => {
           }
 
           <h1 class="tco-text-media-heading tco-type-display--${headingSize}">${heading}</h1>
-          <div class="tco-text-media-lede">
-            <p>${lede}</p>
-          </div>
+          <p class="tco-text-media-lede">${lede}</p>
           ${
             showCta
               ? `
@@ -75,8 +73,8 @@ export const Default = () => {
           }
           ${showTeaser ? teaser() : ''}
         </div>
-        <div class="tco-text-media-content tco-text-media-content--media tco-text-media-content--media-${mediaOrientation} ${
-    imageBackground ? 'tco-text-media-content--media-background' : ''
+        <div class="tco-text-media-content tco-text-media-content-media tco-text-media-content-media--${mediaOrientation} ${
+    imageBackground ? 'tco-text-media-content-media--background' : ''
   }">
           ${
             imageBackground

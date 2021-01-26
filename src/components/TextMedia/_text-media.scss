@@ -13,7 +13,7 @@ $max-width-mobile: 524px;
   &-content {
     width: 100%;
 
-    &--text {
+    &-text {
       order: 1;
 
       &-right {
@@ -25,7 +25,7 @@ $max-width-mobile: 524px;
       }
     }
 
-    &--media {
+    &-media {
       position: relative;
       display: flex;
       order: 0;
@@ -42,12 +42,12 @@ $max-width-mobile: 524px;
     justify-content: center;
     text-align: center;
 
-    .tco-text-media-content--text {
+    .tco-text-media-content-text {
       max-width: $max-width-lede;
       margin: 0 auto;
     }
 
-    .tco-text-media-content--media {
+    .tco-text-media-content-media {
       justify-content: center;
     }
   }
@@ -64,7 +64,7 @@ $max-width-mobile: 524px;
         flex: 0 auto;
         width: calc(50% - 26px);
 
-        &--media {
+        &-media {
           margin: 0;
         }
       }
@@ -82,11 +82,11 @@ $max-width-mobile: 524px;
       padding-right: $spacing-inline-24;
 
       .tco-text-media-content {
-        &--text {
+        &-text {
           order: 0;
         }
 
-        &--media {
+        &-media {
           order: 1;
         }
       }
@@ -94,10 +94,14 @@ $max-width-mobile: 524px;
   }
 
   // circle image background
-  &-content--media-background {
-    &.tco-text-media-content--media-tall {
+  &-content-media--background {
+    &.tco-text-media-content-media--tall {
       width: calc(100% - 60px);
       margin-left: $spacing-inline-30;
+
+      @include wider-than($breakpoint-tablet-portrait) {
+        margin-left: 0;
+      }
 
       .tco-text-media--align-center & {
         margin-left: 0;
