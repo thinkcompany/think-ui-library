@@ -16,11 +16,11 @@ $max-width-mobile: 524px;
     &-text {
       order: 1;
 
-      &-right {
+      &--right {
         text-align: right;
       }
 
-      &-center {
+      &--center {
         text-align: center;
       }
     }
@@ -62,7 +62,7 @@ $max-width-mobile: 524px;
     .tco-text-media-content {
       @include wider-than($breakpoint-tablet-portrait) {
         flex: 0 auto;
-        width: calc(50% - 26px);
+        width: calc(50% - #{$spacing-inline-24});
 
         &-media {
           margin: 0;
@@ -93,10 +93,9 @@ $max-width-mobile: 524px;
     }
   }
 
-  // circle image background
   &-content-media--background {
     &.tco-text-media-content-media--tall {
-      width: calc(100% - 60px);
+      width: calc(100% - #{$spacing-inline-60});
       margin-left: $spacing-inline-30;
 
       @include wider-than($breakpoint-tablet-portrait) {
@@ -116,10 +115,10 @@ $max-width-mobile: 524px;
       content: '';
       z-index: 0;
       display: block;
-      width: calc(100% - 12px);
+      width: calc(100% - #{$spacing-inline-12});
       height: 0;
       margin: auto;
-      padding-bottom: calc(100% - 12px);
+      padding-bottom: calc(100% - #{$spacing-inline-12});
       border-radius: 50%;
       background-color: $color-background-primary;
     }
@@ -139,13 +138,13 @@ $max-width-mobile: 524px;
         position: absolute;
         top: 50%;
         left: 50%;
-        width: calc(100% + 60px);
-        padding-bottom: calc(100% + 60px);
+        width: calc(100% + #{$spacing-inline-60});
+        padding-bottom: calc(100% + #{$spacing-stack-60});
         transform: translate(-50%, -50%);
 
         @include wider-than($breakpoint-desktop) {
-          width: calc(100% + 120px);
-          padding-bottom: calc(100% + 120px);
+          width: calc(100% + #{$spacing-inline-120});
+          padding-bottom: calc(100% + #{$spacing-stack-120});
         }
       }
 
@@ -162,7 +161,7 @@ $max-width-mobile: 524px;
     padding: 0;
 
     .tco-text-media-content {
-      &--text {
+      &-text {
         order: 0;
         margin-bottom: $spacing-stack-50;
         padding: 0 $spacing-inline-24;
@@ -173,7 +172,7 @@ $max-width-mobile: 524px;
         }
       }
 
-      &--media {
+      &-media {
         order: 1;
         max-width: none;
         margin: 0;
@@ -185,11 +184,11 @@ $max-width-mobile: 524px;
       .tco-text-media--align-right {
         align-items: flex-start;
 
-        .tco-text-media-content--text {
-          width: calc(68% - 50px);
+        .tco-text-media-content-text {
+          width: calc(68% - #{$spacing-inline-50});
         }
 
-        .tco-text-media-content--media {
+        .tco-text-media-content-media {
           width: 32%;
         }
       }
@@ -217,7 +216,6 @@ $max-width-mobile: 524px;
   }
 
   &--numbered {
-    // placeholder styles. need svg blobs
     display: inline-block;
     width: $spacing-stack-32;
     height: $spacing-stack-32;

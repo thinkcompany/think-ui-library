@@ -15,7 +15,6 @@ export const Default = () => {
   const containerColor = select('Background Color', colors, colors.Glass);
   const alignment = select('Media Alignment', alignments, 'left');
   const image = text('Image', 'https://placekitten.com/524/320');
-  //const image = text('Image', 'https://placekitten.com/390/524');
   const imageBackground = boolean('Image background?', true);
   const textAlignment = select('Text Alignment', alignments, 'left');
   const eyebrow = text('Eyebrow', 'Text and Image');
@@ -29,7 +28,6 @@ export const Default = () => {
   const showTeaser = boolean('Show Teaser', false);
   const numbered = boolean('Numbered', false);
 
-  // get media aspect ratio for background bubble style
   const url = new URL(image);
   const path = url.pathname;
   const size = path.split('/');
@@ -42,11 +40,11 @@ export const Default = () => {
     mediaOrientation = 'tall';
   }
 
-  return /*html*/ `
+  return `
   <div class="tco-container-wrapper ${containerColor}">
     <div class="tco-container tco-container--default">
       <div class="tco-text-media tco-text-media--align-${alignment}">
-        <div class="tco-text-media-content tco-text-media-content-text tco-text-media-content-text-${textAlignment}">
+        <div class="tco-text-media-content tco-text-media-content-text tco-text-media-content-text--${textAlignment}">
           ${
             numbered
               ? `
@@ -111,26 +109,13 @@ export const PageHeader = () => {
   );
   const showCta = boolean('CTA', true);
 
-  // // get media aspect ratio for background bubble style
-  // const url = new URL(image);
-  // const path = url.pathname;
-  // const size = path.split('/');
-  // const aspectRatio = size[1] / size[2];
-  // let mediaOrientation;
-  //
-  // if( aspectRatio > 1) {
-  //   mediaOrientation = 'wide';
-  // } else {
-  //   mediaOrientation = 'tall';
-  // }
-
-  return /*html*/ `
+  return `
   <div class="tco-container-wrapper ${containerColor} tco-text-media--page-header">
     <div class="tco-container tco-container--default">
       <div class="tco-text-media tco-text-media--align-left ${
         circleBackground ? 'tco-text-media-content--media-background' : ''
       }">
-        <div class="tco-text-media-content tco-text-media-content--text tco-text-media-content--text-${textAlignment}">
+        <div class="tco-text-media-content tco-text-media-content-text tco-text-media-content-text--${textAlignment}">
           ${
             eyebrow
               ? `
@@ -152,7 +137,7 @@ export const PageHeader = () => {
           }
         </div>
 
-        <div class="tco-text-media-content tco-text-media-content--media">
+        <div class="tco-text-media-content tco-text-media-content-media">
           <img class="tco-text-media-image" alt="An adorable kitten" src="${image}" />
         </div>
     </div>
