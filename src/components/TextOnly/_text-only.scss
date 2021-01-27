@@ -58,6 +58,12 @@ $bubble-max: 600px;
       }
     }
 
+    .tco-container-wrapper--glass & {
+      &::before {
+        background-color: $color-background-primary;
+      }
+    }
+
     &.tco-text-only--right {
       &::before {
         right: 0;
