@@ -14,7 +14,7 @@ const alignment = {
   Right: 'tco-post-teaser--align-right'
 };
 
-export const Default = () => {
+export const teaser = () => {
   const containerColor = select('Background Color', colors, colors.Default);
   const teaserAlignment = select('Alignment', alignment, alignment.Default);
   const teaserHeader = text('Header', 'From our blog');
@@ -24,21 +24,17 @@ export const Default = () => {
   const teaserShowByline = boolean('Show Author', true);
 
   return `
-    <div class="tco-container-wrapper ${containerColor} ">
-      <div class="tco-container">
-        <div class="tco-post-teaser ${teaserAlignment}">
-          <div class=" tco-post-teaser-content">
-            <span class="tco-post-teaser-eyebrow tco-type-display--extra-small">${teaserHeader}</span>
-            <h4 class="tco-post-teaser-title"><a href="#" class="tco-post-teaser-link">${teaserTitle}</a></h4>
-            ${
-              teaserShowByline
-                ? `
-              <p class="tco-post-teaser-author">by ${teaserAuthor}, ${teaserPosition}</p>
-              `
-                : ``
-            }
-          </div>
-        </div>
+    <div class="tco-post-teaser ${teaserAlignment}">
+      <div class=" tco-post-teaser-content">
+        <span class="tco-post-teaser-eyebrow tco-type-display--extra-small">${teaserHeader}</span>
+        <h4 class="tco-post-teaser-title"><a href="#" class="tco-post-teaser-link">${teaserTitle}</a></h4>
+        ${
+          teaserShowByline
+            ? `
+          <p class="tco-post-teaser-author">by ${teaserAuthor}, ${teaserPosition}</p>
+          `
+            : ``
+        }
       </div>
     </div>
   `;
