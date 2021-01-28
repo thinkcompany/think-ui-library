@@ -1,0 +1,20 @@
+@mixin center-absolute {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+@mixin center-reset {
+  position: initial;
+  top: auto;
+  left: auto;
+  transform: translate(0, 0);
+}
+
+@mixin pseudo-bubble {
+  content: '';
+  display: block;
+  border-radius: 50%;
+  background-color: $color-background-primary;
+}
