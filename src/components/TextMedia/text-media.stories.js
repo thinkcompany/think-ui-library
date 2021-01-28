@@ -15,7 +15,7 @@ export const Default = () => {
   const containerColor = select('Background Color', colors, colors.Glass);
   const alignment = select('Media Alignment', alignments, 'left');
   const image = text('Image', 'https://placekitten.com/524/320');
-  const imageBackground = boolean('Image background?', true);
+  const bubbleBackground = boolean('Image background bubble?', true);
   const textAlignment = select('Text Alignment', alignments, 'left');
   const eyebrow = text('Eyebrow', 'Text and Image');
   const heading = text('Heading', 'Technology Integration');
@@ -77,10 +77,10 @@ export const Default = () => {
           ${showTeaser ? teaser() : ''}
         </div>
         <div class="tco-text-media-content tco-text-media-content-media tco-text-media-content-media--${mediaOrientation} ${
-    imageBackground ? 'tco-text-media-content-media--background' : ''
+    bubbleBackground ? 'tco-text-media-content-media--background' : ''
   }">
           ${
-            imageBackground
+            bubbleBackground
               ? `
             <div class="tco-text-media-container tco-text-media-container--${mediaOrientation}">
               <img class="tco-text-media-image" alt="An adorable kitten" src="${image}" />
@@ -99,8 +99,8 @@ export const Default = () => {
 
 export const PageHeader = () => {
   const containerColor = select('Background Color', colors, colors.Default);
-  const image = text('Image', 'https://placekitten.com/524/524');
-  const circleBackground = boolean('Circle background?', false);
+  const image = text('Image', 'https://placekitten.com/524/320');
+  const bubbleBackground = boolean('Bubble background?', false);
   const textAlignment = select('Text Alignment', alignments, 'left');
   const eyebrow = text('Eyebrow', '');
   const heading = text(
@@ -117,9 +117,7 @@ export const PageHeader = () => {
   return `
   <div class="tco-container-wrapper ${containerColor} tco-text-media--page-header">
     <div class="tco-container tco-container--default">
-      <div class="tco-text-media tco-text-media--align-left ${
-        circleBackground ? 'tco-text-media-content--media-background' : ''
-      }">
+      <div class="tco-text-media tco-text-media--align-left">
         <div class="tco-text-media-content tco-text-media-content-text tco-text-media-content-text--${textAlignment}">
           ${
             eyebrow
@@ -142,8 +140,21 @@ export const PageHeader = () => {
           }
         </div>
 
-        <div class="tco-text-media-content tco-text-media-content-media">
-          <img class="tco-text-media-image" alt="An adorable kitten" src="${image}" />
+        <div class="tco-text-media-content tco-text-media-content-media ${
+          bubbleBackground ? 'tco-text-media-content-media--background' : ''
+        }">
+          ${
+            bubbleBackground
+              ? `
+            <div class="tco-text-media-container">
+              <img class="tco-text-media-image" alt="An adorable kitten" src="${image}" />
+            </div>
+          `
+              : `
+            <img class="tco-text-media-image" alt="An adorable kitten" src="${image}" />
+          `
+          }
+
         </div>
     </div>
   </div>
