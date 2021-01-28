@@ -114,15 +114,11 @@ $bubble-max: 600px;
 
     &::before {
       @include pseudo-bubble;
-      // content: '';
       z-index: 0;
-      // display: block;
       width: calc(100% - #{$spacing-inline-12});
       height: 0;
       margin: auto;
       padding-bottom: calc(100% - #{$spacing-inline-12});
-      // border-radius: 50%;
-      // background-color: $color-background-primary;
     }
 
     .tco-text-media-image {
