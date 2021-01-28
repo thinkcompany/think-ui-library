@@ -2,9 +2,6 @@ import { select, text, boolean } from '@storybook/addon-knobs';
 
 const colors = {
   Default: '',
-  Tan: 'tco-container-wrapper--tan',
-  Blue: 'tco-container-wrapper--blue',
-  Navy: 'tco-container-wrapper--navy',
   Glass: 'tco-container-wrapper--glass'
 };
 
@@ -17,12 +14,14 @@ const offsets = {
 export const imageOnly = () => {
   const containerColor = select('Background Color', colors, colors.Glass);
   const offset = select('Offset Image', offsets, offsets.Default);
-  const imageSrc =
-    'https://thinkstaging.wpengine.com/wp-content/uploads/2021/01/careers-header.jpg';
+  const imageSrc = text(
+    'Image',
+    'https://thinkstaging.wpengine.com/wp-content/uploads/2021/01/careers-header.jpg'
+  );
 
   return `
     <div class="tco-image-only ${offset}">
-      <img class="tco-image-only-image" alt="Think Company employees working in office" src="${imageSrc}" />
+      <img class="tco-image-only-image" alt="A brief description of the image" src="${imageSrc}" />
     </div>`;
 };
 
