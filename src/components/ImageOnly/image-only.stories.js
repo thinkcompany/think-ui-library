@@ -20,7 +20,7 @@ export const imageOnly = () => {
   const imageSrc =
     'https://thinkstaging.wpengine.com/wp-content/uploads/2021/01/careers-header.jpg';
 
-  return /*html*/ `
+  return `
     <div class="tco-image-only ${offset}">
       <img class="tco-image-only-image" alt="Think Company employees working in office" src="${imageSrc}" />
     </div>`;
