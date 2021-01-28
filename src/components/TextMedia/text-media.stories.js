@@ -100,7 +100,7 @@ export const Default = () => {
 export const PageHeader = () => {
   const containerColor = select('Background Color', colors, colors.Default);
   const image = text('Image', 'https://placekitten.com/524/320');
-  const bubbleBackground = boolean('Bubble background?', false);
+  const bubbleBackground = boolean('Offset bubble background?', false);
   const textAlignment = select('Text Alignment', alignments, 'left');
   const eyebrow = text('Eyebrow', '');
   const heading = text(
@@ -156,8 +156,63 @@ export const PageHeader = () => {
           }
 
         </div>
+      </div>
+    </div>
+  </div>`;
+};
+
+export const PageHeaderFullImage = () => {
+  const containerColor = select('Background Color', colors, colors.Default);
+  const image = text('Image', 'https://placekitten.com/187/387');
+  const textAlignment = select('Text Alignment', alignments, 'left');
+  const eyebrow = text('Eyebrow', '');
+  const heading = text('Heading', 'Product Design & Development');
+  const headingSize = select('Heading Size', sizes, 'large');
+  const lede = text(
+    'Lede',
+    'Lorem ipsum dolor sit amet, consectetur adipiscing elit.'
+  );
+  const showCta = boolean('CTA', false);
+
+  return /*html*/ `
+  <div class="tco-container-wrapper ${containerColor} tco-text-media--page-header tco-text-media--image-only">
+    <div class="tco-container tco-container--default">
+      <div class="tco-text-media tco-text-media--align-left">
+        <div class="tco-text-media-content tco-text-media-content-headline tco-text-media-content-text--${textAlignment}">
+          ${
+            eyebrow
+              ? `
+            <span class="tco-text-media-eyebrow">${eyebrow}</span>
+            `
+              : ''
+          }
+
+          <h1 class="tco-text-media-heading tco-type-display--${headingSize}">${heading}</h1>
+        </div>
+
+        <div class="tco-text-media-content tco-text-media-content-lede tco-text-media-content-text--${textAlignment}">
+          <div class="tco-text-media-lede">
+            <p>${lede}</p>
+          </div>
+          ${
+            showCta
+              ? `
+            <a href="#" class="tco-btn tco-btn--primary">Learn More</a>
+          `
+              : ''
+          }
+        </div>
+
+        <div class="tco-text-media-content tco-text-media-content-media tco-text-media-content-media--background">
+          <div class="tco-text-media-container">
+            <img class="tco-text-media-image" alt="An adorable kitten" src="${image}" />
+          </div>
+        </div>
+      </div>
     </div>
   </div>
+  <div class="tco-image-only">
+    <img class="tco-text-media-image" alt="Think Company employees working in office" src="https://thinkstaging.wpengine.com/wp-content/uploads/2021/01/careers-header.jpg" />
   </div>`;
 };
 
