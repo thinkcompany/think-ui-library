@@ -1,5 +1,6 @@
 import { select, text, boolean } from '@storybook/addon-knobs';
 import { teaser } from '../Teaser/teaser.stories';
+import { imageOnly } from '../ImageOnly/image-only.stories';
 
 const colors = {
   Default: '',
@@ -211,9 +212,7 @@ export const PageHeaderFullImage = () => {
       </div>
     </div>
   </div>
-  <div class="tco-image-only">
-    <img class="tco-text-media-image" alt="Think Company employees working in office" src="https://thinkstaging.wpengine.com/wp-content/uploads/2021/01/careers-header.jpg" />
-  </div>`;
+  ${imageOnly()}`;
 };
 
 export default {
