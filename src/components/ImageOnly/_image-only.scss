@@ -1,0 +1,26 @@
+$offset: $spacing-stack-50;
+
+.tco-container-wrapper--image-only {
+  padding: 0;
+}
+
+.tco-image-only {
+  position: relative;
+  z-index: 1;
+
+  &-image {
+    margin: 0 auto;
+  }
+
+  &--offset-top {
+    .tco-image-only-image {
+      transform: translateY(-$offset);
+    }
+  }
+
+  &--offset-bottom {
+    .tco-image-only-image {
+      transform: translateY($offset);
+    }
+  }
+}
