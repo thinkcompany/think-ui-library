@@ -1,28 +1,13 @@
-import { select, text, boolean } from '@storybook/addon-knobs';
-import { useEffect } from '@storybook/client-api';
+import { select, text } from '@storybook/addon-knobs';
 
-// sets the background to $color-background-tertiary based on the function result
-const toggleBackground = (equalityFunc, targetSelector) => {
-  useEffect(() => {
-    const storyBackground = document.querySelector(targetSelector);
-
-    if (equalityFunc()) {
-      storyBackground.style.background = '#173145';
-    } else {
-      storyBackground.style.background = '';
-    }
-
-    return () => {
-      storyBackground.style.background = '';
-    };
-  });
-};
-
-// #region knob option objects
 const styles = {
   Primary: 'tco-btn--primary',
-  Secondary: 'tco-btn--secondary',
-  Tertiary: 'tco-btn--tertiary'
+  Secondary: 'tco-btn--secondary'
+};
+
+const linkStyles = {
+  Primary: '',
+  Secondary: 'tco-text-link--secondary'
 };
 
 const states = {
@@ -30,40 +15,26 @@ const states = {
   Disabled: 'disabled'
 };
 
-const linkSizes = {
+const sizes = {
+  DisplayXLarge: 'display--extra-large',
+  DisplayLarge: 'display--large',
+  DisplayMedium: 'display--medium',
+  DisplaySmall: 'display--small',
+  DisplayXSmall: 'display--extra-small',
+  BodyDefault: 'body--default',
+  BodyLarge: 'body--large',
+  BodySansSmall: 'body--sans-small'
+};
+
+const colors = {
   Default: '',
-  Large: 'tco-btn-link--large',
-  Small: 'tco-btn-link--small'
+  Glass: 'tco-container-wrapper--glass'
 };
 
-const linkColors = {
-  Default: '',
-  'On Tint': 'tco-btn-link--on-tint'
-};
-
-const icons = {
-  Add: 'icon-add',
-  Alert: 'icon-alert',
-  Check: 'icon-check',
-  ChevronDown: 'icon-chevron-down',
-  ChevronLeft: 'icon-chevron-left',
-  ChevronRight: 'icon-chevron-right',
-  ChevronUp: 'icon-chevron-up',
-  Close: 'icon-close',
-  File: 'icon-file',
-  Minus: 'icon-minus',
-  Search: 'icon-search',
-  Trash: 'icon-trash'
-};
-// #endregion
-
-// #region individual button stories
-export const Text = () => {
-  const buttonText = text('Button Text', 'Button Text');
+export const Button = () => {
+  const buttonText = text('Button Text', 'Button');
   const buttonStyle = select('Style', styles, styles.Primary);
   const buttonState = select('State', states, states.Active);
-
-  toggleBackground(() => buttonStyle === styles.Secondary, '.sb-show-main');
 
   return `
     <button type="button" class="tco-btn ${buttonStyle}" ${buttonState}>
@@ -71,164 +42,42 @@ export const Text = () => {
     </button>`;
 };
 
-export const Link = () => {
-  const buttonText = text('Button Text', 'Button Text');
-  const buttonSize = select('Size', linkSizes, linkSizes.Default);
-  const buttonState = select('State', states, states.Active);
-  const linkColor = select('Color', linkColors, linkColors.Default);
-
-  toggleBackground(() => linkColor === linkColors['On Tint'], '.sb-show-main');
+export const TextLink = () => {
+  const linkText = text('Text', 'default text link');
+  const linkState = select('State', states, states.Active);
 
   return `
-    <a href="#" class="tco-btn tco-btn-link${linkColor ? ` ${linkColor}` : ''}${
-    buttonSize ? ` ${buttonSize}` : ''
-  }" ${buttonState}>
-      ${buttonText}
-    </a>`;
+    <p class="tco-type-body--default">Lorem ipsum dolor sit amet <a href="#" class="tco-text-link" ${linkState}> ${linkText}</a>.</p>
+    <p class="tco-type-body--sans-small">Lorem ipsum <a href="#" class="tco-text-link" ${linkState}> ${linkText}</a> dolor sit amet.</p>`;
 };
 
-export const Icon = () => {
-  const iconId = select('Icon', icons, icons.Add);
-  const buttonText = text('Button Title', 'Button Title');
-  const buttonStyle = select('Style', styles, styles.Primary);
-  const buttonState = select('State', states, states.Active);
+export const LinkWithArrow = () => {
+  const linkText = text('Text', 'Text Link with Arrow');
+  const linkStyle = select('Style', linkStyles, linkStyles.Primary);
+  const linkState = select('State', states, states.Active);
+  const fontSize = select('Font Size', sizes, sizes.BodyDefault);
+  let containerColor;
 
-  toggleBackground(() => buttonStyle === styles.Secondary, '.sb-show-main');
+  if (linkStyle == 'tco-text-link--secondary') {
+    containerColor = 'tco-container-wrapper--navy';
+  } else {
+    containerColor = '';
+  }
 
   return `
-    <button type="button" class="tco-btn tco-btn--icon ${buttonStyle}" ${buttonState}>
-      <svg class="icon" width="16" height="16" viewBox="0 0 16 16">
-        <use xlink:href="img/icons.svg#${iconId}"></use>
-      </svg>
-      <span class="tco-accessibly-hidden">${buttonText}</span>
-    </button>`;
+  <div class="tco-container-wrapper ${containerColor}">
+    <div class="tco-container">
+      <h3 class="tco-type-${fontSize}">
+        <a href="#" class="tco-text-link tco-text-link--arrow ${linkStyle}" ${linkState}>
+          ${linkText}
+          <svg class="tco-text-link-icon" width="20" height="20" viewBox="0 0 20 20" role="img" aria-labelledby="arrow">
+            <use xlink:href="/img/icons.svg#icon-arrow-right"></use>
+          </svg>
+        </a>
+      </h3>
+    </div>
+  </div>`;
 };
-
-export const IconWithText = () => {
-  const iconId = select('Icon', icons, icons.Add);
-  const buttonText = text('Button Text', 'Button Text');
-  const buttonStyle = select('Style', styles, styles.Primary);
-  const buttonState = select('State', states, states.Active);
-
-  toggleBackground(() => buttonStyle === styles.Secondary, '.sb-show-main');
-
-  return `
-    <button type="button" class="tco-btn tco-btn--icon-text ${buttonStyle}" ${buttonState}>
-      <svg class="icon" width="16" height="16" viewBox="0 0 16 16">
-        <use xlink:href="img/icons.svg#${iconId}"></use>
-      </svg>
-      ${buttonText}
-    </button>`;
-};
-// #endregion
-
-// #region all buttons story
-export const All = () => {
-  // knobs
-  const showInfo = boolean('Show Component Info', false); // shows or hides component info
-  const buttonText = text('Button Text', 'Button');
-  const iconId = select('Icon', icons, icons.Add);
-  const backgroundColor = select(
-    'Background Color',
-    {
-      Dark: 'dark',
-      Light: 'light'
-    },
-    'light'
-  );
-
-  toggleBackground(() => backgroundColor === 'dark', '.sb-show-main');
-
-  // wrapper div for each button example
-  const itemWrapper = children => `
-    <div
-      class="documentation-grid--item ${showInfo ? 'documentation-block' : ''}"
-      style="${showInfo ? '' : 'text-align:center; padding: 20px 0;'}"
-    >
-      ${children}
-    </div>`;
-
-  // iterate over style and size objects to get all button examples
-  const textButtonExamples = Object.keys(styles)
-    .map(styleKey =>
-      itemWrapper(`
-      <button type="button" class="tco-btn ${styles[styleKey]}">
-        ${buttonText}
-      </button>
-      <footer style="${showInfo ? '' : 'display: none'}">
-        <span class="type-style--bold">Text Button</span>
-        <span>style: ${styleKey}</span>
-      </footer>
-    `)
-    )
-    .join('');
-
-  const iconButtonExamples = Object.keys(styles)
-    .map(styleKey =>
-      itemWrapper(`
-      <button type="button" class="tco-btn tco-btn--icon ${styles[styleKey]}">
-        <svg class="icon" width="16" height="16" viewBox="0 0 16 16">
-          <use xlink:href="/img/icons.svg#${iconId}"></use>
-        </svg>
-        <span class="tco-accessibly-hidden">${buttonText}</span>
-      </button>
-      <footer style="${showInfo ? '' : 'display: none'}">
-        <span class="type-style--bold">Icon Button</span>
-        <span>style: ${styleKey}</span>
-      </footer>
-    `)
-    )
-    .join('');
-
-  const iconTextButtonExamples = Object.keys(styles)
-    .map(styleKey =>
-      itemWrapper(`
-      <button type="button" class="tco-btn tco-btn--icon-text ${
-        styles[styleKey]
-      }">
-        <svg class="icon" width="16" height="16" viewBox="0 0 16 16">
-          <use xlink:href="/img/icons.svg#${iconId}"></use>
-        </svg>
-        ${buttonText}
-      </button>
-      <footer style="${showInfo ? '' : 'display: none'}">
-        <span class="type-style--bold">Icon Button With Text</span>
-        <span>style: ${styleKey}</span>
-      </footer>
-    `)
-    )
-    .join('');
-
-  const linkButtonExamples = Object.keys(linkColors)
-    .map(colorKey =>
-      Object.keys(linkSizes)
-        .map(sizeKey =>
-          itemWrapper(`
-          <a href="/" class="tco-btn tco-btn-link ${linkColors[colorKey]} ${
-            sizeKey !== 'Default' ? linkSizes[sizeKey] : ''
-          }">
-            ${buttonText}
-          </a>
-          <footer style="${showInfo ? '' : 'display: none'}">
-            <span class="type-style--bold">Link Button</span>
-            <span>size: ${sizeKey}</span>
-          </footer>
-        `)
-        )
-        .join('')
-    )
-    .join('');
-
-  const buttonExamples = [
-    textButtonExamples,
-    iconButtonExamples,
-    iconTextButtonExamples,
-    linkButtonExamples
-  ];
-
-  return `<div class="documentation-grid">${buttonExamples.join('')}</div>`;
-};
-// #endregion
 
 export default {
   title: 'Controls & Inputs / Buttons'

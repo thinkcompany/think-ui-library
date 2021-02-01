@@ -207,7 +207,7 @@
 }
 
 @mixin type-body-default($font-color: inherit, $italic: false) {
-  @include type-base-style($font-color, 300);
+  @include type-base-style($font-color);
   font-size: $font-size-18;
   font-family: $font-stack-slab-book;
   line-height: 1.78;
@@ -263,9 +263,6 @@
   transition: text-decoration 0.4s ease, color 0.4s ease;
 }
 
-/**
-  * Link style with highlight transition
-  */
 @mixin type-link(
   $font-color: $color-tint-blue-primary,
   $font-size: inherit,
@@ -273,21 +270,97 @@
   $font-family: inherit,
   $line-height: inherit
 ) {
-  @include type-highlight($font-color);
+  position: relative;
+  color: $font-color;
   font-weight: $font-weight;
   font-size: $font-size;
   font-family: $font-family;
   line-height: $line-height;
+  text-decoration: none;
+  background-color: transparent;
+  text-transform: none;
 
-  &:link,
-  &:visited {
-    text-decoration: underline;
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: 1px;
+    left: 0;
+    display: block;
+    width: 100%;
+    height: 1px;
+    background-color: $font-color;
+    opacity: 1;
+    transition: opacity 0.2s linear;
+  }
+
+  &:disabled,
+  &[disabled] {
+    cursor: inherit;
   }
 
   &:hover,
   &:focus,
-  &:active {
-    text-decoration: none;
+  &:active,
+  &:visited,
+  &:disabled,
+  &[disabled] {
+    &::after {
+      opacity: 0;
+    }
+  }
+}
+
+$arrow-width: (16 / 18) * 1em;
+$arrow-height: (14 / 18) * 1em;
+$arrow-offset: 5px;
+$arrow-translate: 10px;
+
+@mixin type-link-cta($font-color: inherit) {
+  padding-right: $arrow-offset + $arrow-offset;
+  color: $font-color;
+
+  .tco-text-link-icon,
+  svg {
+    display: inline-block;
+    width: $arrow-width;
+    height: $arrow-height;
+    fill: $color-tint-blue-primary;
+    transition: transform 0.2s linear;
+    transform: translate($arrow-offset, 0);
+    transform-origin: left center;
+  }
+
+  &::after {
+    display: none;
+  }
+
+  &:hover,
+  &:focus {
+    .tco-text-link--icon,
+    svg {
+      transform: translate($arrow-translate, 0);
+    }
+  }
+
+  &[disabled],
+  &:disabled {
+    .tco-text-link-icon,
+    svg {
+      fill: $color-disabled;
+      transform: translate($arrow-offset, 0);
+    }
+  }
+
+  &.tco-text-link--secondary {
+    color: $color-background-primary;
+
+    &::after {
+      display: none;
+    }
+
+    .tco-text-link-icon {
+      fill: $color-background-primary;
+    }
   }
 }
 

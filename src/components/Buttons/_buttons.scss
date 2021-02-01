@@ -1,212 +1,86 @@
-/* ----------------------------------------------*\
-    Buttons
-\*---------------------------------------------- */
+$color-disabled: #c8d9ea;
+$color-hover: #08519a;
 
 .tco-btn {
-  @include spacing-inset-16;
-  @include type-body-medium;
-  @include type-style-bold;
+  @include type-eyebrow;
   position: relative;
+  padding: $spacing-stack-12 $spacing-stack-18;
   border: none;
+  border-radius: 0;
   text-align: center;
   text-decoration: none;
   text-transform: uppercase;
   cursor: pointer;
+  transition: all 0.2s linear;
   appearance: none;
 
   &[href] {
     display: inline-block;
     text-decoration: none;
   }
-}
 
-/* ----------------------------------------------*\
-    Primary Button
-\*---------------------------------------------- */
+  &:hover,
+  &:focus {
+    border-color: $color-hover;
+    background: $color-hover;
+  }
+
+  &[disabled],
+  &:disabled {
+    border-color: $color-disabled;
+    background: $color-disabled;
+    color: $color-disabled;
+    cursor: default;
+  }
+}
 
 .tco-btn--primary,
 %tco-btn--primary {
   border: 1px solid $color-tint-blue-primary;
-  border-radius: $border-radius-small;
   background: $color-tint-blue-primary;
   color: $color-foreground-on-tint;
 
-  > svg {
-    fill: $color-foreground-on-tint;
-  }
-
-  &:hover,
-  &:focus {
-    border-color: $color-tint-blue-secondary;
-    background: $color-tint-blue-secondary;
-
-    &::after {
-      border-color: $color-tint-blue-secondary;
-      border-radius: $border-radius-small;
-    }
-  }
-
   &:active {
-    border-color: $color-foreground-primary;
-    background: $color-tint-blue-secondary;
+    border-color: $color-background-tertiary;
   }
 
   &[disabled],
   &:disabled {
-    border-color: $color-tint-blue-secondary;
-    background: $color-tint-blue-secondary;
-    cursor: default;
+    color: $color-foreground-on-tint;
   }
 }
-
-/* ----------------------------------------------*\
-    Secondary Button
-\*---------------------------------------------- */
 
 .tco-btn--secondary,
 %tco-btn--secondary {
-  border: 1px solid $color-background-primary;
-  border-radius: $border-radius-small;
-  background: $color-background-primary;
-  color: $color-foreground-primary;
-
-  > svg {
-    fill: $color-foreground-primary;
-  }
+  border: 1px solid $color-tint-blue-primary;
+  background: transparent;
+  color: $color-tint-blue-primary;
 
   &:hover,
   &:focus {
-    background-color: $color-foreground-quanternary;
-
-    &::after {
-      border-color: $color-foreground-quanternary;
-      border-radius: $border-radius-small;
-    }
+    color: $color-foreground-on-tint;
   }
 
   &:active {
-    border-color: $color-foreground-tertiary;
-    background-color: $color-foreground-quanternary;
+    border-color: $color-hover;
   }
 
   &[disabled],
   &:disabled {
-    border-color: $color-background-primary;
-    color: $color-foreground-primary;
-    cursor: default;
-
-    &:hover {
-      background: none;
-    }
+    background-color: transparent;
   }
 }
 
-/* ----------------------------------------------*\
-    Tertiary Button
-\*---------------------------------------------- */
-
-.tco-btn--tertiary,
-%tco-btn--tertiary {
-  border: 1px solid $color-tint-orange-primary;
-  border-radius: $border-radius-small;
-  background-color: $color-tint-orange-primary;
-  color: $color-foreground-primary;
-
-  > svg {
-    fill: $color-foreground-primary;
-  }
-
-  &:hover,
-  &:focus {
-    border-color: lighten($color-tint-orange-secondary, 15%);
-    background-color: lighten($color-tint-orange-secondary, 15%);
-
-    &::after {
-      border-color: lighten($color-tint-orange-secondary, 15%);
-      border-radius: $border-radius-small;
-    }
+.tco-text-link {
+  &--arrow {
+    @include type-link-cta;
   }
 
   &:active {
-    border-color: lighten($color-tint-orange-secondary, 5%);
-    background-color: lighten($color-tint-orange-secondary, 15%);
-  }
+    color: $color-hover;
 
-  &[disabled],
-  &:disabled {
-    border-color: $color-tint-orange-primary;
-    color: $color-foreground-primary;
-    cursor: default;
-
-    &:hover {
-      background: none;
+    .tco-text-link-icon {
+      fill: $color-hover;
     }
   }
-}
-
-/* ----------------------------------------------*\
-    Link Button
-\*---------------------------------------------- */
-
-.tco-btn-link {
-  @include type-link($font-weight: $font-weight-500);
-  padding: 0 4px;
-  background-color: transparent;
-  text-transform: none;
-
-  &--on-tint {
-    @include type-link(
-      $font-color: $color-foreground-on-tint,
-      $font-weight: $font-weight-500
-    );
-  }
-
-  &.tco-btn-link--large {
-    @include type-display-small($color-foreground-on-tint);
-    font-weight: $font-weight-600;
-  }
-
-  &.tco-btn-link--small {
-    @include type-body-small($color-foreground-on-tint);
-  }
-}
-
-/* ----------------------------------------------*\
-    Icon Button
-\*---------------------------------------------- */
-
-.tco-btn--icon,
-.tco-btn--icon-text {
-  @include spacing-inset-8;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: $border-radius-small;
-  line-height: 0;
-
-  &.tco-btn--small {
-    @include spacing-inset-8;
-
-    > svg {
-      width: 10px;
-      height: 10px;
-    }
-  }
-
-  &.tco-btn--medium {
-    @include spacing-inset-12;
-
-    > svg {
-      width: 14px;
-      height: 14px;
-    }
-  }
-
-  &.tco-btn--large {
-    @include spacing-inset-16;
-  }
-}
-
-.tco-btn--icon-text > svg {
-  margin-right: 8px;
 }
