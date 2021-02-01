@@ -1,58 +1,35 @@
-// The math assumes an even number
-$images-per-row: 2;
-$images-per-row-desktop: 4;
+$container-max: 220px;
 
-// IMPORTANT: Assumes an even-number for items in a full row.
-@mixin internal-grid-border($items-per-row) {
-  border-top: $border-tertiary;
-  border-right: $border-tertiary;
-
-  // Selects only top-most row of $items-per-row
-  &:nth-child(-n + #{$items-per-row}) {
-    border-top-color: transparent;
+.tco-container-image-grid-alignment {
+  &-center {
+    text-align: center;
   }
 
-  // Selects only the first child on each row of $items-per-row (left-most column)
-  &:nth-child(#{$items-per-row}n):nth-child(even) {
-    border-right-color: transparent;
+  &-right {
+    text-align: right;
   }
 }
 
 .tco-image-grid {
-  display: grid;
-  grid-template-columns: repeat($images-per-row, 1fr);
-  align-items: flex-start;
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
   justify-content: center;
-  margin-top: $spacing-stack-64;
-  margin-bottom: $spacing-stack-64;
-
-  @include wider-than($breakpoint-tablet-portrait) {
-    grid-template-columns: repeat($images-per-row-desktop, 1fr);
-  }
+  padding-top: $spacing-stack-50;
 
   &-container {
-    @include spacing-inset-8;
-    margin: 0;
-  }
+    width: 50%;
+    max-width: $container-max;
+    margin-bottom: $spacing-stack-32;
+    padding: 0 $spacing-inline-32;
 
-  &-caption {
-    @include spacing-inset-8;
-    @include type-eyebrow;
-    display: block;
-    margin-top: $spacing-stack-8;
-    text-align: center;
-  }
+    @include wider-than($breakpoint-phone-landscape) {
+      width: 33.3%;
+      margin-bottom: $spacing-stack-50;
+    }
 
-  &--border {
-    .tco-image-grid-container {
-      // Mobile nth-child selection seems to carry over to desktop
-      @include narrower-than($breakpoint-tablet-portrait) {
-        @include internal-grid-border($images-per-row);
-      }
-
-      @include wider-than($breakpoint-tablet-portrait) {
-        @include internal-grid-border($images-per-row-desktop);
-      }
+    @include wider-than($breakpoint-tablet-portrait) {
+      width: 20%;
     }
   }
 }
