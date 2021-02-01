@@ -4,9 +4,6 @@ import { imageOnly } from '../ImageOnly/image-only.stories';
 
 const colors = {
   Default: '',
-  Tan: 'tco-container-wrapper--tan',
-  Blue: 'tco-container-wrapper--blue',
-  Navy: 'tco-container-wrapper--navy',
   Glass: 'tco-container-wrapper--glass'
 };
 const alignments = ['center', 'left', 'right'];
