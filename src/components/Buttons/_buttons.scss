@@ -1,6 +1,5 @@
 $color-disabled: #c8d9ea;
 $color-hover: #08519a;
-$arrow-translate: 5px;
 
 .tco-btn {
   @include type-eyebrow;
@@ -19,17 +18,9 @@ $arrow-translate: 5px;
     display: inline-block;
     text-decoration: none;
   }
-}
-
-.tco-btn--primary,
-%tco-btn--primary {
-  border: 1px solid $color-tint-blue-primary;
-  background: $color-tint-blue-primary;
-  color: $color-foreground-on-tint;
 
   &:hover,
-  &:focus,
-  &:active {
+  &:focus {
     border-color: $color-hover;
     background: $color-hover;
   }
@@ -38,7 +29,24 @@ $arrow-translate: 5px;
   &:disabled {
     border-color: $color-disabled;
     background: $color-disabled;
+    color: $color-disabled;
     cursor: default;
+  }
+}
+
+.tco-btn--primary,
+%tco-btn--primary {
+  border: 1px solid $color-tint-blue-primary;
+  background: $color-tint-blue-primary;
+  color: $color-foreground-on-tint;
+
+  &:active {
+    border-color: $color-background-tertiary;
+  }
+
+  &[disabled],
+  &:disabled {
+    color: $color-foreground-on-tint;
   }
 }
 
@@ -50,76 +58,28 @@ $arrow-translate: 5px;
 
   &:hover,
   &:focus {
-    border-color: $color-tint-blue-primary;
-    background-color: $color-tint-blue-primary;
     color: $color-foreground-on-tint;
   }
 
   &:active {
     border-color: $color-hover;
-    color: $color-hover;
   }
 
   &[disabled],
   &:disabled {
-    border-color: $color-disabled;
-    color: $color-disabled;
-    cursor: default;
+    background-color: transparent;
   }
 }
 
-.tco-btn-link {
-  @include type-body-default($font-color: $color-tint-blue-primary);
-  position: relative;
-  background-color: transparent;
-  text-transform: none;
-
-  &::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    display: block;
-    width: calc(100% + #{$arrow-translate});
-    height: 1px;
-    background-color: $color-tint-blue-primary;
-    opacity: 0;
-    transition: opacity 0.2s linear;
-  }
-
-  &-icon {
-    display: inline-block;
-    width: $spacing-inline-16;
-    height: 14px;
-    fill: $color-tint-blue-primary;
-    transition: transform 0.2s linear;
-    transform: translate(0, 1px);
-  }
-
-  &:hover,
-  &:focus {
-    &::after {
-      opacity: 1;
-    }
-
-    .tco-btn-link-icon {
-      transform: translate(#{$arrow-translate}, 1px);
-    }
-  }
-
-  &[disabled],
-  &:disabled {
-    color: $color-disabled;
-
-    .tco-btn-link-icon {
-      fill: $color-disabled;
-    }
+.tco-text-link {
+  &--arrow {
+    @include type-link-cta;
   }
 
   &:active {
     color: $color-hover;
 
-    .tco-btn-link-icon {
+    .tco-text-link-icon {
       fill: $color-hover;
     }
   }
