@@ -2,9 +2,6 @@ import { select, text, boolean } from '@storybook/addon-knobs';
 
 const colors = {
   Default: '',
-  Tan: 'tco-container-wrapper--tan',
-  Blue: 'tco-container-wrapper--blue',
-  Navy: 'tco-container-wrapper--navy',
   Glass: 'tco-container-wrapper--glass'
 };
 const alignments = ['center', 'left', 'right'];
