@@ -1,13 +1,14 @@
 $color-box-shadow: rgba(0, 0, 0, 0.45);
-$floating-form-gutter: 20px;
+$floating-form-gutter: 14px;
+$floating-form-offset: 25px;
 
 // ========================================================
 // = FLOATING BUTTON
 // ========================================================
 .tco-floating-btn {
   position: fixed;
-  right: 20px;
-  bottom: 20px;
+  right: $floating-form-offset;
+  bottom: $floating-form-offset;
   z-index: 31;
   display: inline-flex;
   align-items: center;
@@ -16,6 +17,7 @@ $floating-form-gutter: 20px;
   border: 0;
   border-radius: 33px;
   background: $color-tint-blue-primary;
+  color: $color-foreground-on-tint;
   transition: 0.2s ease-in-out;
   animation: 5s infinite pulse;
 
@@ -27,30 +29,14 @@ $floating-form-gutter: 20px;
   &-icon {
     line-height: 0;
 
-    svg,
-    img {
-      width: 28px;
-      height: 27px;
-
-      @media (min-width: $breakpoint-tablet-portrait) {
-        width: 33px;
-        height: 32px;
-      }
-    }
-
-    &--chat {
-      svg,
-      img {
-        height: 29px;
-
-        @media (min-width: $breakpoint-tablet-portrait) {
-          height: 34px;
-        }
-      }
+    svg {
+      width: 24px;
+      height: 24px;
     }
 
     &--close {
       display: none; // Hidden by default
+      transform: translateY(2px);
     }
   }
 
@@ -65,9 +51,10 @@ $floating-form-gutter: 20px;
   }
 
   &-label {
-    @include type-display-small($color-foreground-on-tint);
+    @include type-body-small($color-foreground-on-tint);
     display: inline-block;
     margin: 0 $spacing-inline-12;
+    letter-spacing: normal;
     text-transform: none;
 
     &:empty {
@@ -75,7 +62,7 @@ $floating-form-gutter: 20px;
     }
   }
 
-  &--close {
+  &--collapse {
     .tco-floating-btn-label {
       display: none;
     }
@@ -92,38 +79,50 @@ $floating-form-gutter: 20px;
   height: auto;
 }
 
-.tco-floating-modal-body {
-  @include spacing-inset-24;
-  position: absolute;
-  right: $floating-form-gutter;
-  bottom: 100px;
-  overflow-x: hidden;
-  overflow-y: auto;
-  max-width: 90vw;
-  max-height: 75vh;
-  border-radius: $border-radius-small;
+.tco-floating-modal-header {
+  @include spacing-inset-20;
+  position: relative;
   background-color: $color-tint-blue-primary;
   color: $color-foreground-on-tint;
+
+  .tco-floating-form-btn--close {
+    position: absolute;
+    top: $floating-form-offset;
+    right: $floating-form-offset;
+  }
+}
+
+.tco-floating-modal-body {
+  position: fixed;
+  top: 0;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  border-radius: $border-radius-small;
   box-shadow: 0 2px 12px $color-box-shadow;
-  text-align: center;
   opacity: 0;
   visibility: hidden;
   transition: visibility 0s linear 0.25s, opacity 0.25s 0s, transform 0.25s;
 
   @media only screen and (orientation: landscape) {
     @include narrower-than($breakpoint-tablet-portrait) {
+      position: absolute;
+      top: auto;
       right: auto;
-      bottom: $floating-form-gutter;
-      left: $floating-form-gutter;
-      max-width: 78vw;
-      max-height: 40vw;
+      bottom: $floating-form-offset;
+      left: $floating-form-offset;
+      max-width: 400px;
+      max-height: 80vh;
     }
   }
 
   @include wider-than($breakpoint-tablet-portrait) {
-    @include spacing-inset-32;
+    top: auto;
+    right: $floating-form-offset;
     bottom: 116px;
     max-width: 400px;
+    height: auto;
+    max-height: 80vh;
   }
 
   .tco-type-display--small {
@@ -131,18 +130,6 @@ $floating-form-gutter: 20px;
 
     + .tco-type-body {
       margin-bottom: $spacing-stack-24;
-    }
-  }
-
-  .tco-type-body,
-  .tco-type-body--small,
-  .tco-btn-link {
-    color: $color-foreground-on-tint;
-  }
-
-  .tco-type-body--small {
-    > a {
-      @include type-link($color-foreground-on-tint, $color-background-primary);
     }
   }
 
@@ -170,29 +157,44 @@ $floating-form-gutter: 20px;
 // = FLOATING FORM
 // ========================================================
 .tco-floating-form {
+  @include spacing-inset-20;
+  flex-grow: 1;
+  overflow-x: hidden;
+  overflow-y: auto;
+
   .tco-form-row {
     margin-bottom: $spacing-stack-24;
     text-align: left;
   }
 
   .tco-form-label {
-    @include type-style-bold;
+    @include type-eyebrow;
     margin-bottom: $spacing-stack-12;
-    letter-spacing: 2.33px;
-    text-transform: uppercase;
-
-    @include wider-than($breakpoint-tablet-portrait) {
-      @include type-body-default($color-foreground-on-tint);
-      @include type-style-bold;
-    }
   }
 
   .tco-form-textarea {
-    min-height: 114px;
+    height: 40px;
+    resize: none;
   }
 
-  .tco-btn--secondary {
-    margin: $spacing-stack-24 auto;
+  .tco-btn--primary {
+    margin: $spacing-stack-24 0 0;
+  }
+
+  &-btn--collapse {
+    display: none;
+
+    @include wider-than($breakpoint-tablet-portrait) {
+      display: inline-flex;
+    }
+  }
+
+  &-footer {
+    margin-top: $spacing-stack-36;
+
+    a {
+      @include type-link;
+    }
   }
 }
 
