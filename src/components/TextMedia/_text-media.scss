@@ -243,14 +243,16 @@ $bubble-max: 600px;
 
     .tco-text-media {
       display: grid;
-      grid: 'headline headline' auto
+      grid:
+        'headline headline' auto
         'lede media' auto
         / 60% 40%;
       row-gap: $spacing-stack-24;
       padding: 0;
 
       @include wider-than($breakpoint-tablet-portrait) {
-        grid: 'headline media' auto
+        grid:
+          'headline media' auto
           'lede media' auto
           / 74% 26%;
         row-gap: $spacing-stack-36;

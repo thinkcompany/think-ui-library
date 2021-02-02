@@ -177,7 +177,11 @@
 
 .tco-menu-site-nav-link {
   .current-menu-item & {
-    background: linear-gradient(180deg, transparent 20%, rgba($color-tint-blue-primary, 0.15) 0);
+    background: linear-gradient(
+      180deg,
+      transparent 20%,
+      rgba($color-tint-blue-primary, 0.15) 0
+    );
     background-position: bottom;
     background-size: 100% 44%;
     background-repeat: no-repeat;
