@@ -1,0 +1,7 @@
+.tco-background-blob {
+  @include blob;
+
+  &--quote {
+    @include blob($width: 40px, $height: 40px);
+  }
+}
