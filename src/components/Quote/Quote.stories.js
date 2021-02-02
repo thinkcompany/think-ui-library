@@ -25,7 +25,7 @@ export const Default = () => {
           <svg class="tco-background-blob-content tco-background-blob-content--quote" width="18px" height="13px" viewBox="0 0 18 13" role="presentation">
             <use xlink:href="/img/icons.svg#icon-quotemark"></use>
           </svg>
-          <svg class="tco-background-blob-icon" width="40" viewBox="0 0 40 40" role="img" aria-labelledby="1">
+          <svg class="tco-background-blob-icon" width="40" viewBox="0 0 40 40" role="presentation">
             <use xlink:href="/img/icons.svg#icon-blob-1"></use>
           </svg>
         </div>
