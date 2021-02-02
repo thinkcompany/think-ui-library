@@ -16,6 +16,10 @@ const config = [
     id: 'icon-calendar'
   },
   {
+    name: 'Chat',
+    id: 'icon-chat'
+  },
+  {
     name: 'Check',
     id: 'icon-check'
   },
