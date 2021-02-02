@@ -1,8 +1,6 @@
 $bubble-max: 600px;
 
 .tco-text-only {
-  width: 100%;
-
   &--right,
   &--center {
     display: flex;
@@ -17,6 +15,10 @@ $bubble-max: 600px;
   &--center {
     align-items: center;
     text-align: center;
+  }
+
+  &-content {
+    width: 100%;
   }
 
   &-cta {
