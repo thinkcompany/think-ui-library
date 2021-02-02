@@ -1,0 +1,26 @@
+@mixin blob(
+  $width: $spacing-stack-36,
+  $height: $spacing-stack-36,
+  $color: $color-background-primary,
+  $font-size: $font-size-18
+) {
+  position: relative;
+  display: inline-block;
+  width: $width;
+  height: $height;
+  margin-bottom: $spacing-stack-12;
+  color: $color;
+  font-size: $font-size;
+  text-align: center;
+
+  &-content {
+    @include center-absolute;
+    height: 100%;
+    z-index: 1;
+
+    &--quote {
+      font-family: $font-stack-slab-book;
+      transform: translate(-50%, -15%) scale(2.35);
+    }
+  }
+}

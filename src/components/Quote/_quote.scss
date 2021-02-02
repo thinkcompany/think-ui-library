@@ -1,66 +1,37 @@
 .tco-quote {
-  margin: 0;
-  padding: 0 $spacing-inline-24;
-  text-align: center;
-
-  @include wider-than($breakpoint-tablet-portrait) {
-    padding: 0 0 0 $spacing-inline-64;
-    text-align: left;
-  }
-
-  &-wrapper {
-    display: flex;
-    padding: $spacing-stack-32 0;
-  }
+  margin: $spacing-stack-4 0 0;
 
   &-text {
-    @include type-display-medium;
-    position: relative;
-    margin-bottom: $spacing-stack-32;
+    @include type-body-large;
 
-    &::before {
-      @include type-display-extra-large;
-      content: '\201c';
-      position: relative;
-      top: 16px;
-      display: block;
-      text-align: center;
-
-      @include wider-than($breakpoint-tablet-portrait) {
-        position: absolute;
-        top: -16px;
-        left: -64px;
-      }
+    &:last-of-type {
+      margin-bottom: 0;
     }
   }
 
-  &-author-name,
-  &-author-title {
-    display: block;
+  &-wrapper-center {
+    text-align: center;
   }
 
-  &-author-name {
-    @include type-display-small;
+  &-wrapper-right {
+    text-align: right;
+  }
+
+  &-name,
+  &-title {
+    @include type-eyebrow;
     font-style: normal;
   }
 
-  &-author-title {
-    @include type-body-medium;
+  &-title {
+    &::before {
+      content: ', ';
+      display: inline-block;
+      transform: translateX(-#{$spacing-inline-4});
+    }
   }
-}
 
-.tco-quote-image-wrapper {
-  display: none; // Hidden on mobile
-  flex-shrink: 0;
-  max-width: 300px;
-  margin-left: $spacing-inline-64;
-
-  @include wider-than($breakpoint-tablet-portrait) {
-    display: block;
+  &-footer {
+    margin-top: $spacing-stack-18;
   }
-}
-
-.tco-quote-image {
-  margin-bottom: $spacing-stack-32;
-  border-radius: $border-radius-round;
 }
