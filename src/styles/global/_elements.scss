@@ -38,8 +38,7 @@ a {
 }
 
 ul {
-  margin: 0;
-  padding: 0;
+  @include list-plain;
 }
 
 .tco-accessibly-hidden,

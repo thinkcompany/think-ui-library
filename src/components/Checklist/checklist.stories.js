@@ -1,4 +1,4 @@
-import { select, text, boolean } from '@storybook/addon-knobs';
+import { select, text, boolean, object } from '@storybook/addon-knobs';
 
 const colors = {
   Default: '',
@@ -6,10 +6,25 @@ const colors = {
 };
 const alignments = ['center', 'left', 'right'];
 
+const groupId = 'checklist';
+
 export const Default = () => {
   const containerColor = select('Background Color', colors, colors.Default);
   const eyebrow = text('Heading', 'How we can help');
+  const list = [];
+  const items = [
+    'Launch a new product',
+    'Transform an existing product',
+    'Maintain and improve business systems',
+    'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vitae dui posuere'
+  ];
 
+  items.forEach(item => {
+    list.push(`
+      <li>${item}</li>
+    `);
+  });
+  const itemList = object('List Items', items, groupId);
   return `
   <div class="tco-container-wrapper ${containerColor}">
     <div class="tco-container tco-container--default">
@@ -22,10 +37,7 @@ export const Default = () => {
             : ''
         }
         <ul>
-          <li>Launch a new product</li>
-          <li>Transform an existing product</li>
-          <li>Maintain and improve business systems</li>
-          <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vitae dui posuere, porta nunc lacinia, pharetra diam.</li>
+          ${list.join('')}
         </ul>
       </div>
     </div>

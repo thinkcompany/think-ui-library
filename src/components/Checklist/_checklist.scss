@@ -1,4 +1,4 @@
-$check: 21px;
+$check: 20px;
 
 .tco-checklist {
   &-eyebrow {
@@ -16,7 +16,6 @@ $check: 21px;
     position: relative;
     margin-bottom: $spacing-stack-18;
     padding-left: $spacing-inline-40;
-    list-style: none;
 
     &::before {
       content: '';
@@ -28,7 +27,7 @@ $check: 21px;
       width: $check;
       height: $check;
       margin-right: $spacing-inline-18;
-      background: url('/svg/checkmark.svg') no-repeat center;
+      background: url('/svg/checkmark.svg') no-repeat center / cover;
     }
   }
 }
