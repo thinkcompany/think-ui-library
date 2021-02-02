@@ -16,11 +16,7 @@
   &-content {
     @include center-absolute;
     height: 100%;
+    font-size: $font-size;
     z-index: 1;
-
-    &--quote {
-      font-family: $font-stack-slab-book;
-      transform: translate(-50%, -15%) scale(2.35);
-    }
   }
 }

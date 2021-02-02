@@ -1,3 +1,7 @@
 .tco-background-blob {
   @include blob;
+
+  &--quote {
+    @include blob($width: $spacing-stack-40, $height: $spacing-stack-40);
+  }
 }
