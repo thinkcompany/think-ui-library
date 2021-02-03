@@ -1,4 +1,4 @@
-import { select, text, boolean } from '@storybook/addon-knobs';
+import { select, text } from '@storybook/addon-knobs';
 
 const colors = {
   Default: '',
@@ -12,7 +12,6 @@ const offsets = {
 };
 
 export const imageOnly = () => {
-  const containerColor = select('Background Color', colors, colors.Glass);
   const offset = select('Offset Image', offsets, offsets.Default);
   const imageSrc = text(
     'Image',
