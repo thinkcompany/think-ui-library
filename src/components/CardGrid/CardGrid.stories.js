@@ -44,12 +44,12 @@ export const Default = () => {
   const containerColor = select('Background Color', colors, colors.Default);
   const columns = number('Column count', 3);
   const headingContainer = select(
-    'Heading & lede container',
+    'Section heading container',
     containerSizes,
     'narrow'
   );
-  const heading = text('Heading', 'Card grid section');
-  const headingSize = select('Heading Size', sizes, 'small');
+  const heading = text('Section heading', 'Card grid section');
+  const headingSize = select('Section heading Size', sizes, 'small');
   const lede = text(
     'Lede',
     "This lede has an option for it's own container. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas pellentesque nunc vel turpis tempor tincidunt. Maecenas in felis suscipit, ornare felis at, posuere eros."
