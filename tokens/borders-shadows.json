@@ -10,7 +10,7 @@
     "default": "0 0 8px 0 rgba(23, 49, 69, 0.3)"
   },
   "border": {
-    "default": "1px solid #000",
+    "default": "1px solid $color-foreground-primary",
     "tertiary": "1px solid $color-foreground-tertiary"
   }
 }

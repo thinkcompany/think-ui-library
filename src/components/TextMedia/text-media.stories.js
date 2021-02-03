@@ -30,6 +30,7 @@ export const Default = () => {
   const path = url.pathname;
   const size = path.split('/');
   const aspectRatio = size[1] / size[2];
+
   let mediaOrientation;
 
   if (aspectRatio > 1) {
@@ -38,7 +39,7 @@ export const Default = () => {
     mediaOrientation = 'tall';
   }
 
-  return /*html*/ `
+  return `
   <div class="tco-container-wrapper ${containerColor}">
     <div class="tco-container tco-container--default">
       <div class="tco-text-media tco-text-media--align-${alignment}">
@@ -172,7 +173,7 @@ export const PageHeaderFullImage = () => {
   );
   const showCta = boolean('CTA', false);
 
-  return /*html*/ `
+  return `
   <div class="tco-container-wrapper ${containerColor} tco-text-media--page-header tco-text-media--image-only">
     <div class="tco-container tco-container--default">
       <div class="tco-text-media tco-text-media--align-left">

@@ -16,6 +16,10 @@
   padding: 16px;
 }
 
+@mixin spacing-inset-20() {
+  padding: 20px;
+}
+
 @mixin spacing-inset-24() {
   padding: 24px;
 }
@@ -62,9 +66,9 @@ $spacing-stack-8: 8px;
 $spacing-stack-12: 12px;
 $spacing-stack-16: 16px;
 $spacing-stack-18: 18px;
+$spacing-stack-20: 20px;
 $spacing-stack-24: 24px;
 $spacing-stack-32: 32px;
-$spacing-stack-36: 36px;
 $spacing-stack-40: 40px;
 $spacing-stack-50: 50px;
 $spacing-stack-60: 60px;
@@ -77,8 +81,8 @@ $spacing-inline-8: 8px;
 $spacing-inline-12: 12px;
 $spacing-inline-16: 16px;
 $spacing-inline-18: 18px;
+$spacing-inline-20: 20px;
 $spacing-inline-24: 24px;
-$spacing-inline-30: 30px;
 $spacing-inline-32: 32px;
 $spacing-inline-40: 40px;
 $spacing-inline-50: 50px;
