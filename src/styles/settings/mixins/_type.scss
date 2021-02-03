@@ -315,8 +315,11 @@ $arrow-height: (14 / 18) * 1em;
 $arrow-offset: 5px;
 $arrow-translate: 10px;
 
-@mixin type-link-cta($font-color: inherit) {
-  padding-right: $arrow-offset + $arrow-offset;
+@mixin type-link-cta(
+  $font-color: inherit,
+  $padding-right: $arrow-offset + $arrow-offset
+) {
+  padding-right: $padding-right;
   color: $font-color;
 
   .tco-text-link-icon,

@@ -4,15 +4,30 @@
 .tco-card {
   @include card-container-shadow;
   overflow: hidden;
-  max-width: 380px;
+  max-width: 368px;
 
   &-link {
-    @include type-not-link;
+    @include type-link-cta($padding-right: 0);
+    height: 100%;
 
     .tco-card-content-heading {
-      @include type-link;
-      @include type-display-medium($color-tint-blue-primary);
-      display: inline;
+      @include type-body-large;
+    }
+  }
+
+  &-image-container {
+    position: relative;
+    width: 100%;
+    height: 0;
+    padding-bottom: (4 / 5) * 100%;
+
+    .tco-card-image {
+      position: absolute;
+      top: 0;
+      left: 0;
+      object-fit: cover;
+      width: 100%;
+      height: 100%;
     }
   }
 
@@ -36,25 +51,18 @@
   }
 
   &-content-container {
-    @include spacing-inset-32;
-    color: $color-foreground-primary;
-    text-align: center;
+    padding: $spacing-stack-18 $spacing-stack-18 $spacing-stack-50;
+    color: $color--gray-dark;
+
+    @include wider-than($breakpoint-desktop) {
+      padding: $spacing-stack-32 $spacing-stack-32 $spacing-stack-64;
+    }
   }
 
-  &-content-eyebrow {
+  &-eyebrow {
     @include type-eyebrow;
     display: block;
-    margin-bottom: $spacing-stack-12;
-  }
-
-  &-content-heading {
-    @include type-display-medium($color-foreground-primary);
-  }
-
-  &-content-description {
-    display: block;
-    margin: $spacing-stack-16 0;
-    color: $color-foreground-primary;
+    margin-bottom: $spacing-stack-16;
   }
 
   &-content-link {
@@ -75,15 +83,6 @@
 
     &-author-name {
       @include type-style-bold;
-    }
-  }
-
-  &-image-container {
-    margin: $spacing-stack-32;
-
-    .tco-card--callout &,
-    .tco-card--post & {
-      margin: 0;
     }
   }
 

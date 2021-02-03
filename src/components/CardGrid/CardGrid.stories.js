@@ -1,5 +1,36 @@
 import { number, text, select } from '@storybook/addon-knobs';
 
+const baseCard = () => {
+  const eyebrow = text('Eyebrow', 'Understand');
+  const heading = 'Approaching digital transformation';
+  const image = 'img/blog-hero-default-5x4.jpg';
+
+  return `
+    <div class="tco-card">
+      <a href="#" class="tco-card-link">
+        <div class="tco-card-image-container">
+          <img class="tco-card-image" alt="A brilliant description of the image" src="${image}" />
+        </div>
+        <div class="tco-card-content-container">
+        ${
+          eyebrow
+            ? `
+          <span class="tco-card-eyebrow">${eyebrow}</span>
+          `
+            : ''
+        }
+          <h3 class="tco-card-content-heading">
+            ${heading}
+            <svg class="tco-text-link-icon" width="20" height="20" viewBox="0 0 20 20" role="img" aria-labelledby="arrow">
+              <use xlink:href="/img/icons.svg#icon-arrow-right"></use>
+          </svg>
+          </h3>
+        </div>
+      </a>
+    </div>
+  `;
+};
+
 const summaryCard = () => {
   const heading = 'Full Experience & Service Design';
   const summary =
@@ -117,7 +148,7 @@ export const Default = () => {
 
   if (heading || lede) {
     containerOpen =
-      '<div class="tco-card-grid-header tco-card-grid-header--' +
+      '<div class="tco-card-grid-header tco-container--' +
       textAlignment +
       ' tco-container--' +
       headingContainer +
@@ -127,32 +158,29 @@ export const Default = () => {
 
   return `
     <div class="tco-container-wrapper ${containerColor}">
-      <div class="tco-container tco-container--${textAlignment}">
-      ${containerOpen}
-        ${
-          heading
-            ? `
-            <h1 class="tco-card-grid-heading tco-type-display--${headingSize}">${heading}</h1>
-          `
-            : ''
-        }
-        ${
-          lede
-            ? `
-            <div class="tco-card-grid-lede-container tco-container tco-container--${ledeContainer}">
-              <p class="tco-card-grid-lede tco-type-body--${ledeSize}">${lede}</p>
-            </div>
-          `
-            : ''
-        }
-      ${containerClose}
+      <div class="tco-container">
+        ${containerOpen}
+          ${
+            heading
+              ? `
+              <h1 class="tco-card-grid-heading tco-type-display--${headingSize}">${heading}</h1>
+            `
+              : ''
+          }
+          ${
+            lede
+              ? `
+              <div class="tco-card-grid-lede-container tco-container tco-container--${ledeContainer}">
+                <p class="tco-card-grid-lede tco-type-body--${ledeSize}">${lede}</p>
+              </div>
+            `
+              : ''
+          }
+        ${containerClose}
         <div class="tco-card-grid tco-card-grid--${columns}-column">
-          ${summaryCard()}
-          ${summaryCardSmall()}
-          ${summaryCard()}
-          ${summaryCardSmall()}
-          ${summaryCard()}
-          ${summaryCard()}
+          ${baseCard()}
+          ${baseCard()}
+          ${baseCard()}
         </div>
       </div>
     </div>

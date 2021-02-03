@@ -1,7 +1,11 @@
 .tco-card-grid {
   display: grid;
-  grid-gap: $spacing-inline-32;
+  grid-gap: $spacing-inline-16;
   justify-content: center;
+
+  @include wider-than($breakpoint-desktop) {
+    grid-gap: $spacing-inline-32;
+  }
 
   &-header {
     margin: 0 auto;
@@ -12,10 +16,8 @@
     margin-bottom: $spacing-stack-12;
   }
 
-  &--2-column {
-    @include wider-than($breakpoint-tablet-portrait) {
-      grid-template-columns: repeat(2, 1fr);
-    }
+  @include wider-than($breakpoint-phone-landscape) {
+    grid-template-columns: repeat(2, 1fr);
   }
 
   &--3-column {
