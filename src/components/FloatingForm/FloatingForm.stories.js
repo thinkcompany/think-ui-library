@@ -85,6 +85,7 @@ export const floatingForm = () => {
               id="contact-message"
               name="contact-message"
               placeholder="${messagePlaceholder}"
+              rows="1"
             ></textarea>
             <p class="tco-type-body--small">*Required</p>
           </div>
