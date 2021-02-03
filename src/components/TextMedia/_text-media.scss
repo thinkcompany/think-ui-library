@@ -351,19 +351,3 @@ $bubble-max: 600px;
     margin: 0 auto $spacing-stack-32;
   }
 }
-
-.tco-background-blob {
-  position: relative;
-  display: inline-block;
-  width: $spacing-stack-36;
-  height: $spacing-stack-36;
-  margin-bottom: $spacing-stack-12;
-  color: $color-background-primary;
-  font-size: $font-size-18;
-  text-align: center;
-
-  &-content {
-    @include center-absolute;
-    z-index: 1;
-  }
-}

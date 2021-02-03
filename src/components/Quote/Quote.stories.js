@@ -1,90 +1,48 @@
-import { text } from '@storybook/addon-knobs';
+import { text, select } from '@storybook/addon-knobs';
+
+const colors = {
+  Default: '',
+  Glass: 'tco-container-wrapper--glass'
+};
+
+const alignments = ['center', 'left', 'right'];
 
 export const Default = () => {
   const quote = text(
     'Quote',
-    'Think Company has been the design bedrock of this project—developing the structure, look, and feel of the application. Think’s vision and ability to turn requirements into reality really set our project off on the right foot.'
+    'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum.'
   );
-  const authorName = text('Author name', 'Name Lastname');
-  const authorTitle = text('Author title', 'Title');
+  const containerColor = select('Background Color', colors, colors.Default);
+  const textAlignment = select('Text Alignment', alignments, 'center');
+  const authorName = text('Name', 'Fake Name');
+  const authorTitle = text('Title/Company', 'ACME Company');
 
   return `
-  <div class="tco-container-wrapper">
+  <div class="tco-container-wrapper ${containerColor}">
     <div class="tco-container tco-container--mid">
-      <div class="tco-quote-wrapper">
+      <div class="tco-quote-wrapper tco-quote-wrapper-${textAlignment}">
+        <div class="tco-background-blob tco-background-blob--quote">
+          <svg class="tco-background-blob-content tco-background-blob-content--quote" width="18px" height="13px" viewBox="0 0 18 13" role="presentation">
+            <use xlink:href="/img/icons.svg#icon-quotemark"></use>
+          </svg>
+          <svg class="tco-background-blob-icon" width="40" viewBox="0 0 40 40" role="presentation">
+            <use xlink:href="/img/icons.svg#icon-blob-1"></use>
+          </svg>
+        </div>
         <blockquote class="tco-quote">
           <p class="tco-quote-text">${quote}</p>
           <div class="tco-quote-footer">
-            <cite class="tco-quote-author-name">${authorName}</cite>
-            <span class="tco-quote-author-title">${authorTitle}</span>
+            <cite class="tco-quote-name">${authorName}</cite>
+            ${
+              authorTitle
+                ? `
+              <span class="tco-quote-title">${authorTitle}</span>
+              `
+                : ''
+            }
+
           </div>
         </blockquote>
-      </div>
-    </div>
-  </div>
-  `;
-};
-
-export const Multiple = () => {
-  const quote = text(
-    'Quote',
-    'Think Company has been the design bedrock of this project—developing the structure, look, and feel of the application. Think’s vision and ability to turn requirements into reality really set our project off on the right foot.'
-  );
-  const authorName = text('Author name', 'Name Lastname');
-  const authorTitle = text('Author title', 'Title');
-
-  return `
-  <div class="tco-container-wrapper">
-    <div class="tco-container tco-container--mid">
-      <div class="tco-quote-wrapper">
-        <blockquote class="tco-quote">
-          <p class="tco-quote-text">${quote}</p>
-          <footer class="tco-quote-footer">
-            <cite class="tco-quote-author-name">${authorName}</cite>
-            <span class="tco-quote-author-title">${authorTitle}</span>
-          </footer>
-        </blockquote>
-      </div>
-      <div class="tco-quote-wrapper">
-        <blockquote class="tco-quote">
-          <p class="tco-quote-text">${quote}</p>
-          <footer class="tco-quote-footer">
-            <cite class="tco-quote-author-name">${authorName}</cite>
-            <span class="tco-quote-author-title">${authorTitle}</span>
-          </footer>
-        </blockquote>
-      </div>
-    </div>
-  </div>
-  `;
-};
-
-export const WithThinker = () => {
-  const quote = text(
-    'Quote',
-    'I love helping to cultivate a culture that sets people up to succeed, gives people the space to work through challenges, and values the diverse perspectives everyone brings to the work.'
-  );
-  const authorName = text('Author name', 'Neha Agarwal');
-  const authorTitle = text('Author title', 'Design Lead');
-  const authorImage = text(
-    'Author image',
-    'https://thinkcompany.com/wp-content/uploads/2016/09/NehaAgarwal.jpg'
-  );
-
-  return `
-  <div class="tco-container-wrapper">
-    <div class="tco-container tco-container--mid">
-      <div class="tco-quote-wrapper">
-        <blockquote class="tco-quote">
-          <p class="tco-quote-text">${quote}</p>
-          <footer class="tco-quote-footer">
-            <cite class="tco-quote-author-name"><a href="#">${authorName}</a></cite>
-            <span class="tco-quote-author-title">${authorTitle}</span>
-          </footer>
-        </blockquote>
-        <div class="tco-quote-image-wrapper">
-          <img class="tco-quote-image" alt="Author image" src="${authorImage}" />
-        </div>
       </div>
     </div>
   </div>
