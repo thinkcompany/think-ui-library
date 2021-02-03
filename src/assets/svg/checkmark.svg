@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="21px" height="21px" viewBox="0 0 21 21" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Sub-Atomic/Checkmark</title>
+    <g id="Sub-Atomic/Checkmark" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <rect id="Container" fill-rule="nonzero" x="0" y="0" width="16" height="14"></rect>
+        <circle id="Oval" fill="#0062C3" cx="10.5" cy="10.5" r="10.5"></circle>
+        <polyline id="Path-7" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" points="5.83290327 10.1658065 9.16709673 13.5 15.1670967 7.5"></polyline>
+    </g>
+</svg>
