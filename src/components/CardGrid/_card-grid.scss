@@ -1,7 +1,16 @@
 .tco-card-grid {
   display: grid;
-  grid-gap: 20px;
+  grid-gap: $spacing-inline-32;
   justify-content: center;
+
+  &-header {
+    margin: 0 auto;
+    padding-bottom: $spacing-stack-40;
+  }
+
+  &-heading {
+    margin-bottom: $spacing-stack-12;
+  }
 
   &--2-column {
     @include wider-than($breakpoint-tablet-portrait) {
