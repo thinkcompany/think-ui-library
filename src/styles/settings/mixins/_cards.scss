@@ -1,8 +1,8 @@
 @mixin card-base {
   min-width: 158px;
   min-height: 300px;
-  border-radius: $border-radius-medium;
   background: $color-background-primary;
+  border: $border-card;
 }
 
 @mixin card-container-flat {
@@ -12,7 +12,7 @@
 
 @mixin card-container-shadow {
   @include card-base;
-  box-shadow: 0 10px 18px 0 rgba(0, 0, 0, 0.15);
+  box-shadow: $box-shadow-card;
 }
 
 /**

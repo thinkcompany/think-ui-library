@@ -4,29 +4,36 @@
 .tco-card {
   @include card-container-shadow;
   overflow: hidden;
-  max-width: 380px;
+  max-width: 368px;
 
   &-link {
-    @include type-not-link;
+    @include type-link-cta($padding-right: 0);
+    height: 100%;
 
     .tco-card-content-heading {
-      @include type-link;
-      @include type-display-medium($color-tint-blue-primary);
-      display: inline;
+      @include type-body-large;
+    }
+  }
+
+  &-image-container {
+    position: relative;
+    width: 100%;
+    height: 0;
+    padding-bottom: (4 / 5) * 100%;
+
+    .tco-card-image {
+      position: absolute;
+      top: 0;
+      left: 0;
+      object-fit: cover;
+      width: 100%;
+      height: 100%;
     }
   }
 
   > {
     .tco-card-link {
       display: block;
-
-      &:hover,
-      &:focus,
-      &:active {
-        .tco-card-content-heading {
-          background-size: 100% 106%;
-        }
-      }
 
       &:focus {
         outline: 4px solid $color-tint-blue-primary;
@@ -36,25 +43,22 @@
   }
 
   &-content-container {
-    @include spacing-inset-32;
-    color: $color-foreground-primary;
-    text-align: center;
-  }
+    padding: $spacing-stack-18 $spacing-stack-18 $spacing-stack-50;
+    color: $color--gray-dark;
 
-  &-content-eyebrow {
-    @include type-eyebrow;
-    display: block;
-    margin-bottom: $spacing-stack-12;
-  }
-
-  &-content-heading {
-    @include type-display-medium($color-foreground-primary);
+    @include wider-than($breakpoint-desktop) {
+      padding: $spacing-stack-32 $spacing-stack-32 $spacing-stack-64;
+    }
   }
 
   &-content-description {
+    @include type-body-default;
+  }
+
+  &-eyebrow {
+    @include type-eyebrow;
     display: block;
-    margin: $spacing-stack-16 0;
-    color: $color-foreground-primary;
+    margin-bottom: $spacing-stack-16;
   }
 
   &-content-link {
@@ -78,15 +82,6 @@
     }
   }
 
-  &-image-container {
-    margin: $spacing-stack-32;
-
-    .tco-card--callout &,
-    .tco-card--post & {
-      margin: 0;
-    }
-  }
-
   &-info-image-container {
     overflow: hidden;
     border-radius: $border-radius-round;
@@ -96,6 +91,84 @@
     border-radius: 0;
     background: transparent;
     box-shadow: none;
+  }
+}
+
+// ========================================================
+// = SERVICE CARD
+// ========================================================
+.tco-card--service {
+  max-width: none;
+  border-width: 0 0 1px;
+  box-shadow: none;
+
+  @include wider-than($breakpoint-phone-landscape) {
+    &:nth-of-type(odd) {
+      border-width: 0 1px 1px 0;
+    }
+  }
+
+  @include wider-than($breakpoint-tablet-portrait) {
+    border-width: 0 1px 1px 0;
+  }
+
+  .tco-card-link {
+    padding: $spacing-stack-24 0;
+
+    @include wider-than($breakpoint-phone-landscape) {
+      padding: $spacing-stack-24 $spacing-inline-16;
+    }
+
+    @include wider-than($breakpoint-tablet-portrait) {
+      padding: $spacing-stack-24 $spacing-inline-32;
+    }
+  }
+
+  .tco-card-image-container {
+    height: auto;
+    padding: $spacing-stack-24 $spacing-inline-24;
+
+    .tco-card-image {
+      position: initial;
+      height: auto;
+    }
+  }
+
+  .tco-card-content {
+    &-container {
+      padding: $spacing-stack-20 0 0;
+    }
+
+    &-heading {
+      color: $color--think-blue;
+    }
+  }
+
+  &-cta {
+    background-color: $color--think-blue;
+
+    .tco-card-link {
+      @include type-link-cta(
+        $padding-right: $spacing-inline-16,
+        $fill: $color-background-primary
+      );
+      display: flex;
+
+      @include wider-than($breakpoint-tablet-portrait) {
+        padding-right: $spacing-inline-32;
+      }
+    }
+
+    .tco-card-content-container {
+      margin: auto 0;
+      padding: 0;
+      color: $color-background-primary;
+    }
+
+    .tco-card-content-heading {
+      margin-bottom: $spacing-stack-24;
+      color: $color-background-primary;
+    }
   }
 }
 

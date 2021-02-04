@@ -110,5 +110,40 @@
     "name": "on-tint",
     "section": "foreground",
     "color": "#ffffff"
+  },
+  {
+    "name": "gray-light",
+    "section": "",
+    "color": "#d4dce1"
+  },
+  {
+    "name": "gray-medium",
+    "section": "",
+    "color": "#7e8e98"
+  },
+  {
+    "name": "gray-dark",
+    "section": "",
+    "color": "#262c30"
+  },
+  {
+    "name": "white",
+    "section": "",
+    "color": "#fffff"
+  },
+  {
+    "name": "glass",
+    "section": "",
+    "color": "#f2f8fa"
+  },
+  {
+    "name": "think-blue",
+    "section": "",
+    "color": "#0062c3"
+  },
+  {
+    "name": "navy",
+    "section": "",
+    "color": "#173145"
   }
 ]
