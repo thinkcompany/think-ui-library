@@ -58,7 +58,7 @@ const serviceCardCTA = () => {
       <a href="#" class="tco-card-link">
         <div class="tco-card-content-container">
           <span class="tco-card-eyebrow">${eyebrow}</span>
-          <h3 class="tco-card-content-heading">${heading}</h3>
+          <h3 class="tco-card-content-heading tco-card-content-heading--cta">${heading}</h3>
           <p class="tco-card-content-description tco-card-content-cta">
             ${ctaText}
             <svg class="tco-text-link-icon" width="20" height="20" viewBox="0 0 20 20" role="presentation">

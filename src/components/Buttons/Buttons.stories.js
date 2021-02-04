@@ -26,11 +26,6 @@ const sizes = {
   BodySansSmall: 'body--sans-small'
 };
 
-const colors = {
-  Default: '',
-  Glass: 'tco-container-wrapper--glass'
-};
-
 export const Button = () => {
   const buttonText = text('Button Text', 'Button');
   const buttonStyle = select('Style', styles, styles.Primary);
@@ -56,9 +51,10 @@ export const LinkWithArrow = () => {
   const linkStyle = select('Style', linkStyles, linkStyles.Primary);
   const linkState = select('State', states, states.Active);
   const fontSize = select('Font Size', sizes, sizes.BodyDefault);
+
   let containerColor;
 
-  if (linkStyle == 'tco-text-link--secondary') {
+  if (linkStyle === 'tco-text-link--secondary') {
     containerColor = 'tco-container-wrapper--navy';
   } else {
     containerColor = '';

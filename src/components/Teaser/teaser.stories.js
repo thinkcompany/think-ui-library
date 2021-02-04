@@ -1,9 +1,4 @@
-import { select, boolean, text, number } from '@storybook/addon-knobs';
-
-const colors = {
-  Default: '',
-  Glass: 'tco-container-wrapper--glass'
-};
+import { select, boolean, text } from '@storybook/addon-knobs';
 
 const alignment = {
   Default: 'tco-post-teaser--align-left',
@@ -12,7 +7,6 @@ const alignment = {
 };
 
 export const teaser = () => {
-  const containerColor = select('Background Color', colors, colors.Default);
   const teaserAlignment = select('Alignment', alignment, alignment.Default);
   const teaserHeader = text('Header', 'From our blog');
   const teaserTitle = text('Post Title', 'Reflections on 2020');

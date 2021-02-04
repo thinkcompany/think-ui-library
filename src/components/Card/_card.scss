@@ -109,6 +109,10 @@
 
   &:hover {
     background-color: $color--glass;
+
+    .tco-card-content-heading {
+      border-bottom-color: $color--think-blue;
+    }
   }
 
   @include wider-than($breakpoint-phone-landscape) {
@@ -156,12 +160,22 @@
 
     &-heading {
       @include type-body-large;
-      @include type-link($font-color: $color-tint-blue-primary, $flip: true);
+      @include type-link;
+      display: inline;
+    }
+
+    &-description {
+      margin-top: $spacing-stack-8;
     }
   }
 
   &-cta {
     background-color: $color--think-blue;
+
+    &:hover,
+    &:focus {
+      background-color: $color--think-blue;
+    }
 
     .tco-card-link {
       @include type-link-cta(
@@ -177,15 +191,21 @@
       }
     }
 
-    .tco-card-content-container {
-      margin: auto 0;
-      padding: 0;
-      color: $color-background-primary;
-    }
+    .tco-card-content {
+      &-container {
+        margin: auto 0;
+        padding: 0;
+        color: $color-background-primary;
+      }
 
-    .tco-card-content-heading {
-      margin-bottom: $spacing-stack-24;
-      color: $color-background-primary;
+      &-heading {
+        margin-bottom: $spacing-stack-24;
+        color: $color-background-primary;
+      }
+
+      &-description {
+        margin-top: $spacing-stack-24;
+      }
     }
   }
 }
