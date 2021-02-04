@@ -13,6 +13,19 @@
 }
 
 @font-face {
+  font-style: bold;
+  font-family: 'Kievit Slab W05 Bold';
+  src: url('./5366961/4ade4a0f-b443-4211-b990-96b1f2feb09e.eot?#iefix');
+  src: url('./5366961/4ade4a0f-b443-4211-b990-96b1f2feb09e.eot?#iefix')
+    format('eot'),
+    url('./5366961/9788ec0d-c3f6-4397-b0b8-2ecb03b055d3.woff2') format('woff2'),
+    url('./5366961/2e7319b3-71f6-4d4b-a3de-88125356007c.woff') format('woff'),
+    url('./5366961/0bb2655d-d363-4879-9f89-7222599e7a7b.ttf') format('truetype');
+  font-variant-numeric: lining-nums;
+  font-display: swap;
+}
+
+@font-face {
   font-style: italic;
   font-family: 'Kievit Slab W05 Italic';
   src: url('./5354469/1d6bd435-d93c-4b34-a3e5-65201d72a3a4.eot?#iefix');
