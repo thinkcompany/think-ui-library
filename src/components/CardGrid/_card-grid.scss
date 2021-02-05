@@ -1,11 +1,39 @@
 .tco-card-grid {
   display: grid;
-  grid-gap: 20px;
-  justify-content: center;
+  grid-gap: $spacing-inline-16;
+  justify-items: center;
+
+  @include wider-than($breakpoint-desktop) {
+    grid-gap: $spacing-inline-32;
+  }
+
+  &-header {
+    margin: 0 auto;
+    padding-bottom: $spacing-stack-40;
+  }
+
+  &-heading {
+    margin-bottom: $spacing-stack-12;
+  }
+
+  @include wider-than($breakpoint-phone-landscape) {
+    grid-template-columns: repeat(2, 1fr);
+    justify-items: center;
+  }
+
+  &--1-column {
+    grid-template-columns: 1fr;
+  }
 
   &--2-column {
-    @include wider-than($breakpoint-tablet-portrait) {
-      grid-template-columns: repeat(2, 1fr);
+    @include wider-than($breakpoint-phone-landscape) {
+      justify-items: start;
+
+      .tco-card {
+        &:nth-of-type(odd) {
+          justify-self: end;
+        }
+      }
     }
   }
 
@@ -13,18 +41,5 @@
     @include wider-than($breakpoint-tablet-portrait) {
       grid-template-columns: repeat(3, 1fr);
     }
-  }
-
-  &--4-column {
-    @include wider-than($breakpoint-tablet-portrait) {
-      grid-template-columns: repeat(4, 1fr);
-    }
-  }
-
-  &--5-column {
-    @include wider-than($breakpoint-tablet-portrait) {
-      grid-template-columns: repeat(5, 1fr);
-    }
-    grid-template-columns: repeat(2, 1fr);
   }
 }

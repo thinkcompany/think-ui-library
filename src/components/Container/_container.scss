@@ -6,16 +6,19 @@
   padding: 0 $spacing-stack-24;
   background-color: $color-background-primary;
 
-  // Size variants
-  .tco-container {
-    width: 100%;
-    max-width: $container-max;
-    margin: 0 auto;
+  > .tco-container {
     padding: $spacing-stack-50 0;
 
     @include wider-than($breakpoint-desktop) {
       padding: $spacing-stack-100 0;
     }
+  }
+
+  // Size variants
+  .tco-container {
+    width: 100%;
+    max-width: $container-max;
+    margin: 0 auto;
 
     &--default {
       max-width: $container-large;
@@ -27,6 +30,18 @@
 
     &--narrow {
       max-width: $container-small;
+    }
+
+    &--center {
+      text-align: center;
+    }
+
+    &--right {
+      text-align: right;
+    }
+
+    &--left {
+      text-align: left;
     }
   }
 

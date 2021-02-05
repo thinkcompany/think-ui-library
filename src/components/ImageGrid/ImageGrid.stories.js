@@ -42,7 +42,7 @@ export const Default = () => {
 
   return `
   <div class="tco-container-wrapper ${containerColor}">
-    <div class="tco-container tco-container-image-grid-alignment-${textAlignment}">
+    <div class="tco-container tco-container--${textAlignment}">
     ${
       eyebrow
         ? `
