@@ -21,7 +21,7 @@ const baseCard = () => {
         }
           <h3 class="tco-card-content-heading">
             ${heading}
-            <svg class="tco-text-link-icon" width="20" height="20" viewBox="0 0 20 20" role="img" aria-labelledby="arrow">
+            <svg class="tco-text-link-icon" width="20" height="20" viewBox="0 0 20 20" role="presentation">
               <use xlink:href="/img/icons.svg#icon-arrow-right"></use>
           </svg>
           </h3>
@@ -94,6 +94,7 @@ export const Default = () => {
           }
         ${containerClose}
         <div class="tco-card-grid tco-card-grid--${columns}-column">
+          ${baseCard()}
           ${baseCard()}
           ${baseCard()}
           ${baseCard()}
