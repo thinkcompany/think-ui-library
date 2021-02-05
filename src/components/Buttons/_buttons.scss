@@ -4,9 +4,9 @@ $color-hover: #08519a;
 .tco-btn {
   @include type-eyebrow;
   position: relative;
-  padding: $spacing-stack-12 $spacing-stack-18;
   border: none;
   border-radius: 0;
+  background: none;
   text-align: center;
   text-decoration: none;
   text-transform: uppercase;
@@ -36,6 +36,7 @@ $color-hover: #08519a;
 
 .tco-btn--primary,
 %tco-btn--primary {
+  padding: $spacing-stack-12 $spacing-stack-18;
   border: 1px solid $color-tint-blue-primary;
   background: $color-tint-blue-primary;
   color: $color-foreground-on-tint;
@@ -52,6 +53,7 @@ $color-hover: #08519a;
 
 .tco-btn--secondary,
 %tco-btn--secondary {
+  padding: $spacing-stack-12 $spacing-stack-18;
   border: 1px solid $color-tint-blue-primary;
   background: transparent;
   color: $color-tint-blue-primary;

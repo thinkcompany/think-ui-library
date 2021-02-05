@@ -37,6 +37,10 @@ a {
   @include type-link;
 }
 
+ul {
+  @include list-plain;
+}
+
 .tco-accessibly-hidden,
 %tco-accessibly-hidden {
   position: absolute;

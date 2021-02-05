@@ -51,14 +51,10 @@ export const LinkWithArrow = () => {
   const linkStyle = select('Style', linkStyles, linkStyles.Primary);
   const linkState = select('State', states, states.Active);
   const fontSize = select('Font Size', sizes, sizes.BodyDefault);
-
-  let containerColor;
-
-  if (linkStyle === 'tco-text-link--secondary') {
-    containerColor = 'tco-container-wrapper--navy';
-  } else {
-    containerColor = '';
-  }
+  const containerColor =
+    linkStyle === 'tco-text-link--secondary'
+      ? 'tco-container-wrapper--navy'
+      : '';
 
   return `
   <div class="tco-container-wrapper ${containerColor}">

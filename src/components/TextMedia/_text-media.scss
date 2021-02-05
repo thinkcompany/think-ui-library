@@ -97,7 +97,7 @@ $bubble-max: 600px;
   &-content-media--background {
     &.tco-text-media-content-media--tall {
       width: calc(100% - #{$spacing-inline-60});
-      margin-left: $spacing-inline-30;
+      margin-left: $spacing-inline-32;
 
       @include wider-than($breakpoint-tablet-portrait) {
         margin-left: 0;
@@ -253,7 +253,7 @@ $bubble-max: 600px;
         grid: 'headline media' auto
           'lede media' auto
           / 74% 26%;
-        row-gap: $spacing-stack-36;
+        row-gap: $spacing-stack-40;
       }
 
       &-lede {
