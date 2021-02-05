@@ -1,15 +1,5 @@
 $container-max: 220px;
 
-.tco-container-image-grid-alignment {
-  &-center {
-    text-align: center;
-  }
-
-  &-right {
-    text-align: right;
-  }
-}
-
 .tco-image-grid {
   display: flex;
   flex-flow: row wrap;
