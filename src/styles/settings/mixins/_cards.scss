@@ -7,7 +7,7 @@
 
 @mixin card-container-flat {
   @include card-base;
-  border: 1px solid rgb(222, 224, 232); //left border on so the card is visiable
+  border: 1px solid rgb(222, 224, 232);
 }
 
 @mixin card-container-shadow {

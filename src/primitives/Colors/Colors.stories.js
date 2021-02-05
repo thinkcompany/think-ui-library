@@ -50,8 +50,8 @@ const getColorList = data => {
     if (item.variants) {
       item.variants.map(variant => {
         list.push({
-          name: `${initialCap(item.section)} 
-          ${initialCap(item.name)} 
+          name: `${initialCap(item.section)}
+          ${initialCap(item.name)}
           ${initialCap(variant.name)}`,
           color: variant.color,
           var: `$color-${item.section}-${item.name}-${variant.name}`
@@ -82,6 +82,11 @@ const foregroundColors = getColorList(
 const backgroundColors = getColorList(
   colors.filter(item => {
     return item.section === 'background';
+  })
+);
+const thinkColors = getColorList(
+  colors.filter(item => {
+    return item.section === 'think-classic';
   })
 );
 const nameBlock = input =>
@@ -181,6 +186,7 @@ export const all = () => genAllColors(allColors);
 export const tints = () => genColorType(tintColors);
 export const foregrounds = () => genColorType(foregroundColors);
 export const backgrounds = () => genColorType(backgroundColors);
+export const thinkClassic = () => genColorType(thinkColors);
 export default {
   title: 'Primitives / Colors'
 };
