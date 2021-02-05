@@ -38,6 +38,11 @@
   }
 }
 
+.tco-type-cursive--large {
+  @include type-cursive;
+  font-size: $font-size-36;
+}
+
 .tco-type-eyebrow {
   @include type-eyebrow;
 

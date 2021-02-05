@@ -1,6 +1,6 @@
 {
   "name": "@thinkcompany/think-ui-library",
-  "version": "1.2.72",
+  "version": "1.2.73",
   "repository": {
     "type": "git",
     "url": "https://github.com/thinkcompany/think-ui-library"
@@ -15,7 +15,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "storybook": "start-storybook -p 6006 -s ./src/assets ./src",
     "build-storybook": "build-storybook -s ./src/assets",
-    "tokens": "node ./build/scripts/tokens.js",
+    "tokens": "node ./build/scripts/tokens.js && npm run format",
     "icons": "node ./build/scripts/combine-svg.js",
     "build": "webpack -p --config build/config/webpack.config.babel.js",
     "lint": "npm run lint:sass && npm run lint:js",

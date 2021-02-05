@@ -252,6 +252,11 @@
   }
 }
 
+@mixin type-cursive($font-color: inherit) {
+  @include type-base-style($font-color, 400);
+  font-family: $font-stack-cursive;
+}
+
 // trash once button styles are updated
 @mixin type-body-medium($font-color: inherit, $font-weight: $font-weight-400) {
   @include type-base-style($font-color);

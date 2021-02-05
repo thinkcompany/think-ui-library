@@ -3,7 +3,6 @@
     Variables
 \*---------------------------------------------- */
 
-$form-input-border: 1px solid $color-background-secondary;
 $opacity--disabled: 0.4;
 
 /* ----------------------------------------------*\
@@ -40,17 +39,17 @@ $opacity--disabled: 0.4;
 
 .tco-form-input,
 %tco-form-input {
-  @include spacing-inset-12;
   @include type-body-default;
   width: 100%;
-  border: $form-input-border;
-  border-radius: $border-radius-small;
+  border: 0;
+  border-bottom: $border-default;
+  border-radius: 0;
   background-color: $color-background-primary;
   background-image: none;
   color: $color-foreground-primary;
 
   &::placeholder {
-    color: $color-foreground-primary;
+    color: $color-foreground-tertiary;
   }
 
   // fixes hidden focus ring on mac firefox
@@ -97,7 +96,7 @@ $opacity--disabled: 0.4;
 }
 
 .tco-form-input--large {
-  @include spacing-inset-16;
+  padding: $spacing-stack-16 $spacing-inline-4;
 
   + .tco-form-state-icon {
     top: rem(44px);
@@ -105,7 +104,7 @@ $opacity--disabled: 0.4;
 }
 
 .tco-form-input--medium {
-  @include spacing-inset-8;
+  padding: $spacing-stack-8 $spacing-inline-4;
 
   + .tco-form-state-icon {
     top: rem(36px);
@@ -113,7 +112,7 @@ $opacity--disabled: 0.4;
 }
 
 .tco-form-input--small {
-  @include spacing-squish-4-8;
+  padding: $spacing-stack-4 $spacing-inline-4;
   font-size: $font-size-12;
 
   + .tco-form-state-icon {
@@ -127,7 +126,6 @@ $opacity--disabled: 0.4;
 
 .tco-form-textarea {
   @extend %tco-form-input;
-
   @include spacing-inset-8;
 
   + .tco-form-state-icon {
@@ -143,6 +141,7 @@ $opacity--disabled: 0.4;
   @include type-eyebrow;
   position: relative;
   display: block;
+  padding: 0 $spacing-inline-4;
   font-weight: $font-weight-600;
 
   .tco-form-label-text {

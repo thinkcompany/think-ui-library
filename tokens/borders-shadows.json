@@ -7,7 +7,7 @@
     "round": "50%"
   },
   "shadow": {
-    "default": "0 0 8px 0 rgba(23, 49, 69, 0.3)",
+    "default": "0 0 8px 0 rgba($color-think-classic-navy, 0.3)",
     "card": "0px 0px 19px 0px rgba(0, 0, 0, 0.08)"
   },
   "border": {
