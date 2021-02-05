@@ -34,7 +34,7 @@ svg {
 }
 
 a {
-  @include type-link;
+  @include type-link($showInitial: true);
 }
 
 ul {

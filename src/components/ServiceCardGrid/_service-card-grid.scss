@@ -1,0 +1,14 @@
+.tco-card-grid--service {
+  grid-gap: 0;
+
+  @include wider-than($breakpoint-phone-landscape) {
+    grid-template-columns: repeat(2, 1fr);
+    border: $border-card;
+    border-bottom-width: 0;
+  }
+
+  @include wider-than($breakpoint-tablet-portrait) {
+    grid-template-columns: repeat(3, 1fr);
+    border-right-width: 0;
+  }
+}

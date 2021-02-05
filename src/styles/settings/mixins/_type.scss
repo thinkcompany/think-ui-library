@@ -173,7 +173,12 @@
   }
 }
 
-@mixin type-body-large($font-color: inherit, $height: default, $italic: false) {
+@mixin type-body-large(
+  $font-color: inherit,
+  $height: default,
+  $italic: false,
+  $bold: false
+) {
   @include type-base-style($font-color, 400);
   @include clamp(
     font-size,
@@ -203,6 +208,14 @@
 
   @if $italic {
     font-family: $font-stack-slab-italic;
+  }
+
+  @if $bold {
+    font-family: $font-stack-slab-bold;
+  }
+
+  strong {
+    font-family: $font-stack-slab-bold;
   }
 }
 
@@ -273,9 +286,10 @@
   $font-size: inherit,
   $font-weight: inherit,
   $font-family: inherit,
-  $line-height: inherit
+  $line-height: inherit,
+  $underline: $font-color,
+  $showInitial: false
 ) {
-  position: relative;
   color: $font-color;
   font-weight: $font-weight;
   font-size: $font-size;
@@ -284,18 +298,13 @@
   text-decoration: none;
   background-color: transparent;
   text-transform: none;
+  border-bottom-width: 1px;
+  border-bottom-style: solid;
+  border-bottom-color: transparent;
+  transition: border-color 0.2s linear;
 
-  &::after {
-    content: '';
-    position: absolute;
-    bottom: 1px;
-    left: 0;
-    display: block;
-    width: 100%;
-    height: 1px;
-    background-color: $font-color;
-    opacity: 1;
-    transition: opacity 0.2s linear;
+  @if $showInitial {
+    border-bottom-color: $underline;
   }
 
   &:disabled,
@@ -304,13 +313,11 @@
   }
 
   &:hover,
-  &:focus,
-  &:active,
-  &:visited,
-  &:disabled,
-  &[disabled] {
-    &::after {
-      opacity: 0;
+  &:focus {
+    border-bottom-color: $underline;
+
+    @if $showInitial {
+      border-bottom-color: transparent;
     }
   }
 }
@@ -322,24 +329,23 @@ $arrow-translate: 10px;
 
 @mixin type-link-cta(
   $font-color: inherit,
-  $padding-right: $arrow-offset + $arrow-offset
+  $padding-right: $arrow-offset + $arrow-offset,
+  $fill: $color-tint-blue-primary
 ) {
   padding-right: $padding-right;
   color: $font-color;
+  text-decoration: none;
+  border-bottom: 0 solid transparent;
 
   .tco-text-link-icon,
   svg {
     display: inline-block;
     width: $arrow-width;
     height: $arrow-height;
-    fill: $color-tint-blue-primary;
+    fill: $fill;
     transition: transform 0.2s linear;
     transform: translate($arrow-offset, 0);
     transform-origin: left center;
-  }
-
-  &::after {
-    display: none;
   }
 
   &:hover,
@@ -361,10 +367,6 @@ $arrow-translate: 10px;
 
   &.tco-text-link--secondary {
     color: $color-background-primary;
-
-    &::after {
-      display: none;
-    }
 
     .tco-text-link-icon {
       fill: $color-background-primary;

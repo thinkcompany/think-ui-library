@@ -35,14 +35,6 @@
     .tco-card-link {
       display: block;
 
-      &:hover,
-      &:focus,
-      &:active {
-        .tco-card-content-heading {
-          background-size: 100% 106%;
-        }
-      }
-
       &:focus {
         outline: 4px solid $color-tint-blue-primary;
         outline-offset: -4px;
@@ -53,6 +45,14 @@
   &-content-container {
     padding: $spacing-stack-18 $spacing-stack-18 $spacing-stack-50;
     color: $color-think-classic-gray-dark;
+
+    @include wider-than($breakpoint-desktop) {
+      padding: $spacing-stack-32 $spacing-stack-32 $spacing-stack-64;
+    }
+  }
+
+  &-content-description {
+    @include type-body-default;
 
     @include wider-than($breakpoint-desktop) {
       padding: $spacing-stack-32 $spacing-stack-32 $spacing-stack-64;
@@ -95,6 +95,122 @@
     border-radius: 0;
     background: transparent;
     box-shadow: none;
+  }
+}
+
+// ========================================================
+// = SERVICE CARD
+// ========================================================
+.tco-card--service {
+  max-width: none;
+  border-width: 0 0 1px;
+  box-shadow: none;
+  transition: background-color 0.2s linear;
+
+  &:nth-last-child(2) {
+    border-bottom-width: 0;
+  }
+
+  &:hover {
+    background-color: $color--glass;
+
+    .tco-card-content-heading {
+      border-bottom-color: $color--think-blue;
+    }
+  }
+
+  @include wider-than($breakpoint-phone-landscape) {
+    &:nth-of-type(odd) {
+      border-width: 0 1px 1px 0;
+    }
+  }
+
+  @include wider-than($breakpoint-tablet-portrait) {
+    border-width: 0 1px 1px 0;
+  }
+
+  .tco-card-link {
+    padding: $spacing-stack-24 0;
+
+    @include wider-than($breakpoint-phone-landscape) {
+      padding: $spacing-stack-24 $spacing-inline-16;
+    }
+
+    @include wider-than($breakpoint-desktop) {
+      padding: $spacing-stack-24 $spacing-inline-32;
+    }
+  }
+
+  .tco-card-image-container {
+    width: calc(100% - #{$spacing-inline-24} * 2);
+    margin: 0 auto;
+
+    .tco-card-image {
+      @include center-absolute;
+      object-fit: contain;
+      width: auto;
+      height: auto;
+    }
+  }
+
+  .tco-card-content {
+    &-container {
+      padding: $spacing-stack-32 0 0;
+
+      @include wider-than($breakpoint-desktop) {
+        padding: $spacing-stack-40 0 0;
+      }
+    }
+
+    &-heading {
+      @include type-body-large;
+      @include type-link;
+      display: inline;
+    }
+
+    &-description {
+      margin-top: $spacing-stack-8;
+    }
+  }
+
+  &-cta {
+    background-color: $color--think-blue;
+
+    &:hover,
+    &:focus {
+      background-color: $color--think-blue;
+    }
+
+    .tco-card-link {
+      @include type-link-cta(
+        $padding-right: $spacing-inline-16,
+        $fill: $color-background-primary
+      );
+      display: flex;
+      padding-left: $spacing-inline-16;
+
+      @include wider-than($breakpoint-desktop) {
+        padding-right: $spacing-inline-32;
+        padding-left: $spacing-inline-32;
+      }
+    }
+
+    .tco-card-content {
+      &-container {
+        margin: auto 0;
+        padding: 0;
+        color: $color-background-primary;
+      }
+
+      &-heading {
+        margin-bottom: $spacing-stack-24;
+        color: $color-background-primary;
+      }
+
+      &-description {
+        margin-top: $spacing-stack-24;
+      }
+    }
   }
 }
 

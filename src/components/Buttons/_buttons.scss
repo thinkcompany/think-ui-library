@@ -76,6 +76,7 @@ $color-hover: #08519a;
 .tco-text-link {
   &--arrow {
     @include type-link-cta;
+    color: $color--think-blue;
   }
 
   &:active {
