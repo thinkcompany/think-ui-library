@@ -97,8 +97,6 @@ const types = ['card', 'full-width'];
 
 const caseStudyCard = input => {
   const cardType = select('Card type', types, 'card');
-  const headingSize =
-    cardType === 'full-width' ? 'body--large' : 'display-small';
 
   return `
     <div class="tco-card tco-card--case-study tco-card--case-study-${cardType} tco-card--case-study-${
