@@ -18,3 +18,16 @@
   border-radius: 50%;
   background-color: $color-background-primary;
 }
+
+@mixin pseudo-doodle {
+  position: relative;
+  flex-shrink: 0;
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    display: block;
+    background-repeat: no-repeat;
+  }
+}
