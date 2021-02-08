@@ -1,112 +1,197 @@
+$offset: 10%;
+
 .tco-card--case-study {
+  position: relative;
+  overflow: visible;
   max-width: none;
-  border-width: 0 0 1px;
   box-shadow: none;
-  transition: background-color 0.2s linear;
 
-  &:nth-last-child(2) {
-    border-bottom-width: 0;
-  }
-
-  &:hover {
-    background-color: $color-think-classic-glass;
-
-    .tco-card-content-heading {
-      border-bottom-color: $color-think-classic-think-blue;
-    }
-  }
-
-  @include wider-than($breakpoint-phone-landscape) {
-    &:nth-of-type(odd) {
-      border-width: 0 1px 1px 0;
-    }
-  }
-
-  @include wider-than($breakpoint-tablet-portrait) {
-    border-width: 0 1px 1px 0;
-  }
-
-  .tco-card-link {
-    padding: $spacing-stack-24 0;
-
-    @include wider-than($breakpoint-phone-landscape) {
-      padding: $spacing-stack-24 $spacing-inline-16;
-    }
-
-    @include wider-than($breakpoint-desktop) {
-      padding: $spacing-stack-24 $spacing-inline-32;
-    }
+  @include wider-than($breakpoint-desktop) {
+    margin-bottom: 0;
   }
 
   .tco-card-image-container {
-    width: calc(100% - #{$spacing-inline-24} * 2);
-    margin: 0 auto;
+    @include aspectRatioBox;
 
-    .tco-card-image {
-      @include center-absolute;
-      object-fit: contain;
-      width: auto;
-      height: auto;
+    &--case-study {
+      z-index: 1;
+
+      &-bg {
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 0;
+
+        &::after {
+          content: '';
+          position: inherit;
+          top: inherit;
+          left: inherit;
+          z-index: 1;
+          display: block;
+          width: 100%;
+          height: 100%;
+        }
+      }
+    }
+  }
+
+  .tco-card-image {
+    width: auto;
+
+    &-offset--bottom {
+      transform: translateY($offset);
+    }
+
+    &-offset--top {
+      transform: translateY(-$offset);
+    }
+
+    &-offset--left {
+      transform: translateX($offset);
+    }
+
+    &-offset--right {
+      transform: translateX(-$offset);
     }
   }
 
   .tco-card-content {
     &-container {
-      padding: $spacing-stack-32 0 0;
+      padding: $spacing-stack-32 $spacing-inline-32;
+      color: $color-background-primary;
 
-      @include wider-than($breakpoint-desktop) {
-        padding: $spacing-stack-40 0 0;
+      @include wider-than($breakpoint-tablet-portrait) {
+        padding: $spacing-stack-50 $spacing-inline-50 $spacing-stack-40;
       }
     }
 
     &-heading {
-      @include type-body-large;
-      @include type-link;
-      display: inline;
+      @include wider-than($breakpoint-tablet-portrait) {
+        margin-bottom: $spacing-stack-32;
+      }
     }
 
     &-description {
-      margin-top: $spacing-stack-8;
+      margin-bottom: $spacing-stack-24;
+      padding: 0;
     }
   }
 
-  &-cta {
-    background-color: $color-think-classic-think-blue;
-
-    &:hover,
-    &:focus {
-      background-color: $color-think-classic-think-blue;
+  &-full-width {
+    .tco-card-link {
+      @include wider-than($breakpoint-tablet-portrait) {
+        display: flex;
+        flex-flow: row nowrap;
+        align-items: center;
+        justify-content: space-between;
+      }
     }
 
-    .tco-card-link {
-      @include type-link-cta(
-        $padding-right: $spacing-inline-16,
-        $fill: $color-background-primary
-      );
-      display: flex;
-      padding-left: $spacing-inline-16;
-
-      @include wider-than($breakpoint-desktop) {
-        padding-right: $spacing-inline-32;
-        padding-left: $spacing-inline-32;
+    .tco-card-image-container {
+      @include wider-than($breakpoint-tablet-portrait) {
+        width: 50%;
+        height: 100%;
+        padding-bottom: 0;
       }
+
+      &--case-study {
+        z-index: 1;
+      }
+
+      &--case-study-bg {
+        width: 100%;
+      }
+    }
+
+    .tco-card-image--bg {
+      width: 100%;
     }
 
     .tco-card-content {
       &-container {
-        margin: auto 0;
-        padding: 0;
-        color: $color-background-primary;
-      }
+        z-index: 1;
 
-      &-heading {
-        margin-bottom: $spacing-stack-24;
-        color: $color-background-primary;
-      }
+        @include wider-than($breakpoint-tablet-portrait) {
+          display: flex;
+          flex-flow: column nowrap;
+          justify-content: center;
+          width: 50%;
+          height: 100%;
+          background-color: transparent;
+        }
 
-      &-description {
-        margin-top: $spacing-stack-24;
+        @include wider-than($breakpoint-desktop) {
+          padding: $spacing-stack-76 $spacing-inline-64 $spacing-stack-64
+            $spacing-inline-32;
+        }
       }
     }
+
+    .tco-card-content-heading {
+      @include type-display-small;
+      margin-bottom: $spacing-stack-20;
+    }
+
+    &:nth-of-type(odd) {
+      .tco-card-content-container {
+        order: 0;
+
+        @include wider-than($breakpoint-desktop) {
+          padding-right: $spacing-inline-32;
+          padding-left: $spacing-inline-64;
+        }
+      }
+
+      .tco-card-image-container--case-study {
+        order: 1;
+      }
+    }
+  }
+
+  .tco-card-eyebrow {
+    margin-bottom: $spacing-stack-4;
+
+    @include wider-than($breakpoint-tablet-portrait) {
+      margin-bottom: $spacing-stack-12;
+    }
+  }
+
+  .tco-text-link {
+    @include type-link-cta($fill: $color-background-primary);
+    @include type-body-default;
+    display: block;
+  }
+
+  &-nemours {
+    @include clientColors(nemours);
+  }
+
+  &-comcast {
+    @include clientColors(comcast);
+  }
+
+  &-merck {
+    @include clientColors(merck);
+  }
+
+  &-retail360 {
+    @include clientColors(retail360);
+  }
+
+  &-policy-map {
+    @include clientColors(policy-map);
+  }
+
+  &-einstein {
+    @include clientColors(einstein);
+  }
+
+  &-janney {
+    @include clientColors(janney);
+  }
+
+  &-abc {
+    @include clientColors(abc);
   }
 }

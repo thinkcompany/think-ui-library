@@ -112,17 +112,17 @@
     "color": "#ffffff"
   },
   {
-    "name": "gray-light",
+    "name": "grey-light",
     "section": "think-classic",
     "color": "#d4dce1"
   },
   {
-    "name": "gray-medium",
+    "name": "grey-medium",
     "section": "think-classic",
-    "color": "#7e8e98"
+    "color": "#64737D"
   },
   {
-    "name": "gray-dark",
+    "name": "grey-dark",
     "section": "think-classic",
     "color": "#262c30"
   },
@@ -140,5 +140,149 @@
     "name": "navy",
     "section": "think-classic",
     "color": "#173145"
+  },
+  {
+    "name": "nemours",
+    "section": "case-study",
+    "variants": [
+      {
+        "name": "primary",
+        "color": "#003a6f"
+      },
+      {
+        "name": "secondary",
+        "color": "#0a7cc1"
+      },
+      {
+        "name": "tertiary",
+        "color": "#f3f5fa"
+      }
+    ]
+  },
+  {
+    "name": "comcast",
+    "section": "case-study",
+    "variants": [
+      {
+        "name": "primary",
+        "color": "#c9234a"
+      },
+      {
+        "name": "secondary",
+        "color": "#635eaa"
+      },
+      {
+        "name": "tertiary",
+        "color": "#f7f7f7"
+      }
+    ]
+  },
+  {
+    "name": "merck",
+    "section": "case-study",
+    "variants": [
+      {
+        "name": "primary",
+        "color": "#01857c"
+      },
+      {
+        "name": "secondary",
+        "color": "#484848"
+      },
+      {
+        "name": "tertiary",
+        "color": "#ebeef0"
+      }
+    ]
+  },
+  {
+    "name": "retail360",
+    "section": "case-study",
+    "variants": [
+      {
+        "name": "primary",
+        "color": "#006498"
+      },
+      {
+        "name": "secondary",
+        "color": "#006498"
+      },
+      {
+        "name": "tertiary",
+        "color": "#ebeef0"
+      }
+    ]
+  },
+  {
+    "name": "policy-map",
+    "section": "case-study",
+    "variants": [
+      {
+        "name": "primary",
+        "color": "#503177"
+      },
+      {
+        "name": "secondary",
+        "color": "#f38933"
+      },
+      {
+        "name": "tertiary",
+        "color": "#cad2d3"
+      }
+    ]
+  },
+  {
+    "name": "einstein",
+    "section": "case-study",
+    "variants": [
+      {
+        "name": "primary",
+        "color": "#0272b6"
+      },
+      {
+        "name": "secondary",
+        "color": "#f2f4f5"
+      },
+      {
+        "name": "tertiary",
+        "color": "#e1f0ff"
+      }
+    ]
+  },
+  {
+    "name": "janney",
+    "section": "case-study",
+    "variants": [
+      {
+        "name": "primary",
+        "color": "#256896"
+      },
+      {
+        "name": "secondary",
+        "color": "#007a7c"
+      },
+      {
+        "name": "tertiary",
+        "color": "#d6e1ec"
+      }
+    ]
+  },
+  {
+    "name": "abc",
+    "section": "case-study",
+    "variants": [
+      {
+        "name": "primary",
+        "color": "#503177"
+      },
+      {
+        "name": "secondary",
+        "color": "#f38933"
+      },
+      {
+        "name": "tertiary",
+        "color": "#cad2d3"
+      }
+    ]
   }
 ]
