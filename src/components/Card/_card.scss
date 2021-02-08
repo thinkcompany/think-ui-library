@@ -112,10 +112,10 @@
   }
 
   &:hover {
-    background-color: $color--glass;
+    background-color: $color-think-classic-glass;
 
     .tco-card-content-heading {
-      border-bottom-color: $color--think-blue;
+      border-bottom-color: $color-think-classic-think-blue;
     }
   }
 
@@ -174,11 +174,11 @@
   }
 
   &-cta {
-    background-color: $color--think-blue;
+    background-color: $color-think-classic-think-blue;
 
     &:hover,
     &:focus {
-      background-color: $color--think-blue;
+      background-color: $color-think-classic-think-blue;
     }
 
     .tco-card-link {
