@@ -150,26 +150,26 @@
 @mixin type-display-extra-small($font-color: inherit, $italic: false) {
   @include type-base-style($font-color, 700);
   font-size: $font-size-11;
-  font-family: $font-stack-serif-bold;
+  font-family: $font-stack-sans-serif-bold;
   text-transform: uppercase;
   letter-spacing: 1px;
   line-height: 1.36;
 
   @if $italic {
-    font-family: $font-stack-serif-bold-italic;
+    font-family: $font-stack-sans-serif-bold-italic;
   }
 }
 
 @mixin type-eyebrow($font-color: inherit, $italic: false) {
   @include type-base-style($font-color, 900);
   font-size: $font-size-14;
-  font-family: $font-stack-serif-black;
+  font-family: $font-stack-sans-serif-black;
   line-height: 1.3;
   letter-spacing: 3px;
   text-transform: uppercase;
 
   @if $italic {
-    font-family: $font-stack-serif-black-italic;
+    font-family: $font-stack-sans-serif-black-italic;
   }
 }
 
@@ -233,22 +233,22 @@
 @mixin type-body-small($font-color: inherit, $italic: false) {
   @include type-base-style($font-color, 500);
   font-size: $font-size-16;
-  font-family: $font-stack-serif;
+  font-family: $font-stack-sans-serif;
   line-height: 1.25;
 
   @if $italic {
-    font-family: $font-stack-serif-italic;
+    font-family: $font-stack-sans-serif-italic;
   }
 }
 
 @mixin type-sans-bold($font-color: inherit, $italic: false) {
   @include type-base-style($font-color);
   font-size: $font-size-16;
-  font-family: $font-stack-serif-bold;
+  font-family: $font-stack-sans-serif-bold;
   line-height: 1.5;
 
   @if $italic {
-    font-family: $font-stack-serif-bold-italic;
+    font-family: $font-stack-sans-serif-bold-italic;
   }
 }
 

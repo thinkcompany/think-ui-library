@@ -11,11 +11,11 @@
     "slab-light-italic": "'Kievit Slab W05 Extralight It', georgia, serif",
     "slab-book": "'Kievit Slab W05 Book', georgia, serif",
     "slab-book-italic": "'Kievit Slab W05 Book Italic', georgia, serif",
-    "serif": "'KievitWeb W07 Medi', helvetica, sans-serif",
-    "serif-italic": "'KievitWeb W07 MediIta', helvetica, sans-serif",
-    "serif-bold": "'KievitWeb W07 Bold', helvetica, sans-serif",
-    "serif-bold-italic": "'KievitWeb W07 BoldIta', helvetica, sans-serif",
-    "serif-black": "'KievitWeb W07 Black', georgia, serif",
-    "serif-black-italic": "'KievitWeb W07 BlackIta', georgia, serif"
+    "sans-serif": "'KievitWeb W07 Medi', helvetica, sans-serif",
+    "sans-serif-italic": "'KievitWeb W07 MediIta', helvetica, sans-serif",
+    "sans-serif-bold": "'KievitWeb W07 Bold', helvetica, sans-serif",
+    "sans-serif-bold-italic": "'KievitWeb W07 BoldIta', helvetica, sans-serif",
+    "sans-serif-black": "'KievitWeb W07 Black', georgia, serif",
+    "sans-serif-black-italic": "'KievitWeb W07 BlackIta', georgia, serif"
   }
 }
