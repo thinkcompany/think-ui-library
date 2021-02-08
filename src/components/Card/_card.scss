@@ -44,7 +44,7 @@
 
   &-content-container {
     padding: $spacing-stack-18 $spacing-stack-18 $spacing-stack-50;
-    color: $color-think-classic-gray-dark;
+    color: $color-classic-gray-dark;
 
     @include wider-than($breakpoint-desktop) {
       padding: $spacing-stack-32 $spacing-stack-32 $spacing-stack-64;
@@ -112,10 +112,10 @@
   }
 
   &:hover {
-    background-color: $color-think-classic-glass;
+    background-color: $color-classic-glass;
 
     .tco-card-content-heading {
-      border-bottom-color: $color-think-classic-think-blue;
+      border-bottom-color: $color-classic-blue;
     }
   }
 
@@ -174,11 +174,11 @@
   }
 
   &-cta {
-    background-color: $color-think-classic-think-blue;
+    background-color: $color-classic-blue;
 
     &:hover,
     &:focus {
-      background-color: $color-think-classic-think-blue;
+      background-color: $color-classic-blue;
     }
 
     .tco-card-link {
