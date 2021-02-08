@@ -1,4 +1,10 @@
+@mixin card-container-shadow {
+  box-shadow: $box-shadow-card;
+}
+
 @mixin card-base {
+  @include card-container-shadow;
+  width: 100%;
   min-width: 158px;
   min-height: 300px;
   background: $color-background-primary;
@@ -8,11 +14,6 @@
 @mixin card-container-flat {
   @include card-base;
   border: 1px solid rgb(222, 224, 232);
-}
-
-@mixin card-container-shadow {
-  @include card-base;
-  box-shadow: $box-shadow-card;
 }
 
 /**

@@ -20,3 +20,10 @@
     z-index: 1;
   }
 }
+
+@mixin aspectRatioBox($width: 100%, $ratio: 65.25%) {
+  position: relative;
+  width: $width;
+  height: 0;
+  padding-bottom: $ratio;
+}
