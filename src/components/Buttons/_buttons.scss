@@ -1,7 +1,8 @@
 $color-disabled: #c8d9ea;
 $color-hover: #08519a;
 
-.tco-btn {
+.tco-btn,
+%tco-btn {
   @include type-eyebrow;
   position: relative;
   border: none;
@@ -76,7 +77,7 @@ $color-hover: #08519a;
 .tco-text-link {
   &--arrow {
     @include type-link-cta;
-    color: $color-think-classic-think-blue;
+    color: $color-classic-blue;
   }
 
   &:active {
