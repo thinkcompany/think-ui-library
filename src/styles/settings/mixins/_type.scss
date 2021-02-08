@@ -241,6 +241,17 @@
   }
 }
 
+@mixin type-body-xsmall($font-color: inherit, $italic: false) {
+  @include type-base-style($font-color, 500);
+  font-size: $font-size-12;
+  font-family: $font-stack-sans-serif;
+  line-height: 1.2;
+
+  @if $italic {
+    font-family: $font-stack-sans-serif-italic;
+  }
+}
+
 @mixin type-sans-bold($font-color: inherit, $italic: false) {
   @include type-base-style($font-color);
   font-size: $font-size-16;
