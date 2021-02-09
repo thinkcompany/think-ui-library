@@ -42,4 +42,14 @@
       grid-template-columns: repeat(3, 1fr);
     }
   }
+
+  &--case-study {
+    &.tco-card-grid--1-column {
+      grid-gap: $spacing-stack-32;
+
+      @include wider-than($breakpoint-tablet-portrait) {
+        grid-gap: $spacing-stack-100;
+      }
+    }
+  }
 }

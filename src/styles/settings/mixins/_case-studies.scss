@@ -1,0 +1,26 @@
+$clients: (
+  comcast: $color-case-study-comcast-primary,
+  nemours: $color-case-study-nemours-primary,
+  merck: $color-case-study-merck-primary,
+  retail360: $color-case-study-retail360-primary,
+  policy-map: $color-case-study-policy-map-primary,
+  einstein: $color-case-study-einstein-primary,
+  janney: $color-case-study-janney-primary,
+  abc: $color-case-study-abc-primary
+);
+
+@mixin clientColors($client, $opacity: var(--bg-alpha)) {
+  .tco-card-content-container {
+    background-color: map-get($clients, $client);
+  }
+
+  .tco-card-content-container--full-width {
+    @include wider-than($breakpoint-tablet-portrait) {
+      background-color: transparent;
+    }
+  }
+
+  .tco-card-image-container--case-study-bg::after {
+    background-color: rgba(map-get($clients, $client), $opacity);
+  }
+}

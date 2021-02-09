@@ -1,112 +1,349 @@
+$offset: 4%;
+$device-width-phone: 640px;
+$device-width-desktop: 468px;
+$device-width-tablet: 350px;
+$device-width-tablet-angle: 500px;
+$device-width-laptop: 570px;
+$device-width-laptop-angle: 500px;
+$device-width-kiosk: 448px;
+$device-width-report: 420px;
+
 .tco-card--case-study {
+  position: relative;
+  overflow: visible;
   max-width: none;
-  border-width: 0 0 1px;
   box-shadow: none;
-  transition: background-color 0.2s linear;
 
-  &:nth-last-child(2) {
-    border-bottom-width: 0;
-  }
-
-  &:hover {
-    background-color: $color-think-classic-glass;
-
-    .tco-card-content-heading {
-      border-bottom-color: $color-think-classic-think-blue;
-    }
-  }
-
-  @include wider-than($breakpoint-phone-landscape) {
-    &:nth-of-type(odd) {
-      border-width: 0 1px 1px 0;
-    }
-  }
-
-  @include wider-than($breakpoint-tablet-portrait) {
-    border-width: 0 1px 1px 0;
+  @include wider-than($breakpoint-desktop) {
+    margin-bottom: 0;
   }
 
   .tco-card-link {
-    padding: $spacing-stack-24 0;
-
-    @include wider-than($breakpoint-phone-landscape) {
-      padding: $spacing-stack-24 $spacing-inline-16;
-    }
-
-    @include wider-than($breakpoint-desktop) {
-      padding: $spacing-stack-24 $spacing-inline-32;
+    &:hover,
+    &:focus {
+      .tco-text-link--icon,
+      svg {
+        transform: translate($arrow-translate, 0);
+      }
     }
   }
 
   .tco-card-image-container {
-    width: calc(100% - #{$spacing-inline-24} * 2);
-    margin: 0 auto;
+    @include aspect-ratio-box;
 
-    .tco-card-image {
-      @include center-absolute;
-      object-fit: contain;
-      width: auto;
-      height: auto;
+    &--case-study {
+      z-index: 1;
+
+      &-bg {
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 0;
+
+        &::after {
+          content: '';
+          position: inherit;
+          top: inherit;
+          left: inherit;
+          z-index: 1;
+          display: block;
+          width: 100%;
+          height: 100%;
+        }
+      }
     }
+
+    &--phone {
+      .tco-card-image {
+        transform: translateY(10%);
+      }
+    }
+
+    &--desktop {
+      .tco-card-image {
+        height: 98%;
+      }
+    }
+
+    &--laptop {
+      .tco-card-image {
+        height: 80%;
+        transform: translateY(26%);
+      }
+    }
+
+    &--tablet,
+    &--tablet-angle,
+    &--laptop-angle,
+    &--kiosk,
+    &--desktop,
+    &--desktop-angle {
+      .tco-card-image {
+        transform: translateY($offset);
+      }
+    }
+
+    &--report {
+      .tco-card-image {
+        transform: translateY($offset * 2);
+      }
+    }
+  }
+
+  .tco-card-image {
+    right: 0;
+    width: auto;
+    margin: 0 auto;
   }
 
   .tco-card-content {
     &-container {
-      padding: $spacing-stack-32 0 0;
+      padding: $spacing-stack-32 $spacing-inline-32;
+      color: $color-background-primary;
 
-      @include wider-than($breakpoint-desktop) {
-        padding: $spacing-stack-40 0 0;
+      @include wider-than($breakpoint-tablet-portrait) {
+        padding: $spacing-stack-50 $spacing-inline-50 $spacing-stack-40;
       }
     }
 
     &-heading {
-      @include type-body-large;
-      @include type-link;
-      display: inline;
+      @include wider-than($breakpoint-tablet-portrait) {
+        margin-bottom: $spacing-stack-32;
+      }
     }
 
     &-description {
-      margin-top: $spacing-stack-8;
+      margin-bottom: $spacing-stack-24;
+      padding: 0;
     }
   }
 
-  &-cta {
-    background-color: $color-think-classic-think-blue;
-
-    &:hover,
-    &:focus {
-      background-color: $color-think-classic-think-blue;
+  &-full-width {
+    .tco-card-link {
+      @include wider-than($breakpoint-tablet-portrait) {
+        display: flex;
+        flex-flow: row nowrap;
+        align-items: center;
+        justify-content: space-between;
+      }
     }
 
-    .tco-card-link {
-      @include type-link-cta(
-        $padding-right: $spacing-inline-16,
-        $fill: $color-background-primary
-      );
-      display: flex;
-      padding-left: $spacing-inline-16;
+    .tco-card-image-container {
+      @include wider-than($breakpoint-tablet-portrait) {
+        height: 100%;
+        padding-bottom: 0;
 
-      @include wider-than($breakpoint-desktop) {
-        padding-right: $spacing-inline-32;
-        padding-left: $spacing-inline-32;
+        &--case-study {
+          position: absolute;
+          display: flex;
+          width: 50%;
+        }
+
+        &.tco-card-image-container--case-study .tco-card-image {
+          height: auto;
+        }
+      }
+
+      &--case-study {
+        z-index: 1;
+      }
+
+      &--case-study-bg {
+        width: 100%;
+      }
+    }
+
+    @include wider-than($breakpoint-tablet-portrait) {
+      .tco-card-image-container--phone {
+        width: $device-width-phone;
+
+        .tco-card-image {
+          transform: translateY(16%);
+        }
+      }
+
+      .tco-card-image-container--desktop,
+      .tco-card-image-container--tablet {
+        .tco-card-image {
+          width: 90%;
+          max-width: $device-width-desktop;
+          transform: translateY(8%);
+        }
+      }
+
+      .tco-card-image-container--tablet {
+        .tco-card-image {
+          max-width: $device-width-tablet;
+          transform: translateY(3%);
+        }
+      }
+
+      .tco-card-image-container--tablet-angle {
+        .tco-card-image {
+          max-width: $device-width-tablet-angle;
+          transform: translateY(10%);
+        }
+      }
+
+      .tco-card-image-container--laptop {
+        .tco-card-image {
+          max-width: $device-width-laptop;
+          transform: translate($spacing-inline-16, 0);
+        }
+      }
+
+      .tco-card-image-container--laptop-angle {
+        .tco-card-image {
+          max-width: $device-width-laptop-angle;
+          transform: translateY(8%);
+        }
+      }
+
+      .tco-card-image-container--kiosk {
+        .tco-card-image {
+          max-width: $device-width-kiosk;
+          transform: translateY(-4%);
+        }
+      }
+
+      .tco-card-image-container--desktop-angle {
+        .tco-card-image {
+          max-width: $device-width-desktop;
+          transform: translateY(-2%);
+        }
+      }
+
+      .tco-card-image-container--report {
+        .tco-card-image {
+          max-width: $device-width-report;
+          transform: translateY(0);
+        }
+      }
+    }
+
+    .tco-card-image {
+      &--bg {
+        width: 100%;
+      }
+
+      &--main {
+        @include wider-than($breakpoint-tablet-portrait) {
+          position: initial;
+          width: 100%;
+          height: auto;
+          margin: auto;
+        }
       }
     }
 
     .tco-card-content {
       &-container {
-        margin: auto 0;
-        padding: 0;
-        color: $color-background-primary;
-      }
+        z-index: 1;
 
-      &-heading {
-        margin-bottom: $spacing-stack-24;
-        color: $color-background-primary;
-      }
+        @include wider-than($breakpoint-tablet-portrait) {
+          display: flex;
+          flex-flow: column nowrap;
+          justify-content: center;
+          width: 50%;
+          height: 100%;
+          background-color: transparent;
+        }
 
-      &-description {
-        margin-top: $spacing-stack-24;
+        @include wider-than($breakpoint-tablet-portrait) {
+          padding: $spacing-stack-76 $spacing-inline-64 $spacing-stack-64
+            $spacing-inline-32;
+        }
       }
     }
+
+    .tco-card-content-heading {
+      @include type-display-small;
+      margin-bottom: $spacing-stack-20;
+    }
+
+    &:nth-of-type(odd) {
+      @include wider-than($breakpoint-tablet-portrait) {
+        .tco-card-content-container {
+          padding-right: $spacing-inline-32;
+          padding-left: $spacing-inline-64;
+        }
+
+        .tco-card-image-container {
+          right: 0;
+        }
+
+        .tco-card-image-container--phone {
+          @include clamp(
+            right,
+            $breakpoint-tablet-portrait,
+            $breakpoint-desktop,
+            -150px,
+            -66px
+          );
+        }
+      }
+    }
+
+    &:nth-of-type(even) {
+      @include wider-than($breakpoint-tablet-portrait) {
+        .tco-card-link {
+          justify-content: flex-end;
+        }
+
+        .tco-card-image-container--case-study {
+          left: 0;
+        }
+
+        .tco-card-image-container--laptop .tco-card-image {
+          transform: translate(-$spacing-inline-16, 0);
+        }
+      }
+    }
+  }
+
+  .tco-card-eyebrow {
+    margin-bottom: $spacing-stack-4;
+
+    @include wider-than($breakpoint-tablet-portrait) {
+      margin-bottom: $spacing-stack-12;
+    }
+  }
+
+  .tco-text-link {
+    @include type-link-cta($fill: $color-background-primary);
+    @include type-body-default;
+    display: block;
+  }
+
+  &-nemours {
+    @include clientColors(nemours);
+  }
+
+  &-comcast {
+    @include clientColors(comcast);
+  }
+
+  &-merck {
+    @include clientColors(merck);
+  }
+
+  &-retail360 {
+    @include clientColors(retail360);
+  }
+
+  &-policy-map {
+    @include clientColors(policy-map);
+  }
+
+  &-einstein {
+    @include clientColors(einstein);
+  }
+
+  &-janney {
+    @include clientColors(janney);
+  }
+
+  &-abc {
+    @include clientColors(abc);
   }
 }

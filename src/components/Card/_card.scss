@@ -16,7 +16,7 @@
   }
 
   &-image-container {
-    @include aspectRatioBox(
+    @include aspect-ratio-box(
       $ratio: (
         4 / 5
       ) * 100%
@@ -41,7 +41,6 @@
 
   &-content-container {
     padding: $spacing-stack-18 $spacing-stack-18 $spacing-stack-50;
-    color: $color-classic-gray-dark;
 
     @include wider-than($breakpoint-desktop) {
       padding: $spacing-stack-32 $spacing-stack-32 $spacing-stack-64;
