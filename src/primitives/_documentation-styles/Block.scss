@@ -6,7 +6,7 @@
   justify-content: space-between;
   width: 100%;
   padding-top: $documentation-padding;
-  border: 1px solid $documentation-grey;
+  border: 1px solid $documentation-gray;
 
   footer {
     display: flex;
@@ -15,7 +15,7 @@
     width: 100%;
     margin-top: $documentation-padding;
     padding: $documentation-padding / 2;
-    border-top: 1px solid $documentation-grey;
+    border-top: 1px solid $documentation-gray;
     background: rgba($documentation-white, 0.8);
     font-size: 12px;
     font-family: sans-serif;

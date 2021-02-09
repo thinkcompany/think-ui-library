@@ -10,7 +10,8 @@ const cardContents = [
     description:
       'Lorem ipsum dolor set amet uncle B ipsum Lorem ipsum dolor set amet uncle B ipsum Lorem ipsum dolor set amet uncle B ipsum Lorem ipsum dolor set amet uncle B ipsum',
     cta: 'View case study',
-    offset: 'bottom'
+    offset: 'bottom',
+    opacity: 0.8
   },
   {
     id: 'comcast',
@@ -21,7 +22,8 @@ const cardContents = [
     description:
       'Lorem ipsum dolor set amet uncle B ipsum Lorem ipsum dolor set amet uncle B ipsum Lorem ipsum dolor set amet uncle B ipsum Lorem ipsum dolor set amet uncle B ipsum',
     cta: 'View case study',
-    offset: 'bottom'
+    offset: 'bottom',
+    opacity: 0.8
   },
   {
     id: 'merck',
@@ -32,7 +34,8 @@ const cardContents = [
     description:
       'Lorem ipsum dolor set amet uncle B ipsum Lorem ipsum dolor set amet uncle B ipsum Lorem ipsum dolor set amet uncle B ipsum Lorem ipsum dolor set amet uncle B ipsum',
     cta: 'View case study',
-    offset: 'bottom'
+    offset: 'bottom',
+    opacity: 0.8
   },
   {
     id: 'retail360',
@@ -43,7 +46,8 @@ const cardContents = [
     description:
       'Lorem ipsum dolor set amet uncle B ipsum Lorem ipsum dolor set amet uncle B ipsum Lorem ipsum dolor set amet uncle B ipsum Lorem ipsum dolor set amet uncle B ipsum',
     cta: 'View case study',
-    offset: 'bottom'
+    offset: 'bottom',
+    opacity: 0.8
   },
   {
     id: 'policy-map',
@@ -54,7 +58,8 @@ const cardContents = [
     description:
       'Lorem ipsum dolor set amet uncle B ipsum Lorem ipsum dolor set amet uncle B ipsum Lorem ipsum dolor set amet uncle B ipsum Lorem ipsum dolor set amet uncle B ipsum',
     cta: 'View case study',
-    offset: 'bottom'
+    offset: 'bottom',
+    opacity: 0.8
   },
   {
     id: 'einstein',
@@ -65,7 +70,8 @@ const cardContents = [
     description:
       'Lorem ipsum dolor set amet uncle B ipsum Lorem ipsum dolor set amet uncle B ipsum Lorem ipsum dolor set amet uncle B ipsum Lorem ipsum dolor set amet uncle B ipsum',
     cta: 'View case study',
-    offset: 'bottom'
+    offset: 'bottom',
+    opacity: 0.8
   },
   {
     id: 'janney',
@@ -76,7 +82,8 @@ const cardContents = [
     description:
       'Lorem ipsum dolor set amet uncle B ipsum Lorem ipsum dolor set amet uncle B ipsum Lorem ipsum dolor set amet uncle B ipsum Lorem ipsum dolor set amet uncle B ipsum',
     cta: 'View case study',
-    offset: 'bottom'
+    offset: 'bottom',
+    opacity: 0.8
   },
   {
     id: 'abc',
@@ -87,7 +94,8 @@ const cardContents = [
     description:
       'Lorem ipsum dolor set amet uncle B ipsum Lorem ipsum dolor set amet uncle B ipsum Lorem ipsum dolor set amet uncle B ipsum Lorem ipsum dolor set amet uncle B ipsum',
     cta: 'View case study',
-    offset: 'bottom'
+    offset: 'bottom',
+    opacity: 0.8
   }
 ];
 
@@ -131,7 +139,9 @@ const caseStudyCard = input => {
             </svg>
           </span>
         </div>
-        <div class="tco-card-image-container tco-card-image-container--case-study-bg">
+        <div class="tco-card-image-container tco-card-image-container--case-study-bg" style="--bg-alpha:${
+          input.opacity
+        };">
           <img class="tco-card-image tco-card-image--bg" alt="" src="${
             input.imageBg
           }" />

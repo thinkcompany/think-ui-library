@@ -137,7 +137,8 @@ $opacity--disabled: 0.4;
       Form controls for labels and legends
 \*---------------------------------------------- */
 
-.tco-form-label {
+.tco-form-label,
+%tco-form-label {
   @include type-eyebrow;
   position: relative;
   display: block;

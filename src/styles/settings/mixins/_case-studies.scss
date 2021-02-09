@@ -9,7 +9,7 @@ $clients: (
   abc: $color-case-study-abc-primary
 );
 
-@mixin clientColors($client, $opacity: 0.9) {
+@mixin clientColors($client, $opacity: var(--bg-alpha)) {
   .tco-card-content-container {
     background-color: map-get($clients, $client);
   }

@@ -21,7 +21,7 @@
   }
 }
 
-@mixin aspectRatioBox($width: 100%, $ratio: 65.25%) {
+@mixin aspect-ratio-box($width: 100%, $ratio: 65.25%) {
   position: relative;
   width: $width;
   height: 0;

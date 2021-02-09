@@ -11,7 +11,7 @@ $offset: 10%;
   }
 
   .tco-card-image-container {
-    @include aspectRatioBox;
+    @include aspect-ratio-box;
 
     &--case-study {
       z-index: 1;
