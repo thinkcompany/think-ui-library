@@ -18,6 +18,16 @@ $device-width-report: 420px;
     margin-bottom: 0;
   }
 
+  .tco-card-link {
+    &:hover,
+    &:focus {
+      .tco-text-link--icon,
+      svg {
+        transform: translate($arrow-translate, 0);
+      }
+    }
+  }
+
   .tco-card-image-container {
     @include aspect-ratio-box;
 
