@@ -79,6 +79,14 @@
   }
 }
 
+.tco-type-body--sans-xsmall {
+  @include type-body-xsmall;
+
+  &-italic {
+    @include type-body-xsmall($italic: true);
+  }
+}
+
 .tco-type-style--bold {
   @include type-style-bold;
 }

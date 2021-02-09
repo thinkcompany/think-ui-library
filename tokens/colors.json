@@ -113,32 +113,32 @@
   },
   {
     "name": "gray-light",
-    "section": "think-classic",
+    "section": "classic",
     "color": "#d4dce1"
   },
   {
     "name": "gray-medium",
-    "section": "think-classic",
+    "section": "classic",
     "color": "#64737d"
   },
   {
     "name": "gray-dark",
-    "section": "think-classic",
+    "section": "classic",
     "color": "#262c30"
   },
   {
     "name": "glass",
-    "section": "think-classic",
+    "section": "classic",
     "color": "#f2f8fa"
   },
   {
-    "name": "think-blue",
-    "section": "think-classic",
+    "name": "blue",
+    "section": "classic",
     "color": "#0062c3"
   },
   {
     "name": "navy",
-    "section": "think-classic",
+    "section": "classic",
     "color": "#173145"
   }
 ]

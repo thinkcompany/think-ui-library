@@ -1,0 +1,54 @@
+/**
+ * Gravity Forms plugin style overrides
+ */
+.gform_fields {
+  @include list-plain;
+}
+
+.gfield {
+  margin-bottom: $spacing-stack-16;
+
+  > * {
+    display: block;
+    text-align: left;
+  }
+}
+
+.gfield_label {
+  @extend %tco-form-label;
+}
+
+.ginput_container {
+  > input,
+  textarea {
+    @extend %tco-form-input;
+  }
+}
+
+.gfield_error {
+  > .ginput_container > input,
+  textarea {
+    padding: $spacing-stack-16 $spacing-inline-12;
+    border: 1px solid $color-tint-red-primary;
+  }
+
+  .validation_message {
+    @include type-body-small($color-tint-red-primary);
+  }
+}
+
+.gform_button {
+  @extend %tco-btn;
+  @extend %tco-btn--secondary;
+}
+
+.gform_footer {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  margin: 0 $spacing-inline-16 $spacing-stack-16;
+}
+
+.gform_validation_container {
+  @extend %tco-accessibly-hidden;
+}
