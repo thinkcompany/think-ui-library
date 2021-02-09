@@ -44,21 +44,22 @@
   }
 
   &-content-container {
-    padding: $spacing-stack-18 $spacing-stack-18 $spacing-stack-50;
+    padding: $spacing-stack-24;
+    color: $color-classic-gray-dark;
 
     @include wider-than($breakpoint-desktop) {
-      padding: $spacing-stack-32 $spacing-stack-32 $spacing-stack-64;
+      padding: $spacing-stack-32;
     }
   }
 
   &-content-description {
-    @include type-body-default;
+    @include type-body-default($font-color: $color-classic-gray-dark);
   }
 
   &-eyebrow {
     @include type-eyebrow;
     display: block;
-    margin-bottom: $spacing-stack-16;
+    margin-bottom: $spacing-stack-8;
   }
 
   &-content-link {
@@ -71,6 +72,7 @@
     grid-gap: $spacing-inline-16;
     align-items: center;
     margin-top: $spacing-stack-16;
+    color: $color-classic-gray-dark;
 
     &-author-name,
     &-author-date {
@@ -78,7 +80,11 @@
     }
 
     &-author-name {
-      @include type-style-bold;
+      @include type-sans-bold;
+    }
+
+    &-author-date {
+      @include type-body-small;
     }
   }
 
@@ -316,63 +322,11 @@ $max-width-person: 218px;
 // = POST CARD
 // ========================================================
 .tco-card--post {
-  .tco-card-link {
-    padding: 0;
-  }
+  max-width: 480px;
 
-  .tco-card-content-container {
-    @include spacing-inset-32;
-    text-align: left;
-  }
-
-  .tco-card-image-container {
-    img {
-      object-fit: cover;
-      width: 100%;
-      height: 300px;
-    }
-  }
-}
-
-.tco-card--post--small {
-  .tco-card-content-container {
-    @include spacing-inset-24;
-  }
-
-  .tco-card-content-heading {
-    @include type-display-small($color-tint-blue-primary);
-  }
-}
-
-.tco-card--post--medium {
-  @include wider-than($breakpoint-tablet-portrait) {
-    max-width: 380px;
-  }
-}
-
-.tco-card--post--large {
-  @include wider-than($breakpoint-tablet-portrait) {
-    max-width: 480px;
-  }
-}
-
-.tco-card--post--xlarge {
-  @include wider-than($breakpoint-tablet-portrait) {
-    max-width: 880px;
-    min-height: 0;
-
-    > .tco-card-link {
-      display: flex;
-    }
-
-    .tco-card-image-container,
-    .tco-card-content-container {
-      flex-basis: 50%;
-
-      img {
-        width: 100%;
-        height: 100%;
-      }
+  .tco-card-content {
+    &-heading {
+      @include type-display-small($font-color: $color-classic-blue);
     }
   }
 }

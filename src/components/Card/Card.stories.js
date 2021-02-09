@@ -50,29 +50,12 @@ export const personCard = () => {
   </div>`;
 };
 
-export const smallCallToAction = () => {
-  const cta = text(
-    'Small Call to Action',
-    'Learn more about working at Think Company'
-  );
-
-  return `
-  <div class="tco-card tco-card--cta-small">
-    <a href="#" class="tco-card-link">
-      <div class="tco-card-content-container">
-        <p class="tco-card-content-description">${cta}</p>
-      </div>
-    </a>
-  </div>`;
-};
-
 export const postCard = () => {
-  const size = select('Size', sizes, 'medium');
   const image = text(
     'Post image',
     'https://thinkcompany.com/wp-content/uploads/2020/07/BlogImage-LGM-9-Kanban-708x472.png'
   );
-  const eyebrow = text('Post type', '');
+  const eyebrow = text('Post type', 'Case Study');
   const heading = text(
     'Post title',
     'How to Use Kanban to Manage a Design System'
@@ -89,16 +72,14 @@ export const postCard = () => {
   const date = text('Post date', 'May 21, 2020');
 
   return `
-  <div class="tco-card tco-card--post tco-card--post--${size}">
+  <div class="tco-card tco-card--post">
     <a href="#" class="tco-card-link">
       <div class="tco-card-image-container">
         <img class="tco-card-image" alt="Card image" src="${image}" />
       </div>
       <div class="tco-card-content-container">
         ${
-          eyebrow
-            ? '<span class="tco-card-content-eyebrow">' + eyebrow + '</span>'
-            : ''
+          eyebrow ? '<span class="tco-card-eyebrow">' + eyebrow + '</span>' : ''
         }
         <h2 class="tco-card-content-heading">${heading}</h2>
         <p class="tco-card-content-description">${description}</p>
