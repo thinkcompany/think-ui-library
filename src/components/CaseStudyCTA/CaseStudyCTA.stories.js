@@ -5,43 +5,40 @@ const cardContents = [
     id: 'nemours',
     eyebrow: 'Nemours',
     heading: 'Succinct headline that entices you to read the whole thing',
-    imageMain: 'img/case-studies/nemours-mockup.png',
+    device: 'phone',
     imageBg: 'img/case-studies/nemours-background.jpg',
     description:
       'Lorem ipsum dolor set amet uncle B ipsum Lorem ipsum dolor set amet uncle B ipsum Lorem ipsum dolor set amet uncle B ipsum Lorem ipsum dolor set amet uncle B ipsum',
     cta: 'View case study',
-    offset: 'bottom',
     opacity: 0.8
   },
   {
     id: 'comcast',
     eyebrow: 'Comcast Corporate',
     heading: 'Succinct headline that entices you to read the whole thing',
-    imageMain: 'img/case-studies/nemours-mockup.png',
+    device: 'desktop',
     imageBg: 'img/case-studies/nemours-background.jpg',
     description:
       'Lorem ipsum dolor set amet uncle B ipsum Lorem ipsum dolor set amet uncle B ipsum Lorem ipsum dolor set amet uncle B ipsum Lorem ipsum dolor set amet uncle B ipsum',
     cta: 'View case study',
-    offset: 'bottom',
     opacity: 0.8
   },
   {
     id: 'merck',
     eyebrow: 'Merck',
     heading: 'Succinct headline that entices you to read the whole thing',
-    imageMain: 'img/case-studies/nemours-mockup.png',
+    device: 'desktop',
     imageBg: 'img/case-studies/nemours-background.jpg',
     description:
       'Lorem ipsum dolor set amet uncle B ipsum Lorem ipsum dolor set amet uncle B ipsum Lorem ipsum dolor set amet uncle B ipsum Lorem ipsum dolor set amet uncle B ipsum',
     cta: 'View case study',
-    offset: 'bottom',
     opacity: 0.8
   },
   {
     id: 'retail360',
-    eyebrow: 'Retail 360',
+    eyebrow: 'Comcast Retail360',
     heading: 'Succinct headline that entices you to read the whole thing',
-    imageMain: 'img/case-studies/nemours-mockup.png',
+    device: 'tablet',
     imageBg: 'img/case-studies/nemours-background.jpg',
     description:
       'Lorem ipsum dolor set amet uncle B ipsum Lorem ipsum dolor set amet uncle B ipsum Lorem ipsum dolor set amet uncle B ipsum Lorem ipsum dolor set amet uncle B ipsum',
@@ -51,50 +48,79 @@ const cardContents = [
   },
   {
     id: 'policy-map',
-    eyebrow: 'Policy Map',
+    eyebrow: 'Policymap',
     heading: 'Succinct headline that entices you to read the whole thing',
-    imageMain: 'img/case-studies/nemours-mockup.png',
+    device: 'laptop',
     imageBg: 'img/case-studies/nemours-background.jpg',
     description:
       'Lorem ipsum dolor set amet uncle B ipsum Lorem ipsum dolor set amet uncle B ipsum Lorem ipsum dolor set amet uncle B ipsum Lorem ipsum dolor set amet uncle B ipsum',
     cta: 'View case study',
-    offset: 'bottom',
     opacity: 0.8
   },
   {
     id: 'einstein',
-    eyebrow: 'Einstein',
+    eyebrow: 'Comcast Einstein',
     heading: 'Succinct headline that entices you to read the whole thing',
-    imageMain: 'img/case-studies/nemours-mockup.png',
+    device: 'desktop',
     imageBg: 'img/case-studies/nemours-background.jpg',
     description:
       'Lorem ipsum dolor set amet uncle B ipsum Lorem ipsum dolor set amet uncle B ipsum Lorem ipsum dolor set amet uncle B ipsum Lorem ipsum dolor set amet uncle B ipsum',
     cta: 'View case study',
-    offset: 'bottom',
     opacity: 0.8
   },
   {
     id: 'janney',
     eyebrow: 'Janney',
     heading: 'Succinct headline that entices you to read the whole thing',
-    imageMain: 'img/case-studies/nemours-mockup.png',
+    device: 'tablet-angle',
     imageBg: 'img/case-studies/nemours-background.jpg',
     description:
       'Lorem ipsum dolor set amet uncle B ipsum Lorem ipsum dolor set amet uncle B ipsum Lorem ipsum dolor set amet uncle B ipsum Lorem ipsum dolor set amet uncle B ipsum',
     cta: 'View case study',
-    offset: 'bottom',
     opacity: 0.8
   },
   {
     id: 'abc',
     eyebrow: 'ABC',
     heading: 'Succinct headline that entices you to read the whole thing',
-    imageMain: 'img/case-studies/nemours-mockup.png',
+    device: 'laptop-angle',
     imageBg: 'img/case-studies/nemours-background.jpg',
     description:
       'Lorem ipsum dolor set amet uncle B ipsum Lorem ipsum dolor set amet uncle B ipsum Lorem ipsum dolor set amet uncle B ipsum Lorem ipsum dolor set amet uncle B ipsum',
     cta: 'View case study',
-    offset: 'bottom',
+    opacity: 0.8
+  },
+  {
+    id: 'comcast',
+    eyebrow: 'Wawa',
+    heading: 'Succinct headline that entices you to read the whole thing',
+    device: 'kiosk',
+    imageBg: 'img/case-studies/nemours-background.jpg',
+    description:
+      'Lorem ipsum dolor set amet uncle B ipsum Lorem ipsum dolor set amet uncle B ipsum Lorem ipsum dolor set amet uncle B ipsum Lorem ipsum dolor set amet uncle B ipsum',
+    cta: 'View case study',
+    opacity: 0.8
+  },
+  {
+    id: 'abc',
+    eyebrow: 'Amerisource Bergen',
+    heading: 'Succinct headline that entices you to read the whole thing',
+    device: 'desktop-angle',
+    imageBg: 'img/case-studies/nemours-background.jpg',
+    description:
+      'Lorem ipsum dolor set amet uncle B ipsum Lorem ipsum dolor set amet uncle B ipsum Lorem ipsum dolor set amet uncle B ipsum Lorem ipsum dolor set amet uncle B ipsum',
+    cta: 'View case study',
+    opacity: 0.8
+  },
+  {
+    id: 'nemours',
+    eyebrow: 'Jackson',
+    heading: 'Succinct headline that entices you to read the whole thing',
+    device: 'report',
+    imageBg: 'img/case-studies/nemours-background.jpg',
+    description:
+      'Lorem ipsum dolor set amet uncle B ipsum Lorem ipsum dolor set amet uncle B ipsum Lorem ipsum dolor set amet uncle B ipsum Lorem ipsum dolor set amet uncle B ipsum',
+    cta: 'View case study',
     opacity: 0.8
   }
 ];
@@ -111,12 +137,12 @@ const caseStudyCard = input => {
     input.id
   }">
       <a href="#" class="tco-card-link">
-        <div class="tco-card-image-container tco-card-image-container--case-study">
-          <img class="tco-card-image tco-card-image--main tco-card-image-offset--${
-            input.offset
-          }" alt="A brilliant description of the image" src="${
-    input.imageMain
-  }" />
+        <div class="tco-card-image-container tco-card-image-container--case-study tco-card-image-container--${
+          input.device
+        }">
+          <img class="tco-card-image tco-card-image--main" alt="A brilliant description of the image" src="img/case-studies/${
+            input.device
+          }.png" />
         </div>
         <div class="tco-card-content-container tco-card-content-container--${cardType} ">
           ${
@@ -153,7 +179,7 @@ const caseStudyCard = input => {
 };
 
 export const Default = () => {
-  const cardType = select('Card type', types, 'card');
+  const cardType = select('Card type', types, 'full-width');
   const gridType = cardType === 'card' ? '2' : '1';
   const itemList = object('Case Studies', cardContents, groupId);
 

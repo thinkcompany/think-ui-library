@@ -1,4 +1,12 @@
-$offset: 10%;
+$offset: 4%;
+$device-width-phone: 640px;
+$device-width-desktop: 468px;
+$device-width-tablet: 350px;
+$device-width-tablet-angle: 500px;
+$device-width-laptop: 570px;
+$device-width-laptop-angle: 500px;
+$device-width-kiosk: 448px;
+$device-width-report: 420px;
 
 .tco-card--case-study {
   position: relative;
@@ -34,26 +42,48 @@ $offset: 10%;
         }
       }
     }
+
+    &--phone {
+      .tco-card-image {
+        transform: translateY(10%);
+      }
+    }
+
+    &--desktop {
+      .tco-card-image {
+        height: 98%;
+      }
+    }
+
+    &--laptop {
+      .tco-card-image {
+        height: 80%;
+        transform: translateY(26%);
+      }
+    }
+
+    &--tablet,
+    &--tablet-angle,
+    &--laptop-angle,
+    &--kiosk,
+    &--desktop,
+    &--desktop-angle {
+      .tco-card-image {
+        transform: translateY($offset);
+      }
+    }
+
+    &--report {
+      .tco-card-image {
+        transform: translateY($offset * 2);
+      }
+    }
   }
 
   .tco-card-image {
+    right: 0;
     width: auto;
-
-    &-offset--bottom {
-      transform: translateY($offset);
-    }
-
-    &-offset--top {
-      transform: translateY(-$offset);
-    }
-
-    &-offset--left {
-      transform: translateX($offset);
-    }
-
-    &-offset--right {
-      transform: translateX(-$offset);
-    }
+    margin: 0 auto;
   }
 
   .tco-card-content {
@@ -90,9 +120,18 @@ $offset: 10%;
 
     .tco-card-image-container {
       @include wider-than($breakpoint-tablet-portrait) {
-        width: 50%;
         height: 100%;
         padding-bottom: 0;
+
+        &--case-study {
+          position: absolute;
+          display: flex;
+          width: 50%;
+        }
+
+        &.tco-card-image-container--case-study .tco-card-image {
+          height: auto;
+        }
       }
 
       &--case-study {
@@ -104,8 +143,87 @@ $offset: 10%;
       }
     }
 
-    .tco-card-image--bg {
-      width: 100%;
+    @include wider-than($breakpoint-tablet-portrait) {
+      .tco-card-image-container--phone {
+        width: $device-width-phone;
+
+        .tco-card-image {
+          transform: translateY(16%);
+        }
+      }
+
+      .tco-card-image-container--desktop,
+      .tco-card-image-container--tablet {
+        .tco-card-image {
+          width: 90%;
+          max-width: $device-width-desktop;
+          transform: translateY(8%);
+        }
+      }
+
+      .tco-card-image-container--tablet {
+        .tco-card-image {
+          max-width: $device-width-tablet;
+          transform: translateY(3%);
+        }
+      }
+
+      .tco-card-image-container--tablet-angle {
+        .tco-card-image {
+          max-width: $device-width-tablet-angle;
+          transform: translateY(10%);
+        }
+      }
+
+      .tco-card-image-container--laptop {
+        .tco-card-image {
+          max-width: $device-width-laptop;
+          transform: translate($spacing-inline-16, 0);
+        }
+      }
+
+      .tco-card-image-container--laptop-angle {
+        .tco-card-image {
+          max-width: $device-width-laptop-angle;
+          transform: translateY(8%);
+        }
+      }
+
+      .tco-card-image-container--kiosk {
+        .tco-card-image {
+          max-width: $device-width-kiosk;
+          transform: translateY(-4%);
+        }
+      }
+
+      .tco-card-image-container--desktop-angle {
+        .tco-card-image {
+          max-width: $device-width-desktop;
+          transform: translateY(-2%);
+        }
+      }
+
+      .tco-card-image-container--report {
+        .tco-card-image {
+          max-width: $device-width-report;
+          transform: translateY(0);
+        }
+      }
+    }
+
+    .tco-card-image {
+      &--bg {
+        width: 100%;
+      }
+
+      &--main {
+        @include wider-than($breakpoint-tablet-portrait) {
+          position: initial;
+          width: 100%;
+          height: auto;
+          margin: auto;
+        }
+      }
     }
 
     .tco-card-content {
@@ -121,7 +239,7 @@ $offset: 10%;
           background-color: transparent;
         }
 
-        @include wider-than($breakpoint-desktop) {
+        @include wider-than($breakpoint-tablet-portrait) {
           padding: $spacing-stack-76 $spacing-inline-64 $spacing-stack-64
             $spacing-inline-32;
         }
@@ -134,17 +252,41 @@ $offset: 10%;
     }
 
     &:nth-of-type(odd) {
-      .tco-card-content-container {
-        order: 0;
-
-        @include wider-than($breakpoint-desktop) {
+      @include wider-than($breakpoint-tablet-portrait) {
+        .tco-card-content-container {
           padding-right: $spacing-inline-32;
           padding-left: $spacing-inline-64;
         }
-      }
 
-      .tco-card-image-container--case-study {
-        order: 1;
+        .tco-card-image-container {
+          right: 0;
+        }
+
+        .tco-card-image-container--phone {
+          @include clamp(
+            right,
+            $breakpoint-tablet-portrait,
+            $breakpoint-desktop,
+            -150px,
+            -66px
+          );
+        }
+      }
+    }
+
+    &:nth-of-type(even) {
+      @include wider-than($breakpoint-tablet-portrait) {
+        .tco-card-link {
+          justify-content: flex-end;
+        }
+
+        .tco-card-image-container--case-study {
+          left: 0;
+        }
+
+        .tco-card-image-container--laptop .tco-card-image {
+          transform: translate(-$spacing-inline-16, 0);
+        }
       }
     }
   }
