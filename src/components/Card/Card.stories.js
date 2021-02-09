@@ -31,25 +31,6 @@ export const summaryCard = () => {
   </div>`;
 };
 
-export const callToActionCard = () => {
-  const description = text(
-    'Description',
-    "Interested in working with Think Company? We scope projects and build teams to meet your organization's unique needs. Tell us about your project today to start the conversation!"
-  );
-  const cta = text('Call to Action', 'Contact us');
-
-  return `
-  <div class="tco-card tco-card--cta">
-    <div class="tco-card-content-container">
-      <p class="tco-card-content-description">${description}</p>
-
-    <button type="button" class="tco-btn tco-btn--secondary tco-btn--large">
-    ${cta}
-  </button>
-    </div>
-  </div>`;
-};
-
 export const personCard = () => {
   const name = text('Name', 'Abby DePrimo');
   const title = text('Title', 'Vice President, Design Operations');

@@ -40,7 +40,7 @@ $color-hover: #08519a;
   padding: $spacing-stack-12 $spacing-stack-18;
   border: 1px solid $color-tint-blue-primary;
   background: $color-tint-blue-primary;
-  color: $color-foreground-on-tint;
+  color: $color-classic-white;
 
   &:active {
     border-color: $color-background-tertiary;
@@ -48,7 +48,7 @@ $color-hover: #08519a;
 
   &[disabled],
   &:disabled {
-    color: $color-foreground-on-tint;
+    color: $color-classic-white;
   }
 }
 
@@ -61,7 +61,7 @@ $color-hover: #08519a;
 
   &:hover,
   &:focus {
-    color: $color-foreground-on-tint;
+    color: $color-classic-white;
   }
 
   &:active {

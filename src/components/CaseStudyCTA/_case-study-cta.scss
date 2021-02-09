@@ -99,7 +99,7 @@ $device-width-report: 420px;
   .tco-card-content {
     &-container {
       padding: $spacing-stack-32 $spacing-inline-32;
-      color: $color-background-primary;
+      color: $color-classic-white;
 
       @include wider-than($breakpoint-tablet-portrait) {
         padding: $spacing-stack-50 $spacing-inline-50 $spacing-stack-40;
@@ -310,7 +310,7 @@ $device-width-report: 420px;
   }
 
   .tco-text-link {
-    @include type-link-cta($fill: $color-background-primary);
+    @include type-link-cta($fill: $color-classic-white);
     @include type-body-default;
     display: block;
   }

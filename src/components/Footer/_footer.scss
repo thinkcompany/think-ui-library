@@ -1,5 +1,5 @@
 .tco-site-footer {
-  @include type-body-large($color-foreground-on-tint);
+  @include type-body-large($color-classic-white);
   padding: $spacing-stack-64 $spacing-inline-24;
   background-color: $color-background-tertiary;
   text-align: center;
@@ -31,7 +31,7 @@
   &-icon {
     @include spacing-inset-4;
     @include type-not-link;
-    color: $color-foreground-on-tint;
+    color: $color-classic-white;
     text-decoration: none;
 
     &:hover,
@@ -57,7 +57,7 @@
 }
 
 .tco-site-footer-copyright {
-  @include type-body-medium($color-foreground-on-tint);
+  @include type-body-medium($color-classic-white);
   letter-spacing: 2px;
   text-transform: uppercase;
 
