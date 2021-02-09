@@ -87,7 +87,7 @@ export const floatingForm = () => {
               placeholder="${messagePlaceholder}"
               rows="1"
             ></textarea>
-            <p class="tco-type-body--small">*Required</p>
+            <p class="tco-type-body--sans-small">*Required</p>
           </div>
           <button type="submit" class="tco-btn tco-btn--primary">
             ${submitLabel}
