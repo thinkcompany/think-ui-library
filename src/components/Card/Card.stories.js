@@ -3,7 +3,7 @@ import { select, text, boolean } from '@storybook/addon-knobs';
 const sizes = ['xlarge', 'large', 'medium', 'small'];
 
 export const summaryCard = () => {
-  const heading = text('Heading', 'Full Experience & Service Design');
+  const heading = text('Heading', 'Work together.');
   const summary = text(
     'Summary',
     'The best experiences are consistent across all channels, so we always consider the entire ecosystem your users interact within—designing for people wherever they click, tap, talk, touch, work, or play.'
@@ -19,8 +19,8 @@ export const summaryCard = () => {
   <div class="tco-card-grid ${background ? 'tco-card-grid--no-link' : ''}" >
     <div class="tco-card tco-card--summary">
       <a href="#" class="tco-card-link">
-        <div class="tco-card-image-container">
-          <img class="tco-card-image" alt="Card image" src="${image}" />
+        <div class="tco-card-image-container tco-card-image-container--summary">
+          <img class="tco-card-image tco-card-image--summary" alt="Card image" src="${image}" />
         </div>
         <div class="tco-card-content-container">
           <h2 class="tco-card-content-heading">${heading}</h2>

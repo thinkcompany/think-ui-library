@@ -16,16 +16,20 @@
   }
 
   &-image-container {
-    @include aspect-ratio-box(
-      $ratio: (
-        4 / 5
-      ) * 100%
-    );
+    &:not(.tco-card-image-container--summary) {
+      @include aspect-ratio-box(
+        $ratio: (
+          4 / 5
+        ) * 100%
+      );
+    }
   }
 
   &-image {
-    @include center-absolute(true);
-    object-fit: cover;
+    &:not(.tco-card-image--summary) {
+      @include center-absolute(true);
+      object-fit: cover;
+    }
   }
 
   > {
@@ -49,10 +53,6 @@
 
   &-content-description {
     @include type-body-default;
-
-    @include wider-than($breakpoint-desktop) {
-      padding: $spacing-stack-32 $spacing-stack-32 $spacing-stack-64;
-    }
   }
 
   &-eyebrow {
@@ -214,24 +214,39 @@
 // = SUMMARY CARD
 // ========================================================
 .tco-card--summary {
-  > .tco-card-link {
-    @include card-image-scale;
+  .tco-card {
+    &-content-container {
+      padding: $spacing-stack-24 $spacing-stack-32;
+    }
+
+    &-image-container {
+      padding: $spacing-stack-24 $spacing-stack-32 0;
+    }
   }
 
   .tco-card-grid--no-link & {
-    .tco-card-image-container {
-      display: flex;
-      height: 250px;
-      margin-bottom: 0;
+    border: none;
+    text-align: center;
+
+    .tco-card {
+      &-content-container {
+        padding: 0;
+      }
+
+      &-image-container {
+        display: flex;
+        height: 250px;
+        padding: 0;
+      }
     }
 
     img {
       width: 100%;
     }
+  }
 
-    .tco-card-content-heading {
-      font-size: $font-size-24;
-    }
+  .tco-card-content-heading {
+    @include type-display-small($font-color: $color-classic-blue);
   }
 }
 
