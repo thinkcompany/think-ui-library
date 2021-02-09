@@ -89,6 +89,12 @@ const thinkColors = getColorList(
     return item.section === 'think-classic';
   })
 );
+
+const caseStudyColors = getColorList(
+  colors.filter(item => {
+    return item.section === 'case-study';
+  })
+);
 const nameBlock = input =>
   input.name ? `<p><strong>${input.name}</strong></p>` : '';
 const varBlock = input => (input.var ? `<p><code>${input.var}</code></p>` : '');
@@ -187,6 +193,7 @@ export const tints = () => genColorType(tintColors);
 export const foregrounds = () => genColorType(foregroundColors);
 export const backgrounds = () => genColorType(backgroundColors);
 export const thinkClassic = () => genColorType(thinkColors);
+export const caseStudies = () => genColorType(caseStudyColors);
 export default {
   title: 'Primitives / Colors'
 };
