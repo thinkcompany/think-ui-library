@@ -409,7 +409,7 @@ $icon-width-large: 44px;
     flex-flow: row wrap;
     padding: $spacing-stack-24 $spacing-inline-24 $spacing-stack-32;
 
-    @include wider-than($breakpoint-tablet-portrait) {
+    @include wider-than($breakpoint-phone-landscape) {
       align-items: center;
       justify-content: space-between;
       padding: $spacing-stack-50 $spacing-inline-32;
@@ -421,8 +421,16 @@ $icon-width-large: 44px;
       width: 100%;
       padding: 0;
 
-      @include wider-than($breakpoint-tablet-portrait) {
+      @include wider-than($breakpoint-phone-landscape) {
         width: auto;
+      }
+    }
+
+    &-container:first-of-type {
+      padding-bottom: $spacing-stack-24;
+
+      @include wider-than($breakpoint-phone-landscape) {
+        padding-bottom: 0;
       }
     }
 
@@ -434,15 +442,6 @@ $icon-width-large: 44px;
     &-location {
       @include type-body-small;
       display: block;
-    }
-  }
-
-  .tco-btn {
-    margin-top: $spacing-stack-24;
-
-    @include wider-than($breakpoint-tablet-portrait) {
-      align-self: flex-end;
-      margin: 0;
     }
   }
 }

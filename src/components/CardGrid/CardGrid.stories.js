@@ -3,7 +3,8 @@ import {
   summaryCard,
   personCard,
   postCard,
-  calloutCard
+  calloutCard,
+  jobCard
 } from '../Card/Card.stories';
 
 const baseCard = () => {
@@ -41,7 +42,7 @@ const colors = {
   Default: '',
   Glass: 'tco-container-wrapper--glass'
 };
-const cards = ['base', 'summary', 'person', 'post', 'callout'];
+const cards = ['base', 'summary', 'person', 'post', 'callout', 'job'];
 
 const alignments = ['center', 'left', 'right'];
 const sizes = ['extra-large', 'large', 'medium', 'small'];
@@ -68,6 +69,8 @@ export const Default = () => {
       card = postCard();
     } else if (cardType === 'callout') {
       card = calloutCard();
+    } else if (cardType === 'job') {
+      card = jobCard();
     }
 
     for (let i = 0; i < cardCount; i++) {
