@@ -1,4 +1,4 @@
-import { select, text, boolean } from '@storybook/addon-knobs';
+import { select, text } from '@storybook/addon-knobs';
 
 const alignments = ['center', 'left', 'right'];
 
