@@ -1,123 +1,79 @@
-import { array, object, text, boolean } from '@storybook/addon-knobs';
-import data from './content-item.json';
+import { select, text, boolean } from '@storybook/addon-knobs';
 
-// Should be its own component
-const tag = (item, groupId) => {
-  return item.category
-    ? `<p class="tco-content-category">
-  <span class="tco-tag">
-  <svg class="icon icon-sm" width="16" height="16" viewBox="0 0 16 16" role="img" aria-labelledby="${
-    item.category
-  }">
-  <use xlink:href="/img/icons.svg#${item.iconId}"></use>
-  </svg>
-  ${text('Category', item.category, groupId)}</span>
-  </p>`
-    : '';
-};
-
-const template = (item, groupId = 'Item 1') => {
-  const {
-    action,
-    authors,
-    date,
-    excerpt,
-    featured,
-    imageSrc,
-    location,
-    mediaLeft,
-    title
-  } = item;
-
-  // Bind knobs to stories
-  const actionKnob = object('Action', action, groupId);
-  const authorsKnob = array('Authors', authors, ', ', groupId);
-  const dateKnob = text('Date', date, groupId);
-  const excerptKnob = text('Excerpt', excerpt, groupId);
-  const featuredKnob = boolean('Featured?', featured, groupId);
-  const imageSrcKnob = text('Image Src', imageSrc, groupId);
-  const locationKnob = text('Location', location, groupId);
-  const mediaLeftKnob = boolean('Media on Left?', mediaLeft, groupId);
-  const titleKnob = text('Title', title, groupId);
-
-  return `
-  <article class="tco-content-item ${
-    mediaLeftKnob ? 'tco-content-item--media-left' : ''
-  } ${featuredKnob ? 'tco-content-item--featured' : ''}">
-  <div class="tco-content-column tco-content-column-media">
-    <div class="tco-content-item-image">
-      <img alt="Card image" src="${imageSrcKnob}" />
-    </div>
-  </div>
-    <div class="tco-content-column tco-content-column-body">
-      <header class="tco-content-item-header">
-        <div class="tco-content-item-meta">
-          ${tag(item, groupId)}
-          <div class="tco-content-item-date">
-            ${dateKnob ? `<span class="tco-type-body">${dateKnob}</span>` : ''}
-            ${
-              locationKnob
-                ? `<span class="tco-type-body">${locationKnob}</span>`
-                : ''
-            }
-          </div>
-        </div>
-        <h3 class="tco-type-display tco-type-display--medium">
-          <a href="#" class="tco-link">
-              ${titleKnob}
-          </a>
-        </h3>
-        ${
-          // If excerpt exists, display it
-          excerptKnob
-            ? `<div class="tco-content-item-excerpt">
-                <p class="tco-type-body tco-type-body--large">${excerptKnob}</p>
-              </div>`
-            : ''
-        }
-        <div class="tco-content-byline">
-          <p class="tco-type-body tco-content-hosts">Hosted by</p>
-          <p class="tco-type-body tco-content-authors tco-type-display--small">${authorsKnob.join(
-            ', '
-          )}</p>
-        </div>
-      </header>
-      <footer class="tco-content-item-footer">
-      ${
-        actionKnob
-          ? `<button class="tco-btn tco-btn--primary">${actionKnob.text}</button>`
-          : ''
-      }
-      </footer>
-    </div>
-  </article>`;
-};
+const alignments = ['center', 'left', 'right'];
 
 export const Default = () => {
-  return template({ ...data[0], featured: false });
-};
-
-export const Featured = () => template({ ...data[1], featured: true });
-
-export const List = () => {
-  const output = data.map((item, index) =>
-    template(
-      {
-        ...item,
-        mediaLeft: false
-      },
-      `Item ${index + 1}`
-    )
+  const alignment = select('Media Alignment', alignments, 'right');
+  const textAlignment = select('Text Alignment', alignments, 'left');
+  const tag = text('Tag', 'Workshop');
+  const date = text('Date', 'June 2, 2020');
+  const location = text('Location', 'Malvern, PA');
+  const heading = text(
+    'Title',
+    'Become a Digital Disruptor in a Changing World (Pact Phorum)'
   );
+  const excerpt = text(
+    'Excerpt',
+    'Learn more about best practices for acheiving internal alignment and framing conversations for the best possible outcome.'
+  );
+  const authors = text('Authors', 'Shawn Hickman, John Young, Dave Thomas');
+  const authorHeading = text('Author Heading', 'Hosted by:');
+  const action = text('CTA', 'Learn More');
+  const image = text('Image', 'https://placekitten.com/960/694');
 
-  return output.join('');
+  return `
+    <div class="tco-container-wrapper">
+      <div class="tco-container tco-container--default">
+        <article class="tco-content-item tco-text-media tco-text-media--align-${alignment} tco-content-item--align-${alignment}">
+          <div class="tco-text-media-content tco-text-media-content-text tco-text-media-content-text--${textAlignment}">
+            <div class="tco-content-item-meta">
+              ${
+                tag
+                  ? `
+                <span class="tco-tag">${tag}</span>
+                `
+                  : ''
+              }
+              <span class="tco-content-item-date">${date}</span>
+              ${
+                location
+                  ? `
+                <span class="tco-content-item-location">${location}</span>
+              `
+                  : ''
+              }
+            </div>
+            <h1 class="tco-content-item-heading">
+              <a href="#" class="tco-link">
+                  ${heading}
+              </a>
+            </h1>
+            ${
+              excerpt
+                ? `
+              <p class="tco-text-media-lede">${excerpt}</p>
+              `
+                : ''
+            }
+            ${
+              authors
+                ? `
+              <span class="tco-content-item-author-heading">${authorHeading}</span>
+              <span class="tco-content-item-authors">${authors}</span>
+              `
+                : ''
+            }
+            <a href="#" class="tco-btn tco-btn--primary">${action}</a>
+          </div>
+          <div class="tco-text-media-content tco-text-media-content-media">
+            <img class="tco-text-media-image" alt="An adorable kitten" src="${image}" />
+          </div>
+        </article>
+      </div>
+    </div>
+  `;
 };
 
 export default {
-  title: 'Components / Content Item',
-  parameters: {
-    options: {
-      showPanel: false
-    }
-  }
+  title: 'Components / Content Item'
 };
