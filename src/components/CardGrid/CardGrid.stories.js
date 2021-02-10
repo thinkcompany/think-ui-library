@@ -1,4 +1,4 @@
-import { number, text, select, boolean } from '@storybook/addon-knobs';
+import { number, text, select } from '@storybook/addon-knobs';
 import {
   summaryCard,
   personCard,
