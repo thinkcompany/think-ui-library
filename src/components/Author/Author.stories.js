@@ -2,7 +2,7 @@ import { boolean, text } from '@storybook/addon-knobs';
 import { socialLinks } from '../SocialIcons/social-icons.stories';
 
 export const Default = () => {
-  const heading = text('Heading', 'Meet the Author');
+  const eyebrow = text('Eyebrow', 'Meet the Author');
   const authorName = text('Author name', 'Abby DePrimo');
   const authorTitle = text('Author title', 'Vice President, Design Operations');
   const authorImage = text(
@@ -13,41 +13,29 @@ export const Default = () => {
     'Author bio',
     'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vel fermentum orci. In commodo tellus eget risus condimentum cursus. Maecenas cursus, risus tristique dictum venenatis, lectus quam finibus est, sit amet feugiat lacus nibh in urna. Aliquam fringilla egestas augue, at dictum ex consequat et. Vestibulum ac imperdiet lectus. Integer rhoncus quis est a fringilla.'
   );
-  const socialLabel = text('Social label', 'Connect with Abby');
+  const socialLabel = text('Social label', 'Say hello');
   const showSocial = boolean('Show social links', true);
 
   return `
-  <div class="tco-container-wrapper tco-author">
+  <div class="tco-container-wrapper">
 	  <div class="tco-container tco-container--default">
-      <div class="tco-author-heading">
-        <span class="tco-type-display--medium">${heading}</span>
-      </div>
-      <div class="tco-author-info ${
-        authorImage ? 'tco-author-info--with-image' : ''
-      }">
-        ${
-          authorImage
-            ? `<div class="tco-author-contact">
-          <img src="${authorImage}" alt="${authorName}">
+      <div class="tco-content-item tco-text-media tco-author">
+        <span class="tco-author-eyebrow">${eyebrow}</span>
+        <div class="tco-text-media-content tco-text-media-content-text">
+          <h1 class="tco-author-heading">${authorName}</h1>
+          <p class="tco-author-title">${authorTitle}</p>
+          <p class="tco-author-bio tco-type-body--default">${authorBio}</p>
           ${
             showSocial
               ? `<div class="tco-author-social">
-          <p class="tco-author-social-heading">${socialLabel}</p>
-          ${socialLinks()}
-        </div>`
+                  <p class="tco-author-social-heading">${socialLabel}</p>
+                  ${socialLinks()}
+                </div>`
               : ''
           }
-        </div>`
-            : ''
-        }
-        <div class="tco-author-body">
-					<div class="tco-author-body-name">
-						<span class="tco-type-display--small">${authorName}</span>
-						<p>${authorTitle}</p>
-					</div>
-					<div class="tco-author-body-description">
-						<p>${authorBio}</p>
-					</div>
+        </div>
+        <div class="tco-text-media-content tco-text-media-content-media tco-author-container-media">
+          <img class="tco-author-image" src="${authorImage}" alt="${authorName}" />
         </div>
       </div>
     </div>
