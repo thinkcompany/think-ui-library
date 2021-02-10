@@ -259,11 +259,8 @@
 // ========================================================
 // = PERSON CARD
 // ========================================================
-$max-width-person: 218px;
-
 .tco-card--person {
   @include card-scale;
-  max-width: $max-width-person;
   background-position: 50%;
   background-size: cover;
   background-repeat: no-repeat;

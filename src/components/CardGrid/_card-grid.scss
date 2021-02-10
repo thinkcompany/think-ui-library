@@ -64,6 +64,10 @@
     @include wider-than($breakpoint-laptop) {
       grid-template-columns: repeat(5, 1fr);
     }
+
+    @include wider-than($breakpoint-desktop) {
+      grid-gap: $spacing-inline-16;
+    }
   }
 
   &--case-study {
