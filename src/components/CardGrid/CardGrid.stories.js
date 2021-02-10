@@ -55,17 +55,18 @@ export const Default = () => {
   const cardType = select('Card type', cards, 'base');
   const cardItems = () => {
     let output = '';
+
     let card = '';
 
-    if (cardType == 'base') {
+    if (cardType === 'base') {
       card = baseCard();
-    } else if (cardType == 'summary') {
+    } else if (cardType === 'summary') {
       card = summaryCard();
-    } else if (cardType == 'person') {
+    } else if (cardType === 'person') {
       card = personCard();
-    } else if (cardType == 'post') {
+    } else if (cardType === 'post') {
       card = postCard();
-    } else if (cardType == 'callout') {
+    } else if (cardType === 'callout') {
       card = calloutCard();
     }
 

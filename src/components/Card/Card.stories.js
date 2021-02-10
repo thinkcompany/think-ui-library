@@ -1,6 +1,4 @@
-import { select, text, boolean } from '@storybook/addon-knobs';
-
-const sizes = ['xlarge', 'large', 'medium', 'small'];
+import { text } from '@storybook/addon-knobs';
 
 export const summaryCard = () => {
   const heading = text('Heading', 'Work together.');
@@ -123,29 +121,6 @@ export const calloutCard = () => {
     </a>
     </div>
   </div>`;
-};
-
-export const all = () => {
-  const itemWrapper = children => `
-    <div
-      class="documentation-grid--item"
-      style="text-align:center; margin: 0 0 20px 40px; padding: 20px 0; flex: 0 0 auto"
-    >
-      ${children}
-    </div>`;
-
-  const variations = [
-    summaryCard,
-    callToActionCard,
-    postCard,
-    personCard,
-    smallCallToAction,
-    calloutCard
-  ];
-
-  const examples = variations.map(variation => itemWrapper(variation()));
-
-  return `<div class="documentation-grid">${examples.join('')}</div>`;
 };
 
 export default {
