@@ -13,10 +13,7 @@ export const summaryCard = () => {
     'https://3vwizk2qtr8l3diwrm3r2ba0-wpengine.netdna-ssl.com/wp-content/themes/tbiv3/img/svgs/services-full-experience-service.svg'
   );
 
-  const background = boolean('No link style', false);
-
   return `
-  <div class="tco-card-grid ${background ? 'tco-card-grid--no-link' : ''}" >
     <div class="tco-card tco-card--summary">
       <a href="#" class="tco-card-link">
         <div class="tco-card-image-container tco-card-image-container--summary">
@@ -27,8 +24,7 @@ export const summaryCard = () => {
           <p class="tco-card-content-description">${summary}</p>
         </div>
       </a>
-    </div>
-  </div>`;
+    </div>`;
 };
 
 export const personCard = () => {

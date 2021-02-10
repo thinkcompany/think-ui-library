@@ -1,4 +1,10 @@
-import { number, text, select } from '@storybook/addon-knobs';
+import { number, text, select, boolean } from '@storybook/addon-knobs';
+import {
+  summaryCard,
+  personCard,
+  postCard,
+  calloutCard
+} from '../Card/Card.stories';
 
 const baseCard = () => {
   const eyebrow = text('Eyebrow', 'Understand');
@@ -35,6 +41,8 @@ const colors = {
   Default: '',
   Glass: 'tco-container-wrapper--glass'
 };
+const cards = ['base', 'summary', 'person', 'post', 'callout'];
+
 const alignments = ['center', 'left', 'right'];
 const sizes = ['extra-large', 'large', 'medium', 'small'];
 const ledeSizes = ['large', 'default', 'sans-small'];
@@ -43,6 +51,31 @@ const containerSizes = ['default', 'mid', 'narrow', 'none'];
 export const Default = () => {
   const containerColor = select('Background Color', colors, colors.Default);
   const columns = number('Column count', 3);
+  const cardCount = number('Card count', 6);
+  const cardType = select('Card type', cards, 'base');
+  const cardItems = () => {
+    let output = '';
+    let card = '';
+
+    if (cardType == 'base') {
+      card = baseCard();
+    } else if (cardType == 'summary') {
+      card = summaryCard();
+    } else if (cardType == 'person') {
+      card = personCard();
+    } else if (cardType == 'post') {
+      card = postCard();
+    } else if (cardType == 'callout') {
+      card = calloutCard();
+    }
+
+    for (let i = 0; i < cardCount; i++) {
+      output += card;
+    }
+
+    return output;
+  };
+  const summaryCardBg = boolean('Summary card no link style', false);
   const headingContainer = select(
     'Section heading container',
     containerSizes,
@@ -93,11 +126,10 @@ export const Default = () => {
               : ''
           }
         ${containerClose}
-        <div class="tco-card-grid tco-card-grid--${columns}-column">
-          ${baseCard()}
-          ${baseCard()}
-          ${baseCard()}
-          ${baseCard()}
+        <div class="tco-card-grid tco-card-grid--${columns}-column ${
+    summaryCardBg ? 'tco-card-grid--no-link' : ''
+  }">
+          ${cardItems()}
         </div>
       </div>
     </div>
