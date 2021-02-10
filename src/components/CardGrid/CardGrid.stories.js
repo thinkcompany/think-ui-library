@@ -126,7 +126,7 @@ export const Default = () => {
               : ''
           }
         ${containerClose}
-        <div class="tco-card-grid tco-card-grid--${columns}-column ${
+        <div class="tco-card-grid tco-card-grid--${columns}-column tco-card-grid--${cardType} ${
     summaryCardBg ? 'tco-card-grid--no-link' : ''
   }">
           ${cardItems()}
