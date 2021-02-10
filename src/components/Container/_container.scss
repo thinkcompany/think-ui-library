@@ -4,7 +4,7 @@
 .tco-container-wrapper {
   @include type-base-style;
   padding: 0 $spacing-stack-24;
-  background-color: $color-classic-white;
+  background-color: $color-foreground-on-tint;
 
   > .tco-container {
     padding: $spacing-stack-50 0;
@@ -62,7 +62,7 @@
 
   &--blue {
     background-color: $color-tint-blue-primary;
-    color: $color-classic-white;
+    color: $color-foreground-on-tint;
 
     .tco-btn {
       &--primary {
@@ -80,7 +80,7 @@
   }
 
   &--navy {
-    @include type-base-style($color-classic-white);
+    @include type-base-style($color-foreground-on-tint);
     background-color: $color-background-tertiary;
 
     .tco-btn {

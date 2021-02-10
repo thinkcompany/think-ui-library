@@ -186,7 +186,7 @@
     .tco-card-link {
       @include type-link-cta(
         $padding-right: $spacing-inline-16,
-        $fill: $color-classic-white
+        $fill: $color-foreground-on-tint
       );
       display: flex;
       padding-left: $spacing-inline-16;
@@ -201,12 +201,12 @@
       &-container {
         margin: auto 0;
         padding: 0;
-        color: $color-classic-white;
+        color: $color-foreground-on-tint;
       }
 
       &-heading {
         margin-bottom: $spacing-stack-24;
-        color: $color-classic-white;
+        color: $color-foreground-on-tint;
       }
 
       &-description {
@@ -294,7 +294,7 @@
   }
 
   .tco-card-content {
-    color: $color-classic-white;
+    color: $color-foreground-on-tint;
 
     &-container {
       @include spacing-inset-16;
@@ -305,11 +305,11 @@
 
     &-heading {
       display: inline;
-      color: $color-classic-white;
+      color: $color-foreground-on-tint;
     }
 
     &-description {
-      @include type-body-small($font-color: $color-classic-white);
+      @include type-body-small($font-color: $color-foreground-on-tint);
       margin-top: $spacing-stack-4;
     }
   }
