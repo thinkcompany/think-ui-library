@@ -3,7 +3,8 @@ import {
   summaryCard,
   personCard,
   postCard,
-  calloutCard
+  calloutCard,
+  mediaCard
 } from '../Card/Card.stories';
 
 const baseCard = () => {
@@ -41,7 +42,7 @@ const colors = {
   Default: '',
   Glass: 'tco-container-wrapper--glass'
 };
-const cards = ['base', 'summary', 'person', 'post', 'callout'];
+const cards = ['base', 'summary', 'person', 'post', 'callout', 'media'];
 
 const alignments = ['center', 'left', 'right'];
 const sizes = ['extra-large', 'large', 'medium', 'small'];
@@ -68,6 +69,8 @@ export const Default = () => {
       card = postCard();
     } else if (cardType === 'callout') {
       card = calloutCard();
+    } else if (cardType === 'media') {
+      card = mediaCard();
     }
 
     for (let i = 0; i < cardCount; i++) {
@@ -76,7 +79,6 @@ export const Default = () => {
 
     return output;
   };
-  const summaryCardBg = boolean('Summary card no link style', false);
   const headingContainer = select(
     'Section heading container',
     containerSizes,
@@ -127,9 +129,7 @@ export const Default = () => {
               : ''
           }
         ${containerClose}
-        <div class="tco-card-grid tco-card-grid--${columns}-column tco-card-grid--${cardType} ${
-    summaryCardBg ? 'tco-card-grid--no-link' : ''
-  }">
+        <div class="tco-card-grid tco-card-grid--${columns}-column">
           ${cardItems()}
         </div>
       </div>
