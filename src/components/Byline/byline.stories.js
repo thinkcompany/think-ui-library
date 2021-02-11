@@ -1,4 +1,4 @@
-import { select, boolean, text, number } from '@storybook/addon-knobs';
+import { boolean, text } from '@storybook/addon-knobs';
 
 export const byline = () => {
   const bylineName = text('Post Author', 'Keith Rich');
