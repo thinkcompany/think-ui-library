@@ -1,7 +1,33 @@
+$author-image-max: 480px;
+
 .tco-author {
+  position: relative;
+  padding-top: $spacing-stack-50;
+
+  @include wider-than($breakpoint-tablet-portrait) {
+    padding-top: 0;
+  }
+
+  &.tco-text-media--align-right {
+    padding-right: 0;
+  }
+
+  .tco-text-media-content {
+    &-media {
+      max-width: $author-image-max;
+    }
+  }
+
   &-eyebrow {
     @include type-eyebrow;
-    margin-bottom: $spacing-stack-32;
+    position: absolute;
+    top: 0;
+    display: block;
+
+    @include wider-than($breakpoint-tablet-portrait) {
+      position: initial;
+      margin-bottom: $spacing-stack-12;
+    }
   }
 
   &-heading {
@@ -14,7 +40,7 @@
   }
 
   &-social {
-    margin-top: $spacing-stack-32;
+    margin-top: $spacing-stack-24;
   }
 
   &-social-heading {
