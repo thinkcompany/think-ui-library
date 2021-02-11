@@ -377,10 +377,10 @@ $arrow-translate: 10px;
   }
 
   &.tco-text-link--secondary {
-    color: $color-classic-white;
+    color: $color-foreground-on-tint;
 
     .tco-text-link-icon {
-      fill: $color-classic-white;
+      fill: $color-foreground-on-tint;
     }
   }
 }

@@ -6,7 +6,7 @@
 body {
   @include type-body-default($color-foreground-primary);
   overflow-x: hidden;
-  background-color: $color-classic-white;
+  background-color: $color-foreground-on-tint;
   font-variant-numeric: lining-nums;
 }
 

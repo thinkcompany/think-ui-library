@@ -44,7 +44,7 @@ $opacity--disabled: 0.4;
   border: 0;
   border-bottom: $border-default;
   border-radius: 0;
-  background-color: $color-classic-white;
+  background-color: $color-foreground-on-tint;
   background-image: none;
   color: $color-foreground-primary;
 
@@ -183,7 +183,7 @@ $opacity--disabled: 0.4;
       height: rem(16px);
       border: 1px solid $color-foreground-primary;
       border-radius: 2px;
-      background: $color-classic-white;
+      background: $color-foreground-on-tint;
     }
   }
 }

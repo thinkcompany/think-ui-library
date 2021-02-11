@@ -42,6 +42,7 @@ const colors = {
   Default: '',
   Glass: 'tco-container-wrapper--glass'
 };
+
 const cards = ['base', 'summary', 'person', 'post', 'callout', 'job'];
 
 const alignments = ['center', 'left', 'right'];
