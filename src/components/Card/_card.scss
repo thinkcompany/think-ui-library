@@ -329,7 +329,6 @@
     }
   }
 }
-
 // ========================================================
 // = CALLOUT CARD
 // ========================================================
@@ -385,15 +384,5 @@ $icon-width-large: 44px;
     &-link {
       @include type-link-cta($font-color: $color-classic-blue);
     }
-  }
-}
-
-// ========================================================
-// = CALLOUT CARD
-// ========================================================
-.tco-card--media {
-  .tco-card-content-heading {
-    @include type-body-large;
-    margin-bottom: $spacing-stack-20;
   }
 }

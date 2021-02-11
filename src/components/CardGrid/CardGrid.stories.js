@@ -42,6 +42,7 @@ const colors = {
   Default: '',
   Glass: 'tco-container-wrapper--glass'
 };
+
 const cards = ['base', 'summary', 'person', 'post', 'callout', 'media'];
 
 const alignments = ['center', 'left', 'right'];
@@ -79,6 +80,7 @@ export const Default = () => {
 
     return output;
   };
+
   const headingContainer = select(
     'Section heading container',
     containerSizes,
