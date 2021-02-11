@@ -10,7 +10,7 @@
 }
 
 .tco-pagination-page--current {
-  @include type-body-medium($color-classic-white, $font-weight-600);
+  @include type-body-medium($color-foreground-on-tint, $font-weight-600);
   display: flex;
   align-items: center;
   justify-content: center;

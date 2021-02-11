@@ -17,7 +17,7 @@ $floating-form-offset: 25px;
   border: 0;
   border-radius: 33px;
   background: $color-tint-blue-primary;
-  color: $color-classic-white;
+  color: $color-foreground-on-tint;
   transition: 0.2s ease-in-out;
   animation: 5s infinite pulse;
 
@@ -51,7 +51,7 @@ $floating-form-offset: 25px;
   }
 
   &-label {
-    @include type-body-small($color-classic-white);
+    @include type-body-small($color-foreground-on-tint);
     display: inline-block;
     margin: 0 $spacing-inline-12;
     letter-spacing: normal;
@@ -83,7 +83,7 @@ $floating-form-offset: 25px;
   @include spacing-inset-20;
   position: relative;
   background-color: $color-tint-blue-primary;
-  color: $color-classic-white;
+  color: $color-foreground-on-tint;
 
   .tco-floating-form-btn--close {
     position: absolute;
@@ -126,7 +126,7 @@ $floating-form-offset: 25px;
   }
 
   .tco-type-display--small {
-    color: $color-classic-white;
+    color: $color-foreground-on-tint;
 
     + .tco-type-body {
       margin-bottom: $spacing-stack-24;

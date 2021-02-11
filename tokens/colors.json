@@ -102,6 +102,11 @@
     "color": "#dadee4"
   },
   {
+    "name": "on-tint",
+    "section": "foreground",
+    "color": "#ffffff"
+  },
+  {
     "name": "gray-light",
     "section": "classic",
     "color": "#d4dce1"
@@ -130,11 +135,6 @@
     "name": "navy",
     "section": "classic",
     "color": "#173145"
-  },
-  {
-    "name": "white",
-    "section": "classic",
-    "color": "#ffffff"
   },
   {
     "name": "nemours",

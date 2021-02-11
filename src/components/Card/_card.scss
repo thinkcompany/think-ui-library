@@ -397,7 +397,7 @@ $icon-width-large: 44px;
   &:focus {
     .tco-btn {
       background-color: $color-hover;
-      color: $color-classic-white;
+      color: $color-foreground-on-tint;
     }
   }
 

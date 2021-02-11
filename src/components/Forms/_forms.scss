@@ -86,12 +86,12 @@ $opacity--disabled: 0.4;
 
   &--error {
     background-color: $color-tint-red-primary;
-    fill: $color-classic-white;
+    fill: $color-foreground-on-tint;
   }
 
   &--success {
     background-color: $color-tint-green-primary;
-    fill: $color-classic-white;
+    fill: $color-foreground-on-tint;
   }
 }
 
