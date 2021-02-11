@@ -72,11 +72,6 @@
     ]
   },
   {
-    "name": "primary",
-    "section": "background",
-    "color": "#ffffff"
-  },
-  {
     "name": "secondary",
     "section": "background",
     "color": "#f4f3f0"

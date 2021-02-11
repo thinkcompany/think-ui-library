@@ -1,9 +1,7 @@
-import { select, text, boolean } from '@storybook/addon-knobs';
-
-const sizes = ['xlarge', 'large', 'medium', 'small'];
+import { text } from '@storybook/addon-knobs';
 
 export const summaryCard = () => {
-  const heading = text('Heading', 'Full Experience & Service Design');
+  const heading = text('Heading', 'Work together.');
   const summary = text(
     'Summary',
     'The best experiences are consistent across all channels, so we always consider the entire ecosystem your users interact within—designing for people wherever they click, tap, talk, touch, work, or play.'
@@ -13,41 +11,18 @@ export const summaryCard = () => {
     'https://3vwizk2qtr8l3diwrm3r2ba0-wpengine.netdna-ssl.com/wp-content/themes/tbiv3/img/svgs/services-full-experience-service.svg'
   );
 
-  const background = boolean('No link style', false);
-
   return `
-  <div class="tco-card-grid ${background ? 'tco-card-grid--no-link' : ''}" >
     <div class="tco-card tco-card--summary">
       <a href="#" class="tco-card-link">
-        <div class="tco-card-image-container">
-          <img class="tco-card-image" alt="Card image" src="${image}" />
+        <div class="tco-card-image-container tco-card-image-container--summary">
+          <img class="tco-card-image tco-card-image--summary" alt="Card image" src="${image}" />
         </div>
         <div class="tco-card-content-container">
           <h2 class="tco-card-content-heading">${heading}</h2>
           <p class="tco-card-content-description">${summary}</p>
         </div>
       </a>
-    </div>
-  </div>`;
-};
-
-export const callToActionCard = () => {
-  const description = text(
-    'Description',
-    "Interested in working with Think Company? We scope projects and build teams to meet your organization's unique needs. Tell us about your project today to start the conversation!"
-  );
-  const cta = text('Call to Action', 'Contact us');
-
-  return `
-  <div class="tco-card tco-card--cta">
-    <div class="tco-card-content-container">
-      <p class="tco-card-content-description">${description}</p>
-
-    <button type="button" class="tco-btn tco-btn--secondary tco-btn--large">
-    ${cta}
-  </button>
-    </div>
-  </div>`;
+    </div>`;
 };
 
 export const personCard = () => {
@@ -69,29 +44,12 @@ export const personCard = () => {
   </div>`;
 };
 
-export const smallCallToAction = () => {
-  const cta = text(
-    'Small Call to Action',
-    'Learn more about working at Think Company'
-  );
-
-  return `
-  <div class="tco-card tco-card--cta-small">
-    <a href="#" class="tco-card-link">
-      <div class="tco-card-content-container">
-        <p class="tco-card-content-description">${cta}</p>
-      </div>
-    </a>
-  </div>`;
-};
-
 export const postCard = () => {
-  const size = select('Size', sizes, 'medium');
   const image = text(
     'Post image',
     'https://thinkcompany.com/wp-content/uploads/2020/07/BlogImage-LGM-9-Kanban-708x472.png'
   );
-  const eyebrow = text('Post type', '');
+  const eyebrow = text('Post type', 'Case Study');
   const heading = text(
     'Post title',
     'How to Use Kanban to Manage a Design System'
@@ -108,16 +66,14 @@ export const postCard = () => {
   const date = text('Post date', 'May 21, 2020');
 
   return `
-  <div class="tco-card tco-card--post tco-card--post--${size}">
+  <div class="tco-card tco-card--post">
     <a href="#" class="tco-card-link">
       <div class="tco-card-image-container">
         <img class="tco-card-image" alt="Card image" src="${image}" />
       </div>
       <div class="tco-card-content-container">
         ${
-          eyebrow
-            ? '<span class="tco-card-content-eyebrow">' + eyebrow + '</span>'
-            : ''
+          eyebrow ? '<span class="tco-card-eyebrow">' + eyebrow + '</span>' : ''
         }
         <h2 class="tco-card-content-heading">${heading}</h2>
         <p class="tco-card-content-description">${description}</p>
@@ -136,7 +92,6 @@ export const postCard = () => {
 };
 
 export const calloutCard = () => {
-  const size = select('Callout size', ['large', 'medium', 'small'], 'medium');
   const heading = text(
     'Callout heading',
     'Problem Solving Workshops for COVID-19 Support'
@@ -151,39 +106,21 @@ export const calloutCard = () => {
   );
 
   return `
-  <div class="tco-card tco-card--callout tco-card--callout--${size}">
-    <div class="tco-card-image-container">
-      <img class="tco-card-image" alt="Card image" src="${image}" />
+  <div class="tco-card tco-card--callout">
+    <div class="tco-card-image-container tco-card-image-container--callout">
+      <img class="tco-card-image tco-card-image--callout" alt="Card image" src="${image}" />
     </div>
     <div class="tco-card-content-container">
       <h2 class="tco-card-content-heading">${heading}</h2>
       <p class="tco-card-content-description">${description}</p>
-      <a class="tco-card-content-link" href="#">Tell us about your challenge</a>
+      <a class="tco-card-content-link" href="#">
+      Tell us about your challenge
+      <svg class="tco-text-link-icon" width="20" height="20" viewBox="0 0 20 20" role="presentation">
+        <use xlink:href="/img/icons.svg#icon-arrow-right"></use>
+    </svg>
+    </a>
     </div>
   </div>`;
-};
-
-export const all = () => {
-  const itemWrapper = children => `
-    <div
-      class="documentation-grid--item"
-      style="text-align:center; margin: 0 0 20px 40px; padding: 20px 0; flex: 0 0 auto"
-    >
-      ${children}
-    </div>`;
-
-  const variations = [
-    summaryCard,
-    callToActionCard,
-    postCard,
-    personCard,
-    smallCallToAction,
-    calloutCard
-  ];
-
-  const examples = variations.map(variation => itemWrapper(variation()));
-
-  return `<div class="documentation-grid">${examples.join('')}</div>`;
 };
 
 export default {
