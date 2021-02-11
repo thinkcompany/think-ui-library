@@ -26,7 +26,6 @@ export const Image2 = () => {
 };
 
 export const Image4 = () => {
-  const containerColor = select('Background Color', colors, colors.Glass);
   const imageA = text(
     'Image A',
     'https://www.thinkcompany.com/wp-content/uploads/2020/12/photo-studios-philly-feature.jpg'
