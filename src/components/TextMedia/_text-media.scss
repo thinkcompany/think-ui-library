@@ -210,7 +210,7 @@ $bubble-max: 600px;
 
     &.tco-container-wrapper--glass {
       .tco-text-media-container::before {
-        background-color: $color-background-primary;
+        background-color: $color-foreground-on-tint;
       }
     }
 
