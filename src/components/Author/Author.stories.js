@@ -22,7 +22,7 @@ export const Default = () => {
       <div class="tco-text-media tco-text-media--align-right tco-author">
         <div class="tco-text-media-content tco-text-media-content-text">
           <span class="tco-author-eyebrow">${eyebrow}</span>
-          <h1 class="tco-author-heading">${authorName}</h1>
+          <h2 class="tco-author-heading">${authorName}</h2>
           <p class="tco-author-title">${authorTitle}</p>
           <p class="tco-author-bio tco-type-body--default">${authorBio}</p>
           ${
