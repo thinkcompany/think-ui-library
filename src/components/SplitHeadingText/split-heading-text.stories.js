@@ -12,7 +12,7 @@ export const Default = () => {
     <div class="tco-container tco-container--default">
       <div class="tco-split-heading-text">
         <div class="tco-split-heading-text-container tco-split-heading-text-container--heading">
-          <h1 class="tco-type-eyebrow">${heading}</h1>
+          <h2 class="tco-type-eyebrow">${heading}</h2>
         </div>
         <div class="tco-split-heading-text-container tco-split-heading-text-container--content">
           <p>${content}</p>
