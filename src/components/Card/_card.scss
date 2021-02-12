@@ -66,33 +66,6 @@
     @include type-link-cta;
   }
 
-  &-info {
-    display: grid;
-    grid-template-columns: 64px 1fr;
-    grid-gap: $spacing-inline-16;
-    align-items: center;
-    margin-top: $spacing-stack-16;
-    color: $color-classic-gray-dark;
-
-    &-author-name,
-    &-author-date {
-      margin-bottom: 0;
-    }
-
-    &-author-name {
-      @include type-sans-bold;
-    }
-
-    &-author-date {
-      @include type-body-small;
-    }
-  }
-
-  &-info-image-container {
-    overflow: hidden;
-    border-radius: $border-radius-round;
-  }
-
   .tco-card-grid--no-link & {
     border-radius: 0;
     background: transparent;
