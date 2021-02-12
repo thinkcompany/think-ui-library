@@ -1,148 +1,87 @@
+$bullet-offset: 15px;
+
 .tco-content-item {
-  @include wider-than($breakpoint-tablet-portrait) {
-    grid-template-areas: 'body media' 'body media';
-    grid-template-columns: 1fr 1fr;
-  }
-  display: grid;
-  grid-template-areas: 'media' 'body';
-  grid-template-columns: 1fr;
-  align-items: flex-start;
-  justify-content: space-between;
-  padding: $spacing-stack-64 0;
-  border-bottom: $border-tertiary;
+  padding-left: 0;
 
-  &:last-of-type {
-    border-bottom: 0;
-  }
-
-  .tco-type-display {
-    margin-top: $spacing-stack-12;
-  }
-
-  &-image {
-    @include wider-than($breakpoint-tablet-portrait) {
-      min-width: 245px;
-      max-width: 380px;
+  &.tco-content-item--align {
+    &-left,
+    &-right {
+      padding: 0;
     }
-    overflow: hidden;
-    min-width: 100px;
-    height: auto;
-    border-radius: $border-radius-medium;
   }
 
-  &-footer {
-    margin-top: $spacing-stack-16;
+  .tco-text-media-content-text--right {
+    .tco-content-item-meta {
+      justify-content: flex-end;
+    }
   }
 
   &-meta {
-    display: inline-flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: space-between;
-
-    > .tco-type-body {
-      margin-right: $spacing-inline-12;
-    }
-  }
-
-  &-date {
-    .tco-type-body {
-      &::after {
-        content: ' • ';
-        display: inline;
-      }
-
-      &:last-of-type {
-        &::after {
-          content: '';
-        }
-      }
-    }
-  }
-
-  &-excerpt {
-    margin-top: $spacing-stack-16;
-  }
-}
-
-.tco-content-column {
-  @include wider-than($breakpoint-tablet-portrait) {
-    margin-top: 0;
-
-    &:last-child {
-      margin-left: 0;
-    }
-
-    &-media {
-      margin-left: $spacing-inline-64;
-    }
-  }
-  margin-top: $spacing-stack-16;
-
-  &:first-child {
-    margin-top: 0;
-  }
-
-  &-media {
+    @include type-body-small;
     display: flex;
-    grid-area: media;
+    flex-flow: row wrap;
     align-items: center;
-    justify-content: center;
+    margin-bottom: $spacing-stack-12;
+
+    @include wider-than($breakpoint-tablet-portrait) {
+      margin-bottom: $spacing-stack-20;
+    }
   }
 
-  &-body {
-    grid-area: body;
+  &-heading {
+    @include type-display-small;
+    margin-bottom: $spacing-stack-8;
+    color: $color-classic-blue;
   }
-}
 
-.tco-content-category {
-  @include wider-than($breakpoint-tablet-portrait) {
-    width: auto;
+  &-location {
+    position: relative;
+    margin-left: $spacing-inline-24;
+
+    &::before {
+      content: '\2022';
+      position: absolute;
+      top: 50%;
+      left: -$bullet-offset;
+      display: inline-block;
+      transform: translateY(-50%);
+    }
+  }
+
+  &-author-heading {
+    @include type-eyebrow;
+    display: block;
+    margin-bottom: $spacing-stack-4;
+  }
+
+  &-authors {
+    @include type-body-small;
+    display: block;
+  }
+
+  .tco-tag {
     margin-right: $spacing-inline-12;
-    margin-bottom: 0;
-  }
-  display: block;
-  width: 100%;
-}
-
-.tco-content-hosts {
-  margin-top: $spacing-stack-16;
-  margin-bottom: $spacing-stack-4;
-}
-
-// Modifiers ==============
-.tco-content-item--featured {
-  background: $color-background-tertiary;
-
-  .tco-heading,
-  .tco-type-body,
-  .tco-content-item-date {
-    color: $color-foreground-on-tint;
   }
 
   .tco-link {
-    @include type-link($color-foreground-on-tint, $color-foreground-on-tint);
+    @include type-not-link;
   }
-}
 
-.tco-content-item--media-left {
-  @include wider-than($breakpoint-tablet-portrait) {
-    grid-template-areas: 'media body';
+  .tco-text-media-lede {
+    margin-bottom: $spacing-stack-12;
 
-    .tco-content-column-media {
-      margin-right: $spacing-inline-64;
-      margin-left: 0;
+    @include wider-than($breakpoint-tablet-portrait) {
+      margin-bottom: $spacing-stack-20;
     }
   }
+
+  .tco-btn {
+    margin-top: $spacing-stack-20;
+  }
 }
 
-// This should probably be its own component
-
 .tco-tag {
-  @include spacing-squish-4-8;
-  @include type-eyebrow;
-  border-radius: $border-radius-large;
-  background: $color-foreground-quanternary;
-  color: $color-foreground-primary;
-  font-size: $font-size-16;
+  @include spacing-squish-6-10;
+  display: inline-block;
+  background: $color-classic-gray-light;
 }

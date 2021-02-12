@@ -22,6 +22,6 @@
   .tco-container-wrapper--navy &,
   .tco-container-wrapper--blue & {
     @include type-body-medium($color-foreground-primary, $font-weight-600);
-    background: $color-background-primary;
+    background: $color-foreground-on-tint;
   }
 }
