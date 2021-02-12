@@ -1,4 +1,3 @@
-$tag-bg: #f2f2f2;
 $bullet-offset: 15px;
 
 .tco-content-item {
@@ -84,5 +83,5 @@ $bullet-offset: 15px;
 .tco-tag {
   @include spacing-squish-6-10;
   display: inline-block;
-  background: $tag-bg;
+  background: $color-classic-gray-light;
 }
