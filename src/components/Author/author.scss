@@ -1,30 +1,56 @@
-.tco-author-heading {
-  margin-bottom: $spacing-stack-8;
-}
+$author-image-max: 480px;
 
-.tco-author-info {
-  &--with-image {
-    @include wider-than($breakpoint-phone-landscape) {
-      display: grid;
-      grid-template: '100px auto' '1fr 1fr';
-      grid-template-areas: 'body contact' 'body contact';
-      grid-gap: 10px 70px;
+.tco-author {
+  position: relative;
+  padding-top: $spacing-stack-50;
+
+  @include wider-than($breakpoint-tablet-portrait) {
+    padding-top: 0;
+  }
+
+  &.tco-text-media--align-right {
+    padding-right: 0;
+  }
+
+  .tco-text-media-content {
+    &-media {
+      max-width: $author-image-max;
     }
   }
-}
 
-.tco-author-eyebrow {
-  grid-area: header;
-  align-self: flex-end;
-}
+  &-eyebrow {
+    @include type-eyebrow;
+    position: absolute;
+    top: 0;
+    display: block;
 
-.tco-author-body {
-  @include type-body-large;
-  grid-area: body;
+    @include wider-than($breakpoint-tablet-portrait) {
+      position: initial;
+      margin-bottom: $spacing-stack-12;
+    }
+  }
 
-  .tco-author-body-name,
-  .tco-author-body-description {
-    margin-bottom: 1em;
+  &-heading {
+    @include type-display-medium;
+  }
+
+  &-title {
+    @include type-body-large;
+    margin-bottom: $spacing-stack-20;
+  }
+
+  &-social {
+    margin-top: $spacing-stack-24;
+  }
+
+  &-social-heading {
+    @include type-eyebrow;
+    margin-bottom: $spacing-stack-20;
+  }
+
+  &-container-media {
+    overflow: hidden;
+    border-radius: 50%;
   }
 }
 
@@ -47,30 +73,5 @@
     margin-bottom: 10px;
     border: 5px solid $color-foreground-quanternary;
     border-radius: $border-radius-round;
-  }
-}
-
-.tco-author-social-heading {
-  @include type-eyebrow;
-}
-
-// Profile Page Styles
-.tco-author--profile {
-  .tco-author-info--with-image {
-    grid-template: 0 auto / auto 500px;
-    grid-template-areas: 'header contact' 'body contact';
-  }
-
-  .tco-author-contact > img {
-    max-width: 100%;
-  }
-
-  .tco-author-body-name {
-    grid-area: header;
-    color: $color-foreground-primary;
-  }
-
-  .tco-author-body-name-title {
-    @include type-display-small;
   }
 }
