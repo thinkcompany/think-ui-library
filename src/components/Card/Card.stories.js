@@ -111,6 +111,29 @@ export const calloutCard = () => {
   </div>`;
 };
 
+export const mediaCard = () => {
+  const heading = text('Heading', 'Competitive Salary and Annual Increase');
+  const summary = text(
+    'Summary',
+    'We pay you what you deserve to make and you can earn up to a 5% salary increase every year based on your individual performance.'
+  );
+  const image = text(
+    'Image',
+    'https://www.thinkcompany.com/wp-content/uploads/2020/12/Competitive-Salary-Annual-Increase-1-1.svg'
+  );
+
+  return `
+    <div class="tco-card tco-card--no-link tco-card--summary tco-card--media">
+      <div class="tco-card-image-container tco-card-image-container--summary">
+        <img class="tco-card-image tco-card-image--summary" alt="Card image" src="${image}" />
+      </div>
+      <div class="tco-card-content-container">
+        <h2 class="tco-card-content-heading">${heading}</h2>
+        <p class="tco-card-content-description">${summary}</p>
+      </div>
+    </div>`;
+};
+
 export const jobCard = () => {
   const heading = text('Job', 'Senior UX Designer');
   const location = text('Location', 'Philadelphia, PA');
