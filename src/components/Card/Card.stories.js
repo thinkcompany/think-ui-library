@@ -123,6 +123,24 @@ export const calloutCard = () => {
   </div>`;
 };
 
+export const jobCard = () => {
+  const heading = text('Job', 'Senior UX Designer');
+  const location = text('Location', 'Philadelphia, PA');
+
+  return `
+    <div class="tco-card tco-card--job">
+      <a href="#" class="tco-card-link">
+        <div class="tco-card-content-container">
+          <h2 class="tco-card-content-heading">${heading}</h2>
+          <span class="tco-card-content-location">${location}</span>
+        </div>
+        <div class="tco-card-content-container">
+          <span href="#" class="tco-btn tco-btn--secondary">Apply Now</span>
+        </div>
+      </a>
+    </div>`;
+};
+
 export default {
   title: 'Components / Card'
 };
