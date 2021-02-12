@@ -43,6 +43,33 @@
     }
   }
 
+  &--4-column {
+    @include wider-than($breakpoint-tablet-portrait) {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+
+  &--5-column,
+  &--person {
+    grid-template-columns: repeat(2, 1fr);
+
+    @include wider-than($breakpoint-phone-landscape) {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    @include wider-than($breakpoint-tablet-portrait) {
+      grid-template-columns: repeat(4, 1fr);
+    }
+
+    @include wider-than($breakpoint-laptop) {
+      grid-template-columns: repeat(5, 1fr);
+    }
+
+    @include wider-than($breakpoint-desktop) {
+      grid-gap: $spacing-inline-16;
+    }
+  }
+
   &--case-study {
     &.tco-card-grid--1-column {
       grid-gap: $spacing-stack-32;
@@ -51,5 +78,9 @@
         grid-gap: $spacing-stack-100;
       }
     }
+  }
+
+  &.tco-card-grid--job {
+    @extend .tco-card-grid--1-column;
   }
 }
