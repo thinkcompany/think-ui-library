@@ -4,7 +4,8 @@ import {
   personCard,
   postCard,
   calloutCard,
-  mediaCard
+  mediaCard,
+  jobCard
 } from '../Card/Card.stories';
 
 const baseCard = () => {
@@ -43,8 +44,7 @@ const colors = {
   Glass: 'tco-container-wrapper--glass'
 };
 
-const cards = ['base', 'summary', 'person', 'post', 'callout', 'media'];
-
+const cards = ['base', 'summary', 'person', 'post', 'callout', 'media', 'job'];
 const alignments = ['center', 'left', 'right'];
 const sizes = ['extra-large', 'large', 'medium', 'small'];
 const ledeSizes = ['large', 'default', 'sans-small'];
@@ -72,6 +72,8 @@ export const Default = () => {
       card = calloutCard();
     } else if (cardType === 'media') {
       card = mediaCard();
+    } else if (cardType === 'job') {
+      card = jobCard();
     }
 
     for (let i = 0; i < cardCount; i++) {

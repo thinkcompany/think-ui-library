@@ -66,33 +66,6 @@
     @include type-link-cta;
   }
 
-  &-info {
-    display: grid;
-    grid-template-columns: 64px 1fr;
-    grid-gap: $spacing-inline-16;
-    align-items: center;
-    margin-top: $spacing-stack-16;
-    color: $color-classic-gray-dark;
-
-    &-author-name,
-    &-author-date {
-      margin-bottom: 0;
-    }
-
-    &-author-name {
-      @include type-sans-bold;
-    }
-
-    &-author-date {
-      @include type-body-small;
-    }
-  }
-
-  &-info-image-container {
-    overflow: hidden;
-    border-radius: $border-radius-round;
-  }
-
   .tco-card-grid--no-link & {
     border-radius: 0;
     background: transparent;
@@ -383,6 +356,63 @@ $icon-width-large: 44px;
 
     &-link {
       @include type-link-cta($font-color: $color-classic-blue);
+    }
+  }
+}
+
+// ========================================================
+// = JOB CARD
+// ========================================================
+.tco-card--job {
+  max-width: none;
+  min-height: 0;
+
+  &:hover,
+  &:focus {
+    .tco-btn {
+      background-color: $color-hover;
+      color: $color-foreground-on-tint;
+    }
+  }
+
+  .tco-card-link {
+    display: flex;
+    flex-flow: row wrap;
+    padding: $spacing-stack-24 $spacing-inline-24 $spacing-stack-32;
+
+    @include wider-than($breakpoint-phone-landscape) {
+      align-items: center;
+      justify-content: space-between;
+      padding: $spacing-stack-50 $spacing-inline-32;
+    }
+  }
+
+  .tco-card-content {
+    &-container {
+      width: 100%;
+      padding: 0;
+
+      @include wider-than($breakpoint-phone-landscape) {
+        width: auto;
+      }
+    }
+
+    &-container:first-of-type {
+      padding-bottom: $spacing-stack-24;
+
+      @include wider-than($breakpoint-phone-landscape) {
+        padding-bottom: 0;
+      }
+    }
+
+    &-heading {
+      @include type-body-large;
+      margin-bottom: $spacing-stack-12;
+    }
+
+    &-location {
+      @include type-body-small;
+      display: block;
     }
   }
 }

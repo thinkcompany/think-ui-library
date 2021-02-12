@@ -1,164 +1,39 @@
-import { select, boolean, text, number } from '@storybook/addon-knobs';
+import { boolean, text } from '@storybook/addon-knobs';
 
-const colors = {
-  Default: '',
-  Tan: 'tco-container-wrapper--tan',
-  Blue: 'tco-container-wrapper--blue',
-  Navy: 'tco-container-wrapper--navy',
-  Glass: 'tco-container-wrapper--glass'
-};
+export const byline = () => {
+  const bylineName = text('Post Author', 'Keith Rich');
+  const bylineDesc = text('Post Date', 'May 21, 2020');
+  const bylineImage = text(
+    'Image',
+    'https://thinkcompany.com/wp-content/uploads/2018/05/KeithRich_Web.jpg'
+  );
+  const bylineLink = boolean('With link?', false);
 
-export const all = () => {
-  const containerColor = select('Background Color', colors, colors.Default);
-  const showImage = boolean('Show Image', false);
-  const bylineName = text('Author Name', 'FirstName LastName');
-  const bylineDesc = text('Byline Description', 'July 8, 2020');
-  const smallType = boolean('Small Type', false);
+  let containerOpen = '';
 
-  return `
-<div class="tco-container-wrapper  ${containerColor} ">
-<div class="tco-container">
-  <div class="tco-byline ${smallType ? 'tco-byline--small' : ''}">
-    ${
-      showImage
-        ? `
-    <div class="tco-byline-image">
-      <img src="https://3vwizk2qtr8l3diwrm3r2ba0-wpengine.netdna-ssl.com/wp-content/uploads/2020/03/AbbyDePrimo_Web.jpg" alt="FirstName LastName">
-    </div>
-    `
-        : ``
-    }
-    <div class="tco-byline-text">
-      <p class="tco-byline-name">${bylineName}</p>
-      <p class="tco-byline-description">${bylineDesc}</p>
-    </div>
-  </div>
-  </div>
-  </div>
-`;
-};
+  let containerClose = '';
 
-export const small = () => {
-  const containerColor = select('Background Color', colors, colors.Default);
-  const bylineName = text('Author Name', 'FirstName LastName');
-  const bylineDesc = text('Byline Description', 'July 8, 2020');
+  if (bylineLink) {
+    containerOpen = '<a href="#" class="tco-byline tco-byline--link">';
+    containerClose = '</a>';
+  } else {
+    containerOpen = '<div class="tco-byline">';
+    containerClose = '</div>';
+  }
 
   return `
-<div class="tco-container-wrapper  ${containerColor} ">
-<div class="tco-container">
-  <div class="tco-byline tco-byline--small">
-    <div class="tco-byline-text">
-      <p class="tco-byline-name">${bylineName}</p>
-      <p class="tco-byline-description">${bylineDesc}</p>
-    </div>
-  </div>
-  </div>
-  </div>
-`;
-};
-
-export const withLink = () => {
-  const containerColor = select('Background Color', colors, colors.Default);
-  const bylineName = text('Author Name', 'FirstName LastName');
-  const bylineDesc = text('Byline Description', 'July 8, 2020');
-
-  return `
-<div class="tco-container-wrapper  ${containerColor}">
-<div class="tco-container">
-<div class="tco-byline">
-      <div class="tco-byline-image">
-        <img src="https://3vwizk2qtr8l3diwrm3r2ba0-wpengine.netdna-ssl.com/wp-content/uploads/2020/03/AbbyDePrimo_Web.jpg" alt="${bylineName}">
+    ${containerOpen}
+      <div class="tco-byline-image-container">
+        <img src="${bylineImage}" alt="${bylineName}">
       </div>
-    <div class="tco-byline-text">
-      <p class="tco-byline-name"> <a href="#">${bylineName}</a></p>
-      <p class="tco-byline-description">${bylineDesc}</p>
-    </div>
-</div>
-</div>
-`;
-};
-
-export const multipleAuthors = () => {
-  const containerColor = select('Background Color', colors, colors.Default);
-  const bylineName = text('Author Name', 'FirstName LastName');
-  const bylineDesc = text('Byline Description', 'July 8, 2020');
-  const numberAuthors = number('Number of Authors', 5, { min: 1, max: 5 });
-
-  const authorMarkup = () => {
-    let authors = '';
-
-    for (let n = 0; n < numberAuthors; n++) {
-      authors += `${bylineName}`;
-      if (n !== numberAuthors - 1) {
-        authors += `,   `;
-      }
-    }
-    return authors;
-  };
-
-  return `
-<div class="tco-container-wrapper  ${containerColor}">
-<div class="tco-container">
-<div class="tco-byline tco-byline--small">
-    <div class="tco-byline-text">
-      <p class="tco-byline-name">
-        ${authorMarkup()}
-      </p>
-      <p class="tco-byline-description">${bylineDesc}</p>
-    </div>
-</div>
-</div>
-`;
-};
-
-export const multipleBylines = () => {
-  const containerColor = select('Background Color', colors, colors.Default);
-  const bylineName = text('Author Name', 'FirstName LastName');
-  const bylineDesc = text('Byline Description', 'July 8, 2020');
-  const numberAuthors = number('Number of Authors', 5, { min: 1, max: 5 });
-  const showImage = boolean('Show Image', true);
-
-  const authorMarkup = () => {
-    let authors = '';
-
-    for (let n = 0; n < numberAuthors; n++) {
-      authors += `<div class="tco-byline">
-      ${
-        showImage
-          ? `
-      <div class="tco-byline-image">
-        <img src="https://3vwizk2qtr8l3diwrm3r2ba0-wpengine.netdna-ssl.com/wp-content/uploads/2020/03/AbbyDePrimo_Web.jpg" alt="FirstName LastName">
+      <div class="tco-byline-content-container">
+        <p class="tco-byline-name">By ${bylineName}</p>
+        <p class="tco-byline-description">${bylineDesc}</p>
       </div>
-      `
-          : ``
-      }
-    <div class="tco-byline-text">
-      <p class="tco-byline-name">
-        <a href="#">${bylineName}</a>
-      </p>
-      <p class="tco-byline-description">${bylineDesc}</p>
-    </div>
-    </div>`;
-    }
-    return authors;
-  };
-
-  return `
-<div class="tco-container-wrapper  ${containerColor}">
-<div class="tco-container">
-<div class="tco-byline-grid">
-${authorMarkup()}
-</div>
-</div>
-</div>
-`;
+    ${containerClose}
+  `;
 };
 
 export default {
-  title: 'Components / Byline',
-  parameters: {
-    options: {
-      showPanel: false
-    }
-  }
+  title: 'Components / Byline'
 };

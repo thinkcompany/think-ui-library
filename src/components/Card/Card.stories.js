@@ -1,4 +1,5 @@
 import { text } from '@storybook/addon-knobs';
+import { byline } from '../Byline/byline.stories';
 
 export const summaryCard = () => {
   const heading = text('Heading', 'Work together.');
@@ -58,12 +59,6 @@ export const postCard = () => {
     'Post excerpt',
     'Kanban originated in the world of automotive manufacturing at Toyota, by way of Japanese industrial engineer Taiichi Ohno.'
   );
-  const author = text('Post author', 'Keith Rich');
-  const authorImage = text(
-    'Post author image',
-    'https://thinkcompany.com/wp-content/uploads/2018/05/KeithRich_Web.jpg'
-  );
-  const date = text('Post date', 'May 21, 2020');
 
   return `
   <div class="tco-card tco-card--post">
@@ -77,15 +72,8 @@ export const postCard = () => {
         }
         <h2 class="tco-card-content-heading">${heading}</h2>
         <p class="tco-card-content-description">${description}</p>
-        <div class="tco-card-info">
-          <div class="tco-card-info-image-container">
-            <img alt="${author} photo" class="tco-card-info-image" src="${authorImage}">
-          </div>
-          <div class="tco-card-info-author">
-            <p class="tco-card-info-author-name">By ${author}</p>
-            <p class="tco-card-info-author-date">${date}</p>
-          </div>
-        </div>
+
+        ${byline()}
       </div>
     </a>
   </div>`;
@@ -143,6 +131,24 @@ export const mediaCard = () => {
         <h2 class="tco-card-content-heading">${heading}</h2>
         <p class="tco-card-content-description">${summary}</p>
       </div>
+    </div>`;
+};
+
+export const jobCard = () => {
+  const heading = text('Job', 'Senior UX Designer');
+  const location = text('Location', 'Philadelphia, PA');
+
+  return `
+    <div class="tco-card tco-card--job">
+      <a href="#" class="tco-card-link">
+        <div class="tco-card-content-container">
+          <h2 class="tco-card-content-heading">${heading}</h2>
+          <span class="tco-card-content-location">${location}</span>
+        </div>
+        <div class="tco-card-content-container">
+          <span href="#" class="tco-btn tco-btn--secondary">Apply Now</span>
+        </div>
+      </a>
     </div>`;
 };
 
