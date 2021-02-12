@@ -1,4 +1,4 @@
-import { select, text, boolean, object } from '@storybook/addon-knobs';
+import { select, text, boolean } from '@storybook/addon-knobs';
 import { textOnly } from '../TextOnly/text-only.stories';
 import { checklist } from '../Checklist/checklist.stories';
 
@@ -16,7 +16,10 @@ export const Default = () => {
   <div class="tco-container-wrapper">
     <div class="tco-container">
       <div class="tco-columns tco-columns">
-        <div class="tco-column tco-column--${layout}">${textOnly()}</div>
+        <div class="tco-column tco-column--${layout}">${textOnly(
+    heading,
+    showCta
+  )}</div>
         <div class="tco-column tco-column--${layout}">${checklist()}</div>
       </div>
     </div>

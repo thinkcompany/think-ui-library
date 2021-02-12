@@ -1,4 +1,4 @@
-import { select, text, object } from '@storybook/addon-knobs';
+import { text, object } from '@storybook/addon-knobs';
 
 const groupId = 'checklist';
 
