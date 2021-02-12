@@ -1,9 +1,10 @@
-import { number, text, select, boolean } from '@storybook/addon-knobs';
+import { number, text, select } from '@storybook/addon-knobs';
 import {
   summaryCard,
   personCard,
   postCard,
   calloutCard,
+  mediaCard,
   jobCard
 } from '../Card/Card.stories';
 
@@ -43,8 +44,7 @@ const colors = {
   Glass: 'tco-container-wrapper--glass'
 };
 
-const cards = ['base', 'summary', 'person', 'post', 'callout', 'job'];
-
+const cards = ['base', 'summary', 'person', 'post', 'callout', 'media', 'job'];
 const alignments = ['center', 'left', 'right'];
 const sizes = ['extra-large', 'large', 'medium', 'small'];
 const ledeSizes = ['large', 'default', 'sans-small'];
@@ -70,6 +70,8 @@ export const Default = () => {
       card = postCard();
     } else if (cardType === 'callout') {
       card = calloutCard();
+    } else if (cardType === 'media') {
+      card = mediaCard();
     } else if (cardType === 'job') {
       card = jobCard();
     }
@@ -80,7 +82,7 @@ export const Default = () => {
 
     return output;
   };
-  const summaryCardBg = boolean('Summary card no link style', false);
+
   const headingContainer = select(
     'Section heading container',
     containerSizes,
@@ -131,9 +133,7 @@ export const Default = () => {
               : ''
           }
         ${containerClose}
-        <div class="tco-card-grid tco-card-grid--${columns}-column tco-card-grid--${cardType} ${
-    summaryCardBg ? 'tco-card-grid--no-link' : ''
-  }">
+        <div class="tco-card-grid tco-card-grid--${columns}-column">
           ${cardItems()}
         </div>
       </div>

@@ -1,3 +1,5 @@
+$icon-size: 48px;
+
 .tco-social-icons-list {
   padding: 0;
   list-style-type: none;
@@ -12,13 +14,15 @@
 }
 
 .tco-social-icons-link {
+  border-bottom-width: 0;
+
   .tco-container-wrapper & {
     background-image: none;
   }
 
   > .tco-icon {
-    width: 45px;
-    height: 45px;
+    width: $icon-size;
+    height: $icon-size;
   }
 
   &:hover {

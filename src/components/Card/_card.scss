@@ -203,19 +203,21 @@
     }
   }
 
-  .tco-card-grid--no-link & {
-    border: none;
+  &.tco-card--no-link {
+    border-width: 0;
+    box-shadow: none;
     text-align: center;
 
     .tco-card {
       &-content-container {
-        padding: 0;
+        padding-right: 0;
+        padding-left: 0;
       }
 
       &-image-container {
         display: flex;
         height: 250px;
-        padding: 0;
+        padding: $spacing-stack-32 $spacing-inline-20 0;
       }
     }
 
@@ -300,7 +302,6 @@
     }
   }
 }
-
 // ========================================================
 // = CALLOUT CARD
 // ========================================================
