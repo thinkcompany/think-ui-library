@@ -1,0 +1,39 @@
+$content-container-max: 568px;
+
+.tco-split-heading-text {
+  @include wider-than($breakpoint-tablet-portrait) {
+    display: flex;
+    flex-flow: row nowrap;
+  }
+
+  &-container {
+    &--content {
+      @include type-body-default;
+    }
+
+    @include wider-than($breakpoint-tablet-portrait) {
+      &--content {
+        width: 66.7%;
+        max-width: $content-container-max;
+      }
+
+      &--heading {
+        width: 33.33%;
+        padding: $spacing-stack-8 $spacing-inline-32 0 0;
+        text-align: right;
+      }
+    }
+
+    p,
+    ul,
+    ol {
+      &:not(:last-of-type) {
+        margin-bottom: $spacing-stack-32;
+      }
+    }
+  }
+
+  .tco-type-eyebrow {
+    margin-bottom: $spacing-stack-16;
+  }
+}
