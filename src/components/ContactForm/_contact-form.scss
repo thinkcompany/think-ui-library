@@ -1,0 +1,27 @@
+// ========================================================
+// = CONTACT FORM
+// ========================================================
+.tco-contact-form-container {
+  box-shadow: $box-shadow-card;
+}
+
+.tco-contact-form {
+  flex-grow: 1;
+  overflow-x: hidden;
+  overflow-y: auto;
+  padding: $spacing-stack-16 $spacing-inline-16 $spacing-stack-24;
+
+  @include wider-than($breakpoint-tablet-portrait) {
+    padding: $spacing-stack-32 $spacing-inline-32 $spacing-stack-50;
+  }
+
+  .tco-form-textarea {
+    resize: none;
+  }
+
+  input,
+  textarea {
+    padding-top: $spacing-stack-20;
+    line-height: 1.1;
+  }
+}
