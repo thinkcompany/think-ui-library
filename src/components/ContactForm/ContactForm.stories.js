@@ -1,4 +1,4 @@
-import { text } from '@storybook/addon-knobs';
+import { text, boolean } from '@storybook/addon-knobs';
 
 export const contactForm = () => {
   const nameLabel = text('Name label', 'Your Name*');
@@ -27,14 +27,12 @@ export const contactForm = () => {
     'Enter a date or timeframe'
   );
   const submitLabel = text('Submit label', 'Send message');
-  const disclaimer = text(
-    'Disclaimer',
-    'By submitting this form, you’re allowing us to store the information you submit. We promise we’ll never, ever, ever share it though.'
-  );
+  const smallForm = boolean('Smaller version?', false);
+  const formVersion = smallForm ? 'small' : 'full';
 
   return `
       <section class="tco-contact-form-container">
-        <form class="tco-contact-form">
+        <form class="tco-contact-form tco-contact-form--${formVersion}">
           <div class="tco-form-row">
             <label for="contact-name" class="tco-form-label">
               ${nameLabel}
@@ -85,25 +83,32 @@ export const contactForm = () => {
               rows="1"
             ></textarea>
           </div>
-          <div class="tco-form-row">
-            <label for="contact-timing" class="tco-form-label">
-              ${timingLabel}
-            </label>
-            <input
-              class="tco-form-input tco-form-input--medium"
-              id="contact-timing"
-              name="contact-timing"
-              placeholder="${timingPlaceholder}"
-            />
-          </div>
+          ${
+            smallForm
+              ? ''
+              : `
+            <div class="tco-form-row">
+              <label for="contact-timing" class="tco-form-label">
+                ${timingLabel}
+              </label>
+              <input
+                class="tco-form-input tco-form-input--medium"
+                id="contact-timing"
+                name="contact-timing"
+                placeholder="${timingPlaceholder}"
+              />
+            </div>
+          `
+          }
           <div class="tco-form-row tco-form-row--button">
             <button type="submit" class="tco-btn tco-btn--primary">
               ${submitLabel}
             </button>
           </div>
           <footer class="tco-contact-form-footer">
-            <p class="tco-type-body-xsmall">${disclaimer}</p>
-            <p class="tco-type-body-xsmall">Please read our <a href="#">Privacy Policy</a> to learn more.</p>
+            <p class="tco-contact-form-footer-text">By submitting this form, you’re allowing us to store the information you submit.</p>
+            <p class="tco-contact-form-footer-text">We promise we’ll never, ever, ever share it though.</p>
+            <p class="tco-contact-form-footer-text">Please read our <a href="#">Privacy Policy</a> to learn more.</p>
           </footer>
         </form>
       </section>

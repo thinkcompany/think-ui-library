@@ -9,7 +9,8 @@ $opacity--disabled: 0.4;
     Form Row
 \*---------------------------------------------- */
 
-.tco-form-row {
+.tco-form-row,
+%tco-form-row {
   position: relative;
   margin-bottom: $spacing-stack-24;
 
@@ -49,6 +50,14 @@ $opacity--disabled: 0.4;
   &.disabled {
     opacity: $opacity--disabled;
   }
+}
+
+.gfield {
+  @extend %tco-form-row;
+}
+
+.gform_footer {
+  @extend .tco-form-row--button;
 }
 
 /* ----------------------------------------------*\
@@ -171,6 +180,10 @@ $opacity--disabled: 0.4;
   .tco-form-label-optional {
     font-style: italic;
   }
+}
+
+.gfield_label {
+  @extend %tco-form-label;
 }
 
 /* ----------------------------------------------*\
