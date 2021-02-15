@@ -11,16 +11,13 @@ export const contactForm = () => {
     'Email placeholder',
     'Enter your email address'
   );
-  const companyLabel = text('Email label', 'Your Email*');
+  const companyLabel = text('Email label', 'Your Company*');
   const companyPlaceholder = text(
     'Company placeholder',
     "Enter your company's name"
   );
   const messageLabel = text('Message label', 'What do you have in mind?*');
-  const messagePlaceholder = text(
-    'Message placeholder',
-    'Next gen blockchain cloud-based AI chatbot'
-  );
+  const messagePlaceholder = text('Message placeholder', 'Bitcoin server farm');
   const timingLabel = text(
     'Timing label',
     'When would you like to get started?*'
@@ -105,13 +102,27 @@ export const contactForm = () => {
             </button>
           </div>
           <footer class="tco-contact-form-footer">
-            <p class="tco-type-body--sans-small">${disclaimer}</p>
-            <p class="tco-type-body--sans-small">Please read our <a href="#">Privacy Policy</a> to learn more.</p>
+            <p class="tco-type-body-xsmall">${disclaimer}</p>
+            <p class="tco-type-body-xsmall">Please read our <a href="#">Privacy Policy</a> to learn more.</p>
           </footer>
         </form>
       </section>
   `;
 };
+
+export const WithColumns = () => {
+  return `
+    <div class="tco-container-wrapper">
+      <div class="tco-container">
+        <div class="tco-columns tco-columns">
+          <div class="tco-column tco-column--50-50"></div>
+          <div class="tco-column tco-column--50-50">${contactForm()}</div>
+        </div>
+      </div>
+    </div>
+  `;
+};
+
 export default {
   title: 'Components / Contact Form'
 };

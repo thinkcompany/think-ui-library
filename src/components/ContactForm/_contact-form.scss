@@ -19,6 +19,12 @@
     resize: none;
   }
 
+  .tco-form-row {
+    @include wider-than($breakpoint-tablet-portrait) {
+      margin-bottom: $spacing-stack-40;
+    }
+  }
+
   input,
   textarea {
     padding-top: $spacing-stack-20;
