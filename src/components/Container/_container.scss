@@ -24,8 +24,9 @@
     > .tco-container {
       @include pseudo-think-bubble;
 
-      @include wider-than($breakpoint-desktop) {
-        padding: $spacing-stack-50 0 $spacing-stack-32;
+      @include wider-than($breakpoint-tablet-portrait) {
+        padding: calc(#{$spacing-stack-50} + #{$spacing-stack-32}) 0
+          $spacing-stack-32;
       }
     }
   }
