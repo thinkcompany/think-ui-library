@@ -1,5 +1,4 @@
-/* Site Header (logo and navigation only)
--------------------------------------------------- */
+$container-max: 1168px;
 
 .tco-site-header {
   position: fixed;
@@ -7,181 +6,117 @@
   left: 0;
   z-index: $z-index-overlay;
   width: 100%;
-  background: $color-foreground-on-tint;
-  box-shadow: 0 5px 10px 0 rgba(75, 75, 75, 0.05);
-}
+  padding: $spacing-stack-12 $spacing-inline-24;
+  background-color: transparent;
 
-.tco-site-header-wrapper {
-  @extend %tco-wrapper--xwide;
-
-  @include wider-than($breakpoint-xl) {
-    justify-content: space-around;
-  }
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.tco-site-header-logo {
-  @include wider-than($breakpoint-phone-landscape) {
-    width: 266px;
-    height: 68px;
-    margin: $spacing-stack-8 0;
+  @include wider-than($breakpoint-laptop) {
+    padding: $spacing-stack-16 $spacing-inline-24;
   }
 
-  @include wider-than($breakpoint-xl) {
-    width: 322px;
-    height: 64px;
-    margin: 0;
-  }
-  display: block;
-  flex: 0 0 auto;
-  width: 200px;
-  height: 42px;
-  margin: $spacing-stack-12 0;
-  // Background image should come from theme
-  background: url('/img/think-company-logo-horizontal-blue.svg') no-repeat
-    center center;
-}
+  &-container {
+    position: relative;
+    display: flex;
+    width: 100%;
+    max-width: $container-max;
+    margin: 0 auto;
 
-.tco-site-header-nav-toggle {
-  @include wider-than($breakpoint-phone-landscape) {
-    width: 60px;
-    height: 60px;
-    margin: 0;
-  }
-
-  @include wider-than($breakpoint-xl) {
-    display: none;
-  }
-  width: 36px;
-  height: 36px;
-  padding: 0;
-  line-height: 1;
-}
-
-.tco-site-header-nav-toggle-icon {
-  @include wider-than($breakpoint-phone-landscape) {
-    width: 60px;
-    height: 60px;
-  }
-  top: 14px;
-  vertical-align: middle;
-  width: 36px;
-  height: 36px;
-  stroke: $color-foreground-secondary;
-  stroke-width: 3;
-  stroke-linecap: square;
-
-  .tco-hamburger-line-4 {
-    opacity: 0;
-  }
-
-  path {
-    transition: opacity 0.2s ease-in-out, transform 0.2s ease-in-out;
-  }
-
-  path,
-  main {
-    backface-visibility: hidden;
-  }
-
-  .tco-menu-site-nav--open & {
-    transform: rotate(225deg);
-
-    .tco-hamburger-line-1 {
-      transform: translateY(8px);
+    @include wider-than($breakpoint-laptop) {
+      flex-flow: row nowrap;
+      align-items: flex-end;
+      justify-content: space-between;
     }
+  }
 
-    .tco-hamburger-line-3 {
-      transform: translateY(-8px);
+  &-logo {
+    @include type-not-link;
+    display: inline-block;
+
+    svg {
+      display: block;
+      width: 97px;
+      height: 32px;
+
+      @include wider-than($breakpoint-laptop) {
+        width: 151px;
+        height: 50px;
+      }
     }
+  }
 
-    .tco-hamburger-line-1,
-    .tco-hamburger-line-3 {
-      opacity: 0;
-    }
+  &-toggle {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    display: block;
+    padding: $spacing-stack-8 $spacing-inline-4;
+    border-width: 0;
+    background: transparent;
+    cursor: pointer;
+    transform: translateY(-50%);
 
-    .tco-hamburger-line-4 {
-      opacity: 1;
+    &-icon {
+      display: block;
+      width: 22px;
+      height: 14px;
+      fill: $color-classic-blue;
     }
   }
 }
 
 .tco-menu-site-nav {
-  @include list-plain;
-
-  @include wider-than($breakpoint-xl) {
-    position: relative;
-    display: flex;
-    flex: 0 0 auto;
-    background: none;
-  }
   display: none;
 
-  .tco-menu-site-nav--open + & {
-    @include spacing-squish-32-64;
-
-    @include wider-than($breakpoint-phone-landscape) {
-      top: 84px;
-    }
-
-    @include wider-than($breakpoint-xl) {
-      position: static;
-      display: flex;
-      padding: 0;
-      background: none;
-    }
-    position: fixed;
-    top: 66px;
-    left: 0;
-    display: block;
-    width: 100%;
-    height: 100%;
-    background: $color-tint-blue-tertiary;
+  @include wider-than($breakpoint-laptop) {
+    display: flex;
+    margin-bottom: $spacing-stack-2;
+    padding-right: 30px;
   }
+
+  // .tco-menu-site-nav--open + & {
+  //   @include spacing-squish-32-64;
+  //
+  //   @include wider-than($breakpoint-phone-landscape) {
+  //     top: 84px;
+  //   }
+  //
+  //   @include wider-than($breakpoint-xl) {
+  //     position: static;
+  //     display: flex;
+  //     padding: 0;
+  //     background: none;
+  //   }
+  //   position: fixed;
+  //   top: 66px;
+  //   left: 0;
+  //   display: block;
+  //   width: 100%;
+  //   height: 100%;
+  //   background: $color-tint-blue-tertiary;
+  // }
 }
 
 .tco-menu-site-nav-item {
-  position: relative;
-  flex: 0 0 auto;
-}
-
-.tco-menu-site-nav-link,
-.tco-menu-site-nav-submenu-link {
-  @include type-display-small($color-foreground-primary);
-  @include spacing-inset-24;
-  @include type-not-link;
-
-  @include wider-than($breakpoint-xl) {
-    margin: 40px $spacing-inline-12 $spacing-stack-32;
-    padding: 0 $spacing-inline-4;
-    border-bottom: 0;
-    font-size: $font-size-18;
-  }
-  position: relative;
-  display: block;
-  border-bottom: 1px solid $color-foreground-quanternary;
-  font-weight: $font-weight-500;
-  line-height: 1.4;
-  letter-spacing: 2.2px;
-  text-align: center;
-  text-decoration: none;
-  text-transform: uppercase;
-
-  &:hover,
-  &:focus {
-    color: $color-foreground-secondary;
+  @include wider-than($breakpoint-laptop) {
+    margin-right: $spacing-inline-50;
   }
 }
 
 .tco-menu-site-nav-link {
+  @include type-link;
+  @include type-eyebrow(
+    $font-color: $color-classic-gray-dark,
+    $font-size: $font-size-18
+  );
+  display: block;
+  padding: $spacing-stack-4 $spacing-inline-2 $spacing-stack-12;
+  border-bottom-width: 2px;
+  line-height: 1;
+
+  &:hover,
+  &:focus,
   .current-menu-item & {
-    background: linear-gradient(180deg, transparent 20%, rgba($color-tint-blue-primary, 0.15) 0);
-    background-position: bottom;
-    background-size: 100% 44%;
-    background-repeat: no-repeat;
-    color: $color-tint-blue-primary;
+    border-bottom-color: $color-classic-blue;
+    color: $color-classic-blue;
   }
 }
 
