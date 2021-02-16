@@ -4,9 +4,14 @@ $menu-max-width: 372px;
 
 .tco-site-footer {
   display: grid;
-  grid-template-rows: 3 auto;
-  grid-template-columns: 1;
+  grid-template-rows: auto;
+  grid-template-columns: 100%;
   grid-row-gap: $spacing-stack-40;
+
+  @include wider-than($breakpoint-tablet-portrait) {
+    grid-template-columns: repeat(3, calc(33.33% - (80px / 3)));
+    grid-gap: $spacing-stack-40;
+  }
 
   &-menu {
     display: grid;
@@ -16,10 +21,23 @@ $menu-max-width: 372px;
     max-width: $menu-max-width;
   }
 
-  &-content {
-    &:nth-of-type(3) {
-      padding-bottom: $spacing-stack-40;
-      border-bottom: 1px solid lighten($color-classic-navy, 6);
+  &-content:first-of-type {
+    padding-top: $spacing-stack-32;
+
+    @include wider-than($breakpoint-tablet-portrait) {
+      padding-top: 0;
+    }
+  }
+
+  &-content--full {
+    padding-top: $spacing-stack-32;
+    border-top: 1px solid lighten($color-classic-navy, 6);
+
+    @include wider-than($breakpoint-tablet-portrait) {
+      display: grid;
+      grid-template-rows: auto;
+      grid-template-columns: 50% 50%;
+      grid-column: 1 / span 3;
     }
   }
 
@@ -29,17 +47,40 @@ $menu-max-width: 372px;
     align-items: center;
     margin-bottom: $spacing-stack-16;
 
+    @include wider-than($breakpoint-tablet-portrait) {
+      flex-flow: row nowrap;
+      margin-bottom: 0;
+    }
+
     .tco-site-footer-logo {
       order: 1;
+
+      @include wider-than($breakpoint-tablet-portrait) {
+        order: 0;
+        margin-right: $spacing-inline-50;
+      }
     }
 
     .tco-social-icons {
       order: 0;
+
+      @include wider-than($breakpoint-tablet-portrait) {
+        order: 1;
+
+        &-list {
+          margin-bottom: 0;
+        }
+      }
     }
   }
 
   &-content-group--fine-print {
     text-align: center;
+
+    @include wider-than($breakpoint-tablet-portrait) {
+      align-self: center;
+      text-align: right;
+    }
 
     p {
       @include type-body-xsmall;

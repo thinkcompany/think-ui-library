@@ -2,7 +2,7 @@ import { socialLinksSmall } from '../SocialIcons/social-icons.stories';
 
 const footer = () => {
   return `
-  <div class="tco-container-wrapper tco-container-wrapper--navy">
+  <div class="tco-container-wrapper tco-container-wrapper--curve tco-container-wrapper--footer tco-container-wrapper--navy" style="margin-top: 10em;">
     <div class="tco-container">
       <div class="tco-site-footer">
         <div class="tco-site-footer-content">

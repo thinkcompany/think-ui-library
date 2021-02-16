@@ -18,6 +18,18 @@
     padding: 0;
   }
 
+  &--footer {
+    @include pseudo-curve;
+
+    > .tco-container {
+      @include pseudo-think-bubble;
+
+      @include wider-than($breakpoint-desktop) {
+        padding: $spacing-stack-50 0 $spacing-stack-32;
+      }
+    }
+  }
+
   // Size variants
   .tco-container {
     width: 100%;
