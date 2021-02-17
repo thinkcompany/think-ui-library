@@ -137,10 +137,10 @@ const caseStudyCard = input => {
     input.id
   }">
       <a href="#" class="tco-card-link">
-        <div class="tco-card-image-container tco-card-image-container--case-study tco-card-image-container--${
+        <div class="tco-case-study-image-container tco-case-study-image-container--case-study tco-case-study-image-container--${
           input.device
         }">
-          <img class="tco-card-image tco-card-image--main" alt="A brilliant description of the image" src="img/case-studies/${
+          <img class="tco-case-study-image tco-case-study-image--main" alt="A brilliant description of the image" src="img/case-studies/${
             input.device
           }.png" />
         </div>
@@ -165,10 +165,10 @@ const caseStudyCard = input => {
             </svg>
           </span>
         </div>
-        <div class="tco-card-image-container tco-card-image-container--case-study-bg" style="--bg-alpha:${
+        <div class="tco-case-study-image-container tco-case-study-image-container--case-study-bg" style="--bg-alpha:${
           input.opacity
         };">
-          <img class="tco-card-image tco-card-image--bg" alt="" src="${
+          <img class="tco-case-study-image tco-case-study-image--bg" alt="" src="${
             input.imageBg
           }" />
         </div>
