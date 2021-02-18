@@ -161,6 +161,13 @@
   }
 }
 
+@mixin type-display-extra-small-slab($font-color: inherit) {
+  @include type-base-style($font-color, 300);
+  font-size: $font-size-11;
+  font-family: $font-stack-slab;
+  line-height: 1.45;
+}
+
 @mixin type-eyebrow(
   $font-color: inherit,
   $italic: false,

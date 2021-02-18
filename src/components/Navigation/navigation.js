@@ -7,17 +7,17 @@ export default class Nav {
   }
 
   setupEventHandler() {
-    const openNavText = 'Open Mobile Navigation';
-    const closeNavText = 'Close Mobile Navigation';
+    // const openNavText = 'Open Mobile Navigation';
+    // const closeNavText = 'Close Mobile Navigation';
 
     this.$mobileMenuBtn.addEventListener(
       'click',
       () => {
-        //const currentText = this.$mobileMenuTitle.textContent;
+        const currentText = this.$mobileMenuTitle.textContent;
         this.$mobileMenuBtn.classList.toggle('tco-site-header-toggle--open');
-        //  this.$siteNav.classList.toggle('tco-site-nav--open');
-        //this.$logo.classList.toggle('tco-site-header-logo--open');
-        console.log('heyo');
+        this.$siteNav.classList.toggle('tco-site-nav--open');
+        this.$logo.classList.toggle('tco-site-header-logo--open');
+        console.log('noooo');
 
         // currentText === openNavText
         //   ? (this.$mobileMenuTitle.textContent = closeNavText)
@@ -26,7 +26,7 @@ export default class Nav {
       false
     );
 
-    console.log('test');
+    console.log('why');
   }
 
   init() {
@@ -36,7 +36,6 @@ export default class Nav {
       this.$mobileMenuTitle = document.querySelector(
         '[data-mobile-menu-title]'
       );
-
       this.$siteNav = document.querySelector('.tco-site-nav');
 
       if (this.$mobileMenuBtn) {

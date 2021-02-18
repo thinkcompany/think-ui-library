@@ -9,12 +9,31 @@ $opacity--disabled: 0.4;
     Form Row
 \*---------------------------------------------- */
 
-.tco-form-row {
+.tco-form-row,
+%tco-form-row {
   position: relative;
-  margin-bottom: 1rem;
+  margin-bottom: $spacing-stack-24;
 
   &:last-of-type {
     margin-bottom: 0;
+  }
+
+  &--split {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+
+    &-group {
+      width: 100%;
+
+      @include wider-than($breakpoint-phone-landscape) {
+        width: calc(50% - #{$spacing-inline-8});
+      }
+    }
+  }
+
+  &.tco-form-row--button {
+    margin: $spacing-stack-40 0;
   }
 }
 
@@ -31,6 +50,14 @@ $opacity--disabled: 0.4;
   &.disabled {
     opacity: $opacity--disabled;
   }
+}
+
+.gfield {
+  @extend %tco-form-row;
+}
+
+.gform_footer {
+  @extend .tco-form-row--button;
 }
 
 /* ----------------------------------------------*\
@@ -153,6 +180,10 @@ $opacity--disabled: 0.4;
   .tco-form-label-optional {
     font-style: italic;
   }
+}
+
+.gfield_label {
+  @extend %tco-form-label;
 }
 
 /* ----------------------------------------------*\
