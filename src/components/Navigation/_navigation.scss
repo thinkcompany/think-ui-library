@@ -4,7 +4,7 @@ $container-max: 1168px;
   position: fixed;
   top: 0;
   left: 0;
-  z-index: $z-index-overlay;
+  z-index: 1;
   width: 100%;
   padding: $spacing-stack-12 $spacing-inline-24;
   background-color: transparent;
@@ -29,16 +29,33 @@ $container-max: 1168px;
 
   &-logo {
     @include type-not-link;
+    z-index: 3;
     display: inline-block;
 
     svg {
       display: block;
       width: 97px;
       height: 32px;
+      transition: 0.2s fill linear;
+
+      .letter {
+        fill: $color-classic-gray-dark;
+      }
+
+      .bubble {
+        fill: $color-classic-blue;
+      }
 
       @include wider-than($breakpoint-laptop) {
         width: 151px;
         height: 50px;
+      }
+    }
+
+    &.tco-site-header-logo--open {
+      .letter,
+      .bubble {
+        fill: $color-foreground-on-tint;
       }
     }
   }
@@ -47,6 +64,7 @@ $container-max: 1168px;
     position: absolute;
     top: 50%;
     right: 0;
+    z-index: 3;
     display: block;
     padding: $spacing-stack-8 $spacing-inline-4;
     border-width: 0;
@@ -59,118 +77,170 @@ $container-max: 1168px;
       width: 22px;
       height: 14px;
       fill: $color-classic-blue;
-    }
-  }
-}
 
-.tco-menu-site-nav {
-  display: none;
-
-  @include wider-than($breakpoint-laptop) {
-    display: flex;
-    margin-bottom: $spacing-stack-2;
-    padding-right: 30px;
-  }
-
-  // .tco-menu-site-nav--open + & {
-  //   @include spacing-squish-32-64;
-  //
-  //   @include wider-than($breakpoint-phone-landscape) {
-  //     top: 84px;
-  //   }
-  //
-  //   @include wider-than($breakpoint-xl) {
-  //     position: static;
-  //     display: flex;
-  //     padding: 0;
-  //     background: none;
-  //   }
-  //   position: fixed;
-  //   top: 66px;
-  //   left: 0;
-  //   display: block;
-  //   width: 100%;
-  //   height: 100%;
-  //   background: $color-tint-blue-tertiary;
-  // }
-}
-
-.tco-menu-site-nav-item {
-  @include wider-than($breakpoint-laptop) {
-    margin-right: $spacing-inline-50;
-  }
-}
-
-.tco-menu-site-nav-link {
-  @include type-link;
-  @include type-eyebrow(
-    $font-color: $color-classic-gray-dark,
-    $font-size: $font-size-18
-  );
-  display: block;
-  padding: $spacing-stack-4 $spacing-inline-2 $spacing-stack-12;
-  border-bottom-width: 2px;
-  line-height: 1;
-
-  &:hover,
-  &:focus,
-  .current-menu-item & {
-    border-bottom-color: $color-classic-blue;
-    color: $color-classic-blue;
-  }
-}
-
-.menu-item-has-children {
-  // Wordpress automated class
-  .tco-menu-site-nav-link {
-    &::after {
-      content: '';
-      display: inline-block;
-      vertical-align: middle;
-      width: 14px;
-      height: 24px;
-      margin-left: $spacing-inline-8;
-      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 24 24' id='icon-chevron-down' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M.293 5.293a1 1 0 011.32-.083l.094.083L12 15.585 22.293 5.293a1 1 0 011.32-.083l.094.083a1 1 0 01.083 1.32l-.083.094-11 11a1 1 0 01-1.32.083l-.094-.083-11-11a1 1 0 010-1.414z' /%3E%3C/svg%3E");
-      background-position: center;
-      background-size: 12px;
-      background-repeat: no-repeat;
-    }
-  }
-}
-
-.tco-menu-site-nav-submenu-link {
-  margin: 0;
-  padding: $spacing-stack-16 $spacing-stack-8;
-  border-bottom: 1px solid $color-foreground-quanternary;
-
-  .tco-menu-site-nav-submenu-item:last-of-type & {
-    border-bottom: 0;
-  }
-}
-
-.tco-menu-site-nav-submenu {
-  @include list-plain;
-  display: none;
-}
-
-.menu-item-has-children > a {
-  @include wider-than($breakpoint-xl) {
-    &:hover,
-    &:focus {
-      + .tco-menu-site-nav-submenu {
-        position: absolute;
-        top: 100%; // height of arrow on submenu
-        left: 50%;
-        // Wordpress automated class
-        display: block;
-        min-width: 250px;
-        margin-left: -125px;
-        padding: 0 $spacing-inline-12;
-        border-bottom-right-radius: 4px;
-        border-bottom-left-radius: 4px;
-        background-color: $color-foreground-on-tint;
-        box-shadow: inset 0 5px 10px 0 rgba(75, 75, 75, 0.05);
+      &--close {
+        display: none;
       }
     }
+
+    &:focus {
+      outline: 1px solid $color-classic-navy;
+    }
+
+    &--open {
+      .tco-site-header-toggle-icon {
+        display: none;
+        fill: $color-foreground-on-tint;
+
+        &--close {
+          display: block;
+        }
+      }
+
+      &:focus {
+        outline: 1px solid $color-foreground-on-tint;
+      }
+    }
+  }
+}
+
+.tco-site-nav {
+  &-wrapper {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    display: block;
+    overflow-y: auto;
+    width: 100vw;
+    height: 100%;
+    min-height: 100vh;
+    padding: $spacing-stack-120 $spacing-inline-24 $spacing-stack-50;
+    background-color: $color-classic-navy;
+    opacity: 0;
+    transform: scale(0);
+
+    @include wider-than($breakpoint-tablet-portrait) {
+      padding-top: $spacing-stack-150;
+    }
+  }
+
+  &-container {
+    width: 100%;
+    max-width: $container-max;
+    margin: 0 auto;
+  }
+
+  &--open {
+    .tco-site-nav-wrapper {
+      opacity: 1;
+      transform: scale(1);
+    }
+
+    .tco-site-nav-container {
+      color: $color-foreground-on-tint;
+
+      @include wider-than($breakpoint-tablet-portrait) {
+        display: flex;
+        flex-flow: row nowrap;
+        align-items: flex-start;
+      }
+    }
+
+    .tco-site-nav-menu--primary {
+      grid-area: primary;
+      margin-bottom: $spacing-stack-20;
+
+      @include wider-than($breakpoint-tablet-portrait) {
+        flex-wrap: wrap;
+        width: 66.6%;
+
+        .tco-site-nav-menu-item {
+          width: 50%;
+        }
+      }
+
+      .tco-site-nav-link {
+        @include type-display-medium;
+        display: inline-block;
+        margin-bottom: $spacing-stack-20;
+        padding-bottom: 0;
+        text-transform: initial;
+
+        &:hover,
+        &:focus {
+          color: $color-foreground-on-tint;
+        }
+      }
+    }
+
+    .tco-site-nav-link {
+      color: $color-foreground-on-tint;
+    }
+  }
+
+  &-menu-group {
+    @include wider-than($breakpoint-tablet-portrait) {
+      padding-top: $spacing-stack-16;
+    }
+  }
+
+  &-menu--primary {
+    @include wider-than($breakpoint-laptop) {
+      display: flex;
+      margin-right: $spacing-inline-50;
+    }
+
+    .tco-site-nav-link {
+      @include type-link;
+      @include type-eyebrow(
+        $font-color: $color-classic-gray-dark,
+        $font-size: $font-size-18
+      );
+      display: block;
+      padding: $spacing-stack-4 $spacing-inline-2 $spacing-stack-12;
+      border-bottom-width: 2px;
+      line-height: 1;
+
+      &:hover,
+      &:focus,
+      .current-menu-item & {
+        border-bottom-color: $color-classic-blue;
+        color: $color-classic-blue;
+      }
+
+      @include wider-than($breakpoint-laptop) {
+        margin-right: $spacing-inline-50;
+      }
+    }
+  }
+
+  &-menu--secondary {
+    &:first-of-type {
+      margin-bottom: $spacing-stack-40;
+
+      @include wider-than($breakpoint-tablet-portrait) {
+        margin-bottom: $spacing-stack-76;
+      }
+    }
+
+    .tco-site-nav-menu-item {
+      margin-bottom: $spacing-stack-8;
+
+      @include wider-than($breakpoint-tablet-portrait) {
+        margin-bottom: $spacing-stack-20;
+      }
+    }
+
+    .tco-site-nav-link {
+      @include type-link;
+      @include type-body-medium;
+      text-transform: initial;
+    }
+  }
+
+  .tco-type-eyebrow {
+    display: block;
+    margin-bottom: $spacing-stack-20;
   }
 }
