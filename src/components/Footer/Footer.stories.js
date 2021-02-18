@@ -6,7 +6,7 @@ const footer = () => {
     <div class="tco-container">
       <div class="tco-site-footer">
         <div class="tco-site-footer-content">
-          <span class="tco-site-footer-heading">Our Offices</span>
+          <p class="tco-site-footer-heading">Our Offices</p>
           <ul>
             <li class="tco-site-footer-cta">
               <a href="#" class="tco-link-cta">
@@ -35,7 +35,7 @@ const footer = () => {
           </ul>
         </div>
         <div class="tco-site-footer-content">
-          <span class="tco-site-footer-heading">Explore More</span>
+          <p class="tco-site-footer-heading">Explore More</p>
           <ul class="tco-site-footer-menu tco-menu">
             <li class="tco-menu-item"><a href="#" class="tco-menu-item-link">Work</a></li>
             <li class="tco-menu-item"><a href="#" class="tco-menu-item-link">Blog</a></li>
@@ -49,7 +49,7 @@ const footer = () => {
             <li class="tco-menu-item"><a href="#" class="tco-menu-item-link">Contact</a></li>
         </div>
         <div class="tco-site-footer-content">
-          <span class="tco-site-footer-heading">Upcoming Event</span>
+          <p class="tco-site-footer-heading">Upcoming Event</p>
           <h5 class="tco-site-footer-post tco-site-footer-cta">
             <a href="#">
               Putting Humanity at the Center of Design
