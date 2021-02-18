@@ -1,0 +1,45 @@
+.tco-columns {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+}
+
+.tco-column {
+  width: 100%;
+
+  &:first-of-type {
+    margin-bottom: $spacing-inline-32;
+  }
+
+  @include wider-than($breakpoint-tablet-portrait) {
+    width: calc(50% - #{$spacing-inline-24});
+
+    &:first-of-type {
+      margin-bottom: 0;
+    }
+
+    &--60-40 {
+      &:first-of-type {
+        width: calc(60% - #{$spacing-inline-32});
+      }
+
+      &:last-of-type {
+        width: calc(40% - #{$spacing-inline-16});
+      }
+    }
+  }
+
+  @include wider-than($breakpoint-desktop) {
+    width: calc(50% - #{$spacing-inline-50});
+
+    &--60-40 {
+      &:first-of-type {
+        width: calc(60% - #{$spacing-inline-50});
+      }
+
+      &:last-of-type {
+        width: calc(40% - #{$spacing-inline-50});
+      }
+    }
+  }
+}

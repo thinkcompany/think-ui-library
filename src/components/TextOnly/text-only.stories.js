@@ -9,8 +9,7 @@ const sizes = ['extra-large', 'large', 'medium', 'small'];
 const ledeSizes = ['large', 'default', 'sans-small'];
 const containerSizes = ['default', 'mid', 'narrow', 'none'];
 
-export const Default = () => {
-  const containerColor = select('Background Color', colors, colors.Default);
+export const textOnly = () => {
   const textAlignment = select('Text Alignment', alignments, 'left');
   const eyebrow = text('Eyebrow', 'Text Only');
   const heading = text('Heading', 'Technology Integration');
@@ -25,8 +24,6 @@ export const Default = () => {
   const bubble = boolean('Bubble Background', false);
 
   return `
-  <div class="tco-container-wrapper ${containerColor}">
-    <div class="tco-container tco-container--default">
       <div class="tco-text-only tco-text-only--${textAlignment} ${
     bubble ? ` tco-text-only--bubble` : ''
   }">
@@ -55,6 +52,16 @@ export const Default = () => {
             : ''
         }
       </div>
+    `;
+};
+
+export const WithContainer = () => {
+  const containerColor = select('Background Color', colors, colors.Default);
+
+  return `
+  <div class="tco-container-wrapper ${containerColor}">
+    <div class="tco-container tco-container--default">
+        ${textOnly()}
     </div>
   </div>`;
 };

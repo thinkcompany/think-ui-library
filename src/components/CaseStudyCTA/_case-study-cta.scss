@@ -1,12 +1,18 @@
 $offset: 4%;
 $device-width-phone: 640px;
 $device-width-desktop: 468px;
+$device-width-desktop-angle--mobile: 68%;
 $device-width-tablet: 350px;
+$device-width-tablet--mobile: 48%;
 $device-width-tablet-angle: 500px;
+$device-width-tablet-angle--mobile: 80%;
 $device-width-laptop: 570px;
 $device-width-laptop-angle: 500px;
-$device-width-kiosk: 448px;
+$device-width-laptop-angle--mobile: 75%;
+$device-width-kiosk: 442px;
+$device-width-kiosk--mobile: 60%;
 $device-width-report: 420px;
+$device-width-report--mobile: 55%;
 
 .tco-card--case-study {
   position: relative;
@@ -28,7 +34,7 @@ $device-width-report: 420px;
     }
   }
 
-  .tco-card-image-container {
+  .tco-case-study-image-container {
     @include aspect-ratio-box;
 
     &--case-study {
@@ -54,21 +60,39 @@ $device-width-report: 420px;
     }
 
     &--phone {
-      .tco-card-image {
+      .tco-case-study-image {
         transform: translateY(10%);
       }
     }
 
     &--desktop {
-      .tco-card-image {
+      .tco-case-study-image {
         height: 98%;
       }
     }
 
+    &--desktop-angle {
+      .tco-case-study-image {
+        width: $device-width-desktop-angle--mobile;
+      }
+    }
+
     &--laptop {
-      .tco-card-image {
+      .tco-case-study-image {
         height: 80%;
         transform: translateY(26%);
+      }
+    }
+
+    &--laptop-angle {
+      .tco-case-study-image {
+        width: $device-width-laptop-angle--mobile;
+      }
+    }
+
+    &--kiosk {
+      .tco-case-study-image {
+        width: $device-width-kiosk--mobile;
       }
     }
 
@@ -78,22 +102,43 @@ $device-width-report: 420px;
     &--kiosk,
     &--desktop,
     &--desktop-angle {
-      .tco-card-image {
+      .tco-case-study-image {
         transform: translateY($offset);
       }
     }
 
     &--report {
-      .tco-card-image {
+      .tco-case-study-image {
+        width: $device-width-report--mobile;
         transform: translateY($offset * 2);
+      }
+    }
+
+    &--tablet {
+      .tco-case-study-image {
+        width: $device-width-tablet--mobile;
+      }
+    }
+
+    &--tablet-angle {
+      .tco-case-study-image {
+        width: $device-width-tablet-angle--mobile;
       }
     }
   }
 
-  .tco-card-image {
+  .tco-case-study-image {
+    position: absolute;
     right: 0;
+    left: 0;
     width: auto;
     margin: 0 auto;
+
+    &--bg {
+      object-fit: cover;
+      width: 100%;
+      height: 100%;
+    }
   }
 
   .tco-card-content {
@@ -115,6 +160,7 @@ $device-width-report: 420px;
     &-description {
       margin-bottom: $spacing-stack-24;
       padding: 0;
+      color: $color-foreground-on-tint;
     }
   }
 
@@ -128,7 +174,7 @@ $device-width-report: 420px;
       }
     }
 
-    .tco-card-image-container {
+    .tco-case-study-image-container {
       @include wider-than($breakpoint-tablet-portrait) {
         height: 100%;
         padding-bottom: 0;
@@ -136,10 +182,12 @@ $device-width-report: 420px;
         &--case-study {
           position: absolute;
           display: flex;
+          flex-flow: column nowrap;
+          justify-content: flex-end;
           width: 50%;
         }
 
-        &.tco-card-image-container--case-study .tco-card-image {
+        &.tco-case-study-image-container--case-study .tco-case-study-image {
           height: auto;
         }
       }
@@ -154,78 +202,79 @@ $device-width-report: 420px;
     }
 
     @include wider-than($breakpoint-tablet-portrait) {
-      .tco-card-image-container--phone {
+      .tco-case-study-image-container--phone {
         width: $device-width-phone;
 
-        .tco-card-image {
+        .tco-case-study-image {
           transform: translateY(16%);
         }
       }
 
-      .tco-card-image-container--desktop,
-      .tco-card-image-container--tablet {
-        .tco-card-image {
+      .tco-case-study-image-container--desktop,
+      .tco-case-study-image-container--tablet {
+        .tco-case-study-image {
           width: 90%;
           max-width: $device-width-desktop;
           transform: translateY(8%);
         }
       }
 
-      .tco-card-image-container--tablet {
-        .tco-card-image {
+      .tco-case-study-image-container--tablet {
+        .tco-case-study-image {
           max-width: $device-width-tablet;
-          transform: translateY(3%);
+          transform: translateY(12%);
         }
       }
 
-      .tco-card-image-container--tablet-angle {
-        .tco-card-image {
+      .tco-case-study-image-container--tablet-angle {
+        .tco-case-study-image {
+          width: 100%;
           max-width: $device-width-tablet-angle;
           transform: translateY(10%);
         }
       }
 
-      .tco-card-image-container--laptop {
-        .tco-card-image {
+      .tco-case-study-image-container--laptop {
+        .tco-case-study-image {
           max-width: $device-width-laptop;
           transform: translate($spacing-inline-16, 0);
         }
       }
 
-      .tco-card-image-container--laptop-angle {
-        .tco-card-image {
+      .tco-case-study-image-container--laptop-angle {
+        .tco-case-study-image {
+          width: 100%;
           max-width: $device-width-laptop-angle;
           transform: translateY(8%);
         }
       }
 
-      .tco-card-image-container--kiosk {
-        .tco-card-image {
+      .tco-case-study-image-container--kiosk {
+        .tco-case-study-image {
+          width: 100%;
           max-width: $device-width-kiosk;
-          transform: translateY(-4%);
+          transform: translateY(5%);
         }
       }
 
-      .tco-card-image-container--desktop-angle {
-        .tco-card-image {
+      .tco-case-study-image-container--desktop-angle {
+        .tco-case-study-image {
+          width: 100%;
           max-width: $device-width-desktop;
           transform: translateY(-2%);
         }
       }
 
-      .tco-card-image-container--report {
-        .tco-card-image {
+      .tco-case-study-image-container--report {
+        .tco-case-study-image {
+          width: 100%;
           max-width: $device-width-report;
-          transform: translateY(0);
+          transform: translateY(14%);
         }
       }
     }
 
-    .tco-card-image {
-      &--bg {
-        width: 100%;
-      }
-
+    .tco-case-study-image {
       &--main {
         @include wider-than($breakpoint-tablet-portrait) {
           position: initial;
@@ -268,11 +317,11 @@ $device-width-report: 420px;
           padding-left: $spacing-inline-64;
         }
 
-        .tco-card-image-container {
+        .tco-case-study-image-container {
           right: 0;
         }
 
-        .tco-card-image-container--phone {
+        .tco-case-study-image-container--phone {
           @include clamp(
             right,
             $breakpoint-tablet-portrait,
@@ -290,11 +339,11 @@ $device-width-report: 420px;
           justify-content: flex-end;
         }
 
-        .tco-card-image-container--case-study {
+        .tco-case-study-image-container--case-study {
           left: 0;
         }
 
-        .tco-card-image-container--laptop .tco-card-image {
+        .tco-case-study-image-container--laptop .tco-case-study-image {
           transform: translate(-$spacing-inline-16, 0);
         }
       }

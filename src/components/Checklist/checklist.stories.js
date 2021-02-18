@@ -1,14 +1,8 @@
-import { select, text, object } from '@storybook/addon-knobs';
-
-const colors = {
-  Default: '',
-  Glass: 'tco-container-wrapper--glass'
-};
+import { text, object } from '@storybook/addon-knobs';
 
 const groupId = 'checklist';
 
-export const Default = () => {
-  const containerColor = select('Background Color', colors, colors.Default);
+export const checklist = () => {
   const eyebrow = text('Heading', 'How we can help');
   const items = [
     'Launch a new product',
@@ -19,19 +13,27 @@ export const Default = () => {
   const itemList = object('List Items', items, groupId);
 
   return `
-  <div class="tco-container-wrapper ${containerColor}">
-    <div class="tco-container tco-container--default">
-      <div class="tco-checklist">
-        ${
-          eyebrow
-            ? `
-          <span class="tco-checklist-eyebrow">${eyebrow}</span>
-          `
-            : ''
-        }
-        <ul>
-          ${itemList.map(item => `<li>${item}</li>`).join('')}
-        </ul>
+    <div class="tco-checklist">
+      ${
+        eyebrow
+          ? `
+        <span class="tco-checklist-eyebrow">${eyebrow}</span>
+        `
+          : ''
+      }
+      <ul>
+        ${itemList.map(item => `<li>${item}</li>`).join('')}
+      </ul>
+    </div>
+  `;
+};
+
+export const WithContainer = () => {
+  return `
+  <div class="tco-container-wrapper">
+    <div class="tco-container">
+      <div class="tco-columns tco-columns">
+        ${checklist()}
       </div>
     </div>
   </div>`;
