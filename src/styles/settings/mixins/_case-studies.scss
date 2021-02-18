@@ -20,7 +20,7 @@ $clients: (
     }
   }
 
-  .tco-card-image-container--case-study-bg::after {
+  .tco-case-study-image-container--case-study-bg::after {
     background-color: rgba(map-get($clients, $client), $opacity);
   }
 }
