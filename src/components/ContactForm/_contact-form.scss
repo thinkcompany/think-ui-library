@@ -1,0 +1,72 @@
+// ========================================================
+// = CONTACT FORM
+// ========================================================
+$max-width-fine-print: 380px;
+
+.tco-contact-form-container {
+  box-shadow: $box-shadow-card;
+}
+
+.tco-contact-form {
+  flex-grow: 1;
+  overflow-x: hidden;
+  overflow-y: auto;
+  padding: $spacing-stack-16 $spacing-inline-16 $spacing-stack-24;
+
+  @include wider-than($breakpoint-tablet-portrait) {
+    padding: $spacing-stack-32 $spacing-inline-32 $spacing-stack-50;
+  }
+
+  .tco-form-textarea {
+    resize: none;
+  }
+
+  .tco-form-row {
+    @include wider-than($breakpoint-tablet-portrait) {
+      margin-bottom: $spacing-stack-40;
+    }
+  }
+
+  .tco-contact-form-footer-text {
+    @include type-display-extra-small-slab(
+      $font-color: $color-classic-gray-medium
+    );
+    margin-bottom: 0;
+  }
+
+  input,
+  textarea {
+    line-height: 1.1;
+  }
+
+  &--small {
+    @include wider-than($breakpoint-tablet-portrait) {
+      padding-bottom: $spacing-stack-32;
+    }
+
+    .tco-form-label {
+      @include type-display-extra-small;
+    }
+
+    .tco-form-row {
+      @include wider-than($breakpoint-tablet-portrait) {
+        margin-bottom: $spacing-stack-32;
+      }
+
+      &.tco-form-row--button {
+        margin: $spacing-stack-32 0;
+      }
+    }
+
+    .tco-contact-form-footer {
+      max-width: $max-width-fine-print;
+    }
+  }
+
+  &--full {
+    input,
+    textarea {
+      padding-top: $spacing-stack-20;
+    }
+  }
+}
