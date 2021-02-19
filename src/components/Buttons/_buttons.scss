@@ -20,10 +20,14 @@ $color-hover: #08519a;
     text-decoration: none;
   }
 
-  &:hover,
-  &:focus {
+  &:hover {
     border-color: $color-hover;
     background: $color-hover;
+  }
+
+  &:focus {
+    border-color: $color-classic-navy;
+    outline: none;
   }
 
   &[disabled],
@@ -38,12 +42,13 @@ $color-hover: #08519a;
 .tco-btn--primary,
 %tco-btn--primary {
   padding: $spacing-stack-12 $spacing-stack-18;
-  border: 1px solid $color-tint-blue-primary;
-  background: $color-tint-blue-primary;
+  border: 1px solid $color-classic-blue;
+  background: $color-classic-blue;
   color: $color-foreground-on-tint;
 
-  &:active {
-    border-color: $color-background-tertiary;
+  &:active,
+  &:focus {
+    border-color: $color-classic-navy;
   }
 
   &[disabled],
@@ -55,12 +60,11 @@ $color-hover: #08519a;
 .tco-btn--secondary,
 %tco-btn--secondary {
   padding: $spacing-stack-12 $spacing-stack-18;
-  border: 1px solid $color-tint-blue-primary;
+  border: 1px solid $color-classic-blue;
   background: transparent;
-  color: $color-tint-blue-primary;
+  color: $color-classic-blue;
 
-  &:hover,
-  &:focus {
+  &:hover {
     color: $color-foreground-on-tint;
   }
 

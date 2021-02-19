@@ -349,10 +349,10 @@ $arrow-translate: 10px;
   $padding-right: $arrow-offset + $arrow-offset,
   $fill: $color-tint-blue-primary
 ) {
+  @include type-link($showInitial: false);
   padding-right: $padding-right;
   color: $font-color;
   text-decoration: none;
-  border-bottom: 0 solid transparent;
 
   .tco-text-link-icon,
   svg {
@@ -361,7 +361,7 @@ $arrow-translate: 10px;
     height: $arrow-height;
     fill: $fill;
     transition: transform 0.2s linear;
-    transform: translate($arrow-offset, 0);
+    transform: translate($arrow-offset, 1px);
     transform-origin: left center;
   }
 
@@ -369,7 +369,7 @@ $arrow-translate: 10px;
   &:focus {
     .tco-text-link--icon,
     svg {
-      transform: translate($arrow-translate, 0);
+      transform: translate($arrow-translate, 1px);
     }
   }
 
@@ -378,7 +378,7 @@ $arrow-translate: 10px;
     .tco-text-link-icon,
     svg {
       fill: $color-disabled;
-      transform: translate($arrow-offset, 0);
+      transform: translate($arrow-offset, 1px);
     }
   }
 
