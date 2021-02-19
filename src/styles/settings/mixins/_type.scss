@@ -306,7 +306,7 @@
   $font-family: inherit,
   $line-height: inherit,
   $underline: $font-color,
-  $showInitial: false
+  $show-initial: false
 ) {
   color: $font-color;
   font-weight: $font-weight;
@@ -321,7 +321,7 @@
   border-bottom-color: transparent;
   transition: border-color 0.2s linear;
 
-  @if $showInitial {
+  @if $show-initial {
     border-bottom-color: $underline;
   }
 
@@ -334,7 +334,7 @@
   &:focus {
     border-bottom-color: $underline;
 
-    @if $showInitial {
+    @if $show-initial {
       border-bottom-color: transparent;
     }
   }
