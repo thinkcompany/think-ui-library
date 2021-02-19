@@ -3,6 +3,7 @@
 
   &-text {
     @include type-body-large;
+    line-height: 46 / 28;
 
     &:last-of-type {
       margin-bottom: 0;
