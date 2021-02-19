@@ -15,7 +15,7 @@ export const imageOnly = () => {
   const offset = select('Offset Image', offsets, offsets.Default);
   const imageSrc = text(
     'Image',
-    'https://thinkstaging.wpengine.com/wp-content/uploads/2021/01/careers-header.jpg'
+    'https://www.thinkcompany.com/wp-content/uploads/2021/01/careers-header.jpg'
   );
 
   return `

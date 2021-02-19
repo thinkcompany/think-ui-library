@@ -1,58 +1,79 @@
+import { socialLinksSmall } from '../SocialIcons/social-icons.stories';
+
 const footer = () => {
   return `
-    <div class="tco-site-footer">
-        
-      <div class="tco-site-footer-content">
-        <p>Give us a call at <a class="tco-btn-link tco-btn-link--on-tint" href="tel:+18002969190">800.296.9190</a> or <a class="tco-btn-link tco-btn-link--on-tint" href="#">send us a message.</a></p>
-        <p>Visit us in <a class="tco-btn-link tco-btn-link--on-tint" href="#">Philadelphia, Conshohocken, or Denver.</a></p>
-        <p>Sign up for our <a class="tco-btn-link tco-btn-link--on-tint" href="#">quarterly email newsletter.</a></p>
-        <p>Read our recent <a class="tco-btn-link tco-btn-link--on-tint" href="#">news and announcements.</a></p>
-      </div>
-      
-      <div class="tco-site-footer-social">  
-        <a class="tco-site-footer-social-icon" href="#">
-          <span class="tco-accessibly-hidden">facebook</span>
-          <svg class="tco-icon" width="16" height="16" viewBox="0 0 16 16" >
-              <use xlink:href="/img/icons.svg#icon-facebook"></use>
-          </svg>
-        </a>
-          
-        <a class="tco-site-footer-social-icon" href="#">
-          <span class="tco-accessibly-hidden">twitter</span>
-          <svg class="tco-icon" width="16" height="16" viewBox="0 0 16 16" >
-              <use xlink:href="/img/icons.svg#icon-twitter"></use>
-          </svg>
-        </a>
-        
-        <a class="tco-site-footer-social-icon" href="#">
-          <span class="tco-accessibly-hidden">linkedin</span>
-          <svg class="tco-icon" width="16" height="16" viewBox="0 0 16 16" >
-            <use xlink:href="/img/icons.svg#icon-linkedin"></use>
-          </svg>
-        </a>
-        
-        <a class="tco-site-footer-social-icon" href="#">
-          <span class="tco-accessibly-hidden">instagram</span>
-          <svg class="tco-icon" width="16" height="16" viewBox="0 0 16 16" >
-            <use xlink:href="/img/icons.svg#icon-instagram"></use>
-          </svg>
-        </a>
-      
-        <a class="tco-site-footer-social-icon" href="#">
-          <span class="tco-accessibly-hidden">youtube</span>
-          <svg class="tco-icon" width="16" height="16" viewBox="0 0 16 16" >
-              <use xlink:href="/img/icons.svg#icon-youtube"></use>
-          </svg>
-        </a>
-      </div>
-      
-      <div class="tco-site-footer-divider"><hr /></div>
-      
-      <div class="tco-site-footer-copyright">
-        <p>&copy; 2020 Think Company, Inc. All rights reserved.</p>
-        <p><a class="tco-btn-link tco-btn-link--on-tint" href="#"> Privacy Policy.</a></p>
+  <div class="tco-container-wrapper tco-container-wrapper--curve tco-container-wrapper--footer tco-container-wrapper--navy" style="margin-top: 10em;">
+    <div class="tco-container">
+      <div class="tco-site-footer">
+        <div class="tco-site-footer-content">
+          <p class="tco-site-footer-heading">Our Offices</p>
+          <ul>
+            <li class="tco-site-footer-cta">
+              <a href="#" class="tco-link-cta">
+              Philadelphia
+              <svg class="tco-text-link-icon" width="20" height="20" viewBox="0 0 20 20" role="presentation">
+                <use xlink:href="/img/icons.svg#icon-arrow-right"></use>
+              </svg>
+              </a>
+            </li>
+            <li class="tco-site-footer-cta">
+              <a href="#" class="tco-link-cta">
+              Conshohocken
+              <svg class="tco-text-link-icon" width="20" height="20" viewBox="0 0 20 20" role="presentation">
+                <use xlink:href="/img/icons.svg#icon-arrow-right"></use>
+              </svg>
+              </a>
+            </li>
+            <li class="tco-site-footer-cta">
+              <a href="#" class="tco-link-cta">
+              Denver
+              <svg class="tco-text-link-icon" width="20" height="20" viewBox="0 0 20 20" role="presentation">
+                <use xlink:href="/img/icons.svg#icon-arrow-right"></use>
+              </svg>
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div class="tco-site-footer-content">
+          <p class="tco-site-footer-heading">Explore More</p>
+          <ul class="tco-site-footer-menu tco-menu">
+            <li class="tco-menu-item"><a href="#" class="tco-menu-item-link">Work</a></li>
+            <li class="tco-menu-item"><a href="#" class="tco-menu-item-link">Blog</a></li>
+            <li class="tco-menu-item"><a href="#" class="tco-menu-item-link">Services</a></li>
+            <li class="tco-menu-item"><a href="#" class="tco-menu-item-link">Events</a></li>
+            <li class="tco-menu-item"><a href="#" class="tco-menu-item-link">Process</a></li>
+            <li class="tco-menu-item"><a href="#" class="tco-menu-item-link">Careers</a></li>
+            <li class="tco-menu-item"><a href="#" class="tco-menu-item-link">About</a></li>
+            <li class="tco-menu-item"><a href="#" class="tco-menu-item-link">Latest News</a></li>
+            <li class="tco-menu-item"><a href="#" class="tco-menu-item-link">Team</a></li>
+            <li class="tco-menu-item"><a href="#" class="tco-menu-item-link">Contact</a></li>
+        </div>
+        <div class="tco-site-footer-content">
+          <p class="tco-site-footer-heading">Upcoming Event</p>
+          <h5 class="tco-site-footer-post tco-site-footer-cta">
+            <a href="#">
+              Putting Humanity at the Center of Design
+              <svg class="tco-text-link-icon" width="20" height="20" viewBox="0 0 20 20" role="presentation">
+                <use xlink:href="/img/icons.svg#icon-arrow-right"></use>
+              </svg>
+            </a>
+          </h5>
+          <p class="tco-site-footer-post-meta">February 14, 2021</p>
+        </div>
+        <div class="tco-site-footer-content tco-site-footer-content--full">
+          <div class="tco-site-footer-content-group tco-site-footer-content-group--icons">
+            <svg class="tco-site-footer-logo" width="151" height="50" role="img" aria-label="Think Company logo">
+              <use xlink:href="/img/icons.svg#icon-think-logo"></use>
+            </svg>
+            ${socialLinksSmall()}
+          </div>
+          <div class="tco-site-footer-content-group tco-site-footer-content-group--fine-print">
+            <p>&copy; 2020 Think Company, Inc. All rights reserved. <a class="tco-btn-link" href="#"> Privacy Policy</a></p>
+          </div>
+        </div>
       </div>
     </div>
+  </div>
   `;
 };
 
