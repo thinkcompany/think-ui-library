@@ -1,24 +1,35 @@
 export default class Nav {
   constructor() {
     this.$mobileMenuBtn;
-    this.$mobileMenuTitle;
     this.$siteNav;
+    this.$logo;
+    this.$body;
+    this.$wrapper;
+    this.$container;
+    this.$menu;
   }
 
   setupEventHandler() {
-    const openNavText = 'Open Mobile Navigation';
-    const closeNavText = 'Close Mobile Navigation';
+    const wrapper = this.$wrapper;
+    const container = this.$container;
+    const menu = this.$menu;
+
+    let menuOpen = false;
 
     this.$mobileMenuBtn.addEventListener(
       'click',
       () => {
-        const currentText = this.$mobileMenuTitle.textContent;
+        menuOpen = !menuOpen;
+        this.$body.classList.toggle('.tco-body--freeze');
+        this.$mobileMenuBtn.classList.toggle('tco-site-header-toggle--open');
+        this.$siteNav.classList.toggle('tco-site-nav--open');
+        this.$logo.classList.toggle('tco-site-header-logo--open');
 
-        this.$mobileMenuBtn.classList.toggle('tco-menu-site-nav--open');
-
-        currentText === openNavText
-          ? (this.$mobileMenuTitle.textContent = closeNavText)
-          : (this.$mobileMenuTitle.textContent = openNavText);
+        if (menuOpen === true) {
+          container.prepend(menu);
+        } else {
+          wrapper.before(menu);
+        }
       },
       false
     );
@@ -26,12 +37,13 @@ export default class Nav {
 
   init() {
     document.addEventListener('DOMContentLoaded', () => {
-      this.$mobileMenuBtn = document.querySelector('[data-mobile-menu-button]');
-      this.$mobileMenuTitle = document.querySelector(
-        '[data-mobile-menu-title]'
-      );
-
-      this.$siteNav = document.querySelector('.tco-menu-site-nav');
+      this.$body = document.body;
+      this.$mobileMenuBtn = document.querySelector('#menu-toggle');
+      this.$logo = document.querySelector('.tco-site-header-logo');
+      this.$siteNav = document.querySelector('.tco-site-nav');
+      this.$wrapper = document.querySelector('.tco-site-nav-wrapper');
+      this.$container = document.querySelector('.tco-site-nav-container');
+      this.$menu = document.querySelector('.tco-site-nav-menu--primary');
 
       if (this.$mobileMenuBtn) {
         this.setupEventHandler();

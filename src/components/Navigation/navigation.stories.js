@@ -1,7 +1,7 @@
 import navMarkup from './navigation.html';
 
 export const header = () => `
-<div style="background-color: #eee; height: 1000px; margin: -20px">
+<div style="background-color: #fff; height: 1000px;">
 ${navMarkup}
 </div>`;
 
