@@ -59,7 +59,7 @@ export const Default = () => {
           ${
             eyebrow
               ? `
-            <span class="tco-text-media-eyebrow">${eyebrow}</span>
+            <p class="tco-text-media-eyebrow">${eyebrow}</p>
             `
               : ''
           }
@@ -121,7 +121,7 @@ export const PageHeader = () => {
           ${
             eyebrow
               ? `
-            <span class="tco-text-media-eyebrow">${eyebrow}</span>
+            <p class="tco-text-media-eyebrow">${eyebrow}</p>
             `
               : ''
           }
@@ -181,7 +181,7 @@ export const PageHeaderFullImage = () => {
           ${
             eyebrow
               ? `
-            <span class="tco-text-media-eyebrow">${eyebrow}</span>
+            <p class="tco-text-media-eyebrow">${eyebrow}</p>
             `
               : ''
           }
