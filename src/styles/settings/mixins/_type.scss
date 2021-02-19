@@ -305,7 +305,7 @@
   $font-family: inherit,
   $line-height: inherit,
   $underline: $font-color,
-  $showInitial: false
+  $show-initial: false
 ) {
   color: $font-color;
   font-weight: $font-weight;
@@ -320,7 +320,7 @@
   border-bottom-color: transparent;
   transition: border-color 0.2s linear, color 0.2s linear;
 
-  @if $showInitial {
+  @if $show-initial {
     border-bottom-color: $underline;
   }
 
@@ -333,7 +333,7 @@
   &:focus {
     border-bottom-color: $underline;
 
-    @if $showInitial {
+    @if $show-initial {
       border-bottom-color: transparent;
     }
   }
@@ -349,7 +349,7 @@ $arrow-translate: 10px;
   $padding-right: $arrow-offset + $arrow-offset,
   $fill: $color-tint-blue-primary
 ) {
-  @include type-link($showInitial: false);
+  @include type-link($show-initial: false);
   padding-right: $padding-right;
   color: $font-color;
   text-decoration: none;
