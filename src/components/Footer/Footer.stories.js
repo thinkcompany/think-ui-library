@@ -58,7 +58,7 @@ const footer = () => {
               </svg>
             </a>
           </h5>
-          <span class="tco-site-footer-post-meta">February 14, 2021</span>
+          <p class="tco-site-footer-post-meta">February 14, 2021</p>
         </div>
         <div class="tco-site-footer-content tco-site-footer-content--full">
           <div class="tco-site-footer-content-group tco-site-footer-content-group--icons">
