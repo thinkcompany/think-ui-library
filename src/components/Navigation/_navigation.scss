@@ -53,6 +53,8 @@ $container-max: 1168px;
     }
 
     &.tco-site-header-logo--open {
+      background-color: $color-classic-navy;
+
       .letter,
       .bubble {
         fill: $color-foreground-on-tint;
@@ -62,7 +64,7 @@ $container-max: 1168px;
 
   &-toggle {
     position: absolute;
-    top: 50%;
+    top: 1px;
     right: 0;
     z-index: 3;
     display: block;
@@ -70,7 +72,10 @@ $container-max: 1168px;
     border-width: 0;
     background: transparent;
     cursor: pointer;
-    transform: translateY(-50%);
+
+    @include wider-than($breakpoint-laptop) {
+      top: 10px;
+    }
 
     &-icon {
       display: block;
@@ -109,16 +114,14 @@ $container-max: 1168px;
     position: fixed;
     top: 0;
     left: 0;
-    z-index: 2;
     display: block;
-    overflow-y: auto;
+    overflow-y: hidden;
     width: 100vw;
-    height: 100%;
-    min-height: 100vh;
+    height: 0;
     padding: $spacing-stack-120 $spacing-inline-24 $spacing-stack-50;
     background-color: $color-classic-navy;
     opacity: 0;
-    transform: scale(0);
+    //  transform: scale(0);
 
     @include wider-than($breakpoint-tablet-portrait) {
       padding-top: $spacing-stack-150;
@@ -131,61 +134,11 @@ $container-max: 1168px;
     margin: 0 auto;
   }
 
-  &--open {
-    .tco-site-nav-wrapper {
-      opacity: 1;
-      transform: scale(1);
-    }
-
-    .tco-site-nav-container {
-      color: $color-foreground-on-tint;
-
-      @include wider-than($breakpoint-tablet-portrait) {
-        display: flex;
-        flex-flow: row nowrap;
-        align-items: flex-start;
-      }
-    }
-
-    .tco-site-nav-menu--primary {
-      grid-area: primary;
-      margin-bottom: $spacing-stack-20;
-
-      @include wider-than($breakpoint-tablet-portrait) {
-        flex-wrap: wrap;
-        width: 66.6%;
-
-        .tco-site-nav-menu-item {
-          width: 50%;
-        }
-      }
-
-      .tco-site-nav-link {
-        @include type-display-medium;
-        display: inline-block;
-        margin-bottom: $spacing-stack-20;
-        padding-bottom: 0;
-        text-transform: initial;
-
-        &:hover,
-        &:focus {
-          color: $color-foreground-on-tint;
-        }
-      }
-    }
-
-    .tco-site-nav-link {
-      color: $color-foreground-on-tint;
-    }
-  }
-
-  &-menu-group {
-    @include wider-than($breakpoint-tablet-portrait) {
-      padding-top: $spacing-stack-16;
-    }
-  }
-
   &-menu--primary {
+    position: relative;
+    z-index: 1;
+    display: none;
+
     @include wider-than($breakpoint-laptop) {
       display: flex;
       margin-right: $spacing-inline-50;
@@ -233,9 +186,69 @@ $container-max: 1168px;
     }
 
     .tco-site-nav-link {
-      @include type-link;
+      @include type-link($underline: $color-foreground-on-tint);
       @include type-body-medium;
       text-transform: initial;
+    }
+  }
+
+  &--open {
+    .tco-site-nav-wrapper {
+      z-index: 2;
+      overflow-y: auto;
+      height: 100%;
+      min-height: 100vh;
+      opacity: 1;
+    }
+
+    .tco-site-nav-container {
+      color: $color-foreground-on-tint;
+
+      @include wider-than($breakpoint-tablet-portrait) {
+        display: flex;
+        flex-flow: row nowrap;
+        align-items: flex-start;
+      }
+    }
+
+    .tco-site-nav-menu--primary {
+      display: block;
+      grid-area: primary;
+      margin-bottom: $spacing-stack-20;
+
+      @include wider-than($breakpoint-tablet-portrait) {
+        display: flex;
+        flex-wrap: wrap;
+        width: 66.6%;
+
+        .tco-site-nav-menu-item {
+          width: 50%;
+        }
+      }
+
+      .tco-site-nav-link {
+        @include type-display-medium;
+        display: inline-block;
+        margin-bottom: $spacing-stack-20;
+        padding-bottom: 0;
+        text-transform: initial;
+
+        &:hover,
+        &:focus {
+          border-bottom-color: $color-foreground-on-tint;
+          color: $color-foreground-on-tint;
+        }
+      }
+    }
+
+    .tco-site-nav-link {
+      color: $color-foreground-on-tint;
+    }
+  }
+
+  &-menu-group {
+    @include wider-than($breakpoint-tablet-portrait) {
+      padding-top: $spacing-stack-16;
     }
   }
 
