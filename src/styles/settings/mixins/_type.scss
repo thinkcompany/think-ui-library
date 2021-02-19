@@ -260,9 +260,13 @@
   }
 }
 
-@mixin type-body-xsmall($font-color: inherit, $italic: false) {
+@mixin type-body-xsmall(
+  $font-color: inherit,
+  $italic: false,
+  $font-size: $font-size-12
+) {
   @include type-base-style($font-color, 500);
-  font-size: $font-size-12;
+  font-size: $font-size;
   font-family: $font-stack-sans-serif;
   line-height: 1.2;
 
