@@ -1,4 +1,9 @@
 $icon-size: 48px;
+$icon-size-small: 19px;
+$icon-size-twitter: 22px;
+$icon-size-yt-w: 21px;
+$icon-size-yt-h: 15px;
+$icon-list-max-width: 278px;
 
 .tco-social-icons-list {
   padding: 0;
@@ -11,6 +16,44 @@ $icon-size: 48px;
       margin-left: 10px;
     }
   }
+
+  .tco-icon {
+    width: $icon-size;
+    height: $icon-size;
+  }
+
+  &--small {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: space-between;
+    max-width: $icon-list-max-width;
+    margin: 0 auto $spacing-stack-40;
+
+    li {
+      vertical-align: middle;
+
+      &:not(:first-child) {
+        margin-left: $spacing-inline-40;
+      }
+    }
+
+    .tco-icon {
+      display: block;
+      width: $icon-size-small;
+      height: $icon-size-small;
+      fill: $color-foreground-on-tint;
+
+      &--twitter {
+        width: $icon-size-twitter;
+      }
+
+      &--youtube {
+        width: $icon-size-yt-w;
+        height: $icon-size-yt-h;
+      }
+    }
+  }
 }
 
 .tco-social-icons-link {
@@ -18,11 +61,6 @@ $icon-size: 48px;
 
   .tco-container-wrapper & {
     background-image: none;
-  }
-
-  > .tco-icon {
-    width: $icon-size;
-    height: $icon-size;
   }
 
   &:hover {
