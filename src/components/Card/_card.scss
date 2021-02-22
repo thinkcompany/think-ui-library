@@ -1,3 +1,4 @@
+/* stylelint-disable selector-max-pseudo-class, max-line-length, selector-max-specificity */
 // ========================================================
 // = BASE CARD
 // ========================================================
@@ -16,7 +17,7 @@
   }
 
   &-image-container {
-    &:not(.tco-card-image-container--summary):not(.tco-card-image-container--callout) {
+    &:not(.tco-card-image-container--summary):not(.tco-card-image-container--callout):not(.tco-card-image-container--summary):not(.tco-card-image-container--service) {
       @include aspect-ratio-box(
         $ratio: (
           4 / 5
@@ -92,6 +93,10 @@
     .tco-card-content-heading {
       border-bottom-color: $color-classic-blue;
     }
+
+    .tco-card-image-container .tco-card-image {
+      transform: translate(-50%, -50%) scale(1.05);
+    }
   }
 
   @include wider-than($breakpoint-phone-landscape) {
@@ -117,6 +122,11 @@
   }
 
   .tco-card-image-container {
+    @include aspect-ratio-box(
+      $ratio: (
+        4 / 5
+      ) * 100%
+    );
     width: calc(100% - #{$spacing-inline-24} * 2);
     margin: 0 auto;
 
@@ -125,12 +135,19 @@
       object-fit: contain;
       width: auto;
       height: auto;
+      transition: transform 0.2s linear;
+    }
+
+    &--product-design {
+      @include wider-than($breakpoint-phone-landscape) {
+        width: 38%;
+      }
     }
   }
 
   .tco-card-content {
     &-container {
-      padding: $spacing-stack-32 0 0;
+      padding: $spacing-stack-32 $spacing-inline-32 0;
 
       @include wider-than($breakpoint-desktop) {
         padding: $spacing-stack-40 0 0;
@@ -153,7 +170,7 @@
 
     &:hover,
     &:focus {
-      background-color: $color-classic-blue;
+      background-color: $color-hover;
     }
 
     .tco-card-link {
@@ -179,11 +196,13 @@
 
       &-heading {
         margin-bottom: $spacing-stack-24;
+        border-bottom-width: 0;
         color: $color-foreground-on-tint;
       }
 
       &-description {
         margin-top: $spacing-stack-24;
+        color: $color-foreground-on-tint;
       }
     }
   }
