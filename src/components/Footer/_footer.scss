@@ -89,7 +89,7 @@ $menu-max-width: 372px;
     a {
       @include type-link(
         $font-color: $color-foreground-on-tint,
-        $showInitial: true
+        $show-initial: true
       );
 
       @include wider-than($breakpoint-phone-portrait) {

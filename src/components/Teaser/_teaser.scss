@@ -1,7 +1,8 @@
 .tco-post-teaser {
   &-eyebrow {
+    @include type-eyebrow;
     display: block;
-    margin-bottom: $spacing-stack-8;
+    margin-bottom: $spacing-stack-12;
   }
 
   &-title {
@@ -11,8 +12,10 @@
   &-link {
     @include type-link(
       $font-family: $font-stack-sans-serif-bold,
-      $line-height: 1.5
+      $line-height: 1.5,
+      $show-initial: true
     );
+    @include type-body-small($font-color: $color-classic-blue);
     display: block;
   }
 
