@@ -6,7 +6,7 @@ const renderForm = () => `
         <li id="field_21_1" class="gfield newsletter-field gfield_contains_required field_sublabel_below field_description_below gfield_visibility_visible">
           <label class="gfield_label" for="input_21_1">Your email<span class="gfield_required">*</span></label>
           <div class="ginput_container ginput_container_email">
-            <input name="input_1" id="input_21_1" type="text" value="" class="medium" tabindex="10111" aria-required="true" aria-invalid="false" />
+            <input name="input_1" id="input_21_1" type="text" value="" class="medium" tabindex="10111" aria-required="true" aria-invalid="false" placeholder="Enter your email address" />
           </div>
         </li>
         <li id="field_21_2" class="gfield gform_validation_container field_sublabel_below field_description_below gfield_visibility_visible">
@@ -51,7 +51,7 @@ export const Default = () => {
     </div>
     <div class="tco-newsletter-form-container">
       ${renderForm()}
-      <p class="tco-type-body--sans-xsmall">We keep it brief, make it easy to unsubscribe, and never share your information.</p>
+      <p class="tco-newsletter-form-disclaimer">We keep it brief, make it easy to unsubscribe, and never share your information.</p>
     </div>
   </div>
   `;
