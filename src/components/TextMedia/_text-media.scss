@@ -69,6 +69,10 @@ $bubble-max: 600px;
           margin: 0;
         }
       }
+
+      @include wider-than($breakpoint-laptop) {
+        width: calc(50% - #{$spacing-inline-50});
+      }
     }
   }
 
