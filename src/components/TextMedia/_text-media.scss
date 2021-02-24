@@ -117,7 +117,7 @@ $bubble-max: 600px;
     width: 100%;
 
     &::before {
-      @include pseudo-bubble;
+      @include pseudo-bubble($background: $color-classic-glass);
       z-index: 0;
       width: calc(100% - #{$spacing-inline-12});
       height: 0;
@@ -149,6 +149,12 @@ $bubble-max: 600px;
 
       .tco-text-media-image {
         @include center-reset;
+      }
+    }
+
+    .tco-container-wrapper--glass & {
+      &::before {
+        background-color: $color-foreground-on-tint;
       }
     }
   }
