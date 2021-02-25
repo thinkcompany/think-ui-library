@@ -104,7 +104,7 @@ $bubble-max: 600px;
       margin-left: $spacing-inline-32;
 
       @include wider-than($breakpoint-tablet-portrait) {
-        margin-left: 0;
+        width: calc(50% - #{$spacing-inline-60});
       }
 
       .tco-text-media--align-center & {
@@ -132,6 +132,10 @@ $bubble-max: 600px;
     &--tall {
       position: relative;
       width: auto;
+
+      @include wider-than($breakpoint-desktop) {
+        max-width: 90%;
+      }
 
       &::before {
         position: absolute;
