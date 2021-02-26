@@ -21,11 +21,11 @@
   transform: translate(0, 0);
 }
 
-@mixin pseudo-bubble {
+@mixin pseudo-bubble($background: $color-foreground-on-tint) {
   content: '';
   display: block;
   border-radius: 50%;
-  background-color: $color-foreground-on-tint;
+  background-color: $background;
 }
 
 @mixin pseudo-doodle {
