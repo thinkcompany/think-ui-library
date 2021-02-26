@@ -10,7 +10,7 @@ const cardContents = [
     description:
       'Lorem ipsum dolor set amet uncle B ipsum Lorem ipsum dolor set amet uncle B ipsum Lorem ipsum dolor set amet uncle B ipsum Lorem ipsum dolor set amet uncle B ipsum',
     cta: 'View case study',
-    opacity: 0.8
+    opacity: 0.9
   },
   {
     id: 'comcast',
@@ -21,7 +21,7 @@ const cardContents = [
     description:
       'Lorem ipsum dolor set amet uncle B ipsum Lorem ipsum dolor set amet uncle B ipsum Lorem ipsum dolor set amet uncle B ipsum Lorem ipsum dolor set amet uncle B ipsum',
     cta: 'View case study',
-    opacity: 0.8
+    opacity: 0.9
   },
   {
     id: 'merck',
@@ -32,7 +32,7 @@ const cardContents = [
     description:
       'Lorem ipsum dolor set amet uncle B ipsum Lorem ipsum dolor set amet uncle B ipsum Lorem ipsum dolor set amet uncle B ipsum Lorem ipsum dolor set amet uncle B ipsum',
     cta: 'View case study',
-    opacity: 0.8
+    opacity: 0.9
   },
   {
     id: 'retail360',
@@ -44,7 +44,7 @@ const cardContents = [
       'Lorem ipsum dolor set amet uncle B ipsum Lorem ipsum dolor set amet uncle B ipsum Lorem ipsum dolor set amet uncle B ipsum Lorem ipsum dolor set amet uncle B ipsum',
     cta: 'View case study',
     offset: 'bottom',
-    opacity: 0.8
+    opacity: 0.9
   },
   {
     id: 'policy-map',
@@ -55,7 +55,7 @@ const cardContents = [
     description:
       'Lorem ipsum dolor set amet uncle B ipsum Lorem ipsum dolor set amet uncle B ipsum Lorem ipsum dolor set amet uncle B ipsum Lorem ipsum dolor set amet uncle B ipsum',
     cta: 'View case study',
-    opacity: 0.8
+    opacity: 0.9
   },
   {
     id: 'einstein',
@@ -66,7 +66,7 @@ const cardContents = [
     description:
       'Lorem ipsum dolor set amet uncle B ipsum Lorem ipsum dolor set amet uncle B ipsum Lorem ipsum dolor set amet uncle B ipsum Lorem ipsum dolor set amet uncle B ipsum',
     cta: 'View case study',
-    opacity: 0.8
+    opacity: 0.9
   },
   {
     id: 'janney',
@@ -77,7 +77,7 @@ const cardContents = [
     description:
       'Lorem ipsum dolor set amet uncle B ipsum Lorem ipsum dolor set amet uncle B ipsum Lorem ipsum dolor set amet uncle B ipsum Lorem ipsum dolor set amet uncle B ipsum',
     cta: 'View case study',
-    opacity: 0.8
+    opacity: 0.9
   },
   {
     id: 'abc',
@@ -88,7 +88,7 @@ const cardContents = [
     description:
       'Lorem ipsum dolor set amet uncle B ipsum Lorem ipsum dolor set amet uncle B ipsum Lorem ipsum dolor set amet uncle B ipsum Lorem ipsum dolor set amet uncle B ipsum',
     cta: 'View case study',
-    opacity: 0.8
+    opacity: 0.9
   },
   {
     id: 'comcast',
@@ -99,7 +99,7 @@ const cardContents = [
     description:
       'Lorem ipsum dolor set amet uncle B ipsum Lorem ipsum dolor set amet uncle B ipsum Lorem ipsum dolor set amet uncle B ipsum Lorem ipsum dolor set amet uncle B ipsum',
     cta: 'View case study',
-    opacity: 0.8
+    opacity: 0.9
   },
   {
     id: 'abc',
@@ -110,7 +110,7 @@ const cardContents = [
     description:
       'Lorem ipsum dolor set amet uncle B ipsum Lorem ipsum dolor set amet uncle B ipsum Lorem ipsum dolor set amet uncle B ipsum Lorem ipsum dolor set amet uncle B ipsum',
     cta: 'View case study',
-    opacity: 0.8
+    opacity: 0.9
   },
   {
     id: 'nemours',
@@ -121,7 +121,7 @@ const cardContents = [
     description:
       'Lorem ipsum dolor set amet uncle B ipsum Lorem ipsum dolor set amet uncle B ipsum Lorem ipsum dolor set amet uncle B ipsum Lorem ipsum dolor set amet uncle B ipsum',
     cta: 'View case study',
-    opacity: 0.8
+    opacity: 0.9
   }
 ];
 
