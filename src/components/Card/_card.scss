@@ -14,6 +14,8 @@
 
   .tco-card-content-heading {
     @include type-body-large;
+    @include type-link;
+    display: inline;
   }
 
   &-image-container {
@@ -41,6 +43,14 @@
         outline: 4px solid $color-tint-blue-primary;
         outline-offset: -4px;
       }
+
+      &:hover {
+        border-bottom-color: transparent;
+
+        .tco-card-content-heading {
+          border-bottom-color: $color-classic-blue;
+        }
+      }
     }
   }
 
@@ -55,6 +65,7 @@
 
   &-content-description {
     @include type-body-default($font-color: $color-classic-gray-dark);
+    margin-top: $spacing-stack-8;
   }
 
   &-eyebrow {
@@ -278,11 +289,9 @@
       background-image: linear-gradient(180deg, transparent, #051824);
     }
 
-    &:hover,
-    &:focus,
-    &:active {
-      .tco-card-content-description {
-        background-size: 100% 106%;
+    &:hover {
+      .tco-card-content-heading {
+        border-bottom-color: $color-foreground-on-tint;
       }
     }
   }
@@ -324,22 +333,31 @@
 // ========================================================
 // = CALLOUT CARD
 // ========================================================
-$icon-width: 32px;
-$icon-width-large: 44px;
+$icon-size: 32px;
+$icon-size-large: 44px;
 
 .tco-card--callout {
-  @include spacing-inset-24;
   max-width: 980px;
   min-height: 0;
 
-  @include wider-than($breakpoint-phone-landscape) {
-    display: flex;
-    flex-flow: row nowrap;
-    align-items: flex-start;
-  }
+  .tco-card-link {
+    @include spacing-inset-24;
 
-  @include wider-than($breakpoint-tablet-portrait) {
-    @include spacing-inset-32;
+    @include wider-than($breakpoint-phone-landscape) {
+      display: flex;
+      flex-flow: row nowrap;
+      align-items: flex-start;
+    }
+
+    @include wider-than($breakpoint-tablet-portrait) {
+      @include spacing-inset-32;
+    }
+
+    &:hover {
+      .tco-card-content-link {
+        border-bottom-color: $color-classic-blue;
+      }
+    }
   }
 
   .tco-card-image-container {
@@ -352,10 +370,10 @@ $icon-width-large: 44px;
   }
 
   .tco-card-image {
-    width: $icon-width;
+    width: $icon-size;
 
     @include wider-than($breakpoint-phone-landscape) {
-      width: $icon-width-large;
+      width: $icon-size-large;
     }
   }
 
@@ -375,6 +393,7 @@ $icon-width-large: 44px;
 
     &-link {
       @include type-link-cta($font-color: $color-classic-blue);
+      display: inline-block;
     }
   }
 }
@@ -385,9 +404,13 @@ $icon-width-large: 44px;
 .tco-card--job {
   max-width: none;
   min-height: 0;
+  transition: transform 0.6s ease-out;
+  transform: scale(1);
 
   &:hover,
   &:focus {
+    transform: scale(1.03);
+
     .tco-btn {
       background-color: $color-hover;
       color: $color-foreground-on-tint;
