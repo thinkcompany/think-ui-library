@@ -1,26 +1,26 @@
 import { text, boolean } from '@storybook/addon-knobs';
 
 export const contactForm = () => {
-  const nameLabel = text('Name label', 'Your Name*');
+  const nameLabel = text('Name label', 'Your Name');
   const namePlaceholder = text(
     'Name placeholder',
     'Enter your first and last name'
   );
-  const emailLabel = text('Email label', 'Your Email*');
+  const emailLabel = text('Email label', 'Your Email');
   const emailPlaceholder = text(
     'Email placeholder',
     'Enter your email address'
   );
-  const companyLabel = text('Email label', 'Your Company*');
+  const companyLabel = text('Email label', 'Your Company');
   const companyPlaceholder = text(
     'Company placeholder',
     "Enter your company's name"
   );
-  const messageLabel = text('Message label', 'What do you have in mind?*');
+  const messageLabel = text('Message label', 'What do you have in mind?');
   const messagePlaceholder = text('Message placeholder', 'Bitcoin server farm');
   const timingLabel = text(
     'Timing label',
-    'When would you like to get started?*'
+    'When would you like to get started?'
   );
   const timingPlaceholder = text(
     'Timing placeholder',
@@ -35,7 +35,7 @@ export const contactForm = () => {
         <form class="tco-contact-form tco-contact-form--${formVersion}">
           <div class="tco-form-row">
             <label for="contact-name" class="tco-form-label">
-              ${nameLabel}
+              ${nameLabel}<span class="tco-field-required">*</span>
             </label>
             <input
               type="text"
@@ -48,7 +48,7 @@ export const contactForm = () => {
           <div class="tco-form-row tco-form-row--split">
             <div class="tco-form-row--split-group">
               <label for="contact-email" class="tco-form-label">
-                ${emailLabel}
+                ${emailLabel}<span class="tco-field-required">*</span>
               </label>
               <input
                 type="text"
@@ -60,7 +60,7 @@ export const contactForm = () => {
             </div>
             <div class="tco-form-row--split-group">
               <label for="contact-company" class="tco-form-label">
-                ${companyLabel}
+                ${companyLabel}<span class="tco-field-required">*</span>
               </label>
               <input
                 type="text"
@@ -73,7 +73,7 @@ export const contactForm = () => {
           </div>
           <div class="tco-form-row">
             <label for="contact-message" class="tco-form-label">
-              ${messageLabel}
+              ${messageLabel}<span class="tco-field-required">*</span>
             </label>
             <textarea
               class="tco-form-textarea"
@@ -89,7 +89,7 @@ export const contactForm = () => {
               : `
             <div class="tco-form-row">
               <label for="contact-timing" class="tco-form-label">
-                ${timingLabel}
+                ${timingLabel}<span class="tco-field-required">*</span>
               </label>
               <input
                 class="tco-form-input tco-form-input--medium"
