@@ -158,7 +158,7 @@ $device-width-report--mobile: 55%;
     }
 
     &-description {
-      margin-bottom: $spacing-stack-24;
+      margin-bottom: $spacing-stack-16;
       padding: 0;
       color: $color-foreground-on-tint;
     }
@@ -292,6 +292,7 @@ $device-width-report--mobile: 55%;
         @include wider-than($breakpoint-tablet-portrait) {
           display: flex;
           flex-flow: column nowrap;
+          align-items: flex-start;
           justify-content: center;
           width: 50%;
           height: 100%;
@@ -307,7 +308,7 @@ $device-width-report--mobile: 55%;
 
     .tco-card-content-heading {
       @include type-display-small;
-      margin-bottom: $spacing-stack-20;
+      margin-bottom: $spacing-stack-16;
     }
 
     &:nth-of-type(odd) {
@@ -351,7 +352,8 @@ $device-width-report--mobile: 55%;
   }
 
   .tco-card-eyebrow {
-    margin-bottom: $spacing-stack-4;
+    margin-top: $spacing-stack-4;
+    margin-bottom: $spacing-stack-20;
 
     @include wider-than($breakpoint-tablet-portrait) {
       margin-bottom: $spacing-stack-12;
@@ -361,7 +363,7 @@ $device-width-report--mobile: 55%;
   .tco-text-link {
     @include type-link-cta($fill: $color-foreground-on-tint);
     @include type-body-default;
-    display: block;
+    display: inline-block;
   }
 
   &-nemours {
