@@ -1,0 +1,67 @@
+$speed: 200ms;
+$item-delay: $speed - 100ms;
+// $dynamic-speed:;
+
+@mixin nav-animation {
+  .tco-site-nav-wrapper {
+    transform: translateX(100%);
+    transition: transform $speed ease-out;
+  }
+
+  .tco-site-nav-menu-item,
+  .tco-site-nav-menu--primary-open .tco-site-nav-menu-item {
+    opacity: 0;
+    transition: opacity $speed ease-out $item-delay;
+
+    &:nth-of-type(2) {
+      transition-delay: $item-delay + 100ms;
+    }
+
+    &:nth-of-type(3) {
+      transition-delay: $item-delay + 200ms;
+    }
+
+    &:nth-of-type(4) {
+      transition-delay: $item-delay + 300ms;
+    }
+
+    &:nth-of-type(5) {
+      transition-delay: $item-delay + 400ms;
+    }
+  }
+
+  &--open {
+    .tco-site-nav-wrapper {
+      z-index: 2;
+      overflow-y: auto;
+      transform: translateX(0);
+    }
+
+    .tco-site-nav-menu {
+      .tco-site-nav-menu-item {
+        opacity: 1;
+      }
+    }
+  }
+}
+
+@mixin logo-animation {
+  .letter {
+    fill: $color-classic-gray-dark;
+  }
+
+  .bubble {
+    fill: $color-classic-blue;
+  }
+
+  &--open {
+    background-color: $color-classic-navy;
+    transition: background-color 100ms ease-out $speed;
+
+    .letter,
+    .bubble {
+      fill: $color-foreground-on-tint;
+      transition: fill 100ms ease $speed - 100ms;
+    }
+  }
+}

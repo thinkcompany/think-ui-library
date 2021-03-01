@@ -27,8 +27,10 @@ export default class Nav {
 
         if (menuOpen === true) {
           container.prepend(menu);
+          this.$menu.classList.add('tco-site-nav-menu--primary-open');
         } else {
           wrapper.before(menu);
+          this.$menu.classList.remove('tco-site-nav-menu--primary-open');
         }
       },
       false
