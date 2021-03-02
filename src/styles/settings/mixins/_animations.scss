@@ -1,34 +1,45 @@
-$speed: 200ms;
-$item-delay: $speed - 100ms;
-// $dynamic-speed:;
+// :root {
+//   --duration: 200ms;
+// }
+
+$speed: 400ms;
+$item-delay: $speed * 0.9;
 
 @mixin nav-animation {
   .tco-site-nav-wrapper {
     transform: translateX(100%);
-    transition: transform $speed ease-out;
+    transition: transform $speed linear;
   }
 
-  .tco-site-nav-menu-item,
-  .tco-site-nav-menu--primary-open .tco-site-nav-menu-item {
-    opacity: 0;
-    transition: opacity $speed ease-out $item-delay;
-
-    &:nth-of-type(2) {
-      transition-delay: $item-delay + 100ms;
-    }
-
-    &:nth-of-type(3) {
-      transition-delay: $item-delay + 200ms;
-    }
-
-    &:nth-of-type(4) {
-      transition-delay: $item-delay + 300ms;
-    }
-
-    &:nth-of-type(5) {
-      transition-delay: $item-delay + 400ms;
+  .tco-site-nav-menu--primary {
+    .tco-site-nav-menu-item {
+      @include wider-than($breakpoint-desktop) {
+        opacity: 1;
+      }
     }
   }
+
+  // .tco-site-nav-menu-item {
+  //   opacity: 0;
+  //   transition: opacity $speed ease-out ;
+  //   transition-delay: $item-delay;
+  //
+  //   &:nth-of-type(2) {
+  //     transition-delay: $item-delay + 50ms;
+  //   }
+  //
+  //   &:nth-of-type(3) {
+  //     transition-delay: $item-delay + 100ms;
+  //   }
+  //
+  //   &:nth-of-type(4) {
+  //     transition-delay: $item-delay + 150ms;
+  //   }
+  //
+  //   &:nth-of-type(5) {
+  //     transition-delay: $item-delay + 200ms;
+  //   }
+  // }
 
   &--open {
     .tco-site-nav-wrapper {
@@ -56,12 +67,14 @@ $item-delay: $speed - 100ms;
 
   &--open {
     background-color: $color-classic-navy;
-    transition: background-color 100ms ease-out $speed;
+    transition: background-color 100ms ease-out;
+    transition-delay: $speed;
 
     .letter,
     .bubble {
       fill: $color-foreground-on-tint;
-      transition: fill 100ms ease $speed - 100ms;
+      transition: fill 1ms ease;
+      transition-delay: $speed - 50ms;
     }
   }
 }

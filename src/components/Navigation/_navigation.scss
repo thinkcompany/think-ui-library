@@ -1,5 +1,5 @@
+/* stylelint-disable selector-max-class, selector-max-combinators, selector-max-compound-selectors, max-line-length, max-nesting-depth, selector-max-specificity */
 $container-max: 1168px;
-$transition-duration: 0.2s;
 
 .tco-site-header {
   position: fixed;
@@ -58,7 +58,7 @@ $transition-duration: 0.2s;
     cursor: pointer;
 
     @include wider-than($breakpoint-laptop) {
-      top: 10px;
+      top: 9px;
     }
 
     &-icon {
@@ -117,28 +117,77 @@ $transition-duration: 0.2s;
     width: 100%;
     max-width: $container-max;
     margin: 0 auto;
+    color: $color-foreground-on-tint;
+
+    @include wider-than($breakpoint-tablet-portrait) {
+      display: flex;
+      flex-flow: row nowrap;
+      align-items: flex-start;
+    }
   }
 
   &-menu--primary {
     position: relative;
     z-index: 1;
     display: none;
+    grid-area: primary;
+    margin-bottom: $spacing-stack-20;
+
+    // .tco-site-nav-link {
+    //   display: inline-block;
+    //   margin-bottom: $spacing-stack-20;
+    //   padding-bottom: 0;
+    // }
+
+    &.tco-site-nav-menu--primary-clone {
+      position: absolute;
+      top: 9px;
+      right: 0;
+      display: none;
+      justify-content: flex-end;
+      width: auto;
+      visibility: hidden;
+    }
+
+    @include wider-than($breakpoint-tablet-portrait) {
+      flex-wrap: wrap;
+      width: 66.6%;
+
+      .tco-site-nav-menu-item {
+        width: 50%;
+      }
+    }
 
     @include wider-than($breakpoint-laptop) {
       display: flex;
+      width: 100%;
       margin-right: $spacing-inline-50;
+      margin-bottom: 0;
+
+      .tco-site-nav-menu-item {
+        width: auto;
+      }
+
+      .tco-site-nav-link {
+        margin-bottom: 0;
+      }
     }
 
     .tco-site-nav-link {
       @include type-link;
-      @include type-eyebrow(
-        $font-color: $color-classic-gray-dark,
-        $font-size: $font-size-18
-      );
+      @include type-display-medium;
+      @include wider-than($breakpoint-desktop) {
+        @include type-eyebrow(
+          $font-color: $color-classic-gray-dark,
+          $font-size: $font-size-18
+        );
+      }
       display: block;
+      margin-bottom: $spacing-stack-20;
       padding: $spacing-stack-4 $spacing-inline-2 $spacing-stack-12;
       border-bottom-width: 2px;
       line-height: 1;
+      transition: all 0.25s ease-in;
 
       &:hover,
       &:focus,
@@ -149,6 +198,7 @@ $transition-duration: 0.2s;
 
       @include wider-than($breakpoint-laptop) {
         margin-right: $spacing-inline-50;
+        margin-bottom: 0;
       }
     }
   }
@@ -178,36 +228,62 @@ $transition-duration: 0.2s;
   }
 
   &--open {
-    .tco-site-nav-container {
-      color: $color-foreground-on-tint;
-
-      @include wider-than($breakpoint-tablet-portrait) {
-        display: flex;
-        flex-flow: row nowrap;
-        align-items: flex-start;
-      }
-    }
-
     .tco-site-nav-menu--primary {
       display: block;
-      grid-area: primary;
-      margin-bottom: $spacing-stack-20;
 
       @include wider-than($breakpoint-tablet-portrait) {
         display: flex;
-        flex-wrap: wrap;
-        width: 66.6%;
+      }
+
+      @include wider-than($breakpoint-laptop) {
+        &:not(.tco-site-nav-menu--primary-clone) {
+          width: 66.6%;
+        }
 
         .tco-site-nav-menu-item {
           width: 50%;
+        }
+
+        .tco-site-nav-link {
+          display: inline-block;
+        }
+      }
+
+      &.tco-site-nav-menu--primary-clone {
+        @include wider-than($breakpoint-laptop) {
+          display: flex;
+          flex-wrap: nowrap;
+          visibility: visible;
+        }
+
+        .tco-site-nav-menu-item {
+          width: auto;
+        }
+
+        .tco-site-nav-link {
+          @include type-eyebrow(
+            $font-color: $color-classic-gray-dark,
+            $font-size: $font-size-18
+          );
+          display: block;
+          padding: $spacing-stack-4 $spacing-inline-2 $spacing-stack-12;
+          border-bottom-width: 2px;
+
+          &:hover,
+          &:focus,
+          .current-menu-item & {
+            border-bottom-color: $color-classic-blue;
+            color: $color-classic-blue;
+          }
+
+          @include wider-than($breakpoint-laptop) {
+            margin-right: $spacing-inline-50;
+          }
         }
       }
 
       .tco-site-nav-link {
         @include type-display-medium;
-        display: inline-block;
-        margin-bottom: $spacing-stack-20;
-        padding-bottom: 0;
         text-transform: initial;
 
         &:hover,
@@ -221,9 +297,15 @@ $transition-duration: 0.2s;
     .tco-site-nav-link {
       color: $color-foreground-on-tint;
     }
+
+    .tco-site-nav-menu-group {
+      opacity: 1;
+    }
   }
 
   &-menu-group {
+    opacity: 0;
+
     @include wider-than($breakpoint-tablet-portrait) {
       padding-top: $spacing-stack-16;
     }
