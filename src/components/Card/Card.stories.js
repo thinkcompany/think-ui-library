@@ -153,5 +153,9 @@ export const jobCard = () => {
 };
 
 export default {
-  title: 'Components / Card'
+  title: 'Components / Card',
+  // enables Chromatic for the component
+  parameters: {
+    chromatic: { disable: false }
+  }
 };

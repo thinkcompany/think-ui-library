@@ -27,5 +27,9 @@ export const Default = () => {
 };
 
 export default {
-  title: 'Components / Columns'
+  title: 'Components / Columns',
+  // enables Chromatic for the component
+  parameters: {
+    chromatic: { disable: false }
+  }
 };

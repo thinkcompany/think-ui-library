@@ -129,5 +129,9 @@ export const WithColumns = () => {
 };
 
 export default {
-  title: 'Components / Contact Form'
+  title: 'Components / Contact Form',
+  // enables Chromatic for the component
+  parameters: {
+    chromatic: { disable: false }
+  }
 };

@@ -195,5 +195,9 @@ export const Default = () => {
 };
 
 export default {
-  title: 'Components / Case Study Cards'
+  title: 'Components / Case Study Cards',
+  // enables Chromatic for the component
+  parameters: {
+    chromatic: { disable: false }
+  }
 };

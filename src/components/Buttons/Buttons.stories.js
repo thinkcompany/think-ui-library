@@ -72,5 +72,9 @@ export const LinkWithArrow = () => {
 };
 
 export default {
-  title: 'Controls & Inputs / Buttons'
+  title: 'Controls & Inputs / Buttons',
+  // enables Chromatic for the component
+  parameters: {
+    chromatic: { disable: false }
+  }
 };

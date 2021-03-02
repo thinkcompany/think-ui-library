@@ -35,5 +35,9 @@ export const byline = () => {
 };
 
 export default {
-  title: 'Components / Byline'
+  title: 'Components / Byline',
+  // enables Chromatic for the component
+  parameters: {
+    chromatic: { disable: false }
+  }
 };

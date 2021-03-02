@@ -142,5 +142,9 @@ export const Default = () => {
 };
 
 export default {
-  title: 'Components / Card Grid'
+  title: 'Components / Card Grid',
+  // enables Chromatic for the component
+  parameters: {
+    chromatic: { disable: false }
+  }
 };

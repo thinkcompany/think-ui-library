@@ -40,5 +40,9 @@ export const WithContainer = () => {
 };
 
 export default {
-  title: 'Components / Checklist'
+  title: 'Components / Checklist',
+  // enables Chromatic for the component
+  parameters: {
+    chromatic: { disable: false }
+  }
 };
