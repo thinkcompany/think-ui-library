@@ -11,6 +11,7 @@ import 'main.scss';
 import 'index.js';
 
 addParameters({
+  chromatic: { disable: true },
   options: {
     showPanel: true,
     panelPosition: 'bottom'
