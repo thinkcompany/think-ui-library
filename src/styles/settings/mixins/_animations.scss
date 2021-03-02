@@ -1,14 +1,10 @@
-// :root {
-//   --duration: 200ms;
-// }
-
 $speed: 400ms;
 $item-delay: $speed * 0.9;
 
 @mixin nav-animation {
   .tco-site-nav-wrapper {
     transform: translateX(100%);
-    transition: transform $speed linear;
+    transition: transform $speed ease-out;
   }
 
   .tco-site-nav-menu--primary {
@@ -18,28 +14,6 @@ $item-delay: $speed * 0.9;
       }
     }
   }
-
-  // .tco-site-nav-menu-item {
-  //   opacity: 0;
-  //   transition: opacity $speed ease-out ;
-  //   transition-delay: $item-delay;
-  //
-  //   &:nth-of-type(2) {
-  //     transition-delay: $item-delay + 50ms;
-  //   }
-  //
-  //   &:nth-of-type(3) {
-  //     transition-delay: $item-delay + 100ms;
-  //   }
-  //
-  //   &:nth-of-type(4) {
-  //     transition-delay: $item-delay + 150ms;
-  //   }
-  //
-  //   &:nth-of-type(5) {
-  //     transition-delay: $item-delay + 200ms;
-  //   }
-  // }
 
   &--open {
     .tco-site-nav-wrapper {
