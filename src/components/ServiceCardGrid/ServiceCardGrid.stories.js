@@ -3,31 +3,36 @@ const cardContents = [
     heading: 'Digital Transformation',
     image: 'img/services/digital-transformation.svg',
     description:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin magna urna, tempor quis maximus ac, posuere nec.'
+      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin magna urna, tempor quis maximus ac, posuere nec.',
+    id: 'digital-transformation'
   },
   {
     heading: 'Product Design & Development',
     image: 'img/services/product-design.svg',
     description:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin magna urna, tempor quis maximus ac, posuere nec.'
+      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin magna urna, tempor quis maximus ac, posuere nec.',
+    id: 'product-design'
   },
   {
     heading: 'Rapid Concept Realization',
     image: 'img/services/rapid-concept-realization.svg',
     description:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin magna urna, tempor quis maximus ac, posuere nec.'
+      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin magna urna, tempor quis maximus ac, posuere nec.',
+    id: 'rapid-concept-realization'
   },
   {
     heading: 'Strategy & Visioning',
     image: 'img/services/strategy-visioning.svg',
     description:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin magna urna, tempor quis maximus ac, posuere nec.'
+      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin magna urna, tempor quis maximus ac, posuere nec.',
+    id: 'strategy-visioning'
   },
   {
     heading: 'Audit & Analysis',
     image: 'img/services/audit-analysis.svg',
     description:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin magna urna, tempor quis maximus ac, posuere nec.'
+      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin magna urna, tempor quis maximus ac, posuere nec.',
+    id: 'audit-analysis'
   }
 ];
 
@@ -35,7 +40,7 @@ const serviceCard = input => {
   return `
     <div class="tco-card tco-card--service">
       <a href="#" class="tco-card-link">
-        <div class="tco-card-image-container tco-card-image-container--service">
+        <div class="tco-card-image-container tco-card-image-container--service tco-card-image-container--${input.id}">
           <img class="tco-card-image" alt="A brilliant description of the image" src="${input.image}" />
         </div>
         <div class="tco-card-content-container">

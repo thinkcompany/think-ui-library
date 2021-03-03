@@ -21,10 +21,17 @@ $bullet-offset: 15px;
     display: flex;
     flex-flow: row wrap;
     align-items: center;
-    margin-bottom: $spacing-stack-12;
 
     @include wider-than($breakpoint-tablet-portrait) {
       margin-bottom: $spacing-stack-20;
+    }
+
+    span {
+      margin-bottom: $spacing-stack-12;
+
+      @include wider-than($breakpoint-tablet-portrait) {
+        margin-bottom: 0;
+      }
     }
   }
 
@@ -64,7 +71,7 @@ $bullet-offset: 15px;
   }
 
   .tco-link {
-    @include type-not-link;
+    @include type-link($show-initial: false);
   }
 
   .tco-text-media-lede {

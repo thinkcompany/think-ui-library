@@ -5,6 +5,7 @@
   justify-content: space-between;
   overflow: hidden;
   padding: $spacing-stack-32 $spacing-inline-40;
+  border: $border-card;
 
   @include wider-than($breakpoint-laptop) {
     flex-flow: row nowrap;
@@ -21,7 +22,8 @@
     }
   }
 
-  &-content {
+  &-content,
+  &-disclaimer {
     max-width: 400px;
   }
 
@@ -29,6 +31,15 @@
     @include wider-than($breakpoint-laptop) {
       min-width: 520px;
       margin-top: $spacing-stack-8;
+    }
+  }
+
+  &-disclaimer {
+    @include type-body-xsmall($font-size: $font-size-14);
+    color: $color-classic-gray-medium;
+
+    @include wider-than($breakpoint-laptop) {
+      max-width: none;
     }
   }
 
@@ -53,10 +64,6 @@
       bottom: auto;
       transform: none;
     }
-  }
-
-  .tco-type-body--sans-xsmall {
-    color: $color-classic-gray-medium;
   }
 
   .newsletter-form {

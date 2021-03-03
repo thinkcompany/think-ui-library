@@ -204,7 +204,7 @@
     $breakpoint-phone-portrait,
     $breakpoint-desktop,
     32px,
-    36px
+    46px
   );
   font-family: $font-stack-slab;
 
@@ -260,9 +260,13 @@
   }
 }
 
-@mixin type-body-xsmall($font-color: inherit, $italic: false) {
+@mixin type-body-xsmall(
+  $font-color: inherit,
+  $italic: false,
+  $font-size: $font-size-12
+) {
   @include type-base-style($font-color, 500);
-  font-size: $font-size-12;
+  font-size: $font-size;
   font-family: $font-stack-sans-serif;
   line-height: 1.2;
 
@@ -305,7 +309,7 @@
   $font-family: inherit,
   $line-height: inherit,
   $underline: $font-color,
-  $showInitial: false
+  $show-initial: false
 ) {
   color: $font-color;
   font-weight: $font-weight;
@@ -320,7 +324,7 @@
   border-bottom-color: transparent;
   transition: border-color 0.2s linear, color 0.2s linear;
 
-  @if $showInitial {
+  @if $show-initial {
     border-bottom-color: $underline;
   }
 
@@ -333,7 +337,7 @@
   &:focus {
     border-bottom-color: $underline;
 
-    @if $showInitial {
+    @if $show-initial {
       border-bottom-color: transparent;
     }
   }
@@ -349,10 +353,10 @@ $arrow-translate: 10px;
   $padding-right: $arrow-offset + $arrow-offset,
   $fill: $color-tint-blue-primary
 ) {
+  @include type-link($show-initial: false);
   padding-right: $padding-right;
   color: $font-color;
   text-decoration: none;
-  border-bottom: 0 solid transparent;
 
   .tco-text-link-icon,
   svg {
@@ -361,7 +365,7 @@ $arrow-translate: 10px;
     height: $arrow-height;
     fill: $fill;
     transition: transform 0.2s linear;
-    transform: translate($arrow-offset, 0);
+    transform: translate($arrow-offset, 1px);
     transform-origin: left center;
   }
 
@@ -369,7 +373,7 @@ $arrow-translate: 10px;
   &:focus {
     .tco-text-link--icon,
     svg {
-      transform: translate($arrow-translate, 0);
+      transform: translate($arrow-translate, 1px);
     }
   }
 
@@ -378,7 +382,7 @@ $arrow-translate: 10px;
     .tco-text-link-icon,
     svg {
       fill: $color-disabled;
-      transform: translate($arrow-offset, 0);
+      transform: translate($arrow-offset, 1px);
     }
   }
 

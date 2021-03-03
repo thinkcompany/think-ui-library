@@ -20,11 +20,19 @@ $opacity--disabled: 0.4;
 
   &--split {
     display: flex;
-    flex-flow: row nowrap;
+    flex-flow: row wrap;
     justify-content: space-between;
 
     &-group {
       width: 100%;
+
+      &:first-of-type {
+        margin-bottom: $spacing-stack-24;
+
+        @include wider-than($breakpoint-phone-landscape) {
+          margin-bottom: 0;
+        }
+      }
 
       @include wider-than($breakpoint-phone-landscape) {
         width: calc(50% - #{$spacing-inline-8});
