@@ -1,18 +1,28 @@
 .tco-post-teaser {
+  &-content {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: flex-start;
+  }
+
   &-eyebrow {
+    @include type-eyebrow;
     display: block;
-    margin-bottom: $spacing-stack-8;
+    margin-bottom: $spacing-stack-12;
   }
 
   &-title {
+    display: inline-block;
     margin-bottom: 0;
   }
 
   &-link {
     @include type-link(
       $font-family: $font-stack-sans-serif-bold,
-      $line-height: 1.5
+      $line-height: 1.5,
+      $show-initial: true
     );
+    @include type-body-small($font-color: $color-classic-blue);
     display: block;
   }
 

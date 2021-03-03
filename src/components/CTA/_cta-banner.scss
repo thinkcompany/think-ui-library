@@ -5,3 +5,48 @@
     }
   }
 }
+
+.tco-container--cta {
+  position: relative;
+}
+
+.tco-speech-bubble {
+  position: absolute;
+  font-size: 84%;
+
+  @include wider-than($breakpoint-laptop) {
+    font-size: 100%;
+  }
+
+  &--left {
+    top: -4px;
+    left: -72px;
+    width: (107 / 16) * 1em;
+    height: (84 / 16) * 1em;
+
+    @include wider-than($breakpoint-laptop) {
+      top: 36px;
+      left: -108px;
+    }
+
+    @include wider-than($breakpoint-desktop) {
+      top: 86px;
+    }
+  }
+
+  &--right {
+    right: -96px;
+    bottom: 0;
+    width: (157 / 16) * 1em;
+    height: (129 / 16) * 1em;
+
+    @include wider-than($breakpoint-laptop) {
+      right: -130px;
+      bottom: 24px;
+    }
+
+    @include wider-than($breakpoint-desktop) {
+      bottom: 74px;
+    }
+  }
+}

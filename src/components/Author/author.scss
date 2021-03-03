@@ -14,6 +14,7 @@ $author-image-max: 480px;
 
   .tco-text-media-content {
     &-media {
+      align-items: flex-start;
       max-width: $author-image-max;
     }
   }

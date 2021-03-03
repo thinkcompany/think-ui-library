@@ -1,5 +1,4 @@
 $max-width-lede: 780px;
-$max-width-mobile: 524px;
 $bubble-max: 600px;
 
 .tco-text-media {
@@ -30,7 +29,6 @@ $bubble-max: 600px;
       position: relative;
       display: flex;
       order: 0;
-      max-width: $max-width-mobile;
       margin-bottom: $spacing-stack-32;
 
       @include wider-than($breakpoint-tablet-portrait) {
@@ -69,6 +67,10 @@ $bubble-max: 600px;
           margin: 0;
         }
       }
+
+      @include wider-than($breakpoint-laptop) {
+        width: calc(50% - #{$spacing-inline-50});
+      }
     }
   }
 
@@ -100,7 +102,7 @@ $bubble-max: 600px;
       margin-left: $spacing-inline-32;
 
       @include wider-than($breakpoint-tablet-portrait) {
-        margin-left: 0;
+        width: calc(50% - #{$spacing-inline-60});
       }
 
       .tco-text-media--align-center & {
@@ -113,7 +115,7 @@ $bubble-max: 600px;
     width: 100%;
 
     &::before {
-      @include pseudo-bubble;
+      @include pseudo-bubble($background: $color-classic-glass);
       z-index: 0;
       width: calc(100% - #{$spacing-inline-12});
       height: 0;
@@ -128,6 +130,10 @@ $bubble-max: 600px;
     &--tall {
       position: relative;
       width: auto;
+
+      @include wider-than($breakpoint-desktop) {
+        max-width: 90%;
+      }
 
       &::before {
         position: absolute;
@@ -145,6 +151,12 @@ $bubble-max: 600px;
 
       .tco-text-media-image {
         @include center-reset;
+      }
+    }
+
+    .tco-container-wrapper--glass & {
+      &::before {
+        background-color: $color-foreground-on-tint;
       }
     }
   }
