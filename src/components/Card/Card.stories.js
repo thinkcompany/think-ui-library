@@ -88,10 +88,6 @@ export const calloutCard = () => {
     'Callout description',
     'We want to help organizations supporting the frontline response'
   );
-  const image = text(
-    'Callout image',
-    'https://thinkstaging.wpengine.com/wp-content/themes/tbiv3/img/svgs/icon-sync.svg'
-  );
 
   return `
   <div class="tco-card tco-card--callout">
