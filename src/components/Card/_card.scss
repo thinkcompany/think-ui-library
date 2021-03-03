@@ -458,3 +458,12 @@ $icon-size-large: 44px;
     }
   }
 }
+
+// ========================================================
+// = MEDIA CARD
+// ========================================================
+.tco-card--media {
+  .tco-card-content-heading {
+    color: $color-classic-gray-dark;
+  }
+}

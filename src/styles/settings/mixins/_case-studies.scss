@@ -23,4 +23,13 @@ $clients: (
   .tco-case-study-image-container--case-study-bg::after {
     background-color: rgba(map-get($clients, $client), $opacity);
   }
+
+  .tco-card-link {
+    &:hover,
+    &:focus {
+      .tco-text-link {
+        border-bottom-color: $color-foreground-on-tint;
+      }
+    }
+  }
 }

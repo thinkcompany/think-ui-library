@@ -1,4 +1,10 @@
 .tco-post-teaser {
+  &-content {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: flex-start;
+  }
+
   &-eyebrow {
     @include type-eyebrow;
     display: block;
@@ -6,6 +12,7 @@
   }
 
   &-title {
+    display: inline-block;
     margin-bottom: 0;
   }
 

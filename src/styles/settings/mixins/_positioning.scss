@@ -59,6 +59,10 @@
 
     @include wider-than($breakpoint-tablet-portrait) {
       left: 0;
+      transform: translate(0, -60%);
+    }
+
+    @include wider-than($breakpoint-desktop) {
       transform: translate(0, -4.5vw);
     }
   }
