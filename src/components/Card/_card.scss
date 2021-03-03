@@ -112,6 +112,10 @@
   .tco-card-link {
     padding: $spacing-stack-24 0;
 
+    &:hover {
+      border-bottom-color: transparent;
+    }
+
     @include wider-than($breakpoint-phone-landscape) {
       padding: $spacing-stack-24 $spacing-inline-16;
     }
