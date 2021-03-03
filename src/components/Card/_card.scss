@@ -357,6 +357,10 @@ $icon-size-large: 44px;
       .tco-card-content-link {
         border-bottom-color: $color-classic-blue;
       }
+
+      .tco-card-image {
+        transform: translate(0, 0);
+      }
     }
   }
 
@@ -371,9 +375,12 @@ $icon-size-large: 44px;
 
   .tco-card-image {
     width: $icon-size;
+    height: $icon-size;
+    transform: translate(0, 0);
 
     @include wider-than($breakpoint-phone-landscape) {
       width: $icon-size-large;
+      height: $icon-size-large;
     }
   }
 

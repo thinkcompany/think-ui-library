@@ -97,8 +97,8 @@ export const calloutCard = () => {
   <div class="tco-card tco-card--callout">
     <a href="#" class="tco-card-link">
       <div class="tco-card-image-container tco-card-image-container--callout">
-        <svg class="tco-icon tco-card-image tco-card-image--callout" viewBox="0 0 24 24" role="presentation">
-          <use xlink:href="/img/icons.svg#icon-workshops"></use>
+        <svg class="tco-icon tco-card-image tco-card-image--callout" viewBox="0 0 44 44" role="presentation">
+          <use xlink:href="/img/icons.svg#icon-sync-blue"></use>
         </svg>
       </div>
       <div class="tco-card-content-container">
