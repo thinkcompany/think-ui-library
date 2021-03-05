@@ -88,26 +88,26 @@ export const calloutCard = () => {
     'Callout description',
     'We want to help organizations supporting the frontline response'
   );
-  const image = text(
-    'Callout image',
-    'https://thinkstaging.wpengine.com/wp-content/themes/tbiv3/img/svgs/icon-sync.svg'
-  );
 
   return `
   <div class="tco-card tco-card--callout">
-    <div class="tco-card-image-container tco-card-image-container--callout">
-      <img class="tco-card-image tco-card-image--callout" alt="Card image" src="${image}" />
-    </div>
-    <div class="tco-card-content-container">
-      <h2 class="tco-card-content-heading">${heading}</h2>
-      <p class="tco-card-content-description">${description}</p>
-      <a class="tco-card-content-link" href="#">
-      Tell us about your challenge
-      <svg class="tco-text-link-icon" width="20" height="20" viewBox="0 0 20 20" role="presentation">
-        <use xlink:href="/img/icons.svg#icon-arrow-right"></use>
-    </svg>
+    <a href="#" class="tco-card-link">
+      <div class="tco-card-image-container tco-card-image-container--callout">
+        <svg class="tco-icon tco-card-image tco-card-image--callout" viewBox="0 0 44 44" role="presentation">
+          <use xlink:href="/img/icons.svg#icon-sync-blue"></use>
+        </svg>
+      </div>
+      <div class="tco-card-content-container">
+        <h2 class="tco-card-content-heading">${heading}</h2>
+        <p class="tco-card-content-description">${description}</p>
+        <p class="tco-card-content-link">
+        Tell us about your challenge
+          <svg class="tco-text-link-icon" width="20" height="20" viewBox="0 0 20 20" role="presentation">
+            <use xlink:href="/img/icons.svg#icon-arrow-right"></use>
+          </svg>
+        </p>
+      </div>
     </a>
-    </div>
   </div>`;
 };
 
