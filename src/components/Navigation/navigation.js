@@ -9,18 +9,33 @@ export default class Nav {
     this.$menu;
   }
 
+  menuLocation() {
+    const vw = this.$body.clientWidth;
+    const container = this.$container;
+
+    const menu = this.$menu;
+
+    if (vw < 1280) {
+      container.prepend(menu);
+    }
+  }
+
   setupEventHandler() {
     const wrapper = this.$wrapper;
     const container = this.$container;
     const menu = this.$menu;
+    const menuClone = menu.cloneNode(true);
 
     let menuOpen = false;
+
+    menuClone.classList.add('tco-site-nav-menu--primary-clone');
+    wrapper.before(menuClone);
 
     this.$mobileMenuBtn.addEventListener(
       'click',
       () => {
         menuOpen = !menuOpen;
-        this.$body.classList.toggle('.tco-body--freeze');
+        this.$body.classList.toggle('tco-body--freeze');
         this.$mobileMenuBtn.classList.toggle('tco-site-header-toggle--open');
         this.$siteNav.classList.toggle('tco-site-nav--open');
         this.$logo.classList.toggle('tco-site-header-logo--open');
@@ -47,6 +62,7 @@ export default class Nav {
 
       if (this.$mobileMenuBtn) {
         this.setupEventHandler();
+        this.menuLocation();
       }
     });
   }
