@@ -139,9 +139,13 @@ $container-max: 1168px;
         cover;
 
       @include wider-than($breakpoint-phone-landscape) {
-        top: -138px;
+        top: -134px;
         width: 151px;
         height: 50px;
+      }
+
+      @include wider-than($breakpoint-phone-landscape) {
+        left: -7px;
       }
     }
 
