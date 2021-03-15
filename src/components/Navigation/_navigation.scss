@@ -8,7 +8,7 @@ $container-max: 1168px;
   z-index: 1;
   width: 100%;
   padding: $spacing-stack-12 $spacing-inline-24;
-  background-color: transparent;
+  background-color: $color-foreground-on-tint;
 
   @include wider-than($breakpoint-laptop) {
     padding: $spacing-stack-16 $spacing-inline-24;
