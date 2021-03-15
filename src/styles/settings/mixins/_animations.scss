@@ -31,24 +31,13 @@ $item-delay: $speed * 0.9;
 }
 
 @mixin logo-animation {
-  .letter {
-    fill: $color-classic-gray-dark;
-  }
+  &::after {
+    opacity: 0;
+    transition: opacity 1ms ease;
 
-  .bubble {
-    fill: $color-classic-blue;
-  }
-
-  &--open {
-    background-color: $color-classic-navy;
-    transition: background-color 100ms ease-out;
-    transition-delay: $speed;
-
-    .letter,
-    .bubble {
-      fill: $color-foreground-on-tint;
-      transition: fill 1ms ease;
-      transition-delay: $speed - 50ms;
+    .tco-site-nav--open & {
+      opacity: 1;
+      transition-delay: $speed;
     }
   }
 }
