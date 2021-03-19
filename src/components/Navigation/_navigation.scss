@@ -5,10 +5,10 @@ $container-max: 1168px;
   position: fixed;
   top: 0;
   left: 0;
-  z-index: 1;
+  z-index: 2;
   width: 100%;
   padding: $spacing-stack-12 $spacing-inline-24;
-  background-color: transparent;
+  background-color: $color-foreground-on-tint;
 
   @include wider-than($breakpoint-laptop) {
     padding: $spacing-stack-16 $spacing-inline-24;
@@ -30,8 +30,6 @@ $container-max: 1168px;
 
   &-logo {
     @include type-not-link;
-    @include logo-animation;
-    z-index: 3;
     display: inline-block;
 
     svg {
@@ -43,6 +41,14 @@ $container-max: 1168px;
         width: 151px;
         height: 50px;
       }
+    }
+
+    .letter {
+      fill: $color-classic-gray-dark;
+    }
+
+    .bubble {
+      fill: $color-classic-blue;
     }
   }
 
@@ -114,10 +120,34 @@ $container-max: 1168px;
   }
 
   &-container {
+    @include logo-animation;
+    position: relative;
     width: 100%;
     max-width: $container-max;
     margin: 0 auto;
     color: $color-foreground-on-tint;
+
+    &::after {
+      content: '';
+      position: absolute;
+      top: -108px;
+      left: 0;
+      display: block;
+      width: 97px;
+      height: 32px;
+      background: transparent url('/img/think-logo-white.svg') no-repeat center /
+        cover;
+
+      @include wider-than($breakpoint-phone-landscape) {
+        top: -134px;
+        width: 151px;
+        height: 50px;
+      }
+
+      @include wider-than($breakpoint-phone-landscape) {
+        left: -7px;
+      }
+    }
 
     @include wider-than($breakpoint-tablet-portrait) {
       display: flex;
@@ -152,7 +182,7 @@ $container-max: 1168px;
       }
     }
 
-    @include wider-than($breakpoint-laptop) {
+    @include wider-than($breakpoint-desktop) {
       display: flex;
       width: 100%;
       margin-right: $spacing-inline-50;
