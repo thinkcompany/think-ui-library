@@ -31,6 +31,10 @@ $device-width-report--mobile: 55%;
       svg {
         transform: translate($arrow-translate, 0);
       }
+
+      .tco-card-content-heading {
+        border-bottom-color: $color-foreground-on-tint;
+      }
     }
   }
 
@@ -152,12 +156,15 @@ $device-width-report--mobile: 55%;
     }
 
     &-heading {
+      color: $color-foreground-on-tint;
+
       @include wider-than($breakpoint-tablet-portrait) {
         margin-bottom: $spacing-stack-32;
       }
     }
 
     &-description {
+      margin-top: $spacing-stack-32;
       margin-bottom: $spacing-stack-16;
       padding: 0;
       color: $color-foreground-on-tint;
@@ -290,10 +297,10 @@ $device-width-report--mobile: 55%;
         z-index: 1;
 
         @include wider-than($breakpoint-tablet-portrait) {
-          display: flex;
-          flex-flow: column nowrap;
-          align-items: flex-start;
-          justify-content: center;
+          // display: flex;
+          // flex-flow: column nowrap;
+          // align-items: flex-start;
+          // justify-content: center;
           width: 50%;
           height: 100%;
           background-color: transparent;
