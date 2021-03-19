@@ -358,6 +358,10 @@ $icon-size-large: 44px;
     }
 
     &:hover {
+      .tco-card-content-heading {
+        border-bottom-color: transparent;
+      }
+
       .tco-card-content-link {
         border-bottom-color: $color-classic-blue;
       }
@@ -421,6 +425,12 @@ $icon-size-large: 44px;
   &:hover,
   &:focus {
     transform: scale(1.03);
+
+    .tco-card-link {
+      .tco-card-content-heading {
+        border-bottom-color: transparent;
+      }
+    }
 
     .tco-btn {
       background-color: $color-hover;
