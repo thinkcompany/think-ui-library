@@ -1,0 +1,54 @@
+$speed: 400ms;
+$item-delay: $speed * 0.9;
+
+@mixin nav-animation {
+  .tco-site-nav-wrapper {
+    transform: translateX(100%);
+    transition: transform $speed ease-out;
+  }
+
+  .tco-site-nav-menu--primary {
+    .tco-site-nav-menu-item {
+      @include wider-than($breakpoint-desktop) {
+        opacity: 1;
+      }
+    }
+  }
+
+  &--open {
+    .tco-site-nav-wrapper {
+      z-index: 2;
+      overflow-y: auto;
+      transform: translateX(0);
+    }
+
+    .tco-site-nav-menu {
+      .tco-site-nav-menu-item {
+        opacity: 1;
+      }
+    }
+  }
+}
+
+@mixin logo-animation {
+  .letter {
+    fill: $color-classic-gray-dark;
+  }
+
+  .bubble {
+    fill: $color-classic-blue;
+  }
+
+  &--open {
+    background-color: $color-classic-navy;
+    transition: background-color 100ms ease-out;
+    transition-delay: $speed;
+
+    .letter,
+    .bubble {
+      fill: $color-foreground-on-tint;
+      transition: fill 1ms ease;
+      transition-delay: $speed - 50ms;
+    }
+  }
+}
