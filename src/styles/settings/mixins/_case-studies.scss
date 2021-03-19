@@ -10,10 +10,6 @@ $clients: (
 );
 
 @mixin clientColors($client, $opacity: var(--bg-alpha)) {
-  .tco-card-content-container {
-    background-color: map-get($clients, $client);
-  }
-
   .tco-card-content-container--full-width {
     @include wider-than($breakpoint-tablet-portrait) {
       background-color: transparent;
@@ -25,6 +21,8 @@ $clients: (
   }
 
   .tco-card-link {
+    background-color: map-get($clients, $client);
+
     &:hover,
     &:focus {
       .tco-text-link {

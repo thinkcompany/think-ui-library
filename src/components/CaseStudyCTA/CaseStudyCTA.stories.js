@@ -154,9 +154,8 @@ const caseStudyCard = input => {
           ${
             cardType === 'full-width'
               ? `
-            <p class="tco-card-content-description">${input.description}</p>
-          `
-              : ''
+            <p class="tco-card-content-description">${input.description}</p>`
+              : `<p class="tco-card-content-description"></p>`
           }
           <span class="tco-text-link">
             ${input.cta}
