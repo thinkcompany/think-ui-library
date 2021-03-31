@@ -1,4 +1,5 @@
 $offset: $spacing-stack-50;
+$offset-xl: 140px;
 
 .tco-container-wrapper--image-only {
   padding: 0;
@@ -12,9 +13,18 @@ $offset: $spacing-stack-50;
     margin: 0 auto;
   }
 
-  &--offset-top {
+  &--offset-top,
+  &--offset-top-xl {
     .tco-image-only-image {
-      transform: translateY(-$offset);
+      margin-top: -$offset;
+    }
+  }
+
+  @include wider-than($breakpoint-desktop) {
+    &--offset-top-xl {
+      .tco-image-only-image {
+        margin-top: -$offset-xl;
+      }
     }
   }
 
