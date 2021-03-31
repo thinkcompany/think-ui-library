@@ -1,3 +1,4 @@
+$icon-size-mobile: 32px;
 $icon-size: 48px;
 $icon-size-small: 19px;
 $icon-size-twitter: 22px;
@@ -18,8 +19,13 @@ $icon-list-max-width: 278px;
   }
 
   .tco-icon {
-    width: $icon-size;
-    height: $icon-size;
+    width: $icon-size-mobile;
+    height: $icon-size-mobile;
+
+    @include wider-than($breakpoint-laptop) {
+      width: $icon-size;
+      height: $icon-size;
+    }
   }
 
   &--small {
