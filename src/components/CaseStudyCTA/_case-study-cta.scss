@@ -400,4 +400,12 @@ $device-width-report--mobile: 55%;
   &-abc {
     @include clientColors(abc);
   }
+
+  &-wawa {
+    @include clientColors(wawa);
+  }
+
+  &-jackson {
+    @include clientColors(jackson);
+  }
 }

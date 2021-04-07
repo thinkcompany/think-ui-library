@@ -6,7 +6,9 @@ $clients: (
   policy-map: $color-case-study-policy-map-primary,
   einstein: $color-case-study-einstein-primary,
   janney: $color-case-study-janney-primary,
-  abc: $color-case-study-abc-primary
+  abc: $color-case-study-abc-primary,
+  wawa: $color-case-study-wawa-primary,
+  jackson: $color-case-study-jackson-primary
 );
 
 @mixin clientColors($client, $opacity: var(--bg-alpha)) {
