@@ -268,15 +268,47 @@
     "variants": [
       {
         "name": "primary",
-        "color": "#503177"
+        "color": "#002b5c"
       },
       {
         "name": "secondary",
-        "color": "#f38933"
+        "color": "#01539b"
       },
       {
         "name": "tertiary",
-        "color": "#cad2d3"
+        "color": "#ebf9ff"
+      }
+    ]
+  },
+  {
+    "name": "jackson",
+    "section": "case-study",
+    "variants": [
+      {
+        "name": "primary",
+        "color": "#d42e12"
+      },
+      {
+        "name": "secondary",
+        "color": "#3b3b3b"
+      }
+    ]
+  },
+  {
+    "name": "wawa",
+    "section": "case-study",
+    "variants": [
+      {
+        "name": "primary",
+        "color": "#c41230"
+      },
+      {
+        "name": "secondary",
+        "color": "#591f00"
+      },
+      {
+        "name": "tertiary",
+        "color": "#ece5d9"
       }
     ]
   }
