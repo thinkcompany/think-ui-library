@@ -13,6 +13,8 @@ $device-width-kiosk: 442px;
 $device-width-kiosk--mobile: 60%;
 $device-width-report: 420px;
 $device-width-report--mobile: 55%;
+$device-width-tablets--mobile: 75%;
+$device-width-tablets: 80%;
 
 .tco-card--case-study {
   position: relative;
@@ -127,6 +129,13 @@ $device-width-report--mobile: 55%;
     &--tablet-angle {
       .tco-case-study-image {
         width: $device-width-tablet-angle--mobile;
+      }
+    }
+
+    &--tablets {
+      .tco-case-study-image {
+        width: $device-width-tablets--mobile;
+        transform: translateY($offset * 2);
       }
     }
   }
@@ -277,6 +286,12 @@ $device-width-report--mobile: 55%;
           width: 100%;
           max-width: $device-width-report;
           transform: translateY(14%);
+        }
+      }
+
+      .tco-case-study-image-container--tablets {
+        .tco-case-study-image {
+          width: $device-width-tablets;
         }
       }
     }
