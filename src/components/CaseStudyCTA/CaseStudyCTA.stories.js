@@ -24,6 +24,18 @@ const cardContents = [
     opacity: 0.9
   },
   {
+    id: 'retail360',
+    eyebrow: 'Comcast Retail360',
+    heading: 'Succinct headline that entices you to read the whole thing',
+    device: 'tablets',
+    imageBg: 'img/case-studies/nemours-background.jpg',
+    description:
+      'Lorem ipsum dolor set amet uncle B ipsum Lorem ipsum dolor set amet uncle B ipsum Lorem ipsum dolor set amet uncle B ipsum Lorem ipsum dolor set amet uncle B ipsum',
+    cta: 'View case study',
+    offset: 'bottom',
+    opacity: 0.9
+  },
+  {
     id: 'merck',
     eyebrow: 'Merck',
     heading: 'Succinct headline that entices you to read the whole thing',
@@ -32,18 +44,6 @@ const cardContents = [
     description:
       'Lorem ipsum dolor set amet uncle B ipsum Lorem ipsum dolor set amet uncle B ipsum Lorem ipsum dolor set amet uncle B ipsum Lorem ipsum dolor set amet uncle B ipsum',
     cta: 'View case study',
-    opacity: 0.9
-  },
-  {
-    id: 'retail360',
-    eyebrow: 'Comcast Retail360',
-    heading: 'Succinct headline that entices you to read the whole thing',
-    device: 'tablet',
-    imageBg: 'img/case-studies/nemours-background.jpg',
-    description:
-      'Lorem ipsum dolor set amet uncle B ipsum Lorem ipsum dolor set amet uncle B ipsum Lorem ipsum dolor set amet uncle B ipsum Lorem ipsum dolor set amet uncle B ipsum',
-    cta: 'View case study',
-    offset: 'bottom',
     opacity: 0.9
   },
   {
@@ -91,7 +91,7 @@ const cardContents = [
     opacity: 0.9
   },
   {
-    id: 'comcast',
+    id: 'wawa',
     eyebrow: 'Wawa',
     heading: 'Succinct headline that entices you to read the whole thing',
     device: 'kiosk',
