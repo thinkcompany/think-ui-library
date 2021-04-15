@@ -311,5 +311,15 @@
         "color": "#ece5d9"
       }
     ]
+  },
+  {
+    "name": "adp",
+    "section": "case-study",
+    "variants": [
+      {
+        "name": "primary",
+        "color": "#ED1C2E"
+      }
+    ]
   }
 ]

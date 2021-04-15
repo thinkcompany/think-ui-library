@@ -15,6 +15,7 @@ $device-width-report: 420px;
 $device-width-report--mobile: 55%;
 $device-width-tablets--mobile: 75%;
 $device-width-tablets: 80%;
+$cs-hero-padding: 130px;
 
 .tco-card--case-study {
   position: relative;
@@ -422,5 +423,62 @@ $device-width-tablets: 80%;
 
   &-jackson {
     @include clientColors(jackson);
+  }
+
+  &-adp {
+    @include clientColors(adp);
+  }
+}
+
+.tco-card-grid--case-study {
+  position: relative;
+  z-index: 1;
+}
+
+.single-casestudies {
+  &.comcast {
+    @include csColor(comcast);
+  }
+
+  &.nemours {
+    @include csColor(nemours);
+  }
+
+  &.merck {
+    @include csColor(merck);
+  }
+
+  &.retail360 {
+    @include csColor(retail360);
+  }
+
+  &.policy-map {
+    @include csColor(policy-map);
+  }
+
+  &.einstein {
+    @include csColor(einstein);
+  }
+
+  &.janney {
+    @include csColor(janney);
+  }
+
+  &.abc {
+    @include csColor(abc);
+  }
+
+  &.wawa {
+    @include csColor(wawa);
+  }
+
+  &.jackson {
+    @include csColor(jackson);
+  }
+
+  &.case-study-new-format .tco-text-only-page-header {
+    .tco-container {
+      padding-bottom: $cs-hero-padding;
+    }
   }
 }
