@@ -476,6 +476,10 @@ $cs-hero-padding: 130px;
     @include csColor(jackson);
   }
 
+  &.adp {
+    @include csColor(adp);
+  }
+
   &.case-study-new-format .tco-text-only-page-header {
     .tco-container {
       padding-bottom: $cs-hero-padding;
