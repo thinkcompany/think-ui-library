@@ -8,7 +8,8 @@ $clients: (
   janney: $color-case-study-janney-primary,
   abc: $color-case-study-abc-primary,
   wawa: $color-case-study-wawa-primary,
-  jackson: $color-case-study-jackson-primary
+  jackson: $color-case-study-jackson-primary,
+  adp: $color-case-study-adp-primary
 );
 
 @mixin clientColors($client, $opacity: var(--bg-alpha)) {
@@ -31,5 +32,13 @@ $clients: (
         border-bottom-color: $color-foreground-on-tint;
       }
     }
+  }
+}
+
+@mixin csColor($client, $bg: var(--bg-alpha)) {
+  .tco-text-only-page-header,
+  .tco-site-header {
+    background-color: map-get($clients, $client);
+    color: $color-foreground-on-tint;
   }
 }
