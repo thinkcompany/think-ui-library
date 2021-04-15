@@ -2,6 +2,17 @@ import { select, object } from '@storybook/addon-knobs';
 
 const cardContents = [
   {
+    id: 'wawa',
+    eyebrow: 'Wawa',
+    heading: 'Succinct headline that entices you to read the whole thing',
+    device: 'kiosk-2',
+    imageBg: 'img/case-studies/nemours-background.jpg',
+    description:
+      'Lorem ipsum dolor set amet uncle B ipsum Lorem ipsum dolor set amet uncle B ipsum Lorem ipsum dolor set amet uncle B ipsum Lorem ipsum dolor set amet uncle B ipsum',
+    cta: 'View case study',
+    opacity: 0.9
+  },
+  {
     id: 'nemours',
     eyebrow: 'Nemours',
     heading: 'Succinct headline that entices you to read the whole thing',
@@ -84,17 +95,6 @@ const cardContents = [
     eyebrow: 'ABC',
     heading: 'Succinct headline that entices you to read the whole thing',
     device: 'laptop-angle',
-    imageBg: 'img/case-studies/nemours-background.jpg',
-    description:
-      'Lorem ipsum dolor set amet uncle B ipsum Lorem ipsum dolor set amet uncle B ipsum Lorem ipsum dolor set amet uncle B ipsum Lorem ipsum dolor set amet uncle B ipsum',
-    cta: 'View case study',
-    opacity: 0.9
-  },
-  {
-    id: 'wawa',
-    eyebrow: 'Wawa',
-    heading: 'Succinct headline that entices you to read the whole thing',
-    device: 'kiosk',
     imageBg: 'img/case-studies/nemours-background.jpg',
     description:
       'Lorem ipsum dolor set amet uncle B ipsum Lorem ipsum dolor set amet uncle B ipsum Lorem ipsum dolor set amet uncle B ipsum Lorem ipsum dolor set amet uncle B ipsum',
