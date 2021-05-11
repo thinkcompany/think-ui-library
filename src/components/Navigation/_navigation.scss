@@ -146,7 +146,7 @@ $container-max: 1168px;
         height: 50px;
       }
 
-      @include wider-than($breakpoint-phone-landscape) {
+      @include wider-than($breakpoint-tablet-portrait) {
         top: -134px;
       }
     }
