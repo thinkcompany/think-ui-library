@@ -5,10 +5,11 @@ $container-max: 1168px;
   position: fixed;
   top: 0;
   left: 0;
-  z-index: 2;
+  z-index: 3;
   width: 100%;
   padding: $spacing-stack-12 $spacing-inline-24;
-  background-color: $color-foreground-on-tint;
+  background-color: transparent;
+  transition: background-color 0.2s linear;
 
   @include wider-than($breakpoint-laptop) {
     padding: $spacing-stack-16 $spacing-inline-24;
@@ -139,13 +140,14 @@ $container-max: 1168px;
         cover;
 
       @include wider-than($breakpoint-phone-landscape) {
-        top: -134px;
+        top: -108px;
+        left: -7px;
         width: 151px;
         height: 50px;
       }
 
-      @include wider-than($breakpoint-phone-landscape) {
-        left: -7px;
+      @include wider-than($breakpoint-tablet-portrait) {
+        top: -134px;
       }
     }
 

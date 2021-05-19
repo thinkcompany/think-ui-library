@@ -29,6 +29,7 @@ export default class Nav {
     let menuOpen = false;
 
     menuClone.classList.add('tco-site-nav-menu--primary-clone');
+    menuClone.setAttribute('tabindex', '-1');
     wrapper.before(menuClone);
 
     this.$mobileMenuBtn.addEventListener(
