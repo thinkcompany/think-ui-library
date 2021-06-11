@@ -90,6 +90,7 @@
 // ========================================================
 .tco-card--service {
   max-width: none;
+  border: 1px solid $color-classic-gray-light;
   border-width: 0 0 1px;
   box-shadow: none;
   transition: background-color 0.2s linear;
