@@ -365,7 +365,7 @@ $arrow-translate: 10px;
     height: $arrow-height;
     fill: $fill;
     transition: transform 0.2s linear;
-    transform: translate($arrow-offset, 1px);
+    transform: translate($arrow-offset, 0px);
     transform-origin: left center;
   }
 
@@ -373,7 +373,7 @@ $arrow-translate: 10px;
   &:focus {
     .tco-text-link--icon,
     svg {
-      transform: translate($arrow-translate, 1px);
+      transform: translate($arrow-translate, 0px);
     }
   }
 
@@ -382,7 +382,7 @@ $arrow-translate: 10px;
     .tco-text-link-icon,
     svg {
       fill: $color-disabled;
-      transform: translate($arrow-offset, 1px);
+      transform: translate($arrow-offset, 0px);
     }
   }
 
