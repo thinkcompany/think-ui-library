@@ -58,6 +58,11 @@
     }
   }
 
+  .tco-form-row,
+  .gfield {
+    margin-bottom: $spacing-stack-24;
+  }
+
   .tco-doodle {
     @include pseudo-doodle;
     position: absolute;
