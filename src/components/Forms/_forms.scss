@@ -4,6 +4,7 @@
 \*---------------------------------------------- */
 
 $opacity--disabled: 0.4;
+$field-space: 36px;
 
 /* ----------------------------------------------*\
     Form Row
@@ -11,8 +12,8 @@ $opacity--disabled: 0.4;
 
 .tco-form-row,
 %tco-form-row {
-  position: relative;
-  margin-bottom: $spacing-stack-24;
+  width: 100%;
+  margin-bottom: $field-space;
 
   &:last-of-type {
     margin-bottom: 0;
@@ -27,16 +28,24 @@ $opacity--disabled: 0.4;
       width: 100%;
 
       &:first-of-type {
-        margin-bottom: $spacing-stack-24;
+        margin-bottom: $field-space;
 
         @include wider-than($breakpoint-phone-landscape) {
           margin-bottom: 0;
         }
       }
 
+      @include wider-than($breakpoint-phone-portrait) {
+        width: 100%;
+      }
+
       @include wider-than($breakpoint-phone-landscape) {
         width: calc(50% - #{$spacing-inline-8});
       }
+    }
+
+    &--textarea {
+      margin-bottom: $field-space - 10px;
     }
   }
 
