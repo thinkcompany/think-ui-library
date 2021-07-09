@@ -1,3 +1,5 @@
+/* stylelint-disable selector-max-combinators, selector-max-compound-selectors */
+
 $color-hover: #08519a;
 
 .tco-newsletter-form {
@@ -138,6 +140,24 @@ $color-hover: #08519a;
     &:disabled {
       background-color: transparent;
     }
+  }
+
+  .gfield_validation_error & {
+    align-items: center;
+  }
+
+  .gfield_error {
+    height: auto;
+    margin-bottom: $spacing-stack-12;
+  }
+
+  .gfield_error > .ginput_container > input {
+    padding: 5px $spacing-inline-4;
+  }
+
+  .tco-newsletter-form-disclaimer {
+    margin-bottom: 0;
+    line-height: 1.4;
   }
 }
 

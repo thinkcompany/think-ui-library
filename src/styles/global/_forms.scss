@@ -37,6 +37,10 @@ $select-height: 35px;
   color: $color-foreground-tertiary;
 }
 
+.ginput_container_radio {
+  margin-top: $spacing-stack-12;
+}
+
 .gfield_error {
   > .ginput_container > input,
   textarea {
@@ -58,7 +62,7 @@ $select-height: 35px;
   display: flex;
   align-items: flex-end;
   justify-content: flex-start;
-  margin: 0 $spacing-inline-16 $spacing-stack-16;
+  margin-bottom: $spacing-stack-16;
 }
 
 .gform_validation_container {
