@@ -140,8 +140,8 @@ $textarea-height: 80px;
 .tco-form-textarea,
 .textarea {
   @extend %tco-form-input;
-  @include spacing-inset-8;
   max-height: $textarea-height;
+  padding: $spacing-stack-8 $spacing-inline-4;
 
   + .tco-form-state-icon {
     top: rem(34px);

@@ -1,6 +1,9 @@
 /**
  * Gravity Forms plugin style overrides
  */
+
+$select-height: 35px;
+
 .gform_fields {
   @include list-plain;
   display: flex;
@@ -27,6 +30,11 @@
   select {
     @extend %tco-form-input;
   }
+}
+
+.gfield_select {
+  height: $select-height;
+  color: $color-foreground-tertiary;
 }
 
 .gfield_error {
