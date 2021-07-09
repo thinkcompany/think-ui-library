@@ -1,6 +1,9 @@
 /**
  * Gravity Forms plugin style overrides
  */
+
+$select-height: 35px;
+
 .gform_fields {
   @include list-plain;
   display: flex;
@@ -29,6 +32,11 @@
   }
 }
 
+.gfield_select {
+  height: $select-height;
+  color: $color-foreground-tertiary;
+}
+
 .gfield_error {
   > .ginput_container > input,
   textarea {
@@ -49,7 +57,7 @@
 .gform_footer {
   display: flex;
   align-items: flex-end;
-  justify-content: center;
+  justify-content: flex-start;
   margin: 0 $spacing-inline-16 $spacing-stack-16;
 }
 
