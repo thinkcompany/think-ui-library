@@ -26,8 +26,15 @@ $color-hover: #08519a;
   }
 
   &:focus {
-    border-color: $color-classic-navy;
-    outline: none;
+    box-shadow: 0 0 20px 0 rgba($color-hover, 0.5);
+    outline: 2px solid $color-hover;
+    outline-offset: 2px;
+  }
+
+  &:active,
+  &:focus {
+    border-color: $color-hover;
+    background-color: $color-hover;
   }
 
   &[disabled],
@@ -45,11 +52,6 @@ $color-hover: #08519a;
   border: 1px solid $color-classic-blue;
   background: $color-classic-blue;
   color: $color-foreground-on-tint;
-
-  &:active,
-  &:focus {
-    border-color: $color-classic-navy;
-  }
 
   &[disabled],
   &:disabled {
@@ -70,6 +72,10 @@ $color-hover: #08519a;
 
   &:active {
     border-color: $color-hover;
+  }
+
+  &:focus {
+    color: $color-foreground-on-tint;
   }
 
   &[disabled],
