@@ -1,4 +1,4 @@
-/* stylelint-disable max-line-length, max-nesting-depth , selector-max-combinators, selector-max-compound-selectors, selector-max-specificity */
+/* stylelint-disable max-line-length, max-nesting-depth , selector-max-combinators, selector-max-compound-selectors, selector-max-specificity , selector-no-qualifying-type */
 
 $opacity--disabled: 0.4;
 $field-space: 36px;
@@ -165,7 +165,8 @@ $field-space: 36px;
       Text Area
 \*---------------------------------------------- */
 
-.tco-form-textarea {
+.tco-form-textarea,
+.textarea {
   @extend %tco-form-input;
   @include spacing-inset-8;
 
@@ -237,7 +238,8 @@ $field-space: 36px;
       Checkbox
 \*---------------------------------------------- */
 
-.tco-form-checkbox {
+.tco-form-checkbox,
+.gfield-choice-input {
   @extend %tco-accessibly-hidden;
   @extend %tco-form-input--pseudo;
 
@@ -306,7 +308,8 @@ $field-space: 36px;
       Radio Buttons
 \*---------------------------------------------- */
 
-.tco-form-radio {
+.tco-form-radio,
+input[type='radio'] {
   @extend %tco-accessibly-hidden;
   @extend %tco-form-input--pseudo;
 
