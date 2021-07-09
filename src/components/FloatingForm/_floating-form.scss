@@ -183,29 +183,29 @@ $think-bubble-h: 51px;
   }
 }
 
-.tco-floating-modal-body,
-.tco-contact-form {
-  .gform_button {
-    border: 1px solid $color-classic-blue;
-    background-color: $color-classic-blue;
-    color: $color-foreground-on-tint;
+// .tco-floating-modal-body,
+// .tco-contact-form {
+//   .gform_button {
+//     border: 1px solid $color-classic-blue;
+//     background-color: $color-classic-blue;
+//     color: $color-foreground-on-tint;
 
-    &:hover {
-      border-color: $color-hover;
-      background: $color-hover;
-    }
+//     &:hover {
+//       border-color: $color-hover;
+//       background: $color-hover;
+//     }
 
-    &:active,
-    &:focus {
-      border-color: $color-classic-navy;
-    }
+//     &:active,
+//     &:focus {
+//       border-color: $color-classic-navy;
+//     }
 
-    &[disabled],
-    &:disabled {
-      color: $color-foreground-on-tint;
-    }
-  }
-}
+//     &[disabled],
+//     &:disabled {
+//       color: $color-foreground-on-tint;
+//     }
+//   }
+// }
 
 // ========================================================
 // = FLOATING FORM
@@ -226,8 +226,10 @@ $think-bubble-h: 51px;
     margin-bottom: $spacing-stack-12;
   }
 
-  .tco-form-textarea {
-    line-height: 1.3;
+  .tco-form-textarea,
+  .textarea {
+    padding: 0 4px;
+    line-height: 1.78;
     resize: none;
   }
 

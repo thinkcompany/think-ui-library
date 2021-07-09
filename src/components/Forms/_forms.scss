@@ -2,6 +2,7 @@
 
 $opacity--disabled: 0.4;
 $field-space: 36px;
+$textarea-height: 80px;
 
 /* ----------------------------------------------*\
     Form Row
@@ -136,31 +137,6 @@ $field-space: 36px;
   }
 }
 
-.tco-form-input--large {
-  padding: $spacing-stack-16 $spacing-inline-4;
-
-  + .tco-form-state-icon {
-    top: rem(44px);
-  }
-}
-
-.tco-form-input--medium {
-  padding: $spacing-stack-8 $spacing-inline-4;
-
-  + .tco-form-state-icon {
-    top: rem(36px);
-  }
-}
-
-.tco-form-input--small {
-  padding: $spacing-stack-4 $spacing-inline-4;
-  font-size: $font-size-12;
-
-  + .tco-form-state-icon {
-    top: rem(30px);
-  }
-}
-
 /* ----------------------------------------------*\
       Text Area
 \*---------------------------------------------- */
@@ -169,6 +145,7 @@ $field-space: 36px;
 .textarea {
   @extend %tco-form-input;
   @include spacing-inset-8;
+  max-height: $textarea-height;
 
   + .tco-form-state-icon {
     top: rem(34px);
@@ -197,8 +174,14 @@ $field-space: 36px;
   }
 }
 
-.gfield_label {
+.gfield_label,
+.gfield_radio label,
+.gfield_checkbox label {
   @extend %tco-form-label;
+}
+
+.gfield_label_before_complex {
+  margin-bottom: $spacing-stack-12;
 }
 
 /* ----------------------------------------------*\

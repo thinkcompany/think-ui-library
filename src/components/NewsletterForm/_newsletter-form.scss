@@ -1,3 +1,5 @@
+$color-hover: #08519a;
+
 .tco-newsletter-form {
   position: relative;
   z-index: 2;
@@ -117,6 +119,24 @@
         position: absolute;
         top: $spacing-stack-12;
       }
+    }
+  }
+
+  .gform_button {
+    @extend %tco-btn--secondary;
+
+    &:hover {
+      background-color: $color-classic-blue;
+      color: $color-foreground-on-tint;
+    }
+
+    &:active {
+      border-color: $color-hover;
+    }
+
+    &[disabled],
+    &:disabled {
+      background-color: transparent;
     }
   }
 }
