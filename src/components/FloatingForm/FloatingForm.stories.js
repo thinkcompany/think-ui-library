@@ -80,13 +80,16 @@ export const floatingForm = () => {
             <label for="contact-message" class="tco-form-label">
               ${messageLabel}
             </label>
-            <textarea
-              class="tco-form-textarea"
-              id="contact-message"
-              name="contact-message"
-              placeholder="${messagePlaceholder}"
-              rows="1"
-            ></textarea>
+            <div class="ginput_container ginput_container_textarea">
+              <textarea
+                class="tco-form-textarea textarea"
+                id="contact-message"
+                name="contact-message"
+                placeholder="${messagePlaceholder}"
+                rows="10"
+                cols="50"
+              ></textarea>
+            </div>
             <p class="tco-type-body--sans-small">*Required</p>
           </div>
           <button type="submit" class="tco-btn tco-btn--primary">
