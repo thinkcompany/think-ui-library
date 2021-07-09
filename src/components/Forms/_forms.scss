@@ -72,7 +72,8 @@ $textarea-height: 80px;
 }
 
 .gform_footer {
-  @extend .tco-form-row--button;
+  display: flex;
+  flex-flow: row wrap;
 }
 
 /* ----------------------------------------------*\
