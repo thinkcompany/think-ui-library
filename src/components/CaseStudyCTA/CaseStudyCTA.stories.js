@@ -2,10 +2,10 @@ import { select, object } from '@storybook/addon-knobs';
 
 const cardContents = [
   {
-    id: 'wawa',
-    eyebrow: 'Wawa',
+    id: 'convenience',
+    eyebrow: 'Leading U.S. Convenience Store',
     heading: 'Succinct headline that entices you to read the whole thing',
-    device: 'kiosk-2',
+    device: 'kiosk',
     imageBg: 'img/case-studies/nemours-background.jpg',
     description:
       'Lorem ipsum dolor set amet uncle B ipsum Lorem ipsum dolor set amet uncle B ipsum Lorem ipsum dolor set amet uncle B ipsum Lorem ipsum dolor set amet uncle B ipsum',

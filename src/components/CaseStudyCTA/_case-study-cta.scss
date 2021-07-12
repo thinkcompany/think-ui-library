@@ -9,7 +9,7 @@ $device-width-tablet-angle--mobile: 80%;
 $device-width-laptop: 570px;
 $device-width-laptop-angle: 500px;
 $device-width-laptop-angle--mobile: 75%;
-$device-width-kiosk: 442px;
+$device-width-kiosk: 390px;
 $device-width-kiosk--mobile: 60%;
 $device-width-report: 420px;
 $device-width-report--mobile: 55%;
@@ -270,7 +270,7 @@ $cs-hero-padding: 130px;
         .tco-case-study-image {
           width: 100%;
           max-width: $device-width-kiosk;
-          transform: translateY(5%);
+          transform: translateY(0);
         }
       }
 
@@ -278,7 +278,7 @@ $cs-hero-padding: 130px;
         .tco-case-study-image {
           width: 100%;
           max-width: $device-width-desktop;
-          transform: translateY(-2%);
+          transform: translateY(0);
         }
       }
 
@@ -417,8 +417,8 @@ $cs-hero-padding: 130px;
     @include clientColors(abc);
   }
 
-  &-wawa {
-    @include clientColors(wawa);
+  &-convenience {
+    @include clientColors(convenience);
   }
 
   &-jackson {
@@ -468,8 +468,8 @@ $cs-hero-padding: 130px;
     @include csColor(abc);
   }
 
-  &.wawa {
-    @include csColor(wawa);
+  &.convenience {
+    @include csColor(convenience);
   }
 
   &.jackson {
