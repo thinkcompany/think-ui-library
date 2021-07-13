@@ -61,7 +61,6 @@ export const speaker = () => {
 
   return `
   <div class="tco-container-wrapper">
-    <p class="tco-type-eyebrow">${eyebrow}</p>
 	  <div class="tco-container">
       <div class="tco-text-media tco-text-media--align-left tco-speaker">
         <div class="tco-text-media-content tco-text-media-content-text">
