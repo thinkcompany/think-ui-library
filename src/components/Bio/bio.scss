@@ -1,4 +1,5 @@
 $author-image-max: 480px;
+$speaker-image-size: 120px;
 
 .tco-author {
   position: relative;
@@ -16,6 +17,18 @@ $author-image-max: 480px;
     &-media {
       align-items: flex-start;
       max-width: $author-image-max;
+    }
+  }
+
+  &.tco-author--no-image {
+    .tco-text-media-content-text {
+      width: 100%;
+    }
+  }
+
+  + {
+    .tco-author {
+      margin-top: $spacing-stack-40;
     }
   }
 
@@ -74,5 +87,53 @@ $author-image-max: 480px;
     margin-bottom: 10px;
     border: 5px solid $color-foreground-quanternary;
     border-radius: $border-radius-round;
+  }
+}
+
+.tco-speaker {
+  &[class*='tco-text-media--align-'] {
+    @include wider-than($breakpoint-tablet-portrait) {
+      align-items: flex-start;
+      justify-content: flex-start;
+      padding-left: 0;
+    }
+
+    .tco-text-media-content-media {
+      margin-bottom: $spacing-stack-20;
+
+      @include wider-than($breakpoint-tablet-portrait) {
+        width: auto;
+        padding-top: $spacing-stack-12;
+      }
+    }
+
+    .tco-text-media-content-text {
+      @include wider-than($breakpoint-tablet-portrait) {
+        flex: 1;
+        width: auto;
+        padding-left: $spacing-inline-32;
+      }
+    }
+
+    .tco-type-body {
+      &--large {
+        line-height: calc(36 / 28);
+      }
+
+      &--default {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  .tco-speaker-image {
+    width: $speaker-image-size;
+    height: $speaker-image-size;
+    border-radius: 50%;
+
+    @include wider-than($breakpoint-tablet-portrait) {
+      width: $speaker-image-size * 1.4;
+      height: $speaker-image-size * 1.4;
+    }
   }
 }
