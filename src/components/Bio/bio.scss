@@ -1,5 +1,6 @@
 $author-image-max: 480px;
 $speaker-image-size: 120px;
+$spacing-stack-jumbo: 200px;
 
 .tco-author {
   position: relative;
@@ -137,6 +138,14 @@ $speaker-image-size: 120px;
     @include wider-than($breakpoint-tablet-portrait) {
       width: $speaker-image-size * 1.4;
       height: $speaker-image-size * 1.4;
+    }
+  }
+
+  + .tco-speaker {
+    margin-top: $spacing-stack-100;
+
+    @include wider-than($breakpoint-desktop) {
+      margin-top: $spacing-stack-jumbo;
     }
   }
 }
