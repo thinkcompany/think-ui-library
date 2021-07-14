@@ -44,7 +44,6 @@ export const author = () => {
 };
 
 export const speaker = () => {
-  const eyebrow = text('Eyebrow', 'About the Speaker');
   const authorName = text('Speaker name', 'Abby DePrimo');
   const authorTitle = text(
     'Speaker title',
@@ -63,7 +62,7 @@ export const speaker = () => {
   <div class="tco-container-wrapper">
 	  <div class="tco-container">
       <div class="tco-text-media tco-text-media--align-left tco-speaker">
-        <div class="tco-text-media-content tco-text-media-content-text">
+        <div class="tco-text-media-content tco-text-media-content-text tco-text-media-content-text--has-image">
           <h2 class="tco-author-heading">${authorName}</h2>
           <p class="tco-type-body--large">${authorTitle}</p>
           <p class="tco-type-body--default">${authorBio}</p>
