@@ -111,7 +111,10 @@ $speaker-image-size: 120px;
       @include wider-than($breakpoint-tablet-portrait) {
         flex: 1;
         width: auto;
-        padding-left: $spacing-inline-32;
+
+        &.tco-text-media-content-text--has-image {
+          padding-left: $spacing-inline-32;
+        }
       }
     }
 
