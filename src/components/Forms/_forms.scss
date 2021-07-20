@@ -79,6 +79,7 @@ $textarea-height: 80px;
 %tco-form-input {
   @include type-body-default;
   width: 100%;
+  padding: 1px 2px;
   border: 0;
   border-bottom: $border-default;
   border-radius: 0;
@@ -167,6 +168,10 @@ $textarea-height: 80px;
 
   .tco-form-label-optional {
     font-style: italic;
+  }
+
+  &.tco-form-label--multiline {
+    margin-bottom: 0;
   }
 }
 
@@ -492,6 +497,25 @@ input[type='radio'] {
   &.tco-form-input--medium {
     background-position-x: calc(100% - 12px);
     background-size: 14px;
+  }
+}
+
+/* ----------------------------------------------*\
+      Expanding text input
+\*---------------------------------------------- */
+.tco-input--expand {
+  textarea {
+    overflow: hidden;
+    height: 35px;
+    max-height: 200px;
+    resize: none;
+  }
+
+  &-jumbo {
+    textarea {
+      height: 48px;
+      padding-top: 10px;
+    }
   }
 }
 

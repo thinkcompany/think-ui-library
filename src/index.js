@@ -1,6 +1,8 @@
 // Import Styles
 import './main.scss';
 
+import './components/Forms/inputexpand.js';
+
 // Components for Site
 import Nav from './components/Navigation/navigation';
 
