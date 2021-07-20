@@ -95,10 +95,10 @@ $container-max: 1168px;
 
     &--close {
       @include close-animation;
-      top: -1px;
+      top: -108px;
       right: 7px;
 
-      @include wider-than($breakpoint-laptop) {
+      @include wider-than($breakpoint-tablet-portrait) {
         top: -125px;
       }
 
