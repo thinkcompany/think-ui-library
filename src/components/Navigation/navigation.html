@@ -23,14 +23,10 @@
           <a class="tco-site-nav-link" href="//localhost:3000/contact/">Contact</a>
         </li>
       </ul>
-      <button id="menu-toggle" class="tco-site-header-toggle">
+      <button id="menu-toggle" class="tco-site-header-toggle tco-site-header-toggle--open">
         <svg class="tco-site-header-toggle-icon" width="22" height="14" viewBox="0 0 22 14">
           <title data-mobile-menu-title="">Open Mobile Navigation</title>
           <use xlink:href="/img/icons.svg#icon-hamburger"></use>
-        </svg>
-        <svg class="tco-site-header-toggle-icon tco-site-header-toggle-icon--close" width="22" height="22">
-          <title data-mobile-menu-title="">Close Mobile Navigation</title>
-          <use xlink:href="/img/icons.svg#icon-close"></use>
         </svg>
       </button>
       <div class="tco-site-nav-wrapper">
@@ -59,6 +55,12 @@
               </li>
             </ul>
           </div>
+          <button id="menu-toggle-close" class="tco-site-header-toggle tco-site-header-toggle--close tco-site-header-toggle--hide">
+            <svg class="tco-site-header-toggle-icon tco-site-header-toggle-icon--close" width="22" height="22">
+              <title data-mobile-menu-title="">Close Mobile Navigation</title>
+              <use xlink:href="/img/icons.svg#icon-close"></use>
+            </svg>
+          </button>
         </div>
       </div>
     </nav>

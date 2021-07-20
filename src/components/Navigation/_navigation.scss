@@ -55,18 +55,15 @@ $container-max: 1168px;
 
   &-toggle {
     position: absolute;
-    top: 1px;
     right: 0;
     z-index: 3;
     display: block;
     padding: $spacing-stack-8 $spacing-inline-4;
     border-width: 0;
     background: transparent;
+    opacity: 1;
+    visibility: visible;
     cursor: pointer;
-
-    @include wider-than($breakpoint-laptop) {
-      top: 9px;
-    }
 
     &-icon {
       display: block;
@@ -75,27 +72,44 @@ $container-max: 1168px;
       fill: $color-classic-blue;
 
       &--close {
-        display: none;
+        fill: $color-foreground-on-tint;
       }
     }
 
     &:focus {
-      outline: 1px solid $color-classic-navy;
+      outline-offset: 2px;
     }
 
     &--open {
-      .tco-site-header-toggle-icon {
-        display: none;
-        fill: $color-foreground-on-tint;
+      @include open-animation;
+      top: 1px;
 
-        &--close {
-          display: block;
-        }
+      @include wider-than($breakpoint-laptop) {
+        top: 9px;
       }
 
       &:focus {
-        outline: 1px solid $color-foreground-on-tint;
+        outline: 2px solid $color-classic-blue;
       }
+    }
+
+    &--close {
+      @include close-animation;
+      top: -1px;
+      right: 7px;
+
+      @include wider-than($breakpoint-laptop) {
+        top: -125px;
+      }
+
+      &:focus {
+        outline: 2px solid $color-foreground-on-tint;
+      }
+    }
+
+    &--hide {
+      opacity: 0;
+      visibility: hidden;
     }
   }
 }
