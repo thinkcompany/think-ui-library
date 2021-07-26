@@ -40,7 +40,6 @@ export const bylineMultiple = () => {
     'Image',
     'https://thinkcompany.com/wp-content/uploads/2018/05/KeithRich_Web.jpg'
   );
-  const bylineLink = boolean('With link?', false);
 
   return `
     <div class="tco-byline tco-byline--multiple">

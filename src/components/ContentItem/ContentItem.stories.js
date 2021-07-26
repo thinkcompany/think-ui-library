@@ -1,9 +1,6 @@
-import { select, text } from '@storybook/addon-knobs';
-
-const alignments = ['left', 'right'];
+import { text } from '@storybook/addon-knobs';
 
 export const Default = () => {
-  const alignment = select('Media Alignment', alignments, 'right');
   const tag = text('Tag', 'Workshop');
   const date = text('Date', 'June 2, 2020');
   const location = text('Location', 'Malvern, PA');
