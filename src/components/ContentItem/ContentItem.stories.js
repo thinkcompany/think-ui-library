@@ -23,7 +23,7 @@ export const Default = () => {
   return `
     <div class="tco-container-wrapper">
       <div class="tco-container tco-container--default">
-        <article class="tco-content-item tco-text-media tco-text-media--align-${alignment} tco-content-item--align-${alignment}">
+        <article class="tco-content-item tco-text-media">
           <div class="tco-text-media-content tco-text-media-content-text">
             <div class="tco-content-item-meta">
               ${

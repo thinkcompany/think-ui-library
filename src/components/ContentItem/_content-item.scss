@@ -1,7 +1,13 @@
 $bullet-offset: 15px;
+$media-max: 360px;
+$content-max: 580px;
 
 .tco-content-item {
   padding-left: 0;
+
+  @include wider-than($breakpoint-tablet-portrait) {
+    justify-content: space-between;
+  }
 
   &.tco-content-item--align {
     &-left,
@@ -84,6 +90,32 @@ $bullet-offset: 15px;
 
   .tco-btn {
     margin-top: $spacing-stack-20;
+  }
+
+  .tco-text-media-content-media {
+    max-width: $media-max;
+
+    @include wider-than($breakpoint-tablet-portrait) {
+      order: 1;
+      margin-bottom: 0;
+    }
+  }
+
+  .tco-text-media-content-text {
+    max-width: $content-max;
+
+    @include wider-than($breakpoint-tablet-portrait) {
+      order: 0;
+      width: calc(100% - 360px - 24px);
+    }
+
+    @include wider-than($breakpoint-laptop) {
+      width: calc(100% - 360px - 50px);
+    }
+
+    @include wider-than($breakpoint-desktop) {
+      width: calc(100% - 360px - 100px);
+    }
   }
 }
 
