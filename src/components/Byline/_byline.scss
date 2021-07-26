@@ -23,6 +23,11 @@ $byline-img-width: 44px;
     flex-flow: column nowrap;
     align-self: stretch;
     justify-content: space-between;
+
+    &--multiple {
+      flex-flow: row wrap;
+      align-self: center;
+    }
   }
 
   &-name {
@@ -37,5 +42,31 @@ $byline-img-width: 44px;
   &-name,
   &-description {
     margin-bottom: 0;
+  }
+
+  &--multiple {
+    display: flex;
+    flex-flow: column nowrap;
+    grid-gap: 0;
+    margin: 0;
+
+    .tco-byline-image-container {
+      margin: 0 $spacing-inline-8 $spacing-stack-16;
+    }
+  }
+
+  &-images {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
+
+.tco-byline-link--multiple {
+  margin-left: $spacing-inline-2;
+
+  &:first-of-type {
+    margin-left: 0;
   }
 }
