@@ -1,4 +1,5 @@
 $speed: 400ms;
+$half-speed: $speed * 0.5;
 $item-delay: $speed * 0.9;
 
 @mixin nav-animation {
@@ -40,4 +41,12 @@ $item-delay: $speed * 0.9;
       transition-delay: $speed - 50ms;
     }
   }
+}
+
+@mixin close-animation {
+  transition: opacity $speed ease-out $speed, visibility $speed ease-out $speed;
+}
+
+@mixin open-animation {
+  transition: opacity $half-speed ease-in, visibility $half-speed ease-in;
 }
