@@ -23,14 +23,14 @@ const textInput = () => {
 
   return `
     <div class="tco-form-row">
-      <label 
+      <label
         for="text-field-1"
         class="tco-form-label"
       >
         ${label}
       </label>
       <input
-        type="text" 
+        type="text"
         placeholder="${placeholder}"
         class="tco-form-input ${size} ${state}"
         id="text-field-1"
@@ -41,6 +41,21 @@ const textInput = () => {
       ? `<p class="tco-form-input-error-msg">${errorMessage}</p>`
       : ''
   }
+    </div>
+
+    <div class="tco-form-row tco-input--expand tco-input--expand-jumbo">
+      <label
+        for="text-field-1"
+        class="tco-form-label"
+      >
+        Multiline text field
+      </label>
+      <textarea
+        placeholder="${placeholder}"
+        class="tco-form-input ${state}"
+        id="text-field-2"
+        name="text-field-2"
+      ></textarea>
     </div>
   `;
 };
