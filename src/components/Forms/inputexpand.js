@@ -18,5 +18,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   };
 
-  textField.addEventListener('input', expandInput);
+  if (textField) {
+    textField.addEventListener('input', expandInput);
+  }
 });
