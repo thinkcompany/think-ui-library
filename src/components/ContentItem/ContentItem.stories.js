@@ -1,9 +1,6 @@
-import { select, text } from '@storybook/addon-knobs';
-
-const alignments = ['left', 'right'];
+import { text } from '@storybook/addon-knobs';
 
 export const Default = () => {
-  const alignment = select('Media Alignment', alignments, 'right');
   const tag = text('Tag', 'Workshop');
   const date = text('Date', 'June 2, 2020');
   const location = text('Location', 'Malvern, PA');
@@ -23,7 +20,7 @@ export const Default = () => {
   return `
     <div class="tco-container-wrapper">
       <div class="tco-container tco-container--default">
-        <article class="tco-content-item tco-text-media tco-text-media--align-${alignment} tco-content-item--align-${alignment}">
+        <article class="tco-content-item tco-text-media">
           <div class="tco-text-media-content tco-text-media-content-text">
             <div class="tco-content-item-meta">
               ${
