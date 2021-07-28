@@ -11,7 +11,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const expandInput = () => {
     if (textField.scrollHeight > initialHeight && textField.value.length > 0) {
-      textField.style.height = 'auto';
       textField.style.height = textField.scrollHeight + 'px';
     } else {
       textField.style.height = initialHeight + 'px';
