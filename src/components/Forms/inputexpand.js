@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const textFieldJumbo = document.querySelector(
     '.tco-input--expand-jumbo textarea'
   );
-  let initialHeight = 35;
+  let initialHeight = 40;
 
   if (textFieldJumbo) {
     initialHeight = 48;
@@ -11,6 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const expandInput = () => {
     if (textField.scrollHeight > initialHeight && textField.value.length > 0) {
+      textField.style.height = 'auto';
       textField.style.height = textField.scrollHeight + 'px';
     } else {
       textField.style.height = initialHeight + 'px';
