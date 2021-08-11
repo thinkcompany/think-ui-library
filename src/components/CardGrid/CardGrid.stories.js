@@ -8,37 +8,6 @@ import {
   jobCard
 } from '../Card/Card.stories';
 
-const baseCard = () => {
-  const eyebrow = text('Eyebrow', 'Understand');
-  const heading = 'Approaching digital transformation';
-  const image = 'img/blog-hero-default-5x4.jpg';
-
-  return `
-    <div class="tco-card">
-      <a href="#" class="tco-card-link">
-        <div class="tco-card-image-container">
-          <img class="tco-card-image" alt="A brilliant description of the image" src="${image}" />
-        </div>
-        <div class="tco-card-content-container">
-        ${
-          eyebrow
-            ? `
-          <span class="tco-card-eyebrow">${eyebrow}</span>
-          `
-            : ''
-        }
-          <h2 class="tco-card-content-heading">
-            ${heading}
-            <svg class="tco-text-link-icon" width="20" height="20" viewBox="0 0 20 20" role="presentation">
-              <use xlink:href="/img/icons.svg#icon-arrow-right"></use>
-          </svg>
-          </h2>
-        </div>
-      </a>
-    </div>
-  `;
-};
-
 const colors = {
   Default: '',
   Glass: 'tco-container-wrapper--glass'
@@ -54,20 +23,18 @@ export const Default = () => {
   const containerColor = select('Background Color', colors, colors.Default);
   const columns = number('Column count', 3);
   const cardCount = number('Card count', 6);
-  const cardType = select('Card type', cards, 'base');
+  const cardType = select('Card type', cards, 'post');
   const cardItems = () => {
     let output = '';
 
     let card = '';
 
-    if (cardType === 'base') {
-      card = baseCard();
+    if (cardType === 'post') {
+      card = postCard();
     } else if (cardType === 'summary') {
       card = summaryCard();
     } else if (cardType === 'person') {
       card = personCard();
-    } else if (cardType === 'post') {
-      card = postCard();
     } else if (cardType === 'callout') {
       card = calloutCard();
     } else if (cardType === 'media') {

@@ -61,6 +61,28 @@ $byline-img-width: 44px;
     align-items: center;
     justify-content: space-between;
   }
+
+  &--no-image {
+    display: block;
+    grid-template-columns: 1fr;
+
+    ul {
+      display: flex;
+      flex-flow: row wrap;
+      padding: 0;
+    }
+
+    .tco-byline-name {
+      @include type-body-small;
+      display: inline;
+      color: $color-classic-gray-dark;
+      list-style-type: none;
+
+      &:not(:first-of-type) {
+        margin-left: 3px;
+      }
+    }
+  }
 }
 
 .tco-byline-link--multiple {

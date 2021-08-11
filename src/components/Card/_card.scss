@@ -18,16 +18,6 @@
     display: inline;
   }
 
-  &-image-container {
-    &:not(.tco-card-image-container--summary):not(.tco-card-image-container--callout):not(.tco-card-image-container--summary):not(.tco-card-image-container--service) {
-      @include aspect-ratio-box(
-        $ratio: (
-          4 / 5
-        ) * 100%
-      );
-    }
-  }
-
   &-image {
     &:not(.tco-card-image--summary):not(.tco-card-image--callout) {
       @include center-absolute(true);
@@ -334,7 +324,24 @@
       @include type-display-small($font-color: $color-classic-blue);
     }
   }
+
+  .tco-type-body--large {
+    line-height: (36 / 28);
+  }
+
+  .tco-card-image-container {
+    position: relative;
+    width: 100%;
+    height: 0;
+    padding-bottom: 56.25%;
+  }
+
+  .tco-type-body--sans-small,
+  .tco-byline--no-image .tco-byline-name {
+    color: $color-classic-gray-medium;
+  }
 }
+
 // ========================================================
 // = CALLOUT CARD
 // ========================================================
