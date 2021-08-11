@@ -3,6 +3,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const textFieldJumbo = document.querySelector(
     '.tco-input--expand-jumbo textarea'
   );
+
   let initialHeight = 40;
 
   if (textFieldJumbo) {

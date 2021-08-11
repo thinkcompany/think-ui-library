@@ -8,37 +8,6 @@ import {
   jobCard
 } from '../Card/Card.stories';
 
-const baseCard = () => {
-  const eyebrow = text('Eyebrow', 'Understand');
-  const heading = 'Approaching digital transformation';
-  const image = 'img/blog-hero-default-5x4.jpg';
-
-  return `
-    <div class="tco-card">
-      <a href="#" class="tco-card-link">
-        <div class="tco-card-image-container">
-          <img class="tco-card-image" alt="A brilliant description of the image" src="${image}" />
-        </div>
-        <div class="tco-card-content-container">
-        ${
-          eyebrow
-            ? `
-          <span class="tco-card-eyebrow">${eyebrow}</span>
-          `
-            : ''
-        }
-          <h2 class="tco-card-content-heading">
-            ${heading}
-            <svg class="tco-text-link-icon" width="20" height="20" viewBox="0 0 20 20" role="presentation">
-              <use xlink:href="/img/icons.svg#icon-arrow-right"></use>
-          </svg>
-          </h2>
-        </div>
-      </a>
-    </div>
-  `;
-};
-
 const colors = {
   Default: '',
   Glass: 'tco-container-wrapper--glass'

@@ -1,5 +1,4 @@
 import { text } from '@storybook/addon-knobs';
-import { byline } from '../Byline/byline.stories';
 
 export const summaryCard = () => {
   const heading = text('Heading', 'Work together.');
