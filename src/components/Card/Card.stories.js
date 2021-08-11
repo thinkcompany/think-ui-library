@@ -48,16 +48,11 @@ export const personCard = () => {
 export const postCard = () => {
   const image = text(
     'Post image',
-    'https://thinkcompany.com/wp-content/uploads/2020/07/BlogImage-LGM-9-Kanban-708x472.png'
+    'https://www.thinkcompany.com/wp-content/uploads/2021/07/Airtable-Illustration-5-1-500x262.jpg'
   );
-  const eyebrow = text('Post type', 'Case Study');
   const heading = text(
     'Post title',
-    'How to Use Kanban to Manage a Design System'
-  );
-  const description = text(
-    'Post excerpt',
-    'Kanban originated in the world of automotive manufacturing at Toyota, by way of Japanese industrial engineer Taiichi Ohno.'
+    'The Benefits of Using Airtable as a Content Management System and Collaboration Platform'
   );
 
   return `
@@ -67,13 +62,19 @@ export const postCard = () => {
         <img class="tco-card-image" alt="Card image" src="${image}" />
       </div>
       <div class="tco-card-content-container">
-        ${
-          eyebrow ? '<span class="tco-card-eyebrow">' + eyebrow + '</span>' : ''
-        }
-        <h2 class="tco-card-content-heading">${heading}</h2>
-        <p class="tco-card-content-description">${description}</p>
-
-        ${byline()}
+        <p class="tco-type-body--sans-small">November 2, 2020</p>
+        <h2 class="tco-text-link tco-type-body--large">${heading}
+          <svg class="tco-text-link-icon" width="20" height="20" viewBox="0 0 20 20" role="presentation">
+            <use xlink:href="/img/icons.svg#icon-arrow-right"></use>
+          </svg>
+        </h2>
+        <div class="tco-byline tco-byline--no-image">
+          <ul>
+            <li class="tco-byline-name">By</li>
+            <li class="tco-byline-name">Ian McPhail,</li>
+            <li class="tco-byline-name">Keith Rich</li>
+          </ul>
+        </div>
       </div>
     </a>
   </div>`;

@@ -54,20 +54,18 @@ export const Default = () => {
   const containerColor = select('Background Color', colors, colors.Default);
   const columns = number('Column count', 3);
   const cardCount = number('Card count', 6);
-  const cardType = select('Card type', cards, 'base');
+  const cardType = select('Card type', cards, 'post');
   const cardItems = () => {
     let output = '';
 
     let card = '';
 
-    if (cardType === 'base') {
-      card = baseCard();
+    if (cardType === 'post') {
+      card = postCard();
     } else if (cardType === 'summary') {
       card = summaryCard();
     } else if (cardType === 'person') {
       card = personCard();
-    } else if (cardType === 'post') {
-      card = postCard();
     } else if (cardType === 'callout') {
       card = calloutCard();
     } else if (cardType === 'media') {
