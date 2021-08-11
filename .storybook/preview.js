@@ -1,5 +1,6 @@
 import { addParameters } from '@storybook/html';
 import { INITIAL_VIEWPORTS } from '@storybook/addon-viewport';
+import { withMarkup } from '@stormid/storybook-html-addon-markup';
 
 // Styles just for Storybook
 import 'fonts/_fonts.scss';
@@ -19,3 +20,5 @@ addParameters({
     viewports: INITIAL_VIEWPORTS
   }
 });
+
+export const decorators = [withMarkup];
