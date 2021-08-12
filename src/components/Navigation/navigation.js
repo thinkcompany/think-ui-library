@@ -41,9 +41,11 @@ export default class Nav {
           lastFocusableEl.focus();
           e.preventDefault();
         }
-      } /* tab */ else if (document.activeElement === lastFocusableEl) {
-        firstFocusableEl.focus();
-        e.preventDefault();
+      } /* tab */ else {
+        if (document.activeElement === lastFocusableEl) {
+          firstFocusableEl.focus();
+          e.preventDefault();
+        }
       }
     });
   }
