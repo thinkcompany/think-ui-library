@@ -18,7 +18,20 @@ addParameters({
   },
   viewport: {
     viewports: INITIAL_VIEWPORTS
-  }
+  },
+  backgrounds: {
+    default: 'white',
+    values: [
+      {
+        name: 'white',
+        value: '#ffffff',
+      },
+      {
+        name: 'glass',
+        value: '#f2f8fa',
+      },
+    ],
+  },
 });
 
 export const decorators = [withMarkup];

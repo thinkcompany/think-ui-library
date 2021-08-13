@@ -43,6 +43,7 @@
     "@babel/register": "^7.12.10",
     "@stormid/storybook-html-addon-markup": "^0.1.1",
     "@storybook/addon-a11y": "^6.3.7",
+    "@storybook/addon-backgrounds": "^6.3.7",
     "@storybook/addon-knobs": "^6.2.9",
     "@storybook/addon-viewport": "^6.3.7",
     "@storybook/html": "^6.3.7",
