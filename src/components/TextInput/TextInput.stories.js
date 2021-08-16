@@ -1,5 +1,4 @@
 import { text, select, boolean } from '@storybook/addon-knobs';
-import stateIcon from './stateIcon';
 
 const sizeOptions = {
   large: 'tco-form-input--large',
@@ -13,7 +12,7 @@ const stateOptions = {
   error: 'is-error'
 };
 
-const textInput = () => {
+export const TextInput = () => {
   const label = text('Label', 'Text Input');
   const placeholder = text('Placeholder', 'Enter Text...');
   const errorMessage = text('Error Message', 'Error Message');
@@ -36,11 +35,11 @@ const textInput = () => {
         id="text-field-1"
         name="text-field-1" ${disabled ? '\n\tdisabled' : ''}
       >
-      ${stateIcon(state)}${
-    state === stateOptions.error
-      ? `<p class="tco-form-input-error-msg">${errorMessage}</p>`
-      : ''
-  }
+      ${
+        state === stateOptions.error
+          ? `<p class="tco-form-input-error-msg">${errorMessage}</p>`
+          : ''
+      }
     </div>
 
     <div class="tco-form-row tco-input--expand tco-input--expand-jumbo">
@@ -60,4 +59,6 @@ const textInput = () => {
   `;
 };
 
-export default textInput;
+export default {
+  title: 'Controls & Inputs / Text Input'
+};

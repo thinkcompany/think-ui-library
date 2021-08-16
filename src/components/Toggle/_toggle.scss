@@ -1,0 +1,98 @@
+/* stylelint-disable max-line-length, max-nesting-depth , selector-max-combinators, selector-max-compound-selectors, selector-max-specificity */
+.tco-form-toggle {
+  @extend %tco-accessibly-hidden;
+  @extend %tco-form-input--pseudo;
+
+  + label {
+    padding-left: rem(48px);
+    line-height: 1.7;
+
+    &::before {
+      top: rem(2px);
+      width: rem(36px);
+      height: rem(20px);
+      border-width: 0;
+      border-radius: rem(100px);
+      background-color: $color-foreground-tertiary;
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      top: rem(4px);
+      left: rem(2px);
+      width: rem(16px);
+      height: rem(16px);
+      border-radius: 100%;
+      background-color: #fff;
+      transition: left 0.1s linear;
+    }
+  }
+
+  &:checked {
+    + label::after {
+      left: rem(18px);
+    }
+
+    + label::before {
+      background-color: $color-tint-blue-primary;
+    }
+  }
+
+  .is-error & {
+    + label {
+      &::before {
+        content: '';
+        position: absolute;
+        top: rem(2px);
+        left: 0;
+        width: rem(36px);
+        height: rem(20px);
+        border-radius: rem(100px);
+        background-color: $color-foreground-tertiary;
+      }
+
+      &::after {
+        content: '';
+        position: absolute;
+        top: rem(4px);
+        left: rem(2px);
+        width: rem(16px);
+        height: rem(16px);
+        border-radius: $border-radius-round;
+        background-color: #fff;
+        transition: left 0.1s linear;
+      }
+    }
+
+    &:checked {
+      + label::after {
+        left: rem(18px);
+      }
+
+      + label::before {
+        background-color: $color-tint-blue-primary;
+      }
+    }
+
+    .theme-dark & {
+      + label {
+        &::before {
+          border-color: #000;
+        }
+      }
+
+      &:checked {
+        + label {
+          &::before {
+            border-color: #000;
+          }
+        }
+      }
+    }
+  }
+
+  &:disabled + label {
+    opacity: $opacity--disabled;
+  }
+}

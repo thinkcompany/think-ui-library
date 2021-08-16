@@ -1,6 +1,6 @@
 import { text, select } from '@storybook/addon-knobs';
 
-const radioButton = () => {
+export const RadioButton = () => {
   const stateOptions = {
     unchecked: '',
     checked: 'checked',
@@ -16,4 +16,6 @@ const radioButton = () => {
   </div>`;
 };
 
-export default radioButton;
+export default {
+  title: 'Controls & Inputs / Radio Button'
+};

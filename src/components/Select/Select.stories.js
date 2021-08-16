@@ -7,7 +7,7 @@ const sizeOptions = {
   small: 'tco-form-input--small'
 };
 
-const selectInput = () => {
+export const Select = () => {
   const label = text('Label', 'Select A Color');
   const options = array(label, selectOptions, ',');
   const size = select('Size', sizeOptions, sizeOptions.medium);
@@ -31,4 +31,6 @@ const selectInput = () => {
   `;
 };
 
-export default selectInput;
+export default {
+  title: 'Controls & Inputs / Select'
+};
