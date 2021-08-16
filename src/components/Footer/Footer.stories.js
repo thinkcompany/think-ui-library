@@ -1,6 +1,6 @@
 import { socialLinksSmall } from '../SocialIcons/social-icons.stories';
 
-const footer = () => {
+export const Footer = () => {
   return `
   <div class="tco-container-wrapper tco-container-wrapper--curve tco-container-wrapper--footer tco-container-wrapper--navy" style="margin-top: 10em;">
     <div class="tco-container">
@@ -77,4 +77,6 @@ const footer = () => {
   `;
 };
 
-export { footer };
+export default {
+  title: 'Global / Footer'
+};

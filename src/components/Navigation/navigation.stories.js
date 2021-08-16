@@ -1,17 +1,10 @@
 import navMarkup from './navigation.html';
 
-export const header = () => `
+export const Header = () => `
 <div style="background-color: #fff; height: 1000px;">
 ${navMarkup}
 </div>`;
 
-export * from '../Footer/Footer.stories';
-
 export default {
-  title: 'Navigation / Global',
-  parameters: {
-    options: {
-      showPanel: false
-    }
-  }
+  title: 'Global / Header'
 };
