@@ -1,6 +1,5 @@
 import { select, text, boolean } from '@storybook/addon-knobs';
 import { teaser } from '../Teaser/teaser.stories';
-import { imageOnly } from '../ImageOnly/image-only.stories';
 
 const colors = {
   Default: '',
