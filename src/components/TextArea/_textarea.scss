@@ -1,0 +1,10 @@
+.tco-form-textarea,
+.textarea {
+  @extend %tco-form-input;
+  max-height: $textarea-height;
+  padding: $spacing-stack-8 $spacing-inline-4;
+
+  + .tco-form-state-icon {
+    top: rem(34px);
+  }
+}

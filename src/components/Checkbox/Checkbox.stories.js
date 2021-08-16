@@ -1,7 +1,7 @@
 import { text, select } from '@storybook/addon-knobs';
 import { useEffect } from '@storybook/client-api';
 
-const checkbox = () => {
+export const Checkbox = () => {
   const stateOptions = {
     unchecked: '',
     checked: 'checked',
@@ -18,10 +18,12 @@ const checkbox = () => {
   });
 
   return `
-<div class="tco-form-group">
-    <input class="tco-form-checkbox" id="checkbox-1" type="checkbox" name="checkbox-1" value="1" ${state} />
-    <label class="tco-form-label" for="checkbox-1">${label}</label>
-</div>`;
+  <div class="tco-form-group">
+      <input class="tco-form-checkbox" id="checkbox-1" type="checkbox" name="checkbox-1" value="1" ${state} />
+      <label class="tco-form-label" for="checkbox-1">${label}</label>
+  </div>`;
 };
 
-export default checkbox;
+export default {
+  title: 'Controls & Inputs / Checkbox'
+};
