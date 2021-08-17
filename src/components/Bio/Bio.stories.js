@@ -76,6 +76,49 @@ export const speaker = () => {
   `;
 };
 
+const Template = args => {
+  const { name, title, image } = args;
+  const bio =
+    'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vel fermentum orci. In commodo tellus eget risus condimentum cursus. Maecenas cursus, risus tristique dictum venenatis, lectus quam finibus est, sit amet feugiat lacus nibh in urna.';
+
+  return `
+    <div class="tco-container-wrapper">
+      <div class="tco-container">
+        <div class="tco-text-media tco-text-media--align-left tco-speaker">
+          <div class="tco-text-media-content tco-text-media-content-text tco-text-media-content-text--has-image">
+            <h2 class="tco-author-heading">${name}</h2>
+            <p class="tco-type-body--large">${title}</p>
+            <p class="tco-type-body--default">${bio}</p>
+          </div>
+          <div class="tco-text-media-content tco-text-media-content-media">
+            <img class="tco-speaker-image" src="${image}" alt="${name}" />
+          </div>
+        </div>
+      </div>
+    </div>
+  `;
+};
+
+export const TestBio = Template.bind({});
+
+TestBio.args = {
+  name: 'Abby DePrimo',
+  title: 'Vice President, Design Operations',
+  image:
+    'https://3vwizk2qtr8l3diwrm3r2ba0-wpengine.netdna-ssl.com/wp-content/uploads/2020/03/AbbyDePrimo_Web.jpg'
+};
+
 export default {
-  title: 'Components / Bio'
+  title: 'Components / Bio',
+  argTypes: {
+    name: {
+      control: 'text'
+    },
+    title: {
+      control: 'text'
+    },
+    image: {
+      control: 'text'
+    }
+  }
 };
