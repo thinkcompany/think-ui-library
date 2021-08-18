@@ -1,69 +1,71 @@
-import { boolean, text } from '@storybook/addon-knobs';
+const BylineTemplate = args => {
+  const { name, image, date, link } = args;
 
-export const byline = () => {
-  const bylineName = text('Post Author', 'Keith Rich');
-  const bylineDesc = text('Post Date', 'May 21, 2020');
-  const bylineImage = text(
-    'Image',
-    'https://thinkcompany.com/wp-content/uploads/2018/05/KeithRich_Web.jpg'
-  );
-  const bylineLink = boolean('With link?', false);
+  let open = '';
 
-  let containerOpen = '';
+  let close = '';
 
-  let containerClose = '';
-
-  if (bylineLink) {
-    containerOpen = '<a href="#" class="tco-byline tco-byline--link">';
-    containerClose = '</a>';
+  if (link) {
+    open = '<a href="#" class="tco-byline tco-byline--link">';
+    close = '</a>';
   } else {
-    containerOpen = '<div class="tco-byline">';
-    containerClose = '</div>';
+    open = '<div class="tco-byline">';
+    close = '</div>';
   }
 
   return `
-    ${containerOpen}
+    ${open}
       <div class="tco-byline-image-container">
-        <img src="${bylineImage}" alt="${bylineName}">
+        <img src="${image}" alt="${name}">
       </div>
       <div class="tco-byline-content-container">
-        <p class="tco-byline-name">By ${bylineName}</p>
-        <p class="tco-byline-description">${bylineDesc}</p>
+        <p class="tco-byline-name">By ${name}</p>
+        <p class="tco-byline-description">${date}</p>
       </div>
-    ${containerClose}
+    ${close}
   `;
 };
 
-export const bylineMultiple = () => {
-  const bylineName = text('Post Author', 'Keith Rich');
-  const bylineImage = text(
-    'Image',
-    'https://thinkcompany.com/wp-content/uploads/2018/05/KeithRich_Web.jpg'
-  );
+export const Byline = BylineTemplate.bind({});
+
+Byline.args = {
+  date: 'May 21, 2020',
+  link: false
+};
+
+const MultipleTemplate = args => {
+  const { name, image } = args;
 
   return `
     <div class="tco-byline tco-byline--multiple">
       <div class="tco-byline-images">
         <div class="tco-byline-image-container">
-          <img src="${bylineImage}" alt="${bylineName}">
+          <img src="${image}" alt="${name}">
         </div>
         <div class="tco-byline-image-container">
-          <img src="${bylineImage}" alt="${bylineName}">
+          <img src="${image}" alt="${name}">
         </div>
         <div class="tco-byline-image-container">
-          <img src="${bylineImage}" alt="${bylineName}">
+          <img src="${image}" alt="${name}">
         </div>
         <div class="tco-byline-image-container">
-          <img src="${bylineImage}" alt="${bylineName}">
+          <img src="${image}" alt="${name}">
         </div>
       </div>
       <div class="tco-byline-content-container tco-byline-content-container--multiple">
-        <p class="tco-type-body--sans-small">By <a href="#" class="tco-byline-link--multiple">${bylineName}</a>, <a href="#" class="tco-byline-link--multiple">${bylineName}</a>, <a href="#" class="tco-byline-link--multiple">${bylineName}</a>, and <a href="#" class="tco-byline-link--multiple">${bylineName}</a></p>
+        <p class="tco-type-body--sans-small">By <a href="#" class="tco-byline-link--multiple">${name}</a>, <a href="#" class="tco-byline-link--multiple">${name}</a>, <a href="#" class="tco-byline-link--multiple">${name}</a>, and <a href="#" class="tco-byline-link--multiple">${name}</a></p>
       </div>
     </div>
   `;
 };
 
+export const BylineMultiple = MultipleTemplate.bind({});
+
 export default {
-  title: 'Components / Byline'
+  title: 'Components / Byline',
+  args: {
+    name: 'Keith Rich',
+    image:
+      'https://thinkcompany.com/wp-content/uploads/2018/05/KeithRich_Web.jpg'
+  }
 };
