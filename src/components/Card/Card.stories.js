@@ -1,15 +1,5 @@
-import { text } from '@storybook/addon-knobs';
-
-export const summaryCard = () => {
-  const heading = text('Heading', 'Work together.');
-  const summary = text(
-    'Summary',
-    'The best experiences are consistent across all channels, so we always consider the entire ecosystem your users interact within—designing for people wherever they click, tap, talk, touch, work, or play.'
-  );
-  const image = text(
-    'Image',
-    'https://3vwizk2qtr8l3diwrm3r2ba0-wpengine.netdna-ssl.com/wp-content/themes/tbiv3/img/svgs/services-full-experience-service.svg'
-  );
+const SummaryCardTemplate = args => {
+  const { heading, summary, image } = args;
 
   return `
     <div class="tco-card tco-card--summary">
@@ -25,13 +15,18 @@ export const summaryCard = () => {
     </div>`;
 };
 
-export const personCard = () => {
-  const name = text('Name', 'Abby DePrimo');
-  const title = text('Title', 'Vice President, Design Operations');
-  const image = text(
-    'Person image',
-    'https://3vwizk2qtr8l3diwrm3r2ba0-wpengine.netdna-ssl.com/wp-content/uploads/2020/03/AbbyDePrimo_Web.jpg'
-  );
+export const SummaryCard = SummaryCardTemplate.bind({});
+
+SummaryCard.args = {
+  heading: 'Work Together.',
+  summary:
+    'The best experiences are consistent across all channels, so we always consider the entire ecosystem your users interact within—designing for people wherever they click, tap, talk, touch, work, or play.',
+  image:
+    'https://3vwizk2qtr8l3diwrm3r2ba0-wpengine.netdna-ssl.com/wp-content/themes/tbiv3/img/svgs/services-full-experience-service.svg'
+};
+
+const PersonCardTemplate = args => {
+  const { name, title, image } = args;
 
   return `
   <div class="tco-card tco-card--person" style="background-image: url(${image})">
@@ -44,15 +39,17 @@ export const personCard = () => {
   </div>`;
 };
 
-export const postCard = () => {
-  const image = text(
-    'Post image',
-    'https://www.thinkcompany.com/wp-content/uploads/2021/07/Airtable-Illustration-5-1-500x262.jpg'
-  );
-  const heading = text(
-    'Post title',
-    'The Benefits of Using Airtable as a Content Management System and Collaboration Platform'
-  );
+export const PersonCard = PersonCardTemplate.bind({});
+
+PersonCard.args = {
+  name: 'Abby DePrimo',
+  title: 'Vice President, Design Operations',
+  image:
+    'https://3vwizk2qtr8l3diwrm3r2ba0-wpengine.netdna-ssl.com/wp-content/uploads/2020/03/AbbyDePrimo_Web.jpg'
+};
+
+const PostCardTemplate = args => {
+  const { image, heading } = args;
 
   return `
   <div class="tco-card tco-card--post">
@@ -79,15 +76,17 @@ export const postCard = () => {
   </div>`;
 };
 
-export const calloutCard = () => {
-  const heading = text(
-    'Callout heading',
-    'Problem Solving Workshops for COVID-19 Support'
-  );
-  const description = text(
-    'Callout description',
-    'We want to help organizations supporting the frontline response'
-  );
+export const PostCard = PostCardTemplate.bind({});
+
+PostCard.args = {
+  heading:
+    'The Benefits of Using Airtable as a Content Management System and Collaboration Platform',
+  image:
+    'https://www.thinkcompany.com/wp-content/uploads/2021/07/Airtable-Illustration-5-1-500x262.jpg'
+};
+
+const CalloutCardTemplate = args => {
+  const { heading, description } = args;
 
   return `
   <div class="tco-card tco-card--callout">
@@ -111,16 +110,15 @@ export const calloutCard = () => {
   </div>`;
 };
 
-export const mediaCard = () => {
-  const heading = text('Heading', 'Competitive Salary and Annual Increase');
-  const summary = text(
-    'Summary',
-    'We pay you what you deserve to make and you can earn up to a 5% salary increase every year based on your individual performance.'
-  );
-  const image = text(
-    'Image',
-    'https://www.thinkcompany.com/wp-content/uploads/2020/12/Competitive-Salary-Annual-Increase-1-1.svg'
-  );
+export const CalloutCard = CalloutCardTemplate.bind({});
+
+CalloutCard.args = {
+  heading: 'Problem Solving Workshops for COVID-19 Support',
+  description: 'We want to help organizations supporting the frontline response'
+};
+
+const MediaCardTemplate = args => {
+  const { heading, summary, image } = args;
 
   return `
     <div class="tco-card tco-card--no-link tco-card--summary tco-card--media">
@@ -134,9 +132,18 @@ export const mediaCard = () => {
     </div>`;
 };
 
-export const jobCard = () => {
-  const heading = text('Job', 'Senior UX Designer');
-  const location = text('Location', 'Philadelphia, PA');
+export const MediaCard = MediaCardTemplate.bind({});
+
+MediaCard.args = {
+  heading: 'Competitive Salary and Annual Increase',
+  summary:
+    'We pay you what you deserve to make and you can earn up to a 5% salary increase every year based on your individual performance.',
+  image:
+    'https://www.thinkcompany.com/wp-content/uploads/2020/12/Competitive-Salary-Annual-Increase-1-1.svg'
+};
+
+const JobCardTemplate = args => {
+  const { heading, location } = args;
 
   return `
     <div class="tco-card tco-card--job">
@@ -150,6 +157,13 @@ export const jobCard = () => {
         </div>
       </a>
     </div>`;
+};
+
+export const JobCard = JobCardTemplate.bind({});
+
+JobCard.args = {
+  heading: 'Senior UX Designer',
+  location: 'Philadelphia, PA'
 };
 
 export default {
