@@ -163,9 +163,11 @@ export const JobCard = JobCardTemplate.bind({});
 
 JobCard.args = {
   heading: 'Senior UX Designer',
-  location: 'Philadelphia, PA'
+  location: 'Philadelphia, PA',
+  component: JobCard
 };
 
 export default {
-  title: 'Components / Card'
+  title: 'Components / Card',
+  component: [SummaryCard, PostCard, PersonCard, CalloutCard, MediaCard]
 };
