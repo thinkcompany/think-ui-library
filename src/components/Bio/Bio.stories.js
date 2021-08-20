@@ -1,4 +1,4 @@
-import { socialLinks } from '../SocialIcons/social-icons.stories';
+import { SocialIcons } from '../SocialIcons/social-icons.stories';
 
 const AuthorTemplate = args => {
   const { eyebrow, name, title, image, bio, socialLabel, showSocial } = args;
@@ -16,7 +16,7 @@ const AuthorTemplate = args => {
             showSocial
               ? `<div class="tco-author-social">
                   <p class="tco-author-social-heading">${socialLabel}</p>
-                  ${socialLinks()}
+                  ${SocialIcons()}
                 </div>`
               : ''
           }
