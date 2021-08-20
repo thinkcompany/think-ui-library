@@ -1,4 +1,4 @@
-const Template = args => {
+const ChecklistTemplate = args => {
   const { eyebrow } = args;
   const items = [
     'Launch a new product',
@@ -23,7 +23,7 @@ const Template = args => {
   `;
 };
 
-export const Checklist = Template.bind({});
+export const Checklist = ChecklistTemplate.bind({});
 
 export default {
   title: 'Components / Checklist',
