@@ -1,21 +1,15 @@
-import { text } from '@storybook/addon-knobs';
-
-export const Default = () => {
-  const tag = text('Tag', 'Workshop');
-  const date = text('Date', 'June 2, 2020');
-  const location = text('Location', 'Malvern, PA');
-  const heading = text(
-    'Title',
-    'Become a Digital Disruptor in a Changing World (Pact Phorum)'
-  );
-  const excerpt = text(
-    'Excerpt',
-    'Learn more about best practices for acheiving internal alignment and framing conversations for the best possible outcome.'
-  );
-  const authors = text('Authors', 'Shawn Hickman, John Young, Dave Thomas');
-  const authorHeading = text('Author Heading', 'Hosted by:');
-  const action = text('CTA', 'Learn More');
-  const image = text('Image', 'https://placekitten.com/960/694');
+const Template = args => {
+  const {
+    tag,
+    date,
+    location,
+    heading,
+    excerpt,
+    authors,
+    authorHeading,
+    action,
+    image
+  } = args;
 
   return `
     <div class="tco-container-wrapper">
@@ -70,6 +64,20 @@ export const Default = () => {
   `;
 };
 
+export const ContentItem = Template.bind({});
+
 export default {
-  title: 'Components / Content Item'
+  title: 'Components / Content Item',
+  args: {
+    tag: 'Workshop',
+    date: 'June 2, 2020',
+    location: 'Malvern, PA',
+    heading: 'Become a Digital Disruptor in a Changing World (Pact Phorum)',
+    excerpt:
+      'Learn more about best practices for achieving internal alignment and framing conversations for the best possible outcome.',
+    authors: 'Shawn Hickman, John Young, Dave Thomas',
+    authorHeading: 'Hosted by: ',
+    action: 'Learn More',
+    image: 'https://placekitten.com/960/694'
+  }
 };
