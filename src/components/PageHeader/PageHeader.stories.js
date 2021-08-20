@@ -1,31 +1,20 @@
-import { select, text, boolean } from '@storybook/addon-knobs';
+const alignments = ['left', 'center', 'right'];
+const sizes = ['medium', 'extra-large', 'large', 'small'];
 
-const colors = {
-  Default: '',
-  Glass: 'tco-container-wrapper--glass'
-};
-const alignments = ['center', 'left', 'right'];
-const sizes = ['extra-large', 'large', 'medium', 'small'];
-
-export const PageHeader = () => {
-  const containerColor = select('Background Color', colors, colors.Default);
-  const image = text('Image', 'https://placekitten.com/524/320');
-  const bubbleBackground = boolean('Offset bubble background?', false);
-  const textAlignment = select('Text Alignment', alignments, 'left');
-  const eyebrow = text('Eyebrow', '');
-  const heading = text(
-    'Heading',
-    'Adapting your digital experience is critical'
-  );
-  const headingSize = select('Heading Size', sizes, 'medium');
-  const lede = text(
-    'Lede',
-    'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas pellentesque nunc vel turpis tempor tincidunt at, posuere eros.'
-  );
-  const showCta = boolean('CTA', true);
+const Template = args => {
+  const {
+    image,
+    bubbleBackground,
+    textAlignment,
+    eyebrow,
+    heading,
+    headingSize,
+    lede,
+    showCta
+  } = args;
 
   return `
-  <div class="tco-container-wrapper ${containerColor} tco-text-media--page-header">
+  <div class="tco-container-wrapper tco-text-media--page-header">
     <div class="tco-container tco-container--default">
       <div class="tco-text-media tco-text-media--align-left">
         <div class="tco-text-media-content tco-text-media-content-text tco-text-media-content-text--${textAlignment}">
@@ -71,6 +60,31 @@ export const PageHeader = () => {
   </div>`;
 };
 
+export const PageHeader = Template.bind({});
+
 export default {
-  title: 'Components / Page Header'
+  title: 'Components / Page Header',
+  args: {
+    image: 'https://placekitten.com/524/320',
+    bubbleBackground: false,
+    textAlignment: alignments[0],
+    eyebrow: '',
+    heading: 'Adapting your digital experience is critical',
+    headingSize: sizes[0],
+    lede:
+      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas pellentesque nunc vel turpis tempor tincidunt at, posuere eros.',
+    showCta: true
+  },
+  argTypes: {
+    textAlignment: {
+      name: 'text alignment',
+      control: 'inline-radio',
+      options: alignments
+    },
+    headingSize: {
+      name: 'heading size',
+      control: 'inline-radio',
+      options: sizes
+    }
+  }
 };
