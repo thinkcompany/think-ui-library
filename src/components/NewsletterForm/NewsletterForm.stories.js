@@ -18,7 +18,7 @@ const renderForm = () => `
                         </div>
 `;
 
-export const Default = () => {
+export const NewsletterForm = () => {
   return `
   <div class="tco-newsletter-form tco-card-container--shadow">
     <div class="tco-newsletter-form-content-container">
