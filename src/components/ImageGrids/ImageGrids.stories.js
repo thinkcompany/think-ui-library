@@ -4,7 +4,7 @@ const colors = {
   Default: '',
   Glass: 'tco-container-wrapper--glass'
 };
-const sizes = ['extra-large', 'large', 'medium', 'small'];
+const sizes = ['large', 'extra-large', 'medium', 'small'];
 const alignments = ['center', 'left', 'right'];
 
 const imageItem = () => {
@@ -23,13 +23,8 @@ const imageItem = () => {
     </div>`;
 };
 
-export const Logos = () => {
-  const containerColor = select('Background Color', colors, colors.Default);
-  const eyebrow = text('Eyebrow', 'Section for Logos');
-  const heading = text('Heading', '');
-  const headingSize = select('Heading Size', sizes, 'small');
-  const textAlignment = select('Text alignment', alignments, 'center');
-  const imageCount = number('Image count', 4);
+const LogoTemplate = args => {
+  const { eyebrow, heading, headingSize, textAlignment, imageCount } = args;
   const imageItems = () => {
     let output = '';
 
@@ -41,7 +36,7 @@ export const Logos = () => {
   };
 
   return `
-  <div class="tco-container-wrapper ${containerColor}">
+  <div class="tco-container-wrapper">
     <div class="tco-container tco-container--${textAlignment}">
     ${
       eyebrow
@@ -64,13 +59,38 @@ export const Logos = () => {
   </div>`;
 };
 
-export const Grid2 = () => {
-  const containerColor = select('Background Color', colors, colors.Glass);
-  const imageA = text('Image A', 'https://placekitten.com/600/624');
-  const imageB = text('Image B', 'https://placekitten.com/600/624');
+export const Logos = LogoTemplate.bind({});
+
+Logos.args = {
+  eyebrow: 'Section for Logos',
+  heading: '',
+  headingSize: sizes[0],
+  textAlignment: alignments[0],
+  imageCount: 4
+};
+
+Logos.argTypes = {
+  headingSize: {
+    name: 'heading size',
+    control: 'inline-radio',
+    options: sizes
+  },
+  textAlignment: {
+    name: 'text alignment',
+    control: 'inline-radio',
+    options: alignments
+  },
+  imageCount: {
+    name: 'image count',
+    control: 'number'
+  }
+};
+
+const Grid2Template = args => {
+  const { imageA, imageB } = args;
 
   return `
-    <div class="tco-container-wrapper tco-container-wrapper--image-only ${containerColor}">
+    <div class="tco-container-wrapper tco-container-wrapper--image-only">
       <div class="tco-container">
         <div class="tco-image-grid-2">
           <div class="tco-image-grid-2-container">
@@ -84,23 +104,15 @@ export const Grid2 = () => {
     </div>`;
 };
 
-export const Grid4 = () => {
-  const imageA = text(
-    'Image A',
-    'https://www.thinkcompany.com/wp-content/uploads/2020/12/photo-studios-philly-feature.jpg'
-  );
-  const imageB = text(
-    'Image B',
-    'https://www.thinkcompany.com/wp-content/uploads/2020/12/studios-conshy-header.jpg'
-  );
-  const imageC = text(
-    'Image C',
-    'https://www.thinkcompany.com/wp-content/uploads/2020/12/studios-conshy-header.jpg'
-  );
-  const imageD = text(
-    'Image D',
-    'https://www.thinkcompany.com/wp-content/uploads/2020/12/photo-studios-philly-feature.jpg'
-  );
+export const Grid2 = Grid2Template.bind({});
+
+Grid2.args = {
+  imageA: 'https://placekitten.com/600/624',
+  imageB: 'https://placekitten.com/600/624'
+};
+
+const Grid4Template = args => {
+  const { imageA, imageB, imageC, imageD } = args;
 
   return `
     <div class="tco-container-wrapper">
@@ -121,6 +133,19 @@ export const Grid4 = () => {
         </div>
       </div>
     </div>`;
+};
+
+export const Grid4 = Grid4Template.bind({});
+
+Grid4.args = {
+  imageA:
+    'https://www.thinkcompany.com/wp-content/uploads/2020/12/photo-studios-philly-feature.jpg',
+  imageB:
+    'https://www.thinkcompany.com/wp-content/uploads/2020/12/studios-conshy-header.jpg',
+  imageC:
+    'https://www.thinkcompany.com/wp-content/uploads/2020/12/studios-conshy-header.jpg',
+  imageD:
+    'https://www.thinkcompany.com/wp-content/uploads/2020/12/photo-studios-philly-feature.jpg'
 };
 
 export default {
