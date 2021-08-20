@@ -1,9 +1,7 @@
-import { text } from '@storybook/addon-knobs';
-
 import thinkBubble from 'assets/img/think-bubble-white.svg';
 
-export const floatingButton = () => {
-  const contactLabel = text('Contact label', '');
+const ButtonTemplate = args => {
+  const { contactLabel } = args;
 
   return `
   <button class="tco-floating-btn tco-btn">
@@ -26,26 +24,28 @@ export const floatingButton = () => {
 `;
 };
 
-export const floatingForm = () => {
-  const intro = text(
-    'Intro',
-    'Ask us about our services or a related topic and a Thinker will respond shortly.'
-  );
-  const emailLabel = text('Email label', 'Your Email*');
-  const emailPlaceholder = text(
-    'Email placeholder',
-    'Enter your email address'
-  );
-  const messageLabel = text('Message label', 'Your Message*');
-  const messagePlaceholder = text(
-    'Message placeholder',
-    'Is a hotdog a sandwich?'
-  );
-  const submitLabel = text('Submit label', 'Send message');
-  const disclaimer = text(
-    'Disclaimer',
-    'By submitting this form, you’re allowing us to store the information you submit. We promise we’ll never, ever, ever share it though.'
-  );
+export const Button = ButtonTemplate.bind({});
+
+Button.args = {
+  contactLabel: ''
+};
+
+Button.argTypes = {
+  contactLabel: {
+    name: 'label'
+  }
+};
+
+const FormTemplate = args => {
+  const {
+    intro,
+    emailLabel,
+    emailPlaceholder,
+    messageLabel,
+    messagePlaceholder,
+    submitLabel,
+    disclaimer
+  } = args;
 
   return `
   <div class="tco-floating-modal tco-floating-modal--show">
@@ -120,6 +120,39 @@ export const floatingForm = () => {
   </div>
   `;
 };
+
+export const Form = FormTemplate.bind({});
+
+Form.args = {
+  intro:
+    'Ask us about our services or a related topic and a Thinker will respond shortly',
+  emailLabel: 'Your Email*',
+  emailPlaceholder: 'Enter your email address',
+  messageLabel: 'Your Message*',
+  messagePlaceholder: 'Is a hotdog a sandwich?',
+  submitLabel: 'Send message',
+  disclaimer:
+    'By submitting this form, you’re allowing us to store the information you submit. We promise we’ll never, ever, ever share it though.'
+};
+
+Form.argTypes = {
+  emailLabel: {
+    name: 'email label'
+  },
+  emailPlaceholder: {
+    name: 'email placeholder'
+  },
+  messageLabel: {
+    name: 'message label'
+  },
+  messagePlaceholder: {
+    name: 'message placeholder'
+  },
+  submitLabel: {
+    name: 'submit label'
+  }
+};
+
 export default {
   title: 'Components / Floating Form'
 };
