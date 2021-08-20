@@ -1,31 +1,15 @@
-import { select, boolean, text } from '@storybook/addon-knobs';
-
-const alignment = {
-  Default: 'tco-post-teaser--align-left',
-  Center: 'tco-post-teaser--align-center',
-  Right: 'tco-post-teaser--align-right'
-};
-
-export const teaser = () => {
-  const teaserAlignment = select('Alignment', alignment, alignment.Default);
-  const teaserHeader = text('Header', 'From our blog');
-  const teaserTitle = text(
-    'Post Title',
-    '3 Fundamentals of Successful Product Design Teams'
-  );
-  const teaserAuthor = text('Author Name', 'Russ Starke');
-  const teaserPosition = text('Position', 'Chief Executive Officer');
-  const teaserShowByline = boolean('Show Author', false);
+export const Teaser = args => {
+  const { header, title, author, position, showByline } = args;
 
   return `
-    <div class="tco-post-teaser ${teaserAlignment}">
+    <div class="tco-post-teaser">
       <div class=" tco-post-teaser-content">
-        <p class="tco-post-teaser-eyebrow">${teaserHeader}</p>
-        <h4 class="tco-post-teaser-title"><a href="#" class="tco-post-teaser-link">${teaserTitle}</a></h4>
+        <p class="tco-post-teaser-eyebrow">${header}</p>
+        <h4 class="tco-post-teaser-title"><a href="#" class="tco-post-teaser-link">${title}</a></h4>
         ${
-          teaserShowByline
+          showByline
             ? `
-          <p class="tco-post-teaser-author">by ${teaserAuthor}, ${teaserPosition}</p>
+          <p class="tco-post-teaser-author">by ${author}, ${position}</p>
           `
             : ``
         }
@@ -34,4 +18,13 @@ export const teaser = () => {
   `;
 };
 
-export default { title: 'Components / Teaser' };
+export default {
+  title: 'Components / Teaser',
+  args: {
+    header: 'From our blog',
+    title: '3 Fundamentals of Successful Product Design Teams',
+    author: 'Russ Starke',
+    position: 'Chief Executive Officer',
+    showByline: false
+  }
+};
