@@ -1,17 +1,11 @@
-import { text, select, boolean } from '@storybook/addon-knobs';
-
 const stateOptions = {
   default: '',
   success: 'is-success',
   error: 'is-error'
 };
 
-export const TextArea = () => {
-  const label = text('Label', 'Textarea');
-  const placeholder = text('Placeholder', 'Enter Text...');
-  const errorMessage = text('Error Message', 'Error Message');
-  const state = select('State', stateOptions, stateOptions.default);
-  const disabled = boolean('Disabled', false);
+export const TextArea = args => {
+  const { label, placeholder, errorMessage, state, disabled } = args;
 
   return `
     <div class="tco-form-row">
@@ -36,5 +30,18 @@ export const TextArea = () => {
 };
 
 export default {
-  title: 'Controls & Inputs / Text Area'
+  title: 'Controls & Inputs / Text Area',
+  args: {
+    label: 'Text Area',
+    placeholder: 'Enter text...',
+    errorMessage: 'Please try again',
+    state: stateOptions.default,
+    disabled: false
+  },
+  argTypes: {
+    state: {
+      control: 'inline-radio',
+      options: stateOptions
+    }
+  }
 };

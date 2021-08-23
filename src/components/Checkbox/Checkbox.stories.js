@@ -31,7 +31,6 @@ export default {
   },
   argTypes: {
     state: {
-      name: 'state',
       control: 'inline-radio',
       options: stateOptions
     }
