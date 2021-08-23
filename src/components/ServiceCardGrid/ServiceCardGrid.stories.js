@@ -76,7 +76,7 @@ const serviceCardCTA = () => {
   `;
 };
 
-export const Default = () => {
+export const ServiceCardGrid = () => {
   return `
     <div class="tco-container-wrapper">
       <div class="tco-container">
@@ -87,6 +87,10 @@ export const Default = () => {
       </div>
     </div>
   `;
+};
+
+ServiceCardGrid.parameters = {
+  controls: { hideNoControlsWarning: true }
 };
 
 export default {

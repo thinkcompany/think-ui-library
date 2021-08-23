@@ -47,6 +47,15 @@ export default {
     authorTitle: 'Acme Company'
   },
   argTypes: {
+    quote: {
+      name: 'quote'
+    },
+    authorName: {
+      name: 'author name'
+    },
+    authorTitle: {
+      name: 'author title'
+    },
     textAlignment: {
       name: 'text alignment',
       control: 'inline-radio',

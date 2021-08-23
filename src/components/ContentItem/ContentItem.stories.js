@@ -79,5 +79,10 @@ export default {
     authorHeading: 'Hosted by: ',
     action: 'Learn More',
     image: 'https://placekitten.com/960/694'
+  },
+  argTypes: {
+    authorHeading: {
+      name: 'author heading'
+    }
   }
 };

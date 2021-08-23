@@ -43,6 +43,10 @@ export const SocialIcons = () => {
   `;
 };
 
+SocialIcons.parameters = {
+  controls: { hideNoControlsWarning: true }
+};
+
 export const SocialIconsSmall = () => {
   const iconSet = [];
   const icons = [
@@ -86,6 +90,10 @@ export const SocialIconsSmall = () => {
       </ul>
     </div>
   `;
+};
+
+SocialIconsSmall.parameters = {
+  controls: { hideNoControlsWarning: true }
 };
 
 export default {

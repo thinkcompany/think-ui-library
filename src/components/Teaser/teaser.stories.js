@@ -26,5 +26,16 @@ export default {
     author: 'Russ Starke',
     position: 'Chief Executive Officer',
     showByline: false
+  },
+  argTypes: {
+    header: {
+      name: 'eyebrow'
+    },
+    title: {
+      name: 'title'
+    },
+    showByline: {
+      name: 'show byline'
+    }
   }
 };

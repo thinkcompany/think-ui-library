@@ -5,6 +5,10 @@ export const Header = () => `
 ${navMarkup}
 </div>`;
 
+Header.parameters = {
+  controls: { hideNoControlsWarning: true }
+};
+
 export default {
   title: 'Global / Header'
 };

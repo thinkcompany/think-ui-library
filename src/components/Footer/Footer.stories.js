@@ -77,6 +77,10 @@ export const Footer = () => {
   `;
 };
 
+Footer.parameters = {
+  controls: { hideNoControlsWarning: true }
+};
+
 export default {
   title: 'Global / Footer'
 };

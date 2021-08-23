@@ -36,6 +36,10 @@ export const NewsletterForm = () => {
   `;
 };
 
+NewsletterForm.parameters = {
+  controls: { hideNoControlsWarning: true }
+};
+
 export default {
   title: 'Components / Newsletter Form'
 };

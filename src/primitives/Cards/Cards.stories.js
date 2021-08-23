@@ -34,7 +34,13 @@ const cardItem = input => `
 </div>
 `;
 
-export const all = () => wrapGrid(config.map(item => cardItem(item)).join(''));
+export const Cards = () =>
+  wrapGrid(config.map(item => cardItem(item)).join(''));
+
+Cards.parameters = {
+  controls: { hideNoControlsWarning: true }
+};
+
 export default {
   title: 'Primitives / Cards'
 };

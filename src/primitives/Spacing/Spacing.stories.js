@@ -54,6 +54,20 @@ export const stack = () =>
   wrapGrid(spacing.stack.map(item => stackItem(item)).join(''));
 export const inline = () =>
   wrapGrid(spacing.inline.map(item => inlineItem(item)).join(''));
+
+inset.parameters = {
+  controls: { hideNoControlsWarning: true }
+};
+squish.parameters = {
+  controls: { hideNoControlsWarning: true }
+};
+stack.parameters = {
+  controls: { hideNoControlsWarning: true }
+};
+inline.parameters = {
+  controls: { hideNoControlsWarning: true }
+};
+
 export default {
   title: 'Primitives / Spacing'
 };

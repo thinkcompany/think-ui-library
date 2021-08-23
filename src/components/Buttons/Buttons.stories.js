@@ -28,6 +28,9 @@ Button.args = {
 };
 
 Button.argTypes = {
+  buttonText: {
+    name: 'text'
+  },
   buttonStyle: {
     name: 'button style',
     control: 'inline-radio',

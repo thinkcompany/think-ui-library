@@ -124,8 +124,41 @@ export default {
     smallForm: false
   },
   argTypes: {
+    nameLabel: {
+      name: 'name label'
+    },
+    namePlaceholder: {
+      name: 'name placeholder'
+    },
+    emailLabel: {
+      name: 'email label'
+    },
+    emailPlaceholder: {
+      name: 'email placeholder'
+    },
+    companyLabel: {
+      name: 'company label'
+    },
+    companyPlaceholder: {
+      name: 'company placeholder'
+    },
+    messageLabel: {
+      name: 'message label'
+    },
+    messagePlaceholder: {
+      name: 'message placeholder'
+    },
+    timingLabel: {
+      name: 'timing label'
+    },
+    timingPlaceholder: {
+      name: 'timing placeholder'
+    },
+    submitLabel: {
+      name: 'submit label'
+    },
     smallForm: {
-      name: 'Display small version'
+      name: 'small version'
     }
   }
 };

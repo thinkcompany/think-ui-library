@@ -144,7 +144,12 @@ const icons = list => {
   return response;
 };
 
-export const all = () => icons(config);
+export const Icons = () => icons(config);
+
+Icons.parameters = {
+  controls: { hideNoControlsWarning: true }
+};
+
 export default {
   title: 'Primitives / Icons'
 };

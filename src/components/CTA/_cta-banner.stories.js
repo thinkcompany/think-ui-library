@@ -45,7 +45,7 @@ const Template = args => {
   </div>`;
 };
 
-export const Cta = Template.bind({});
+export const CTABanner = Template.bind({});
 
 export default {
   title: 'Components / CTA Banner',

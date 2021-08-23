@@ -137,6 +137,15 @@ export default {
       name: 'heading size',
       control: 'inline-radio',
       options: sizes
+    },
+    bubbleBackground: {
+      name: 'bubble background'
+    },
+    showCta: {
+      name: 'show cta'
+    },
+    showTeaser: {
+      name: 'show teaser'
     }
   }
 };

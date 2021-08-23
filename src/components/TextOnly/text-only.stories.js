@@ -100,6 +100,12 @@ export default {
       name: 'lede size',
       control: 'inline-radio',
       options: ledeSizes
+    },
+    bubble: {
+      name: 'bubble background'
+    },
+    showCta: {
+      name: 'show cta'
     }
   }
 };
