@@ -1,15 +1,14 @@
-import { text, select } from '@storybook/addon-knobs';
 import { useEffect } from '@storybook/client-api';
 
-export const Checkbox = () => {
-  const stateOptions = {
-    unchecked: '',
-    checked: 'checked',
-    indeterminate: 'indeterminate',
-    disabled: 'disabled'
-  };
-  const label = text('Label', 'Checkbox');
-  const state = select('State', stateOptions, stateOptions.unchecked);
+const stateOptions = {
+  unchecked: '',
+  checked: 'checked',
+  indeterminate: 'indeterminate',
+  disabled: 'disabled'
+};
+
+export const Checkbox = args => {
+  const { label, state } = args;
 
   useEffect(() => {
     if (state === stateOptions.indeterminate) {
@@ -25,5 +24,16 @@ export const Checkbox = () => {
 };
 
 export default {
-  title: 'Controls & Inputs / Checkbox'
+  title: 'Controls & Inputs / Checkbox',
+  args: {
+    label: 'Checkbox',
+    state: stateOptions.unchecked
+  },
+  argTypes: {
+    state: {
+      name: 'state',
+      control: 'inline-radio',
+      options: stateOptions
+    }
+  }
 };
