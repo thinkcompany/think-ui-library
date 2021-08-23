@@ -1,24 +1,11 @@
-import { text, select, boolean } from '@storybook/addon-knobs';
-
-const sizeOptions = {
-  large: 'tco-form-input--large',
-  medium: 'tco-form-input--medium',
-  small: 'tco-form-input--small'
-};
-
 const stateOptions = {
   default: '',
   success: 'is-success',
   error: 'is-error'
 };
 
-export const Password = () => {
-  const label = text('Label', 'Password');
-  const placeholder = text('Placeholder', 'Enter Text...');
-  const errorMessage = text('Error Message', 'Error Message');
-  const size = select('Size', sizeOptions, sizeOptions.medium);
-  const state = select('State', stateOptions, stateOptions.default);
-  const disabled = boolean('Disabled', false);
+export const Password = args => {
+  const { label, placeholder, errorMessage, state, disabled } = args;
 
   return `
   <div class="tco-form-row">
@@ -26,7 +13,7 @@ export const Password = () => {
     <input
       type="password"
       placeholder="${placeholder}"
-      class="tco-form-input ${size} ${state}"
+      class="tco-form-input ${state}"
       id="password-1"
       name="password-1" ${disabled ? '\n\tdisabled' : ''}
     >
@@ -39,5 +26,21 @@ export const Password = () => {
 };
 
 export default {
-  title: 'Controls & Inputs / Password'
+  title: 'Controls & Inputs / Password',
+  args: {
+    label: 'Password',
+    placeholder: 'Enter password here..',
+    errorMessage: 'Wrong!',
+    state: stateOptions.default,
+    disabled: false
+  },
+  argTypes: {
+    state: {
+      control: 'inline-radio',
+      options: stateOptions
+    },
+    errorMessage: {
+      name: 'error message'
+    }
+  }
 };
