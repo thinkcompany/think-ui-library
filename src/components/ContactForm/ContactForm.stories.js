@@ -14,10 +14,10 @@ const Template = args => {
     smallForm
   } = args;
 
-  const formVersion = 'full';
+  let formVersion = 'full';
 
   if (smallForm) {
-    const formVersion = 'small';
+    formVersion = 'small';
   }
 
   return `

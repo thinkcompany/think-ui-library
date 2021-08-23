@@ -1,4 +1,4 @@
-import { SocialIcons } from '../SocialIcons/social-icons.stories';
+import { SocialIcons as icons } from '../SocialIcons/social-icons.stories';
 
 const AuthorTemplate = args => {
   const { eyebrow, name, title, image, bio, socialLabel, showSocial } = args;
@@ -16,7 +16,7 @@ const AuthorTemplate = args => {
             showSocial
               ? `<div class="tco-author-social">
                   <p class="tco-author-social-heading">${socialLabel}</p>
-                  ${SocialIcons()}
+                  ${icons()}
                 </div>`
               : ''
           }
@@ -75,5 +75,13 @@ export default {
     title: 'Vice President, Design Operations',
     image:
       'https://3vwizk2qtr8l3diwrm3r2ba0-wpengine.netdna-ssl.com/wp-content/uploads/2020/03/AbbyDePrimo_Web.jpg'
+  },
+  argTypes: {
+    showSocial: {
+      name: 'show social'
+    },
+    socialLabel: {
+      name: 'social label'
+    }
   }
 };

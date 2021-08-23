@@ -1,7 +1,3 @@
-const colors = {
-  Default: '',
-  Glass: 'tco-container-wrapper--glass'
-};
 const sizes = ['large', 'extra-large', 'medium', 'small'];
 const alignments = ['center', 'left', 'right'];
 

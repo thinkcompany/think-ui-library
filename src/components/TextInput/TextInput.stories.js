@@ -1,9 +1,3 @@
-const sizeOptions = {
-  large: 'tco-form-input--large',
-  medium: 'tco-form-input--medium',
-  small: 'tco-form-input--small'
-};
-
 const stateOptions = {
   default: '',
   success: 'is-success',
