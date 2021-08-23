@@ -1,9 +1,5 @@
-import { text, boolean } from '@storybook/addon-knobs';
-
-export const Toggle = () => {
-  const label = text('Label', 'Toggle');
-  const state = boolean('State', false);
-  const disabled = boolean('Disabled', false);
+export const Toggle = args => {
+  const { label, toggled, disabled } = args;
 
   return `
   <div class="tco-form-group">
@@ -13,7 +9,7 @@ export const Toggle = () => {
         type="checkbox"
         name="toggle-default"
         value="1"
-        ${state ? 'checked' : ''}
+        ${toggled ? 'checked' : ''}
         ${disabled ? 'disabled' : ''}
     />
     <label class="tco-form-label" for="toggle-1">${label}</label>
@@ -21,5 +17,10 @@ export const Toggle = () => {
 };
 
 export default {
-  title: 'Controls & Inputs / Toggle'
+  title: 'Controls & Inputs / Toggle',
+  args: {
+    label: 'Toggle',
+    toggled: false,
+    disabled: false
+  }
 };

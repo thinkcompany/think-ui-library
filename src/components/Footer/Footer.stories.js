@@ -1,4 +1,4 @@
-import { socialLinksSmall } from '../SocialIcons/social-icons.stories';
+import { SocialIconsSmall as icons } from '../SocialIcons/social-icons.stories';
 
 export const Footer = () => {
   return `
@@ -65,7 +65,7 @@ export const Footer = () => {
             <svg class="tco-site-footer-logo" width="151" height="50" role="img" aria-label="Think Company logo">
               <use xlink:href="/img/icons.svg#icon-think-logo"></use>
             </svg>
-            ${socialLinksSmall()}
+            ${icons()}
           </div>
           <div class="tco-site-footer-content-group tco-site-footer-content-group--fine-print">
             <p>&copy; 2020 Think Company, Inc. All rights reserved. <a class="tco-btn-link" href="#"> Privacy Policy</a></p>
@@ -75,6 +75,10 @@ export const Footer = () => {
     </div>
   </div>
   `;
+};
+
+Footer.parameters = {
+  controls: { hideNoControlsWarning: true }
 };
 
 export default {

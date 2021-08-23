@@ -29,7 +29,13 @@ const cardItem = input => `
   </div>
   `;
 
-export const all = () => wrapGrid(config.map(item => cardItem(item)).join(''));
+export const Dividers = () =>
+  wrapGrid(config.map(item => cardItem(item)).join(''));
+
+Dividers.parameters = {
+  controls: { hideNoControlsWarning: true }
+};
+
 export default {
   title: 'Primitives / Dividers'
 };

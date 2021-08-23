@@ -1,66 +1,74 @@
-import { select, text } from '@storybook/addon-knobs';
+const styles = ['primary', 'secondary'];
+const states = ['active', 'disabled'];
 
-const styles = {
-  Primary: 'tco-btn--primary',
-  Secondary: 'tco-btn--secondary'
-};
+const sizes = [
+  'body--default',
+  'body--large',
+  'body--sans-small',
+  'display--extra-large',
+  'display--large',
+  'display--medium',
+  'display--small',
+  'display--extra-small'
+];
 
-const linkStyles = {
-  Primary: '',
-  Secondary: 'tco-text-link--secondary'
-};
-
-const states = {
-  Active: '',
-  Disabled: 'disabled'
-};
-
-const sizes = {
-  DisplayXLarge: 'display--extra-large',
-  DisplayLarge: 'display--large',
-  DisplayMedium: 'display--medium',
-  DisplaySmall: 'display--small',
-  DisplayXSmall: 'display--extra-small',
-  BodyDefault: 'body--default',
-  BodyLarge: 'body--large',
-  BodySansSmall: 'body--sans-small'
-};
-
-export const Button = () => {
-  const buttonText = text('Button Text', 'Button');
-  const buttonStyle = select('Style', styles, styles.Primary);
-  const buttonState = select('State', states, states.Active);
+export const Button = args => {
+  const { buttonText, buttonState, buttonStyle } = args;
 
   return `
-    <button type="button" class="tco-btn ${buttonStyle}" ${buttonState}>
+    <button type="button" class="tco-btn tco-btn--${buttonStyle}" ${buttonState}>
       ${buttonText}
     </button>`;
 };
 
-export const TextLink = () => {
-  const linkText = text('Text', 'default text link');
-  const linkState = select('State', states, states.Active);
-
-  return `
-    <p class="tco-type-body--default">Lorem ipsum dolor sit amet <a href="#" class="tco-text-link" ${linkState}> ${linkText}</a>.</p>
-    <p class="tco-type-body--sans-small">Lorem ipsum <a href="#" class="tco-text-link" ${linkState}> ${linkText}</a> dolor sit amet.</p>`;
+Button.args = {
+  buttonText: 'button',
+  buttonStyle: styles[0],
+  buttonState: states[0]
 };
 
-export const LinkWithArrow = () => {
-  const linkText = text('Text', 'Text Link with Arrow');
-  const linkStyle = select('Style', linkStyles, linkStyles.Primary);
-  const linkState = select('State', states, states.Active);
-  const fontSize = select('Font Size', sizes, sizes.BodyDefault);
-  const containerColor =
-    linkStyle === 'tco-text-link--secondary'
-      ? 'tco-container-wrapper--navy'
-      : '';
+Button.argTypes = {
+  buttonText: {
+    name: 'text'
+  },
+  buttonStyle: {
+    name: 'button style',
+    control: 'inline-radio',
+    options: styles
+  },
+  buttonState: {
+    name: 'button state',
+    control: 'inline-radio',
+    options: states
+  }
+};
+
+export const TextLink = args => {
+  const { linkText } = args;
+
+  return `
+    <p class="tco-type-body--default">Lorem ipsum dolor sit amet <a href="#" class="tco-text-link"> ${linkText}</a>.</p>
+    <p class="tco-type-body--sans-small">Lorem ipsum <a href="#" class="tco-text-link"> ${linkText}</a> dolor sit amet.</p>`;
+};
+
+TextLink.args = {
+  linkText: 'default text link'
+};
+
+TextLink.argTypes = {
+  linkText: {
+    name: 'link text'
+  }
+};
+
+export const LinkWithArrow = args => {
+  const { linkText, linkState, fontSize, containerColor } = args;
 
   return `
   <div class="tco-container-wrapper ${containerColor}">
     <div class="tco-container">
       <h3 class="tco-type-${fontSize}">
-        <a href="#" class="tco-text-link tco-text-link--arrow ${linkStyle}" ${linkState}>
+        <a href="#" class="tco-text-link tco-text-link--arrow" ${linkState}>
           ${linkText}
           <svg class="tco-text-link-icon" width="20" height="20" viewBox="0 0 20 20" role="presentation">
             <use xlink:href="/img/icons.svg#icon-arrow-right"></use>
@@ -69,6 +77,28 @@ export const LinkWithArrow = () => {
       </h3>
     </div>
   </div>`;
+};
+
+LinkWithArrow.args = {
+  linkText: 'Text Link with Arrow',
+  linkState: states[0],
+  fontSize: sizes[0]
+};
+
+LinkWithArrow.argTypes = {
+  linkText: {
+    name: 'link text'
+  },
+  linkState: {
+    name: 'state',
+    control: 'inline-radio',
+    options: states
+  },
+  fontSize: {
+    name: 'font size',
+    control: 'inline-radio',
+    options: sizes
+  }
 };
 
 export default {

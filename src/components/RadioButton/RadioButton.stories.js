@@ -1,13 +1,11 @@
-import { text, select } from '@storybook/addon-knobs';
+const stateOptions = {
+  unchecked: '',
+  checked: 'checked',
+  disabled: 'disabled'
+};
 
-export const RadioButton = () => {
-  const stateOptions = {
-    unchecked: '',
-    checked: 'checked',
-    disabled: 'disabled'
-  };
-  const label = text('Label', 'Radio');
-  const state = select('State', stateOptions, stateOptions.unchecked);
+export const RadioButton = args => {
+  const { label, state } = args;
 
   return `
   <div class="tco-form-group">
@@ -17,5 +15,15 @@ export const RadioButton = () => {
 };
 
 export default {
-  title: 'Controls & Inputs / Radio Button'
+  title: 'Controls & Inputs / Radio Button',
+  args: {
+    label: 'Radio button',
+    state: stateOptions.unchecked
+  },
+  argTypes: {
+    state: {
+      control: 'inline-radio',
+      options: stateOptions
+    }
+  }
 };

@@ -1,24 +1,14 @@
-import { text, select, boolean, array } from '@storybook/addon-knobs';
-
 const selectOptions = ['Red', 'Green', 'Blue'];
-const sizeOptions = {
-  large: 'tco-form-input--large',
-  medium: 'tco-form-input--medium',
-  small: 'tco-form-input--small'
-};
 
-export const Select = () => {
-  const label = text('Label', 'Select A Color');
-  const options = array(label, selectOptions, ',');
-  const size = select('Size', sizeOptions, sizeOptions.medium);
-  const disabled = boolean('Disabled', false);
+export const Select = args => {
+  const { label, options, disabled } = args;
 
   return `
     <div class="tco-form-row">
       <label for="select-1" class="tco-form-label">${label}</label>
       <div class="tco-form-select">
         <select
-          class="select tco-form-input ${size}"
+          class="select tco-form-input"
           id="select-1"
           name="select-1"
           ${disabled ? 'disabled' : ''}
@@ -32,5 +22,10 @@ export const Select = () => {
 };
 
 export default {
-  title: 'Controls & Inputs / Select'
+  title: 'Controls & Inputs / Select',
+  args: {
+    label: 'Select a color',
+    options: selectOptions,
+    disabled: false
+  }
 };

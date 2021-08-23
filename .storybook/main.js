@@ -5,9 +5,12 @@ module.exports = {
   ],
   addons: [
     '@storybook/addon-a11y',
-    '@storybook/addon-knobs',
-    '@storybook/addon-viewport',
-    '@storybook/addon-backgrounds',
+    {
+      name: '@storybook/addon-essentials',
+      options: {
+        actions: false
+      }
+    },
     '@stormid/storybook-html-addon-markup'
   ]
 };

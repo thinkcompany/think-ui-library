@@ -1,41 +1,31 @@
-import { select, text } from '@storybook/addon-knobs';
+const offsets = ['none', 'top', 'bottom'];
 
-const colors = {
-  Default: '',
-  Glass: 'tco-container-wrapper--glass'
-};
-
-const offsets = {
-  Default: '',
-  Top: 'tco-image-only--offset-top',
-  Bottom: 'tco-image-only--offset-bottom'
-};
-
-export const imageOnly = () => {
-  const offset = select('Offset Image', offsets, offsets.Default);
-  const imageSrc = text(
-    'Image',
-    'https://www.thinkcompany.com/wp-content/uploads/2021/01/careers-header.jpg'
-  );
+const Template = args => {
+  const { offset, src } = args;
 
   return `
-    <div class="tco-image-only ${offset}">
-      <img class="tco-image-only-image" alt="A brief description of the image" src="${imageSrc}" />
+    <div class="tco-image-only tco-image-only--offset-${offset}">
+      <img class="tco-image-only-image" alt="A brief description of the image" src="${src}" />
     </div>`;
 };
 
-export const WithContainer = () => {
-  const containerColor = select('Background Color', colors, colors.Default);
+export const ImageOnly = Template.bind({});
 
-  return `
-    <div class="tco-container-wrapper tco-container-wrapper--image-only ${containerColor}">
-      <div class="tco-container">
-        ${imageOnly()}
-      </div>
-    </div>
-  `;
+ImageOnly.args = {
+  src:
+    'https://www.thinkcompany.com/wp-content/uploads/2021/01/careers-header.jpg'
 };
 
 export default {
-  title: 'Components / Image Only'
+  title: 'Components / Image Only',
+  args: {
+    offset: offsets[0]
+  },
+  argTypes: {
+    offset: {
+      name: 'vertical offset',
+      control: 'inline-radio',
+      options: offsets
+    }
+  }
 };

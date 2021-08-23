@@ -1,28 +1,21 @@
-import { select, boolean } from '@storybook/addon-knobs';
-
-const colors = {
-  Default: '',
-  Glass: 'tco-container-wrapper--glass'
-};
-
-export const socialLinks = () => {
+export const SocialIcons = () => {
   const iconSet = [];
   const icons = [
     {
       name: 'facebook',
-      include: boolean('Facebook', true)
+      include: true
     },
     {
       name: 'twitter',
-      include: boolean('Twitter', true)
+      include: true
     },
     {
       name: 'linkedin',
-      include: boolean('Linkedin', true)
+      include: true
     },
     {
       name: 'instagram',
-      include: boolean('Instagram', true)
+      include: true
     }
   ];
 
@@ -50,28 +43,28 @@ export const socialLinks = () => {
   `;
 };
 
-export const socialLinksSmall = () => {
+SocialIcons.parameters = {
+  controls: { hideNoControlsWarning: true }
+};
+
+export const SocialIconsSmall = () => {
   const iconSet = [];
   const icons = [
     {
-      name: 'linkedin',
-      include: boolean('Linkedin', true)
+      name: 'facebook',
+      include: true
     },
     {
       name: 'twitter',
-      include: boolean('Twitter', true)
+      include: true
+    },
+    {
+      name: 'linkedin',
+      include: true
     },
     {
       name: 'instagram',
-      include: boolean('Instagram', true)
-    },
-    {
-      name: 'youtube',
-      include: boolean('Youtube', true)
-    },
-    {
-      name: 'facebook',
-      include: boolean('Facebook', true)
+      include: true
     }
   ];
 
@@ -80,8 +73,8 @@ export const socialLinksSmall = () => {
       iconSet.push(`
         <li>
           <a class="tco-social-icons-link" href="#" target="_blank" rel="noopener noreferrer">
-            <svg class="tco-icon tco-icon--${item.name}" title="${item.name}">
-              <use xlink:href="/img/icons.svg#icon-${item.name}-small"></use>
+            <svg class="tco-icon tco-icon--${item.name}" title="${item.name}" viewBox="0 0 100 100">
+              <use xlink:href="/img/icons.svg#icon-${item.name}"></use>
             </svg>
             <span class="tco-accessibly-hidden">${item.name}</span>
           </a>
@@ -91,7 +84,7 @@ export const socialLinksSmall = () => {
   });
 
   return `
-    <div class="tco-social-icons">
+    <div class="tco-social-icons tco-container-wrapper--navy">
       <ul class="tco-social-icons-list tco-social-icons-list--small">
         ${iconSet.join('')}
       </ul>
@@ -99,20 +92,10 @@ export const socialLinksSmall = () => {
   `;
 };
 
-export const WithContainer = () => {
-  const containerColor = select('Background Color', colors, colors.Default);
-
-  return `
-    <div class="tco-container-wrapper ${containerColor}">
-      <div class="tco-container">
-        ${socialLinks()}
-      </div>
-
-      <div class="tco-container">
-        ${socialLinksSmall()}
-      </div>
-    </div>
-  `;
+SocialIconsSmall.parameters = {
+  controls: { hideNoControlsWarning: true }
 };
 
-export default { title: 'Components / Social Icons' };
+export default {
+  title: 'Components / Social Icons'
+};

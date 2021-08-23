@@ -1,29 +1,22 @@
-import { select, text, boolean } from '@storybook/addon-knobs';
-import { teaser } from '../Teaser/teaser.stories';
+const colors = ['default', 'glass'];
+const alignments = ['left', 'center', 'right'];
+const sizes = ['small', 'medium', 'large', 'extra-large'];
 
-const colors = {
-  Default: '',
-  Glass: 'tco-container-wrapper--glass'
-};
-const alignments = ['center', 'left', 'right'];
-const sizes = ['extra-large', 'large', 'medium', 'small'];
-
-export const Default = () => {
-  const containerColor = select('Background Color', colors, colors.Glass);
-  const alignment = select('Media Alignment', alignments, 'left');
-  const image = text('Image', 'https://placekitten.com/524/320');
-  const bubbleBackground = boolean('Image background bubble?', true);
-  const textAlignment = select('Text Alignment', alignments, 'left');
-  const eyebrow = text('Eyebrow', 'Text and Image');
-  const heading = text('Heading', 'Technology Integration');
-  const headingSize = select('Heading Size', sizes, 'small');
-  const lede = text(
-    'Lede',
-    'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas pellentesque nunc vel turpis tempor tincidunt. Maecenas in felis suscipit, ornare felis at, posuere eros.'
-  );
-  const showCta = boolean('CTA', true);
-  const showTeaser = boolean('Show Teaser', false);
-  const numbered = boolean('Numbered', false);
+export const TextAndMedia = args => {
+  const {
+    containerColor,
+    alignment,
+    image,
+    bubbleBackground,
+    textAlignment,
+    eyebrow,
+    heading,
+    headingSize,
+    lede,
+    showCta,
+    showTeaser,
+    numbered
+  } = args;
 
   const url = new URL(image);
   const path = url.pathname;
@@ -39,7 +32,7 @@ export const Default = () => {
   }
 
   return `
-  <div class="tco-container-wrapper ${containerColor}">
+  <div class="tco-container-wrapper tco-container-wrapper--${containerColor}">
     <div class="tco-container tco-container--default">
       <div class="tco-text-media tco-text-media--align-${alignment}">
         <div class="tco-text-media-content tco-text-media-content-text tco-text-media-content-text--${textAlignment}">
@@ -72,7 +65,19 @@ export const Default = () => {
           `
               : ''
           }
-          ${showTeaser ? teaser() : ''}
+          ${
+            showTeaser
+              ? `
+            <div class="tco-post-teaser">
+            <div class=" tco-post-teaser-content">
+              <p class="tco-post-teaser-eyebrow">From our blog</p>
+              <h4 class="tco-post-teaser-title"><a href="#" class="tco-post-teaser-link">3 Fundamentals of Successful Product Design Teams</a></h4>
+
+            </div>
+          </div>
+          `
+              : ''
+          }
         </div>
         <div class="tco-text-media-content tco-text-media-content-media tco-text-media-content-media--${mediaOrientation} ${
     bubbleBackground ? 'tco-text-media-content-media--background' : ''
@@ -96,5 +101,51 @@ export const Default = () => {
 };
 
 export default {
-  title: 'Components / Text & Media'
+  title: 'Components / Text And Media',
+  args: {
+    containerColor: colors[0],
+    alignment: alignments[0],
+    bubbleBackground: true,
+    textAlignment: alignments[0],
+    showCta: true,
+    showTeaser: false,
+    numbered: false,
+    eyebrow: 'Text and Image',
+    heading: 'Technology Integration',
+    headingSize: sizes[0],
+    image: 'https://placekitten.com/524/320',
+    lede:
+      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas pellentesque nunc vel turpis tempor tincidunt. Maecenas in felis suscipit, ornare felis at, posuere eros.'
+  },
+  argTypes: {
+    containerColor: {
+      name: 'background color',
+      control: 'inline-radio',
+      options: colors
+    },
+    alignment: {
+      name: 'media alignment',
+      control: 'inline-radio',
+      options: alignments
+    },
+    textAlignment: {
+      name: 'text alignment',
+      control: 'inline-radio',
+      options: alignments
+    },
+    headingSize: {
+      name: 'heading size',
+      control: 'inline-radio',
+      options: sizes
+    },
+    bubbleBackground: {
+      name: 'bubble background'
+    },
+    showCta: {
+      name: 'show cta'
+    },
+    showTeaser: {
+      name: 'show teaser'
+    }
+  }
 };

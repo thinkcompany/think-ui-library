@@ -1,5 +1,3 @@
-import { select, object } from '@storybook/addon-knobs';
-
 const cardContents = [
   {
     id: 'convenience',
@@ -125,12 +123,10 @@ const cardContents = [
   }
 ];
 
-const groupId = 'casestudies';
+const types = ['full-width', 'card'];
 
-const types = ['card', 'full-width'];
-
-const caseStudyCard = input => {
-  const cardType = select('Card type', types, 'card');
+const caseStudyCard = (input, cardtype) => {
+  const cardType = cardtype;
 
   return `
     <div class="tco-card tco-card--case-study tco-card--case-study-${cardType} tco-card--case-study-${
@@ -177,22 +173,37 @@ const caseStudyCard = input => {
   `;
 };
 
-export const Default = () => {
-  const cardType = select('Card type', types, 'full-width');
-  const gridType = cardType === 'card' ? '2' : '1';
-  const itemList = object('Case Studies', cardContents, groupId);
+const CaseStudyCardsTemplate = args => {
+  const { type, itemList } = args;
+  const gridType = type === 'card' ? '2' : '1';
 
   return `
     <div class="tco-container-wrapper tco-container-wrapper--bleed">
       <div class="tco-container">
         <div class="tco-card-grid tco-card-grid--case-study tco-card-grid--${gridType}-column">
-          ${itemList.map(item => caseStudyCard(item)).join('')}
+          ${itemList.map(item => caseStudyCard(item, type)).join('')}
         </div>
       </div>
     </div>
   `;
 };
 
+export const CaseStudyCards = CaseStudyCardsTemplate.bind({});
+
 export default {
-  title: 'Components / Case Study Cards'
+  title: 'Components / Case Study Cards',
+  args: {
+    type: types[0],
+    itemList: cardContents
+  },
+  argTypes: {
+    type: {
+      name: 'card type',
+      control: 'inline-radio',
+      options: types
+    },
+    itemList: {
+      control: 'object'
+    }
+  }
 };

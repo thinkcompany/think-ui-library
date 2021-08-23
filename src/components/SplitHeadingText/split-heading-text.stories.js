@@ -1,11 +1,5 @@
-import { text } from '@storybook/addon-knobs';
-
-export const Default = () => {
-  const heading = text('Heading', 'Design and Development');
-  const content = text(
-    'Lede',
-    'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vitae dui posuere, porta nunc lacinia, pharetra diam. Maecenas dapibus orci vitae accumsan lacinia. Praesent dapibus ac leo ut aliquam. Praesent commodo hendrerit est.'
-  );
+export const SplitHeadingText = args => {
+  const { heading, content } = args;
 
   return `
   <div class="tco-container-wrapper">
@@ -24,5 +18,10 @@ export const Default = () => {
 };
 
 export default {
-  title: 'Components / Split Heading Text'
+  title: 'Components / Split Heading Text',
+  args: {
+    heading: 'Design and Development',
+    content:
+      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vitae dui posuere, porta nunc lacinia, pharetra diam. Maecenas dapibus orci vitae accumsan lacinia. Praesent dapibus ac leo ut aliquam. Praesent commodo hendrerit est.'
+  }
 };

@@ -194,6 +194,26 @@ export const foregrounds = () => genColorType(foregroundColors);
 export const backgrounds = () => genColorType(backgroundColors);
 export const thinkClassic = () => genColorType(thinkColors);
 export const caseStudies = () => genColorType(caseStudyColors);
+
+all.parameters = {
+  controls: { hideNoControlsWarning: true }
+};
+tints.parameters = {
+  controls: { hideNoControlsWarning: true }
+};
+foregrounds.parameters = {
+  controls: { hideNoControlsWarning: true }
+};
+backgrounds.parameters = {
+  controls: { hideNoControlsWarning: true }
+};
+thinkClassic.parameters = {
+  controls: { hideNoControlsWarning: true }
+};
+caseStudies.parameters = {
+  controls: { hideNoControlsWarning: true }
+};
+
 export default {
   title: 'Primitives / Colors'
 };

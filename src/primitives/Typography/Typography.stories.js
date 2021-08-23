@@ -134,6 +134,18 @@ export const display = () =>
 export const body = () =>
   wrapGrid(bodyStyles.map(item => typeItem(item, 8)).join(''));
 
+all.parameters = {
+  controls: { hideNoControlsWarning: true }
+};
+
+display.parameters = {
+  controls: { hideNoControlsWarning: true }
+};
+
+body.parameters = {
+  controls: { hideNoControlsWarning: true }
+};
+
 export default {
   title: 'Primitives / Typography'
 };

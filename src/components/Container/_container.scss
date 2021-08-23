@@ -49,6 +49,10 @@
       max-width: $container-small;
     }
 
+    &--max {
+      max-width: $container-max;
+    }
+
     &--center {
       text-align: center;
     }

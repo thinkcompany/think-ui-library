@@ -1,26 +1,11 @@
-import { select, text, boolean } from '@storybook/addon-knobs';
-
-const colors = {
-  Default: '',
-  Glass: 'tco-container-wrapper--glass'
-};
-const ledeSizes = ['large', 'default', 'sans-small'];
+const ledeSizes = ['default', 'large', 'sans-small'];
 const containerSizes = ['default', 'mid', 'narrow', 'none'];
 
-export const Default = () => {
-  const containerColor = select('Background Color', colors, colors.Default);
-  const eyebrow = text('Eyebrow', 'Send us a postcard, drop us a line');
-  const heading = text('Heading', 'Interested in working with us?');
-  const lede = text(
-    'Lede',
-    "We scope projects and build teams to meet your organization's unique design and development needs. Tell us about your project today to start the conversation."
-  );
-  const ledeSize = select('Lede Size', ledeSizes, 'default');
-  const ledeContainer = select('Lede Container', containerSizes, 'narrow');
-  const showCta = boolean('CTA', true);
+const Template = args => {
+  const { heading, eyebrow, lede, ledeSize, container, cta } = args;
 
   return `
-  <div class="tco-container-wrapper ${containerColor}">
+  <div class="tco-container-wrapper">
     <div class="tco-container tco-container--default tco-container--cta">
       <div class="tco-text-only tco-text-only-cta tco-text-only--center">
         ${
@@ -37,11 +22,11 @@ export const Default = () => {
           `
             : ''
         }
-        <div class="tco-text-only-content tco-text-only-content--center tco-container--${ledeContainer}">
+        <div class="tco-text-only-content tco-text-only-content--center tco-container--${container}">
           <p class="tco-text-only-lede tco-type-body--${ledeSize}">${lede}</p>
         </div>
         ${
-          showCta
+          cta
             ? `
           <a href="#" class="tco-btn tco-btn--primary tco-text-only-cta">Learn More</a>
         `
@@ -60,6 +45,29 @@ export const Default = () => {
   </div>`;
 };
 
+export const CTABanner = Template.bind({});
+
 export default {
-  title: 'Components / CTA Banner'
+  title: 'Components / CTA Banner',
+  args: {
+    eyebrow: 'Send us a postcard, drop us a line',
+    heading: 'Interested in working with us?',
+    lede:
+      "We scope projects and build teams to meet your organization's unique design and development needs. Tell us about your project today to start the conversation.",
+    ledeSize: ledeSizes[0],
+    container: containerSizes[2],
+    cta: true
+  },
+  argTypes: {
+    ledeSize: {
+      name: 'lede size',
+      control: 'inline-radio',
+      options: ledeSizes
+    },
+    container: {
+      name: 'lede container',
+      control: 'inline-radio',
+      options: containerSizes
+    }
+  }
 };
