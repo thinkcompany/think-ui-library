@@ -11,7 +11,6 @@ module.exports = {
         actions: false
       }
     },
-    '@storybook/addon-knobs',
     '@stormid/storybook-html-addon-markup'
   ]
 };

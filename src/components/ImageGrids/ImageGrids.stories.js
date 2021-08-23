@@ -1,5 +1,3 @@
-import { number, select, text } from '@storybook/addon-knobs';
-
 const colors = {
   Default: '',
   Glass: 'tco-container-wrapper--glass'
