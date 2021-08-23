@@ -1,5 +1,3 @@
-import { text, select, boolean } from '@storybook/addon-knobs';
-
 const sizeOptions = {
   large: 'tco-form-input--large',
   medium: 'tco-form-input--medium',
@@ -14,12 +12,6 @@ const stateOptions = {
 
 export const TextInput = args => {
   const { label, placeholder, errorMessage, state, disabled } = args;
-  // const label = text('Label', 'Text Input');
-  // const placeholder = text('Placeholder', 'Enter Text...');
-  // const errorMessage = text('Error Message', 'Error Message');
-  // const size = select('Size', sizeOptions, sizeOptions.medium);
-  // const state = select('State', stateOptions, stateOptions.default);
-  // const disabled = boolean('Disabled', false);
 
   return `
     <div class="tco-form-row">
