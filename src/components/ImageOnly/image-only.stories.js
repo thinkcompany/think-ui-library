@@ -12,8 +12,7 @@ const Template = args => {
 export const ImageOnly = Template.bind({});
 
 ImageOnly.args = {
-  src:
-    'https://www.thinkcompany.com/wp-content/uploads/2021/01/careers-header.jpg'
+  src: 'https://www.thinkcompany.com/wp-content/uploads/2021/01/careers-header.jpg'
 };
 
 export default {

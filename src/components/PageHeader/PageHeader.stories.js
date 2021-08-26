@@ -71,8 +71,7 @@ export default {
     eyebrow: '',
     heading: 'Adapting your digital experience is critical',
     headingSize: sizes[0],
-    lede:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas pellentesque nunc vel turpis tempor tincidunt at, posuere eros.',
+    lede: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas pellentesque nunc vel turpis tempor tincidunt at, posuere eros.',
     showCta: true
   },
   argTypes: {

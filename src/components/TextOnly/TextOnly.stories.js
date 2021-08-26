@@ -4,7 +4,7 @@ const sizes = ['small', 'medium', 'large', 'extra-large'];
 const ledeSizes = ['large', 'default', 'sans-small'];
 const containerSizes = ['default', 'mid', 'narrow', 'none'];
 
-export const TextOnly = args => {
+const Template = args => {
   const {
     textAlignment,
     eyebrow,
@@ -16,18 +16,6 @@ export const TextOnly = args => {
     showCta,
     bubble
   } = args;
-  // const textAlignment = select('Text Alignment', alignments, 'left');
-  // const eyebrow = text('Eyebrow', 'Text Only');
-  // const heading = text('Heading', 'Technology Integration');
-  // const headingSize = select('Heading Size', sizes, 'medium');
-  // const lede = text(
-  //   'Lede',
-  //   'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vitae dui posuere, porta nunc lacinia, pharetra diam. Maecenas dapibus orci vitae accumsan lacinia. Praesent dapibus ac leo ut aliquam. Praesent commodo hendrerit est.'
-  // );
-  // const ledeSize = select('Lede Size', ledeSizes, 'default');
-  // const ledeContainer = select('Lede Container', containerSizes, 'none');
-  // const showCta = boolean('CTA', true);
-  // const bubble = boolean('Bubble Background', false);
 
   return `
     <div class="tco-container-wrapper">
@@ -66,17 +54,19 @@ export const TextOnly = args => {
     `;
 };
 
+export const TextOnly = Template.bind({});
+
 export default {
   title: 'Components / Text Only',
+  component: TextOnly,
   args: {
-    bubble: false,
+    bubble: true,
     textAlignment: alignments[0],
-    showCta: true,
-    eyebrow: 'Text only',
-    heading: 'Technology Integration',
+    showCta: false,
+    eyebrow: 'Welcome',
+    heading: 'Think Company Design System',
     headingSize: sizes[1],
-    lede:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vitae dui posuere, porta nunc lacinia, pharetra diam. Maecenas dapibus orci vitae accumsan lacinia. Praesent dapibus ac leo ut aliquam. Praesent commodo hendrerit est.',
+    lede: "The Think Company Design System includes styles, components, and patterns for various UI elements within the Think Company website. This library is intended to be used as a reference and guide for the design and development teams. What's included:</br><strong>Primitives</strong> are the foundational styles and components used throughout the Design System, including colors, typograhpy, and spacing. <strong>Controls & Inputs </strong> enable users to take actions, typically within a form. <strong>Components</strong> are the higher level building blocks of the Think Company site.",
     ledeSize: ledeSizes[1],
     ledeContainer: containerSizes[0]
   },

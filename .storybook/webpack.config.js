@@ -15,15 +15,6 @@ module.exports = async ({ config }) => {
         }
       }
     ]
-  },
-  {
-    test: /\.mdx$/,
-    use: [
-      'babel-loader',
-      {
-        loader: '@mdx-js/loader',
-      }
-    ]
   });
 
   config.plugins.push(

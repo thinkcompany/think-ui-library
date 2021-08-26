@@ -114,8 +114,7 @@ export default {
     heading: 'Technology Integration',
     headingSize: sizes[0],
     image: 'https://placekitten.com/524/320',
-    lede:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas pellentesque nunc vel turpis tempor tincidunt. Maecenas in felis suscipit, ornare felis at, posuere eros.'
+    lede: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas pellentesque nunc vel turpis tempor tincidunt. Maecenas in felis suscipit, ornare felis at, posuere eros.'
   },
   argTypes: {
     containerColor: {

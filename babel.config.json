@@ -6,9 +6,6 @@
         "useBuiltIns": "usage",
         "corejs": "3.6"
       }
-    ],
-    [
-      "@babel/preset-react"
     ]
   ],
   "retainLines": true
