@@ -2,17 +2,21 @@ const SummaryCardTemplate = args => {
   const { heading, summary, image } = args;
 
   return `
-    <div class="tco-card tco-card--summary">
-      <a href="#" class="tco-card-link">
-        <div class="tco-card-image-container tco-card-image-container--summary">
-          <img class="tco-card-image tco-card-image--summary" alt="Card image" src="${image}" />
-        </div>
-        <div class="tco-card-content-container">
-          <h2 class="tco-card-content-heading">${heading}</h2>
-          <p class="tco-card-content-description">${summary}</p>
-        </div>
-      </a>
-    </div>`;
+  <div class="tco-container-wrapper">
+    <div class="tco-container">
+      <div class="tco-card tco-card--summary">
+        <a href="#" class="tco-card-link">
+          <div class="tco-card-image-container tco-card-image-container--summary">
+            <img class="tco-card-image tco-card-image--summary" alt="Card image" src="${image}" />
+          </div>
+          <div class="tco-card-content-container">
+            <h2 class="tco-card-content-heading">${heading}</h2>
+            <p class="tco-card-content-description">${summary}</p>
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>`;
 };
 
 export const SummaryCard = SummaryCardTemplate.bind({});
@@ -29,13 +33,17 @@ const PersonCardTemplate = args => {
   const { name, title, image } = args;
 
   return `
-  <div class="tco-card tco-card--person" style="background-image: url(${image})">
-    <a href="#" class="tco-card-link">
-      <div class="tco-card-content-container">
-        <h2 class="tco-card-content-heading">${name}</h2>
-        <p class="tco-card-content-description">${title}</p>
+  <div class="tco-container-wrapper">
+    <div class="tco-container">
+      <div class="tco-card tco-card--person" style="background-image: url(${image})">
+        <a href="#" class="tco-card-link">
+          <div class="tco-card-content-container">
+            <h2 class="tco-card-content-heading">${name}</h2>
+            <p class="tco-card-content-description">${title}</p>
+          </div>
+        </a>
       </div>
-    </a>
+    </div>
   </div>`;
 };
 
@@ -52,27 +60,31 @@ const PostCardTemplate = args => {
   const { image, heading } = args;
 
   return `
-  <div class="tco-card tco-card--post">
-    <a href="#" class="tco-card-link">
-      <div class="tco-card-image-container">
-        <img class="tco-card-image" alt="Card image" src="${image}" />
+  <div class="tco-container-wrapper">
+    <div class="tco-container">
+      <div class="tco-card tco-card--post">
+        <a href="#" class="tco-card-link">
+          <div class="tco-card-image-container">
+            <img class="tco-card-image" alt="Card image" src="${image}" />
+          </div>
+          <div class="tco-card-content-container">
+            <p class="tco-type-body--sans-small">November 2, 2020</p>
+            <h2 class="tco-text-link tco-type-body--large">${heading}
+              <svg class="tco-text-link-icon" width="20" height="20" viewBox="0 0 20 20" role="presentation">
+                <use xlink:href="/img/icons.svg#icon-arrow-right"></use>
+              </svg>
+            </h2>
+            <div class="tco-byline tco-byline--no-image">
+              <ul>
+                <li class="tco-byline-name">By</li>
+                <li class="tco-byline-name">Ian McPhail,</li>
+                <li class="tco-byline-name">Keith Rich</li>
+              </ul>
+            </div>
+          </div>
+        </a>
       </div>
-      <div class="tco-card-content-container">
-        <p class="tco-type-body--sans-small">November 2, 2020</p>
-        <h2 class="tco-text-link tco-type-body--large">${heading}
-          <svg class="tco-text-link-icon" width="20" height="20" viewBox="0 0 20 20" role="presentation">
-            <use xlink:href="/img/icons.svg#icon-arrow-right"></use>
-          </svg>
-        </h2>
-        <div class="tco-byline tco-byline--no-image">
-          <ul>
-            <li class="tco-byline-name">By</li>
-            <li class="tco-byline-name">Ian McPhail,</li>
-            <li class="tco-byline-name">Keith Rich</li>
-          </ul>
-        </div>
-      </div>
-    </a>
+    </div>
   </div>`;
 };
 
@@ -89,24 +101,28 @@ const CalloutCardTemplate = args => {
   const { heading, description } = args;
 
   return `
-  <div class="tco-card tco-card--callout">
-    <a href="#" class="tco-card-link">
-      <div class="tco-card-image-container tco-card-image-container--callout">
-        <svg class="tco-icon tco-card-image tco-card-image--callout" viewBox="0 0 44 44" role="presentation">
-          <use xlink:href="/img/icons.svg#icon-sync-blue"></use>
-        </svg>
+  <div class="tco-container-wrapper">
+    <div class="tco-container">
+      <div class="tco-card tco-card--callout">
+        <a href="#" class="tco-card-link">
+          <div class="tco-card-image-container tco-card-image-container--callout">
+            <svg class="tco-icon tco-card-image tco-card-image--callout" viewBox="0 0 44 44" role="presentation">
+              <use xlink:href="/img/icons.svg#icon-sync-blue"></use>
+            </svg>
+          </div>
+          <div class="tco-card-content-container">
+            <h2 class="tco-card-content-heading">${heading}</h2>
+            <p class="tco-card-content-description">${description}</p>
+            <p class="tco-card-content-link">
+            Tell us about your challenge
+              <svg class="tco-text-link-icon" width="20" height="20" viewBox="0 0 20 20" role="presentation">
+                <use xlink:href="/img/icons.svg#icon-arrow-right"></use>
+              </svg>
+            </p>
+          </div>
+        </a>
       </div>
-      <div class="tco-card-content-container">
-        <h2 class="tco-card-content-heading">${heading}</h2>
-        <p class="tco-card-content-description">${description}</p>
-        <p class="tco-card-content-link">
-        Tell us about your challenge
-          <svg class="tco-text-link-icon" width="20" height="20" viewBox="0 0 20 20" role="presentation">
-            <use xlink:href="/img/icons.svg#icon-arrow-right"></use>
-          </svg>
-        </p>
-      </div>
-    </a>
+    </div>
   </div>`;
 };
 
@@ -121,15 +137,19 @@ const MediaCardTemplate = args => {
   const { heading, summary, image } = args;
 
   return `
-    <div class="tco-card tco-card--no-link tco-card--summary tco-card--media">
-      <div class="tco-card-image-container tco-card-image-container--summary">
-        <img class="tco-card-image tco-card-image--summary" alt="Card image" src="${image}" />
+  <div class="tco-container-wrapper">
+    <div class="tco-container">
+      <div class="tco-card tco-card--no-link tco-card--summary tco-card--media">
+        <div class="tco-card-image-container tco-card-image-container--summary">
+          <img class="tco-card-image tco-card-image--summary" alt="Card image" src="${image}" />
+        </div>
+        <div class="tco-card-content-container">
+          <h2 class="tco-card-content-heading">${heading}</h2>
+          <p class="tco-card-content-description">${summary}</p>
+        </div>
       </div>
-      <div class="tco-card-content-container">
-        <h2 class="tco-card-content-heading">${heading}</h2>
-        <p class="tco-card-content-description">${summary}</p>
-      </div>
-    </div>`;
+    </div>
+  </div>`;
 };
 
 export const MediaCard = MediaCardTemplate.bind({});
@@ -146,17 +166,21 @@ const JobCardTemplate = args => {
   const { heading, location } = args;
 
   return `
-    <div class="tco-card tco-card--job">
-      <a href="#" class="tco-card-link">
-        <div class="tco-card-content-container">
-          <h2 class="tco-card-content-heading">${heading}</h2>
-          <span class="tco-card-content-location">${location}</span>
-        </div>
-        <div class="tco-card-content-container">
-          <span href="#" class="tco-btn tco-btn--secondary">Apply Now</span>
-        </div>
-      </a>
-    </div>`;
+  <div class="tco-container-wrapper">
+    <div class="tco-container">
+      <div class="tco-card tco-card--job">
+        <a href="#" class="tco-card-link">
+          <div class="tco-card-content-container">
+            <h2 class="tco-card-content-heading">${heading}</h2>
+            <span class="tco-card-content-location">${location}</span>
+          </div>
+          <div class="tco-card-content-container">
+            <span href="#" class="tco-btn tco-btn--secondary">Apply Now</span>
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>`;
 };
 
 export const JobCard = JobCardTemplate.bind({});
