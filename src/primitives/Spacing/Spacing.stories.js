@@ -8,20 +8,20 @@ const insetItem = input => `
     <div class="spacing-block" style="padding: ${input}px;">
     <div class="content"></div>
     </div>
-    <footer>
+    <div class="doc-footer">
     <p><strong>Inset ${input}</strong></p>
     <p><code>@include spacing-inset-${input}</code></p>
-    </footer>
+    </div>
 </div>`;
 const squishItem = input => `
 <div class="documentation-grid--item documentation-spacing--internal documentation-block">
     <div class="spacing-block" style="padding: ${input.y}px ${input.x}px;">
     <div class="content"></div>
     </div>
-    <footer>
+    <div class="doc-footer">
     <p><strong>Squish ${input.y}</strong></p>
     <p><code>@include spacing-squish-${input.y}</code></p>
-    </footer>
+    </div>
 </div>`;
 const stackItem = input => `
 <div class="documentation-grid--item documentation-spacing--external documentation-block">
@@ -29,10 +29,10 @@ const stackItem = input => `
         <div class="content" style="margin-bottom: ${input}px;"></div>
         <div class="content"></div>
     </div>
-    <footer>
+    <div class="doc-footer">
         <p><strong>Stack ${input}</strong></p>
         <p><code>$spacing-stack-${input}</code></p>
-    </footer>
+    </div>
 </div>`;
 const inlineItem = input => `
 <div class="documentation-grid--item documentation-spacing--external documentation-block">
@@ -40,10 +40,10 @@ const inlineItem = input => `
         <div class="content" style="margin-right: ${input}px;"></div>
         <div class="content"></div>
     </div>
-    <footer>
+    <div class="doc-footer">
         <p><strong>Inline ${input}</strong></p>
         <p><code>$spacing-inline-${input}</code></p>
-    </footer>
+    </div>
 </div>`;
 
 export const inset = () =>

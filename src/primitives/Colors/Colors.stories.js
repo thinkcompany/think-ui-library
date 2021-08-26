@@ -128,23 +128,23 @@ const swatch = (item, over) => {
   if (over) {
     response += `
     <div class="text" style="color: ${over.color}"><span>Aa</span></div>
-    <footer>
+    <div class="doc-footer">
       ${nameBlock(over)}
       ${varBlock(over)}
       ${hexBlock(over)}
       <div class="a11y-tag-container">
         ${a11yBlock(ratio)}
       </div>
-    </footer>
+    </div>
     `;
   } else {
     response += `
     <div class="color-block"></div>
-      <footer>
+      <div class="doc-footer">
       ${nameBlock(item)}
       ${varBlock(item)}
       ${hexBlock(item)}
-    </footer>`;
+    </div>`;
   }
   response += `</div>`;
 

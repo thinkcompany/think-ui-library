@@ -75,8 +75,7 @@ export default {
     eyebrow: 'Text only',
     heading: 'Technology Integration',
     headingSize: sizes[1],
-    lede:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vitae dui posuere, porta nunc lacinia, pharetra diam. Maecenas dapibus orci vitae accumsan lacinia. Praesent dapibus ac leo ut aliquam. Praesent commodo hendrerit est.',
+    lede: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vitae dui posuere, porta nunc lacinia, pharetra diam. Maecenas dapibus orci vitae accumsan lacinia. Praesent dapibus ac leo ut aliquam. Praesent commodo hendrerit est.',
     ledeSize: ledeSizes[1],
     ledeContainer: containerSizes[0]
   },
