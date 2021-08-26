@@ -20,17 +20,21 @@ const renderForm = () => `
 
 export const NewsletterForm = () => {
   return `
-  <div class="tco-newsletter-form tco-card-container--shadow">
-    <div class="tco-newsletter-form-content-container">
-      <div class="tco-newsletter-form-content">
-        <h2 class="tco-type-display--small">Stay in the know</h2>
-        <p class="tco-type-body--sans-small">Receive blog posts, useful tools, and company updates straight to your inbox.</p>
+  <div class="tco-container-wrapper">
+    <div class="tco-container">
+      <div class="tco-newsletter-form tco-card-container--shadow">
+        <div class="tco-newsletter-form-content-container">
+          <div class="tco-newsletter-form-content">
+            <h2 class="tco-type-display--small">Stay in the know</h2>
+            <p class="tco-type-body--sans-small">Receive blog posts, useful tools, and company updates straight to your inbox.</p>
+          </div>
+          <div class="tco-doodle"></div>
+        </div>
+        <div class="tco-newsletter-form-container">
+          ${renderForm()}
+          <p class="tco-newsletter-form-disclaimer">We keep it brief, make it easy to unsubscribe, and never share your information.</p>
+        </div>
       </div>
-      <div class="tco-doodle"></div>
-    </div>
-    <div class="tco-newsletter-form-container">
-      ${renderForm()}
-      <p class="tco-newsletter-form-disclaimer">We keep it brief, make it easy to unsubscribe, and never share your information.</p>
     </div>
   </div>
   `;
