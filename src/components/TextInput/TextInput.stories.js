@@ -8,46 +8,50 @@ export const TextInput = args => {
   const { label, placeholder, errorMessage, state, disabled } = args;
 
   return `
-    <div class="tco-form-row">
-      <label
-        for="text-field-1"
-        class="tco-form-label"
-      >
-        ${label}
-      </label>
-      <input
-        type="text"
-        placeholder="${placeholder}"
-        class="tco-form-input ${state}"
-        id="text-field-1"
-        name="text-field-1" ${disabled ? '\n\tdisabled' : ''}
-      >
-      ${
-        state === stateOptions.error
-          ? `<p class="tco-form-input-error-msg">${errorMessage}</p>`
-          : ''
-      }
-    </div>
+  <div class="tco-container-wrapper">
+    <div class="tco-container">
+      <div class="tco-form-row">
+        <label
+          for="text-field-1"
+          class="tco-form-label"
+        >
+          ${label}
+        </label>
+        <input
+          type="text"
+          placeholder="${placeholder}"
+          class="tco-form-input ${state}"
+          id="text-field-1"
+          name="text-field-1" ${disabled ? '\n\tdisabled' : ''}
+        >
+        ${
+          state === stateOptions.error
+            ? `<p class="tco-form-input-error-msg">${errorMessage}</p>`
+            : ''
+        }
+      </div>
 
-    <div class="tco-form-row tco-input--expand tco-input--expand-jumbo">
-      <label
-        for="text-field-1"
-        class="tco-form-label"
-      >
-        Multiline text field
-      </label>
-      <textarea
-        placeholder="${placeholder}"
-        class="tco-form-input ${state}"
-        id="text-field-2"
-        name="text-field-2" ${disabled ? '\n\tdisabled' : ''}
-      ></textarea>
-      ${
-        state === stateOptions.error
-          ? `<p class="tco-form-input-error-msg">${errorMessage}</p>`
-          : ''
-      }
+      <div class="tco-form-row tco-input--expand tco-input--expand-jumbo">
+        <label
+          for="text-field-1"
+          class="tco-form-label"
+        >
+          Multiline text field
+        </label>
+        <textarea
+          placeholder="${placeholder}"
+          class="tco-form-input ${state}"
+          id="text-field-2"
+          name="text-field-2" ${disabled ? '\n\tdisabled' : ''}
+        ></textarea>
+        ${
+          state === stateOptions.error
+            ? `<p class="tco-form-input-error-msg">${errorMessage}</p>`
+            : ''
+        }
+      </div>
     </div>
+  </div>
   `;
 };
 

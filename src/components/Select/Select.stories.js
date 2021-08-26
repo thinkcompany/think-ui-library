@@ -4,20 +4,24 @@ export const Select = args => {
   const { label, options, disabled } = args;
 
   return `
-    <div class="tco-form-row">
-      <label for="select-1" class="tco-form-label">${label}</label>
-      <div class="tco-form-select">
-        <select
-          class="select tco-form-input"
-          id="select-1"
-          name="select-1"
-          ${disabled ? 'disabled' : ''}
-        >
-        <option>Select...</option>
-        ${options.map(option => `<option>${option}</option>`).join('\n\t')}
-        </select>
+  <div class="tco-container-wrapper">
+    <div class="tco-container">
+      <div class="tco-form-row">
+        <label for="select-1" class="tco-form-label">${label}</label>
+        <div class="tco-form-select">
+          <select
+            class="select tco-form-input"
+            id="select-1"
+            name="select-1"
+            ${disabled ? 'disabled' : ''}
+          >
+          <option>Select...</option>
+          ${options.map(option => `<option>${option}</option>`).join('\n\t')}
+          </select>
+        </div>
       </div>
     </div>
+  </div>
   `;
 };
 

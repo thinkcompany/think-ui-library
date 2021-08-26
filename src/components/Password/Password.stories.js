@@ -8,21 +8,25 @@ export const Password = args => {
   const { label, placeholder, errorMessage, state, disabled } = args;
 
   return `
-  <div class="tco-form-row">
-    <label for="password-1" class="tco-form-label">${label}</label>
-    <input
-      type="password"
-      placeholder="${placeholder}"
-      class="tco-form-input ${state}"
-      id="password-1"
-      name="password-1" ${disabled ? '\n\tdisabled' : ''}
-    >
-    ${
-      state === stateOptions.error
-        ? `<p class="tco-form-input-error-msg">${errorMessage}</p>`
-        : ''
-    }
-</div>`;
+  <div class="tco-container-wrapper">
+    <div class="tco-container">
+      <div class="tco-form-row">
+        <label for="password-1" class="tco-form-label">${label}</label>
+        <input
+          type="password"
+          placeholder="${placeholder}"
+          class="tco-form-input ${state}"
+          id="password-1"
+          name="password-1" ${disabled ? '\n\tdisabled' : ''}
+        >
+        ${
+          state === stateOptions.error
+            ? `<p class="tco-form-input-error-msg">${errorMessage}</p>`
+            : ''
+        }
+      </div>
+    </div>
+  </div>`;
 };
 
 export default {

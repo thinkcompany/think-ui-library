@@ -2,19 +2,23 @@ export const Teaser = args => {
   const { header, title, author, position, showByline } = args;
 
   return `
-    <div class="tco-post-teaser">
-      <div class=" tco-post-teaser-content">
-        <p class="tco-post-teaser-eyebrow">${header}</p>
-        <h4 class="tco-post-teaser-title"><a href="#" class="tco-post-teaser-link">${title}</a></h4>
-        ${
-          showByline
-            ? `
-          <p class="tco-post-teaser-author">by ${author}, ${position}</p>
-          `
-            : ``
-        }
+  <div class="tco-container-wrapper">
+    <div class="tco-container">
+      <div class="tco-post-teaser">
+        <div class=" tco-post-teaser-content">
+          <p class="tco-post-teaser-eyebrow">${header}</p>
+          <h4 class="tco-post-teaser-title"><a href="#" class="tco-post-teaser-link">${title}</a></h4>
+          ${
+            showByline
+              ? `
+            <p class="tco-post-teaser-author">by ${author}, ${position}</p>
+            `
+              : ``
+          }
+        </div>
       </div>
     </div>
+  </div>
   `;
 };
 

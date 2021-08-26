@@ -114,11 +114,11 @@ const typeItem = (input, demoLength, demo = true) => `
 `
       : ''
   }
-  <footer>
+  <div class="doc-footer">
     ${nameBlock(input)}
     ${classBlock(input)}
     ${sassBlock(input)}
-  </footer>
+  </div>
 </div>
 `;
 

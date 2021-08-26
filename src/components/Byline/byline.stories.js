@@ -14,15 +14,19 @@ const BylineTemplate = args => {
   }
 
   return `
-    ${open}
-      <div class="tco-byline-image-container">
-        <img src="${image}" alt="${name}">
+    <div class="tco-container-wrapper">
+      <div class="tco-container">
+        ${open}
+          <div class="tco-byline-image-container">
+            <img src="${image}" alt="${name}">
+          </div>
+          <div class="tco-byline-content-container">
+            <p class="tco-byline-name">By ${name}</p>
+            <p class="tco-byline-description">${date}</p>
+          </div>
+        ${close}
       </div>
-      <div class="tco-byline-content-container">
-        <p class="tco-byline-name">By ${name}</p>
-        <p class="tco-byline-description">${date}</p>
-      </div>
-    ${close}
+    </div>
   `;
 };
 
@@ -37,25 +41,29 @@ const MultipleTemplate = args => {
   const { name, image } = args;
 
   return `
-    <div class="tco-byline tco-byline--multiple">
-      <div class="tco-byline-images">
-        <div class="tco-byline-image-container">
-          <img src="${image}" alt="${name}">
+  <div class="tco-container-wrapper">
+    <div class="tco-container">
+      <div class="tco-byline tco-byline--multiple">
+        <div class="tco-byline-images">
+          <div class="tco-byline-image-container">
+            <img src="${image}" alt="${name}">
+          </div>
+          <div class="tco-byline-image-container">
+            <img src="${image}" alt="${name}">
+          </div>
+          <div class="tco-byline-image-container">
+            <img src="${image}" alt="${name}">
+          </div>
+          <div class="tco-byline-image-container">
+            <img src="${image}" alt="${name}">
+          </div>
         </div>
-        <div class="tco-byline-image-container">
-          <img src="${image}" alt="${name}">
+        <div class="tco-byline-content-container tco-byline-content-container--multiple">
+          <p class="tco-type-body--sans-small">By <a href="#" class="tco-byline-link--multiple">${name}</a>, <a href="#" class="tco-byline-link--multiple">${name}</a>, <a href="#" class="tco-byline-link--multiple">${name}</a>, and <a href="#" class="tco-byline-link--multiple">${name}</a></p>
         </div>
-        <div class="tco-byline-image-container">
-          <img src="${image}" alt="${name}">
-        </div>
-        <div class="tco-byline-image-container">
-          <img src="${image}" alt="${name}">
-        </div>
-      </div>
-      <div class="tco-byline-content-container tco-byline-content-container--multiple">
-        <p class="tco-type-body--sans-small">By <a href="#" class="tco-byline-link--multiple">${name}</a>, <a href="#" class="tco-byline-link--multiple">${name}</a>, <a href="#" class="tco-byline-link--multiple">${name}</a>, and <a href="#" class="tco-byline-link--multiple">${name}</a></p>
       </div>
     </div>
+  </div>
   `;
 };
 

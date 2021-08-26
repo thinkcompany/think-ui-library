@@ -8,18 +8,22 @@ const ChecklistTemplate = args => {
   ];
 
   return `
-    <div class="tco-checklist">
-      ${
-        eyebrow
-          ? `
-        <span class="tco-checklist-eyebrow">${eyebrow}</span>
-        `
-          : ''
-      }
-      <ul>
-        ${items.map(item => `<li>${item}</li>`).join('')}
-      </ul>
+  <div class="tco-container-wrapper">
+    <div class="tco-container">
+      <div class="tco-checklist">
+        ${
+          eyebrow
+            ? `
+          <span class="tco-checklist-eyebrow">${eyebrow}</span>
+          `
+            : ''
+        }
+        <ul>
+          ${items.map(item => `<li>${item}</li>`).join('')}
+        </ul>
+      </div>
     </div>
+  </div>
   `;
 };
 

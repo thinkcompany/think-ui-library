@@ -9,7 +9,8 @@
   padding-top: $documentation-padding;
   border: 1px solid $documentation-gray;
 
-  footer {
+  footer,
+  .doc-footer {
     display: flex;
     flex-flow: column wrap;
     justify-self: flex-end;

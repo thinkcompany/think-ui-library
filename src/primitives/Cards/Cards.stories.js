@@ -26,11 +26,11 @@ const cardItem = input => `
             <div class="content"></div>
         </div>
     </div>
-    <footer>
+    <div>
         ${nameBlock(input)}
         ${classBlock(input)}
         ${sassBlock(input)}
-    </footer>
+    </div>
 </div>
 `;
 

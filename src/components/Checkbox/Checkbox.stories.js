@@ -17,10 +17,15 @@ export const Checkbox = args => {
   });
 
   return `
-  <div class="tco-form-group">
-      <input class="tco-form-checkbox" id="checkbox-1" type="checkbox" name="checkbox-1" value="1" ${state} />
-      <label class="tco-form-label" for="checkbox-1">${label}</label>
-  </div>`;
+  <div class="tco-container-wrapper">
+    <div class="tco-container">
+      <div class="tco-form-group">
+        <input class="tco-form-checkbox" id="checkbox-1" type="checkbox" name="checkbox-1" value="1" ${state} />
+        <label class="tco-form-label" for="checkbox-1">${label}</label>
+      </div>
+    </div>
+  </div>
+  `;
 };
 
 export default {
