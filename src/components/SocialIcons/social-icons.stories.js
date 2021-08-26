@@ -88,16 +88,12 @@ export const SocialIconsSmall = () => {
   });
 
   return `
-  <div class="tco-container-wrapper">
-    <div class="tco-container">
-      <div class="tco-social-icons tco-container-wrapper--navy">
-        <ul class="tco-social-icons-list tco-social-icons-list--small">
-          ${iconSet.join('')}
-        </ul>
-      </div>
+    <div class="tco-social-icons tco-container-wrapper--navy">
+      <ul class="tco-social-icons-list tco-social-icons-list--small">
+        ${iconSet.join('')}
+      </ul>
     </div>
-  </div>
-  `;
+`;
 };
 
 SocialIconsSmall.parameters = {

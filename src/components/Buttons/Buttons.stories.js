@@ -16,9 +16,14 @@ export const Button = args => {
   const { buttonText, buttonState, buttonStyle } = args;
 
   return `
-    <button type="button" class="tco-btn tco-btn--${buttonStyle}" ${buttonState}>
-      ${buttonText}
-    </button>`;
+  <div class="tco-container-wrapper">
+    <div class="tco-container">
+      <button type="button" class="tco-btn tco-btn--${buttonStyle}" ${buttonState}>
+        ${buttonText}
+      </button>
+    </div>
+  </div>
+  `;
 };
 
 Button.args = {
@@ -47,8 +52,12 @@ export const TextLink = args => {
   const { linkText } = args;
 
   return `
-    <p class="tco-type-body--default">Lorem ipsum dolor sit amet <a href="#" class="tco-text-link"> ${linkText}</a>.</p>
-    <p class="tco-type-body--sans-small">Lorem ipsum <a href="#" class="tco-text-link"> ${linkText}</a> dolor sit amet.</p>`;
+  <div class="tco-container-wrapper">
+    <div class="tco-container">
+      <p class="tco-type-body--default">Lorem ipsum dolor sit amet <a href="#" class="tco-text-link"> ${linkText}</a>.</p>
+      <p class="tco-type-body--sans-small">Lorem ipsum <a href="#" class="tco-text-link"> ${linkText}</a> dolor sit amet.</p>
+    </div>
+  </div>`;
 };
 
 TextLink.args = {
