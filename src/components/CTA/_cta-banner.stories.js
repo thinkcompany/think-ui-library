@@ -52,8 +52,7 @@ export default {
   args: {
     eyebrow: 'Send us a postcard, drop us a line',
     heading: 'Interested in working with us?',
-    lede:
-      "We scope projects and build teams to meet your organization's unique design and development needs. Tell us about your project today to start the conversation.",
+    lede: "We scope projects and build teams to meet your organization's unique design and development needs. Tell us about your project today to start the conversation.",
     ledeSize: ledeSizes[0],
     container: containerSizes[2],
     cta: true

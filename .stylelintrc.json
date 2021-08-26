@@ -6,7 +6,7 @@
   ],
   "defaultSeverity": "error",
   "plugins": ["stylelint-scss", "stylelint-order"],
-  "ignoreFiles": ["dist/**/*.scss", "src/styles/settings/mixins/*.scss", "src/styles/settings/variables/*.scss"],
+  "ignoreFiles": ["dist/**/*.scss", "src/styles/settings/mixins/*.scss", "src/styles/settings/variables/*.scss", "src/primitives/_documentation-styles/Block.scss"],
   "rules": {
     "at-rule-blacklist": null,
     "at-rule-empty-line-before": null,
@@ -73,7 +73,7 @@
     "declaration-block-trailing-semicolon": [
       "always",
       {
-        "except": ["single-line"]
+        "ignore": ["single-declaration"]
       }
     ],
     "declaration-colon-newline-after": null,

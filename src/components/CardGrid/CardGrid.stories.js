@@ -205,8 +205,7 @@ export default {
     headingContainer: containerSizes[0],
     introHeading: 'Card grid section',
     headingSize: sizes[0],
-    lede:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas pellentesque nunc vel turpis tempor tincidunt. Maecenas in felis suscipit, ornare felis at, posuere eros.',
+    lede: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas pellentesque nunc vel turpis tempor tincidunt. Maecenas in felis suscipit, ornare felis at, posuere eros.',
     ledeSize: ledeSizes[0],
     ledeContainer: containerSizes[0],
     textAlignment: alignments[0]
