@@ -64,10 +64,10 @@ const Template = args => {
   `;
 };
 
-export const ContentItem = Template.bind({});
+export const EventPreview = Template.bind({});
 
 export default {
-  title: 'Components / Content Item',
+  title: 'Components / Event Preview',
   args: {
     tag: 'Workshop',
     date: 'June 2, 2020',
