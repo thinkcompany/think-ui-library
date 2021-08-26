@@ -65,7 +65,8 @@ export const PageHeader = Template.bind({});
 export default {
   title: 'Components / Page Header',
   args: {
-    image: 'https://placekitten.com/524/320',
+    image:
+      'https://www.thinkcompany.com/wp-content/uploads/2020/12/events-illustration-1.png',
     bubbleBackground: false,
     textAlignment: alignments[0],
     eyebrow: '',
