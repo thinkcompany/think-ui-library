@@ -12,6 +12,7 @@ module.exports = {
         actions: false
       }
     },
+    '@storybook/addon-postcss',
     '@stormid/storybook-html-addon-markup'
   ]
 };
