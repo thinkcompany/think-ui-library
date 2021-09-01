@@ -23,5 +23,5 @@ export default {
     extensions: ['.js'],
     modules: ['node_modules', 'src']
   },
-  optimization: {...optimization, ...common.optimization}
+  optimization
 };
