@@ -133,8 +133,11 @@
         4 / 5
       ) * 100%
     );
-    width: calc(100% - #{$spacing-inline-24} * 2);
     margin: 0 auto;
+
+    @include wider-than($breakpoint-phone-landscape) {
+      width: calc(100% - #{$spacing-inline-24} * 2);
+    }
 
     .tco-card-image {
       @include center-absolute;
@@ -153,7 +156,7 @@
 
   .tco-card-content {
     &-container {
-      padding: $spacing-stack-32 $spacing-inline-32 0;
+      padding: 0 $spacing-inline-32 0 0;
 
       @include wider-than($breakpoint-desktop) {
         padding: $spacing-stack-40 0 0;
@@ -164,6 +167,7 @@
       @include type-body-large;
       @include type-link;
       display: inline;
+      line-height: 1.3;
     }
 
     &-description {
@@ -210,6 +214,14 @@
         margin-top: $spacing-stack-24;
         color: $color-foreground-on-tint;
       }
+    }
+  }
+
+  &:not(.tco-card--service-cta) {
+    width: calc(100% - 32px);
+
+    @include wider-than($breakpoint-phone-landscape) {
+      width: 100%;
     }
   }
 }
@@ -304,6 +316,7 @@
     &-heading {
       display: inline;
       color: $color-foreground-on-tint;
+      line-height: (32 / 28);
     }
 
     &-description {
@@ -494,5 +507,29 @@ $icon-size-large: 44px;
 .tco-card--media {
   .tco-card-content-heading {
     color: $color-classic-gray-dark;
+  }
+}
+
+// ========================================================
+// = CTA CARD
+// ========================================================
+
+// fixes vertical stretching in safari
+.tco-card--summary,
+.tco-card--media {
+  .tco-card--no-link {
+    &:hover {
+      .tco-card-content-heading {
+        border-bottom-color: transparent;
+      }
+    }
+
+    .tco-card-image-container {
+      align-items: flex-start;
+    }
+  }
+
+  .tco-card-image-container {
+    align-items: flex-start;
   }
 }

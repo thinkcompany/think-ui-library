@@ -83,4 +83,16 @@
   &.tco-card-grid--job {
     @extend .tco-card-grid--1-column;
   }
+
+  &.tco-card-grid--service {
+    @include wider-than($breakpoint-phone-landscape) {
+      width: calc(100% - #{$spacing-inline-24} * 2);
+      margin-right: auto;
+      margin-left: auto;
+    }
+
+    @include wider-than($breakpoint-desktop) {
+      width: 100%;
+    }
+  }
 }

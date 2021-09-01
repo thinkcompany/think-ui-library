@@ -2,7 +2,7 @@ $check: 20px;
 $checklist-title-spacing: 25px;
 
 .tco-checklist {
-  &-eyebrow {
+  .tco-checklist-eyebrow {
     @include type-eyebrow;
     display: block;
     margin-bottom: $spacing-stack-18;
@@ -52,6 +52,16 @@ $checklist-title-spacing: 25px;
       &::before {
         display: none;
       }
+    }
+  }
+
+  &:not(:first-of-type) {
+    margin-top: $spacing-stack-50;
+  }
+
+  &-offset-top {
+    @include wider-than($breakpoint-tablet-portrait) {
+      margin-top: $offset;
     }
   }
 }

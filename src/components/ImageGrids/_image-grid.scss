@@ -5,6 +5,7 @@ $container-max: 220px;
   flex-flow: row wrap;
   align-items: center;
   justify-content: center;
+  padding: $spacing-stack-50 0 $spacing-stack-40;
   padding-top: $spacing-stack-50;
 
   &-container {

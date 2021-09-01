@@ -18,6 +18,18 @@
     padding: 0;
   }
 
+  &--bleed-top {
+    > .tco-container {
+      padding-top: 0;
+    }
+  }
+
+  &--bleed-bottom {
+    > .tco-container {
+      padding-bottom: 0;
+    }
+  }
+
   &--footer {
     @include pseudo-curve;
 
@@ -51,6 +63,10 @@
 
     &--max {
       max-width: $container-max;
+    }
+
+    &--image-only {
+      max-width: $container-super-max;
     }
 
     &--center {
