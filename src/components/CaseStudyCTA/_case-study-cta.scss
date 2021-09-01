@@ -68,7 +68,22 @@ $cs-hero-padding: 130px;
 
     &--phone {
       .tco-case-study-image {
+        height: 99%;
         transform: translateY(10%);
+
+        @include wider-than($breakpoint-tablet-portrait) {
+          width: 70%;
+          transform: translate(-22%, 16%);
+        }
+
+        @include wider-than($breakpoint-laptop) {
+          width: 92%;
+          transform: translate(-6%, 10%);
+        }
+
+        @include wider-than($breakpoint-desktop) {
+          transform: translate(-6%, 10%);
+        }
       }
     }
 
@@ -137,6 +152,20 @@ $cs-hero-padding: 130px;
       .tco-case-study-image {
         width: $device-width-tablets--mobile;
         transform: translateY($offset * 2);
+      }
+    }
+  }
+
+  .tco-case-study-image-container--phone-adp {
+    @extend .tco-case-study-image-container--phone;
+
+    .tco-case-study-image {
+      height: 112%;
+      transform: translateY(8%);
+
+      @include wider-than($breakpoint-tablet-portrait) {
+        width: 100%;
+        transform: translateY(18%);
       }
     }
   }
