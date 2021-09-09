@@ -78,7 +78,7 @@ const serviceCardCTA = () => {
 
 export const ServiceCardGrid = () => {
   return `
-    <div class="tco-container-wrapper">
+    <div class="tco-container-wrapper tco-container-wrapper--bleed">
       <div class="tco-container">
         <div class="tco-card-grid tco-card-grid--service tco-card-grid--3-column">
           ${cardContents.map(item => serviceCard(item)).join('')}
