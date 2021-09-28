@@ -24,14 +24,6 @@ export const Footer = () => {
               </svg>
               </a>
             </li>
-            <li class="tco-site-footer-cta">
-              <a href="#" class="tco-link-cta">
-              Denver
-              <svg class="tco-text-link-icon" width="20" height="20" viewBox="0 0 20 20" role="presentation">
-                <use xlink:href="/img/icons.svg#icon-arrow-right"></use>
-              </svg>
-              </a>
-            </li>
           </ul>
         </div>
         <div class="tco-site-footer-content">
@@ -66,9 +58,15 @@ export const Footer = () => {
               <use xlink:href="/img/icons.svg#icon-think-logo"></use>
             </svg>
             ${icons()}
+            <div class="tco-clutch-widget">
+              <div class="tco-clutch-widget-container">
+                <script type="text/javascript" src="https://widget.clutch.co/static/js/widget.js" async></script>
+                <div class="clutch-widget" data-url="https://widget.clutch.co" data-widget-type="1" data-height="40" data-theme="white" data-clutchcompany-id="35649"></div>
+              </div>
+            </div>
           </div>
           <div class="tco-site-footer-content-group tco-site-footer-content-group--fine-print">
-            <p>&copy; 2020 Think Company, Inc. All rights reserved. <a class="tco-btn-link" href="#"> Privacy Policy</a></p>
+            <p>&copy; 2021 Think Company, Inc. All rights reserved. <a class="tco-btn-link" href="#"> Privacy Policy</a></p>
           </div>
         </div>
       </div>
