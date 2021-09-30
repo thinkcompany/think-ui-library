@@ -457,6 +457,10 @@ $cs-hero-padding: 130px;
   &-adp {
     @include clientColors(adp);
   }
+
+  &-astm {
+    @include clientColors(astm);
+  }
 }
 
 .tco-card-grid--case-study {
@@ -507,6 +511,10 @@ $cs-hero-padding: 130px;
 
   &.adp {
     @include csColor(adp);
+  }
+
+  &.astm {
+    @include csColor(astm);
   }
 
   &.case-study-new-format .tco-text-only-page-header {
