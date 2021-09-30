@@ -9,7 +9,8 @@ $clients: (
   abc: $color-case-study-abc-primary,
   convenience: $color-case-study-convenience-primary,
   jackson: $color-case-study-jackson-primary,
-  adp: $color-case-study-adp-primary
+  adp: $color-case-study-adp-primary,
+  astm: $color-case-study-astm-primary
 );
 
 @mixin clientColors($client, $opacity: var(--bg-alpha)) {
