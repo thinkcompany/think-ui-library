@@ -321,5 +321,15 @@
         "color": "#ED1C2E"
       }
     ]
+  },
+  {
+    "name": "astm",
+    "section": "case-study",
+    "variants": [
+      {
+        "name": "primary",
+        "color": "#025B62"
+      }
+    ]
   }
 ]
