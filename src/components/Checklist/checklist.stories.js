@@ -1,7 +1,8 @@
 const checkOptions = ['default', 'alt', 'none'];
+const sizeOptions = ['default', 'large'];
 
 const ChecklistTemplate = args => {
-  const { eyebrow, checkType } = args;
+  const { eyebrow, checkType, checkSize } = args;
   const items = [
     'Launch a new product',
     'Transform an existing product',
@@ -17,10 +18,16 @@ const ChecklistTemplate = args => {
     checkMarkClass = 'tco-checklist--no-checkmark';
   }
 
+  let checklistSize = '';
+
+  if (checkSize === 'large') {
+    checklistSize = 'tco-checklist--large';
+  }
+
   return `
   <div class="tco-container-wrapper">
-    <div class="tco-container">
-      <div class="tco-checklist">
+    <div class="tco-container tco-container--mid">
+      <div class="tco-checklist ${checklistSize}">
         ${
           eyebrow
             ? `
@@ -43,13 +50,19 @@ export default {
   title: 'Components / Checklist',
   args: {
     eyebrow: 'How we can help',
-    checkType: checkOptions[0]
+    checkType: checkOptions[0],
+    checkSize: sizeOptions[0]
   },
   argTypes: {
     checkType: {
       name: 'checkmark type',
       control: 'inline-radio',
       options: checkOptions
+    },
+    checkSize: {
+      name: 'list size',
+      control: 'inline-radio',
+      options: sizeOptions
     }
   }
 };
