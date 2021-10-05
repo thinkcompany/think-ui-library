@@ -34,13 +34,21 @@ $icon-list-max-width: 278px;
     align-items: center;
     justify-content: space-between;
     max-width: $icon-list-max-width;
-    margin: 0 auto $spacing-stack-40;
+    margin: 0 auto $spacing-stack-32;
 
     li {
       vertical-align: middle;
 
       &:not(:first-child) {
         margin-left: $spacing-inline-40;
+
+        @include wider-than($breakpoint-tablet-portrait) {
+          margin-left: $spacing-inline-16;
+        }
+
+        @include wider-than($breakpoint-laptop) {
+          margin-left: $spacing-inline-40;
+        }
       }
     }
 

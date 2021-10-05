@@ -55,7 +55,7 @@ export const SocialIconsSmall = () => {
   const iconSet = [];
   const icons = [
     {
-      name: 'facebook',
+      name: 'linkedin',
       include: true
     },
     {
@@ -63,11 +63,15 @@ export const SocialIconsSmall = () => {
       include: true
     },
     {
-      name: 'linkedin',
+      name: 'instagram',
       include: true
     },
     {
-      name: 'instagram',
+      name: 'youtube',
+      include: true
+    },
+    {
+      name: 'facebook',
       include: true
     }
   ];
@@ -78,7 +82,7 @@ export const SocialIconsSmall = () => {
         <li>
           <a class="tco-social-icons-link" href="#" target="_blank" rel="noopener noreferrer">
             <svg class="tco-icon tco-icon--${item.name}" title="${item.name}" viewBox="0 0 100 100">
-              <use xlink:href="/img/icons.svg#icon-${item.name}"></use>
+              <use xlink:href="/img/icons.svg#icon-${item.name}-small"></use>
             </svg>
             <span class="tco-accessibly-hidden">${item.name}</span>
           </a>
