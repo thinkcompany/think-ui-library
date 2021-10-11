@@ -25,7 +25,8 @@ $container-max: 220px;
   }
 }
 
-.tco-image-grid-2 {
+.tco-image-grid-2,
+.tco-image-grid-3 {
   @include wider-than($breakpoint-tablet-portrait) {
     display: flex;
     flex-flow: row nowrap;
@@ -45,6 +46,24 @@ $container-max: 220px;
       @include wider-than($breakpoint-tablet-portrait) {
         margin-bottom: 0;
       }
+    }
+  }
+}
+
+.tco-image-grid-3 {
+  @include wider-than($breakpoint-tablet-portrait) {
+    flex-flow: row wrap;
+  }
+
+  &-container {
+    margin-bottom: $spacing-stack-32;
+
+    @include wider-than($breakpoint-laptop) {
+      width: calc(33.3% - (#{$spacing-inline-64} / 3));
+    }
+
+    &:last-of-type {
+      margin-bottom: 0;
     }
   }
 }
