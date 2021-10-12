@@ -1,13 +1,20 @@
 const BylineTemplate = args => {
-  const { name, image, date, link } = args;
+  const { name, image, date, link, excludeImage } = args;
 
   let open = '';
 
   let close = '';
 
-  if (link) {
+  if (link && excludeImage) {
+    open =
+      '<a href="#" class="tco-byline tco-byline--no-image tco-byline--link">';
+    close = '</a>';
+  } else if (link) {
     open = '<a href="#" class="tco-byline tco-byline--link">';
     close = '</a>';
+  } else if (excludeImage) {
+    open = '<div class="tco-byline tco-byline--no-image">';
+    close = '</div>';
   } else {
     open = '<div class="tco-byline">';
     close = '</div>';
@@ -17,9 +24,15 @@ const BylineTemplate = args => {
     <div class="tco-container-wrapper">
       <div class="tco-container">
         ${open}
-          <div class="tco-byline-image-container">
-            <img src="${image}" alt="${name}">
-          </div>
+          ${
+            !excludeImage
+              ? `
+            <div class="tco-byline-image-container">
+              <img src="${image}" alt="${name}">
+            </div>
+          `
+              : ''
+          }
           <div class="tco-byline-content-container">
             <p class="tco-byline-name">By ${name}</p>
             <p class="tco-byline-description">${date}</p>
@@ -34,7 +47,14 @@ export const Byline = BylineTemplate.bind({});
 
 Byline.args = {
   date: 'May 21, 2020',
-  link: false
+  link: false,
+  excludeImage: false
+};
+
+Byline.argTypes = {
+  excludeImage: {
+    name: 'exclude image?'
+  }
 };
 
 const MultipleTemplate = args => {
