@@ -71,15 +71,19 @@ $byline-img-width: 44px;
       flex-flow: row wrap;
       padding: 0;
     }
+  }
 
-    .tco-byline-name {
-      @include type-body-small;
-      display: inline;
-      color: $color-classic-gray-dark;
-      list-style-type: none;
+  .tco-card & {
+    &--no-image {
+      .tco-byline-name {
+        @include type-body-small;
+        display: inline;
+        color: $color-classic-gray-dark;
+        list-style-type: none;
 
-      &:not(:first-of-type) {
-        margin-left: 3px;
+        &:not(:first-of-type) {
+          margin-left: 3px;
+        }
       }
     }
   }
