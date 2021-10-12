@@ -283,6 +283,7 @@
     flex-flow: column wrap;
     justify-content: center;
     min-height: 332px;
+    border-bottom-width: 0;
     background: none;
 
     &::before {

@@ -101,8 +101,42 @@ const Grid2Template = args => {
 export const Grid2 = Grid2Template.bind({});
 
 Grid2.args = {
-  imageA: 'https://placekitten.com/600/624',
-  imageB: 'https://placekitten.com/600/624'
+  imageA:
+    'https://www.thinkcompany.com/wp-content/uploads/2020/12/photo-studios-philly-feature.jpg',
+  imageB:
+    'https://www.thinkcompany.com/wp-content/uploads/2020/12/studios-conshy-header.jpg'
+};
+
+const Grid3Template = args => {
+  const { imageA, imageB, imageC } = args;
+
+  return `
+    <div class="tco-container-wrapper tco-container-wrapper--image-only">
+      <div class="tco-container">
+        <div class="tco-image-grid-3">
+          <div class="tco-image-grid-3-container">
+            <img class="tco-image-only-image" alt="Description of image A" src="${imageA}" />
+          </div>
+          <div class="tco-image-grid-3-container">
+            <img class="tco-image-only-image" alt="Description of image B" src="${imageB}" />
+          </div>
+          <div class="tco-image-grid-3-container">
+            <img class="tco-image-only-image" alt="Description of image C" src="${imageC}" />
+          </div>
+        </div>
+      </div>
+    </div>`;
+};
+
+export const Grid3 = Grid3Template.bind({});
+
+Grid3.args = {
+  imageA:
+    'https://www.thinkcompany.com/wp-content/uploads/2020/12/photo-studios-philly-feature.jpg',
+  imageB:
+    'https://www.thinkcompany.com/wp-content/uploads/2020/12/studios-conshy-header.jpg',
+  imageC:
+    'https://www.thinkcompany.com/wp-content/uploads/2020/12/studios-conshy-header.jpg'
 };
 
 const Grid4Template = args => {
