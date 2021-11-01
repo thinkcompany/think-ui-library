@@ -48,6 +48,10 @@
     padding: $spacing-stack-24;
     color: $color-classic-gray-dark;
 
+    .tco-lights-out & {
+      color: $color-foreground-on-tint;
+    }
+
     @include wider-than($breakpoint-desktop) {
       padding: $spacing-stack-32;
     }
@@ -56,6 +60,10 @@
   &-content-description {
     @include type-body-default($font-color: $color-classic-gray-dark);
     margin-top: $spacing-stack-8;
+
+    .tco-lights-out & {
+      color: $color-foreground-on-tint;
+    }
   }
 
   &-eyebrow {
@@ -508,6 +516,10 @@ $icon-size-large: 44px;
 .tco-card--media {
   .tco-card-content-heading {
     color: $color-classic-gray-dark;
+
+    .tco-lights-out & {
+      color: $color-foreground-on-tint;
+    }
   }
 }
 

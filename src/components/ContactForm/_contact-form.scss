@@ -8,6 +8,10 @@ $max-width-fine-print: 380px;
   z-index: 2;
   background-color: $color-foreground-on-tint;
   box-shadow: $box-shadow-card;
+
+  .tco-lights-out & {
+    background-color: $color-classic-dark;
+  }
 }
 
 .tco-contact-form {

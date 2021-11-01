@@ -1,0 +1,19 @@
+/* stylelint-disable declaration-no-important */
+
+$color-classic-dark: #262c30;
+$color-foreground-on-tint: #fff;
+
+.sb-show-main {
+  &.tco-lights-out {
+    background-color: $color-classic-dark !important;
+  }
+}
+
+.tco-lights-out {
+  color: $color-foreground-on-tint;
+
+  .tco-container-wrapper {
+    background-color: $color-classic-dark;
+    color: $color-foreground-on-tint;
+  }
+}

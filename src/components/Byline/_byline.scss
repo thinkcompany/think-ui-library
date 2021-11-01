@@ -8,6 +8,10 @@ $byline-img-width: 44px;
   margin-top: $spacing-stack-16;
   color: $color-classic-gray-dark;
 
+  .tco-lights-out & {
+    color: $color-foreground-on-tint;
+  }
+
   &--link {
     @include type-not-link;
   }

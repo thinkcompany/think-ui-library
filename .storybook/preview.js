@@ -36,11 +36,17 @@ addParameters({
   darkMode: {
     dark: {
       ...themes.dark,
-      appBg: '#262c30',
-      appContentBg: '#262c30',
-      barBg: '#262c30',
+      base: 'dark',
+      appBg: '#181c1f',
+      appContentBg: '#181c1f',
+      barBg: '#181c1f',
+      brandImage: '/img/think-logo-white.svg',
     },
-    light: { ...themes.normal, appBg: '#ffffff' },
+    light: {
+      ...themes.normal,
+      appBg: '#ffffff',
+      brandImage: '/img/think-company-logo-stacked.svg'
+    },
     current: 'light',
     darkClass: 'tco-lights-out',
     lightClass: 'tco-lights-on',
