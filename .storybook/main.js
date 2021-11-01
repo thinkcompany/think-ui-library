@@ -13,6 +13,7 @@ module.exports = {
       }
     },
     '@storybook/addon-postcss',
-    '@stormid/storybook-html-addon-markup'
+    '@stormid/storybook-html-addon-markup',
+    'storybook-dark-mode'
   ]
 };
