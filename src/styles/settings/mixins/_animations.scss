@@ -4,6 +4,7 @@ $item-delay: $speed * 0.9;
 
 @mixin nav-animation {
   .tco-site-nav-wrapper {
+    visibility: hidden;
     transform: translateX(100%);
     transition: transform $speed ease-out;
   }
@@ -18,6 +19,7 @@ $item-delay: $speed * 0.9;
 
   &--open {
     .tco-site-nav-wrapper {
+      visibility: visible;
       z-index: 2;
       overflow-y: auto;
       transform: translateX(0);
