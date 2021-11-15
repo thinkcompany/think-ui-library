@@ -78,7 +78,7 @@ export default {
     authors: 'Shawn Hickman, John Young, Dave Thomas',
     authorHeading: 'Hosted by: ',
     action: 'Learn More',
-    image: 'https://picsum.photos/id/237/960/694'
+    image: 'https://picsum.photos/id/1062/960/694'
   },
   argTypes: {
     authorHeading: {
