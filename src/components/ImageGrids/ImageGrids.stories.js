@@ -21,12 +21,10 @@ const LogoTemplate = args => {
       '/img/logos/client-logo-sanofi.svg'
     ];
 
-    let image;
+    let image = images[i];
 
-    if (randomize) {
+    if (randomize == 'shuffle') {
       image = images[Math.floor(Math.random() * images.length)];
-    } else {
-      image = images[i];
     }
 
     return `
@@ -76,8 +74,7 @@ Logos.args = {
   heading: '',
   headingSize: sizes[0],
   textAlignment: alignments[0],
-  imageCount: 4,
-  randomize: false
+  imageCount: 4
 };
 
 Logos.argTypes = {
