@@ -21,7 +21,9 @@ export const TextAndMedia = args => {
   const url = new URL(image);
   const path = url.pathname;
   const size = path.split('/');
-  const aspectRatio = size[1] / size[2];
+  const h = size.pop();
+  const w = size.slice(-1);
+  const aspectRatio = w / h;
 
   let mediaOrientation;
 
@@ -113,7 +115,7 @@ export default {
     eyebrow: 'Text and Image',
     heading: 'Technology Integration',
     headingSize: sizes[0],
-    image: 'https://placekitten.com/524/320',
+    image: 'https://picsum.photos/id/1025/524/320',
     lede: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas pellentesque nunc vel turpis tempor tincidunt. Maecenas in felis suscipit, ornare felis at, posuere eros.'
   },
   argTypes: {
