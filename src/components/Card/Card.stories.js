@@ -26,7 +26,7 @@ SummaryCard.args = {
   summary:
     'The best experiences are consistent across all channels, so we always consider the entire ecosystem your users interact within—designing for people wherever they click, tap, talk, touch, work, or play.',
   image:
-    'https://www.thinkcompany.com/wp-content/uploads/2021/10/Be-excellent.png'
+    'https://www.thinkcompany.com/wp-content/uploads/2021/10/Be-kind-to-people.png'
 };
 
 const PersonCardTemplate = args => {

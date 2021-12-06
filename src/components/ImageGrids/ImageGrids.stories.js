@@ -1,29 +1,43 @@
 const sizes = ['large', 'extra-large', 'medium', 'small'];
 const alignments = ['center', 'left', 'right'];
-
-const imageItem = () => {
-  const images = [
-    '/img/logos/client-logo-nemours.svg',
-    '/img/logos/client-logo-unitedway.svg',
-    '/img/logos/client-logo-whyy.svg',
-    '/img/logos/client-logo-andesa.svg',
-    '/img/logos/client-logo-sanofi.svg'
-  ];
-  const image = images[Math.floor(Math.random() * images.length)];
-
-  return `
-    <div class="tco-image-grid-container">
-      <img class="tco-image-grid-media" alt="Client image" src="${image}" />
-    </div>`;
-};
+const output = ['shuffle'];
 
 const LogoTemplate = args => {
-  const { eyebrow, heading, headingSize, textAlignment, imageCount } = args;
+  const {
+    eyebrow,
+    heading,
+    headingSize,
+    textAlignment,
+    imageCount,
+    randomize
+  } = args;
+
+  const imageItem = i => {
+    const images = [
+      '/img/logos/client-logo-nemours.svg',
+      '/img/logos/client-logo-unitedway.svg',
+      '/img/logos/client-logo-whyy.svg',
+      '/img/logos/client-logo-andesa.svg',
+      '/img/logos/client-logo-sanofi.svg'
+    ];
+
+    let image = images[i];
+
+    if (randomize == 'shuffle') {
+      image = images[Math.floor(Math.random() * images.length)];
+    }
+
+    return `
+      <div class="tco-image-grid-container">
+        <img class="tco-image-grid-media" alt="Client image" src="${image}" />
+      </div>`;
+  };
+
   const imageItems = () => {
     let output = '';
 
     for (let index = 0; index < imageCount; index++) {
-      output += imageItem();
+      output += imageItem(index);
     }
 
     return output;
@@ -77,6 +91,11 @@ Logos.argTypes = {
   imageCount: {
     name: 'image count',
     control: 'number'
+  },
+  randomize: {
+    name: 'shuffle logos',
+    control: 'inline-check',
+    options: output
   }
 };
 

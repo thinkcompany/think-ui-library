@@ -3,7 +3,7 @@ const summaryCard = () => {
     <div class="tco-card tco-card--summary">
       <a href="#" class="tco-card-link">
         <div class="tco-card-image-container tco-card-image-container--summary">
-          <img class="tco-card-image tco-card-image--summary" alt="Card image" src="https://www.thinkcompany.com/wp-content/uploads/2021/10/Be-excellent.png" />
+          <img class="tco-card-image tco-card-image--summary" alt="Card image" src="https://www.thinkcompany.com/wp-content/uploads/2021/10/Be-kind-to-people.png" />
         </div>
         <div class="tco-card-content-container">
           <h2 class="tco-card-content-heading">Work Together.</h2>
