@@ -51,11 +51,6 @@ addParameters({
     darkClass: 'tco-lights-out',
     lightClass: 'tco-lights-on',
     stylePreview: true
-  },
-  html: {
-    highlighter: {
-      style: 'a11yDark'
-    }
   }
 });
 

@@ -1,0 +1,25 @@
+/* stylelint-disable declaration-no-important */
+$color-classic-dark: #262c30;
+$color-foreground-on-tint: #fff;
+
+.sb-show-main.tco-lights-out {
+  .sbdocs.sbdocs-wrapper {
+    background: transparent;
+  }
+
+  .sbdocs-title,
+  .sbdocs-h2,
+  .sbdocs-h3 {
+    color: $color-foreground-on-tint;
+  }
+
+  .docs-story {
+    background-color: $color-classic-dark !important;
+  }
+
+  thead {
+    th {
+      color: $color-foreground-on-tint;
+    }
+  }
+}
