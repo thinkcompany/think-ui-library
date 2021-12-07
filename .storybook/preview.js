@@ -43,14 +43,18 @@ addParameters({
       brandImage: '/img/think-logo-white.svg',
     },
     light: {
-      ...themes.normal,
+      ...themes.light,
       appBg: '#ffffff',
       brandImage: '/img/think-company-logo-stacked.svg'
     },
-    current: 'light',
     darkClass: 'tco-lights-out',
     lightClass: 'tco-lights-on',
     stylePreview: true
+  },
+  html: {
+    prettier: {
+      printWidth: 120
+    }
   }
 });
 
