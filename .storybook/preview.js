@@ -33,6 +33,11 @@ addParameters({
       },
     ],
   },
+  docs: {
+    source: {
+      state: 'open'
+    }
+  },
   darkMode: {
     dark: {
       ...themes.dark,
