@@ -83,4 +83,11 @@ $color-manager-border-dark: rgba(153, 153, 153, 0.4);
       }
     }
   }
+
+  #anchor--storybook-welcome--page {
+    + .sbdocs-preview {
+      border-color: $color-classic-dark;
+      background-color: $color-classic-dark;
+    }
+  }
 }

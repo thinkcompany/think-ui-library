@@ -35,7 +35,7 @@ addParameters({
   },
   docs: {
     source: {
-      state: 'open'
+      state: 'close'
     }
   },
   darkMode: {
