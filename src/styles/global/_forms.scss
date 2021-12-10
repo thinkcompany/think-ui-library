@@ -1,3 +1,5 @@
+/* stylelint-disable selector-max-combinators, selector-max-compound-selectors */
+
 /**
  * Gravity Forms plugin style overrides & general form styles
  */
@@ -202,6 +204,37 @@ $textarea-height: 80px;
   }
 }
 
+// hubspot version with spans instead of labels
+%tco-form-input--pseudo-span {
+  &:focus + span::before {
+    outline: 2px solid $color-tint-blue-primary;
+  }
+
+  + span {
+    position: relative;
+    margin-right: $spacing-inline-32;
+    padding-left: rem(24px);
+    font-weight: 400;
+    font-size: $font-size-14;
+
+    @include wider-than($breakpoint-phone-landscape) {
+      line-height: initial;
+    }
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: rem(16px);
+      height: rem(16px);
+      border: 1px solid $color-foreground-primary;
+      border-radius: 2px;
+      background: $color-foreground-on-tint;
+    }
+  }
+}
+
 /* ----------------------------------------------*\
       Error States
 \*---------------------------------------------- */
@@ -222,6 +255,7 @@ $textarea-height: 80px;
   }
 }
 
+// gravity forms
 .gform_fields {
   @include list-plain;
   display: flex;
@@ -286,4 +320,39 @@ $textarea-height: 80px;
 
 .gform_validation_container {
   @extend %tco-accessibly-hidden;
+}
+
+// hubspot forms
+.tco-form--hubspot {
+  [class*='form-columns-'] {
+    max-width: 100%;
+
+    .hs-form-field .input {
+      margin: 0 0 $field-space;
+    }
+  }
+
+  .hs-form {
+    .form-columns-2 {
+      display: flex;
+      flex-flow: row wrap;
+      justify-content: space-between;
+
+      .hs-form-field {
+        width: 100%;
+
+        @include wider-than($breakpoint-phone-landscape) {
+          width: calc(50% - (#{$spacing-inline-16} / 2));
+        }
+      }
+    }
+  }
+
+  input:not([type='submit']) {
+    @extend %tco-form-input;
+  }
+
+  label {
+    @extend %tco-form-label;
+  }
 }

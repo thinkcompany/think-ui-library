@@ -98,3 +98,9 @@ $color-hover: #08519a;
     }
   }
 }
+
+// hubspot buttons
+.hs-button {
+  @extend %tco-btn;
+  @extend %tco-btn--primary;
+}
