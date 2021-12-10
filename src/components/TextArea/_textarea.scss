@@ -1,5 +1,6 @@
 .tco-form-textarea,
-.textarea {
+.textarea,
+.tco-form--hubspot textarea {
   @extend %tco-form-input;
   overflow: hidden;
   max-height: $textarea-height;

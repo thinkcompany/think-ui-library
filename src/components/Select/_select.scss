@@ -501,6 +501,12 @@ input[type='radio'] {
   }
 }
 
+.tco-form--hubspot {
+  select {
+    @extend %tco-form-input;
+  }
+}
+
 // /* ----------------------------------------------*\
 //       Expanding text input
 // \*---------------------------------------------- */
