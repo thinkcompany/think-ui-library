@@ -137,6 +137,11 @@
     "color": "#173145"
   },
   {
+    "name": "black",
+    "section": "dark-theme",
+    "color": "#23272A"
+  },
+  {
     "name": "nemours",
     "section": "case-study",
     "variants": [

@@ -1,11 +1,11 @@
 /* stylelint-disable declaration-no-important */
 
-$color-classic-dark: #262c30;
+$color-dark-theme-black: #23272a;
 $color-foreground-on-tint: #fff;
 
 .sb-show-main {
   &.tco-lights-out {
-    background-color: $color-classic-dark !important;
+    background-color: $color-dark-theme-black !important;
   }
 }
 
@@ -13,7 +13,7 @@ $color-foreground-on-tint: #fff;
   color: $color-foreground-on-tint;
 
   .tco-container-wrapper {
-    background-color: $color-classic-dark;
+    background-color: $color-dark-theme-black;
     color: $color-foreground-on-tint;
   }
 }

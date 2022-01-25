@@ -4,7 +4,7 @@
 /* stylelint-disable selector-max-combinators */
 /* stylelint-disable selector-max-specificity */
 
-$color-classic-dark: #262c30;
+$color-dark-theme-black: #23272a;
 $color-foreground-on-tint: #fff;
 $color-manager-dark: #181c1f;
 $color-manager-border-dark: rgba(153, 153, 153, 0.4);
@@ -29,7 +29,7 @@ $color-manager-border-dark: rgba(153, 153, 153, 0.4);
     }
 
     .os-host {
-      background-color: $color-classic-dark;
+      background-color: $color-dark-theme-black;
     }
   }
 
@@ -66,7 +66,7 @@ $color-manager-border-dark: rgba(153, 153, 153, 0.4);
 
       td {
         border-radius: 0;
-        background-color: $color-classic-dark;
+        background-color: $color-dark-theme-black;
         color: $color-foreground-on-tint;
       }
 
@@ -86,8 +86,8 @@ $color-manager-border-dark: rgba(153, 153, 153, 0.4);
 
   #anchor--storybook-welcome--page {
     + .sbdocs-preview {
-      border-color: $color-classic-dark;
-      background-color: $color-classic-dark;
+      border-color: $color-dark-theme-black;
+      background-color: $color-dark-theme-black;
     }
   }
 }

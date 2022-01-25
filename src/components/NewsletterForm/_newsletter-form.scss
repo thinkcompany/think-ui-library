@@ -15,7 +15,7 @@ $color-hover: #08519a;
   background-color: $color-foreground-on-tint;
 
   .tco-lights-out & {
-    background-color: $color-classic-dark;
+    background-color: $color-dark-theme-black;
   }
 
   @include wider-than($breakpoint-laptop) {
