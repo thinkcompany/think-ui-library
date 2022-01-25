@@ -1,10 +1,12 @@
+const treatments = ['flat', 'shadow'];
+
 const SummaryCardTemplate = args => {
-  const { heading, summary, image } = args;
+  const { heading, summary, image, treatment } = args;
 
   return `
   <div class="tco-container-wrapper">
     <div class="tco-container">
-      <div class="tco-card tco-card--summary">
+      <div class="tco-card tco-card--summary tco-card-container--${treatment}">
         <a href="#" class="tco-card-link">
           <div class="tco-card-image-container tco-card-image-container--summary">
             <img class="tco-card-image tco-card-image--summary" alt="Card image" src="${image}" />
@@ -26,7 +28,16 @@ SummaryCard.args = {
   summary:
     'The best experiences are consistent across all channels, so we always consider the entire ecosystem your users interact within—designing for people wherever they click, tap, talk, touch, work, or play.',
   image:
-    'https://www.thinkcompany.com/wp-content/uploads/2021/10/Be-kind-to-people.png'
+    'https://www.thinkcompany.com/wp-content/uploads/2021/10/Be-kind-to-people.png',
+  treatment: treatments[0]
+};
+
+SummaryCard.argTypes = {
+  treatment: {
+    name: 'border treatment',
+    control: 'inline-radio',
+    options: treatments
+  }
 };
 
 const PersonCardTemplate = args => {

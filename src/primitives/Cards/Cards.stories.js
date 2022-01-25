@@ -2,7 +2,7 @@ const config = [
   {
     name: 'Card Container Flat',
     class: 'tco-card-container--flat',
-    sass: '@include card-base'
+    sass: '@include card-container-flat'
   },
   {
     name: 'Card Container Shadow',

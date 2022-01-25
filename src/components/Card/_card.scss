@@ -12,6 +12,10 @@
     height: 100%;
   }
 
+  &.tco-card-container--flat {
+    box-shadow: none;
+  }
+
   .tco-card-content-heading {
     @include type-body-large;
     @include type-link;
