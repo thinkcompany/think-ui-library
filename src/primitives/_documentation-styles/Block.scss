@@ -1,4 +1,5 @@
 /* stylelint-disable property-disallowed-list */
+$color-classic-navy: #173145;
 
 .documentation-block {
   display: flex;
@@ -21,6 +22,10 @@
     background: rgba($documentation-white, 0.8);
     font-size: 12px;
     font-family: sans-serif;
+
+    .tco-lights-out & {
+      background: rgba($color-classic-navy, 0.9);
+    }
 
     p {
       overflow: auto;
