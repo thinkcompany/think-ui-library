@@ -78,3 +78,41 @@ input[type='radio'] {
     }
   }
 }
+
+.tco-form--hubspot {
+  .hs-form-radio {
+    margin-bottom: $spacing-stack-8;
+  }
+
+  .hs-fieldtype-radio {
+    > label {
+      margin-bottom: $spacing-stack-12;
+    }
+  }
+
+  [type='radio'] {
+    @extend %tco-form-input--pseudo-span;
+
+    &:checked + span::after {
+      opacity: 1;
+    }
+
+    + span {
+      &::before {
+        border-radius: 50%;
+      }
+
+      &::after {
+        content: '';
+        position: absolute;
+        top: rem(4px);
+        left: rem(4px);
+        width: rem(10px);
+        height: rem(10px);
+        border-radius: 100%;
+        background-color: $color-tint-blue-primary;
+        opacity: 0;
+      }
+    }
+  }
+}
