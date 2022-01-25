@@ -26,7 +26,7 @@ const cardItem = input => `
             <div class="content"></div>
         </div>
     </div>
-    <div>
+    <div class="doc-footer">
         ${nameBlock(input)}
         ${classBlock(input)}
         ${sassBlock(input)}
