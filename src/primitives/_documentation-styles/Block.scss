@@ -1,5 +1,6 @@
 /* stylelint-disable property-disallowed-list */
 $color-classic-navy: #173145;
+$color-dark-theme-black: #23272a;
 
 .documentation-block {
   display: flex;
@@ -37,6 +38,14 @@ $color-classic-navy: #173145;
 
     strong {
       font-weight: 900;
+    }
+  }
+}
+
+.documentation-typography {
+  .type-block--demo p {
+    .tco-lights-out & {
+      background-color: $color-dark-theme-black;
     }
   }
 }
