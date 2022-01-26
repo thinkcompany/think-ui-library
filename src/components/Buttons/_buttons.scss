@@ -82,12 +82,30 @@ $color-hover: #08519a;
   &:disabled {
     background-color: transparent;
   }
+
+  .tco-lights-out & {
+    border-color: $color-foreground-on-tint;
+    color: $color-foreground-on-tint;
+
+    &:hover {
+      border-color: $color-hover;
+      background: $color-hover;
+    }
+  }
 }
 
 .tco-text-link {
   &--arrow {
     @include type-link-cta;
     color: $color-classic-blue;
+
+    .tco-lights-out & {
+      border-bottom-color: transparent;
+
+      &:hover {
+        border-bottom-color: $color-dark-theme-blue;
+      }
+    }
   }
 
   &:active {
