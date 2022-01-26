@@ -1,4 +1,4 @@
-const treatments = ['flat', 'shadow'];
+const treatments = ['flat', 'shadow', 'none'];
 
 const SummaryCardTemplate = args => {
   const { heading, summary, image, treatment } = args;
@@ -29,7 +29,7 @@ SummaryCard.args = {
     'The best experiences are consistent across all channels, so we always consider the entire ecosystem your users interact within—designing for people wherever they click, tap, talk, touch, work, or play.',
   image:
     'https://www.thinkcompany.com/wp-content/uploads/2021/10/Be-kind-to-people.png',
-  treatment: treatments[0]
+  treatment: treatments[1]
 };
 
 SummaryCard.argTypes = {
@@ -41,12 +41,12 @@ SummaryCard.argTypes = {
 };
 
 const PersonCardTemplate = args => {
-  const { name, title, image } = args;
+  const { name, title, image, treatment } = args;
 
   return `
   <div class="tco-container-wrapper">
     <div class="tco-container">
-      <div class="tco-card tco-card--person" style="background-image: url(${image})">
+      <div class="tco-card tco-card--person tco-card-container--${treatment}" style="background-image: url(${image})">
         <a href="#" class="tco-card-link">
           <div class="tco-card-content-container">
             <h2 class="tco-card-content-heading">${name}</h2>
@@ -64,16 +64,25 @@ PersonCard.args = {
   name: 'Abby DePrimo',
   title: 'Vice President, Design Operations',
   image:
-    'https://3vwizk2qtr8l3diwrm3r2ba0-wpengine.netdna-ssl.com/wp-content/uploads/2020/03/AbbyDePrimo_Web.jpg'
+    'https://www.thinkcompany.com/wp-content/uploads/2020/03/AbbyDePrimo_Web.jpg',
+  treatment: treatments[1]
+};
+
+PersonCard.argTypes = {
+  treatment: {
+    name: 'border treatment',
+    control: 'inline-radio',
+    options: treatments
+  }
 };
 
 const PostCardTemplate = args => {
-  const { image, heading } = args;
+  const { image, heading, treatment } = args;
 
   return `
   <div class="tco-container-wrapper">
     <div class="tco-container">
-      <div class="tco-card tco-card--post">
+      <div class="tco-card tco-card--post tco-card-container--${treatment}">
         <a href="#" class="tco-card-link">
           <div class="tco-card-image-container">
             <img class="tco-card-image" alt="Card image" src="${image}" />
@@ -105,16 +114,25 @@ PostCard.args = {
   heading:
     'The Benefits of Using Airtable as a Content Management System and Collaboration Platform',
   image:
-    'https://www.thinkcompany.com/wp-content/uploads/2021/07/Airtable-Illustration-5-1-500x262.jpg'
+    'https://www.thinkcompany.com/wp-content/uploads/2021/07/Airtable-Illustration-5-1-500x262.jpg',
+  treatment: treatments[1]
+};
+
+PostCard.argTypes = {
+  treatment: {
+    name: 'border treatment',
+    control: 'inline-radio',
+    options: treatments
+  }
 };
 
 const CalloutCardTemplate = args => {
-  const { heading, description } = args;
+  const { heading, description, treatment } = args;
 
   return `
   <div class="tco-container-wrapper">
     <div class="tco-container">
-      <div class="tco-card tco-card--callout">
+      <div class="tco-card tco-card--callout tco-card-container--${treatment}">
         <a href="#" class="tco-card-link">
           <div class="tco-card-image-container tco-card-image-container--callout">
             <svg class="tco-icon tco-card-image tco-card-image--callout" viewBox="0 0 44 44" role="presentation">
@@ -141,7 +159,17 @@ export const CalloutCard = CalloutCardTemplate.bind({});
 
 CalloutCard.args = {
   heading: 'Problem Solving Workshops for COVID-19 Support',
-  description: 'We want to help organizations supporting the frontline response'
+  description:
+    'We want to help organizations supporting the frontline response',
+  treatment: treatments[1]
+};
+
+CalloutCard.argTypes = {
+  treatment: {
+    name: 'border treatment',
+    control: 'inline-radio',
+    options: treatments
+  }
 };
 
 const MediaCardTemplate = args => {
@@ -174,12 +202,12 @@ MediaCard.args = {
 };
 
 const JobCardTemplate = args => {
-  const { heading, location } = args;
+  const { heading, location, treatment } = args;
 
   return `
   <div class="tco-container-wrapper">
     <div class="tco-container">
-      <div class="tco-card tco-card--job">
+      <div class="tco-card tco-card--job tco-card-container--${treatment}">
         <a href="#" class="tco-card-link">
           <div class="tco-card-content-container">
             <h2 class="tco-card-content-heading">${heading}</h2>
@@ -198,7 +226,16 @@ export const JobCard = JobCardTemplate.bind({});
 
 JobCard.args = {
   heading: 'Senior UX Designer',
-  location: 'Philadelphia, PA'
+  location: 'Philadelphia, PA',
+  treatment: treatments[1]
+};
+
+JobCard.argTypes = {
+  treatment: {
+    name: 'border treatment',
+    control: 'inline-radio',
+    options: treatments
+  }
 };
 
 export default {
