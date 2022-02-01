@@ -166,6 +166,10 @@ $think-bubble-h: 51px;
   .tco-field-textarea {
     margin-bottom: 0;
   }
+
+  .tco-lights-out & {
+    box-shadow: $box-shadow-dark;
+  }
 }
 
 .tco-floating-modal--show {
@@ -200,6 +204,10 @@ $think-bubble-h: 51px;
   .tco-form-label {
     @include type-eyebrow;
     margin-bottom: $spacing-stack-12;
+
+    .tco-lights-out & {
+      color: $color-classic-navy;
+    }
   }
 
   .tco-form-textarea,
