@@ -30,6 +30,12 @@ const LogoTemplate = args => {
     return `
       <div class="tco-image-grid-container">
         <img class="tco-image-grid-media" alt="Client image" src="${image}" />
+      <svg viewBox="0 0 30 10" xmlns="http://www.w3.org/2000/svg">
+
+
+  <use href="${image}" x="20" fill="white" stroke="red"/>
+
+</svg>
       </div>`;
   };
 
