@@ -1,3 +1,4 @@
+/* stylelint-disable selector-max-pseudo-class, max-line-length, selector-max-specificity,  max-nesting-depth, selector-max-combinators, selector-max-compound-selectors, no-duplicate-selectors */
 $color-disabled: #c8d9ea;
 $color-hover: #08519a;
 
@@ -57,6 +58,11 @@ $color-hover: #08519a;
   &:disabled {
     color: $color-foreground-on-tint;
   }
+
+  .tco-lights-out & {
+    border-color: $color-dark-theme-dark-blue;
+    background: $color-dark-theme-dark-blue;
+  }
 }
 
 .tco-btn--secondary,
@@ -113,6 +119,24 @@ $color-hover: #08519a;
 
     .tco-text-link-icon {
       fill: $color-hover;
+    }
+  }
+
+  .tco-lights-out & {
+    border-bottom-color: $color-dark-theme-blue;
+    color: $color-dark-theme-blue;
+
+    &:hover,
+    &:focus {
+      border-bottom-color: transparent;
+    }
+
+    &--arrow {
+      border-bottom-color: transparent;
+
+      &:hover {
+        border-bottom-color: $color-dark-theme-blue;
+      }
     }
   }
 }

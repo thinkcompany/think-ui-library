@@ -324,10 +324,10 @@
   border-bottom-color: transparent;
   transition: border-color 0.2s linear, color 0.2s linear;
 
-  .tco-lights-out & {
-    color: $color-dark-theme-blue;
-    border-bottom-color: $color-dark-theme-blue;
-  }
+  // .tco-lights-out & {
+  //   color: $color-dark-theme-blue;
+  //   border-bottom-color: $color-dark-theme-blue;
+  // }
 
   @if $show-initial {
     border-bottom-color: $underline;

@@ -34,12 +34,6 @@ $max-width-fine-print: 380px;
     }
   }
 
-  .tco-contact-form-footer-text {
-    @include type-body-xsmall($font-size: $font-size-14);
-    margin-bottom: $spacing-stack-4;
-    color: $color-classic-gray-medium;
-  }
-
   input,
   textarea {
     height: 48px;
@@ -104,7 +98,19 @@ $max-width-fine-print: 380px;
   @include type-body-xsmall($font-size: $font-size-14);
   margin-bottom: $spacing-stack-4;
   color: $color-classic-gray-medium;
-  line-height: 1.45;
+
+  .tco-lights-out & {
+    color: $color-foreground-on-tint;
+
+    a {
+      border-bottom-color: $color-dark-theme-blue;
+      color: $color-dark-theme-blue;
+
+      &:hover {
+        border-bottom-color: transparent;
+      }
+    }
+  }
 }
 
 .tco-component {

@@ -1,3 +1,5 @@
+/* stylelint-disable selector-max-combinators, selector-max-compound-selectors, selector-max-specificity, max-line-length */
+
 $offset: 4%;
 $device-width-phone: 640px;
 $device-width-desktop: 468px;
@@ -25,6 +27,19 @@ $cs-hero-padding: 130px;
 
   @include wider-than($breakpoint-desktop) {
     margin-bottom: 0;
+  }
+
+  .tco-lights-out & {
+    box-shadow: none;
+
+    .tco-card-link {
+      &:hover,
+      &:focus {
+        .tco-card-content-heading {
+          border-bottom-color: $color-foreground-on-tint;
+        }
+      }
+    }
   }
 
   .tco-card-link {
@@ -412,6 +427,12 @@ $cs-hero-padding: 130px;
     @include type-link-cta($fill: $color-foreground-on-tint);
     @include type-body-default;
     display: inline-block;
+
+    .tco-lights-out & {
+      .tco-text-link-icon {
+        fill: $color-foreground-on-tint;
+      }
+    }
   }
 
   &-nemours {

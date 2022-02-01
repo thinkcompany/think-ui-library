@@ -327,6 +327,10 @@ $color-hover: #08519a;
     &:hover {
       .tco-card-content-heading {
         border-bottom-color: $color-foreground-on-tint;
+
+        .tco-lights-out & {
+          border-bottom-color: $color-foreground-on-tint;
+        }
       }
     }
   }
@@ -385,6 +389,20 @@ $color-hover: #08519a;
       color: $color-foreground-on-tint;
     }
   }
+
+  .tco-lights-out & {
+    .tco-card-link {
+      border-bottom-color: transparent;
+    }
+
+    .tco-type-body--large {
+      color: $color-foreground-on-tint;
+    }
+
+    .tco-text-link-icon {
+      fill: $color-foreground-on-tint;
+    }
+  }
 }
 
 // ========================================================
@@ -417,6 +435,10 @@ $icon-size-large: 44px;
 
       .tco-card-content-link {
         border-bottom-color: $color-classic-blue;
+
+        .tco-text-link-icon {
+          transform: translate(10px, 0);
+        }
       }
 
       .tco-card-image {
@@ -508,6 +530,10 @@ $icon-size-large: 44px;
     &:focus {
       .tco-btn--secondary {
         border-color: $color-hover;
+      }
+
+      .tco-card-content-container .tco-card-content-heading {
+        border-bottom-color: transparent;
       }
     }
   }
