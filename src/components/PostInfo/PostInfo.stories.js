@@ -4,11 +4,11 @@ const Template = args => {
   return `
     <div class="tco-post-info">
     <div class="tco-post-info-category">
-      <span class="tco-post-info-category-label">${categoryLabel}</span>
+      <span class="tco-type-eyebrow">${categoryLabel}</span>
       <a href="#" class="tco-post-info-category-link">${category}</a>
     </div>
     <div class="tco-post-info-share">
-      <span class="tco-post-info-share-label">${shareLabel}</span>
+      <span class="tco-type-eyebrow">${shareLabel}</span>
       <ul class="tco-post-info-share-list">
         <li>
           <a href="#">

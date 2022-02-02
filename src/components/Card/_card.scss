@@ -451,6 +451,10 @@ $icon-size-large: 44px;
         .tco-card-content-heading {
           border-bottom-color: transparent;
         }
+
+        .tco-card-content-link {
+          border-bottom-color: $color-dark-theme-blue;
+        }
       }
     }
   }
@@ -494,6 +498,7 @@ $icon-size-large: 44px;
       display: inline-block;
 
       .tco-lights-out & {
+        border-bottom-color: transparent;
         color: $color-dark-theme-blue;
       }
     }
@@ -588,6 +593,7 @@ $icon-size-large: 44px;
     color: $color-classic-gray-dark;
 
     .tco-lights-out & {
+      border-bottom-color: transparent;
       color: $color-foreground-on-tint;
     }
   }

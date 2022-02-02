@@ -24,3 +24,11 @@
   width: 20px;
   height: 20px;
 }
+
+.tco-background-blob-icon {
+  fill: $color-classic-blue;
+
+  .tco-lights-out & {
+    fill: $color-dark-theme-dark-blue;
+  }
+}
