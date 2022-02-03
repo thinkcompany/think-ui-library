@@ -66,7 +66,7 @@ export default {
     eyebrow: 'Welcome',
     heading: 'Think Company Design System',
     headingSize: sizes[1],
-    lede: "The Think Company Design System includes styles, components, and patterns for various UI elements within the Think Company website. This library is intended to be used as a reference and guide for the design and development teams. What's included:</br><strong>Primitives</strong> are the foundational styles and components used throughout the Design System, including colors, typograhpy, and spacing. <strong>Controls & Inputs </strong> enable users to take actions, typically within a form. <strong>Components</strong> are the higher level building blocks of the Think Company site.",
+    lede: "The Think Company Design System includes styles, components, and patterns for various UI elements within the Think Company website. This library is intended to be used as a reference and guide for the design and development teams. What's included:</br><strong>Primitives</strong> are the foundational styles and components used throughout the Design System, including colors, typography, and spacing. <strong>Controls & Inputs </strong> enable users to take actions, typically within a form. <strong>Components</strong> are the higher level building blocks of the Think Company site.",
     ledeSize: ledeSizes[1],
     ledeContainer: containerSizes[0]
   },
