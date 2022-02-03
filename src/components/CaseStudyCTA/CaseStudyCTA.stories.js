@@ -132,7 +132,7 @@ const caseStudyCard = (input, cardtype) => {
     <div class="tco-card tco-card--case-study tco-card--case-study-${cardType} tco-card--case-study-${
     input.id
   }">
-      <a href="#" class="tco-card-link tco-link--within">
+      <a href="#" class="tco-card-link tco-link--dark-theme">
         <div class="tco-case-study-image-container tco-case-study-image-container--case-study tco-case-study-image-container--${
           input.device
         }">
@@ -146,7 +146,7 @@ const caseStudyCard = (input, cardtype) => {
               ? '<span class="tco-card-eyebrow">' + input.eyebrow + '</span>'
               : ''
           }
-          <h2 class="tco-card-content-heading tco-link--within">${
+          <h2 class="tco-card-content-heading tco-link--dark-theme">${
             input.heading
           }</h2>
           ${
@@ -155,7 +155,7 @@ const caseStudyCard = (input, cardtype) => {
             <p class="tco-card-content-description">${input.description}</p>`
               : `<p class="tco-card-content-description"></p>`
           }
-          <p class="tco-text-link tco-link--within">
+          <p class="tco-text-link tco-link--dark-theme">
             ${input.cta}
             <svg class="tco-text-link-icon" width="20" height="20" viewBox="0 0 20 20" role="presentation">
               <use xlink:href="/img/icons.svg#icon-arrow-right"></use>

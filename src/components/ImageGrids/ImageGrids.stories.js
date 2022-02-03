@@ -14,11 +14,31 @@ const LogoTemplate = args => {
 
   const imageItem = i => {
     const images = [
-      '/img/logos/client-logo-nemours.svg',
-      '/img/logos/client-logo-unitedway.svg',
-      '/img/logos/client-logo-whyy.svg',
-      '/img/logos/client-logo-andesa.svg',
-      '/img/logos/client-logo-sanofi.svg'
+      {
+        logo: 'nemours',
+        width: 335,
+        height: 113
+      },
+      {
+        logo: 'unitedway',
+        width: 312,
+        height: 133
+      },
+      {
+        logo: 'whyy',
+        width: 335,
+        height: 112
+      },
+      {
+        logo: 'andesa',
+        width: 270,
+        height: 159
+      },
+      {
+        logo: 'sanofi',
+        width: 249,
+        height: 199
+      }
     ];
 
     let image = images[i];
@@ -29,13 +49,11 @@ const LogoTemplate = args => {
 
     return `
       <div class="tco-image-grid-container">
-        <img class="tco-image-grid-media" alt="Client image" src="${image}" />
-      <svg viewBox="0 0 30 10" xmlns="http://www.w3.org/2000/svg">
-
-
-  <use href="${image}" x="20" fill="white" stroke="red"/>
-
-</svg>
+        <div class="tco-image-grid-media" style="--logo-w:${image.width}; --logo-h:${image.height};">
+          <svg class="tco-image-grid-media tco-image-grid-media--svg" role="presentation">
+            <use xlink:href="/img/logos.svg#icon-client-logo-${image.logo}"></use>
+          </svg>
+        </div>
       </div>`;
   };
 

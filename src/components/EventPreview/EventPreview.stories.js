@@ -34,7 +34,7 @@ const Template = args => {
               }
             </div>
             <h2 class="tco-content-item-heading">
-              <a href="#" class="tco-link tco-link--within">
+              <a href="#" class="tco-link tco-link--dark-theme">
                   ${heading}
               </a>
             </h2>

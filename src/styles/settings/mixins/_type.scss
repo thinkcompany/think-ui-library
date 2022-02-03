@@ -324,7 +324,7 @@
   border-bottom-color: transparent;
   transition: border-color 0.2s linear, color 0.2s linear;
 
-  &:not(.tco-btn):not(.tco-link--within) {
+  &:not(.tco-btn):not(.tco-link--dark-theme) {
     .tco-lights-out & {
       color: $color-dark-theme-blue;
       border-bottom-color: $color-dark-theme-blue;
@@ -348,7 +348,7 @@
       border-bottom-color: transparent;
     }
 
-    &:not(.tco-btn):not(.tco-link--within) {
+    &:not(.tco-btn):not(.tco-link--dark-theme) {
       .tco-lights-out & {
         border-bottom-color: transparent;
       }
@@ -381,8 +381,10 @@ $arrow-translate: 10px;
     transform: translate($arrow-offset, 0px);
     transform-origin: left center;
 
-    .tco-lights-out & {
-      fill: $color-dark-theme-blue;
+    &:not(.tco-text-link-icon--alt) {
+      .tco-lights-out & {
+        fill: $color-dark-theme-blue;
+      }
     }
   }
 

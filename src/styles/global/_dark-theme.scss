@@ -11,9 +11,4 @@ $color-foreground-on-tint: #fff;
 
 .tco-lights-out {
   color: $color-foreground-on-tint;
-
-  .tco-container-wrapper {
-    background-color: $color-dark-theme-black;
-    color: $color-foreground-on-tint;
-  }
 }

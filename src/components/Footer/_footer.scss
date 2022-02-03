@@ -98,6 +98,7 @@ $widget-width: 132px;
 
     p {
       @include type-body-xsmall;
+      color: $color-foreground-on-tint;
     }
 
     a {
@@ -116,6 +117,7 @@ $widget-width: 132px;
     @include type-eyebrow;
     display: block;
     margin-bottom: $spacing-stack-20;
+    color: $color-foreground-on-tint;
   }
 
   &-logo {
@@ -129,6 +131,7 @@ $widget-width: 132px;
 
     a {
       @include type-link-cta($fill: $color-foreground-on-tint);
+      color: $color-foreground-on-tint;
 
       &:hover,
       &:focus {
@@ -139,6 +142,7 @@ $widget-width: 132px;
 
   &-post-meta {
     @include type-body-small;
+    color: $color-foreground-on-tint;
   }
 
   .tco-menu-item {

@@ -90,3 +90,19 @@ $container-max: 220px;
     }
   }
 }
+
+.tco-image-grid-media {
+  width: 100%;
+  aspect-ratio: var(--logo-w) / var(--logo-h);
+
+  &--svg {
+    display: block;
+    width: 100%;
+    height: auto;
+    fill: $color-classic-navy;
+
+    .tco-lights-out & {
+      fill: $color-foreground-on-tint;
+    }
+  }
+}

@@ -106,9 +106,9 @@ export default {
   title: 'Components / Text And Media',
   args: {
     containerColor: colors[0],
-    alignment: alignments[1],
+    alignment: alignments[0],
     bubbleBackground: true,
-    textAlignment: alignments[1],
+    textAlignment: alignments[0],
     showCta: true,
     showTeaser: false,
     numbered: false,

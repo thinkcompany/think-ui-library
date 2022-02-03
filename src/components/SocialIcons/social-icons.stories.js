@@ -80,7 +80,7 @@ export const SocialIconsSmall = () => {
     if (item.include) {
       iconSet.push(`
         <li>
-          <a class="tco-social-icons-link" href="#" target="_blank" rel="noopener noreferrer">
+          <a class="tco-social-icons-link tco-link--dark-theme" href="#" target="_blank" rel="noopener noreferrer">
             <svg class="tco-icon tco-icon--${item.name}" title="${item.name}" viewBox="0 0 100 100">
               <use xlink:href="/img/icons.svg#icon-${item.name}-small"></use>
             </svg>

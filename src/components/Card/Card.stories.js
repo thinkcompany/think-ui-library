@@ -7,12 +7,12 @@ const SummaryCardTemplate = args => {
   <div class="tco-container-wrapper">
     <div class="tco-container">
       <div class="tco-card tco-card--summary tco-card-container--${treatment}">
-        <a href="#" class="tco-card-link tco-link--within">
+        <a href="#" class="tco-card-link tco-link--dark-theme">
           <div class="tco-card-image-container tco-card-image-container--summary">
             <img class="tco-card-image tco-card-image--summary" alt="Card image" src="${image}" />
           </div>
           <div class="tco-card-content-container">
-            <h2 class="tco-card-content-heading tco-link--within">${heading}</h2>
+            <h2 class="tco-card-content-heading tco-link--dark-theme">${heading}</h2>
             <p class="tco-card-content-description">${summary}</p>
           </div>
         </a>
@@ -49,7 +49,7 @@ const PersonCardTemplate = args => {
       <div class="tco-card tco-card--person tco-card-container--${treatment}" style="background-image: url(${image})">
         <a href="#" class="tco-card-link">
           <div class="tco-card-content-container">
-            <h2 class="tco-card-content-heading tco-link--within">${name}</h2>
+            <h2 class="tco-card-content-heading tco-link--dark-theme">${name}</h2>
             <p class="tco-card-content-description">${title}</p>
           </div>
         </a>
@@ -83,7 +83,7 @@ const PostCardTemplate = args => {
   <div class="tco-container-wrapper">
     <div class="tco-container">
       <div class="tco-card tco-card--post tco-card-container--${treatment}">
-        <a href="#" class="tco-card-link tco-link--within">
+        <a href="#" class="tco-card-link tco-link--dark-theme">
           <div class="tco-card-image-container">
             <img class="tco-card-image" alt="Card image" src="${image}" />
           </div>
@@ -133,16 +133,16 @@ const CalloutCardTemplate = args => {
   <div class="tco-container-wrapper">
     <div class="tco-container">
       <div class="tco-card tco-card--callout tco-card-container--${treatment}">
-        <a href="#" class="tco-card-link tco-link--within">
+        <a href="#" class="tco-card-link tco-link--dark-theme">
           <div class="tco-card-image-container tco-card-image-container--callout">
             <svg class="tco-icon tco-card-image tco-card-image--callout" viewBox="0 0 44 44" role="presentation">
               <use xlink:href="/img/icons.svg#icon-sync-blue"></use>
             </svg>
           </div>
           <div class="tco-card-content-container">
-            <h2 class="tco-card-content-heading tco-link--within">${heading}</h2>
+            <h2 class="tco-card-content-heading tco-link--dark-theme">${heading}</h2>
             <p class="tco-card-content-description">${description}</p>
-            <p class="tco-card-content-link tco-link--within">
+            <p class="tco-card-content-link tco-link--dark-theme">
             Tell us about your challenge
               <svg class="tco-text-link-icon" width="20" height="20" viewBox="0 0 20 20" role="presentation">
                 <use xlink:href="/img/icons.svg#icon-arrow-right"></use>
@@ -183,7 +183,7 @@ const MediaCardTemplate = args => {
           <img class="tco-card-image tco-card-image--summary" alt="Card image" src="${image}" />
         </div>
         <div class="tco-card-content-container">
-          <h2 class="tco-card-content-heading tco-link--within">${heading}</h2>
+          <h2 class="tco-card-content-heading tco-link--dark-theme">${heading}</h2>
           <p class="tco-card-content-description">${summary}</p>
         </div>
       </div>
@@ -208,9 +208,9 @@ const JobCardTemplate = args => {
   <div class="tco-container-wrapper">
     <div class="tco-container">
       <div class="tco-card tco-card--job tco-card-container--${treatment}">
-        <a href="#" class="tco-card-link tco-link--within">
+        <a href="#" class="tco-card-link tco-link--dark-theme">
           <div class="tco-card-content-container">
-            <h2 class="tco-card-content-heading tco-link--within">${heading}</h2>
+            <h2 class="tco-card-content-heading tco-link--dark-theme">${heading}</h2>
             <span class="tco-card-content-location">${location}</span>
           </div>
           <div class="tco-card-content-container">
