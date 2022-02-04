@@ -38,6 +38,31 @@ const LogoTemplate = args => {
         logo: 'sanofi',
         width: 249,
         height: 199
+      },
+      {
+        logo: 'aws',
+        width: 1080,
+        height: 405
+      },
+      {
+        logo: 'angularJS',
+        width: 2500,
+        height: 679
+      },
+      {
+        logo: 'react',
+        width: 1080,
+        height: 363
+      },
+      {
+        logo: 'salesforce',
+        width: 1080,
+        height: 754
+      },
+      {
+        logo: 'veeva',
+        width: 1080,
+        height: 251
       }
     ];
 
@@ -51,7 +76,7 @@ const LogoTemplate = args => {
       <div class="tco-image-grid-container">
         <div class="tco-image-grid-media" style="--logo-w:${image.width}; --logo-h:${image.height};">
           <svg class="tco-image-grid-media tco-image-grid-media--svg" role="presentation">
-            <use xlink:href="/img/logos.svg#icon-client-logo-${image.logo}"></use>
+            <use xlink:href="/img/logos.svg#icon-logo-${image.logo}"></use>
           </svg>
         </div>
       </div>`;
@@ -98,7 +123,7 @@ Logos.args = {
   heading: '',
   headingSize: sizes[0],
   textAlignment: alignments[0],
-  imageCount: 4
+  imageCount: 10
 };
 
 Logos.argTypes = {
