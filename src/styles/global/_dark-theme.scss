@@ -7,6 +7,20 @@ $color-foreground-on-tint: #fff;
   &.tco-lights-out {
     background-color: $color-dark-theme-black !important;
   }
+
+  &.sb-main-fullscreen {
+    .sbdocs-wrapper {
+      padding: 0;
+    }
+
+    &.tco-lights-out {
+      .innerZoomElementWrapper {
+        > div {
+          background-color: $color-dark-theme-black;
+        }
+      }
+    }
+  }
 }
 
 .tco-lights-out {

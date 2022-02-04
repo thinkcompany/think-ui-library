@@ -367,6 +367,10 @@ $device-offset-v: 58px;
   .tco-card-content-heading {
     @include type-display-small($font-color: $color-classic-blue);
 
+    &:hover {
+      border-bottom-color: transparent;
+    }
+
     .tco-lights-out & {
       color: $color-dark-theme-blue;
     }
@@ -523,8 +527,10 @@ $icon-size-large: 44px;
         transform: translate(0, 0);
       }
     }
+  }
 
-    .tco-lights-out & {
+  .tco-lights-out & {
+    .tco-card-link {
       &:hover {
         .tco-card-content-heading {
           border-bottom-color: transparent;
