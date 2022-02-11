@@ -84,6 +84,10 @@ $max-width-fine-print: 380px;
 .tco-field-required,
 .gfield_required {
   color: $color-classic-blue;
+
+  .tco-lights-out & {
+    color: $color-dark-theme-blue;
+  }
 }
 
 .tco-contact-form-footer {

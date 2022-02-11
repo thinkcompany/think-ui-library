@@ -88,6 +88,10 @@ $think-bubble-h: 51px;
   background-color: $color-tint-blue-primary;
   color: $color-foreground-on-tint;
 
+  .tco-lights-out & {
+    background-color: $color-dark-theme-dark-blue;
+  }
+
   .tco-floating-form-btn--close {
     position: absolute;
     top: $floating-form-offset;
@@ -168,6 +172,7 @@ $think-bubble-h: 51px;
   }
 
   .tco-lights-out & {
+    background-color: $color-dark-theme-black;
     box-shadow: $box-shadow-dark;
   }
 }
@@ -204,10 +209,6 @@ $think-bubble-h: 51px;
   .tco-form-label {
     @include type-eyebrow;
     margin-bottom: $spacing-stack-12;
-
-    .tco-lights-out & {
-      color: $color-classic-navy;
-    }
   }
 
   .tco-form-textarea,

@@ -38,8 +38,7 @@ $color-hover: #08519a;
     background-color: $color-hover;
   }
 
-  &[disabled],
-  &:disabled {
+  &[disabled] {
     border-color: $color-disabled;
     background: $color-disabled;
     color: $color-disabled;
@@ -54,8 +53,7 @@ $color-hover: #08519a;
   background: $color-classic-blue;
   color: $color-foreground-on-tint;
 
-  &[disabled],
-  &:disabled {
+  &[disabled] {
     color: $color-foreground-on-tint;
   }
 
@@ -66,6 +64,12 @@ $color-hover: #08519a;
     &:hover {
       border-color: $color-hover;
       background: $color-hover;
+    }
+
+    &:disabled {
+      border-color: $color-disabled;
+      background: $color-disabled;
+      cursor: default;
     }
   }
 }
@@ -89,7 +93,6 @@ $color-hover: #08519a;
     color: $color-foreground-on-tint;
   }
 
-  &[disabled],
   &:disabled {
     background-color: transparent;
   }
@@ -101,6 +104,12 @@ $color-hover: #08519a;
     &:hover {
       border-color: $color-hover;
       background: $color-hover;
+    }
+
+    &:disabled {
+      border-color: $color-disabled;
+      background-color: $color-disabled;
+      cursor: default;
     }
   }
 }

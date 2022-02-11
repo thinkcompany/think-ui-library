@@ -1,13 +1,13 @@
-/* stylelint-disable selector-max-combinators, selector-max-compound-selectors */
-
-/**
- * Gravity Forms plugin style overrides & general form styles
- */
+/* stylelint-disable selector-max-combinators,
+  selector-max-specificity, selector-max-compound-selectors,
+  declaration-no-important, selector-no-qualifying-type
+*/
 
 $select-height: 35px;
 $opacity--disabled: 0.4;
 $field-space: 36px;
 $textarea-height: 80px;
+$color-hover: #08519a;
 
 /* ----------------------------------------------*\
     Form Row
@@ -102,17 +102,22 @@ $textarea-height: 80px;
     pointer-events: none;
   }
 
-  &.is-error,
-  &.is-success {
-    padding-left: rem(32px);
-  }
-
   &.is-error {
     border-color: $color-tint-red-primary;
   }
 
   &.is-success {
     border-color: $color-tint-green-primary;
+  }
+
+  .tco-lights-out & {
+    border-bottom: 1px solid $color-foreground-on-tint;
+    background-color: transparent;
+    color: $color-foreground-on-tint;
+
+    &:focus {
+      outline: 2px solid $color-foreground-on-tint;
+    }
   }
 }
 
@@ -250,8 +255,8 @@ $textarea-height: 80px;
     margin-top: rem(8px);
   }
 
-  .theme-dark & {
-    color: #000;
+  .tco-lights-out & {
+    color: $color-dark-theme-error;
   }
 }
 
@@ -324,6 +329,19 @@ $textarea-height: 80px;
 
 // hubspot forms
 .tco-form--hubspot {
+  &.tco-form--hubspot-component {
+    padding: $spacing-stack-16 $spacing-inline-16 0;
+  }
+
+  .tco-column & {
+    padding: $spacing-stack-16 $spacing-inline-16;
+    background-color: $color-foreground-on-tint;
+
+    @include wider-than($breakpoint-tablet-portrait) {
+      padding: $spacing-stack-32 $spacing-inline-32;
+    }
+  }
+
   [class*='form-columns-'] {
     max-width: 100%;
 
@@ -348,11 +366,137 @@ $textarea-height: 80px;
     }
   }
 
-  input:not([type='submit']) {
+  input:not([type='submit']),
+  textarea,
+  select {
     @extend %tco-form-input;
+    width: 100% !important; // :shame
+    background-color: transparent;
+
+    &.invalid,
+    &.error {
+      border: 1px solid $color-tint-red-primary;
+    }
   }
 
   label {
     @extend %tco-form-label;
+  }
+
+  [type='checkbox'] {
+    @extend %tco-accessibly-hidden;
+  }
+
+  .hs-fieldtype-booleancheckbox {
+    > .hs-field-desc {
+      @include type-eyebrow;
+      position: relative;
+      display: block;
+      margin-bottom: $spacing-stack-12;
+      padding: 0 $spacing-inline-4;
+      font-weight: $font-weight-600;
+    }
+  }
+
+  .hs-fieldtype-checkbox {
+    > label {
+      display: block;
+      margin-bottom: $spacing-stack-12;
+    }
+
+    .hs-form-checkbox {
+      margin-bottom: $spacing-stack-4;
+    }
+  }
+
+  .hs-form-required {
+    color: $color-classic-blue;
+  }
+
+  ul {
+    padding-left: 0;
+  }
+
+  li {
+    list-style: none;
+  }
+
+  .hs-error-msgs {
+    margin: (-$field-space + 2px) 0 $field-space;
+
+    .hs-error-msg,
+    label {
+      @include type-body-small($color-tint-red-primary);
+      letter-spacing: 0;
+      text-transform: initial;
+    }
+  }
+
+  .submitted-message {
+    @include type-display-small;
+  }
+
+  &.tco-newsletter-form-container {
+    .hs-form {
+      display: flex;
+      flex-flow: row wrap;
+
+      @include wider-than($breakpoint-tablet-portrait) {
+        flex-flow: row nowrap;
+      }
+    }
+
+    .hs-email {
+      position: relative;
+      flex-grow: 2;
+      margin-bottom: $spacing-stack-16;
+
+      @include wider-than($breakpoint-tablet-portrait) {
+        margin-bottom: $spacing-stack-24;
+      }
+    }
+
+    .hs-submit {
+      display: flex;
+      align-items: flex-end;
+      justify-content: flex-start;
+      margin: 0 0 $spacing-stack-16;
+
+      @include wider-than($breakpoint-tablet-portrait) {
+        justify-content: center;
+        margin: 0 0 $spacing-stack-24 $spacing-inline-16;
+      }
+    }
+
+    .hs-button {
+      padding: $spacing-stack-12 $spacing-inline-18;
+      border: 1px solid $color-classic-blue;
+      background-color: transparent;
+      color: $color-classic-blue;
+
+      &:hover {
+        background-color: $color-classic-blue;
+        color: $color-foreground-on-tint;
+      }
+
+      .tco-lights-out & {
+        border-color: $color-foreground-on-tint;
+        color: $color-foreground-on-tint;
+
+        &:hover {
+          border-color: $color-hover;
+        }
+      }
+    }
+
+    .submitted-message {
+      @include type-body-small;
+    }
+
+    .hs-error-msgs {
+      position: absolute;
+      left: 0;
+      margin: 0;
+    }
   }
 }

@@ -152,6 +152,11 @@
     "color": "#1459B5"
   },
   {
+    "name": "error",
+    "section": "dark-theme",
+    "color": "#fb5c6a"
+  },
+  {
     "name": "nemours",
     "section": "case-study",
     "variants": [
