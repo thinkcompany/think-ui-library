@@ -1,30 +1,19 @@
 const BylineTemplate = args => {
-  const { name, image, date, link } = args;
-
-  let open = '';
-
-  let close = '';
-
-  if (link) {
-    open = '<a href="#" class="tco-byline tco-byline--link">';
-    close = '</a>';
-  } else {
-    open = '<div class="tco-byline">';
-    close = '</div>';
-  }
+  const { name, image, date, title } = args;
 
   return `
     <div class="tco-container-wrapper">
       <div class="tco-container">
-        ${open}
-          <div class="tco-byline-image-container">
+        <div class="tco-byline tco-byline--single tco-byline--l">
+          <div class="tco-byline-image-container tco-byline-image-container--l">
             <img src="${image}" alt="${name}">
           </div>
           <div class="tco-byline-content-container">
-            <p class="tco-byline-name">By ${name}</p>
+            <p class="tco-byline-name"><a href="#">By ${name}</a></p>
+            <p class="tco-byline-description">${title}</p>
             <p class="tco-byline-description">${date}</p>
           </div>
-        ${close}
+        </div>
       </div>
     </div>
   `;
@@ -34,7 +23,7 @@ export const Byline = BylineTemplate.bind({});
 
 Byline.args = {
   date: 'May 21, 2020',
-  link: false
+  title: 'Principal Experience Designer'
 };
 
 const MultipleTemplate = args => {
