@@ -31,6 +31,10 @@ $search-h: 18px;
 
   // magnifying glass in search input
   .tco-form-row--search-row {
+    .tco-form-input::-webkit-search-cancel-button {
+      -webkit-appearance: none;
+    }
+
     &::after {
       content: '';
       position: absolute;
