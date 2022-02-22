@@ -52,9 +52,6 @@ export default class Nav {
     const container = this.$container;
     const siteNav = this.$siteNav;
     const menu = this.$menu;
-    const menuClone = menu.cloneNode(true);
-
-    menuClone.classList.add('tco-site-nav-menu--primary-clone');
 
     this.$mobileMenuBtn.addEventListener('click', () => {
       this.$body.classList.add('tco-body--freeze');
