@@ -55,8 +55,8 @@ export const Footer = () => {
         </div>
         <div class="tco-site-footer-content tco-site-footer-content--full">
           <div class="tco-site-footer-content-group tco-site-footer-content-group--icons">
-            <a href="/" class="tco-footer-link--think">
-              <svg class="tco-site-footer-logo" width="151" height="50" role="img" aria-label="Think Company logo">
+            <a href="/" class="tco-footer-link--think tco-site-footer-logo">
+              <svg class="" width="151" height="50" role="img" aria-label="Think Company logo">
                 <use xlink:href="/img/icons.svg#icon-think-logo"></use>
               </svg>
             </a>
