@@ -58,6 +58,10 @@ $bubble-max: 600px;
         padding-bottom: 62%;
         transform: translate(-28%, -50%);
       }
+
+      .tco-lights-out & {
+        background-color: $color-classic-navy;
+      }
     }
 
     .tco-container-wrapper--glass & {

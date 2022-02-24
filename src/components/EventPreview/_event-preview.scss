@@ -45,6 +45,16 @@ $content-max: 580px;
     @include type-display-small;
     margin-bottom: $spacing-stack-8;
     color: $color-classic-blue;
+
+    .tco-lights-out & {
+      a {
+        color: $color-dark-theme-blue;
+
+        &:hover {
+          border-color: $color-dark-theme-blue;
+        }
+      }
+    }
   }
 
   &-location {
@@ -123,4 +133,9 @@ $content-max: 580px;
   @include spacing-squish-6-10;
   display: inline-block;
   background: $color-classic-gray-light;
+
+  .tco-lights-out & {
+    border: 1px solid $color-foreground-on-tint;
+    background: transparent;
+  }
 }

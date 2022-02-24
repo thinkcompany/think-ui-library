@@ -33,11 +33,11 @@ const Template = args => {
                   : ''
               }
             </div>
-            <h1 class="tco-content-item-heading">
-              <a href="#" class="tco-link">
+            <h2 class="tco-content-item-heading">
+              <a href="#" class="tco-link tco-link--dark-theme">
                   ${heading}
               </a>
-            </h1>
+            </h2>
             ${
               excerpt
                 ? `

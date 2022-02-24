@@ -5,6 +5,15 @@
     width: 100%;
     padding-right: $documentation-padding;
     padding-left: $documentation-padding;
+    background: $documentation-white;
+
+    .tco-lights-out & {
+      background: $documentation-black;
+    }
+
+    [class*='tco-card-container'] {
+      min-height: 300px;
+    }
   }
 
   .content {

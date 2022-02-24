@@ -32,6 +32,7 @@
 
   &--footer {
     @include pseudo-curve;
+    background-color: $color-classic-navy;
 
     > .tco-container {
       @include pseudo-think-bubble;
@@ -40,6 +41,15 @@
         padding: calc(#{$spacing-stack-50} + #{$spacing-stack-32}) 0
           $spacing-stack-32;
       }
+    }
+  }
+
+  .tco-lights-out & {
+    background-color: $color-dark-theme-black;
+    color: $color-foreground-on-tint;
+
+    &--footer {
+      background-color: $color-classic-navy;
     }
   }
 

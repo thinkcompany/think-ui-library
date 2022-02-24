@@ -1,12 +1,12 @@
 const summaryCard = () => {
   return `
     <div class="tco-card tco-card--summary">
-      <a href="#" class="tco-card-link">
+      <a href="#" class="tco-card-link tco-link--dark-theme">
         <div class="tco-card-image-container tco-card-image-container--summary">
           <img class="tco-card-image tco-card-image--summary" alt="Card image" src="https://www.thinkcompany.com/wp-content/uploads/2021/10/Be-kind-to-people.png" />
         </div>
         <div class="tco-card-content-container">
-          <h2 class="tco-card-content-heading">Work Together.</h2>
+          <h2 class="tco-card-content-heading tco-link--dark-theme">Work Together.</h2>
           <p class="tco-card-content-description">The best experiences are consistent across all channels, so we always consider the entire ecosystem your users interact within—designing for people wherever they click, tap, talk, touch, work, or play.</p>
         </div>
       </a>
@@ -18,7 +18,7 @@ const personCard = () => {
   <div class="tco-card tco-card--person" style="background-image: url(https://3vwizk2qtr8l3diwrm3r2ba0-wpengine.netdna-ssl.com/wp-content/uploads/2020/03/AbbyDePrimo_Web.jpg)">
     <a href="#" class="tco-card-link">
       <div class="tco-card-content-container">
-        <h2 class="tco-card-content-heading">Abby DePrimo</h2>
+        <h2 class="tco-card-content-heading tco-link--dark-theme">Abby DePrimo</h2>
         <p class="tco-card-content-description">Vice President, Design Operations</p>
       </div>
     </a>
@@ -28,7 +28,7 @@ const personCard = () => {
 const postCard = () => {
   return `
   <div class="tco-card tco-card--post">
-    <a href="#" class="tco-card-link">
+    <a href="#" class="tco-card-link tco-link--dark-theme">
       <div class="tco-card-image-container">
         <img class="tco-card-image" alt="Card image" src="https://www.thinkcompany.com/wp-content/uploads/2021/07/Airtable-Illustration-5-1-500x262.jpg" />
       </div>
@@ -54,16 +54,16 @@ const postCard = () => {
 const calloutCard = () => {
   return `
   <div class="tco-card tco-card--callout">
-    <a href="#" class="tco-card-link">
+    <a href="#" class="tco-card-link tco-link--dark-theme">
       <div class="tco-card-image-container tco-card-image-container--callout">
         <svg class="tco-icon tco-card-image tco-card-image--callout" viewBox="0 0 44 44" role="presentation">
           <use xlink:href="/img/icons.svg#icon-sync-blue"></use>
         </svg>
       </div>
       <div class="tco-card-content-container">
-        <h2 class="tco-card-content-heading">Problem Solving Workshops for COVID-19 Support</h2>
+        <h2 class="tco-card-content-heading tco-link--dark-theme">Problem Solving Workshops for COVID-19 Support</h2>
         <p class="tco-card-content-description">We want to help organizations supporting the frontline response</p>
-        <p class="tco-card-content-link">
+        <p class="tco-card-content-link tco-link--dark-theme">
         Tell us about your challenge
           <svg class="tco-text-link-icon" width="20" height="20" viewBox="0 0 20 20" role="presentation">
             <use xlink:href="/img/icons.svg#icon-arrow-right"></use>
@@ -81,7 +81,7 @@ const mediaCard = () => {
         <img class="tco-card-image tco-card-image--summary" alt="Card image" src="https://www.thinkcompany.com/wp-content/uploads/2020/12/Competitive-Salary-Annual-Increase-1-1.svg" />
       </div>
       <div class="tco-card-content-container">
-        <h2 class="tco-card-content-heading">Competitive Salary and Annual Increase</h2>
+        <h2 class="tco-card-content-heading tco-link--dark-theme">Competitive Salary and Annual Increase</h2>
         <p class="tco-card-content-description">We pay you what you deserve to make and you can earn up to a 5% salary increase every year based on your individual performance.</p>
       </div>
     </div>`;
@@ -90,9 +90,9 @@ const mediaCard = () => {
 const jobCard = () => {
   return `
     <div class="tco-card tco-card--job">
-      <a href="#" class="tco-card-link">
+      <a href="#" class="tco-card-link tco-link--dark-theme">
         <div class="tco-card-content-container">
-          <h2 class="tco-card-content-heading">Senior UX Designer</h2>
+          <h2 class="tco-card-content-heading tco-link--dark-theme">Senior UX Designer</h2>
           <span class="tco-card-content-location">Philadelphia, PA</span>
         </div>
         <div class="tco-card-content-container">

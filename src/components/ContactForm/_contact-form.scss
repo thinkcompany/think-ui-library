@@ -8,6 +8,10 @@ $max-width-fine-print: 380px;
   z-index: 2;
   background-color: $color-foreground-on-tint;
   box-shadow: $box-shadow-card;
+
+  .tco-lights-out & {
+    background-color: $color-dark-theme-black;
+  }
 }
 
 .tco-contact-form {
@@ -28,12 +32,6 @@ $max-width-fine-print: 380px;
     @include wider-than($breakpoint-tablet-portrait) {
       margin-bottom: $spacing-stack-40;
     }
-  }
-
-  .tco-contact-form-footer-text {
-    @include type-body-xsmall($font-size: $font-size-14);
-    margin-bottom: $spacing-stack-4;
-    color: $color-classic-gray-medium;
   }
 
   input,
@@ -86,6 +84,10 @@ $max-width-fine-print: 380px;
 .tco-field-required,
 .gfield_required {
   color: $color-classic-blue;
+
+  .tco-lights-out & {
+    color: $color-dark-theme-blue;
+  }
 }
 
 .tco-contact-form-footer {
@@ -100,7 +102,19 @@ $max-width-fine-print: 380px;
   @include type-body-xsmall($font-size: $font-size-14);
   margin-bottom: $spacing-stack-4;
   color: $color-classic-gray-medium;
-  line-height: 1.45;
+
+  .tco-lights-out & {
+    color: $color-foreground-on-tint;
+
+    a {
+      border-bottom-color: $color-dark-theme-blue;
+      color: $color-dark-theme-blue;
+
+      &:hover {
+        border-bottom-color: transparent;
+      }
+    }
+  }
 }
 
 .tco-component {

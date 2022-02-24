@@ -1,5 +1,9 @@
 @mixin card-container-shadow {
   box-shadow: $box-shadow-card;
+
+  .tco-lights-out & {
+    box-shadow: $box-shadow-dark;
+  }
 }
 
 @mixin card-base {
@@ -8,11 +12,21 @@
   min-width: 158px;
   min-height: 300px;
   background: $color-foreground-on-tint;
+
+  .tco-lights-out & {
+    background-color: $color-dark-theme-black;
+  }
 }
 
 @mixin card-container-flat {
-  @include card-base;
-  border: 1px solid rgb(222, 224, 232);
+  border: 1px solid $color-classic-gray-light;
+  box-shadow: none;
+
+  .tco-lights-out & {
+    background-color: $color-dark-theme-black;
+    border: 2px solid $color-foreground-on-tint;
+    box-shadow: none;
+  }
 }
 
 /**

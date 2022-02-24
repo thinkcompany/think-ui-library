@@ -1,7 +1,9 @@
-/* stylelint-disable selector-max-pseudo-class, max-line-length, selector-max-specificity */
+/* stylelint-disable selector-max-pseudo-class, max-line-length, selector-max-specificity,  max-nesting-depth, selector-max-combinators, selector-max-compound-selectors */
 // ========================================================
 // = BASE CARD
 // ========================================================
+$color-hover: #08519a;
+
 .tco-card {
   @include card-base;
   overflow: hidden;
@@ -10,6 +12,11 @@
   &-link {
     @include type-link-cta($padding-right: 0);
     height: 100%;
+  }
+
+  &.tco-card-container--flat,
+  &.tco-card-container--none {
+    box-shadow: none;
   }
 
   .tco-card-content-heading {
@@ -41,12 +48,24 @@
           border-bottom-color: $color-classic-blue;
         }
       }
+
+      .tco-lights-out & {
+        &:hover {
+          .tco-card-content-heading {
+            border-bottom-color: $color-dark-theme-blue;
+          }
+        }
+      }
     }
   }
 
   &-content-container {
     padding: $spacing-stack-24;
     color: $color-classic-gray-dark;
+
+    .tco-lights-out & {
+      color: $color-foreground-on-tint;
+    }
 
     @include wider-than($breakpoint-desktop) {
       padding: $spacing-stack-32;
@@ -56,6 +75,10 @@
   &-content-description {
     @include type-body-default($font-color: $color-classic-gray-dark);
     margin-top: $spacing-stack-8;
+
+    .tco-lights-out & {
+      color: $color-foreground-on-tint;
+    }
   }
 
   &-eyebrow {
@@ -78,12 +101,22 @@
 // ========================================================
 // = SERVICE CARD
 // ========================================================
+$device-width-dark-theme: 42%;
+$device-offset-v: 58px;
+
 .tco-card--service {
   max-width: none;
   border: 1px solid $color-classic-gray-light;
   border-width: 0 0 1px;
   box-shadow: none;
   transition: background-color 0.2s linear;
+
+  .tco-lights-out & {
+    border-width: 1px 1px 0;
+    border-style: solid;
+    border-color: $color-foreground-on-tint;
+    box-shadow: none;
+  }
 
   &:nth-last-child(2) {
     border-bottom-width: 0;
@@ -96,8 +129,20 @@
       border-bottom-color: $color-classic-blue;
     }
 
-    .tco-card-image-container .tco-card-image {
-      transform: translate(-50%, -50%) scale(1.05);
+    .tco-card-image-container {
+      .tco-lights-out & {
+        &::before {
+          transform: translate(-50%, -50%) scale(1.05);
+        }
+      }
+
+      .tco-card-image {
+        transform: translate(-50%, -50%) scale(1.05);
+      }
+    }
+
+    .tco-lights-out & {
+      background-color: $color-classic-navy;
     }
   }
 
@@ -105,10 +150,22 @@
     &:nth-of-type(odd) {
       border-width: 0 1px 1px 0;
     }
+
+    &:nth-of-type(even) {
+      .tco-lights-out & {
+        border-width: 0 0 1px;
+      }
+    }
   }
 
   @include wider-than($breakpoint-tablet-portrait) {
     border-width: 0 1px 1px 0;
+
+    &:nth-of-type(even) {
+      .tco-lights-out & {
+        border-width: 0 1px 1px 0;
+      }
+    }
   }
 
   .tco-card-link {
@@ -135,6 +192,32 @@
     );
     margin: 0 auto;
 
+    .tco-lights-out & {
+      width: $device-width-dark-theme;
+
+      &::before {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        display: block;
+        width: calc(100% + #{$spacing-inline-64});
+        border-radius: 50%;
+        background-color: $color-foreground-on-tint;
+        transition: transform 0.2s linear;
+        transform: translate(-50%, -50%) scale(1);
+        aspect-ratio: 1;
+      }
+
+      &--product-design {
+        width: calc(#{$device-width-dark-theme} - #{$device-offset-v});
+
+        &::before {
+          width: calc(100% + #{$spacing-inline-64} + #{$device-offset-v});
+        }
+      }
+    }
+
     @include wider-than($breakpoint-phone-landscape) {
       width: calc(100% - #{$spacing-inline-24} * 2);
     }
@@ -145,6 +228,7 @@
       width: auto;
       height: auto;
       transition: transform 0.2s linear;
+      will-change: transform;
     }
 
     &--product-design {
@@ -156,7 +240,7 @@
 
   .tco-card-content {
     &-container {
-      padding: $spacing-stack-32 $spacing-inline-32 0 0;
+      padding: $spacing-stack-32 $spacing-inline-32 0;
 
       @include wider-than($breakpoint-desktop) {
         padding: $spacing-stack-40 0 0;
@@ -168,6 +252,10 @@
       @include type-link;
       display: inline;
       line-height: 1.3;
+
+      .tco-lights-out & {
+        color: $color-dark-theme-blue;
+      }
     }
 
     &-description {
@@ -177,6 +265,15 @@
 
   &-cta {
     background-color: $color-classic-blue;
+
+    .tco-lights-out & {
+      background-color: $color-dark-theme-dark-blue;
+
+      &:hover,
+      &:focus {
+        background-color: $color-hover;
+      }
+    }
 
     &:hover,
     &:focus {
@@ -208,6 +305,10 @@
         margin-bottom: $spacing-stack-24;
         border-bottom-width: 0;
         color: $color-foreground-on-tint;
+
+        .tco-lights-out & {
+          color: $color-foreground-on-tint;
+        }
       }
 
       &-description {
@@ -265,6 +366,14 @@
 
   .tco-card-content-heading {
     @include type-display-small($font-color: $color-classic-blue);
+
+    &:hover {
+      border-bottom-color: transparent;
+    }
+
+    .tco-lights-out & {
+      color: $color-dark-theme-blue;
+    }
   }
 }
 
@@ -300,6 +409,10 @@
     &:hover {
       .tco-card-content-heading {
         border-bottom-color: $color-foreground-on-tint;
+
+        .tco-lights-out & {
+          border-bottom-color: $color-foreground-on-tint;
+        }
       }
     }
   }
@@ -353,6 +466,24 @@
   .tco-type-body--sans-small,
   .tco-byline--no-image .tco-byline-name {
     color: $color-classic-gray-medium;
+
+    .tco-lights-out & {
+      color: $color-foreground-on-tint;
+    }
+  }
+
+  .tco-lights-out & {
+    .tco-card-link {
+      border-bottom-color: transparent;
+    }
+
+    .tco-type-body--large {
+      color: $color-foreground-on-tint;
+    }
+
+    .tco-text-link-icon {
+      fill: $color-foreground-on-tint;
+    }
   }
 }
 
@@ -386,10 +517,28 @@ $icon-size-large: 44px;
 
       .tco-card-content-link {
         border-bottom-color: $color-classic-blue;
+
+        .tco-text-link-icon {
+          transform: translate(10px, 0);
+        }
       }
 
       .tco-card-image {
         transform: translate(0, 0);
+      }
+    }
+  }
+
+  .tco-lights-out & {
+    .tco-card-link {
+      &:hover {
+        .tco-card-content-heading {
+          border-bottom-color: transparent;
+        }
+
+        .tco-card-content-link {
+          border-bottom-color: $color-dark-theme-blue;
+        }
       }
     }
   }
@@ -431,6 +580,11 @@ $icon-size-large: 44px;
     &-link {
       @include type-link-cta($font-color: $color-classic-blue);
       display: inline-block;
+
+      .tco-lights-out & {
+        border-bottom-color: transparent;
+        color: $color-dark-theme-blue;
+      }
     }
   }
 }
@@ -457,6 +611,19 @@ $icon-size-large: 44px;
     .tco-btn {
       background-color: $color-hover;
       color: $color-foreground-on-tint;
+    }
+  }
+
+  .tco-lights-out & {
+    &:hover,
+    &:focus {
+      .tco-btn--secondary {
+        border-color: $color-hover;
+      }
+
+      .tco-card-content-container .tco-card-content-heading {
+        border-bottom-color: transparent;
+      }
     }
   }
 
@@ -508,6 +675,11 @@ $icon-size-large: 44px;
 .tco-card--media {
   .tco-card-content-heading {
     color: $color-classic-gray-dark;
+
+    .tco-lights-out & {
+      border-bottom-color: transparent;
+      color: $color-foreground-on-tint;
+    }
   }
 }
 

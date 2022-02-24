@@ -1,3 +1,4 @@
+/* stylelint-disable selector-max-pseudo-class, max-line-length, selector-max-specificity,  max-nesting-depth, selector-max-combinators, selector-max-compound-selectors, no-duplicate-selectors */
 $color-disabled: #c8d9ea;
 $color-hover: #08519a;
 
@@ -37,8 +38,7 @@ $color-hover: #08519a;
     background-color: $color-hover;
   }
 
-  &[disabled],
-  &:disabled {
+  &[disabled] {
     border-color: $color-disabled;
     background: $color-disabled;
     color: $color-disabled;
@@ -53,9 +53,24 @@ $color-hover: #08519a;
   background: $color-classic-blue;
   color: $color-foreground-on-tint;
 
-  &[disabled],
-  &:disabled {
+  &[disabled] {
     color: $color-foreground-on-tint;
+  }
+
+  .tco-lights-out & {
+    border-color: $color-dark-theme-dark-blue;
+    background: $color-dark-theme-dark-blue;
+
+    &:hover {
+      border-color: $color-hover;
+      background: $color-hover;
+    }
+
+    &:disabled {
+      border-color: $color-disabled;
+      background: $color-disabled;
+      cursor: default;
+    }
   }
 }
 
@@ -78,9 +93,24 @@ $color-hover: #08519a;
     color: $color-foreground-on-tint;
   }
 
-  &[disabled],
   &:disabled {
     background-color: transparent;
+  }
+
+  .tco-lights-out & {
+    border-color: $color-foreground-on-tint;
+    color: $color-foreground-on-tint;
+
+    &:hover {
+      border-color: $color-hover;
+      background: $color-hover;
+    }
+
+    &:disabled {
+      border-color: $color-disabled;
+      background-color: $color-disabled;
+      cursor: default;
+    }
   }
 }
 
@@ -88,6 +118,14 @@ $color-hover: #08519a;
   &--arrow {
     @include type-link-cta;
     color: $color-classic-blue;
+
+    .tco-lights-out & {
+      border-bottom-color: transparent;
+
+      &:hover {
+        border-bottom-color: $color-dark-theme-blue;
+      }
+    }
   }
 
   &:active {
@@ -95,6 +133,24 @@ $color-hover: #08519a;
 
     .tco-text-link-icon {
       fill: $color-hover;
+    }
+  }
+
+  .tco-lights-out & {
+    border-bottom-color: $color-dark-theme-blue;
+    color: $color-dark-theme-blue;
+
+    &:hover,
+    &:focus {
+      border-bottom-color: transparent;
+    }
+
+    &--arrow {
+      border-bottom-color: transparent;
+
+      &:hover {
+        border-bottom-color: $color-dark-theme-blue;
+      }
     }
   }
 }

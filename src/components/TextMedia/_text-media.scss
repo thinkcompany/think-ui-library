@@ -121,6 +121,10 @@ $bubble-max: 600px;
       height: 0;
       margin: auto;
       padding-bottom: calc(100% - #{$spacing-inline-12});
+
+      .tco-lights-out & {
+        background-color: $color-classic-navy;
+      }
     }
 
     .tco-text-media-image {
@@ -157,6 +161,10 @@ $bubble-max: 600px;
     .tco-container-wrapper--glass & {
       &::before {
         background-color: $color-foreground-on-tint;
+
+        .tco-lights-out & {
+          background-color: $color-classic-navy;
+        }
       }
     }
   }
@@ -212,6 +220,10 @@ $bubble-max: 600px;
           width: 164%;
           height: 0;
           padding-bottom: 164%;
+        }
+
+        .tco-lights-out & {
+          background-color: $color-classic-navy;
         }
       }
 

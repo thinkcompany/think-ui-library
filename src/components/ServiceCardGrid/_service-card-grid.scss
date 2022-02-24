@@ -5,6 +5,10 @@
     grid-template-columns: repeat(2, 1fr);
     border: $border-card;
     border-bottom-width: 0;
+
+    .tco-lights-out & {
+      border-color: $color-foreground-on-tint;
+    }
   }
 
   @include wider-than($breakpoint-tablet-portrait) {

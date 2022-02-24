@@ -5,7 +5,7 @@ module.exports = {
     jest: true,
     node: true
   },
-  extends: ['eslint:recommended'],
+  extends: ["eslint:recommended", "plugin:storybook/recommended"],
   parser: 'babel-eslint',
   parserOptions: {
     sourceType: 'module'
@@ -31,7 +31,9 @@ module.exports = {
     'eol-last': 0,
     eqeqeq: 2,
     'func-names': [2, 'never'],
-    'func-style': [2, 'declaration', { allowArrowFunctions: true }],
+    'func-style': [2, 'declaration', {
+      allowArrowFunctions: true
+    }],
     'guard-for-in': 2,
     'handle-callback-err': 0,
     'id-length': 0,
@@ -45,7 +47,9 @@ module.exports = {
     'max-nested-callbacks': 0,
     'max-params': 0,
     'max-statements': 0,
-    'new-cap': [2, { properties: false }],
+    'new-cap': [2, {
+      properties: false
+    }],
     'newline-after-var': 1,
     'no-alert': 2,
     'no-array-constructor': 2,
@@ -153,11 +157,12 @@ module.exports = {
     'valid-typeof': 2,
     'vars-on-top': 2,
     yoda: 2,
-    'no-console': [
-      process.env.NODE_ENV === 'debug' ? 0 : 2,
-      { allow: ['warn', 'error'] }
-    ],
+    'no-console': [process.env.NODE_ENV === 'debug' ? 0 : 2, {
+      allow: ['warn', 'error']
+    }],
     'no-debugger': process.env.NODE_ENV === 'debug' ? 0 : 2,
-    'prettier/prettier': [2, { singleQuote: true }]
+    'prettier/prettier': [2, {
+      singleQuote: true
+    }]
   }
 };
