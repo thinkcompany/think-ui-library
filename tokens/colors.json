@@ -137,6 +137,26 @@
     "color": "#173145"
   },
   {
+    "name": "black",
+    "section": "dark-theme",
+    "color": "#23272A"
+  },
+  {
+    "name": "blue",
+    "section": "dark-theme",
+    "color": "#478EEB"
+  },
+  {
+    "name": "dark-blue",
+    "section": "dark-theme",
+    "color": "#1459B5"
+  },
+  {
+    "name": "error",
+    "section": "dark-theme",
+    "color": "#fb5c6a"
+  },
+  {
     "name": "nemours",
     "section": "case-study",
     "variants": [

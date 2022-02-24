@@ -1,8 +1,11 @@
 /* START: storybook specific styles */
-$documentation-black: #000;
+$documentation-black: #23272a;
 $documentation-white: #fff;
-$documentation-gray: #efefef;
+$documentation-gray: #edecec;
+$documentation-gray-2: #e5e5e5;
 $documentation-pink: #fb0091;
+$color-classic-navy: #173145;
+$color-dark-theme-black: #23272a;
 $documentation-padding: 20px;
 
 @import './_documentation-styles/Global';
@@ -13,5 +16,6 @@ $documentation-padding: 20px;
 @import './_documentation-styles/Typography';
 @import './_documentation-styles/Cards';
 @import './_documentation-styles/Select';
+@import './_documentation-styles/Dark-theme';
 
 /* END: storybook specific styles */

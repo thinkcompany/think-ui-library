@@ -7,7 +7,7 @@
   justify-content: space-between;
   width: 100%;
   padding-top: $documentation-padding;
-  border: 1px solid $documentation-gray;
+  border: 1px solid $documentation-gray-2;
 
   footer,
   .doc-footer {
@@ -17,10 +17,14 @@
     width: 100%;
     margin-top: $documentation-padding;
     padding: $documentation-padding / 2;
-    border-top: 1px solid $documentation-gray;
-    background: rgba($documentation-white, 0.8);
+    border-top: 1px solid $documentation-gray-2;
+    background: rgba($documentation-gray, 0.8);
     font-size: 12px;
     font-family: sans-serif;
+
+    .tco-lights-out & {
+      background: rgba($color-classic-navy, 0.9);
+    }
 
     p {
       overflow: auto;
@@ -36,27 +40,33 @@
   }
 }
 
-.sbdocs.sbdocs-wrapper {
-  padding: 0;
+.documentation-typography {
+  .type-block--demo p {
+    .tco-lights-out & {
+      background-color: $color-dark-theme-black;
+    }
+  }
+}
 
+.sbdocs.sbdocs-wrapper {
   .sbdocs-content {
     max-width: 1800px;
   }
 
   .sbdocs-preview {
     margin-top: 0;
-    border-width: 0;
     box-shadow: none;
+    border-radius: 0;
+  }
+
+  .docblock-code-toggle {
+    border-radius: 0;
   }
 
   .docs-story {
     > div {
       margin: 0;
-    }
-
-    button {
-      opacity: 0;
-      visibility: hidden;
+      padding: 0;
     }
   }
 }

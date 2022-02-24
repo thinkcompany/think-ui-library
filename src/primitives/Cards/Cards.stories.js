@@ -2,7 +2,7 @@ const config = [
   {
     name: 'Card Container Flat',
     class: 'tco-card-container--flat',
-    sass: '@include card-base'
+    sass: '@include card-container-flat'
   },
   {
     name: 'Card Container Shadow',
@@ -26,7 +26,7 @@ const cardItem = input => `
             <div class="content"></div>
         </div>
     </div>
-    <div>
+    <div class="doc-footer">
         ${nameBlock(input)}
         ${classBlock(input)}
         ${sassBlock(input)}

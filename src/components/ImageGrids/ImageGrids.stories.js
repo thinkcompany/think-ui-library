@@ -14,11 +14,56 @@ const LogoTemplate = args => {
 
   const imageItem = i => {
     const images = [
-      '/img/logos/client-logo-nemours.svg',
-      '/img/logos/client-logo-unitedway.svg',
-      '/img/logos/client-logo-whyy.svg',
-      '/img/logos/client-logo-andesa.svg',
-      '/img/logos/client-logo-sanofi.svg'
+      {
+        logo: 'nemours',
+        width: 335,
+        height: 113
+      },
+      {
+        logo: 'unitedway',
+        width: 312,
+        height: 133
+      },
+      {
+        logo: 'whyy',
+        width: 335,
+        height: 112
+      },
+      {
+        logo: 'andesa',
+        width: 270,
+        height: 159
+      },
+      {
+        logo: 'sanofi',
+        width: 249,
+        height: 199
+      },
+      {
+        logo: 'aws',
+        width: 1080,
+        height: 405
+      },
+      {
+        logo: 'angularJS',
+        width: 2500,
+        height: 679
+      },
+      {
+        logo: 'react',
+        width: 1080,
+        height: 363
+      },
+      {
+        logo: 'salesforce',
+        width: 1080,
+        height: 754
+      },
+      {
+        logo: 'veeva',
+        width: 1080,
+        height: 251
+      }
     ];
 
     let image = images[i];
@@ -29,7 +74,11 @@ const LogoTemplate = args => {
 
     return `
       <div class="tco-image-grid-container">
-        <img class="tco-image-grid-media" alt="Client image" src="${image}" />
+        <div class="tco-image-grid-media" style="--logo-w:${image.width}; --logo-h:${image.height};">
+          <svg class="tco-image-grid-media tco-image-grid-media--svg" role="presentation">
+            <use xlink:href="/img/logos.svg#icon-logo-${image.logo}"></use>
+          </svg>
+        </div>
       </div>`;
   };
 
@@ -74,7 +123,7 @@ Logos.args = {
   heading: '',
   headingSize: sizes[0],
   textAlignment: alignments[0],
-  imageCount: 4
+  imageCount: 10
 };
 
 Logos.argTypes = {

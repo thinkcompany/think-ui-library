@@ -14,6 +14,10 @@ $color-hover: #08519a;
   border: $border-card;
   background-color: $color-foreground-on-tint;
 
+  .tco-lights-out & {
+    background-color: $color-dark-theme-black;
+  }
+
   @include wider-than($breakpoint-laptop) {
     flex-flow: row nowrap;
     align-items: center;
@@ -56,6 +60,10 @@ $color-hover: #08519a;
   &-disclaimer {
     @include type-body-xsmall($font-size: $font-size-14);
     color: $color-classic-gray-medium;
+
+    .tco-lights-out & {
+      color: $color-classic-gray-light;
+    }
 
     @include wider-than($breakpoint-laptop) {
       max-width: none;

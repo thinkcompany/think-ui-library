@@ -1,0 +1,93 @@
+/* stylelint-disable declaration-no-important */
+/* stylelint-disable selector-max-class */
+/* stylelint-disable selector-max-compound-selectors */
+/* stylelint-disable selector-max-combinators */
+/* stylelint-disable selector-max-specificity */
+
+$color-dark-theme-black: #23272a;
+$color-foreground-on-tint: #fff;
+$color-manager-dark: #181c1f;
+$color-manager-border-dark: rgba(153, 153, 153, 0.4);
+
+.sb-show-main.tco-lights-out {
+  .sbdocs.sbdocs-wrapper {
+    background: transparent;
+  }
+
+  .docblock-code-toggle {
+    border-color: $color-manager-dark;
+    background-color: $color-manager-dark;
+    color: $color-foreground-on-tint;
+  }
+
+  .sbdocs.sbdocs-preview {
+    border-color: $color-manager-dark;
+    background-color: $color-manager-dark;
+
+    .os-padding {
+      background: $color-manager-dark;
+    }
+
+    .os-host {
+      background-color: $color-dark-theme-black;
+    }
+  }
+
+  .sbdocs-title,
+  .sbdocs-h2,
+  .sbdocs-h3 {
+    color: $color-foreground-on-tint;
+  }
+
+  #docs-root [id*='anchor--components-'] .docs-story {
+    background-color: $color-manager-dark !important;
+  }
+
+  .docblock-argstable,
+  .docblock-argstable-body {
+    background-color: $color-manager-dark;
+  }
+
+  .docblock-argstable-head {
+    border-right: 2px solid $color-manager-dark;
+    border-left: 2px solid $color-manager-dark;
+
+    th {
+      color: $color-foreground-on-tint;
+    }
+  }
+
+  .docblock-argstable-body {
+    border-radius: 0;
+    box-shadow: none;
+
+    tr {
+      border: 2px solid $color-manager-dark;
+
+      td {
+        border-radius: 0;
+        background-color: $color-dark-theme-black;
+        color: $color-foreground-on-tint;
+      }
+
+      &:first-child {
+        td:first-child {
+          border-top-left-radius: 0;
+        }
+      }
+
+      &:last-child {
+        td:first-child {
+          border-bottom-left-radius: 0;
+        }
+      }
+    }
+  }
+
+  #anchor--storybook-welcome--page {
+    + .sbdocs-preview {
+      border-color: $color-dark-theme-black;
+      background-color: $color-dark-theme-black;
+    }
+  }
+}

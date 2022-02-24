@@ -1,4 +1,5 @@
 $byline-img-width: 44px;
+$byline-img-width--l: 66px;
 
 .tco-byline {
   display: grid;
@@ -8,6 +9,14 @@ $byline-img-width: 44px;
   margin-top: $spacing-stack-16;
   color: $color-classic-gray-dark;
 
+  &--l {
+    grid-template-columns: $byline-img-width--l 1fr;
+  }
+
+  .tco-lights-out & {
+    color: $color-foreground-on-tint;
+  }
+
   &--link {
     @include type-not-link;
   }
@@ -16,6 +25,10 @@ $byline-img-width: 44px;
     overflow: hidden;
     width: $byline-img-width;
     border-radius: $border-radius-round;
+  }
+
+  &-image-container--l {
+    width: $byline-img-width--l;
   }
 
   &-content-container {

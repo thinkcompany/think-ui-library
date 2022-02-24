@@ -39,12 +39,12 @@ const cardContents = [
 const serviceCard = input => {
   return `
     <div class="tco-card tco-card--service">
-      <a href="#" class="tco-card-link">
+      <a href="#" class="tco-card-link tco-link--dark-theme">
         <div class="tco-card-image-container tco-card-image-container--service tco-card-image-container--${input.id}">
           <img class="tco-card-image" alt="A brilliant description of the image" src="${input.image}" />
         </div>
         <div class="tco-card-content-container">
-          <h3 class="tco-card-content-heading">${input.heading}</h3>
+          <h3 class="tco-card-content-heading tco-link--dark-theme">${input.heading}</h3>
           <p class="tco-card-content-description">${input.description}</p>
         </div>
       </a>
@@ -60,13 +60,13 @@ const serviceCardCTA = () => {
 
   return `
     <div class="tco-card tco-card--service tco-card--service-cta">
-      <a href="#" class="tco-card-link">
+      <a href="#" class="tco-card-link tco-link--dark-theme">
         <div class="tco-card-content-container">
           <span class="tco-card-eyebrow">${eyebrow}</span>
-          <h3 class="tco-card-content-heading tco-card-content-heading--cta">${heading}</h3>
+          <h3 class="tco-card-content-heading tco-card-content-heading--cta tco-link--dark-theme">${heading}</h3>
           <p class="tco-card-content-description tco-card-content-cta">
             ${ctaText}
-            <svg class="tco-text-link-icon" width="20" height="20" viewBox="0 0 20 20" role="presentation">
+            <svg class="tco-text-link-icon tco-text-link-icon--alt" width="20" height="20" viewBox="0 0 20 20" role="presentation">
               <use xlink:href="/img/icons.svg#icon-arrow-right"></use>
             </svg>
           </p>

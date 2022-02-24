@@ -303,7 +303,7 @@
 }
 
 @mixin type-link(
-  $font-color: $color-tint-blue-primary,
+  $font-color: $color-classic-blue,
   $font-size: inherit,
   $font-weight: inherit,
   $font-family: inherit,
@@ -324,6 +324,13 @@
   border-bottom-color: transparent;
   transition: border-color 0.2s linear, color 0.2s linear;
 
+  &:not(.tco-btn):not(.tco-link--dark-theme) {
+    .tco-lights-out & {
+      color: $color-dark-theme-blue;
+      border-bottom-color: $color-dark-theme-blue;
+    }
+  }
+
   @if $show-initial {
     border-bottom-color: $underline;
   }
@@ -339,6 +346,12 @@
 
     @if $show-initial {
       border-bottom-color: transparent;
+    }
+
+    &:not(.tco-btn):not(.tco-link--dark-theme) {
+      .tco-lights-out & {
+        border-bottom-color: transparent;
+      }
     }
   }
 }
@@ -367,6 +380,12 @@ $arrow-translate: 10px;
     transition: transform 0.2s linear;
     transform: translate($arrow-offset, 0px);
     transform-origin: left center;
+
+    &:not(.tco-text-link-icon--alt) {
+      .tco-lights-out & {
+        fill: $color-dark-theme-blue;
+      }
+    }
   }
 
   &:hover,
