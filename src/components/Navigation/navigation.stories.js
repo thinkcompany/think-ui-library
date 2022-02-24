@@ -4,7 +4,16 @@ export const Header = args => {
   const { searchStyle } = args;
 
   return `
-  <div style="background-color: #fff; height: 1000px;" class="${searchStyle}">
+  <style>
+    .sb-page-background {
+      height: 1000px;
+      background-color: #fff;
+    }
+    .tco-lights-out .sb-page-background {
+      background-color: #23272a;
+    }
+  </style>
+  <div class="sb-page-background" class="${searchStyle}">
     <header class="tco-site-header" role="banner">
   <div class="tco-container tco-site-header-container">
     <a class="tco-site-header-logo" href="/">
@@ -15,22 +24,22 @@ export const Header = args => {
     <nav class="tco-site-nav">
       <ul class="tco-site-nav-menu tco-site-nav-menu--primary">
         <li class="tco-site-nav-menu-item">
-          <a class="tco-site-nav-link" href="/our-work/">Our Work</a>
+          <a class="tco-site-nav-link tco-link--dark-theme" href="/our-work/">Our Work</a>
         </li>
         <li class="tco-site-nav-menu-item current-menu-item">
-          <a class="tco-site-nav-link" href="/services/">Services</a>
+          <a class="tco-site-nav-link tco-link--dark-theme" href="/services/">Services</a>
         </li>
         <li class="tco-site-nav-menu-item">
-          <a class="tco-site-nav-link" href="/about/">About</a>
+          <a class="tco-site-nav-link tco-link--dark-theme" href="/about/">About</a>
         </li>
         <li class="tco-site-nav-menu-item">
-          <a class="tco-site-nav-link" href="/blog/">Blog</a>
+          <a class="tco-site-nav-link tco-link--dark-theme" href="/blog/">Blog</a>
         </li>
         <li class="tco-site-nav-menu-item">
-          <a class="tco-site-nav-link" href="/careers/">Careers</a>
+          <a class="tco-site-nav-link tco-link--dark-theme" href="/careers/">Careers</a>
         </li>
         <li id="menu-item-5719" class="tco-site-nav-menu-item">
-          <a class="tco-site-nav-link" href="/contact/">Contact</a>
+          <a class="tco-site-nav-link tco-link--dark-theme" href="/contact/">Contact</a>
         </li>
       </ul>
       <button id="search-open" class="tco-site-header-toggle tco-site-header-toggle--search tco-site-header-toggle--search-${searchStyle}">
@@ -52,19 +61,19 @@ export const Header = args => {
             <p class="tco-type-eyebrow">More</p>
             <ul class="tco-site-nav-menu tco-site-nav-menu--secondary">
               <li class="tco-site-nav-menu-item">
-                <a class="tco-site-nav-link" href="/events/">Events</a>
+                <a class="tco-site-nav-link tco-link--dark-theme" href="/events/">Events</a>
               </li>
               <li class="tco-site-nav-menu-item">
-                <a class="tco-site-nav-link" href="/news/">News</a>
+                <a class="tco-site-nav-link tco-link--dark-theme" href="/news/">News</a>
               </li>
             </ul>
             <p class="tco-type-eyebrow">Social</p>
             <ul class="tco-site-nav-menu tco-site-nav-menu--secondary">
-              <li class="tco-site-nav-menu-item"><a class="tco-site-nav-link" href="#">Linkedin</a>
-              <li class="tco-site-nav-menu-item"><a class="tco-site-nav-link" href="#">Twitter</a>
-              <li class="tco-site-nav-menu-item"><a class="tco-site-nav-link" href="#">Instagram</a>
-              <li class="tco-site-nav-menu-item"><a class="tco-site-nav-link" href="#">YouTube</a>
-              <li class="tco-site-nav-menu-item"><a class="tco-site-nav-link" href="#">Facebook</a>
+              <li class="tco-site-nav-menu-item"><a class="tco-site-nav-link tco-link--dark-theme tco-link--dark-theme" href="#">Linkedin</a>
+              <li class="tco-site-nav-menu-item"><a class="tco-site-nav-link tco-link--dark-theme" href="#">Twitter</a>
+              <li class="tco-site-nav-menu-item"><a class="tco-site-nav-link tco-link--dark-theme" href="#">Instagram</a>
+              <li class="tco-site-nav-menu-item"><a class="tco-site-nav-link tco-link--dark-theme" href="#">YouTube</a>
+              <li class="tco-site-nav-menu-item"><a class="tco-site-nav-link tco-link--dark-theme" href="#">Facebook</a>
               </li>
             </ul>
           </div>

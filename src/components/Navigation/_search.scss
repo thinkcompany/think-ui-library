@@ -55,6 +55,10 @@ $search-h: 18px;
         width: $search-w + 4px;
         height: $search-h + 4px;
       }
+
+      .tco-lights-out & {
+        background-image: url("data:image/svg+xml,%3Csvg width='27' height='27' viewBox='0 0 27 27' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M18.6 10.8a7.8 7.8 0 1 1-15.6 0 7.8 7.8 0 0 1 15.6 0Zm-1.408 8.706c-1.79 1.316-4 2.094-6.392 2.094C4.835 21.6 0 16.765 0 10.8 0 4.835 4.835 0 10.8 0c5.965 0 10.8 4.835 10.8 10.8 0 2.49-.843 4.785-2.26 6.612l7.467 7.467L24.686 27l-7.494-7.494Z' fill='%23ffffff'/%3E%3C/svg%3E");
+      }
     }
   }
 
@@ -154,6 +158,10 @@ $search-h: 18px;
     padding: $spacing-stack-2 $spacing-inline-24 $spacing-stack-4;
     border-bottom: 3px solid $color-classic-navy;
 
+    .tco-lights-out & {
+      border-bottom-color: $color-foreground-on-tint;
+    }
+
     .tco-global-search--el & {
       border-top: 3px solid $color-classic-blue;
       border-bottom-width: 0;
@@ -205,10 +213,15 @@ $search-h: 18px;
   svg {
     width: $search-w;
     height: $search-h;
+    fill: $color-classic-blue;
 
     @include wider-than($breakpoint-desktop) {
-      width: 22px;
+      width: $search-w + 4px;
       height: $search-h + 4px;
+    }
+
+    .tco-lights-out & {
+      fill: $color-foreground-on-tint;
     }
   }
 
@@ -238,6 +251,10 @@ $search-h: 18px;
     width: $search-w;
     height: $search-h;
     fill: $color-classic-blue;
+
+    .tco-lights-out & {
+      fill: $color-foreground-on-tint;
+    }
   }
 
   @include wider-than($breakpoint-phone-landscape) {
