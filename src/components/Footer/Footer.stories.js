@@ -29,16 +29,17 @@ export const Footer = () => {
         <div class="tco-site-footer-content">
           <p class="tco-site-footer-heading">Explore More</p>
           <ul class="tco-site-footer-menu tco-menu">
-            <li class="tco-menu-item"><a href="#" class="tco-menu-item-link tco-link--dark-theme">Work</a></li>
-            <li class="tco-menu-item"><a href="#" class="tco-menu-item-link tco-link--dark-theme">Blog</a></li>
-            <li class="tco-menu-item"><a href="#" class="tco-menu-item-link tco-link--dark-theme">Services</a></li>
-            <li class="tco-menu-item"><a href="#" class="tco-menu-item-link tco-link--dark-theme">Events</a></li>
-            <li class="tco-menu-item"><a href="#" class="tco-menu-item-link tco-link--dark-theme">Process</a></li>
-            <li class="tco-menu-item"><a href="#" class="tco-menu-item-link tco-link--dark-theme">Careers</a></li>
-            <li class="tco-menu-item"><a href="#" class="tco-menu-item-link tco-link--dark-theme">About</a></li>
-            <li class="tco-menu-item"><a href="#" class="tco-menu-item-link tco-link--dark-theme">Latest News</a></li>
-            <li class="tco-menu-item"><a href="#" class="tco-menu-item-link tco-link--dark-theme">Team</a></li>
-            <li class="tco-menu-item"><a href="#" class="tco-menu-item-link tco-link--dark-theme">Contact</a></li>
+            <li class="tco-menu-item"><a href="#" class="tco-menu-item-link">Our Work</a></li>
+            <li class="tco-menu-item"><a href="#" class="tco-menu-item-link">About</a></li>
+            <li class="tco-menu-item"><a href="#" class="tco-menu-item-link">Services</a></li>
+            <li class="tco-menu-item"><a href="#" class="tco-menu-item-link">Team</a></li>
+            <li class="tco-menu-item"><a href="#" class="tco-menu-item-link">Process</a></li>
+            <li class="tco-menu-item"><a href="#" class="tco-menu-item-link">Events</a></li>
+            <li class="tco-menu-item"><a href="#" class="tco-menu-item-link">Guides</a></li>
+            <li class="tco-menu-item"><a href="#" class="tco-menu-item-link">News</a></li>
+            <li class="tco-menu-item"><a href="#" class="tco-menu-item-link">Blog</a></li>
+            <li class="tco-menu-item"><a href="#" class="tco-menu-item-link">Careers</a></li>
+            <li class="tco-menu-item"><a href="#" class="tco-menu-item-link">Contact</a></li>
         </div>
         <div class="tco-site-footer-content">
           <p class="tco-site-footer-heading">Upcoming Event</p>
@@ -54,9 +55,11 @@ export const Footer = () => {
         </div>
         <div class="tco-site-footer-content tco-site-footer-content--full">
           <div class="tco-site-footer-content-group tco-site-footer-content-group--icons">
-            <svg class="tco-site-footer-logo" width="151" height="50" role="img" aria-label="Think Company logo">
-              <use xlink:href="/img/icons.svg#icon-think-logo"></use>
-            </svg>
+            <a href="/" class="tco-footer-link--think tco-site-footer-logo">
+              <svg class="" width="151" height="50" role="img" aria-label="Think Company logo">
+                <use xlink:href="/img/icons.svg#icon-think-logo"></use>
+              </svg>
+            </a>
             ${icons()}
             <div class="tco-clutch-widget">
               <div class="tco-clutch-widget-container">

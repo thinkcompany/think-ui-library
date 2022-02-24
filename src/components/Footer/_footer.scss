@@ -120,7 +120,7 @@ $widget-width: 132px;
     color: $color-foreground-on-tint;
   }
 
-  &-logo {
+  &-logo svg {
     width: $logo-width;
     height: $logo-height;
   }
@@ -211,4 +211,9 @@ $widget-width: 132px;
       transform: scale(0.5);
     }
   }
+}
+
+.tco-site-footer-content-group .tco-footer-link--think {
+  display: inherit;
+  border-bottom-width: 0;
 }
