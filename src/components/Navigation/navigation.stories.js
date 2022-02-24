@@ -1,5 +1,3 @@
-import navMarkup from './navigation.html';
-
 const styles = ['underline', 'el', 'el-blue', 'el-glass'];
 
 export const Header = args => {
