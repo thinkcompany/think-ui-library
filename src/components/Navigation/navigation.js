@@ -60,7 +60,7 @@ export default class Nav {
       this.$siteNav.classList.add('tco-site-nav--open');
       this.$logo.classList.add('tco-site-header-logo--open');
 
-      container.prepend(menu);
+      //container.prepend(menu);
       this.trapFocus(this.$container);
     });
 
@@ -71,7 +71,7 @@ export default class Nav {
       this.$siteNav.classList.remove('tco-site-nav--open');
       this.$logo.classList.remove('tco-site-header-logo--open');
 
-      siteNav.prepend(menu);
+      //siteNav.prepend(menu);
     });
   }
 
@@ -88,7 +88,7 @@ export default class Nav {
 
       if (this.$mobileMenuBtn) {
         this.setupEventHandler();
-        this.menuLocation();
+        //this.menuLocation();
       }
     });
   }

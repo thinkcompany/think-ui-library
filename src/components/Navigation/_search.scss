@@ -4,24 +4,31 @@ $search-h: 18px;
 
 .tco-global-search {
   position: absolute;
-  top: 100%;
+  top: -34px;
   right: 0;
   left: 0;
   display: flex;
-  justify-content: flex-end;
   width: 100%;
   max-width: $container-max;
   margin: 0 auto;
-  opacity: 0;
-  visibility: hidden;
   transition: opacity 0.15s ease-out, visibility 0.15s ease-out;
-
-  @include wider-than($max-width) {
-    padding: 0 $spacing-inline-24;
-  }
 
   @include wider-than($container-max) {
     padding: 0;
+  }
+
+  @include wider-than($breakpoint-phone-landscape) {
+    top: -12px;
+  }
+
+  @include wider-than($breakpoint-tablet-portrait) {
+    top: -42px;
+  }
+
+  @include wider-than($breakpoint-desktop) {
+    justify-content: flex-end;
+    opacity: 0;
+    visibility: hidden;
   }
 
   &.tco-global-search--open {
@@ -39,7 +46,7 @@ $search-h: 18px;
       content: '';
       position: absolute;
       top: 8px;
-      right: 28px;
+      right: 0;
       display: block;
       width: $search-w;
       height: $search-h;
@@ -52,6 +59,7 @@ $search-h: 18px;
       }
 
       @include wider-than($breakpoint-desktop) {
+        right: 28px;
         width: $search-w + 4px;
         height: $search-h + 4px;
       }
@@ -155,7 +163,7 @@ $search-h: 18px;
   }
 
   .tco-form-input {
-    padding: $spacing-stack-2 $spacing-inline-24 $spacing-stack-4;
+    padding: $spacing-stack-2 $spacing-inline-24 $spacing-stack-4 0;
     border-bottom: 3px solid $color-classic-navy;
 
     .tco-lights-out & {
@@ -181,15 +189,17 @@ $search-h: 18px;
     }
 
     @include wider-than($breakpoint-desktop) {
+      padding-left: $spacing-inline-24;
       font-size: $font-size-24;
     }
   }
 }
 
 .tco-site-header-toggle--search {
-  top: -2px;
-  right: 48px;
+  top: -4px;
+  right: 0;
   z-index: 2;
+  display: none;
   opacity: 1;
   visibility: visible;
   transition: opacity 0.2s ease-out,
@@ -201,12 +211,7 @@ $search-h: 18px;
     visibility: hidden;
   }
 
-  @include wider-than($breakpoint-laptop) {
-    top: 6px;
-  }
-
   @include wider-than($breakpoint-desktop) {
-    right: -3px;
     display: block;
   }
 

@@ -22,41 +22,37 @@ export const Header = args => {
     </a>
 
     <nav class="tco-site-nav">
-      <ul class="tco-site-nav-menu tco-site-nav-menu--primary">
-        <li class="tco-site-nav-menu-item">
-          <a class="tco-site-nav-link tco-link--dark-theme" href="/our-work/">Our Work</a>
-        </li>
-        <li class="tco-site-nav-menu-item current-menu-item">
-          <a class="tco-site-nav-link tco-link--dark-theme" href="/services/">Services</a>
-        </li>
-        <li class="tco-site-nav-menu-item">
-          <a class="tco-site-nav-link tco-link--dark-theme" href="/about/">About</a>
-        </li>
-        <li class="tco-site-nav-menu-item">
-          <a class="tco-site-nav-link tco-link--dark-theme" href="/blog/">Blog</a>
-        </li>
-        <li class="tco-site-nav-menu-item">
-          <a class="tco-site-nav-link tco-link--dark-theme" href="/careers/">Careers</a>
-        </li>
-        <li id="menu-item-5719" class="tco-site-nav-menu-item">
-          <a class="tco-site-nav-link tco-link--dark-theme" href="/contact/">Contact</a>
-        </li>
-      </ul>
-      <button id="search-open" class="tco-site-header-toggle tco-site-header-toggle--search tco-site-header-toggle--search-${searchStyle}">
-        <svg class="tco-site-header-toggle-icon--search" width="22" height="22" viewbox="0 0 22 22">
-          <title data-mobile-menu-title="">Open Search Field</title>
-          <use xlink:href="/img/icons.svg#icon-search-magnifying"></use>
-        </svg>
-      </button>
-
       <button id="menu-toggle" class="tco-site-header-toggle tco-site-header-toggle--open">
         <svg class="tco-site-header-toggle-icon" width="22" height="14" viewBox="0 0 22 14">
           <title data-mobile-menu-title="">Open Mobile Navigation</title>
           <use xlink:href="/img/icons.svg#icon-hamburger"></use>
         </svg>
       </button>
+
       <div class="tco-site-nav-wrapper">
         <div class="tco-site-nav-container">
+
+          <ul class="tco-site-nav-menu tco-site-nav-menu--primary">
+            <li class="tco-site-nav-menu-item">
+              <a class="tco-site-nav-link tco-link--dark-theme" href="/our-work/">Our Work</a>
+            </li>
+            <li class="tco-site-nav-menu-item current-menu-item">
+              <a class="tco-site-nav-link tco-link--dark-theme" href="/services/">Services</a>
+            </li>
+            <li class="tco-site-nav-menu-item">
+              <a class="tco-site-nav-link tco-link--dark-theme" href="/about/">About</a>
+            </li>
+            <li class="tco-site-nav-menu-item">
+              <a class="tco-site-nav-link tco-link--dark-theme" href="/blog/">Blog</a>
+            </li>
+            <li class="tco-site-nav-menu-item">
+              <a class="tco-site-nav-link tco-link--dark-theme" href="/careers/">Careers</a>
+            </li>
+            <li id="menu-item-5719" class="tco-site-nav-menu-item">
+              <a class="tco-site-nav-link tco-link--dark-theme" href="/contact/">Contact</a>
+            </li>
+          </ul>
+
           <div class="tco-site-nav-menu-group">
             <p class="tco-type-eyebrow">More</p>
             <ul class="tco-site-nav-menu tco-site-nav-menu--secondary">
@@ -77,34 +73,42 @@ export const Header = args => {
               </li>
             </ul>
           </div>
+
+          <button id="search-open" class="tco-site-header-toggle tco-site-header-toggle--search tco-site-header-toggle--search-${searchStyle}">
+            <svg class="tco-site-header-toggle-icon--search" width="22" height="22" viewbox="0 0 22 22">
+              <title data-mobile-menu-title="">Open Search Field</title>
+              <use xlink:href="/img/icons.svg#icon-search-magnifying"></use>
+            </svg>
+          </button>
+
+          <div class="tco-global-search tco-global-search--">
+            <form role="search" method="get" id="searchform" class="tco-search-form tco-search-form--global" action="">
+              <div class="tco-form-row tco-form-row--search-row">
+                <label class="tco-accessibly-hidden" for="s">Search for:</label>
+                <input class="tco-form-input" type="search" value="" placeholder="Search" name="s" id="s" placeholder="Search"/>
+                <input type="submit" id="searchsubmit" value="Search" hidden/>
+                <input type="hidden" name="search-type" value="global"/>
+              </div>
+            </form>
+            <button id="search-close" class="tco-site-header-toggle tco-search-close tco-search-close--closed">
+              <svg class="tco-global-search--close" width="22" height="22">
+                <title data-mobile-menu-title="">Close Search</title>
+                <use xlink:href="/img/icons.svg#icon-close"></use>
+              </svg>
+            </button>
+          </div>
+
           <button id="menu-toggle-close" class="tco-site-header-toggle tco-site-header-toggle--close tco-site-header-toggle--hide">
             <svg class="tco-site-header-toggle-icon tco-site-header-toggle-icon--close" width="22" height="22">
               <title data-mobile-menu-title="">Close Mobile Navigation</title>
               <use xlink:href="/img/icons.svg#icon-close"></use>
             </svg>
           </button>
+
         </div>
       </div>
     </nav>
   </div>
-
-  <div class="tco-global-search tco-global-search--${searchStyle}">
-    <form role="search" method="get" id="searchform" class="tco-search-form tco-search-form--global" action="">
-      <div class="tco-form-row tco-form-row--search-row">
-        <label class="tco-accessibly-hidden" for="s">Search for:</label>
-        <input class="tco-form-input" type="search" value="" placeholder="Search" name="s" id="s" placeholder="Search"/>
-        <input type="submit" id="searchsubmit" value="Search" hidden/>
-        <input type="hidden" name="search-type" value="global"/>
-      </div>
-    </form>
-    <button id="search-close" class="tco-site-header-toggle tco-search-close tco-search-close--closed">
-			<svg class="tco-global-search--close" width="22" height="22">
-				<title data-mobile-menu-title="">Close Search</title>
-				<use xlink:href="/img/icons.svg#icon-close"></use>
-			</svg>
-		</button>
-  </div>
-
 </header>
 <div class="tco-container-wrapper">
   <div class="tco-container" style="margin-top:5em;">
