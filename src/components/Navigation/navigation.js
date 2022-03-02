@@ -13,14 +13,14 @@ export default class Nav {
   }
 
   menuState() {
-    const vw = window.innerWidth;
+    let vw = window.innerWidth;
 
     if (vw >= 1280) {
       this.$searchOpen.after(this.$search);
     }
 
     window.addEventListener('resize', () => {
-      const vw = window.innerWidth;
+      vw = window.innerWidth;
 
       if (vw >= 1280) {
         this.$body.classList.remove('tco-body--freeze');
