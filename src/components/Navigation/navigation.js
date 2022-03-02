@@ -8,17 +8,31 @@ export default class Nav {
     this.$wrapper;
     this.$container;
     this.$menu;
+    this.$search;
+    this.$searchOpen;
   }
 
-  menuLocation() {
-    const vw = this.$body.clientWidth;
-    const container = this.$container;
+  menuState() {
+    const vw = window.innerWidth;
 
-    const menu = this.$menu;
-
-    if (vw < 1280) {
-      container.prepend(menu);
+    if (vw >= 1280) {
+      this.$searchOpen.after(this.$search);
     }
+
+    window.addEventListener('resize', () => {
+      const vw = window.innerWidth;
+
+      if (vw >= 1280) {
+        this.$body.classList.remove('tco-body--freeze');
+        this.$mobileMenuBtnClose.classList.add('tco-site-header-toggle--hide');
+        this.$mobileMenuBtn.classList.remove('tco-site-header-toggle--hide');
+        this.$siteNav.classList.remove('tco-site-nav--open');
+        this.$logo.classList.remove('tco-site-header-logo--open');
+        this.$searchOpen.after(this.$search);
+      } else {
+        this.$container.prepend(this.$search);
+      }
+    });
   }
 
   trapFocus(element) {
@@ -49,10 +63,6 @@ export default class Nav {
   }
 
   setupEventHandler() {
-    const container = this.$container;
-    const siteNav = this.$siteNav;
-    const menu = this.$menu;
-
     this.$mobileMenuBtn.addEventListener('click', () => {
       this.$body.classList.add('tco-body--freeze');
       this.$mobileMenuBtnClose.classList.remove('tco-site-header-toggle--hide');
@@ -60,7 +70,6 @@ export default class Nav {
       this.$siteNav.classList.add('tco-site-nav--open');
       this.$logo.classList.add('tco-site-header-logo--open');
 
-      //container.prepend(menu);
       this.trapFocus(this.$container);
     });
 
@@ -70,8 +79,6 @@ export default class Nav {
       this.$mobileMenuBtn.classList.remove('tco-site-header-toggle--hide');
       this.$siteNav.classList.remove('tco-site-nav--open');
       this.$logo.classList.remove('tco-site-header-logo--open');
-
-      //siteNav.prepend(menu);
     });
   }
 
@@ -85,10 +92,14 @@ export default class Nav {
       this.$wrapper = document.querySelector('.tco-site-nav-wrapper');
       this.$container = document.querySelector('.tco-site-nav-container');
       this.$menu = document.querySelector('.tco-site-nav-menu--primary');
+      this.$search = document.querySelector('.tco-global-search');
+      this.$searchOpen = document.querySelector(
+        '.tco-site-header-toggle--search'
+      );
 
       if (this.$mobileMenuBtn) {
         this.setupEventHandler();
-        //this.menuLocation();
+        this.menuState();
       }
     });
   }

@@ -126,6 +126,10 @@ $container-max: 1168px;
         right: 0;
       }
 
+      @include wider-than($breakpoint-laptop) {
+        top: -128px;
+      }
+
       &:focus {
         outline: 2px solid $color-foreground-on-tint;
       }
@@ -224,7 +228,7 @@ $container-max: 1168px;
 
     @include wider-than($breakpoint-tablet-portrait) {
       flex-wrap: wrap;
-      width: 66.6%;
+      width: 75%;
       padding-top: $spacing-stack-50;
 
       .tco-site-nav-menu-item {
@@ -320,7 +324,7 @@ $container-max: 1168px;
 
       @include wider-than($breakpoint-laptop) {
         &:not(.tco-site-nav-menu--primary-clone) {
-          width: 66.6%;
+          width: 75%;
         }
 
         .tco-site-nav-menu-item {
@@ -357,7 +361,7 @@ $container-max: 1168px;
     opacity: 0;
 
     @include wider-than($breakpoint-tablet-portrait) {
-      padding-top: $spacing-stack-50;
+      padding-top: $spacing-stack-50 + $spacing-stack-16;
     }
 
     @include wider-than($breakpoint-desktop) {

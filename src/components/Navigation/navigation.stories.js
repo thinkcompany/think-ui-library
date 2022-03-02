@@ -1,5 +1,3 @@
-const styles = ['underline', 'el', 'el-blue', 'el-glass'];
-
 export const Header = args => {
   const { searchStyle } = args;
 
@@ -13,7 +11,7 @@ export const Header = args => {
       background-color: #23272a;
     }
   </style>
-  <div class="sb-page-background" class="${searchStyle}">
+  <div class="sb-page-background">
     <header class="tco-site-header" role="banner">
   <div class="tco-container tco-site-header-container">
     <a class="tco-site-header-logo" href="/">
@@ -31,6 +29,23 @@ export const Header = args => {
 
       <div class="tco-site-nav-wrapper">
         <div class="tco-site-nav-container">
+
+          <div class="tco-global-search">
+            <form role="search" method="get" id="searchform" class="tco-search-form tco-search-form--global" action="">
+              <div class="tco-form-row tco-form-row--search-row">
+                <label class="tco-accessibly-hidden" for="s">Search for:</label>
+                <input class="tco-form-input" type="search" value="" placeholder="Search" name="s" id="s" placeholder="Search"/>
+                <input type="submit" id="searchsubmit" value="Search" hidden/>
+                <input type="hidden" name="search-type" value="global"/>
+              </div>
+            </form>
+            <button id="search-close" class="tco-site-header-toggle tco-search-close tco-search-close--closed">
+              <svg class="tco-global-search--close" width="22" height="22">
+                <title data-mobile-menu-title="">Close Search</title>
+                <use xlink:href="/img/icons.svg#icon-close"></use>
+              </svg>
+            </button>
+          </div>
 
           <ul class="tco-site-nav-menu tco-site-nav-menu--primary">
             <li class="tco-site-nav-menu-item">
@@ -74,29 +89,12 @@ export const Header = args => {
             </ul>
           </div>
 
-          <button id="search-open" class="tco-site-header-toggle tco-site-header-toggle--search tco-site-header-toggle--search-${searchStyle}">
+          <button id="search-open" class="tco-site-header-toggle tco-site-header-toggle--search">
             <svg class="tco-site-header-toggle-icon--search" width="22" height="22" viewbox="0 0 22 22">
               <title data-mobile-menu-title="">Open Search Field</title>
               <use xlink:href="/img/icons.svg#icon-search-magnifying"></use>
             </svg>
           </button>
-
-          <div class="tco-global-search tco-global-search--">
-            <form role="search" method="get" id="searchform" class="tco-search-form tco-search-form--global" action="">
-              <div class="tco-form-row tco-form-row--search-row">
-                <label class="tco-accessibly-hidden" for="s">Search for:</label>
-                <input class="tco-form-input" type="search" value="" placeholder="Search" name="s" id="s" placeholder="Search"/>
-                <input type="submit" id="searchsubmit" value="Search" hidden/>
-                <input type="hidden" name="search-type" value="global"/>
-              </div>
-            </form>
-            <button id="search-close" class="tco-site-header-toggle tco-search-close tco-search-close--closed">
-              <svg class="tco-global-search--close" width="22" height="22">
-                <title data-mobile-menu-title="">Close Search</title>
-                <use xlink:href="/img/icons.svg#icon-close"></use>
-              </svg>
-            </button>
-          </div>
 
           <button id="menu-toggle-close" class="tco-site-header-toggle tco-site-header-toggle--close tco-site-header-toggle--hide">
             <svg class="tco-site-header-toggle-icon tco-site-header-toggle-icon--close" width="22" height="22">
@@ -119,18 +117,6 @@ export const Header = args => {
 </div>
   </div>
   `;
-};
-
-Header.args = {
-  searchStyle: styles[0]
-};
-
-Header.argTypes = {
-  searchStyle: {
-    name: 'search style',
-    control: 'inline-radio',
-    options: styles
-  }
 };
 
 export default {

@@ -56,7 +56,7 @@
     ],
     "comment-no-empty": true,
     "comment-whitespace-inside": "always",
-    "comment-word-blacklist": ["/^TODO:/"],
+    "comment-word-disallowed-list": ["/^TODO:/"],
     "custom-media-pattern": null,
     "custom-property-empty-line-before": null,
     "custom-property-pattern": null,
@@ -86,7 +86,7 @@
         "severity": "error"
       }
     ],
-    "declaration-property-unit-blacklist": [
+    "declaration-property-unit-disallowed-list": [
       {
         "line-height": ["em", "px", "rem"]
       },
@@ -94,12 +94,12 @@
         "severity": "error"
       }
     ],
-    "declaration-property-unit-whitelist": {
+    "declaration-property-unit-allowed-list": {
       "border": ["px"],
       "outline-offset": ["px"]
     },
-    "declaration-property-value-blacklist": {},
-    "declaration-property-value-whitelist": {},
+    "declaration-property-value-disallowed-list": {},
+    "declaration-property-value-allowed-list": {},
     "font-family-name-quotes": "always-unless-keyword",
     "font-family-no-duplicate-names": true,
     "font-family-no-missing-generic-family-keyword": true,
@@ -163,7 +163,7 @@
       }
     ],
     "number-no-trailing-zeros": true,
-    "property-blacklist": [
+    "property-disallowed-list": [
       ["font-family"],
       {
         "severity": "error"
@@ -235,7 +235,7 @@
     "unit-blacklist": null,
     "unit-case": "lower",
     "unit-no-unknown": true,
-    "unit-whitelist": [
+    "unit-allowed-list": [
       "%",
       "deg",
       "em",
