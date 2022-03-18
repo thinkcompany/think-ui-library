@@ -15,7 +15,7 @@ const summaryCard = () => {
 
 const personCard = () => {
   return `
-  <div class="tco-card tco-card--person" style="background-image: url(https://3vwizk2qtr8l3diwrm3r2ba0-wpengine.netdna-ssl.com/wp-content/uploads/2020/03/AbbyDePrimo_Web.jpg)">
+  <div class="tco-card tco-card--person" style="background-image: url(https://www.thinkcompany.com/wp-content/uploads/2020/03/AbbyDePrimo_Web.jpg)">
     <a href="#" class="tco-card-link">
       <div class="tco-card-content-container">
         <h2 class="tco-card-content-heading tco-link--dark-theme">Abby DePrimo</h2>

@@ -72,7 +72,7 @@ export default {
     name: 'Abby DePrimo',
     title: 'Vice President, Design Operations',
     image:
-      'https://3vwizk2qtr8l3diwrm3r2ba0-wpengine.netdna-ssl.com/wp-content/uploads/2020/03/AbbyDePrimo_Web.jpg'
+      'https://www.thinkcompany.com/wp-content/uploads/2020/03/AbbyDePrimo_Web.jpg'
   },
   argTypes: {
     showSocial: {
