@@ -15,11 +15,9 @@ $widget-width: 132px;
   }
 
   &-menu {
-    display: grid;
-    grid-template-rows: auto;
-    grid-template-columns: 50% 50%;
-    grid-row-gap: $spacing-stack-4;
+    display: block;
     max-width: $menu-max-width;
+    columns: 2 120px;
   }
 
   &-content:first-of-type {
@@ -54,7 +52,7 @@ $widget-width: 132px;
     }
 
     .tco-site-footer-logo {
-      order: 1;
+      order: 3;
 
       @include wider-than($breakpoint-tablet-portrait) {
         order: 0;
@@ -83,6 +81,14 @@ $widget-width: 132px;
 
         &-list {
           margin-bottom: 0;
+        }
+      }
+
+      &-list {
+        order: 0;
+
+        @include wider-than($breakpoint-tablet-portrait) {
+          order: 2;
         }
       }
     }
@@ -155,6 +161,7 @@ $widget-width: 132px;
 }
 
 .tco-clutch-widget {
+  order: 1;
   width: 100%;
   margin: 0 auto $spacing-stack-40;
   padding-bottom: $spacing-stack-40 - 4px;

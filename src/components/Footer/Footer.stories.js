@@ -30,16 +30,17 @@ export const Footer = () => {
           <p class="tco-site-footer-heading">Explore More</p>
           <ul class="tco-site-footer-menu tco-menu">
             <li class="tco-menu-item"><a href="#" class="tco-menu-item-link tco-link--dark-theme">Our Work</a></li>
-            <li class="tco-menu-item"><a href="#" class="tco-menu-item-link tco-link--dark-theme">About</a></li>
             <li class="tco-menu-item"><a href="#" class="tco-menu-item-link tco-link--dark-theme">Services</a></li>
-            <li class="tco-menu-item"><a href="#" class="tco-menu-item-link tco-link--dark-theme">Team</a></li>
             <li class="tco-menu-item"><a href="#" class="tco-menu-item-link tco-link--dark-theme">Process</a></li>
-            <li class="tco-menu-item"><a href="#" class="tco-menu-item-link tco-link--dark-theme">Events</a></li>
             <li class="tco-menu-item"><a href="#" class="tco-menu-item-link tco-link--dark-theme">Guides</a></li>
-            <li class="tco-menu-item"><a href="#" class="tco-menu-item-link tco-link--dark-theme">News</a></li>
             <li class="tco-menu-item"><a href="#" class="tco-menu-item-link tco-link--dark-theme">Blog</a></li>
-            <li class="tco-menu-item"><a href="#" class="tco-menu-item-link tco-link--dark-theme">Careers</a></li>
             <li class="tco-menu-item"><a href="#" class="tco-menu-item-link tco-link--dark-theme">Contact</a></li>
+            <li class="tco-menu-item"><a href="#" class="tco-menu-item-link tco-link--dark-theme">About</a></li>
+            <li class="tco-menu-item"><a href="#" class="tco-menu-item-link tco-link--dark-theme">Team</a></li>
+            <li class="tco-menu-item"><a href="#" class="tco-menu-item-link tco-link--dark-theme">Events</a></li>
+            <li class="tco-menu-item"><a href="#" class="tco-menu-item-link tco-link--dark-theme">News</a></li>
+            <li class="tco-menu-item"><a href="#" class="tco-menu-item-link tco-link--dark-theme">Careers</a></li>
+
         </div>
         <div class="tco-site-footer-content">
           <p class="tco-site-footer-heading">Upcoming Event</p>
@@ -60,13 +61,14 @@ export const Footer = () => {
                 <use xlink:href="/img/icons.svg#icon-think-logo"></use>
               </svg>
             </a>
-            ${icons()}
             <div class="tco-clutch-widget">
               <div class="tco-clutch-widget-container">
                 <script type="text/javascript" src="https://widget.clutch.co/static/js/widget.js" async></script>
                 <div class="clutch-widget" data-url="https://widget.clutch.co" data-widget-type="1" data-height="40" data-theme="white" data-clutchcompany-id="35649"></div>
               </div>
             </div>
+            ${icons()}
+
           </div>
           <div class="tco-site-footer-content-group tco-site-footer-content-group--fine-print">
             <p>&copy; 2021 Think Company, Inc. All rights reserved. <a class="tco-btn-link tco-link--dark-theme" href="#"> Privacy Policy</a></p>
