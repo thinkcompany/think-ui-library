@@ -1,0 +1,32 @@
+.tco-tab-group {
+  overflow: hidden;
+}
+
+.tco-tab-controls {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  justify-content: center;
+  background-color: $color-classic-glass;
+}
+
+.tco-tab-control {
+  @include type-eyebrow;
+  position: relative;
+  width: 100%;
+  padding: $spacing-stack-16 $spacing-inline-16;
+  color: $color-classic-blue;
+  text-align: center;
+
+  &::after {
+    content: '';
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: block;
+    width: 100%;
+    height: 1px;
+    background-color: $color-classic-gray-light;
+  }
+}
