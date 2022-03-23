@@ -8,6 +8,12 @@
   align-items: center;
   justify-content: center;
   background-color: $color-classic-glass;
+
+  @include wider-than($breakpoint-tablet-portrait) {
+    flex-flow: row wrap;
+    justify-content: flex-start;
+    padding: 0 $spacing-inline-32;
+  }
 }
 
 .tco-tab-control {
@@ -17,6 +23,17 @@
   padding: $spacing-stack-16 $spacing-inline-16;
   color: $color-classic-blue;
   text-align: center;
+  cursor: pointer;
+
+  @include wider-than($breakpoint-tablet-portrait) {
+    flex-grow: 0;
+    width: auto;
+    margin-right: $spacing-inline-40;
+
+    &:last-of-type {
+      margin-right: 0;
+    }
+  }
 
   &::after {
     content: '';
@@ -28,5 +45,41 @@
     width: 100%;
     height: 1px;
     background-color: $color-classic-gray-light;
+    transition: background-color 0.15s ease-out, transform 0.15s ease-out;
+    transform: scaleY(1);
+    transform-origin: bottom center;
+
+    @include wider-than($breakpoint-tablet-portrait) {
+      background-color: transparent;
+    }
+  }
+
+  &:hover {
+    &::after {
+      background-color: $color-classic-blue;
+    }
+  }
+
+  &--active {
+    &::after {
+      background-color: $color-classic-blue;
+      transform: scaleY(3);
+    }
+  }
+}
+
+.tco-tab-group-content {
+  padding: $spacing-stack-20 $spacing-inline-16;
+
+  @include wider-than($breakpoint-tablet-portrait) {
+    padding: $spacing-stack-40 $spacing-inline-32;
+  }
+}
+
+.tco-tab-panel {
+  display: none;
+
+  &--active {
+    display: block;
   }
 }
