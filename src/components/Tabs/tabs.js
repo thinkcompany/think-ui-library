@@ -1,12 +1,13 @@
 document.addEventListener('DOMContentLoaded', () => {
-  const container = document.querySelector('.tco-tab-group');
-  const tabControls = document.querySelector('.tco-tab-controls');
   const tabs = document.querySelectorAll('.tco-tab-control');
+  const tabControls = document.querySelector('.tco-tab-controls');
   const tabPanels = document.querySelectorAll('.tco-tab-panel');
+  const selectedTab = document.querySelector('.tco-tab-control--selected');
+  const selectedText = document.querySelector('.tco-tab-selected-text');
 
   // handle tab functionality
   const setActiveTab = id => {
-    for (tab of tabs) {
+    for (let tab of tabs) {
       if (tab.getAttribute('aria-controls') == id) {
         tab.setAttribute('aria-selected', 'true');
         tab.classList.add('tco-tab-control--active');
@@ -17,7 +18,7 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     }
 
-    for (tabPanel of tabPanels) {
+    for (let tabPanel of tabPanels) {
       if (tabPanel.getAttribute('id') == id) {
         tabPanel.setAttribute('aria-expanded', 'true');
         tabPanel.classList.add('tco-tab-panel--active');
@@ -28,44 +29,41 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   };
 
+  // set selected tab (mobile)
+  const setSelected = text => {
+    selectedText.innerHTML = text;
+  };
+
   // set event listeners on tabs
-  for (tab of tabs) {
+  for (let tab of tabs) {
     tab.addEventListener('click', function (e) {
       e.preventDefault();
+      let tabText = this.innerHTML;
       setActiveTab(this.getAttribute('aria-controls'));
+      setSelected(tabText);
     });
 
     tab.addEventListener('keyup', function (e) {
       if (e.keyCode == 13 || e.keyCode == 32) {
         // return or space
         e.preventDefault();
+        let tabText = this.innerHTML;
         setActiveTab(this.getAttribute('aria-controls'));
+        setSelected(tabText);
       }
     });
   }
 
-  // set event listener on tab controls
-  tabControls.addEventListener('keyup', function (e) {
-    const activeTab = document.querySelector('.tco-tab-control--active');
-
-    if (e.keyCode == 37) {
-      // left arrow
-      e.preventDefault();
-
-      let previous = [...tabs].indexOf(activeTab) - 1;
-      previous = previous >= 0 ? previous : tabs.length - 1;
-
-      setActiveTab(tabs[previous].getAttribute('aria-controls'));
-    }
-
-    if (e.keyCode == 39) {
-      // right arrow
-      e.preventDefault();
-
-      let next = [...tabs].indexOf(activeTab) + 1;
-      next = next >= 0 ? next : tabs.length + 1;
-
-      setActiveTab(tabs[next].getAttribute('aria-controls'));
-    }
-  });
+  // toggle selected tab
+  if (selectedTab) {
+    selectedTab.addEventListener('click', function () {
+      if (selectedTab.classList.contains('tco-tab-control--selected-open')) {
+        selectedTab.classList.remove('tco-tab-control--selected-open');
+        tabControls.classList.remove('tco-tab-controls--expanded');
+      } else {
+        selectedTab.classList.add('tco-tab-control--selected-open');
+        tabControls.classList.add('tco-tab-controls--expanded');
+      }
+    });
+  }
 });
