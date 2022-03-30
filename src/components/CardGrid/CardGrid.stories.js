@@ -108,6 +108,7 @@ const alignments = ['center', 'left', 'right'];
 const sizes = ['medium', 'extra-large', 'large', 'small'];
 const ledeSizes = ['default', 'large', 'sans-small'];
 const containerSizes = ['default', 'mid', 'narrow', 'none'];
+const cardMaxWidth = ['default', 'no max width'];
 
 const Template = args => {
   const {
@@ -115,6 +116,7 @@ const Template = args => {
     columns,
     count,
     cardType,
+    cardMax,
     headingContainer,
     introHeading,
     headingSize,
@@ -154,6 +156,8 @@ const Template = args => {
 
   let containerClose = '';
 
+  let maxWidth = '';
+
   if (introHeading || lede) {
     containerOpen =
       '<div class="tco-card-grid-header tco-container--' +
@@ -162,6 +166,10 @@ const Template = args => {
       headingContainer +
       '">';
     containerClose = '</div>';
+  }
+
+  if (cardMax == 'no max width') {
+    maxWidth = 'tco-card-no-max';
   }
 
   return `
@@ -185,7 +193,7 @@ const Template = args => {
               : ''
           }
         ${containerClose}
-        <div class="tco-card-grid tco-card-grid--${columns}-column">
+        <div class="tco-card-grid tco-card-grid--${columns}-column ${maxWidth}">
           ${cardItems()}
         </div>
       </div>
@@ -202,6 +210,7 @@ export default {
     columns: 3,
     count: 6,
     cardType: cardTypes[0],
+    cardMax: cardMaxWidth[0],
     headingContainer: containerSizes[0],
     introHeading: 'Card grid section',
     headingSize: sizes[0],
@@ -224,6 +233,11 @@ export default {
     count: {
       name: ' card count',
       control: 'number'
+    },
+    cardMax: {
+      name: 'card max width',
+      control: 'inline-radio',
+      options: cardMaxWidth
     },
     columns: {
       name: 'column count',
