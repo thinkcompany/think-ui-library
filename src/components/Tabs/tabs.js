@@ -57,6 +57,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // toggle selected tab
   if (selectedTab) {
     selectedTab.addEventListener('click', function () {
+      console.log('clicky');
       if (selectedTab.classList.contains('tco-tab-control--selected-open')) {
         selectedTab.classList.remove('tco-tab-control--selected-open');
         tabControls.classList.remove('tco-tab-controls--expanded');
