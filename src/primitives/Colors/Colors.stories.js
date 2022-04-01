@@ -199,7 +199,9 @@ all.parameters = {
   controls: { hideNoControlsWarning: true }
 };
 tints.parameters = {
-  controls: { hideNoControlsWarning: true }
+  controls: { hideNoControlsWarning: true },
+  // disables Chromatic visual testing for the component
+  chromatic: { disable: true }
 };
 foregrounds.parameters = {
   controls: { hideNoControlsWarning: true }
@@ -211,7 +213,9 @@ thinkClassic.parameters = {
   controls: { hideNoControlsWarning: true }
 };
 caseStudies.parameters = {
-  controls: { hideNoControlsWarning: true }
+  controls: { hideNoControlsWarning: true },
+  // disables Chromatic visual testing for the component
+  chromatic: { disable: true }
 };
 
 export default {
