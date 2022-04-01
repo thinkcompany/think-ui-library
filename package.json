@@ -22,9 +22,7 @@
     "lint:sass": "stylelint '**/*.scss' --fix",
     "lint:js": "eslint 'src/**/*.js'",
     "format": "prettier --config ./prettier.config.js --ignore-path ./.prettierignore \"src/**/*.{js,json,scss,css}\" --write",
-    "ci": "npm install",
-    "prepublishOnly": "npm run build",
-    "snapshot": "build-storybook && percy storybook ./storybook-static"
+    "ci": "npm install"
   },
   "keywords": [],
   "author": "",
@@ -44,8 +42,6 @@
     "@babel/core": "^7.12.10",
     "@babel/preset-env": "^7.12.11",
     "@babel/register": "^7.12.10",
-    "@percy/cli": "^1.0.0-beta.67",
-    "@percy/storybook": "^4.1.0",
     "@stormid/storybook-html-addon-markup": "^0.1.1",
     "@storybook/addon-a11y": "^6.4.8",
     "@storybook/addon-backgrounds": "^6.4.8",
