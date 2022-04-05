@@ -1,14 +1,13 @@
 import { SocialIcons as icons } from '../SocialIcons/social-icons.stories';
 
 const AuthorTemplate = args => {
-  const { eyebrow, name, title, image, bio, socialLabel, showSocial } = args;
+  const { name, title, image, bio, socialLabel, showSocial } = args;
 
   return `
   <div class="tco-container-wrapper">
 	  <div class="tco-container">
       <div class="tco-text-media tco-text-media--align-right tco-author">
         <div class="tco-text-media-content tco-text-media-content-text">
-          <span class="tco-author-eyebrow">${eyebrow}</span>
           <h2 class="tco-author-heading">${name}</h2>
           <p class="tco-author-title">${title}</p>
           <p class="tco-author-bio tco-type-body--default">${bio}</p>
@@ -33,7 +32,6 @@ const AuthorTemplate = args => {
 export const Author = AuthorTemplate.bind({});
 
 Author.args = {
-  eyebrow: 'Meet the Author',
   bio: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vel fermentum orci. In commodo tellus eget risus condimentum cursus. Maecenas cursus, risus tristique dictum venenatis, lectus quam finibus est, sit amet feugiat lacus nibh in urna. Aliquam fringilla egestas augue, at dictum ex consequat et. Vestibulum ac imperdiet lectus. Integer rhoncus quis est a fringilla.',
   socialLabel: 'Say Hello',
   showSocial: true
@@ -68,6 +66,16 @@ Speaker.args = {
 
 export default {
   title: 'Components / Bio',
+  parameters: {
+    component: Author,
+    componentSubtitle: 'The Bio component is used on Thinker profile pages.',
+    docs: {
+      description: {
+        component:
+          "Can also be used as a <a href='#speaker'>Speaker component</a> on Event posts."
+      }
+    }
+  },
   args: {
     name: 'Abby DePrimo',
     title: 'Vice President, Design Operations',
@@ -75,11 +83,26 @@ export default {
       'https://www.thinkcompany.com/wp-content/uploads/2020/03/AbbyDePrimo_Web.jpg'
   },
   argTypes: {
+    name: {
+      description: 'Thinker display_name from WordPress User profile'
+    },
+    image: {
+      description:
+        '1:1 ratio. Displays at 250 x 250px. Upload @1.5x = 375 x 375px'
+    },
+    title: {
+      description: 'Thinker job title'
+    },
+    bio: {
+      description: 'Thinker Biographical Info from WordPress User profile'
+    },
     showSocial: {
-      name: 'show social'
+      name: 'show social',
+      description: 'Optionally include Thinker social icons'
     },
     socialLabel: {
-      name: 'social label'
+      name: 'social label',
+      description: 'Label appears above icons'
     }
   }
 };

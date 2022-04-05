@@ -51,6 +51,7 @@
 .sbdocs.sbdocs-wrapper {
   .sbdocs-content {
     max-width: 1800px;
+    padding: 0 40px 40px 0;
   }
 
   .sbdocs-preview {
@@ -67,6 +68,62 @@
     > div {
       margin: 0;
       padding: 0;
+    }
+  }
+
+  .sbdocs-title,
+  .sbdocs-subtitle,
+  .sbdocs-p,
+  .sbdocs-h2,
+  .sbdocs-h3,
+  [id*='anchor--components-'] {
+    margin-left: 40px;
+
+    a[aria-hidden='true'] {
+      border-bottom-color: transparent;
+    }
+  }
+
+  [id*='anchor--components-'] {
+    .sbdocs-h2,
+    .sbdocs-h3 {
+      margin-left: 0;
+    }
+  }
+
+  .sbdocs-title {
+    padding-top: 40px;
+  }
+
+  .docblock-argstable {
+    width: calc(100% - 40px);
+    margin-left: 40px;
+  }
+
+  .docblock-argstable-head {
+    button {
+      .tco-lights-out & {
+        background-color: #23272a;
+      }
+    }
+
+    svg {
+      .tco-lights-out & {
+        fill: #478eeb;
+      }
+    }
+  }
+  [title='Zoom in'],
+  [title='Zoom out'],
+  [title='Reset zoom'] {
+    svg path {
+      fill: #478eeb;
+    }
+  }
+
+  .docblock-code-toggle {
+    .tco-lights-out & {
+      color: #478eeb;
     }
   }
 }
