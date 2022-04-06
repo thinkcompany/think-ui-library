@@ -99,6 +99,30 @@
     width: calc(100% - 40px);
     margin-left: 40px;
 
+    label {
+      .tco-lights-out & {
+        background-color: #3f3f3f;
+
+        &[title='Change to false'] {
+          span:first-of-type {
+            color: white;
+          }
+        }
+
+        &[title='Change to true'] {
+          span:last-of-type {
+            color: white;
+          }
+        }
+
+        input[type='radio'] {
+          + span {
+            background-color: #222;
+          }
+        }
+      }
+    }
+
     textarea {
       .tco-lights-out & {
         background-color: #3f3f3f;
@@ -120,6 +144,7 @@
       }
     }
   }
+
   [title='Zoom in'],
   [title='Zoom out'],
   [title='Reset zoom'] {
@@ -129,6 +154,12 @@
   }
 
   .docblock-code-toggle {
+    .tco-lights-out & {
+      color: #478eeb;
+    }
+  }
+
+  .sbdocs-expandable {
     .tco-lights-out & {
       color: #478eeb;
     }
