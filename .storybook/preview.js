@@ -44,12 +44,12 @@ addParameters({
       base: 'dark',
       appBg: '#181c1f',
       appContentBg: '#181c1f',
-      barBg: '#181c1f',
+      barBg: '#23272a',
       brandImage: '/img/think-logo-white.svg',
     },
     light: {
       ...themes.light,
-      appBg: '#ffffff',
+      appBg: '#f2f8fa',
       brandImage: '/img/think-company-logo-stacked.svg'
     },
     darkClass: 'tco-lights-out',

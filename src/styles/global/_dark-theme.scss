@@ -6,6 +6,11 @@ $color-foreground-on-tint: #fff;
 .sb-show-main {
   &.tco-lights-out {
     background-color: $color-dark-theme-black !important;
+
+    .sbdocs-subtitle,
+    .sbdocs-p {
+      color: $color-foreground-on-tint;
+    }
   }
 
   &.sb-main-fullscreen {
