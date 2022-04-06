@@ -49,6 +49,17 @@ export const CTABanner = Template.bind({});
 
 export default {
   title: 'Components / CTA Banner',
+  parameters: {
+    component: CTABanner,
+    componentSubtitle:
+      'The CTA block is displayed above the footer on all pages and posts.',
+    docs: {
+      description: {
+        component:
+          'Multiple CTAs can be created (CTA is a post type) in the CMS. Any CTA can be selected, or removed entirely, on a page by page basis.'
+      }
+    }
+  },
   args: {
     eyebrow: 'Send us a postcard, drop us a line',
     heading: 'Interested in working with us?',
