@@ -58,15 +58,50 @@ export default {
     cta: true
   },
   argTypes: {
+    eyebrow: {
+      table: {
+        type: { summary: 'text field' }
+      }
+    },
+    heading: {
+      description: 'Optionally select heading level in CMS',
+      table: {
+        type: { summary: 'text field' },
+        defaultValue: { summary: '<h2>' }
+      }
+    },
+    lede: {
+      table: {
+        type: { summary: 'wysiwyg' }
+      }
+    },
+    cta: {
+      description: 'URL field in CMS. Displays if url is entered.',
+      table: {
+        type: {
+          summary: 'url',
+          detail: 'Configurable link text, target= behavior',
+          defaultValue: 'null'
+        }
+      }
+    },
     ledeSize: {
       name: 'lede size',
       control: 'inline-radio',
-      options: ledeSizes
+      options: ledeSizes,
+      table: {
+        type: { summary: 'radio' },
+        defaultValue: { summary: 'default' }
+      }
     },
     container: {
       name: 'lede container',
       control: 'inline-radio',
-      options: containerSizes
+      options: containerSizes,
+      table: {
+        type: { summary: 'radio' },
+        defaultValue: { summary: 'narrow' }
+      }
     }
   }
 };

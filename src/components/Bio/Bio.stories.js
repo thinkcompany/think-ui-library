@@ -14,7 +14,7 @@ const AuthorTemplate = args => {
           ${
             showSocial
               ? `<div class="tco-author-social">
-                  <p class="tco-author-social-heading">${socialLabel}</p>
+                  <p class="tco-author-social-heading">Say Hello</p>
                   ${icons()}
                 </div>`
               : ''
@@ -33,7 +33,6 @@ export const Author = AuthorTemplate.bind({});
 
 Author.args = {
   bio: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vel fermentum orci. In commodo tellus eget risus condimentum cursus. Maecenas cursus, risus tristique dictum venenatis, lectus quam finibus est, sit amet feugiat lacus nibh in urna. Aliquam fringilla egestas augue, at dictum ex consequat et. Vestibulum ac imperdiet lectus. Integer rhoncus quis est a fringilla.',
-  socialLabel: 'Say Hello',
   showSocial: true
 };
 
@@ -84,25 +83,43 @@ export default {
   },
   argTypes: {
     name: {
-      description: 'Thinker display_name from WordPress User profile'
+      description: 'Thinker display_name from WordPress User profile',
+      table: {
+        type: { summary: 'text field' }
+      }
     },
     image: {
       description:
-        '1:1 ratio. Displays at 250 x 250px. Upload @1.5x = 375 x 375px'
+        '1:1 ratio. Displays at 250 x 250px. Upload @1.5x = 375 x 375px',
+      table: {
+        type: { summary: 'image' }
+      }
     },
     title: {
-      description: 'Thinker job title'
+      description: 'Thinker job title',
+      table: {
+        type: { summary: 'text field' }
+      }
     },
     bio: {
-      description: 'Thinker Biographical Info from WordPress User profile'
+      description: 'Thinker Biographical Info from WordPress User profile',
+      table: {
+        type: { summary: 'text area' }
+      }
     },
     showSocial: {
       name: 'show social',
-      description: 'Optionally include Thinker social icons'
+      description: 'Optionally include link(s) to Thinker social platforms',
+      table: {
+        type: { summary: 'text field' }
+      }
     },
     socialLabel: {
       name: 'social label',
-      description: 'Label appears above icons'
+      table: {
+        type: { summary: 'not editable' },
+        defaultValue: { summary: 'Say Hello' }
+      }
     }
   }
 };
