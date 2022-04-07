@@ -240,5 +240,23 @@ JobCard.argTypes = {
 
 export default {
   title: 'Components / Card',
-  component: [SummaryCard, PostCard, PersonCard, CalloutCard, MediaCard]
+  component: [SummaryCard, PostCard, PersonCard, CalloutCard, MediaCard],
+  parameters: {
+    component: SummaryCard,
+    componentSubtitle:
+      'Cards are used on the site by way of the Post Grid, and Card Grid components.',
+    docs: {
+      description: {
+        component:
+          'Post, Event, Case Study, and People cards are available within the Post Grid, and content is populated automatically based on the selected post. Only one type of card (content type) can be used within the Post Grid.<br> Post, The Card Grid offers more flexibility, as Post, Job, Media, Callout, Person, Summary, CTA, Service, and Process. Different card types can be used within the same Card Grid instance, and content is manually input.'
+      }
+    }
+  },
+  argTypes: {
+    heading: {
+      table: {
+        type: { summary: 'Headline element is configurable' }
+      }
+    }
+  }
 };

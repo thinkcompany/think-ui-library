@@ -205,6 +205,11 @@ export const CardGrid = Template.bind({});
 
 export default {
   title: 'Components / Card Grid',
+  parameters: {
+    component: CardGrid,
+    componentSubtitle:
+      'The Post, Job, Media, Callout, Person, Summary, CTA, Service, and Process Cards are available in the Card Grid. Different card types can be used within the same instance, and content is manually input.'
+  },
   args: {
     bg: colors[0],
     columns: 3,
@@ -223,50 +228,117 @@ export default {
     cardType: {
       name: 'card type',
       control: 'inline-radio',
-      options: cardTypes
+      options: cardTypes,
+      table: {
+        type: { summary: 'select' }
+      }
     },
     bg: {
       name: 'background color',
       control: 'inline-radio',
-      options: colors
+      options: colors,
+      table: {
+        type: { summary: 'select' }
+      },
+      defaultValue: { summary: 'default(white)' }
     },
     count: {
       name: ' card count',
-      control: 'number'
+      control: 'number',
+      description: 'Based on cards added in CMS',
+      table: {
+        type: { summary: 'number' }
+      },
+      defaultValue: { summary: '3' }
     },
     cardMax: {
       name: 'card max width',
       control: 'inline-radio',
-      options: cardMaxWidth
+      options: cardMaxWidth,
+      table: {
+        type: { summary: 'radio' },
+        defaultValue: { summary: 'has max width' }
+      }
     },
     columns: {
       name: 'column count',
-      control: 'number'
+      control: 'number',
+      table: {
+        type: { summary: 'number' }
+      },
+      defaultValue: { summary: '3' }
+    },
+    introHeading: {
+      name: 'heading',
+      table: {
+        type: {
+          summary: 'text field'
+        }
+      }
     },
     headingContainer: {
       name: 'component container',
       control: 'inline-radio',
-      options: containerSizes
+      options: containerSizes,
+      description:
+        'Controls width of container surrounding Card Grid Header (Heading + Lede)',
+      table: {
+        type: {
+          summary: 'radio'
+        },
+        defaultValue: { summary: 'narrow' }
+      }
     },
     headingSize: {
       name: 'heading size',
       control: 'inline-radio',
-      options: sizes
+      options: sizes,
+      table: {
+        type: {
+          summary: 'select'
+        },
+        defaultValue: { summary: 'small' }
+      }
+    },
+    lede: {
+      table: {
+        type: {
+          summary: 'text area'
+        }
+      }
     },
     ledeSize: {
       name: 'lede size',
       control: 'inline-radio',
-      options: ledeSizes
+      options: ledeSizes,
+      table: {
+        type: {
+          summary: 'radio'
+        },
+        defaultValue: { summary: 'default' }
+      }
     },
     ledeContainer: {
       name: 'lede container',
       control: 'inline-radio',
-      options: containerSizes
+      options: containerSizes,
+      table: {
+        type: {
+          summary: 'radio'
+        },
+        defaultValue: { summary: 'narrow' }
+      }
     },
     textAlignment: {
       name: 'text alignment',
       control: 'inline-radio',
-      options: alignments
+      options: alignments,
+      table: {
+        type: {
+          summary: 'radio'
+        },
+        defaultValue: { summary: 'center' }
+      }
     }
   }
 };
