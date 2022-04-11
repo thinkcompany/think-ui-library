@@ -198,14 +198,80 @@ export default {
     type: types[0],
     itemList: cardContents
   },
+  parameters: {
+    component: CaseStudyCards,
+    componentSubtitle:
+      'Case study cards are featured on the Our Work page (full width), and throughout the site in the Post Grid block (2 column)',
+    docs: {
+      description: {
+        component:
+          'Background color and opacity are fully customizable in the CMS. Focal image positioning is selectable based on the device used to frame the actual artwork.'
+      }
+    }
+  },
   argTypes: {
     type: {
       name: 'card type',
       control: 'inline-radio',
-      options: types
+      options: types,
+      description: 'Choose 1 or 2 column layout',
+      table: {
+        type: { summary: 'radio' },
+        defaultValue: { summary: '1 col (full width)' }
+      }
     },
-    itemList: {
-      control: 'object'
+    eyebrow: {
+      table: {
+        type: { summary: 'text field' }
+      }
+    },
+    lede: {
+      table: {
+        type: { summary: 'wysiwyg' }
+      }
+    },
+    cta: {
+      description:
+        'CTA text is editable. Link points to single case study page',
+      table: {
+        type: { summary: 'text' },
+        defaultValue: { summary: 'View case study' }
+      }
+    },
+    color: {
+      name: 'custom color',
+      description:
+        'Used for background overlay and page header on single case study pages',
+      table: {
+        type: { summary: 'color picker' }
+      }
+    },
+    bg: {
+      name: 'background image(s)',
+      description:
+        '<strong>Full width background</strong>: Image will stretch to fill container, but will maintain its natural aspect ratio. Displays at max width of 1168px. Upload @1.5x = 1752px<br><br><strong>Card background (2 col)</strong>: Optional. Image is forced to display at a 16:9 aspect ratio to ensure proper grid alignment. If not uploaded, full width image will be used',
+      table: {
+        type: { summary: 'image' }
+      }
+    },
+    opacity: {
+      name: 'background overlay opacity',
+      description: 'Opacity of custom case study color',
+      table: {
+        type: { summary: 'number' },
+        defaultValue: { summary: '0.9' }
+      }
+    },
+    image: {
+      name: 'focal image',
+      description:
+        'Focal image positioning is selectable based on the device used to frame the actual artwork.<br><em>device / display dimensions max / dimensions @ 1.5x</em><br>phone / 640 x 432 / 960 x 648<br>monitor / 468 x 390 / 702 x 585<br>tablet vertical / 350 x 473 / 525 x 710<br>laptop / 570 x 325 / 855 x 488<br>tablet horizontal / 500 x 408 / 750 x 612<br>laptop angled / 500 x 443 / 750 x 665<br>kiosk / 442 x 486 / 663 x 729<br>report / 420 x 504 / 630 x 756<br>monitor angled / 468 x 449 / 702 x 674',
+      table: {
+        type: { summary: ['image', 'select'] },
+        defaultValue: {
+          summary: 'phone'
+        }
+      }
     }
   }
 };

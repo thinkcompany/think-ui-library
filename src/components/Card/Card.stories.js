@@ -244,18 +244,33 @@ export default {
   parameters: {
     component: SummaryCard,
     componentSubtitle:
-      'Cards are used on the site by way of the Post Grid, and Card Grid components.',
+      'Cards are used on the site via the Post Grid, and Card Grid components.',
     docs: {
       description: {
         component:
-          'Post, Event, Case Study, and People cards are available within the Post Grid, and content is populated automatically based on the selected post. Only one type of card (content type) can be used within the Post Grid.<br> Post, The Card Grid offers more flexibility, as Post, Job, Media, Callout, Person, Summary, CTA, Service, and Process. Different card types can be used within the same Card Grid instance, and content is manually input.'
+          'The <a href="#post-card">Post</a>, <a href="#person-card">Person</a>, Event, and Case Study cards are available within the <strong>Post Grid</strong>, and content is populated automatically based on the selected post. Only one type of card (content type) can be used within the Post Grid.<br><br>The <strong>Card Grid</strong> offers more flexibility, as the <a href="#post-card">Post</a>, <a href="#job-card">Job</a>, <a href="#media-card">Media</a>, <a href="#callout-card">Callout</a>, <a href="person-card">Person</a>, <a href="#anchor--components-card--summary-card">Summary</a>, Service, and Process cards are available. Different card types can be used within the same Card Grid instance, and content is manually input.<br><br><br><h3 class="sbdocs-h3" style="margin-left:0;">Summary Card</h3>'
       }
     }
   },
   argTypes: {
     heading: {
       table: {
-        type: { summary: 'Headline element is configurable' }
+        type: { summary: 'text field' }
+      }
+    },
+    image: {
+      description:
+        'Summary: Display width 302px. Upload @1.5x = 451px<br>Person: Display width 250px. Upload @1.5x = 375px<br>Post: Display width 478px. Upload @1.5x = 717px<br>Callout: Display width: 44px. Upload @1.5x = 66px<br>Media: Display width 328px. Upload @1.5x = 492px',
+      table: {
+        type: { summary: 'image' }
+      }
+    },
+    treatment: {
+      description:
+        'Cards have 3 border treatment options <em>for Dark mode only</em>',
+      table: {
+        type: { summary: 'select' },
+        defaultValue: { summary: 'flat' }
       }
     }
   }
