@@ -117,13 +117,14 @@
 
         input[type='radio'] {
           + span {
-            background-color: #222;
+            background-color: #23272a;
           }
         }
       }
     }
 
-    textarea {
+    textarea,
+    input[type='number'] {
       .tco-lights-out & {
         background-color: #3f3f3f;
         color: white;
