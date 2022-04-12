@@ -12,6 +12,7 @@ module.exports = {
         actions: false
       }
     },
+    'storybook-addon-designs',
     '@storybook/addon-postcss',
     '@whitespace/storybook-addon-html',
     'storybook-dark-mode',
