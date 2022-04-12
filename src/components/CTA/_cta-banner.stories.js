@@ -1,3 +1,5 @@
+import { withDesign } from 'storybook-addon-designs';
+
 const ledeSizes = ['default', 'large', 'sans-small'];
 const containerSizes = ['default', 'mid', 'narrow', 'none'];
 
@@ -49,6 +51,7 @@ export const CTABanner = Template.bind({});
 
 export default {
   title: 'Components / CTA Banner',
+  decorators: [withDesign],
   parameters: {
     component: CTABanner,
     componentSubtitle:
@@ -58,6 +61,10 @@ export default {
         component:
           'Multiple CTAs can be created (CTA is a post type) in the CMS. Any CTA can be selected, or removed entirely, on a page by page basis.'
       }
+    },
+    design: {
+      type: 'figma',
+      url: 'https://www.figma.com/file/rMY4EcQ7vUr5McXHToFXRD/thinkcompany.com?node-id=103%3A202'
     }
   },
   args: {
