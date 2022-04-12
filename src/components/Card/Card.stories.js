@@ -1,3 +1,5 @@
+import { withDesign } from 'storybook-addon-designs';
+
 const treatments = ['flat', 'shadow', 'none'];
 
 const SummaryCardTemplate = args => {
@@ -241,6 +243,7 @@ JobCard.argTypes = {
 export default {
   title: 'Components / Card',
   component: [SummaryCard, PostCard, PersonCard, CalloutCard, MediaCard],
+  decorators: [withDesign],
   parameters: {
     component: SummaryCard,
     componentSubtitle:
@@ -250,6 +253,10 @@ export default {
         component:
           'The <a href="#post-card">Post</a>, <a href="#person-card">Person</a>, Event, and Case Study cards are available within the <strong>Post Grid</strong>, and content is populated automatically based on the selected post. Only one type of card (content type) can be used within the Post Grid.<br><br>The <strong>Card Grid</strong> offers more flexibility, as the <a href="#post-card">Post</a>, <a href="#job-card">Job</a>, <a href="#media-card">Media</a>, <a href="#callout-card">Callout</a>, <a href="person-card">Person</a>, <a href="#anchor--components-card--summary-card">Summary</a>, Service, and Process cards are available. Different card types can be used within the same Card Grid instance, and content is manually input.<br><br><br><h3 class="sbdocs-h3" style="margin-left:0;">Summary Card</h3>'
       }
+    },
+    design: {
+      type: 'figma',
+      url: 'https://www.figma.com/file/rMY4EcQ7vUr5McXHToFXRD/thinkcompany.com?node-id=210%3A1206'
     }
   },
   argTypes: {
