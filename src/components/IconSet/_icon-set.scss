@@ -1,0 +1,39 @@
+$icon-size: 18px;
+
+.tco-icon-set {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: flex-start;
+  list-style: none;
+
+  &.tco-icon-set--horizontal,
+  .tco-card--job:not(.tco-card--job-deluxe-preview) & {
+    flex-flow: row wrap;
+  }
+}
+
+.tco-icon-meta {
+  display: flex;
+  align-items: center;
+  margin-bottom: $spacing-stack-16;
+
+  .tco-icon-set--horizontal &,
+  .tco-card--job & {
+    margin-right: $spacing-inline-50;
+  }
+
+  &:last-of-type {
+    margin-right: 0;
+  }
+
+  .tco-icon {
+    flex: 1 0 auto;
+    width: $icon-size;
+    height: $icon-size;
+    fill: $color-classic-blue;
+  }
+
+  .tco-type-body--sans-small {
+    margin-left: $spacing-inline-12;
+  }
+}

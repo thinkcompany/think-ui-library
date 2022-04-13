@@ -1,4 +1,9 @@
+import { IconSet as icons } from '../IconSet/IconSet.stories';
+
 const treatments = ['flat', 'shadow', 'none'];
+const layouts = ['top', 'side'];
+const versions = ['classic', 'grid'];
+const models = ['classic', 'deluxe-preview', 'deluxe'];
 
 const SummaryCardTemplate = args => {
   const { heading, summary, image, treatment } = args;
@@ -34,7 +39,7 @@ SummaryCard.args = {
 
 SummaryCard.argTypes = {
   treatment: {
-    name: 'border treatment',
+    name: 'border treatment (dark theme)',
     control: 'inline-radio',
     options: treatments
   }
@@ -70,7 +75,7 @@ PersonCard.args = {
 
 PersonCard.argTypes = {
   treatment: {
-    name: 'border treatment',
+    name: 'border treatment (dark theme)',
     control: 'inline-radio',
     options: treatments
   }
@@ -120,20 +125,32 @@ PostCard.args = {
 
 PostCard.argTypes = {
   treatment: {
-    name: 'border treatment',
+    name: 'border treatment (dark theme)',
     control: 'inline-radio',
     options: treatments
   }
 };
 
 const CalloutCardTemplate = args => {
-  const { heading, description, treatment } = args;
+  const { heading, description, treatment, version } = args;
+
+  let container = '<a href="#" class="tco-card-link tco-link--dark-theme">';
+  let containerClose = '</a>';
+  let link = 'p';
+  let linkClose = '</p>';
+
+  if (version === 'grid') {
+    container = '<div class="tco-card-link tco-link--dark-theme">';
+    containerClose = '</div>';
+    link = 'a href="#"';
+    linkClose = '</a>';
+  }
 
   return `
   <div class="tco-container-wrapper">
     <div class="tco-container">
-      <div class="tco-card tco-card--callout tco-card-container--${treatment}">
-        <a href="#" class="tco-card-link tco-link--dark-theme">
+      <div class="tco-card tco-card--callout tco-card--callout-${version} tco-card-container--${treatment}">
+        ${container}
           <div class="tco-card-image-container tco-card-image-container--callout">
             <svg class="tco-icon tco-card-image tco-card-image--callout" viewBox="0 0 44 44" role="presentation">
               <use xlink:href="/img/icons.svg#icon-sync-blue"></use>
@@ -142,14 +159,14 @@ const CalloutCardTemplate = args => {
           <div class="tco-card-content-container">
             <h2 class="tco-card-content-heading tco-link--dark-theme">${heading}</h2>
             <p class="tco-card-content-description">${description}</p>
-            <p class="tco-card-content-link tco-link--dark-theme">
+            <${link} class="tco-card-content-link tco-link--dark-theme">
             Tell us about your challenge
               <svg class="tco-text-link-icon" width="20" height="20" viewBox="0 0 20 20" role="presentation">
                 <use xlink:href="/img/icons.svg#icon-arrow-right"></use>
               </svg>
-            </p>
+            ${linkClose}
           </div>
-        </a>
+        ${containerClose}
       </div>
     </div>
   </div>`;
@@ -161,24 +178,30 @@ CalloutCard.args = {
   heading: 'Problem Solving Workshops for COVID-19 Support',
   description:
     'We want to help organizations supporting the frontline response',
-  treatment: treatments[1]
+  treatment: treatments[1],
+  version: versions[1]
 };
 
 CalloutCard.argTypes = {
   treatment: {
-    name: 'border treatment',
+    name: 'border treatment (dark theme)',
     control: 'inline-radio',
     options: treatments
+  },
+  version: {
+    name: 'card version',
+    control: 'inline-radio',
+    options: versions
   }
 };
 
 const MediaCardTemplate = args => {
-  const { heading, summary, image } = args;
+  const { heading, summary, image, layout, treatment } = args;
 
   return `
   <div class="tco-container-wrapper">
     <div class="tco-container">
-      <div class="tco-card tco-card--no-link tco-card--summary tco-card--media">
+      <div class="tco-card tco-card--no-link tco-card--summary tco-card--media tco-card--media-${layout} tco-card-container--${treatment}">
         <div class="tco-card-image-container tco-card-image-container--summary">
           <img class="tco-card-image tco-card-image--summary" alt="Card image" src="${image}" />
         </div>
@@ -198,25 +221,65 @@ MediaCard.args = {
   summary:
     'We pay you what you deserve to make and you can earn up to a 5% salary increase every year based on your individual performance.',
   image:
-    'https://www.thinkcompany.com/wp-content/uploads/2020/12/Competitive-Salary-Annual-Increase-1-1.svg'
+    'https://www.thinkcompany.com/wp-content/uploads/2020/12/Competitive-Salary-Annual-Increase-1-1.svg',
+  layout: layouts[0]
+};
+
+MediaCard.argTypes = {
+  treatment: {
+    name: 'border treatment (dark theme)',
+    control: 'inline-radio',
+    options: treatments
+  },
+  layout: {
+    name: 'media position',
+    control: 'inline-radio',
+    options: layouts
+  }
 };
 
 const JobCardTemplate = args => {
-  const { heading, location, treatment } = args;
+  const { heading, location, treatment, model } = args;
+
+  let container = '<a href="#" class="tco-card-link tco-link--dark-theme">';
+  let containerClose = '</a>';
+  let link = '<span';
+  let linkClose = '</span>';
+
+  if (model === 'deluxe' || model === 'deluxe-preview') {
+    container = '<div class="tco-card-link tco-link--dark-theme">';
+    containerClose = '</div>';
+    link = '<a href="#"';
+    linkClose = '</a>';
+  }
 
   return `
   <div class="tco-container-wrapper">
     <div class="tco-container">
-      <div class="tco-card tco-card--job tco-card-container--${treatment}">
-        <a href="#" class="tco-card-link tco-link--dark-theme">
+      <div class="tco-card tco-card--job tco-card-container--${treatment} tco-card--job-${model}">
+        ${container}
           <div class="tco-card-content-container">
             <h2 class="tco-card-content-heading tco-link--dark-theme">${heading}</h2>
-            <span class="tco-card-content-location">${location}</span>
+            ${
+              model === 'deluxe' || model === 'deluxe-preview'
+                ? `
+              ${icons('layout')}
+              <p class="tco-type-body--default tco-deluxe-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
+            `
+                : `<p class="tco-card-content-location">${location}</p>`
+            }
           </div>
           <div class="tco-card-content-container">
-            <span href="#" class="tco-btn tco-btn--secondary">Apply Now</span>
+            ${
+              model === 'deluxe'
+                ? `
+              <a href="#" class="tco-btn tco-btn--primary">See more</a>
+            `
+                : ''
+            }
+            ${link} href="#" class="tco-btn tco-btn--secondary">Apply Now${linkClose}
           </div>
-        </a>
+        ${containerClose}
       </div>
     </div>
   </div>`;
@@ -227,14 +290,20 @@ export const JobCard = JobCardTemplate.bind({});
 JobCard.args = {
   heading: 'Senior UX Designer',
   location: 'Philadelphia, PA',
-  treatment: treatments[1]
+  treatment: treatments[1],
+  model: models[1]
 };
 
 JobCard.argTypes = {
   treatment: {
-    name: 'border treatment',
+    name: 'border treatment (dark theme)',
     control: 'inline-radio',
     options: treatments
+  },
+  model: {
+    name: 'card version',
+    control: 'inline-radio',
+    options: models
   }
 };
 

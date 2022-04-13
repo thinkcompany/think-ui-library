@@ -1,4 +1,4 @@
-/* stylelint-disable selector-max-pseudo-class, max-line-length, selector-max-specificity,  max-nesting-depth, selector-max-combinators, selector-max-compound-selectors */
+/* stylelint-disable selector-max-pseudo-class, max-line-length, selector-max-specificity,  max-nesting-depth, selector-max-combinators, selector-max-compound-selectors, selector-max-class */
 // ========================================================
 // = BASE CARD
 // ========================================================
@@ -587,6 +587,47 @@ $icon-size-large: 44px;
       }
     }
   }
+
+  &.tco-card--callout-grid {
+    padding: 0 $spacing-inline-16 $spacing-stack-16;
+    box-shadow: none;
+
+    .tco-card-link {
+      padding: 0;
+    }
+
+    .tco-card-content-heading {
+      @include type-body-large;
+      display: block;
+      color: $color-classic-navy;
+
+      .tco-lights-out & {
+        color: $color-foreground-on-tint;
+      }
+    }
+
+    .tco-card-content-description {
+      @include type-body-small;
+    }
+
+    .tco-card-content-link {
+      margin-top: $spacing-stack-24;
+      font-size: $font-size-18;
+    }
+
+    .tco-card-content-container {
+      @include wider-than($breakpoint-phone-landscape) {
+        max-width: 450px;
+        padding-left: $spacing-inline-40;
+      }
+    }
+
+    .tco-card-image-container {
+      @include wider-than($breakpoint-phone-landscape) {
+        padding-top: $spacing-stack-24;
+      }
+    }
+  }
 }
 
 // ========================================================
@@ -598,31 +639,35 @@ $icon-size-large: 44px;
   transition: transform 0.6s ease-out;
   transform: scale(1);
 
-  &:hover,
-  &:focus {
-    transform: scale(1.03);
+  &:not(.tco-card--job-deluxe):not(.tco-card--job-deluxe-preview) {
+    &:hover,
+    &:focus {
+      transform: scale(1.03);
 
-    .tco-card-link {
-      .tco-card-content-heading {
-        border-bottom-color: transparent;
+      .tco-card-link {
+        .tco-card-content-heading {
+          border-bottom-color: transparent;
+        }
       }
-    }
 
-    .tco-btn {
-      background-color: $color-hover;
-      color: $color-foreground-on-tint;
+      .tco-btn {
+        background-color: $color-hover;
+        color: $color-foreground-on-tint;
+      }
     }
   }
 
   .tco-lights-out & {
-    &:hover,
-    &:focus {
-      .tco-btn--secondary {
-        border-color: $color-hover;
-      }
+    &:not(.tco-card--job-deluxe):not(.tco-card--job-deluxe-preview) {
+      &:hover,
+      &:focus {
+        .tco-btn--secondary {
+          border-color: $color-hover;
+        }
 
-      .tco-card-content-container .tco-card-content-heading {
-        border-bottom-color: transparent;
+        .tco-card-content-container .tco-card-content-heading {
+          border-bottom-color: transparent;
+        }
       }
     }
   }
@@ -667,6 +712,112 @@ $icon-size-large: 44px;
       display: block;
     }
   }
+
+  &.tco-card--job-deluxe {
+    .tco-card-content-container {
+      &:first-of-type {
+        padding-bottom: 0;
+
+        @include wider-than($breakpoint-tablet-portrait) {
+          flex: 1 1 100%;
+          padding-right: $spacing-inline-64;
+        }
+      }
+
+      &:last-of-type {
+        @include wider-than($breakpoint-tablet-portrait) {
+          display: flex;
+          flex: 1 0 auto;
+          flex-flow: column nowrap;
+        }
+      }
+    }
+
+    .tco-card-content-heading {
+      display: block;
+      margin-bottom: $spacing-stack-16;
+    }
+
+    .tco-deluxe-description {
+      margin: 0;
+    }
+
+    .tco-card-link {
+      padding: $spacing-stack-32 $spacing-inline-32;
+
+      @include wider-than($breakpoint-tablet-portrait) {
+        display: flex;
+        flex-flow: row nowrap;
+        align-items: center;
+        justify-content: space-between;
+      }
+
+      .tco-icon {
+        transform: translate(0, 0);
+      }
+
+      &:hover {
+        .tco-card-content-heading {
+          border-bottom-color: transparent;
+        }
+      }
+    }
+
+    .tco-btn {
+      margin-top: $spacing-stack-24;
+
+      @include wider-than($breakpoint-tablet-portrait) {
+        margin-top: 0;
+      }
+    }
+
+    .tco-btn--primary {
+      margin-right: $spacing-inline-24;
+
+      @include wider-than($breakpoint-tablet-portrait) {
+        margin: 0 0 $spacing-stack-20;
+      }
+    }
+  }
+
+  &.tco-card--job-deluxe-preview {
+    .tco-card-content-container {
+      &:first-of-type {
+        padding-bottom: 0;
+      }
+    }
+
+    .tco-card-content-heading {
+      display: block;
+      margin-bottom: $spacing-stack-16;
+    }
+
+    .tco-deluxe-description {
+      margin: 0;
+    }
+
+    .tco-card-link {
+      padding: $spacing-stack-32 $spacing-inline-32;
+
+      @include wider-than($breakpoint-tablet-portrait) {
+        padding-bottom: $spacing-stack-50 + $spacing-stack-16;
+      }
+
+      .tco-icon {
+        transform: translate(0, 0);
+      }
+
+      &:hover {
+        .tco-card-content-heading {
+          border-bottom-color: transparent;
+        }
+      }
+    }
+
+    .tco-btn {
+      margin-top: $spacing-stack-24;
+    }
+  }
 }
 
 // ========================================================
@@ -679,6 +830,60 @@ $icon-size-large: 44px;
     .tco-lights-out & {
       border-bottom-color: transparent;
       color: $color-foreground-on-tint;
+    }
+  }
+
+  &.tco-card--media-side {
+    max-width: 568px;
+    // box-shadow: $box-shadow-default;
+
+    &:not([class*='tco-card-container--shadow']) {
+      box-shadow: $box-shadow-default;
+    }
+
+    @include wider-than($breakpoint-phone-landscape) {
+      display: flex;
+      flex-flow: row nowrap;
+      align-items: center;
+      justify-content: space-between;
+      padding: $spacing-stack-40 $spacing-inline-16;
+    }
+
+    .tco-card-content-container {
+      padding: $spacing-stack-24 $spacing-inline-20 $spacing-stack-32;
+
+      @include wider-than($breakpoint-phone-landscape) {
+        width: 56%;
+        padding: 0;
+        text-align: left;
+      }
+    }
+
+    .tco-card-content-heading {
+      @include type-body-large;
+    }
+
+    .tco-card-image-container {
+      display: block;
+      height: auto;
+
+      @include wider-than($breakpoint-phone-landscape) {
+        flex: 0 1 46%;
+        height: auto;
+        padding: 0 $spacing-inline-24 0 0;
+      }
+    }
+
+    &.tco-card--no-link {
+      .tco-lights-out & {
+        &.tco-card-container--shadow {
+          box-shadow: $box-shadow-dark;
+        }
+
+        &.tco-card-container--flat {
+          @include card-container-flat;
+        }
+      }
     }
   }
 }
