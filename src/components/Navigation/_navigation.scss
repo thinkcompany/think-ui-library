@@ -245,6 +245,41 @@ $container-max: 1168px;
 
       .tco-site-nav-menu-item {
         width: auto;
+
+        &:last-of-type {
+          transform: translate(0, -2px);
+
+          .tco-site-nav-link {
+            margin: 0;
+            padding: $spacing-stack-4 $spacing-inline-12;
+            border: 2px solid $color-classic-blue;
+            background-color: transparent;
+            color: $color-classic-blue;
+
+            .tco-lights-out & {
+              border-color: $color-foreground-on-tint;
+              color: $color-foreground-on-tint;
+
+              &:hover {
+                border-color: $color-foreground-on-tint;
+                background-color: $color-foreground-on-tint;
+                color: $color-classic-navy;
+              }
+            }
+
+            &:hover {
+              border-color: $color-classic-blue;
+              background-color: $color-classic-blue;
+              color: $color-foreground-on-tint;
+            }
+          }
+        }
+
+        &:nth-last-of-type(2) {
+          .tco-site-nav-link {
+            margin-right: $spacing-inline-50 - $spacing-inline-8;
+          }
+        }
       }
 
       .tco-site-nav-link {
