@@ -15,13 +15,6 @@ $checklist-title-spacing: 25px;
   ul {
     padding-left: 0;
     list-style: none;
-
-    &:not(.tco-checklist--alt-checkmark) {
-      li::before {
-        background: url('/svg/checkmark-dark-theme.svg') no-repeat center /
-          cover;
-      }
-    }
   }
 
   li {
@@ -79,6 +72,24 @@ $checklist-title-spacing: 25px;
         top: 6px;
         width: $check * 1.3;
         height: $check * 1.3;
+      }
+    }
+  }
+
+  .tco-lights-out & {
+    li {
+      &::before {
+        background: url('/svg/checkmark-dark-theme.svg') no-repeat center /
+          cover;
+      }
+    }
+
+    &--alt-checkmark {
+      li {
+        &::before {
+          background: url('/svg/checkmark-alt-dark-theme.svg') no-repeat center /
+            cover;
+        }
       }
     }
   }
