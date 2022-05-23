@@ -270,14 +270,7 @@ const JobCardTemplate = args => {
             }
           </div>
           <div class="tco-card-content-container">
-            ${
-              model === 'deluxe'
-                ? `
-              <a href="#" class="tco-btn tco-btn--primary">See more</a>
-            `
-                : ''
-            }
-            ${link} href="#" class="tco-btn tco-btn--secondary">Apply Now${linkClose}
+            ${link} href="#" class="tco-btn tco-btn--secondary">View Job${linkClose}
           </div>
         ${containerClose}
       </div>

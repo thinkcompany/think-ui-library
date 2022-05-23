@@ -713,6 +713,13 @@ $icon-size-large: 44px;
     }
   }
 
+  &.tco-card--job-deluxe,
+  &.tco-card--job-deluxe-preview {
+    .tco-card-content-heading {
+      @include type-display-small;
+    }
+  }
+
   &.tco-card--job-deluxe {
     .tco-card-content-container {
       &:first-of-type {
