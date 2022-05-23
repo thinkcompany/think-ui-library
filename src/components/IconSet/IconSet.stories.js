@@ -6,7 +6,7 @@ export const IconSet = args => {
   const icons = [
     {
       name: 'Remote',
-      icon: 'location'
+      icon: 'location-alt'
     },
     {
       name: 'Time',
@@ -14,14 +14,16 @@ export const IconSet = args => {
     },
     {
       name: 'Salary',
-      icon: 'dollar'
+      icon: 'dollar-bill'
     }
   ];
 
   icons.forEach(item => {
     iconSet.push(`
       <li class="tco-icon-meta">
-        <svg class="tco-icon" title="${item.name}" viewBox="0 0 100 100">
+        <svg class="tco-icon tco-icon--${item.icon.toLowerCase()}" title="${
+      item.name
+    }" viewBox="0 0 100 100">
           <use xlink:href="/img/icons.svg#icon-${item.icon.toLowerCase()}"></use>
         </svg>
         <span class="tco-type-body--sans-small">${item.name}</span>

@@ -3,6 +3,7 @@
 // = BASE CARD
 // ========================================================
 $color-hover: #08519a;
+$job-content-max: 704px;
 
 .tco-card {
   @include card-base;
@@ -713,14 +714,23 @@ $icon-size-large: 44px;
     }
   }
 
+  &.tco-card--job-deluxe,
+  &.tco-card--job-deluxe-preview {
+    .tco-card-content-heading {
+      @include type-display-small;
+    }
+  }
+
   &.tco-card--job-deluxe {
     .tco-card-content-container {
       &:first-of-type {
+        display: flex;
+        flex-flow: column nowrap;
         padding-bottom: 0;
-        background: $color-hover;
 
         @include wider-than($breakpoint-tablet-portrait) {
           flex: 1 1 100%;
+          max-width: $job-content-max;
           padding-right: $spacing-inline-64;
         }
       }
@@ -736,11 +746,32 @@ $icon-size-large: 44px;
 
     .tco-card-content-heading {
       display: block;
+      order: 0;
       margin-bottom: $spacing-stack-16;
     }
 
     .tco-deluxe-description {
+      order: 2;
       margin: 0;
+
+      @include wider-than($breakpoint-tablet-portrait) {
+        order: 1;
+        margin-bottom: $spacing-stack-16;
+      }
+    }
+
+    .tco-icon-set {
+      order: 1;
+
+      @include wider-than($breakpoint-tablet-portrait) {
+        order: 2;
+      }
+    }
+
+    .tco-icon-meta {
+      @include wider-than($breakpoint-tablet-portrait) {
+        margin-bottom: 0;
+      }
     }
 
     .tco-card-link {
@@ -753,8 +784,27 @@ $icon-size-large: 44px;
         justify-content: space-between;
       }
 
+      @include wider-than($breakpoint-laptop) {
+        padding: $spacing-stack-48 $spacing-inline-48;
+      }
+
       .tco-icon {
         transform: translate(0, 0);
+      }
+
+      .tco-icon--job-cta {
+        display: none;
+
+        @include wider-than($breakpoint-tablet-portrait) {
+          position: absolute;
+          top: 50%;
+          right: 48px;
+          display: block;
+          width: 21px;
+          height: 42px;
+          fill: $color-classic-blue;
+          transform: translateY(-50%);
+        }
       }
 
       &:hover {
@@ -762,13 +812,17 @@ $icon-size-large: 44px;
           border-bottom-color: transparent;
         }
       }
+
+      &::after {
+        content: '';
+      }
     }
 
     .tco-btn {
       margin-top: $spacing-stack-24;
 
       @include wider-than($breakpoint-tablet-portrait) {
-        margin-top: 0;
+        display: none;
       }
     }
 

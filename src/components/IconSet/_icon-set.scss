@@ -1,4 +1,5 @@
 $icon-size: 18px;
+$icon-size-small: 14px;
 
 .tco-icon-set {
   display: flex;
@@ -31,6 +32,10 @@ $icon-size: 18px;
     width: $icon-size;
     height: $icon-size;
     fill: $color-classic-blue;
+  }
+
+  .tco-icon--clock {
+    width: $icon-size-small;
   }
 
   .tco-type-body--sans-small {
