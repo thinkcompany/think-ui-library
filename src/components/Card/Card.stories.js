@@ -246,7 +246,7 @@ const JobCardTemplate = args => {
   let link = '<span';
   let linkClose = '</span>';
 
-  if (model === 'deluxe' || model === 'deluxe-preview') {
+  if (model === 'deluxe-preview') {
     container = '<div class="tco-card-link tco-link--dark-theme">';
     containerClose = '</div>';
     link = '<a href="#"';
@@ -255,7 +255,7 @@ const JobCardTemplate = args => {
 
   return `
   <div class="tco-container-wrapper">
-    <div class="tco-container">
+    <div class="tco-container tco-container--mid">
       <div class="tco-card tco-card--job tco-card-container--${treatment} tco-card--job-${model}">
         ${container}
           <div class="tco-card-content-container">
@@ -264,7 +264,7 @@ const JobCardTemplate = args => {
               model === 'deluxe' || model === 'deluxe-preview'
                 ? `
               ${icons('layout')}
-              <p class="tco-type-body--default tco-deluxe-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
+              <p class="tco-type-body--default tco-deluxe-description">Like an archaeologist, you love strategically exploring a UX challenge, disecting it down to its working parts, and then getting to know the user and other stuff that I’ll eventualy fill in here but that’s not important right now. It’s three lines though.</p>
             `
                 : `<p class="tco-card-content-location">${location}</p>`
             }
@@ -272,6 +272,15 @@ const JobCardTemplate = args => {
           <div class="tco-card-content-container">
             ${link} href="#" class="tco-btn tco-btn--secondary">View Job${linkClose}
           </div>
+          ${
+            model === 'deluxe'
+              ? `
+            <svg class="tco-icon tco-icon--job-cta tco-icon--chevron-right" title="Arrow forward" viewBox="0 0 22 30">
+              <use xlink:href="/img/icons.svg#icon-chevron-right"></use>
+            </svg>
+          `
+              : ''
+          }
         ${containerClose}
       </div>
     </div>
