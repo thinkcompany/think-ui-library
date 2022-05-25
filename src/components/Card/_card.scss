@@ -855,7 +855,7 @@ $icon-size-large: 44px;
       padding: $spacing-stack-32 $spacing-inline-32;
 
       @include wider-than($breakpoint-tablet-portrait) {
-        padding-bottom: $spacing-stack-50 + $spacing-stack-16;
+        padding: $spacing-stack-48 $spacing-inline-32;
       }
 
       .tco-icon {
