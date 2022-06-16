@@ -39,6 +39,11 @@
 
       @include wider-than($breakpoint-tablet-portrait) {
         padding: calc(#{$spacing-stack-50} + #{$spacing-stack-32}) 0
+          $spacing-stack-50;
+      }
+
+      @include wider-than($breakpoint-laptop) {
+        padding: calc(#{$spacing-stack-50} + #{$spacing-stack-32}) 0
           $spacing-stack-32;
       }
     }

@@ -32,11 +32,22 @@ $widget-width: 132px;
     padding-top: $spacing-stack-32;
     border-top: 1px solid lighten($color-classic-navy, 6);
 
+    @include wider-than($breakpoint-phone-landscape) {
+      grid-template-columns: auto 1fr;
+    }
+
     @include wider-than($breakpoint-tablet-portrait) {
       display: grid;
-      grid-template-rows: auto;
-      grid-template-columns: 1fr auto;
+      grid-template-areas: 'icons icons'
+        'disclaimer disclaimer';
+      grid-template-rows: repeat(2, 100%);
       grid-column: 1 / span 3;
+      align-items: start;
+    }
+
+    @include wider-than($breakpoint-laptop) {
+      grid-template-areas: 'icons disclaimer';
+      grid-template-rows: auto;
     }
   }
 
@@ -48,7 +59,13 @@ $widget-width: 132px;
 
     @include wider-than($breakpoint-tablet-portrait) {
       flex-flow: row nowrap;
+      grid-area: icons;
+      justify-content: center;
       margin-bottom: 0;
+    }
+
+    @include wider-than($breakpoint-laptop) {
+      justify-content: start;
     }
 
     .tco-site-footer-logo {
@@ -97,14 +114,38 @@ $widget-width: 132px;
   &-content-group--fine-print {
     text-align: center;
 
+    span {
+      display: inline;
+
+      @include wider-than($breakpoint-laptop) {
+        display: block;
+        margin-top: $spacing-stack-8;
+      }
+    }
+
     @include wider-than($breakpoint-tablet-portrait) {
+      grid-area: disclaimer;
       align-self: center;
+    }
+
+    @include wider-than($breakpoint-laptop) {
       text-align: right;
     }
 
     p {
       @include type-body-xsmall;
       color: $color-foreground-on-tint;
+      line-height: 1.5;
+
+      @include wider-than($breakpoint-tablet-portrait) {
+        margin-bottom: 0;
+        line-height: 1.2;
+        transform: translateY(-6px);
+      }
+
+      @include wider-than($breakpoint-tablet-portrait) {
+        transform: translateY(2px);
+      }
     }
 
     a {
@@ -113,8 +154,17 @@ $widget-width: 132px;
         $show-initial: true
       );
 
+      &:nth-of-type(2) {
+        margin-left: $spacing-inline-4;
+      }
+
       @include wider-than($breakpoint-phone-portrait) {
         margin-left: $spacing-inline-16;
+      }
+
+      @include wider-than($breakpoint-tablet-portrait) {
+        display: inline-block;
+        margin: 0;
       }
     }
   }
@@ -216,6 +266,50 @@ $widget-width: 132px;
     @include wider-than($breakpoint-tablet-portrait) {
       margin: 0;
       transform: scale(0.5);
+    }
+  }
+}
+
+.tco-theme-toggle-container {
+  order: 4;
+  margin-top: $spacing-stack-24;
+
+  @include wider-than($breakpoint-tablet-portrait) {
+    margin-top: 0;
+    margin-left: $spacing-inline-50;
+  }
+
+  .tco-form-toggle {
+    &:focus {
+      + label {
+        &::before {
+          outline-color: $color-foreground-on-tint;
+        }
+      }
+    }
+
+    &:checked {
+      + label::after {
+        left: 20px;
+      }
+    }
+
+    + label {
+      @include type-body-xsmall;
+      margin: 0;
+      padding-top: $spacing-stack-4;
+      padding-left: $spacing-inline-50 - $spacing-inline-8;
+      line-height: 1.9;
+      text-align: left;
+
+      &::before {
+        height: 18px;
+      }
+
+      &::after {
+        width: 14px;
+        height: 14px;
+      }
     }
   }
 }
