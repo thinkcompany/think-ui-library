@@ -115,7 +115,11 @@ $widget-width: 132px;
     text-align: center;
 
     span {
-      display: inline;
+      display: block;
+
+      @include wider-than($breakpoint-tablet-portrait) {
+        display: inline;
+      }
 
       @include wider-than($breakpoint-laptop) {
         display: block;
@@ -299,6 +303,7 @@ $widget-width: 132px;
       margin: 0;
       padding-top: $spacing-stack-4;
       padding-left: $spacing-inline-50 - $spacing-inline-8;
+      color: $color-foreground-on-tint;
       line-height: 1.9;
       text-align: left;
 
