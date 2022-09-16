@@ -106,6 +106,10 @@
   &--glass {
     background-color: $color-tint-blue-tertiary;
     color: $color-foreground-primary;
+
+    .tco-lights-out & {
+      background-color: $color-classic-navy;
+    }
   }
 
   &--blue {
