@@ -1,0 +1,59 @@
+$icon-size: 18px;
+$icon-size-small: 14px;
+$color-icon-orange: #fd8a5b;
+$color-icon-green: #00998e;
+
+.tco-icon-set {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: flex-start;
+  list-style: none;
+
+  &.tco-icon-set--horizontal {
+    flex-flow: row wrap;
+  }
+
+  .tco-card--job:not(.tco-card--job-deluxe-preview) & {
+    @include wider-than($breakpoint-tablet-portrait) {
+      flex-flow: row wrap;
+    }
+  }
+}
+
+.tco-icon-meta {
+  display: flex;
+  align-items: center;
+  margin-bottom: $spacing-stack-16;
+
+  .tco-icon-set--horizontal &,
+  .tco-card--job & {
+    margin-right: $spacing-inline-50;
+  }
+
+  &:last-of-type {
+    margin-right: 0;
+  }
+
+  .tco-icon {
+    flex: 1 0 auto;
+    width: $icon-size;
+    height: $icon-size;
+  }
+
+  .tco-icon--clock {
+    width: $icon-size-small;
+    fill: $color-classic-blue;
+  }
+
+  .tco-icon--location-alt {
+    fill: $color-icon-orange;
+  }
+
+  .tco-icon--dollar-bill {
+    fill: $color-icon-green;
+  }
+
+  .tco-type-body--sans-small {
+    margin-left: $spacing-inline-12;
+  }
+}

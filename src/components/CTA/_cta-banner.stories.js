@@ -49,6 +49,17 @@ export const CTABanner = Template.bind({});
 
 export default {
   title: 'Components / CTA Banner',
+  parameters: {
+    component: CTABanner,
+    componentSubtitle:
+      'The CTA block is displayed above the footer on all pages and posts.',
+    docs: {
+      description: {
+        component:
+          'Multiple CTAs can be created (CTA is a post type) in the CMS. Any CTA can be selected, or removed entirely, on a page by page basis.'
+      }
+    }
+  },
   args: {
     eyebrow: 'Send us a postcard, drop us a line',
     heading: 'Interested in working with us?',
@@ -58,15 +69,50 @@ export default {
     cta: true
   },
   argTypes: {
+    eyebrow: {
+      table: {
+        type: { summary: 'text field' }
+      }
+    },
+    heading: {
+      description: 'Optionally select heading level in CMS',
+      table: {
+        type: { summary: 'text field' },
+        defaultValue: { summary: '<h2>' }
+      }
+    },
+    lede: {
+      table: {
+        type: { summary: 'wysiwyg' }
+      }
+    },
+    cta: {
+      description: 'URL field in CMS. Displays if url is entered.',
+      table: {
+        type: {
+          summary: 'url',
+          detail: 'Configurable link text, target= behavior',
+          defaultValue: 'null'
+        }
+      }
+    },
     ledeSize: {
       name: 'lede size',
       control: 'inline-radio',
-      options: ledeSizes
+      options: ledeSizes,
+      table: {
+        type: { summary: 'radio' },
+        defaultValue: { summary: 'default' }
+      }
     },
     container: {
       name: 'lede container',
       control: 'inline-radio',
-      options: containerSizes
+      options: containerSizes,
+      table: {
+        type: { summary: 'radio' },
+        defaultValue: { summary: 'narrow' }
+      }
     }
   }
 };
