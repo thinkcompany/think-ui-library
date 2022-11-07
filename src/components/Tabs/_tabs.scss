@@ -1,0 +1,122 @@
+.tco-tab-group {
+  overflow: hidden;
+}
+
+.tco-tab-controls {
+  display: none;
+  flex-flow: row wrap;
+  align-items: center;
+  background-color: $color-classic-glass;
+
+  &.tco-tab-controls--expanded {
+    display: flex;
+  }
+
+  @include wider-than($breakpoint-tablet-portrait) {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-start;
+    padding: 0 $spacing-inline-32;
+  }
+}
+
+.tco-tab-control {
+  @include type-eyebrow;
+  position: relative;
+  width: 100%;
+  padding: $spacing-stack-16 $spacing-inline-16;
+  color: $color-classic-blue;
+  cursor: pointer;
+
+  @include wider-than($breakpoint-tablet-portrait) {
+    flex-grow: 0;
+    width: auto;
+    margin-right: $spacing-inline-40;
+
+    &:last-of-type {
+      margin-right: 0;
+    }
+  }
+
+  &::after {
+    @include wider-than($breakpoint-tablet-portrait) {
+      content: '';
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      display: block;
+      width: 100%;
+      height: 1px;
+      background-color: transparent;
+      transition: background-color 0.15s ease-out, transform 0.15s ease-out;
+      transform: scaleY(1);
+      transform-origin: bottom center;
+    }
+  }
+
+  &:hover {
+    &::after {
+      @include wider-than($breakpoint-tablet-portrait) {
+        background-color: $color-classic-blue;
+      }
+    }
+  }
+
+  &--active {
+    &::after {
+      @include wider-than($breakpoint-tablet-portrait) {
+        background-color: $color-classic-blue;
+        transform: scaleY(3);
+      }
+    }
+  }
+
+  &--selected {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: space-between;
+    padding: $spacing-stack-16 $spacing-inline-16;
+    background-color: $color-classic-blue;
+    color: $color-foreground-on-tint;
+
+    .tco-type-eyebrow {
+      margin-bottom: 0;
+    }
+
+    .tco-icon {
+      width: 16px;
+      height: 16px;
+      fill: $color-foreground-on-tint;
+      transition: transform 0.2s linear;
+      transform: rotateX(180deg);
+    }
+
+    &.tco-tab-control--selected-open {
+      .tco-icon {
+        transform: rotateY(0deg);
+      }
+    }
+
+    @include wider-than($breakpoint-tablet-portrait) {
+      display: none;
+    }
+  }
+}
+
+.tco-tab-group-content {
+  padding: $spacing-stack-20 $spacing-inline-16;
+
+  @include wider-than($breakpoint-tablet-portrait) {
+    padding: $spacing-stack-40 $spacing-inline-32;
+  }
+}
+
+.tco-tab-panel {
+  display: none;
+
+  &.tco-tab-panel--active {
+    display: block;
+  }
+}
