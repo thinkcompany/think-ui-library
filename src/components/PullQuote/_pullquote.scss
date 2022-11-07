@@ -6,9 +6,10 @@
   border-style: solid;
   border-color: $color-classic-gray-light;
 
-  @include wider-than($breakpoint-phone-landscape) {
+  @include wider-than($breakpoint-phone-portrait) {
     float: left;
-    width: 50%;
+    width: auto;
+    max-width: 50%;
     margin-right: $spacing-inline-24;
   }
 
@@ -21,7 +22,7 @@
   }
 
   &.tco-pull-quote--right {
-    @include wider-than($breakpoint-phone-landscape) {
+    @include wider-than($breakpoint-phone-portrait) {
       float: right;
       width: 50%;
       margin-right: 0;
