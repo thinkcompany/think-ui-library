@@ -5,6 +5,8 @@ import './components/TextInput/inputexpand.js';
 
 import './components/Navigation/global-search.js';
 
+import './components/Tabs/tabs.js';
+
 // Components for Site
 import Nav from './components/Navigation/navigation';
 
