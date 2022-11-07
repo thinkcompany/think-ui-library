@@ -1,3 +1,5 @@
+/* eslint-disable no-invalid-this */
+
 document.addEventListener('DOMContentLoaded', () => {
   const tabs = document.querySelectorAll('.tco-tab-control');
   const tabControls = document.querySelector('.tco-tab-controls');
@@ -7,8 +9,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // handle tab functionality
   const setActiveTab = id => {
-    for (let tab of tabs) {
-      if (tab.getAttribute('aria-controls') == id) {
+    for (const tab of tabs) {
+      if (tab.getAttribute('aria-controls') === id) {
         tab.setAttribute('aria-selected', 'true');
         tab.classList.add('tco-tab-control--active');
         tab.focus();
@@ -18,8 +20,8 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     }
 
-    for (let tabPanel of tabPanels) {
-      if (tabPanel.getAttribute('id') == id) {
+    for (const tabPanel of tabPanels) {
+      if (tabPanel.getAttribute('id') === id) {
         tabPanel.setAttribute('aria-expanded', 'true');
         tabPanel.classList.add('tco-tab-panel--active');
       } else {
@@ -35,19 +37,21 @@ document.addEventListener('DOMContentLoaded', () => {
   };
 
   // set event listeners on tabs
-  for (let tab of tabs) {
+  for (const tab of tabs) {
     tab.addEventListener('click', function (e) {
       e.preventDefault();
-      let tabText = this.innerHTML;
+      const tabText = this.innerHTML;
+
       setActiveTab(this.getAttribute('aria-controls'));
       setSelected(tabText);
     });
 
     tab.addEventListener('keyup', function (e) {
-      if (e.keyCode == 13 || e.keyCode == 32) {
+      if (e.keyCode === 13 || e.keyCode === 32) {
         // return or space
         e.preventDefault();
-        let tabText = this.innerHTML;
+        const tabText = this.innerHTML;
+
         setActiveTab(this.getAttribute('aria-controls'));
         setSelected(tabText);
       }
@@ -57,7 +61,6 @@ document.addEventListener('DOMContentLoaded', () => {
   // toggle selected tab
   if (selectedTab) {
     selectedTab.addEventListener('click', function () {
-      console.log('clicky');
       if (selectedTab.classList.contains('tco-tab-control--selected-open')) {
         selectedTab.classList.remove('tco-tab-control--selected-open');
         tabControls.classList.remove('tco-tab-controls--expanded');
