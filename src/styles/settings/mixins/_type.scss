@@ -125,6 +125,20 @@
   }
 }
 
+@mixin type-display-junior($font-color: inherit) {
+  @include type-base-style($font-color, 400);
+  @include clamp(
+    font-size,
+    $breakpoint-phone-portrait,
+    $breakpoint-desktop,
+    $font-size-36,
+    $font-size-48
+  );
+  line-height: 1.2;
+  font-family: $font-stack-slab;
+  letter-spacing: 0;
+}
+
 @mixin type-display-small($font-color: inherit, $italic: false) {
   @include type-base-style($font-color, 400);
   @include clamp(
@@ -146,6 +160,14 @@
   @if $italic {
     font-family: $font-stack-slab-book-italic;
   }
+}
+
+@mixin type-display-thin($font-color: inherit) {
+  @include type-base-style($font-color, 400);
+  font-size: $font-size-24;
+  line-height: 1;
+  font-family: $font-stack-slab-light;
+  letter-spacing: 0;
 }
 
 @mixin type-display-extra-small($font-color: inherit, $italic: false) {

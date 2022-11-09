@@ -18,9 +18,21 @@ const displayStyles = [
     textLength: 1
   },
   {
+    name: 'Display Junior',
+    class: 'tco-type-display--junior',
+    sass: '@include type-display-junior',
+    textLength: 1
+  },
+  {
     name: 'Display Small',
     class: 'tco-type-display--small',
     sass: '@include type-display-small',
+    textLength: 1
+  },
+  {
+    name: 'Display Thin',
+    class: 'tco-type-display--thin',
+    sass: '@include type-display-thin',
     textLength: 1
   },
   {

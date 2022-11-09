@@ -22,12 +22,20 @@
   }
 }
 
+.tco-type-display--junior {
+  @include type-display-junior;
+}
+
 .tco-type-display--small {
   @include type-display-small;
 
   &-italic {
     @include type-display-small($italic: true);
   }
+}
+
+.tco-type-display--thin {
+  @include type-display-thin;
 }
 
 .tco-type-display--extra-small {
