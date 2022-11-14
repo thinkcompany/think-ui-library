@@ -88,12 +88,9 @@ $byline-img-width--l: 66px;
     .tco-byline-name {
       @include type-body-small;
       display: inline;
+      margin-right: 3px;
       color: $color-classic-gray-dark;
       list-style-type: none;
-
-      &:not(:first-of-type) {
-        margin-left: 3px;
-      }
     }
   }
 }
