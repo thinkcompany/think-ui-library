@@ -57,6 +57,12 @@ const bodyStyles = [
     textLength: 1
   },
   {
+    name: 'Body Text Sans Small Light',
+    class: 'tco-type-body--sans-small-light',
+    sass: '@include type-body-small-light',
+    textLength: 1
+  },
+  {
     name: 'Body Text Large',
     class: 'tco-type-body--large',
     sass: '@include type-body-large',
