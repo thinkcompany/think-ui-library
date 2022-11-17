@@ -91,6 +91,17 @@
 }
 
 @font-face {
+  font-weight: 300;
+  font-style: normal;
+  font-family: 'Kievit Pro Light';
+  src: url('./KievitPro-Light.eot?#iefix') format('embedded-opentype'),
+    url('./KievitPro-Light.woff2') format('woff2'),
+    url('./KievitPro-Light.woff') format('woff'),
+    url('./KievitPro-Light.ttf') format('truetype');
+  font-display: swap;
+}
+
+@font-face {
   font-style: normal;
   font-family: 'KievitWeb W07 Medi'; // KievitPro-Medium
   src: url('./1473295/2adcd26a-1976-42fe-a53b-58b4bb023e71.eot?#iefix');

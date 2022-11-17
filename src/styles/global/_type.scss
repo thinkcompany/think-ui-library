@@ -87,6 +87,10 @@
   }
 }
 
+.tco-type-body--sans-small-light {
+  @include type-body-small-light;
+}
+
 .tco-type-body--sans-xsmall {
   @include type-body-xsmall;
 

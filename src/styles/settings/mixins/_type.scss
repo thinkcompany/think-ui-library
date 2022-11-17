@@ -282,6 +282,13 @@
   }
 }
 
+@mixin type-body-small-light($font-color: inherit) {
+  @include type-base-style($font-color, 300);
+  font-size: $font-size-16;
+  font-family: $font-stack-sans-serif-light;
+  line-height: 1.25;
+}
+
 @mixin type-body-xsmall(
   $font-color: inherit,
   $italic: false,
