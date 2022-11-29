@@ -383,9 +383,6 @@ $device-offset-v: 58px;
 // ========================================================
 .tco-card--person {
   @include card-scale;
-  background-position: 50%;
-  background-size: cover;
-  background-repeat: no-repeat;
 
   > .tco-card-link {
     position: relative;
@@ -401,6 +398,7 @@ $device-offset-v: 58px;
       position: absolute;
       bottom: 0;
       left: 0;
+      z-index: 1;
       display: block;
       width: 100%;
       height: 50%;
@@ -438,6 +436,17 @@ $device-offset-v: 58px;
       @include type-body-small($font-color: $color-foreground-on-tint);
       margin-top: $spacing-stack-4;
     }
+  }
+
+  .tco-person-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    transform: translate3d(0, 0, 0);
+    backface-visibility: hidden;
   }
 }
 

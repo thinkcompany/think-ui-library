@@ -51,12 +51,13 @@ const PersonCardTemplate = args => {
   return `
   <div class="tco-container-wrapper">
     <div class="tco-container">
-      <div class="tco-card tco-card--person tco-card-container--${treatment}" style="background-image: url(${image})">
+      <div class="tco-card tco-card--person tco-card-container--${treatment}">
         <a href="#" class="tco-card-link">
           <div class="tco-card-content-container">
             <h2 class="tco-card-content-heading tco-link--dark-theme">${name}</h2>
             <p class="tco-card-content-description">${title}</p>
           </div>
+          <img class="tco-person-image" alt="${name}" src="${image}" loading="lazy" />
         </a>
       </div>
     </div>
