@@ -26,6 +26,10 @@
   @include type-display-junior;
 }
 
+.tco-type-display--sans {
+  @include type-display-sans;
+}
+
 .tco-type-display--small {
   @include type-display-small;
 

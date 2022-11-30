@@ -315,6 +315,19 @@
   }
 }
 
+@mixin type-display-sans($font-color: inherit) {
+  @include type-base-style($font-color);
+  @include clamp(
+    font-size,
+    $breakpoint-phone-portrait,
+    $breakpoint-desktop,
+    $font-size-30,
+    $font-size-53
+  );
+  font-family: $font-stack-sans-serif-bold;
+  line-height: 1.2;
+}
+
 @mixin type-cursive($font-color: inherit) {
   @include type-base-style($font-color, 400);
   font-family: $font-stack-cursive;
