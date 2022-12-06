@@ -1,0 +1,37 @@
+$panel-max: 1680;
+
+.tco-image-panel {
+  position: relative;
+  min-width: 124vw;
+  max-width: calc(#{$panel-max} * 1px);
+  transform: translateX(-12vw);
+  aspect-ratio: $panel-max / 722;
+}
+
+.tco-panel-item {
+  position: absolute;
+  top: 50%;
+  display: inline-block;
+  width: calc((var(--width) / #{$panel-max}) * 100%);
+  box-shadow: $box-shadow-image;
+  transform: translate3d(0, -50%, 0);
+
+  &--a {
+    left: 0;
+  }
+
+  &--e {
+    left: 50%;
+    transform: translate3d(-50%, -50%, 0);
+  }
+
+  &--i {
+    right: 0;
+  }
+}
+
+.tco-panel-image {
+  display: block;
+  width: 100%;
+  height: auto;
+}
