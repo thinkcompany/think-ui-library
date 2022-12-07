@@ -1,32 +1,110 @@
-$panel-max: 1680;
+$panel-width: 124; // vw
+$panel-max: 1680; // px
+$panel-max-px: $panel-max + px;
+$panel-max-h: 722; // px intended size of panel at $panel-max
+$bp-a: 1355px; // $panel-max / $panel-width
 
 .tco-image-panel {
   position: relative;
-  min-width: 124vw;
-  max-width: calc(#{$panel-max} * 1px);
-  transform: translateX(-12vw);
-  aspect-ratio: $panel-max / 722;
+  width: min(#{$panel-width} * 1vw, #{$panel-max-px});
+  margin: 0 auto;
+  transform: translateX(calc(((#{$panel-width} - 100) / 2) * -1vw));
+  aspect-ratio: $panel-max / $panel-max-h;
+
+  @include wider-than($bp-a) {
+    transform: translateX(calc((100vw - #{$panel-max-px}) / 2));
+  }
+
+  @include wider-than($panel-max-px) {
+    transform: translateX(0);
+  }
 }
 
 .tco-panel-item {
   position: absolute;
-  top: 50%;
+  left: 0;
   display: inline-block;
-  width: calc((var(--width) / #{$panel-max}) * 100%);
+  width: min((var(--width) / #{$panel-max}) * 100%, var(--width) * 1px);
+  margin: 0;
   box-shadow: $box-shadow-image;
-  transform: translate3d(0, -50%, 0);
+
+  &--b,
+  &--c,
+  &--d,
+  &--e,
+  &--f,
+  &--g,
+  &--i {
+    bottom: 0;
+  }
+
+  &--a,
+  &--h {
+    top: 0;
+  }
+
+  &--f,
+  &--g {
+    left: 50%;
+  }
+
+  &--h,
+  &--i {
+    right: 0;
+    left: auto;
+  }
+
+  &--b,
+  &--g {
+    z-index: 2;
+  }
+
+  &--e,
+  &--i {
+    z-index: 3;
+  }
+
+  &--d,
+  &--f {
+    z-index: 4;
+  }
 
   &--a {
-    left: 0;
+    transform: translate3d(0, 0, 0);
+  }
+
+  &--b {
+    transform: translate3d(33%, -40%, 0);
+  }
+
+  &--c {
+    z-index: 5;
+    transform: translate3d(210%, -84%, 0);
+  }
+
+  &--d {
+    transform: translate3d(107%, 0, 0);
   }
 
   &--e {
-    left: 50%;
-    transform: translate3d(-50%, -50%, 0);
+    transform: translate3d(108%, -50%, 0);
+  }
+
+  &--f {
+    transform: translate3d(96%, -20%, 0);
+  }
+
+  &--g {
+    transform: translate3d(44%, -56%, 0);
+  }
+
+  &--h {
+    z-index: 1;
+    transform: translate3d(-126%, 5%, 0);
   }
 
   &--i {
-    right: 0;
+    transform: translate3d(0, -10%, 0);
   }
 }
 
