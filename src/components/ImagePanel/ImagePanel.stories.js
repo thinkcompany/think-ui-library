@@ -85,17 +85,13 @@ export default {
   title: 'Components / Image Panel',
   parameters: {
     component: ImagePanel,
-    componentSubtitle: 'The Image Panel is a component.',
+    componentSubtitle: 'The Image Panel is used on the homepage.',
+    controls: { hideNoControlsWarning: true },
     docs: {
       description: {
-        component: 'Other things'
+        component:
+          'This component is highly curated - uploaded images should be the same aspect ratio as the supplied dimensions.'
       }
     }
-  },
-  args: {
-    imageA:
-      'https://www.thinkcompany.com/wp-content/uploads/2020/12/photo-studios-philly-feature.jpg',
-    imageB:
-      'https://www.thinkcompany.com/wp-content/uploads/2020/12/studios-conshy-header.jpg'
   }
 };
