@@ -2,55 +2,55 @@ const ImagePanelTemplate = () => {
   const imageItem = i => {
     const images = [
       {
-        source: 'https://dummyimage.com/425x318/fff',
+        source: 'https://dummyimage.com/425x318/0062c3',
         class: 'tco-panel-item--a',
         width: 425,
         height: 318
       },
       {
-        source: 'https://dummyimage.com/462x346/fff',
+        source: 'https://dummyimage.com/462x346/0062c3',
         class: 'tco-panel-item--b',
         width: 462,
         height: 346
       },
       {
-        source: 'https://dummyimage.com/160x328/fff',
+        source: 'https://dummyimage.com/160x328/0062c3',
         class: 'tco-panel-item--c',
         width: 160,
         height: 328
       },
       {
-        source: 'https://dummyimage.com/425x318/fff',
+        source: 'https://dummyimage.com/425x318/0062c3',
         class: 'tco-panel-item--d',
         width: 425,
         height: 318
       },
       {
-        source: 'https://dummyimage.com/516x387/fff',
+        source: 'https://dummyimage.com/516x387/0062c3',
         class: 'tco-panel-item--e',
         width: 516,
         height: 387
       },
       {
-        source: 'https://dummyimage.com/160x328/fff',
+        source: 'https://dummyimage.com/160x328/0062c3',
         class: 'tco-panel-item--f',
         width: 160,
         height: 328
       },
       {
-        source: 'https://dummyimage.com/440x330/fff',
+        source: 'https://dummyimage.com/440x330/0062c3',
         class: 'tco-panel-item--g',
         width: 440,
         height: 330
       },
       {
-        source: 'https://dummyimage.com/222x454/fff',
+        source: 'https://dummyimage.com/222x454/0062c3',
         class: 'tco-panel-item--h',
         width: 222,
         height: 454
       },
       {
-        source: 'https://dummyimage.com/425x318/fff',
+        source: 'https://dummyimage.com/425x318/0062c3',
         class: 'tco-panel-item--i',
         width: 425,
         height: 318

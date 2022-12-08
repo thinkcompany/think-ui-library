@@ -3,6 +3,7 @@ $panel-max: 1680; // px
 $panel-max-px: $panel-max + px;
 $panel-max-h: 722; // px intended size of panel at $panel-max
 $bp-a: 1355px; // $panel-max / $panel-width
+$border-radius-image: 6px;
 
 .tco-image-panel {
   position: relative;
@@ -10,6 +11,7 @@ $bp-a: 1355px; // $panel-max / $panel-width
   margin: 0 auto;
   transform: translateX(calc(((#{$panel-width} - 100) / 2) * -1vw));
   aspect-ratio: $panel-max / $panel-max-h;
+  perspective: 1000px;
 
   @include wider-than($bp-a) {
     transform: translateX(calc((100vw - #{$panel-max-px}) / 2));
@@ -24,9 +26,16 @@ $bp-a: 1355px; // $panel-max / $panel-width
   position: absolute;
   left: 0;
   display: inline-block;
+  overflow: hidden;
   width: min((var(--width) / #{$panel-max}) * 100%, var(--width) * 1px);
   margin: 0;
+  border-radius: $border-radius-image;
   box-shadow: $box-shadow-image;
+  transform-origin: 0 0;
+
+  .tco-lights-out & {
+    box-shadow: $box-shadow-dark;
+  }
 
   &--b,
   &--c,
@@ -69,42 +78,38 @@ $bp-a: 1355px; // $panel-max / $panel-width
     z-index: 4;
   }
 
-  &--a {
-    transform: translate3d(0, 0, 0);
-  }
-
   &--b {
-    transform: translate3d(33%, -40%, 0);
+    transform: translate(33%, -40%);
   }
 
   &--c {
     z-index: 5;
-    transform: translate3d(210%, -84%, 0);
+    transform: translate(210%, -84%);
   }
 
   &--d {
-    transform: translate3d(107%, 0, 0);
+    transform: translate(107%, 0);
   }
 
   &--e {
-    transform: translate3d(108%, -50%, 0);
+    transform: translate(108%, -50%);
   }
 
   &--f {
-    transform: translate3d(96%, -20%, 0);
+    transform: translate(96%, -20%);
   }
 
   &--g {
-    transform: translate3d(44%, -56%, 0);
+    transform: translate(44%, -56%);
   }
 
   &--h {
     z-index: 1;
-    transform: translate3d(-126%, 5%, 0);
+    transform: translate(-126%, 5%);
   }
 
   &--i {
-    transform: translate3d(0, -10%, 0);
+    transform: translate(0, -10%);
   }
 }
 
