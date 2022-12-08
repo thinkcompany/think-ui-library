@@ -11,7 +11,6 @@ $border-radius-image: 6px;
   margin: 0 auto;
   transform: translateX(calc(((#{$panel-width} - 100) / 2) * -1vw));
   aspect-ratio: $panel-max / $panel-max-h;
-  perspective: 1000px;
 
   @include wider-than($bp-a) {
     transform: translateX(calc((100vw - #{$panel-max-px}) / 2));
