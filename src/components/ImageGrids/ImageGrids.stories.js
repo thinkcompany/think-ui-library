@@ -15,54 +15,54 @@ const LogoTemplate = args => {
   const imageItem = i => {
     const images = [
       {
-        logo: 'nemours',
-        width: 335,
-        height: 113
+        logo: 'adp',
+        width: 250,
+        height: 115
+      },
+      {
+        logo: 'chop',
+        width: 250,
+        height: 170
+      },
+      {
+        logo: 'amerisourcebergen',
+        width: 250,
+        height: 26
+      },
+      {
+        logo: 'clarivate',
+        width: 250,
+        height: 86
+      },
+      {
+        logo: 'comcast',
+        width: 250,
+        height: 88
+      },
+      {
+        logo: 'eventbrite',
+        width: 250,
+        height: 45
+      },
+      {
+        logo: 'johnsonandjohnson',
+        width: 250,
+        height: 46
+      },
+      {
+        logo: 'templeuniversity',
+        width: 250,
+        height: 55
       },
       {
         logo: 'unitedway',
-        width: 312,
-        height: 133
+        width: 250,
+        height: 106
       },
       {
-        logo: 'whyy',
-        width: 335,
-        height: 112
-      },
-      {
-        logo: 'andesa',
-        width: 270,
-        height: 159
-      },
-      {
-        logo: 'sanofi',
-        width: 249,
-        height: 199
-      },
-      {
-        logo: 'aws',
-        width: 1080,
-        height: 405
-      },
-      {
-        logo: 'angularJS',
-        width: 2500,
-        height: 679
-      },
-      {
-        logo: 'react',
-        width: 1080,
-        height: 363
-      },
-      {
-        logo: 'salesforce',
-        width: 1080,
-        height: 754
-      },
-      {
-        logo: 'veeva',
-        width: 1080,
-        height: 251
+        logo: 'vanguard',
+        width: 250,
+        height: 54
       }
     ];
 
@@ -74,11 +74,7 @@ const LogoTemplate = args => {
 
     return `
       <div class="tco-image-grid-container">
-        <div class="tco-image-grid-media" style="--logo-w:${image.width}; --logo-h:${image.height};">
-          <svg class="tco-image-grid-media tco-image-grid-media--svg" role="presentation">
-            <use xlink:href="/img/logos.svg#icon-logo-${image.logo}"></use>
-          </svg>
-        </div>
+        <img src="/img/logos/client-logo-${image.logo}.png" width="${image.width}" height="${image.height}" alt="${image.logo} logo" />
       </div>`;
   };
 
@@ -93,7 +89,7 @@ const LogoTemplate = args => {
   };
 
   return `
-  <div class="tco-container-wrapper">
+  <div class="tco-container-wrapper tco-container-wrapper--blue">
     <div class="tco-container tco-container--${textAlignment}">
     ${
       eyebrow
