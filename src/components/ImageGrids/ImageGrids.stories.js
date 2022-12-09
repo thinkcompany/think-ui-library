@@ -122,6 +122,16 @@ Logos.args = {
   imageCount: 10
 };
 
+Logos.parameters = {
+  component: Logos,
+  docs: {
+    description: {
+      component:
+        'Guidelines: <strong>format </strong>transparent png | <strong>upload size</strong> 250px wide'
+    }
+  }
+};
+
 Logos.argTypes = {
   headingSize: {
     name: 'heading size',
