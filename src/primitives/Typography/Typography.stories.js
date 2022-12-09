@@ -36,6 +36,12 @@ const displayStyles = [
     textLength: 1
   },
   {
+    name: 'Display Sans',
+    class: 'tco-type-display--sans',
+    sass: '@include type-display-sans',
+    textLength: 1
+  },
+  {
     name: 'Eyebrow',
     class: 'tco-type-eyebrow',
     sass: '@include type-eyebrow',
