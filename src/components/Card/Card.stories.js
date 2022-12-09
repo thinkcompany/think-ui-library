@@ -310,6 +310,58 @@ JobCard.argTypes = {
   }
 };
 
+const MotionCardTemplate = args => {
+  const { heading, summary, image, layout, treatment } = args;
+
+  return `
+  <div class="tco-container-wrapper">
+    <div class="tco-container">
+      <div class="tco-card tco-card--motion tco-card-container--${treatment}">
+        <div class="tco-card-content-container">
+          <h2 class="tco-type-display--medium tco-link--dark-theme">${heading}</h2>
+          <p class="tco-type-body--sans-small">${summary}</p>
+          <p class="tco-text-link">See our work
+            <svg class="tco-text-link-icon" width="20" height="20" viewBox="0 0 20 20" role="presentation">
+              <use xlink:href="/img/icons.svg#icon-arrow-right"></use>
+            </svg>
+          </p>
+        </div>
+        <div class="tco-card-video-container">
+          <video class="tco-card-video" autoplay="" muted="" loop="" playsinline="" preload="auto" poster="${image}">
+            <source src="" type="video/webm">
+            <source src="" type="video/mp4">
+          </video>
+          <button class="tco-video-controls tco-video-controls--pause" data-text-pause="Stop Video" data-text-play="Play Video">Stop Video</button>
+        </div>
+      </div>
+    </div>
+  </div>`;
+};
+
+export const MotionCard = MotionCardTemplate.bind({});
+
+MotionCard.args = {
+  heading: 'Work',
+  summary:
+    'Take a look at how we’ve helped teams like yours delight customers and employees with modern digital tools.',
+  image:
+    'https://www.thinkcompany.com/wp-content/uploads/2020/12/Competitive-Salary-Annual-Increase-1-1.svg',
+  layout: layouts[0]
+};
+
+MotionCard.argTypes = {
+  treatment: {
+    name: 'border treatment (dark theme)',
+    control: 'inline-radio',
+    options: treatments
+  },
+  layout: {
+    name: 'media position',
+    control: 'inline-radio',
+    options: layouts
+  }
+};
+
 export default {
   title: 'Components / Card',
   component: [SummaryCard, PostCard, PersonCard, CalloutCard, MediaCard],
