@@ -2,58 +2,58 @@ const ImagePanelTemplate = () => {
   const imageItem = i => {
     const images = [
       {
-        source: 'https://dummyimage.com/425x318/0062c3',
+        source: 'https://dummyimage.com/489x326/0062c3',
         class: 'tco-panel-item--a',
-        width: 425,
-        height: 318
+        width: 489,
+        height: 326
       },
       {
-        source: 'https://dummyimage.com/462x346/0062c3',
+        source: 'https://dummyimage.com/489x326/0062c3',
         class: 'tco-panel-item--b',
-        width: 462,
+        width: 489,
         height: 346
       },
       {
-        source: 'https://dummyimage.com/160x328/0062c3',
+        source: 'https://dummyimage.com/178x386/0062c3',
         class: 'tco-panel-item--c',
-        width: 160,
-        height: 328
+        width: 178,
+        height: 386
       },
       {
-        source: 'https://dummyimage.com/425x318/0062c3',
+        source: 'https://dummyimage.com/489x326/0062c3',
         class: 'tco-panel-item--d',
-        width: 425,
-        height: 318
+        width: 489,
+        height: 326
       },
       {
-        source: 'https://dummyimage.com/516x387/0062c3',
+        source: 'https://dummyimage.com/489x326/0062c3',
         class: 'tco-panel-item--e',
-        width: 516,
-        height: 387
+        width: 489,
+        height: 326
       },
       {
-        source: 'https://dummyimage.com/160x328/0062c3',
+        source: 'https://dummyimage.com/178x386/0062c3',
         class: 'tco-panel-item--f',
-        width: 160,
-        height: 328
+        width: 178,
+        height: 386
       },
       {
-        source: 'https://dummyimage.com/440x330/0062c3',
+        source: 'https://dummyimage.com/489x326/0062c3',
         class: 'tco-panel-item--g',
-        width: 440,
-        height: 330
+        width: 489,
+        height: 326
       },
       {
-        source: 'https://dummyimage.com/222x454/0062c3',
+        source: 'https://dummyimage.com/178x386/0062c3',
         class: 'tco-panel-item--h',
-        width: 222,
-        height: 454
+        width: 178,
+        height: 386
       },
       {
-        source: 'https://dummyimage.com/425x318/0062c3',
+        source: 'https://dummyimage.com/489x326/0062c3',
         class: 'tco-panel-item--i',
-        width: 425,
-        height: 318
+        width: 489,
+        height: 326
       }
     ];
 
@@ -61,7 +61,7 @@ const ImagePanelTemplate = () => {
 
     return `
       <figure class="tco-panel-item ${image.class}" style="--width:${image.width} ">
-        <img class="tco-panel-image" alt="Hey now" src="${image.source}" width="${image.width}" height="${image.height}" />
+        <img class="tco-panel-image" alt="A placeholder image" src="${image.source}" width="${image.width}" height="${image.height}" />
       </figure>
     `;
   };
@@ -90,7 +90,7 @@ export default {
     docs: {
       description: {
         component:
-          'This component is highly curated - uploaded images should be the same aspect ratio as the supplied dimensions.'
+          'There are two image sizes / aspect ratios<br> 1) <strong>aspect ratio </strong>6:4 | <strong>max display size</strong> 489 x 326 | <strong>upload size</strong> 734 x 489 <br>12 <strong>aspect ratio </strong>89:193 | <strong>max display size</strong> 178 x 386 | <strong>upload size</strong> 267 x 579'
       }
     }
   }

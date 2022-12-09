@@ -1,18 +1,37 @@
-$panel-width: 124; // vw
-$panel-max: 1680; // px
+$panel-mobile-max: 756;
+$panel-mobile-max-px: $panel-mobile-max + px;
+$panel-width-mobile: 194; // vw
+$panel-width: 144; // vw
+$panel-max: 1842; // px
 $panel-max-px: $panel-max + px;
-$panel-max-h: 722; // px intended size of panel at $panel-max
-$bp-a: 1355px; // $panel-max / $panel-width
+$panel-max-h: 730; // px intended size of panel at $panel-max
+$bp-a: 390px; // $panel-mobile-max / $panel-width-mobile
+$bp-b: 1280px; // $panel-max / $panel-width
 $border-radius-image: 6px;
+$mobile-max-width: calc(var(--width) * 0.67);
 
 .tco-image-panel {
   position: relative;
-  width: min(#{$panel-width} * 1vw, #{$panel-max-px});
+  width: min(#{$panel-width-mobile} * 1vw, #{$panel-mobile-max-px});
   margin: 0 auto;
-  transform: translateX(calc(((#{$panel-width} - 100) / 2) * -1vw));
-  aspect-ratio: $panel-max / $panel-max-h;
+  transform: translateX(calc(((#{$panel-width-mobile} - 100) / 2) * -1vw));
+  aspect-ratio: $panel-mobile-max / $panel-mobile-max;
 
   @include wider-than($bp-a) {
+    transform: translateX(calc((100vw - #{$panel-mobile-max-px}) / 2));
+  }
+
+  @include wider-than($panel-mobile-max-px) {
+    transform: translateX(0);
+  }
+
+  @include wider-than($breakpoint-tablet-portrait) {
+    width: min(#{$panel-width} * 1vw, #{$panel-max-px});
+    transform: translateX(calc(((#{$panel-width} - 100) / 2) * -1vw));
+    aspect-ratio: $panel-max / $panel-max-h;
+  }
+
+  @include wider-than($bp-b) {
     transform: translateX(calc((100vw - #{$panel-max-px}) / 2));
   }
 
@@ -26,11 +45,15 @@ $border-radius-image: 6px;
   left: 0;
   display: inline-block;
   overflow: hidden;
-  width: min((var(--width) / #{$panel-max}) * 100%, var(--width) * 1px);
+  width: min(((var(--width) * 0.68) / #{$panel-mobile-max}) * 100%, var(--width) * 1px);
   margin: 0;
   border-radius: $border-radius-image;
   box-shadow: $box-shadow-image;
   transform-origin: 0 0;
+
+  @include wider-than($breakpoint-tablet-portrait) {
+    width: min((var(--width) / #{$panel-max}) * 100%, var(--width) * 1px);
+  }
 
   .tco-lights-out & {
     box-shadow: $box-shadow-dark;
@@ -62,53 +85,92 @@ $border-radius-image: 6px;
     left: auto;
   }
 
-  &--b,
-  &--g {
-    z-index: 2;
-  }
-
   &--e,
   &--i {
     z-index: 3;
   }
 
-  &--d,
-  &--f {
-    z-index: 4;
+  &--a {
+    transform: translate(4%, 22%);
+
+    @include wider-than($breakpoint-tablet-portrait) {
+      transform: translate(0, 0);
+    }
   }
 
   &--b {
-    transform: translate(33%, -40%);
+    z-index: 4;
+    transform: translate(0, -58%);
+
+    @include wider-than($breakpoint-tablet-portrait) {
+      z-index: 2;
+      transform: translate(50%, -52%);
+    }
   }
 
   &--c {
     z-index: 5;
-    transform: translate(210%, -84%);
+    transform: translate(78%, -98%);
+
+    @include wider-than($breakpoint-tablet-portrait) {
+      transform: translate(260%, -70%);
+    }
   }
 
   &--d {
-    transform: translate(107%, 0);
+    z-index: 5;
+    transform: translate(54%, 0);
+
+    @include wider-than($breakpoint-tablet-portrait) {
+      z-index: 4;
+      transform: translate(114%, 0);
+    }
   }
 
   &--e {
-    transform: translate(108%, -50%);
+    transform: translate(54%, -154%);
+
+    @include wider-than($breakpoint-tablet-portrait) {
+      transform: translate(140%, -78%);
+    }
   }
 
   &--f {
-    transform: translate(96%, -20%);
+    z-index: 5;
+    transform: translate(54%, -22%);
+
+    @include wider-than($breakpoint-tablet-portrait) {
+      z-index: 4;
+      transform: translate(96%, -20%);
+    }
   }
 
   &--g {
-    transform: translate(44%, -56%);
+    z-index: 4;
+    transform: translate(-21%, -86%);
+
+    @include wider-than($breakpoint-tablet-portrait) {
+      z-index: 2;
+      transform: translate(44%, -66%);
+    }
   }
 
   &--h {
-    z-index: 1;
-    transform: translate(-126%, 5%);
+    z-index: 4;
+    transform: translate(-205%, 0);
+
+    @include wider-than($breakpoint-tablet-portrait) {
+      z-index: 1;
+      transform: translate(-206%, 5%);
+    }
   }
 
   &--i {
-    transform: translate(0, -10%);
+    transform: translate(0%, -176%);
+
+    @include wider-than($breakpoint-tablet-portrait) {
+      transform: translate(0%, -10%);
+    }
   }
 }
 
