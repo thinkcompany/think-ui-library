@@ -310,28 +310,85 @@ JobCard.argTypes = {
   }
 };
 
+const miniContent = [
+  {
+    name: 'Client',
+    image: 'img/case-studies/client-a.jpg',
+    project: 'Client project',
+    bg: '#00654e'
+  },
+  {
+    name: 'Client',
+    image: 'img/case-studies/client-b.jpg',
+    project: 'Client project',
+    bg: '#007ab8'
+  },
+  {
+    name: 'Client with a long name',
+    image: 'img/case-studies/client-c.jpg',
+    project: 'Client project name really long',
+    bg: '#143061'
+  },
+  {
+    name: 'Client with a long name',
+    image: 'img/case-studies/client-c.jpg',
+    project: 'Client project name really long',
+    bg: '#143061'
+  }
+];
+
+const miniCsCard = input => {
+  return `
+    <article class="tco-mini-card" style="--cs-bg-hex:${input.bg}">
+      <div class="tco-mini-card-container">
+        <div class="tco-mini-image-container">
+          <img src="${input.image}" alt="Example of work" width="234" height="130" />
+        </div>
+        <div class="tco-mini-content">
+          <h5 class="tco-type-eyebrow">${input.name}</h5>
+          <p class="tco-type-body">${input.project}</p>
+        </div>
+      </div>
+    </article>
+  `;
+};
+
 const MotionCardTemplate = args => {
-  const { heading, summary, image, layout, treatment } = args;
+  const { heading, summary, miniCards, treatment } = args;
+  const miniCount = miniCards.length;
 
   return `
   <div class="tco-container-wrapper">
     <div class="tco-container">
-      <div class="tco-card tco-card--motion tco-card-container--${treatment}">
-        <div class="tco-card-content-container">
-          <h2 class="tco-type-display--medium tco-link--dark-theme">${heading}</h2>
-          <p class="tco-type-body--sans-small">${summary}</p>
-          <p class="tco-text-link">See our work
-            <svg class="tco-text-link-icon" width="20" height="20" viewBox="0 0 20 20" role="presentation">
-              <use xlink:href="/img/icons.svg#icon-arrow-right"></use>
-            </svg>
-          </p>
-        </div>
-        <div class="tco-card-video-container">
-          <video class="tco-card-video" autoplay="" muted="" loop="" playsinline="" preload="auto" poster="${image}">
-            <source src="" type="video/webm">
-            <source src="" type="video/mp4">
-          </video>
-          <button class="tco-video-controls tco-video-controls--pause" data-text-pause="Stop Video" data-text-play="Play Video">Stop Video</button>
+      <div class="tco-card-grid tco-card-grid--2-column">
+        <div class="tco-card tco-card--motion tco-card-container--${treatment}">
+          <div class="tco-card-content-container">
+            <h2 class="tco-type-display--medium tco-link--dark-theme">${heading}</h2>
+            <p class="tco-card-description tco-type-body--sans-small">${summary}</p>
+            <p class="tco-text-link tco-type-body tco-link--dark-theme">
+              See our work
+              <svg class="tco-text-link-icon" width="20" height="20" viewBox="0 0 20 20" role="presentation">
+                <use xlink:href="/img/icons.svg#icon-arrow-right"></use>
+              </svg>
+            </p>
+
+          </div>
+          <div class="tco-card-motion-container">
+            <div class="tco-motion-track tco-motion-track--paused" style="--card-count:${miniCount}">
+              ${miniCards.map(item => miniCsCard(item)).join('')}
+            </div>
+            <div class="tco-motion-control-container">
+              <button class="tco-motion-control tco-motion-track--paused tco-btn">
+                <span class="tco-accessibly-hidden">Stop Video</span>
+                <svg class="tco-motion-control-icon tco-motion-control-icon--pause" width="20" height="20" viewBox="0 0 12 12" role="presentation">
+                  <use xlink:href="/img/icons.svg#icon-pause"></use>
+                </svg>
+                <svg class="tco-motion-control-icon tco-motion-control-icon--play" width="20" height="20" viewBox="0 0 12 12" role="presentation">
+                  <use xlink:href="/img/icons.svg#icon-play"></use>
+                </svg>
+              </button>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -344,9 +401,7 @@ MotionCard.args = {
   heading: 'Work',
   summary:
     'Take a look at how we’ve helped teams like yours delight customers and employees with modern digital tools.',
-  image:
-    'https://www.thinkcompany.com/wp-content/uploads/2020/12/Competitive-Salary-Annual-Increase-1-1.svg',
-  layout: layouts[0]
+  miniCards: miniContent
 };
 
 MotionCard.argTypes = {
