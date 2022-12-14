@@ -1,7 +1,8 @@
 document.addEventListener('DOMContentLoaded', () => {
-  const motionCards = document.querySelectorAll('.tco-card--motion');
+  const carouselCard = document.querySelector('.tco-card--motion-carousel');
+  const sliderCard = document.querySelector('.tco-card--motion-slider');
 
-  const cardControls = card => {
+  const carouselControls = card => {
     const cardWidth = card.offsetWidth;
     const track = card.querySelector('.tco-motion-track');
     const minis = track.querySelectorAll('.tco-mini-card');
@@ -38,7 +39,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const observerCallback = entries => {
       entries.forEach(entry => {
         const { target } = entry;
-        console.log(entry);
         // if ( entry.intersectionRatio >= observerOptions.threshold ) {
         if (entry.isIntersecting) {
           target.classList.add(miniClass);
@@ -85,12 +85,10 @@ document.addEventListener('DOMContentLoaded', () => {
         animateTrack.play();
         track.classList.remove(pauseClass);
         control.classList.remove(pauseClass);
-        console.log(animateTrack.effect.getComputedTiming().progress);
       } else {
         animateTrack.pause();
         track.classList.add(pauseClass);
         control.classList.add(pauseClass);
-        console.log(animateTrack.effect.getComputedTiming().progress);
       }
     };
 
@@ -114,7 +112,73 @@ document.addEventListener('DOMContentLoaded', () => {
     control.addEventListener('click', toggleAnimation);
   };
 
-  motionCards.forEach(motionCard => {
-    cardControls(motionCard);
-  });
+  const sliderControls = card => {
+    const track = card.querySelector('.tco-motion-track');
+    const slideRows = track.querySelectorAll('.tco-motion-row');
+    const controlContainer = card.querySelector(
+      '.tco-motion-control-container'
+    );
+    const control = controlContainer.querySelector('.tco-motion-control');
+    const trackWidth = track.offsetWidth;
+    const miniWidth = 174;
+
+    const animateRows = () => {
+      let rowWidths = [];
+      let widestRow = '100%';
+
+      slideRows.forEach(row => {
+        let keyframes = [];
+        let ogSlides = row.querySelectorAll('.tco-mini-slide');
+        let rowWidth =
+          miniWidth * (ogSlides.length * 2) + (ogSlides.length - 1) * 8;
+
+        rowWidths.push(rowWidth);
+
+        // clone the images in each row
+        ogSlides.forEach(ogSlide => {
+          let clone = ogSlide.cloneNode(true);
+          clone.classList.add('tco-mini-slide--clone');
+          row.append(clone);
+        });
+
+        // now get all the slides
+        const slides = row.querySelectorAll('.tco-mini-slide');
+        const slideCount = slides.length / 2 + 1;
+
+        const trackTiming = {
+          duration: 1000 * slides.length,
+          iterations: Infinity
+        };
+
+        // build keyframes
+        for (let i = 0; i < slideCount; i++) {
+          let miniW = miniWidth + 8;
+          miniW = miniW * i;
+
+          keyframes.push({ transform: 'translateX(-' + miniW + 'px)' });
+        }
+
+        const animateRow = row.animate(keyframes, trackTiming);
+        animateRow.pause();
+
+        const toggleAnimation = () => {
+          if (animateRow.playState === 'paused') {
+            animateRow.play();
+          } else {
+            animateRow.pause();
+          }
+        };
+
+        control.addEventListener('click', toggleAnimation);
+      });
+
+      widestRow = rowWidths.reduce((a, b) => Math.max(a, b), -Infinity) + 'px';
+      track.style.width = widestRow;
+    };
+
+    animateRows();
+  };
+
+  carouselControls(carouselCard);
+  sliderControls(sliderCard);
 });

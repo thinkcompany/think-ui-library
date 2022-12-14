@@ -1,5 +1,6 @@
 $motion-content-max: 464px;
 $mini-card: 280px;
+$mini-slide: 174px;
 
 .tco-card--motion {
   display: flex;
@@ -53,15 +54,17 @@ $mini-card: 280px;
 
 .tco-card-motion-container {
   width: 100%;
-  transform: translateX(calc(-#{$mini-card}));
+
+  &:not(.tco-card-motion-container--slider) {
+    transform: translateX(calc(-#{$mini-card}));
+  }
 }
 
-.tco-motion-track {
+.tco-motion-track--carousel {
   display: flex;
   flex-flow: row nowrap;
   align-items: center;
   width: calc(#{$mini-card} * (var(--card-count) * 2));
-  padding: $spacing-stack-16 0 0;
 }
 
 .tco-motion-control-container {
@@ -123,8 +126,12 @@ $mini-card: 280px;
 }
 
 .tco-mini-image-container {
-  position: relative;
   aspect-ratio: 234 / 130;
+}
+
+.tco-mini-image-container,
+.tco-mini-slide {
+  position: relative;
 
   img {
     position: absolute;
@@ -148,5 +155,40 @@ $mini-card: 280px;
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
+  }
+}
+
+.tco-motion-row {
+  display: flex;
+  flex-flow: row nowrap;
+  gap: $spacing-inline-8;
+
+  &--top {
+    width: calc(var(--slide-count-a) * $mini-slide);
+    margin-bottom: $spacing-stack-8;
+  }
+
+  &--bottom {
+    width: calc(var(--slide-count-b) * $mini-slide);
+  }
+}
+
+.tco-motion-track--slider {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: flex-start;
+}
+
+.tco-mini-slide {
+  flex: 0 0 auto;
+  overflow: hidden;
+  width: $mini-slide;
+  margin: 0;
+  border-radius: 8px;
+  box-shadow: $box-shadow-mini;
+  aspect-ratio: 174 / 116;
+
+  img {
+    object-fit: cover;
   }
 }
