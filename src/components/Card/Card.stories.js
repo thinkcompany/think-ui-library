@@ -328,12 +328,6 @@ const miniContent = [
     image: 'img/case-studies/client-c.jpg',
     project: 'Client project name really long',
     bg: '#143061'
-  },
-  {
-    name: 'Client with a long name',
-    image: 'img/case-studies/client-c.jpg',
-    project: 'Client project name really long',
-    bg: '#143061'
   }
 ];
 
