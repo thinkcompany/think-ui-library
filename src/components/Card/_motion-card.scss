@@ -127,15 +127,30 @@ $mini-slide: 174px;
   padding: 0 $spacing-inline-8;
 }
 
+@keyframes grow {
+  0% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.2);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
 .tco-mini-card-container {
   overflow: hidden;
   border-radius: 16px;
   box-shadow: $box-shadow-mini;
-  transition: transform 1s linear;
-  transform: scale(0.9);
+  // transition: transform 1s linear;
+  // transform: scale(0.9);
 
   .tco-mini-card--in-view & {
-    transform: scale(1);
+    //animation: 1s 1 grow;
+    // transform: scale(1);
   }
 }
 
