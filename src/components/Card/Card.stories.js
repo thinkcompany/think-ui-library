@@ -402,12 +402,12 @@ const MotionCardTemplate = args => {
           <div class="tco-card-content-container">
             <h2 class="tco-type-display--medium tco-link--dark-theme">${heading}</h2>
             <p class="tco-card-description tco-type-body--sans-small">${summary}</p>
-            <p class="tco-text-link tco-type-body tco-link--dark-theme">
+            <a class="tco-text-link tco-type-body tco-link--dark-theme">
               See our work
               <svg class="tco-text-link-icon" width="20" height="20" viewBox="0 0 20 20" role="presentation">
                 <use xlink:href="/img/icons.svg#icon-arrow-right"></use>
               </svg>
-            </p>
+            </a>
 
           </div>
           <div class="tco-card-motion-container">
@@ -432,12 +432,12 @@ const MotionCardTemplate = args => {
           <div class="tco-card-content-container">
             <h2 class="tco-type-display--medium tco-link--dark-theme">${headingB}</h2>
             <p class="tco-card-description tco-type-body--sans-small">${summaryB}</p>
-            <p class="tco-text-link tco-type-body tco-link--dark-theme">
+            <a class="tco-text-link tco-type-body tco-link--dark-theme">
               How we do it
               <svg class="tco-text-link-icon" width="20" height="20" viewBox="0 0 20 20" role="presentation">
                 <use xlink:href="/img/icons.svg#icon-arrow-right"></use>
               </svg>
-            </p>
+            </a>
 
           </div>
           <div class="tco-card-motion-container tco-card-motion-container--slider">

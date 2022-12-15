@@ -30,6 +30,7 @@ $mini-slide: 174px;
   }
 
   .tco-text-link {
+    @include type-link-cta($color-classic-blue);
     @include clamp(
       font-size,
       $breakpoint-phone-portrait,
@@ -37,18 +38,27 @@ $mini-slide: 174px;
       $font-size-16,
       $font-size-18
     );
-    display: flex;
+    display: inline-flex;
     gap: $spacing-inline-12;
     align-items: center;
     justify-content: center;
-    margin-bottom: 0;
-    color: $color-classic-blue;
+    border-bottom: 0;
+    cursor: pointer;
+
+    .tco-text-link-icon {
+      width: (32 / 18) * 1em;
+      height: auto;
+    }
   }
 
-  .tco-text-link-icon {
-    width: (32 / 18) * 1em;
-    height: auto;
-    fill: $color-classic-blue;
+  .tco-lights-out & {
+    .tco-text-link {
+      color: $color-dark-theme-blue;
+    }
+
+    .tco-text-link-icon {
+      fill: $color-dark-theme-blue;
+    }
   }
 }
 
@@ -79,6 +89,10 @@ $mini-slide: 174px;
   height: 24px;
   border-radius: 50%;
   background-color: $color-classic-navy;
+
+  .tco-lights-out & {
+    background-color: $color-dark-theme-dark-blue;
+  }
 
   .tco-motion-control-icon--play {
     display: none;
@@ -187,6 +201,10 @@ $mini-slide: 174px;
   border-radius: 8px;
   box-shadow: $box-shadow-mini;
   aspect-ratio: 174 / 116;
+
+  .tco-motion-row--bottom & {
+    transform: translateX(-50%);
+  }
 
   img {
     object-fit: cover;
