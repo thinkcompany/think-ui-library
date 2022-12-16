@@ -3,6 +3,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const sliderCard = document.querySelector('.tco-card--motion-slider');
 
   const carouselControls = card => {
+    console.log(card.offsetWidth);
     const cardWidth = card.offsetWidth;
     const track = card.querySelector('.tco-motion-track');
     const minis = track.querySelectorAll('.tco-mini-card');
@@ -15,17 +16,17 @@ document.addEventListener('DOMContentLoaded', () => {
     const trackWidth = track.offsetWidth;
     const miniWidth = 280;
     const miniClass = 'tco-mini-card--in-view';
-    const cardDuration = 1000;
+    const cardDuration = 1500;
     const cardCount = Math.round(trackWidth / miniWidth);
     const keyCount = cardCount / 2 + 1;
 
-    const initialOffset = () => {
+    const carouselPrep = () => {
       const offset = miniWidth - (cardWidth - miniWidth) / 2;
+      // offset card container
       offsetContainer.style.transform = 'translateX(-' + offset + 'px)';
       controlContainer.style.transform = 'translateX(' + offset + 'px)';
-    };
 
-    const doClones = () => {
+      // clone the cards and add to the end
       minis.forEach(mini => {
         let clone = mini.cloneNode(true);
         clone.classList.add('tco-mini-card--clone');
@@ -33,7 +34,7 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     };
 
-    const trackAnimation = () => {
+    const carouselAnimation = controlState => {
       let keyframes = [];
 
       //  build keyframes
@@ -45,7 +46,6 @@ document.addEventListener('DOMContentLoaded', () => {
           { transform: 'translateX(-' + miniW + 'px)' }
         );
       }
-
       console.log(keyframes);
 
       const trackTiming = {
@@ -57,22 +57,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
       animateTrack.pause();
 
-      const toggleAnimation = () => {
-        if (animateTrack.playState === 'paused') {
-          animateTrack.play();
-          track.classList.remove(pauseClass);
-          control.classList.remove(pauseClass);
-        } else {
-          animateTrack.pause();
-          track.classList.add(pauseClass);
-          control.classList.add(pauseClass);
-        }
-      };
-      control.addEventListener('click', toggleAnimation);
-    };
-
-    const animateCard = () => {
       const cards = track.querySelectorAll('.tco-mini-card');
+
       const observerOptions = {
         root: card,
         rootMargin: '0% -33% 0% -33%',
@@ -83,20 +69,28 @@ document.addEventListener('DOMContentLoaded', () => {
         entries.forEach(entry => {
           const cardKeyframes = [
             { transform: 'scale(1)' },
-            { transform: 'scale(1.2)' },
+            { transform: 'scale(1)' },
+            { transform: 'scale(1.1)' },
+            { transform: 'scale(1.1)' },
+            { transform: 'scale(1.1)' },
             { transform: 'scale(1)' }
           ];
+
           const cardTiming = {
-            duration: cardDuration,
-            iterations: 1
+            duration: cardDuration * 2,
+            iterations: 1,
+            fill: 'backwards',
+            easing: 'ease-out'
           };
 
           const { target } = entry;
-          console.log(target);
-          // if ( entry.intersectionRatio >= observerOptions.threshold ) {
-          if (entry.isIntersecting) {
+          const cardAnimation = target.animate(cardKeyframes, cardTiming);
+          cardAnimation.pause();
+
+          if (entry.isIntersecting && entry.intersectionRatio < 0.5) {
+            // checking for intersectionRatio value prevents card animation on initial load
             target.classList.add(miniClass);
-            target.animate(cardKeyframes, cardTiming);
+            cardAnimation.play();
           } else {
             target.classList.remove(miniClass);
           }
@@ -108,15 +102,24 @@ document.addEventListener('DOMContentLoaded', () => {
         observerOptions
       );
 
-      cards.forEach((card, i) => {
+      cards.forEach(card => {
         observer.observe(card);
       });
+
+      const toggleAnimation = () => {
+        if (animateTrack.playState === 'paused') {
+          animateTrack.play();
+          control.classList.remove(pauseClass);
+        } else {
+          animateTrack.pause();
+          control.classList.add(pauseClass);
+        }
+      };
+      control.addEventListener('click', toggleAnimation);
     };
 
-    initialOffset();
-    doClones();
-    trackAnimation();
-    animateCard();
+    carouselPrep();
+    carouselAnimation();
   };
 
   const sliderControls = card => {
