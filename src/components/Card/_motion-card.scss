@@ -1,6 +1,7 @@
 $motion-content-max: 464px;
-$mini-card: 280px;
+$mini-card: 240px;
 $mini-slide: 174px;
+$track-height: 240px;
 
 .tco-card--motion {
   display: flex;
@@ -65,9 +66,9 @@ $mini-slide: 174px;
 .tco-card-motion-container {
   width: 100%;
 
-  &:not(.tco-card-motion-container--slider) {
-    transform: translateX(calc(-#{$mini-card}));
-  }
+  // &:not(.tco-card-motion-container--slider) {
+  //   transform: translateX(calc(-#{$mini-card}));
+  // }
 }
 
 .tco-motion-track--carousel {
@@ -75,6 +76,7 @@ $mini-slide: 174px;
   flex-flow: row nowrap;
   align-items: center;
   width: calc(#{$mini-card} * (var(--card-count) * 2));
+  height: $track-height;
 }
 
 .tco-motion-control-container {
@@ -125,6 +127,7 @@ $mini-slide: 174px;
   flex: 1 0 auto;
   width: $mini-card;
   padding: 0 $spacing-inline-8;
+  will-change: transform;
 }
 
 @keyframes grow {
@@ -145,13 +148,6 @@ $mini-slide: 174px;
   overflow: hidden;
   border-radius: 16px;
   box-shadow: $box-shadow-mini;
-  // transition: transform 1s linear;
-  // transform: scale(0.9);
-
-  .tco-mini-card--in-view & {
-    //animation: 1s 1 grow;
-    // transform: scale(1);
-  }
 }
 
 .tco-mini-image-container {

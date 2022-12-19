@@ -13,17 +13,18 @@ document.addEventListener('DOMContentLoaded', () => {
     const offsetContainer = card.querySelector('.tco-card-motion-container');
     const pauseClass = 'tco-motion-track--paused';
     const trackWidth = track.offsetWidth;
-    const miniWidth = 280;
+    const miniWidth = 240;
     const miniClass = 'tco-mini-card--in-view';
     const cardDuration = 1500;
     const cardCount = Math.round(trackWidth / miniWidth);
     const keyCount = cardCount / 2 + 1;
+    const bezierCurve = 'cubic-bezier(0.79,0.14,0.15,0.86)';
 
     const carouselPrep = () => {
       const offset = miniWidth - (cardWidth - miniWidth) / 2;
       // offset card container
-      offsetContainer.style.transform = 'translateX(-' + offset + 'px)';
-      controlContainer.style.transform = 'translateX(' + offset + 'px)';
+      // offsetContainer.style.transform = 'translateX(-' + offset + 'px)';
+      // controlContainer.style.transform = 'translateX(' + offset + 'px)';
 
       // clone the cards and add to the end
       minis.forEach(mini => {
@@ -40,6 +41,10 @@ document.addEventListener('DOMContentLoaded', () => {
       for (let i = 1; i < keyCount + 1; i++) {
         let miniW = miniWidth * i;
 
+        // keyframes.push(
+        //             { transform: 'translateX(-' + miniW + 'px)' },
+        //             { transform: 'translateX(-' + miniW + 'px)' }
+        //           );
         if (i === 1) {
           keyframes.push({ transform: 'translateX(-' + miniW + 'px)' });
         } else {
@@ -66,21 +71,21 @@ document.addEventListener('DOMContentLoaded', () => {
         rootMargin: '0% -33% 0% -33%',
         threshold: [0, 1]
       };
-      //console.log(animateTrack);
-      //console.log(animateTrack.effect.getComputedTiming());
+
       const observerCallback = entries => {
         entries.forEach(entry => {
           const cardKeyframes = [
-            { transform: 'scale(1)' },
-            { transform: 'scale(1.1)' },
-            { transform: 'scale(1.1)' },
-            { transform: 'scale(1.1)' },
-            { transform: 'scale(1)' }
+            { transform: 'scale(1)', opacity: 0.9 },
+            { transform: 'scale(1.1)', opacity: 1 },
+            { transform: 'scale(1.1)', opacity: 1 },
+            { transform: 'scale(1.1)', opacity: 1 },
+            { transform: 'scale(1.1)', opacity: 1 },
+            { transform: 'scale(1)', opacity: 0.9 }
           ];
 
           const cardTiming = {
             duration: cardDuration * 2,
-            easing: 'ease-in-out'
+            easing: bezierCurve
           };
 
           const { target } = entry;
