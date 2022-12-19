@@ -1,14 +1,18 @@
 document.addEventListener('DOMContentLoaded', () => {
+  const carouselCard = document.querySelector('.tco-card--motion-carousel');
+  const sliderCard = document.querySelector('.tco-card--motion-slider');
+
   const carouselControls = () => {
-    const card = document.querySelector('.tco-card--motion-carousel');
-    const cardWidth = card.offsetWidth;
-    const track = card.querySelector('.tco-motion-track');
+    const cardWidth = carouselCard.offsetWidth;
+    const track = carouselCard.querySelector('.tco-motion-track');
     const minis = track.querySelectorAll('.tco-mini-card');
-    const controlContainer = card.querySelector(
+    const controlContainer = carouselCard.querySelector(
       '.tco-motion-control-container'
     );
     const control = controlContainer.querySelector('.tco-motion-control');
-    const offsetContainer = card.querySelector('.tco-card-motion-container');
+    const offsetContainer = carouselCard.querySelector(
+      '.tco-card-motion-container'
+    );
     const pauseClass = 'tco-motion-track--paused';
     const trackWidth = track.offsetWidth;
     const miniWidth = 240;
@@ -61,8 +65,8 @@ document.addEventListener('DOMContentLoaded', () => {
       const cards = track.querySelectorAll('.tco-mini-card');
 
       const observerOptions = {
-        root: card,
-        rootMargin: '0% -33% 0% -33%',
+        root: carouselCard,
+        rootMargin: '0% -33% 0% 0%',
         threshold: [0, 1]
       };
 
@@ -70,6 +74,9 @@ document.addEventListener('DOMContentLoaded', () => {
         entries.forEach(entry => {
           const cardKeyframes = [
             { transform: 'scale(1)', opacity: 0.95 },
+            { transform: 'scale(1)', opacity: 1 },
+            { transform: 'scale(1.1)', opacity: 1 },
+            { transform: 'scale(1.1)', opacity: 1 },
             { transform: 'scale(1.1)', opacity: 1 },
             { transform: 'scale(1.1)', opacity: 1 },
             { transform: 'scale(1.1)', opacity: 1 },
@@ -77,7 +84,7 @@ document.addEventListener('DOMContentLoaded', () => {
           ];
 
           const cardTiming = {
-            duration: cardDuration * 2.33,
+            duration: cardDuration * 1.75,
             easing: bezierCurve
           };
 
@@ -121,7 +128,8 @@ document.addEventListener('DOMContentLoaded', () => {
   };
 
   const sliderControls = () => {
-    const card = document.querySelector('.tco-card--motion-slider');
+    // const card = document.querySelector('.tco-card--motion-slider');
+    const card = sliderCard;
     const track = card.querySelector('.tco-motion-track');
     const slideRows = track.querySelectorAll('.tco-motion-row');
     const controlContainer = card.querySelector(
@@ -191,8 +199,13 @@ document.addEventListener('DOMContentLoaded', () => {
     track.style.width = widestRow;
   };
 
-  carouselControls();
-  sliderControls();
+  if (carouselCard) {
+    carouselControls();
+  }
+
+  if (sliderCard) {
+    sliderControls();
+  }
 
   // window.addEventListener('resize', carouselControls);
   // window.addEventListener('resize', sliderControls);
