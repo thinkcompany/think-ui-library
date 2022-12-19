@@ -66,9 +66,9 @@ $track-height: 240px;
 .tco-card-motion-container {
   width: 100%;
 
-  // &:not(.tco-card-motion-container--slider) {
-  //   transform: translateX(calc(-#{$mini-card}));
-  // }
+  &:not(.tco-card-motion-container--slider) {
+    transform: translateX(calc(-#{$mini-card} / 2));
+  }
 }
 
 .tco-motion-track--carousel {

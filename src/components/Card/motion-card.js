@@ -1,8 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
-  const carouselCard = document.querySelector('.tco-card--motion-carousel');
-  const sliderCard = document.querySelector('.tco-card--motion-slider');
-
-  const carouselControls = card => {
+  const carouselControls = () => {
+    const card = document.querySelector('.tco-card--motion-carousel');
     const cardWidth = card.offsetWidth;
     const track = card.querySelector('.tco-motion-track');
     const minis = track.querySelectorAll('.tco-mini-card');
@@ -15,16 +13,17 @@ document.addEventListener('DOMContentLoaded', () => {
     const trackWidth = track.offsetWidth;
     const miniWidth = 240;
     const miniClass = 'tco-mini-card--in-view';
-    const cardDuration = 1500;
+    const cardDuration = 1000;
+    const timingOffset = 500;
     const cardCount = Math.round(trackWidth / miniWidth);
     const keyCount = cardCount / 2 + 1;
-    const bezierCurve = 'cubic-bezier(0.79,0.14,0.15,0.86)';
+    const bezierCurve = 'cubic-bezier(0.45,0.05,0.55,0.95)';
 
     const carouselPrep = () => {
       const offset = miniWidth - (cardWidth - miniWidth) / 2;
       // offset card container
-      // offsetContainer.style.transform = 'translateX(-' + offset + 'px)';
-      // controlContainer.style.transform = 'translateX(' + offset + 'px)';
+      offsetContainer.style.transform = 'translateX(-' + offset + 'px)';
+      controlContainer.style.transform = 'translateX(' + offset + 'px)';
 
       // clone the cards and add to the end
       minis.forEach(mini => {
@@ -41,10 +40,6 @@ document.addEventListener('DOMContentLoaded', () => {
       for (let i = 1; i < keyCount + 1; i++) {
         let miniW = miniWidth * i;
 
-        // keyframes.push(
-        //             { transform: 'translateX(-' + miniW + 'px)' },
-        //             { transform: 'translateX(-' + miniW + 'px)' }
-        //           );
         if (i === 1) {
           keyframes.push({ transform: 'translateX(-' + miniW + 'px)' });
         } else {
@@ -56,7 +51,7 @@ document.addEventListener('DOMContentLoaded', () => {
       }
 
       const trackTiming = {
-        duration: cardDuration * cardCount,
+        duration: cardDuration * cardCount + timingOffset * cardCount,
         iterations: Infinity
       };
 
@@ -80,11 +75,12 @@ document.addEventListener('DOMContentLoaded', () => {
             { transform: 'scale(1.1)', opacity: 1 },
             { transform: 'scale(1.1)', opacity: 1 },
             { transform: 'scale(1.1)', opacity: 1 },
+            { transform: 'scale(1.1)', opacity: 1 },
             { transform: 'scale(1)', opacity: 0.9 }
           ];
 
           const cardTiming = {
-            duration: cardDuration * 2,
+            duration: (cardDuration + timingOffset) * 2,
             easing: bezierCurve
           };
 
@@ -94,8 +90,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
           if (entry.isIntersecting && entry.intersectionRatio < 0.5) {
             // checking for intersectionRatio value prevents card animation on initial load
-            //const trackTiming = animateTrack.effect.getComputedTiming();
-
             target.classList.add(miniClass);
             cardAnimation.play();
           } else {
@@ -129,7 +123,8 @@ document.addEventListener('DOMContentLoaded', () => {
     carouselAnimation();
   };
 
-  const sliderControls = card => {
+  const sliderControls = () => {
+    const card = document.querySelector('.tco-card--motion-slider');
     const track = card.querySelector('.tco-motion-track');
     const slideRows = track.querySelectorAll('.tco-motion-row');
     const controlContainer = card.querySelector(
@@ -199,6 +194,9 @@ document.addEventListener('DOMContentLoaded', () => {
     track.style.width = widestRow;
   };
 
-  carouselControls(carouselCard);
-  sliderControls(sliderCard);
+  carouselControls();
+  sliderControls();
+
+  // window.addEventListener('resize', carouselControls);
+  // window.addEventListener('resize', sliderControls);
 });
