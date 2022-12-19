@@ -73,14 +73,14 @@ document.addEventListener('DOMContentLoaded', () => {
       const observerCallback = entries => {
         entries.forEach(entry => {
           const cardKeyframes = [
-            { transform: 'scale(1)', opacity: 0.95 },
-            { transform: 'scale(1)', opacity: 1 },
-            { transform: 'scale(1.1)', opacity: 1 },
-            { transform: 'scale(1.1)', opacity: 1 },
-            { transform: 'scale(1.1)', opacity: 1 },
-            { transform: 'scale(1.1)', opacity: 1 },
-            { transform: 'scale(1.1)', opacity: 1 },
-            { transform: 'scale(1)', opacity: 0.95 }
+            { transform: 'scale3d(1, 1, 1)', opacity: 0.95 },
+            { transform: 'scale3d(1, 1, 1)', opacity: 1 },
+            { transform: 'scale3d(1.1, 1.1, 1.1)', opacity: 1 },
+            { transform: 'scale3d(1.1, 1.1, 1.1)', opacity: 1 },
+            { transform: 'scale3d(1.1, 1.1, 1.1)', opacity: 1 },
+            { transform: 'scale3d(1.1, 1.1, 1.1)', opacity: 1 },
+            { transform: 'scale3d(1.1, 1.1, 1.1)', opacity: 1 },
+            { transform: 'scale3d(1, 1, 1)', opacity: 0.95 }
           ];
 
           const cardTiming = {
