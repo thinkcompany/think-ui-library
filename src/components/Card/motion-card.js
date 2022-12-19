@@ -3,7 +3,6 @@ document.addEventListener('DOMContentLoaded', () => {
   const sliderCard = document.querySelector('.tco-card--motion-slider');
 
   const carouselControls = card => {
-    console.log(card.offsetWidth);
     const cardWidth = card.offsetWidth;
     const track = card.querySelector('.tco-motion-track');
     const minis = track.querySelectorAll('.tco-mini-card');
@@ -34,19 +33,22 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     };
 
-    const carouselAnimation = controlState => {
+    const carouselAnimation = () => {
       let keyframes = [];
 
       //  build keyframes
-      for (let i = 0; i < keyCount; i++) {
+      for (let i = 1; i < keyCount + 1; i++) {
         let miniW = miniWidth * i;
 
-        keyframes.push(
-          { transform: 'translateX(-' + miniW + 'px)' },
-          { transform: 'translateX(-' + miniW + 'px)' }
-        );
+        if (i === 1) {
+          keyframes.push({ transform: 'translateX(-' + miniW + 'px)' });
+        } else {
+          keyframes.push(
+            { transform: 'translateX(-' + miniW + 'px)' },
+            { transform: 'translateX(-' + miniW + 'px)' }
+          );
+        }
       }
-      console.log(keyframes);
 
       const trackTiming = {
         duration: cardDuration * cardCount,
@@ -64,11 +66,11 @@ document.addEventListener('DOMContentLoaded', () => {
         rootMargin: '0% -33% 0% -33%',
         threshold: [0, 1]
       };
-
+      //console.log(animateTrack);
+      //console.log(animateTrack.effect.getComputedTiming());
       const observerCallback = entries => {
         entries.forEach(entry => {
           const cardKeyframes = [
-            { transform: 'scale(1)' },
             { transform: 'scale(1)' },
             { transform: 'scale(1.1)' },
             { transform: 'scale(1.1)' },
@@ -78,9 +80,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
           const cardTiming = {
             duration: cardDuration * 2,
-            iterations: 1,
-            fill: 'backwards',
-            easing: 'ease-out'
+            easing: 'ease-in-out'
           };
 
           const { target } = entry;
@@ -89,6 +89,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
           if (entry.isIntersecting && entry.intersectionRatio < 0.5) {
             // checking for intersectionRatio value prevents card animation on initial load
+            //const trackTiming = animateTrack.effect.getComputedTiming();
+
             target.classList.add(miniClass);
             cardAnimation.play();
           } else {
