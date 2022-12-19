@@ -13,8 +13,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const trackWidth = track.offsetWidth;
     const miniWidth = 240;
     const miniClass = 'tco-mini-card--in-view';
-    const cardDuration = 1000;
-    const timingOffset = 500;
+    const cardDuration = 1500;
     const cardCount = Math.round(trackWidth / miniWidth);
     const keyCount = cardCount / 2 + 1;
     const bezierCurve = 'cubic-bezier(0.45,0.05,0.55,0.95)';
@@ -51,7 +50,7 @@ document.addEventListener('DOMContentLoaded', () => {
       }
 
       const trackTiming = {
-        duration: cardDuration * cardCount + timingOffset * cardCount,
+        duration: cardDuration * cardCount,
         iterations: Infinity
       };
 
@@ -70,17 +69,15 @@ document.addEventListener('DOMContentLoaded', () => {
       const observerCallback = entries => {
         entries.forEach(entry => {
           const cardKeyframes = [
-            { transform: 'scale(1)', opacity: 0.9 },
+            { transform: 'scale(1)', opacity: 0.95 },
             { transform: 'scale(1.1)', opacity: 1 },
             { transform: 'scale(1.1)', opacity: 1 },
             { transform: 'scale(1.1)', opacity: 1 },
-            { transform: 'scale(1.1)', opacity: 1 },
-            { transform: 'scale(1.1)', opacity: 1 },
-            { transform: 'scale(1)', opacity: 0.9 }
+            { transform: 'scale(1)', opacity: 0.95 }
           ];
 
           const cardTiming = {
-            duration: (cardDuration + timingOffset) * 2,
+            duration: cardDuration * 2.33,
             easing: bezierCurve
           };
 
