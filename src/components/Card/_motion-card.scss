@@ -73,7 +73,7 @@ $track-height: 240px;
   align-items: center;
   width: calc(#{$mini-card} * (var(--card-count) * 2));
   height: $track-height;
-  perspective: 1000px;
+  //perspective: 1000px;
 }
 
 .tco-motion-control-container {
@@ -125,20 +125,6 @@ $track-height: 240px;
   width: $mini-card;
   padding: 0 $spacing-inline-8;
   will-change: transform;
-}
-
-@keyframes grow {
-  0% {
-    transform: scale(1);
-  }
-
-  50% {
-    transform: scale(1.2);
-  }
-
-  100% {
-    transform: scale(1);
-  }
 }
 
 .tco-mini-card-container {

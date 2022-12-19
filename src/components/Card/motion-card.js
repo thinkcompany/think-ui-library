@@ -73,18 +73,16 @@ document.addEventListener('DOMContentLoaded', () => {
       const observerCallback = entries => {
         entries.forEach(entry => {
           const cardKeyframes = [
-            { transform: 'scale3d(1, 1, 1)', opacity: 0.95 },
-            { transform: 'scale3d(1, 1, 1)', opacity: 1 },
-            { transform: 'scale3d(1.1, 1.1, 1.1)', opacity: 1 },
-            { transform: 'scale3d(1.1, 1.1, 1.1)', opacity: 1 },
-            { transform: 'scale3d(1.1, 1.1, 1.1)', opacity: 1 },
-            { transform: 'scale3d(1.1, 1.1, 1.1)', opacity: 1 },
-            { transform: 'scale3d(1.1, 1.1, 1.1)', opacity: 1 },
-            { transform: 'scale3d(1, 1, 1)', opacity: 0.95 }
+            { transform: 'scale(1)', opacity: 1 },
+            { transform: 'scale(1.1)', opacity: 1 },
+            { transform: 'scale(1.1)', opacity: 1 },
+            { transform: 'scale(1.1)', opacity: 1 },
+            { transform: 'scale(1.1)', opacity: 1 },
+            { transform: 'scale(1)', opacity: 1 }
           ];
 
           const cardTiming = {
-            duration: cardDuration * 1.75,
+            duration: cardDuration * 2,
             easing: bezierCurve
           };
 
