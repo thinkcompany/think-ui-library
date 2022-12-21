@@ -149,10 +149,7 @@
         color: $color-foreground-primary;
       }
     }
-  }
 
-  &--blue,
-  &--navy {
     a {
       @include type-link;
     }
