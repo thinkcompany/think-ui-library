@@ -43,14 +43,7 @@ document.addEventListener('DOMContentLoaded', () => {
       for (let i = 1; i < keyCount + 1; i++) {
         let miniW = miniWidth * i;
 
-        if (i === 1) {
-          keyframes.push({ transform: 'translateX(-' + miniW + 'px)' });
-        } else {
-          keyframes.push(
-            { transform: 'translateX(-' + miniW + 'px)' },
-            { transform: 'translateX(-' + miniW + 'px)' }
-          );
-        }
+        keyframes.push({ transform: 'translateX(-' + miniW + 'px)' });
       }
 
       const trackTiming = {
@@ -62,29 +55,37 @@ document.addEventListener('DOMContentLoaded', () => {
 
       animateTrack.pause();
 
-      const cards = track.querySelectorAll('.tco-mini-card');
+      const cards = track.querySelectorAll('.tco-mini-card'); // includes clones
 
       const observerOptions = {
         root: carouselCard,
-        rootMargin: '0% -33% 0% 0%',
+        rootMargin: '0% -50% 0% 0%',
         threshold: [0, 1]
       };
 
       const observerCallback = entries => {
         entries.forEach(entry => {
+          console.log('time ' + entry.time);
           const cardKeyframes = [
             { transform: 'scale(1)', opacity: 1 },
-            { transform: 'scale(1.1)', opacity: 1 },
-            { transform: 'scale(1.1)', opacity: 1 },
-            { transform: 'scale(1.1)', opacity: 1 },
             { transform: 'scale(1.1)', opacity: 1 },
             { transform: 'scale(1)', opacity: 1 }
           ];
 
           const cardTiming = {
-            duration: cardDuration * 2,
-            easing: bezierCurve
+            //duration: cardDuration * 3,
+            duration:
+              (animateTrack.effect.getComputedTiming().duration /
+                cards.length) *
+              2,
+            easing: bezierCurve,
+            fill: 'forwards'
           };
+
+          console.log(
+            'track duration ' + animateTrack.effect.getComputedTiming().duration
+          );
+          console.log('card duration ' + cardTiming.duration);
 
           const { target } = entry;
           const cardAnimation = target.animate(cardKeyframes, cardTiming);

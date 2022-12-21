@@ -4,6 +4,7 @@ $mini-slide: 174px;
 $track-height: 240px;
 
 .tco-card--motion {
+  position: relative;
   display: flex;
   flex-flow: column nowrap;
   gap: $spacing-stack-40;
@@ -13,6 +14,28 @@ $track-height: 240px;
 
   @include wider-than($breakpoint-desktop) {
     gap: $spacing-stack-64;
+  }
+
+  &-carousel {
+    &::before,
+    &::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      display: block;
+      width: 33%;
+      height: 100%;
+      background-color: rgba($color-classic-blue, 0.3);
+    }
+
+    &::before {
+      left: 0;
+    }
+
+    &::after {
+      right: 0;
+      width: 50%;
+    }
   }
 
   .tco-card-content-container {
@@ -68,21 +91,23 @@ $track-height: 240px;
 }
 
 .tco-motion-track--carousel {
+  position: relative;
   display: flex;
   flex-flow: row nowrap;
   align-items: center;
   width: calc(#{$mini-card} * (var(--card-count) * 2));
   height: $track-height;
-  //perspective: 1000px;
 }
 
 .tco-motion-control-container {
   display: flex;
-  justify-content: flex-end;
+  //justify-content: flex-end;
+  justify-content: center;
   padding: $spacing-stack-20 $spacing-inline-16 $spacing-stack-16;
 }
 
 .tco-motion-control {
+  z-index: 1;
   display: flex;
   width: 24px;
   height: 24px;
