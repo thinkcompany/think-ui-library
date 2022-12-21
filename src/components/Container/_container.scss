@@ -113,16 +113,20 @@
   }
 
   &--blue {
-    background-color: $color-tint-blue-primary;
+    background-color: $color-classic-blue;
     color: $color-foreground-on-tint;
 
     .tco-btn {
       &--primary {
-        @extend %tco-btn--secondary;
+        border-color: $color-foreground-on-tint;
+        background-color: $color-foreground-on-tint;
+        color: $color-classic-blue;
       }
 
       &--secondary {
-        color: $color-foreground-primary;
+        border-color: $color-foreground-on-tint;
+        background-color: transparent;
+        color: $color-foreground-on-tint;
       }
 
       &--tertiary {
@@ -137,23 +141,13 @@
 
     .tco-btn {
       &--secondary {
+        border-color: $color-foreground-primary;
         color: $color-foreground-primary;
       }
 
       &--tertiary {
         color: $color-foreground-primary;
       }
-    }
-  }
-
-  &--tan,
-  &--glass,
-  &--blue,
-  &--navy {
-    .tco-btn {
-      // unset "link" style on buttons
-      background-image: none;
-      @include type-style-bold;
     }
   }
 
