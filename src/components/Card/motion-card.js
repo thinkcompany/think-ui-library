@@ -6,13 +6,9 @@ document.addEventListener('DOMContentLoaded', () => {
     const cardWidth = carouselCard.offsetWidth;
     const track = carouselCard.querySelector('.tco-motion-track');
     const minis = track.querySelectorAll('.tco-mini-card');
-    const controlContainer = carouselCard.querySelector(
-      '.tco-motion-control-container'
-    );
+    const controlContainer = carouselCard.querySelector('.tco-motion-control-container');
     const control = controlContainer.querySelector('.tco-motion-control');
-    const offsetContainer = carouselCard.querySelector(
-      '.tco-card-motion-container'
-    );
+    const offsetContainer = carouselCard.querySelector('.tco-card-motion-container');
     const pauseClass = 'tco-motion-track--paused';
     const trackWidth = track.offsetWidth;
     const miniWidth = 240;
@@ -59,7 +55,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
       const observerOptions = {
         root: carouselCard,
-        rootMargin: '0% -50% 0% 0%',
+        rootMargin: '0% 0% 0% 0%',
         threshold: [0, 1]
       };
 
@@ -74,17 +70,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
           const cardTiming = {
             //duration: cardDuration * 3,
-            duration:
-              (animateTrack.effect.getComputedTiming().duration /
-                cards.length) *
-              2,
+            duration: (animateTrack.effect.getComputedTiming().duration / cards.length) * 2,
             easing: bezierCurve,
             fill: 'forwards'
           };
 
-          console.log(
-            'track duration ' + animateTrack.effect.getComputedTiming().duration
-          );
+          console.log('track duration ' + animateTrack.effect.getComputedTiming().duration);
           console.log('card duration ' + cardTiming.duration);
 
           const { target } = entry;
@@ -101,10 +92,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
       };
 
-      const observer = new IntersectionObserver(
-        observerCallback,
-        observerOptions
-      );
+      const observer = new IntersectionObserver(observerCallback, observerOptions);
 
       cards.forEach(card => {
         observer.observe(card);
@@ -131,9 +119,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const card = sliderCard;
     const track = card.querySelector('.tco-motion-track');
     const slideRows = track.querySelectorAll('.tco-motion-row');
-    const controlContainer = card.querySelector(
-      '.tco-motion-control-container'
-    );
+    const controlContainer = card.querySelector('.tco-motion-control-container');
     const control = controlContainer.querySelector('.tco-motion-control');
     const miniWidth = 174;
     const pauseClass = 'tco-motion-track--paused';
@@ -143,8 +129,7 @@ document.addEventListener('DOMContentLoaded', () => {
     slideRows.forEach((row, i) => {
       let keyframes = [];
       let ogSlides = row.querySelectorAll('.tco-mini-slide');
-      let rowWidth =
-        miniWidth * (ogSlides.length * 2) + (ogSlides.length - 1) * 8; // accounts for gap
+      let rowWidth = miniWidth * (ogSlides.length * 2) + (ogSlides.length - 1) * 8; // accounts for gap
       rowWidths.push(rowWidth); // will be used to set width of parent container
 
       // clone the images in each row

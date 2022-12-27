@@ -16,27 +16,27 @@ $track-height: 240px;
     gap: $spacing-stack-64;
   }
 
-  &-carousel {
-    &::before,
-    &::after {
-      content: '';
-      position: absolute;
-      top: 0;
-      display: block;
-      width: 33%;
-      height: 100%;
-      background-color: rgba($color-classic-blue, 0.3);
-    }
+  // &-carousel {
+  //   &::before,
+  //   &::after {
+  //     content: '';
+  //     position: absolute;
+  //     top: 0;
+  //     display: block;
+  //     width: 33%;
+  //     height: 100%;
+  //     background-color: rgba($color-classic-blue, 0.3);
+  //   }
 
-    &::before {
-      left: 0;
-    }
+  //   &::before {
+  //     left: 0;
+  //   }
 
-    &::after {
-      right: 0;
-      width: 50%;
-    }
-  }
+  //   &::after {
+  //     right: 0;
+  //     width: 50%;
+  //   }
+  // }
 
   .tco-card-content-container {
     width: min(100%, #{$motion-content-max});
