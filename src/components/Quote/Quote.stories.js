@@ -1,6 +1,6 @@
 const alignments = ['center', 'left', 'right'];
 
-const Template = args => {
+const QuoteTemplate = args => {
   const { quote, textAlignment, authorName, authorTitle } = args;
 
   return `
@@ -35,7 +35,46 @@ const Template = args => {
   `;
 };
 
-export const Quote = Template.bind({});
+export const Quote = QuoteTemplate.bind({});
+
+const QuoteCarouselTemplate = args => {
+  const { quote, authorName, authorTitle } = args;
+
+  return `
+    <div class="tco-container-wrapper tco-container-wrapper--glass">
+      <div class="tco-container tco-container--narrow">
+        <div class="tco-quote-wrapper tco-quote-wrapper--carousel tco-quote-wrapper-center">
+          <blockquote class="tco-quote tco-quote--slide">
+            <p class="tco-type-display--small">${quote}</p>
+            <div class="tco-quote-footer">
+              <cite class="tco-type-body--large">${authorName}</cite>
+              ${
+                authorTitle
+                  ? `
+                <span class="tco-type-eyebrow">${authorTitle}</span>
+                `
+                  : ''
+              }
+
+            </div>
+          </blockquote>
+          <svg class="tco-icon tco-icon--lquo" viewBox="0 0 197 154" role="presentation">
+            <use xlink:href="/img/icons.svg#icon-lquo"></use>
+          </svg>
+        </div>
+      </div>
+    </div>
+  `;
+};
+
+export const QuoteCarousel = QuoteCarouselTemplate.bind({});
+
+QuoteCarousel.args = {
+  quote:
+    'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore.',
+  authorName: 'Author O. Quote',
+  authorTitle: 'Person who said it'
+};
 
 export default {
   title: 'Components / Quote',
