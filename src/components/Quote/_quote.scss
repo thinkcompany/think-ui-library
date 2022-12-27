@@ -43,8 +43,12 @@ $lquo-offset: 70px;
   }
 }
 
+$n: 3; /* number of images */
+
 .tco-quote-wrapper--carousel {
+  --d: 8s; /* duration */
   position: relative;
+  display: grid;
   margin-top: $lquo-offset * 0.75;
 
   @include wider-than($breakpoint-tablet-portrait) {
@@ -54,8 +58,26 @@ $lquo-offset: 70px;
 
 .tco-quote--slide {
   position: relative;
-  z-index: 1;
+  z-index: 2;
+  grid-area: 1/1;
   margin: 0;
+  background: $color-classic-glass;
+  animation: slide var(--d) infinite, z-order var(--d) infinite steps(1);
+  animation-fill-mode: both;
+
+  &:last-child {
+    animation-name: slide, z-order-last;
+  }
+
+  // &:last-child {
+  //   animation-name: slide;
+  // }
+
+  @for $i from 2 to ($n + 1) {
+    &:nth-child(#{$i}) {
+      animation-delay: calc(#{(1 - $i) / $n} * var(--d));
+    }
+  }
 
   .tco-type-display--small {
     margin-bottom: 0;
@@ -106,5 +128,42 @@ $lquo-offset: 70px;
 
   .tco-lights-out & {
     fill: $color-dark-theme-blue;
+  }
+}
+
+@keyframes slide {
+  // #{50/$n}% {
+  //   opacity: 1
+  // }
+  // #{100/$n}% {
+  //   opacity: 0
+  // }
+
+  #{50/$n}%,
+  #{100/$n}% {
+    opacity: 1;
+  }
+  #{100 - 100/$n}% {
+    opacity: 0;
+  }
+}
+
+@keyframes z-order {
+  #{50/$n}%,
+  #{100/$n}% {
+    z-index: 1;
+  }
+  #{100 - 100/$n}% {
+    z-index: 2;
+  }
+}
+
+@keyframes z-order-last {
+  #{50/$n}%,
+  #{100/$n}% {
+    z-index: 1;
+  }
+  #{100 - 50/$n}% {
+    z-index: 2;
   }
 }

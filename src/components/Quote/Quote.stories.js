@@ -45,36 +45,36 @@ const QuoteCarouselTemplate = args => {
       <div class="tco-container tco-container--narrow">
         <div class="tco-quote-wrapper tco-quote-wrapper--carousel tco-quote-wrapper-center">
           <blockquote class="tco-quote tco-quote--slide">
-            <p class="tco-type-display--small">${quote}</p>
+            <p class="tco-type-display--small">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore.</p>
             <div class="tco-quote-footer">
-              <cite class="tco-type-body--large">${authorName}</cite>
-              ${
-                authorTitle
-                  ? `
-                <span class="tco-type-eyebrow">${authorTitle}</span>
-                `
-                  : ''
-              }
-
+              <cite class="tco-type-body--large">Author O. Quote</cite>
+              <span class="tco-type-eyebrow">Person who said it</span>
             </div>
           </blockquote>
-          <svg class="tco-icon tco-icon--lquo" viewBox="0 0 197 154" role="presentation">
+          <blockquote class="tco-quote tco-quote--slide">
+            <p class="tco-type-display--small">Sed do eiusmod tempor incididunt ut labore.</p>
+            <div class="tco-quote-footer">
+              <cite class="tco-type-body--large">Person Name</cite>
+              <span class="tco-type-eyebrow">CEO</span>
+            </div>
+          </blockquote>
+          <blockquote class="tco-quote tco-quote--slide">
+            <p class="tco-type-display--small">Another one!</p>
+            <div class="tco-quote-footer">
+              <cite class="tco-type-body--large">The Author</cite>
+              <span class="tco-type-eyebrow">Vice CEO</span>
+            </div>
+          </blockquote>
+        </div>
+         <svg class="tco-icon tco-icon--lquo" viewBox="0 0 197 154" role="presentation">
             <use xlink:href="/img/icons.svg#icon-lquo"></use>
           </svg>
-        </div>
       </div>
     </div>
   `;
 };
 
 export const QuoteCarousel = QuoteCarouselTemplate.bind({});
-
-QuoteCarousel.args = {
-  quote:
-    'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore.',
-  authorName: 'Author O. Quote',
-  authorTitle: 'Person who said it'
-};
 
 export default {
   title: 'Components / Quote',
