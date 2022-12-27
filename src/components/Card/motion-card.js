@@ -10,19 +10,21 @@ document.addEventListener('DOMContentLoaded', () => {
     const control = controlContainer.querySelector('.tco-motion-control');
     const offsetContainer = carouselCard.querySelector('.tco-card-motion-container');
     const pauseClass = 'tco-motion-track--paused';
-    const trackWidth = track.offsetWidth;
+    const trackWidth = track.offsetWidth; // track width set in css and will always reflect inclusion of clones (css vars pass in accurate card count)
     const miniWidth = 240;
     const miniClass = 'tco-mini-card--in-view';
     const cardDuration = 1500;
     const cardCount = Math.round(trackWidth / miniWidth);
     const keyCount = cardCount / 2 + 1;
-    const bezierCurve = 'cubic-bezier(0.45,0.05,0.55,0.95)';
+    //const bezierCurve = 'cubic-bezier(0.45,0.05,0.55,0.95)';
+    const bezierCurve = 'linear';
 
     const carouselPrep = () => {
-      const offset = miniWidth - (cardWidth - miniWidth) / 2;
+      // const offset = miniWidth - (cardWidth - miniWidth) / 2;
+      const offset = miniWidth + cardWidth;
       // offset card container
-      offsetContainer.style.transform = 'translateX(-' + offset + 'px)';
-      controlContainer.style.transform = 'translateX(' + offset + 'px)';
+      //offsetContainer.style.transform = 'translateX(' + cardWidth + 'px)';
+      // controlContainer.style.transform = 'translateX(' + offset + 'px)';
 
       // clone the cards and add to the end
       minis.forEach(mini => {
@@ -46,22 +48,44 @@ document.addEventListener('DOMContentLoaded', () => {
         duration: cardDuration * cardCount,
         iterations: Infinity
       };
-
       const animateTrack = track.animate(keyframes, trackTiming);
-
       animateTrack.pause();
 
       const cards = track.querySelectorAll('.tco-mini-card'); // includes clones
 
-      const observerOptions = {
-        root: carouselCard,
-        rootMargin: '0% 0% 0% 0%',
-        threshold: [0, 1]
-      };
+      cards.forEach((card, i) => {
+        const cardKeyframes = [
+          { transform: 'scale(1)', opacity: 1 },
+          { transform: 'scale(1.1)', opacity: 1 },
+          { transform: 'scale(1)', opacity: 1 }
+        ];
+
+        const frameDuration = (animateTrack.effect.getComputedTiming().duration / cards.length) * 2;
+
+        const cardTiming = {
+          duration: frameDuration,
+          delay: frameDuration * i,
+          easing: bezierCurve,
+          fill: 'forwards'
+        };
+
+        const cardAnimation = card.animate(cardKeyframes, cardTiming);
+        cardAnimation.pause();
+
+        if (animateTrack.playState === 'paused') {
+          cardAnimation.pause();
+          console.log('paused');
+        } else {
+          console.log('play');
+          cardAnimation.play();
+        }
+      });
 
       const observerCallback = entries => {
         entries.forEach(entry => {
-          console.log('time ' + entry.time);
+          //console.log('time ' + entry.time);
+          // console.log(entry);
+          //console.log('ratio ' + entry.intersectionRatio);
           const cardKeyframes = [
             { transform: 'scale(1)', opacity: 1 },
             { transform: 'scale(1.1)', opacity: 1 },
@@ -75,28 +99,22 @@ document.addEventListener('DOMContentLoaded', () => {
             fill: 'forwards'
           };
 
-          console.log('track duration ' + animateTrack.effect.getComputedTiming().duration);
-          console.log('card duration ' + cardTiming.duration);
+          //console.log('card duration ' + cardTiming.duration);
 
           const { target } = entry;
           const cardAnimation = target.animate(cardKeyframes, cardTiming);
           cardAnimation.pause();
 
-          if (entry.isIntersecting && entry.intersectionRatio < 0.5) {
+          if (entry.isIntersecting && entry.intersectionRatio > 0) {
             // checking for intersectionRatio value prevents card animation on initial load
+            //console.log(entry);
             target.classList.add(miniClass);
-            cardAnimation.play();
+            //cardAnimation.play();
           } else {
             target.classList.remove(miniClass);
           }
         });
       };
-
-      const observer = new IntersectionObserver(observerCallback, observerOptions);
-
-      cards.forEach(card => {
-        observer.observe(card);
-      });
 
       const toggleAnimation = () => {
         if (animateTrack.playState === 'paused') {

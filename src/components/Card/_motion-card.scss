@@ -16,27 +16,33 @@ $track-height: 240px;
     gap: $spacing-stack-64;
   }
 
-  // &-carousel {
-  //   &::before,
-  //   &::after {
-  //     content: '';
-  //     position: absolute;
-  //     top: 0;
-  //     display: block;
-  //     width: 33%;
-  //     height: 100%;
-  //     background-color: rgba($color-classic-blue, 0.3);
-  //   }
+  &-slider {
+    display: none;
+  }
 
-  //   &::before {
-  //     left: 0;
-  //   }
+  &-carousel {
+    overflow: visible;
 
-  //   &::after {
-  //     right: 0;
-  //     width: 50%;
-  //   }
-  // }
+    // &::before,
+    // &::after {
+    //   content: '';
+    //   position: absolute;
+    //   top: 0;
+    //   display: block;
+    //   width: 164px;
+    //   height: 100%;
+    //   background-color: rgba($color-classic-blue, 0.3);
+    // }
+
+    // &::before {
+    //   left: 0;
+    // }
+
+    // &::after {
+    //   right: 0;
+    //   width: 164px;
+    // }
+  }
 
   .tco-card-content-container {
     width: min(100%, #{$motion-content-max});
@@ -101,8 +107,8 @@ $track-height: 240px;
 
 .tco-motion-control-container {
   display: flex;
-  //justify-content: flex-end;
-  justify-content: center;
+  justify-content: flex-end;
+  // justify-content: center;
   padding: $spacing-stack-20 $spacing-inline-16 $spacing-stack-16;
 }
 
