@@ -1,3 +1,6 @@
+/* eslint-disable no-use-before-define */
+/* eslint-disable no-unused-vars */
+
 document.addEventListener('DOMContentLoaded', () => {
   const quoteCarousel = () => {
     const quoteSlides = document.querySelectorAll('.tco-quote--slide');
@@ -5,6 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const controlBullet = document.querySelectorAll('.tco-bullet');
     const activeClass = 'tco-bullet--active';
     const timeout = 4000;
+
     let current = 1;
 
     let slider = setTimeout(fadeNextSlide, timeout);
@@ -15,7 +19,7 @@ document.addEventListener('DOMContentLoaded', () => {
         controlBullet[i].classList.remove(activeClass);
       }
 
-      if (current != parseInt(quoteSlides.length) - 1) {
+      if (current !== parseInt(quoteSlides.length, 10) - 1) {
         current++;
       } else {
         current = 0;
@@ -33,7 +37,7 @@ document.addEventListener('DOMContentLoaded', () => {
         quoteSlides[i].style.opacity = 0;
         controlBullet[i].classList.remove(activeClass);
       }
-      if (current == 0) {
+      if (current === 0) {
         current = quoteSlides.length - 1;
       } else {
         current--;
@@ -46,7 +50,8 @@ document.addEventListener('DOMContentLoaded', () => {
     if (controls) {
       controls.addEventListener('click', function (event) {
         event.preventDefault();
-        let liIndex = event.target.dataset.bullet;
+        const liIndex = event.target.dataset.bullet;
+
         for (let i = 0; i < quoteSlides.length; i++) {
           quoteSlides[i].style.opacity = 0;
           controlBullet[i].classList.remove(activeClass);
