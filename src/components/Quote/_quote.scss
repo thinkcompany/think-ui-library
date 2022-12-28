@@ -1,8 +1,13 @@
+:root {
+  --duration: 1s; /* duration */
+}
+
 $bar-width: 180px;
 $bar-height: 3px;
 $quote-width: 200px;
 $quote-width-mobile: 138px;
 $lquo-offset: 70px;
+$bullet-size: 12px;
 
 .tco-quote {
   margin: $spacing-stack-4 0 0;
@@ -43,10 +48,7 @@ $lquo-offset: 70px;
   }
 }
 
-$n: 3; /* number of images */
-
 .tco-quote-wrapper--carousel {
-  --d: 8s; /* duration */
   position: relative;
   display: grid;
   margin-top: $lquo-offset * 0.75;
@@ -58,28 +60,45 @@ $n: 3; /* number of images */
 
 .tco-quote--slide {
   position: relative;
-  z-index: 2;
   grid-area: 1/1;
   margin: 0;
   background: $color-classic-glass;
-  animation: slide var(--d) infinite, z-order var(--d) infinite steps(1);
-  animation-fill-mode: both;
+  opacity: 0;
+  transition: opacity var(--duration);
 
-  &:last-child {
-    animation-name: slide, z-order-last;
+  .tco-lights-out & {
+    background-color: $color-classic-navy;
   }
 
-  // &:last-child {
-  //   animation-name: slide;
-  // }
+  &:nth-of-type(1) {
+    opacity: 1;
+  }
 
-  @for $i from 2 to ($n + 1) {
-    &:nth-child(#{$i}) {
-      animation-delay: calc(#{(1 - $i) / $n} * var(--d));
+  &::before {
+    content: '';
+    position: absolute;
+    top: -$lquo-offset * 0.75;
+    left: -14px;
+    z-index: 2;
+    display: block;
+    width: $quote-width-mobile;
+    height: auto;
+    background: url('/svg/lquo.svg') no-repeat center / cover;
+    aspect-ratio: 197 / 154;
+
+    @include wider-than($breakpoint-tablet-portrait) {
+      top: -$lquo-offset;
+      width: $quote-width;
+    }
+
+    .tco-lights-out & {
+      background: url('/svg/lquo-dark.svg') no-repeat center / cover;
     }
   }
 
   .tco-type-display--small {
+    position: relative;
+    z-index: 3;
     margin-bottom: 0;
   }
 
@@ -112,58 +131,48 @@ $n: 3; /* number of images */
   }
 }
 
-.tco-icon--lquo {
-  position: absolute;
-  top: -$lquo-offset * 0.75;
-  left: -14px;
-  z-index: 0;
-  width: $quote-width-mobile;
-  height: auto;
-  fill: $color-foreground-on-tint;
+.tco-quote-carousel {
+  position: relative;
+}
 
-  @include wider-than($breakpoint-tablet-portrait) {
-    top: -$lquo-offset;
-    width: $quote-width;
+.tco-bullet-container {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  padding: $spacing-stack-32 0 0;
+}
+
+.tco-bullet {
+  width: $bullet-size;
+  height: $bullet-size;
+  margin: 0 $spacing-inline-16;
+  padding: 0;
+  border: 2px solid $color-classic-navy;
+  border-radius: 50%;
+  background-color: transparent;
+  text-indent: -999em;
+  cursor: pointer;
+  transition: background ease-in-out 0.2s;
+
+  &--active {
+    background-color: $color-classic-navy;
   }
 
   .tco-lights-out & {
-    fill: $color-dark-theme-blue;
+    border-color: $color-dark-theme-blue;
+
+    &--active {
+      background-color: $color-dark-theme-blue;
+    }
   }
 }
 
-@keyframes slide {
-  // #{50/$n}% {
-  //   opacity: 1
-  // }
-  // #{100/$n}% {
-  //   opacity: 0
-  // }
-
-  #{50/$n}%,
-  #{100/$n}% {
+@keyframes fader {
+  from {
     opacity: 1;
   }
-  #{100 - 100/$n}% {
+
+  to {
     opacity: 0;
-  }
-}
-
-@keyframes z-order {
-  #{50/$n}%,
-  #{100/$n}% {
-    z-index: 1;
-  }
-  #{100 - 100/$n}% {
-    z-index: 2;
-  }
-}
-
-@keyframes z-order-last {
-  #{50/$n}%,
-  #{100/$n}% {
-    z-index: 1;
-  }
-  #{100 - 50/$n}% {
-    z-index: 2;
   }
 }
