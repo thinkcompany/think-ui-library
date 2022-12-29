@@ -8,8 +8,10 @@ document.addEventListener('DOMContentLoaded', () => {
     const controlBullet = document.querySelectorAll('.tco-bullet');
     const activeClass = 'tco-bullet--active';
     const timeout = 4000;
+    const slideCount = quoteSlides.length - 1;
+    const mediaQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
 
-    let current = 1;
+    let current = 0;
 
     let slider = setTimeout(fadeNextSlide, timeout);
 
@@ -19,7 +21,9 @@ document.addEventListener('DOMContentLoaded', () => {
         controlBullet[i].classList.remove(activeClass);
       }
 
-      if (current !== parseInt(quoteSlides.length, 10) - 1) {
+      clearTimeout(slider);
+
+      if (Number(current) !== slideCount) {
         current++;
       } else {
         current = 0;
@@ -32,39 +36,39 @@ document.addEventListener('DOMContentLoaded', () => {
       slider = setTimeout(fadeNextSlide, timeout);
     }
 
-    function fadePrevSlide() {
-      for (let i = 0; i < quoteSlides.length; i++) {
-        quoteSlides[i].style.opacity = 0;
-        controlBullet[i].classList.remove(activeClass);
-      }
-      if (current === 0) {
-        current = quoteSlides.length - 1;
-      } else {
-        current--;
-      }
-      quoteSlides[current].style.opacity = 1;
-      controlBullet[current].classList.add(activeClass);
-      slider = setTimeout(fadeNextSlide, timeout);
-    }
-
     if (controls) {
       controls.addEventListener('click', function (event) {
         event.preventDefault();
-        const liIndex = event.target.dataset.bullet;
+        event.stopPropagation();
+        let liIndex = event.target.dataset.bullet;
 
         for (let i = 0; i < quoteSlides.length; i++) {
           quoteSlides[i].style.opacity = 0;
           controlBullet[i].classList.remove(activeClass);
         }
         clearTimeout(slider);
-        current = liIndex;
+
+        current = liIndex - 1;
         if (quoteSlides[liIndex]) {
           quoteSlides[liIndex].style.opacity = 1;
           controlBullet[liIndex].classList.add(activeClass);
         }
+
+        if (Number(current) < slideCount) {
+          // current 0 1 2
+          current++;
+        } else {
+          current = 0;
+        }
+
         slider = setTimeout(fadeNextSlide, timeout);
       });
     }
+
+    mediaQuery.addEventListener('change', () => {
+      console.log(mediaQuery.media, mediaQuery.matches);
+      //clearTimeout(slider);
+    });
   };
 
   quoteCarousel();
