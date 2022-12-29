@@ -89,5 +89,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const observer = new IntersectionObserver(observerCallback, observerOptions);
 
-  observer.observe(quoteContainer);
+  if (quoteContainer) {
+    observer.observe(quoteContainer);
+  }
 });
