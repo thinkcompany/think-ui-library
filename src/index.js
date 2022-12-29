@@ -9,6 +9,8 @@ import './components/Tabs/tabs.js';
 
 import './components/Quote/quote-carousel.js';
 
+import './components/TextCircle/text-circle.js';
+
 // Components for Site
 import Nav from './components/Navigation/navigation';
 
