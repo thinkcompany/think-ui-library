@@ -2,6 +2,8 @@
 /* eslint-disable no-unused-vars */
 
 document.addEventListener('DOMContentLoaded', () => {
+  const quoteContainer = document.querySelector('.tco-quote-carousel');
+
   const quoteCarousel = () => {
     const quoteSlides = document.querySelectorAll('.tco-quote--slide');
     const controls = document.querySelector('.tco-quote-controls');
@@ -9,7 +11,9 @@ document.addEventListener('DOMContentLoaded', () => {
     const activeClass = 'tco-bullet--active';
     const timeout = 4000;
     const slideCount = quoteSlides.length - 1;
-    const mediaQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
+    const prefersReduced =
+      window.matchMedia(`(prefers-reduced-motion: reduce)`) === true ||
+      window.matchMedia(`(prefers-reduced-motion: reduce)`).matches === true;
 
     let current = 0;
 
@@ -40,7 +44,7 @@ document.addEventListener('DOMContentLoaded', () => {
       controls.addEventListener('click', function (event) {
         event.preventDefault();
         event.stopPropagation();
-        let liIndex = event.target.dataset.bullet;
+        const liIndex = event.target.dataset.bullet;
 
         for (let i = 0; i < quoteSlides.length; i++) {
           quoteSlides[i].style.opacity = 0;
@@ -65,11 +69,25 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     }
 
-    mediaQuery.addEventListener('change', () => {
-      console.log(mediaQuery.media, mediaQuery.matches);
-      //clearTimeout(slider);
+    if (prefersReduced) {
+      clearTimeout(slider);
+    }
+  };
+
+  const observerOptions = {
+    rootMargin: '0px',
+    threshold: 1
+  };
+
+  const observerCallback = entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        quoteCarousel();
+      }
     });
   };
 
-  quoteCarousel();
+  const observer = new IntersectionObserver(observerCallback, observerOptions);
+
+  observer.observe(quoteContainer);
 });
