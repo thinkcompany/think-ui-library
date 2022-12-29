@@ -139,7 +139,12 @@ $bullet-size: 12px;
   display: flex;
   justify-content: center;
   width: 100%;
-  padding: $spacing-stack-32 0 0;
+}
+
+.tco-carousel-navigation--quote {
+  .tco-bullet-container {
+    padding: $spacing-stack-32 0 0;
+  }
 }
 
 .tco-bullet {
