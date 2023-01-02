@@ -1,6 +1,6 @@
 const alignments = ['center', 'left', 'right'];
 
-const Template = args => {
+const QuoteTemplate = args => {
   const { quote, textAlignment, authorName, authorTitle } = args;
 
   return `
@@ -35,7 +35,65 @@ const Template = args => {
   `;
 };
 
-export const Quote = Template.bind({});
+export const Quote = QuoteTemplate.bind({});
+
+const QuoteCarouselTemplate = args => {
+  return `
+    <div class="tco-container-wrapper tco-container-wrapper--glass">
+      <div class="tco-container tco-container--narrow">
+        <div class="tco-quote-carousel">
+          <div class="tco-quote-wrapper tco-quote-wrapper--carousel tco-quote-wrapper-center">
+            <blockquote class="tco-quote tco-quote--slide">
+              <p class="tco-type-display--small">I love helping to cultivate a culture that sets people up to succeed, gives people the space to work through challenges, and values the diverse perspectives everyone brings to the work.</p>
+              <div class="tco-quote-footer">
+                <cite class="tco-type-body--large">Neha Agarwal</cite>
+                <span class="tco-type-eyebrow">Manager, Design</span>
+              </div>
+            </blockquote>
+            <blockquote class="tco-quote tco-quote--slide">
+              <p class="tco-type-display--small">It's hard to find a company whose core values align with my own; I love that I can be myself and represent Think Company at the same time.</p>
+              <div class="tco-quote-footer">
+                <cite class="tco-type-body--large">Christine Martino</cite>
+                <span class="tco-type-eyebrow">Principal UX Engineer</span>
+              </div>
+            </blockquote>
+            <blockquote class="tco-quote tco-quote--slide">
+              <p class="tco-type-display--small">Fusce hendrerit mattis dapibus. Morbi ornare, felis rutrum eleifend interdum, lorem enim auctor elit.</p>
+              <div class="tco-quote-footer">
+                <cite class="tco-type-body--large">Author O. Quote</cite>
+                <span class="tco-type-eyebrow">Person who said it</span>
+              </div>
+            </blockquote>
+          </div>
+          <aside class="tco-carousel-navigation tco-carousel-navigation--quote">
+            <div class="tco-bullet-container tco-quote-controls">
+              <span class="tco-bullet tco-bullet--carousel tco-bullet--active" data-bullet="0">Go to slide 1</span>
+              <span class="tco-bullet tco-bullet--carousel" data-bullet="1">Go to slide 2</span>
+              <span class="tco-bullet tco-bullet--carousel" data-bullet="2">Go to slide 3</span>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </div>
+  `;
+};
+
+export const QuoteCarousel = QuoteCarouselTemplate.bind({});
+
+QuoteCarousel.argTypes = {
+  quote: {
+    control: false
+  },
+  authorName: {
+    control: false
+  },
+  authorTitle: {
+    control: false
+  },
+  textAlignment: {
+    control: false
+  }
+};
 
 export default {
   title: 'Components / Quote',
