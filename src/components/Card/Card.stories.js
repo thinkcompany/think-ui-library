@@ -32,8 +32,7 @@ SummaryCard.args = {
   heading: 'Work Together.',
   summary:
     'The best experiences are consistent across all channels, so we always consider the entire ecosystem your users interact within—designing for people wherever they click, tap, talk, touch, work, or play.',
-  image:
-    'https://www.thinkcompany.com/wp-content/uploads/2021/10/Be-kind-to-people.png',
+  image: 'https://www.thinkcompany.com/wp-content/uploads/2021/10/Be-kind-to-people.png',
   treatment: treatments[1]
 };
 
@@ -69,8 +68,7 @@ export const PersonCard = PersonCardTemplate.bind({});
 PersonCard.args = {
   name: 'Abby DePrimo',
   title: 'Vice President, Design Operations',
-  image:
-    'https://www.thinkcompany.com/wp-content/uploads/2020/03/AbbyDePrimo_Web.jpg',
+  image: 'https://www.thinkcompany.com/wp-content/uploads/2020/03/AbbyDePrimo_Web.jpg',
   treatment: treatments[1]
 };
 
@@ -177,8 +175,7 @@ export const CalloutCard = CalloutCardTemplate.bind({});
 
 CalloutCard.args = {
   heading: 'Problem Solving Workshops for COVID-19 Support',
-  description:
-    'We want to help organizations supporting the frontline response',
+  description: 'We want to help organizations supporting the frontline response',
   treatment: treatments[1],
   version: versions[1]
 };
@@ -313,19 +310,19 @@ JobCard.argTypes = {
 const miniContent = [
   {
     name: 'Client',
-    image: 'img/case-studies/client-a.jpg',
+    image: 'img/case-studies/client-a.png',
     project: 'Client project',
     bg: '#00654e'
   },
   {
     name: 'Client',
-    image: 'img/case-studies/client-b.jpg',
+    image: 'img/case-studies/client-b.png',
     project: 'Client project',
     bg: '#007ab8'
   },
   {
     name: 'Client with a long name',
-    image: 'img/case-studies/client-c.jpg',
+    image: 'img/case-studies/client-c.png',
     project: 'Client project name really long',
     bg: '#143061'
   }
@@ -367,7 +364,7 @@ const sliderRowB = [
 const miniCsCard = input => {
   return `
     <article class="tco-mini-card" style="--cs-bg-hex:${input.bg}">
-      <div class="tco-mini-card-container">
+      <div class="tco-mini-card-container animation-container">
         <div class="tco-mini-image-container">
           <img src="${input.image}" alt="Example of work" width="234" height="130" />
         </div>
@@ -414,7 +411,7 @@ const MotionCardTemplate = args => {
             <div class="tco-motion-track tco-motion-track--carousel tco-motion-track--paused" style="--card-count:${miniCount}">
               ${miniCards.map(item => miniCsCard(item)).join('')}
             </div>
-            <div class="tco-motion-control-container">
+            <div class="tco-motion-control-container tco-motion-control-container--carousel">
               <button class="tco-motion-control tco-motion-track--paused tco-btn">
                 <span class="tco-accessibly-hidden">Stop Video</span>
                 <svg class="tco-motion-control-icon tco-motion-control-icon--pause" width="20" height="20" viewBox="0 0 12 12" role="presentation">
@@ -497,8 +494,7 @@ export default {
   component: [SummaryCard, PostCard, PersonCard, CalloutCard, MediaCard],
   parameters: {
     component: SummaryCard,
-    componentSubtitle:
-      'Cards are used on the site via the Post Grid, and Card Grid components.',
+    componentSubtitle: 'Cards are used on the site via the Post Grid, and Card Grid components.',
     docs: {
       description: {
         component:
@@ -520,8 +516,7 @@ export default {
       }
     },
     treatment: {
-      description:
-        'Cards have 3 border treatment options <em>for Dark mode only</em>',
+      description: 'Cards have 3 border treatment options <em>for Dark mode only</em>',
       table: {
         type: { summary: 'select' },
         defaultValue: { summary: 'flat' }

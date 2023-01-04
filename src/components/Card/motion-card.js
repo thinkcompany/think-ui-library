@@ -1,139 +1,39 @@
 document.addEventListener('DOMContentLoaded', () => {
+  const Flickity = require('flickity');
   const carouselCard = document.querySelector('.tco-card--motion-carousel');
   const sliderCard = document.querySelector('.tco-card--motion-slider');
 
-  const carouselControls = () => {
-    const cardWidth = carouselCard.offsetWidth;
-    const track = carouselCard.querySelector('.tco-motion-track');
-    const minis = track.querySelectorAll('.tco-mini-card');
-    const controlContainer = carouselCard.querySelector('.tco-motion-control-container');
-    const control = controlContainer.querySelector('.tco-motion-control');
-    const offsetContainer = carouselCard.querySelector('.tco-card-motion-container');
+  const initCarousel = () => {
+    const track = document.querySelector('.tco-motion-track--carousel');
+    const control = document.querySelector('.tco-motion-control');
     const pauseClass = 'tco-motion-track--paused';
-    const trackWidth = track.offsetWidth; // track width set in css and will always reflect inclusion of clones (css vars pass in accurate card count)
-    const miniWidth = 240;
-    const miniClass = 'tco-mini-card--in-view';
-    const cardDuration = 1500;
-    const cardCount = Math.round(trackWidth / miniWidth);
-    const keyCount = cardCount / 2 + 1;
-    //const bezierCurve = 'cubic-bezier(0.45,0.05,0.55,0.95)';
-    const bezierCurve = 'linear';
+    const duration = 2000;
 
-    const carouselPrep = () => {
-      // const offset = miniWidth - (cardWidth - miniWidth) / 2;
-      const offset = miniWidth + cardWidth;
-      // offset card container
-      //offsetContainer.style.transform = 'translateX(' + cardWidth + 'px)';
-      // controlContainer.style.transform = 'translateX(' + offset + 'px)';
+    const carousel = new Flickity(track, {
+      freeScroll: true,
+      wrapAround: true,
+      prevNextButtons: false,
+      pageDots: false,
+      cellSelector: '.tco-mini-card',
+      autoPlay: duration
+    });
 
-      // clone the cards and add to the end
-      minis.forEach(mini => {
-        let clone = mini.cloneNode(true);
-        clone.classList.add('tco-mini-card--clone');
-        track.append(clone);
-      });
-    };
+    carousel.stopPlayer();
 
-    const carouselAnimation = () => {
-      let keyframes = [];
-
-      //  build keyframes
-      for (let i = 1; i < keyCount + 1; i++) {
-        let miniW = miniWidth * i;
-
-        keyframes.push({ transform: 'translateX(-' + miniW + 'px)' });
+    const toggleCarousel = () => {
+      if (carousel.player.state === 'playing') {
+        carousel.stopPlayer();
+        control.classList.add(pauseClass);
+      } else {
+        carousel.playPlayer();
+        control.classList.remove(pauseClass);
       }
-
-      const trackTiming = {
-        duration: cardDuration * cardCount,
-        iterations: Infinity
-      };
-      const animateTrack = track.animate(keyframes, trackTiming);
-      animateTrack.pause();
-
-      const cards = track.querySelectorAll('.tco-mini-card'); // includes clones
-
-      cards.forEach((card, i) => {
-        const cardKeyframes = [
-          { transform: 'scale(1)', opacity: 1 },
-          { transform: 'scale(1.1)', opacity: 1 },
-          { transform: 'scale(1)', opacity: 1 }
-        ];
-
-        const frameDuration = (animateTrack.effect.getComputedTiming().duration / cards.length) * 2;
-
-        const cardTiming = {
-          duration: frameDuration,
-          delay: frameDuration * i,
-          easing: bezierCurve,
-          fill: 'forwards'
-        };
-
-        const cardAnimation = card.animate(cardKeyframes, cardTiming);
-        cardAnimation.pause();
-
-        if (animateTrack.playState === 'paused') {
-          cardAnimation.pause();
-          console.log('paused');
-        } else {
-          console.log('play');
-          cardAnimation.play();
-        }
-      });
-
-      const observerCallback = entries => {
-        entries.forEach(entry => {
-          //console.log('time ' + entry.time);
-          // console.log(entry);
-          //console.log('ratio ' + entry.intersectionRatio);
-          const cardKeyframes = [
-            { transform: 'scale(1)', opacity: 1 },
-            { transform: 'scale(1.1)', opacity: 1 },
-            { transform: 'scale(1)', opacity: 1 }
-          ];
-
-          const cardTiming = {
-            //duration: cardDuration * 3,
-            duration: (animateTrack.effect.getComputedTiming().duration / cards.length) * 2,
-            easing: bezierCurve,
-            fill: 'forwards'
-          };
-
-          //console.log('card duration ' + cardTiming.duration);
-
-          const { target } = entry;
-          const cardAnimation = target.animate(cardKeyframes, cardTiming);
-          cardAnimation.pause();
-
-          if (entry.isIntersecting && entry.intersectionRatio > 0) {
-            // checking for intersectionRatio value prevents card animation on initial load
-            //console.log(entry);
-            target.classList.add(miniClass);
-            //cardAnimation.play();
-          } else {
-            target.classList.remove(miniClass);
-          }
-        });
-      };
-
-      const toggleAnimation = () => {
-        if (animateTrack.playState === 'paused') {
-          animateTrack.play();
-          control.classList.remove(pauseClass);
-        } else {
-          animateTrack.pause();
-          control.classList.add(pauseClass);
-        }
-      };
-      control.addEventListener('click', toggleAnimation);
     };
 
-    carouselPrep();
-    carouselAnimation();
+    control.addEventListener('click', toggleCarousel);
   };
 
   const sliderControls = () => {
-    // const card = document.querySelector('.tco-card--motion-slider');
     const card = sliderCard;
     const track = card.querySelector('.tco-motion-track');
     const slideRows = track.querySelectorAll('.tco-motion-row');
@@ -202,13 +102,10 @@ document.addEventListener('DOMContentLoaded', () => {
   };
 
   if (carouselCard) {
-    carouselControls();
+    initCarousel();
   }
 
   if (sliderCard) {
     sliderControls();
   }
-
-  // window.addEventListener('resize', carouselControls);
-  // window.addEventListener('resize', sliderControls);
 });

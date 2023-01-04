@@ -1,7 +1,10 @@
 $motion-content-max: 464px;
-$mini-card: 240px;
+$mini-card: 260px;
 $mini-slide: 174px;
 $track-height: 240px;
+$scale: 0.85;
+$duration: 0.35s;
+$timing-fn: cubic-bezier(0.45, 0.05, 0.55, 0.95);
 
 .tco-card--motion {
   position: relative;
@@ -14,34 +17,6 @@ $track-height: 240px;
 
   @include wider-than($breakpoint-desktop) {
     gap: $spacing-stack-64;
-  }
-
-  &-slider {
-    display: none;
-  }
-
-  &-carousel {
-    overflow: visible;
-
-    // &::before,
-    // &::after {
-    //   content: '';
-    //   position: absolute;
-    //   top: 0;
-    //   display: block;
-    //   width: 164px;
-    //   height: 100%;
-    //   background-color: rgba($color-classic-blue, 0.3);
-    // }
-
-    // &::before {
-    //   left: 0;
-    // }
-
-    // &::after {
-    //   right: 0;
-    //   width: 164px;
-    // }
   }
 
   .tco-card-content-container {
@@ -96,19 +71,38 @@ $track-height: 240px;
   width: 100%;
 }
 
-.tco-motion-track--carousel {
-  position: relative;
-  display: flex;
-  flex-flow: row nowrap;
-  align-items: center;
-  width: calc(#{$mini-card} * (var(--card-count) * 2));
+// flickity cell
+.tco-mini-card {
+  position: absolute;
+  width: $mini-card;
   height: $track-height;
+  margin: 0 $spacing-inline-2;
+  border: 1px solid transparent;
+  perspective: 1000px;
+
+  .animation-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    filter: blur(0.5px);
+    transition: transform $duration $timing-fn, filter $duration $timing-fn;
+    transform: scale3d(#{$scale}, #{$scale}, #{$scale});
+  }
+
+  &.is-selected {
+    .animation-container {
+      opacity: 1;
+      filter: none;
+      transform: scale3d(1, 1, 1);
+    }
+  }
 }
 
 .tco-motion-control-container {
   display: flex;
   justify-content: flex-end;
-  // justify-content: center;
   padding: $spacing-stack-20 $spacing-inline-16 $spacing-stack-16;
 }
 
@@ -149,13 +143,6 @@ $track-height: 240px;
   height: 12px;
   margin: auto;
   fill: $color-foreground-on-tint;
-}
-
-.tco-mini-card {
-  flex: 1 0 auto;
-  width: $mini-card;
-  padding: 0 $spacing-inline-8;
-  will-change: transform;
 }
 
 .tco-mini-card-container {
@@ -234,4 +221,40 @@ $track-height: 240px;
   img {
     object-fit: cover;
   }
+}
+
+/*! Flickity v2.3.0
+https://flickity.metafizzy.co
+---------------------------------------------- */
+.flickity-enabled {
+  position: relative;
+
+  &:focus {
+    outline: none;
+  }
+
+  &.is-draggable {
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
+
+    .flickity-viewport {
+      cursor: grab;
+    }
+  }
+}
+
+.flickity-viewport {
+  position: relative;
+  overflow: hidden;
+  height: 100%;
+}
+
+.flickity-slider {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.flickity-enabled.is-draggable .flickity-viewport.is-pointer-down {
+  cursor: grabbing;
 }
