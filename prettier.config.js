@@ -4,7 +4,7 @@
 //Ref -> https://medium.com/ngconf/ultimate-prettier-angular-cheatsheet-777c9515f4fb
 
 module.exports = {
-	printWidth: 80,
+	printWidth: 100,
 	tabWidth: 2,
 	useTabs: false,
 	semi: true,
