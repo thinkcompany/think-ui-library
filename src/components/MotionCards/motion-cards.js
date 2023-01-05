@@ -2,6 +2,9 @@ document.addEventListener('DOMContentLoaded', () => {
   const Flickity = require('flickity');
   const carouselCard = document.querySelector('.tco-card--motion-carousel');
   const sliderCard = document.querySelector('.tco-card--motion-slider');
+  const prefersReduced =
+    window.matchMedia(`(prefers-reduced-motion: reduce)`) === true ||
+    window.matchMedia(`(prefers-reduced-motion: reduce)`).matches === true;
 
   const initCarousel = () => {
     const track = document.querySelector('.tco-motion-track--carousel');
@@ -18,7 +21,8 @@ document.addEventListener('DOMContentLoaded', () => {
       autoPlay: duration
     });
 
-    carousel.stopPlayer();
+    carousel.playPlayer();
+    control.classList.remove(pauseClass);
 
     const toggleCarousel = () => {
       if (carousel.player.state === 'playing') {
@@ -31,6 +35,11 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
     control.addEventListener('click', toggleCarousel);
+
+    if (prefersReduced) {
+      carousel.stopPlayer();
+      control.classList.add(pauseClass);
+    }
   };
 
   const sliderControls = () => {
@@ -91,7 +100,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
       const animateRow = row.animate(keyframes, trackTiming);
 
-      animateRow.pause();
+      control.classList.remove(pauseClass);
 
       const toggleAnimation = () => {
         if (animateRow.playState === 'paused') {
@@ -104,17 +113,46 @@ document.addEventListener('DOMContentLoaded', () => {
       };
 
       control.addEventListener('click', toggleAnimation);
+
+      if (prefersReduced) {
+        animateRow.pause();
+        control.classList.add(pauseClass);
+      }
     });
 
     widestRow = rowWidths.reduce((a, b) => Math.max(a, b), -Infinity) + 'px'; // use widest row to set parent width
     track.style.width = widestRow;
   };
 
+  const obsvrOptions = {
+    rootMargin: '0px',
+    threshold: 1
+  };
+
+  const obsvrCallback = entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        initCarousel();
+      }
+    });
+  };
+
+  const obsvrCallbackSlider = entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        sliderControls();
+      }
+    });
+  };
+
+  const obsvr = new IntersectionObserver(obsvrCallback, obsvrOptions);
+  const obsvrSlider = new IntersectionObserver(obsvrCallbackSlider, obsvrOptions);
+
   if (carouselCard) {
-    initCarousel();
+    obsvr.observe(carouselCard);
   }
 
   if (sliderCard) {
-    sliderControls();
+    obsvrSlider.observe(sliderCard);
   }
 });
