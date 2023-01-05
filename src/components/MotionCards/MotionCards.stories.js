@@ -60,7 +60,7 @@ const miniCsCard = input => {
           <img src="${input.image}" alt="Example of work" width="234" height="130" />
         </div>
         <div class="tco-mini-content">
-          <h5 class="tco-type-eyebrow">${input.name}</h5>
+          <h3 class="tco-type-eyebrow">${input.name}</h3>
           <p class="tco-type-body">${input.project}</p>
         </div>
       </div>
@@ -157,60 +157,23 @@ const MotionCardTemplate = args => {
 
 export const MotionCards = MotionCardTemplate.bind({});
 
-MotionCards.args = {
-  heading: 'Work',
-  headingB: 'Process',
-  summary:
-    'Take a look at how we’ve helped teams like yours delight customers and employees with modern digital tools.',
-  summaryB:
-    'See how we launch exceptional digital experiences— even in the most challenging regulated environments.',
-  miniCards: miniContent
-};
-
-MotionCards.argTypes = {
-  treatment: {
-    name: 'border treatment (dark theme)',
-    control: 'inline-radio',
-    options: treatments
-  },
-  layout: {
-    name: 'media position',
-    control: 'inline-radio',
-    options: layouts
-  }
-};
-
 export default {
   title: 'Components / Motion Cards',
-  component: MotionCards,
+  args: {
+    heading: 'Work',
+    headingB: 'Process',
+    summary:
+      "Take a look at how we've helped teams like yours delight customers and employees with modern digital tools.",
+    summaryB:
+      'See how we launch exceptional digital experiences— even in the most challenging regulated environments.',
+    miniCards: miniContent
+  },
   parameters: {
     component: MotionCards,
-    componentSubtitle: 'Cards are used on the site via the Post Grid, and Card Grid components.',
     docs: {
       description: {
         component:
-          'The <a href="#post-card">Post</a>, <a href="#person-card">Person</a>, Event, and Case Study cards are available within the <strong>Post Grid</strong>, and content is populated automatically based on the selected post. Only one type of card (content type) can be used within the Post Grid.<br><br>The <strong>Card Grid</strong> offers more flexibility, as the <a href="#post-card">Post</a>, <a href="#job-card">Job</a>, <a href="#media-card">Media</a>, <a href="#callout-card">Callout</a>, <a href="person-card">Person</a>, <a href="#anchor--components-card--summary-card">Summary</a>, Service, and Process cards are available. Different card types can be used within the same Card Grid instance, and content is manually input.<br><br><br><h3 class="sbdocs-h3" style="margin-left:0;">Summary Card</h3>'
-      }
-    }
-  },
-  argTypes: {
-    heading: {
-      table: {
-        type: { summary: 'text field' }
-      }
-    },
-    image: {
-      description:
-        'Summary: Display width 302px. Upload @1.5x = 451px<br>Person: Display width 250px. Upload @1.5x = 375px<br>Post: Display width 478px. Upload @1.5x = 717px<br>Callout: Display width: 44px. Upload @1.5x = 66px<br>Media: Display width 328px. Upload @1.5x = 492px',
-      table: {
-        type: { summary: 'image' }
-      }
-    },
-    treatment: {
-      description: 'Cards have 3 border treatment options <em>for Dark mode only</em>',
-      table: {
-        type: { summary: 'select' },
-        defaultValue: { summary: 'flat' }
+          'Case Study Card images<br><strong>max display size</strong> 258 x 143 | <strong>upload size</strong> 387 x 215<br>Sliding Image Card images<br><strong>max display size</strong> 174 x 116 | <strong>upload size</strong> 261 x 174'
       }
     }
   }
