@@ -3,7 +3,7 @@ import './main.scss';
 import './components/TextInput/inputexpand.js';
 import './components/Navigation/global-search.js';
 import './components/Tabs/tabs.js';
-import './components/Card/motion-card.js';
+import './components/MotionCards/motion-cards.js';
 
 import './components/Quote/quote-carousel.js';
 

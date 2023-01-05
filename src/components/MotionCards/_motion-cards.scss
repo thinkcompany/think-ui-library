@@ -190,12 +190,12 @@ $timing-fn: cubic-bezier(0.45, 0.05, 0.55, 0.95);
   gap: $spacing-inline-8;
 
   &--top {
-    width: calc(var(--slide-count-a) * $mini-slide);
+    width: calc(var(--slide-count-a) * #{$mini-slide});
     margin-bottom: $spacing-stack-8;
   }
 
   &--bottom {
-    width: calc(var(--slide-count-b) * $mini-slide);
+    width: calc(var(--slide-count-b) * #{$mini-slide});
   }
 }
 

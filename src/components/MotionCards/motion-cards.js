@@ -41,18 +41,24 @@ document.addEventListener('DOMContentLoaded', () => {
     const control = controlContainer.querySelector('.tco-motion-control');
     const miniWidth = 174;
     const pauseClass = 'tco-motion-track--paused';
-    let rowWidths = [];
+
+    const rowWidths = [];
+
     let widestRow = '100%';
 
     slideRows.forEach((row, i) => {
-      let keyframes = [];
-      let ogSlides = row.querySelectorAll('.tco-mini-slide');
-      let rowWidth = miniWidth * (ogSlides.length * 2) + (ogSlides.length - 1) * 8; // accounts for gap
+      const keyframes = [];
+
+      const ogSlides = row.querySelectorAll('.tco-mini-slide');
+
+      const rowWidth = miniWidth * (ogSlides.length * 2) + (ogSlides.length - 1) * 8; // accounts for gap
+
       rowWidths.push(rowWidth); // will be used to set width of parent container
 
       // clone the images in each row
       ogSlides.forEach(ogSlide => {
-        let clone = ogSlide.cloneNode(true);
+        const clone = ogSlide.cloneNode(true);
+
         clone.classList.add('tco-mini-slide--clone');
         row.append(clone);
       });
@@ -61,9 +67,11 @@ document.addEventListener('DOMContentLoaded', () => {
       const slides = row.querySelectorAll('.tco-mini-slide');
       const slideCount = slides.length / 2 + 1;
       // we only need to build keyframes for 1/2 (+1) of all slides (og and clones) for a seamless loop
-      for (let i = 0; i < slideCount; i++) {
+
+      for (i = 0; i < slideCount; i++) {
         let miniW = miniWidth + 8;
-        miniW = miniW * i;
+
+        miniW *= i;
 
         keyframes.push({ transform: 'translateX(-' + miniW + 'px)' });
       }
@@ -74,7 +82,7 @@ document.addEventListener('DOMContentLoaded', () => {
         iterations: Infinity
       };
 
-      if (i != 0) {
+      if (i !== 0) {
         trackTiming = {
           duration: 3000 * slides.length,
           iterations: Infinity
@@ -82,6 +90,7 @@ document.addEventListener('DOMContentLoaded', () => {
       }
 
       const animateRow = row.animate(keyframes, trackTiming);
+
       animateRow.pause();
 
       const toggleAnimation = () => {

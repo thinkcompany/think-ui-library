@@ -464,30 +464,30 @@ const MotionCardTemplate = args => {
   </div>`;
 };
 
-export const MotionCard = MotionCardTemplate.bind({});
+// export const MotionCard = MotionCardTemplate.bind({});
 
-MotionCard.args = {
-  heading: 'Work',
-  headingB: 'Process',
-  summary:
-    'Take a look at how we’ve helped teams like yours delight customers and employees with modern digital tools.',
-  summaryB:
-    'See how we launch exceptional digital experiences— even in the most challenging regulated environments.',
-  miniCards: miniContent
-};
+// MotionCard.args = {
+//   heading: 'Work',
+//   headingB: 'Process',
+//   summary:
+//     'Take a look at how we’ve helped teams like yours delight customers and employees with modern digital tools.',
+//   summaryB:
+//     'See how we launch exceptional digital experiences— even in the most challenging regulated environments.',
+//   miniCards: miniContent
+// };
 
-MotionCard.argTypes = {
-  treatment: {
-    name: 'border treatment (dark theme)',
-    control: 'inline-radio',
-    options: treatments
-  },
-  layout: {
-    name: 'media position',
-    control: 'inline-radio',
-    options: layouts
-  }
-};
+// MotionCard.argTypes = {
+//   treatment: {
+//     name: 'border treatment (dark theme)',
+//     control: 'inline-radio',
+//     options: treatments
+//   },
+//   layout: {
+//     name: 'media position',
+//     control: 'inline-radio',
+//     options: layouts
+//   }
+// };
 
 export default {
   title: 'Components / Card',

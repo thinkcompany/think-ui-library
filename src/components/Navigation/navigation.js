@@ -93,9 +93,7 @@ export default class Nav {
       this.$container = document.querySelector('.tco-site-nav-container');
       this.$menu = document.querySelector('.tco-site-nav-menu--primary');
       this.$search = document.querySelector('.tco-global-search');
-      this.$searchOpen = document.querySelector(
-        '.tco-site-header-toggle--search'
-      );
+      this.$searchOpen = document.querySelector('.tco-site-header-toggle--search');
 
       if (this.$mobileMenuBtn) {
         this.setupEventHandler();
