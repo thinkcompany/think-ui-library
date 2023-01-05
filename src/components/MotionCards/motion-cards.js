@@ -68,10 +68,10 @@ document.addEventListener('DOMContentLoaded', () => {
       const slideCount = slides.length / 2 + 1;
       // we only need to build keyframes for 1/2 (+1) of all slides (og and clones) for a seamless loop
 
-      for (i = 0; i < slideCount; i++) {
+      for (let n = 0; n < slideCount; n++) {
         let miniW = miniWidth + 8;
 
-        miniW *= i;
+        miniW *= n;
 
         keyframes.push({ transform: 'translateX(-' + miniW + 'px)' });
       }
@@ -88,6 +88,8 @@ document.addEventListener('DOMContentLoaded', () => {
           iterations: Infinity
         };
       }
+
+      console.log(i);
 
       const animateRow = row.animate(keyframes, trackTiming);
 
