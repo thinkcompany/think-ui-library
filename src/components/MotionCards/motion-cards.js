@@ -89,8 +89,6 @@ document.addEventListener('DOMContentLoaded', () => {
         };
       }
 
-      console.log(i);
-
       const animateRow = row.animate(keyframes, trackTiming);
 
       animateRow.pause();
