@@ -14,6 +14,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const carousel = new Flickity(track, {
       freeScroll: true,
+      freeScrollFriction: 0.1,
+      dragThreshold: 10,
       wrapAround: true,
       prevNextButtons: false,
       pageDots: false,
