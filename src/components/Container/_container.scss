@@ -1,6 +1,8 @@
 // ========================================================
 // = BASE CONTAINER
 // ========================================================
+$color-hover-blue-blue: #09509a;
+
 .tco-container-wrapper {
   @include type-base-style;
   padding: 0 $spacing-stack-24;
@@ -38,13 +40,11 @@
       @include pseudo-think-bubble;
 
       @include wider-than($breakpoint-tablet-portrait) {
-        padding: calc(#{$spacing-stack-50} + #{$spacing-stack-32}) 0
-          $spacing-stack-50;
+        padding: calc(#{$spacing-stack-50} + #{$spacing-stack-32}) 0 $spacing-stack-50;
       }
 
       @include wider-than($breakpoint-laptop) {
-        padding: calc(#{$spacing-stack-50} + #{$spacing-stack-32}) 0
-          $spacing-stack-32;
+        padding: calc(#{$spacing-stack-50} + #{$spacing-stack-32}) 0 $spacing-stack-32;
       }
     }
   }
@@ -121,6 +121,12 @@
         border-color: $color-foreground-on-tint;
         background-color: $color-foreground-on-tint;
         color: $color-classic-blue;
+
+        &:hover {
+          border-color: $color-hover-blue-blue;
+          background-color: $color-hover-blue-blue;
+          color: $color-foreground-on-tint;
+        }
       }
 
       &--secondary {
