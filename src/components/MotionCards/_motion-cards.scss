@@ -146,6 +146,7 @@ $timing-fn: cubic-bezier(0.45, 0.05, 0.55, 0.95);
 }
 
 .tco-mini-card-container {
+  display: block;
   overflow: hidden;
   border-radius: 16px;
   box-shadow: $box-shadow-mini;
@@ -238,7 +239,7 @@ https://flickity.metafizzy.co
     -webkit-tap-highlight-color: transparent;
 
     .flickity-viewport {
-      cursor: grab;
+      //cursor: grab;
     }
   }
 }

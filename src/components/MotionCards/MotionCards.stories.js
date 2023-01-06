@@ -55,14 +55,16 @@ const sliderRowB = [
 const miniCsCard = input => {
   return `
     <article class="tco-mini-card" style="--cs-bg-hex:${input.bg}">
-      <div class="tco-mini-card-container animation-container">
-        <div class="tco-mini-image-container">
-          <img src="${input.image}" alt="Example of work" width="234" height="130" />
-        </div>
-        <div class="tco-mini-content">
-          <h3 class="tco-type-eyebrow">${input.name}</h3>
-          <p class="tco-type-body">${input.project}</p>
-        </div>
+      <div class="animation-container">
+        <a href="/" class="tco-mini-card-container">
+          <div class="tco-mini-image-container">
+            <img src="${input.image}" alt="Example of work" width="234" height="130" />
+          </div>
+          <div class="tco-mini-content">
+            <h3 class="tco-type-eyebrow">${input.name}</h3>
+            <p class="tco-type-body">${input.project}</p>
+          </div>
+        </a>
       </div>
     </article>
   `;
