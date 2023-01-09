@@ -187,7 +187,7 @@ export default {
     docs: {
       description: {
         component:
-          'Case Study Card images<br><strong>max display size</strong> 258 x 143 | <strong>upload size</strong> 387 x 215<br>Sliding Image Card images<br><strong>max display size</strong> 174 x 116 | <strong>upload size</strong> 261 x 174'
+          'Case Study Card images<br><strong>upload size</strong> 387 x 215<br>Sliding Image Card images<br><strong>upload size</strong> 261 x 174'
       }
     }
   }
