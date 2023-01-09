@@ -90,11 +90,11 @@ const MotionCardTemplate = args => {
       <div class="tco-card-grid tco-card-grid--2-column">
         <div class="tco-card tco-card--motion tco-card--motion-carousel tco-card-container--${treatment}">
           <div class="tco-card-content-container">
-            <h2 class="tco-type-display--medium tco-link--dark-theme">${heading}</h2>
+            <h2 class="tco-type-display--medium">${heading}</h2>
             <p class="tco-card-description tco-type-body--sans-small">${summary}</p>
-            <a class="tco-text-link tco-type-body tco-link--dark-theme">
+            <a class="tco-text-link-motion tco-type-body">
               See our work
-              <svg class="tco-text-link-icon" width="20" height="20" viewBox="0 0 20 20" role="presentation">
+              <svg class="tco-text-link-icon tco-text-link-icon--alt" width="20" height="20" viewBox="0 0 20 20" role="presentation">
                 <use xlink:href="/img/icons.svg#icon-arrow-right"></use>
               </svg>
             </a>
@@ -120,11 +120,11 @@ const MotionCardTemplate = args => {
 
         <div class="tco-card tco-card--motion tco-card--motion-slider tco-card-container--${treatment}">
           <div class="tco-card-content-container">
-            <h2 class="tco-type-display--medium tco-link--dark-theme">${headingB}</h2>
+            <h2 class="tco-type-display--medium">${headingB}</h2>
             <p class="tco-card-description tco-type-body--sans-small">${summaryB}</p>
-            <a class="tco-text-link tco-type-body tco-link--dark-theme">
+            <a class="tco-text-link-motion tco-type-body">
               How we do it
-              <svg class="tco-text-link-icon" width="20" height="20" viewBox="0 0 20 20" role="presentation">
+              <svg class="tco-text-link-icon tco-text-link-icon--alt" width="20" height="20" viewBox="0 0 20 20" role="presentation">
                 <use xlink:href="/img/icons.svg#icon-arrow-right"></use>
               </svg>
             </a>

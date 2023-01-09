@@ -13,6 +13,7 @@ $timing-fn: cubic-bezier(0.45, 0.05, 0.55, 0.95);
   gap: $spacing-stack-40;
   max-width: none;
   border-radius: 20px;
+  background-color: $color-foreground-on-tint;
   text-align: center;
 
   @include wider-than($breakpoint-desktop) {
@@ -24,6 +25,7 @@ $timing-fn: cubic-bezier(0.45, 0.05, 0.55, 0.95);
     margin: 0 auto;
     padding-top: $spacing-stack-40;
     padding-bottom: 0;
+    color: $color-classic-gray-dark;
 
     @include wider-than($breakpoint-desktop) {
       padding-top: $spacing-stack-48;
@@ -34,7 +36,7 @@ $timing-fn: cubic-bezier(0.45, 0.05, 0.55, 0.95);
     margin-bottom: $spacing-stack-32;
   }
 
-  .tco-text-link {
+  .tco-text-link-motion {
     @include type-link-cta($color-classic-blue);
     @include clamp(
       font-size,
@@ -53,17 +55,12 @@ $timing-fn: cubic-bezier(0.45, 0.05, 0.55, 0.95);
     .tco-text-link-icon {
       width: (32 / 18) * 1em;
       height: auto;
+      fill: $color-classic-blue;
     }
   }
 
   .tco-lights-out & {
-    .tco-text-link {
-      color: $color-dark-theme-blue;
-    }
-
-    .tco-text-link-icon {
-      fill: $color-dark-theme-blue;
-    }
+    background-color: $color-foreground-on-tint;
   }
 }
 
@@ -114,10 +111,6 @@ $timing-fn: cubic-bezier(0.45, 0.05, 0.55, 0.95);
   border-radius: 50%;
   background-color: $color-classic-navy;
 
-  .tco-lights-out & {
-    background-color: $color-dark-theme-dark-blue;
-  }
-
   .tco-motion-control-icon--play {
     display: none;
     transform: translateX(1px);
@@ -148,6 +141,7 @@ $timing-fn: cubic-bezier(0.45, 0.05, 0.55, 0.95);
 .tco-mini-card-container {
   display: block;
   overflow: hidden;
+  border-width: 0;
   border-radius: 16px;
   box-shadow: $box-shadow-mini;
 }

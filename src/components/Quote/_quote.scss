@@ -180,12 +180,12 @@ $bullet-size: 12px;
 
     .tco-lights-out & {
       &::before {
-        border-color: $color-dark-theme-blue;
+        border-color: $color-foreground-on-tint;
       }
 
       &--active {
         &::before {
-          background-color: $color-dark-theme-blue;
+          background-color: $color-foreground-on-tint;
         }
       }
     }

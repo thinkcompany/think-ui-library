@@ -64,13 +64,7 @@
     $font-size-53,
     $font-size-160
   );
-  @include clamp(
-    line-height,
-    $breakpoint-phone-portrait,
-    $breakpoint-desktop,
-    60px,
-    175px
-  );
+  @include clamp(line-height, $breakpoint-phone-portrait, $breakpoint-desktop, 60px, 175px);
   font-family: $font-stack-slab-light;
 
   @if $italic {
@@ -87,13 +81,7 @@
     $font-size-53,
     $font-size-120
   );
-  @include clamp(
-    line-height,
-    $breakpoint-phone-portrait,
-    $breakpoint-desktop,
-    60px,
-    128px
-  );
+  @include clamp(line-height, $breakpoint-phone-portrait, $breakpoint-desktop, 60px, 128px);
   font-family: $font-stack-slab-light;
 
   @if $italic {
@@ -110,13 +98,7 @@
     $font-size-43,
     $font-size-80
   );
-  @include clamp(
-    line-height,
-    $breakpoint-phone-portrait,
-    $breakpoint-desktop,
-    52px,
-    92px
-  );
+  @include clamp(line-height, $breakpoint-phone-portrait, $breakpoint-desktop, 52px, 92px);
   font-family: $font-stack-slab-light;
   letter-spacing: 0;
 
@@ -148,13 +130,7 @@
     $font-size-30,
     $font-size-36
   );
-  @include clamp(
-    line-height,
-    $breakpoint-phone-portrait,
-    $breakpoint-desktop,
-    40px,
-    46px
-  );
+  @include clamp(line-height, $breakpoint-phone-portrait, $breakpoint-desktop, 40px, 46px);
   font-family: $font-stack-slab-book;
 
   @if $italic {
@@ -190,11 +166,7 @@
   line-height: 1.45;
 }
 
-@mixin type-eyebrow(
-  $font-color: inherit,
-  $italic: false,
-  $font-size: $font-size-14
-) {
+@mixin type-eyebrow($font-color: inherit, $italic: false, $font-size: $font-size-14) {
   @include type-base-style($font-color, 900);
   font-size: $font-size;
   font-family: $font-stack-sans-serif-black;
@@ -207,12 +179,7 @@
   }
 }
 
-@mixin type-body-large(
-  $font-color: inherit,
-  $height: default,
-  $italic: false,
-  $bold: false
-) {
+@mixin type-body-large($font-color: inherit, $height: default, $italic: false, $bold: false) {
   @include type-base-style($font-color, 400);
   @include clamp(
     font-size,
@@ -221,23 +188,11 @@
     $font-size-24,
     $font-size-28
   );
-  @include clamp(
-    line-height,
-    $breakpoint-phone-portrait,
-    $breakpoint-desktop,
-    32px,
-    46px
-  );
+  @include clamp(line-height, $breakpoint-phone-portrait, $breakpoint-desktop, 32px, 46px);
   font-family: $font-stack-slab;
 
   @if $height != default {
-    @include clamp(
-      line-height,
-      $breakpoint-phone-portrait,
-      $breakpoint-desktop,
-      38px,
-      46px
-    );
+    @include clamp(line-height, $breakpoint-phone-portrait, $breakpoint-desktop, 38px, 46px);
   }
 
   @if $italic {
@@ -289,11 +244,7 @@
   line-height: 1.25;
 }
 
-@mixin type-body-xsmall(
-  $font-color: inherit,
-  $italic: false,
-  $font-size: $font-size-12
-) {
+@mixin type-body-xsmall($font-color: inherit, $italic: false, $font-size: $font-size-12) {
   @include type-base-style($font-color, 500);
   font-size: $font-size;
   font-family: $font-stack-sans-serif;
@@ -366,7 +317,7 @@
   border-bottom-color: transparent;
   transition: border-color 0.2s linear, color 0.2s linear;
 
-  &:not(.tco-btn):not(.tco-link--dark-theme) {
+  &:not(.tco-btn):not(.tco-link--dark-theme):not(.tco-text-link-motion) {
     .tco-lights-out & {
       color: $color-dark-theme-blue;
       border-bottom-color: $color-dark-theme-blue;
