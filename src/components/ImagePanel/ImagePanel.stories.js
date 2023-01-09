@@ -11,7 +11,7 @@ const ImagePanelTemplate = () => {
         source: 'https://dummyimage.com/489x326/0062c3',
         class: 'tco-panel-item--b',
         width: 489,
-        height: 346
+        height: 326
       },
       {
         source: 'https://dummyimage.com/178x386/0062c3',
@@ -32,10 +32,10 @@ const ImagePanelTemplate = () => {
         height: 326
       },
       {
-        source: 'https://dummyimage.com/178x386/0062c3',
+        source: 'https://dummyimage.com/489x326/0062c3',
         class: 'tco-panel-item--f',
-        width: 178,
-        height: 386
+        width: 489,
+        height: 326
       },
       {
         source: 'https://dummyimage.com/489x326/0062c3',
@@ -48,12 +48,6 @@ const ImagePanelTemplate = () => {
         class: 'tco-panel-item--h',
         width: 178,
         height: 386
-      },
-      {
-        source: 'https://dummyimage.com/489x326/0062c3',
-        class: 'tco-panel-item--i',
-        width: 489,
-        height: 326
       }
     ];
 
@@ -69,7 +63,7 @@ const ImagePanelTemplate = () => {
   const imageItems = () => {
     let output = '';
 
-    for (let index = 0; index < 9; index++) {
+    for (let index = 0; index < 8; index++) {
       output += imageItem(index);
     }
 
