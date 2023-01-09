@@ -52,9 +52,14 @@ $bullet-size: 12px;
   position: relative;
   display: grid;
   margin-top: $lquo-offset * 0.75;
+  background: $color-classic-glass;
 
   @include wider-than($breakpoint-tablet-portrait) {
     margin-top: $lquo-offset;
+  }
+
+  .tco-lights-out & {
+    background-color: $color-classic-navy;
   }
 }
 
@@ -62,13 +67,13 @@ $bullet-size: 12px;
   position: relative;
   grid-area: 1/1;
   margin: 0;
-  background: $color-classic-glass;
+  // background: $color-classic-glass;
   opacity: 0;
   transition: opacity var(--duration);
 
-  .tco-lights-out & {
-    background-color: $color-classic-navy;
-  }
+  // .tco-lights-out & {
+  //   background-color: $color-classic-navy;
+  // }
 
   &:nth-of-type(1) {
     opacity: 1;
