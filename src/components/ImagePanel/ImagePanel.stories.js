@@ -2,49 +2,49 @@ const ImagePanelTemplate = () => {
   const imageItem = i => {
     const images = [
       {
-        source: 'img/489x326.png',
+        source: 'img/image-panel/AILA.jpg',
         class: 'tco-panel-item--a',
         width: 489,
         height: 326
       },
       {
-        source: 'img/489x326.png',
+        source: 'img/image-panel/Penn-Mutual.jpg',
         class: 'tco-panel-item--b',
         width: 489,
         height: 326
       },
       {
-        source: 'img/178x386.png',
+        source: 'img/image-panel/CHOP.jpg',
         class: 'tco-panel-item--c',
         width: 178,
         height: 386
       },
       {
-        source: 'img/489x326.png',
+        source: 'img/image-panel/Projector.jpg',
         class: 'tco-panel-item--d',
         width: 489,
         height: 326
       },
       {
-        source: 'img/489x326.png',
+        source: 'img/image-panel/Flex.jpg',
         class: 'tco-panel-item--e',
         width: 489,
         height: 326
       },
       {
-        source: 'img/489x326.png',
+        source: 'img/image-panel/Barnes.jpg',
         class: 'tco-panel-item--f',
         width: 489,
         height: 326
       },
       {
-        source: 'img/489x326.png',
+        source: 'img/image-panel/Synergita.jpg',
         class: 'tco-panel-item--g',
         width: 489,
         height: 326
       },
       {
-        source: 'img/178x386.png',
+        source: 'img/image-panel/Good-Place.jpg',
         class: 'tco-panel-item--h',
         width: 178,
         height: 386

@@ -91,7 +91,7 @@ $mobile-max-width: calc(var(--width) * 0.77);
     transform: translate(0, 112%);
 
     @include wider-than($breakpoint-tablet-portrait) {
-      transform: translate(0, 122%);
+      transform: translate(0, 121%);
     }
   }
 
@@ -100,13 +100,13 @@ $mobile-max-width: calc(var(--width) * 0.77);
     transform: translate(-60%, 16%);
 
     @include wider-than($breakpoint-tablet-portrait) {
-      transform: translate(-192%, 26%);
+      transform: translate(-192%, 24%);
     }
   }
 
   &--d {
     z-index: 2;
-    transform: translate(-38%, -142%);
+    transform: translate(-35%, -142%);
 
     @include wider-than($breakpoint-tablet-portrait) {
       transform: translate(-84%, 0);
@@ -115,10 +115,10 @@ $mobile-max-width: calc(var(--width) * 0.77);
 
   &--e {
     z-index: 1;
-    transform: translate(10%, 54%);
+    transform: translate(7%, 62%);
 
     @include wider-than($breakpoint-tablet-portrait) {
-      transform: translate(-40%, 70%);
+      transform: translate(-41%, 72%);
     }
   }
 
@@ -126,7 +126,8 @@ $mobile-max-width: calc(var(--width) * 0.77);
     transform: translate(-34%, 0);
 
     @include wider-than($breakpoint-tablet-portrait) {
-      transform: translate(26%, -24%);
+      z-index: 1;
+      transform: translate(27%, -32%);
     }
   }
 
@@ -137,7 +138,7 @@ $mobile-max-width: calc(var(--width) * 0.77);
       right: 0;
       left: auto;
       z-index: 2;
-      transform: translate(0, -118%);
+      transform: translate(0, -122%);
     }
   }
 
