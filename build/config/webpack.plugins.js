@@ -10,11 +10,7 @@ const plugins = [
       {
         from: 'src/styles/settings',
         to: 'settings'
-      },
-      {
-        from: 'src/assets',
-        to: '.'
-      },
+      }
     ]
   }),
 ];
