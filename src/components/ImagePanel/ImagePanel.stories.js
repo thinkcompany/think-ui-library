@@ -84,7 +84,7 @@ export default {
     docs: {
       description: {
         component:
-          'There are two image sizes / aspect ratios<br> 1) <strong>aspect ratio </strong>6:4 | <strong>max display size</strong> 489 x 326 | <strong>upload size</strong> 734 x 489 <br>2) <strong>aspect ratio </strong>89:193 | <strong>max display size</strong> 178 x 386 | <strong>upload size</strong> 267 x 579'
+          'There are two image sizes / aspect ratios<br> 1) <strong>upload </strong> 734 x 489 (<strong>aspect ratio </strong>6:4) <br>2) <strong>upload size</strong> 267 x 579 (<strong>aspect ratio </strong>89:193)'
       }
     }
   }

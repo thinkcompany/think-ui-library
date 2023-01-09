@@ -1,54 +1,66 @@
 const miniContent = [
   {
-    name: 'Client',
-    image: 'img/case-studies/client-a.png',
-    project: 'Client project',
+    name: 'Penn Mutual',
+    image: 'img/case-studies/Penn-Mutual.jpg',
+    project: 'Financial Services',
     bg: '#00654e'
   },
   {
-    name: 'Client',
-    image: 'img/case-studies/client-b.png',
-    project: 'Client project',
-    bg: '#007ab8'
+    name: 'Nemours',
+    image: 'img/case-studies/Nemours.jpg',
+    project: 'Healthcare',
+    bg: '#003A6F'
   },
   {
-    name: 'Client with a long name',
-    image: 'img/case-studies/client-c.png',
-    project: 'Client project name really long',
-    bg: '#143061'
+    name: 'Janney',
+    image: 'img/case-studies/Janney.jpg',
+    project: 'Financial Services',
+    bg: '#256896'
+  },
+  {
+    name: 'Merck',
+    image: 'img/case-studies/Merck.jpg',
+    project: 'Pharmaceutical',
+    bg: '#01857c'
+  },
+  {
+    name: 'Comcast Business',
+    image: 'img/case-studies/Comcast-Business.jpg',
+    project: 'Corporate',
+    bg: '#c9234a'
   }
 ];
 
 const sliderRowA = [
   {
-    image: 'img/case-studies/client-a.jpg'
+    image: 'img/motion-card/Think_culture_0003 1.jpg'
   },
   {
-    image: 'img/case-studies/client-b.jpg'
+    image: 'img/motion-card/Think_culture_0019 1.jpg'
   },
   {
-    image: 'img/case-studies/client-c.jpg'
+    image: 'img/motion-card/Think_culture_0063 1.jpg'
   },
   {
-    image: 'img/case-studies/client-b.jpg'
+    image: 'img/motion-card/Think_culture_0111 1.jpg'
   }
 ];
 
 const sliderRowB = [
   {
-    image: 'img/case-studies/client-a.jpg'
+    image: 'img/motion-card/Think_culture_0111 2.jpg'
   },
   {
-    image: 'img/case-studies/client-b.jpg'
+    image: 'img/motion-card/Think_culture_0125 1.jpg'
   },
   {
-    image: 'img/case-studies/client-c.jpg'
+    image: 'img/motion-card/Think_culture_0145 1.jpg'
   },
   {
-    image: 'img/case-studies/client-b.jpg'
+    image: 'img/motion-card/Think_culture_0151 1.jpg'
   },
   {
-    image: 'img/case-studies/client-c.jpg'
+    image: 'img/motion-card/Think_culture_0155 1.jpg'
   }
 ];
 
