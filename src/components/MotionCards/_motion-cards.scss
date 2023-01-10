@@ -83,8 +83,7 @@ $timing-fn: cubic-bezier(0.45, 0.05, 0.55, 0.95);
     left: 0;
     width: 100%;
     height: 100%;
-    opacity: 0.9;
-    transition: transform $duration $timing-fn, opacity $duration $timing-fn;
+    transition: transform $duration $timing-fn;
     transform: scale3d(#{$scale}, #{$scale}, #{$scale});
   }
 
@@ -93,6 +92,20 @@ $timing-fn: cubic-bezier(0.45, 0.05, 0.55, 0.95);
       opacity: 1;
       transform: scale3d(1, 1, 1);
     }
+  }
+}
+
+.tco-mini-card-link {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: none;
+  width: 100%;
+  height: 100%;
+  border-width: 0;
+
+  .is-selected & {
+    display: block;
   }
 }
 
@@ -147,7 +160,13 @@ $timing-fn: cubic-bezier(0.45, 0.05, 0.55, 0.95);
 }
 
 .tco-mini-image-container {
+  opacity: 0.9;
+  transition: opacity $duration $timing-fn;
   aspect-ratio: 234 / 130;
+
+  .is-selected & {
+    opacity: 1;
+  }
 }
 
 .tco-mini-image-container,
