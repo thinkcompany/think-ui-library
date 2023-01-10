@@ -33,34 +33,34 @@ const miniContent = [
 
 const sliderRowA = [
   {
-    image: 'img/motion-card/Think_culture_0003 1.jpg'
+    image: 'img/motion-card/Think_culture_0003-1.jpg'
   },
   {
-    image: 'img/motion-card/Think_culture_0019 1.jpg'
+    image: 'img/motion-card/Think_culture_0019-1.jpg'
   },
   {
-    image: 'img/motion-card/Think_culture_0063 1.jpg'
+    image: 'img/motion-card/Think_culture_0063-1.jpg'
   },
   {
-    image: 'img/motion-card/Think_culture_0111 1.jpg'
+    image: 'img/motion-card/Think_culture_0111-1.jpg'
   }
 ];
 
 const sliderRowB = [
   {
-    image: 'img/motion-card/Think_culture_0111 2.jpg'
+    image: 'img/motion-card/Think_culture_0111-2.jpg'
   },
   {
-    image: 'img/motion-card/Think_culture_0125 1.jpg'
+    image: 'img/motion-card/Think_culture_0125-1.jpg'
   },
   {
-    image: 'img/motion-card/Think_culture_0145 1.jpg'
+    image: 'img/motion-card/Think_culture_0145-1.jpg'
   },
   {
-    image: 'img/motion-card/Think_culture_0151 1.jpg'
+    image: 'img/motion-card/Think_culture_0151-1.jpg'
   },
   {
-    image: 'img/motion-card/Think_culture_0155 1.jpg'
+    image: 'img/motion-card/Think_culture_0155-1.jpg'
   }
 ];
 
