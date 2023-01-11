@@ -65,13 +65,6 @@ const QuoteCarouselTemplate = args => {
               </div>
             </blockquote>
           </div>
-          <aside class="tco-carousel-navigation tco-carousel-navigation--quote">
-            <div class="tco-bullet-container tco-quote-controls">
-              <span class="tco-bullet tco-bullet--carousel tco-bullet--active" data-bullet="0"><span class="tco-accessibly-hidden">Go to slide 1</span></span>
-              <span class="tco-bullet tco-bullet--carousel" data-bullet="1"><span class="tco-accessibly-hidden">Go to slide 2</span></span>
-              <span class="tco-bullet tco-bullet--carousel" data-bullet="2"><span class="tco-accessibly-hidden">Go to slide 3</span></span>
-            </div>
-          </aside>
         </div>
       </div>
     </div>
