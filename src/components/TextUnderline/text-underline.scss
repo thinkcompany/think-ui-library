@@ -1,4 +1,4 @@
-$circle-offset: 0.4em;
+$circle-offset: 0.6em;
 
 [class*='tco-type-treatment--'] {
   position: relative;
@@ -36,7 +36,7 @@ $circle-offset: 0.4em;
 
   svg {
     top: 0.09em;
-    left: -0.42em;
+    left: -0.5em;
     width: calc(100% + #{$circle-offset});
     animation: drawline 0.4s cubic-bezier(0.65, 0.05, 0.36, 1) forwards;
     animation-play-state: paused;
