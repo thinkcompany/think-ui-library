@@ -1,3 +1,5 @@
+/* stylelint-disable declaration-no-important */
+
 :root {
   --duration: 1s; /* duration */
 }
@@ -88,6 +90,12 @@ $bullet-size: 12px;
   width: 100%;
   height: auto;
   margin: 0;
+  opacity: 0 !important; // gross but necessary to fix flickity bug when only 2 slides
+  transition: opacity 1s ease !important;
+
+  &.is-selected {
+    opacity: 1 !important;
+  }
 
   .tco-type-display--small {
     position: relative;

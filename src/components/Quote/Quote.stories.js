@@ -57,13 +57,6 @@ const QuoteCarouselTemplate = args => {
                 <span class="tco-type-eyebrow">Principal UX Engineer</span>
               </div>
             </blockquote>
-            <blockquote class="tco-quote tco-quote--slide">
-              <p class="tco-type-display--small">Fusce hendrerit mattis dapibus. Morbi ornare, felis rutrum eleifend interdum, lorem enim auctor elit.</p>
-              <div class="tco-quote-footer">
-                <cite class="tco-type-body--large">Author O. Quote</cite>
-                <span class="tco-type-eyebrow">Person who said it</span>
-              </div>
-            </blockquote>
           </div>
         </div>
       </div>
