@@ -3,6 +3,14 @@ $header-max: 490px;
 .tco-statement-block {
   padding-top: min(11vw, 132px);
 
+  + .tco-statement-block {
+    margin-top: $spacing-stack-50;
+
+    @include wider-than($breakpoint-tablet-portrait) {
+      margin-top: $spacing-stack-100;
+    }
+  }
+
   @include wider-than($breakpoint-phone-landscape) {
     display: flex;
     flex-flow: row nowrap;

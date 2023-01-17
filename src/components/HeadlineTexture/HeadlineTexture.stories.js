@@ -19,10 +19,7 @@ const HeadlineTextureTemplate = args => {
           <a href="/" class="tco-btn tco-btn--secondary">Schedule an evaluation</a>
         </div>
       </article>
-    </div>
-  </div>
-  <div class="tco-container-wrapper tco-container-wrapper--glass tco-container-wrapper--bleed-bottom">
-	  <div class="tco-container">
+
       <article class="tco-statement-block">
         <header class="tco-statement-block-header tco-texture tco-texture--curl">
           <p class="tco-type-eyebrow">Build your next big thing</p>
@@ -38,10 +35,7 @@ const HeadlineTextureTemplate = args => {
           <a href="/" class="tco-btn tco-btn--secondary">Tell us about your project</a>
         </div>
       </article>
-    </div>
-  </div>
-  <div class="tco-container-wrapper tco-container-wrapper--glass">
-	  <div class="tco-container">
+
       <article class="tco-statement-block">
         <header class="tco-statement-block-header tco-texture tco-texture--curve">
           <p class="tco-type-eyebrow">Continual improvement = Sustainable success</p>
