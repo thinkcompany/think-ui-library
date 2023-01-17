@@ -51,8 +51,7 @@ export default {
   title: 'Components / CTA Banner',
   parameters: {
     component: CTABanner,
-    componentSubtitle:
-      'The CTA block is displayed above the footer on all pages and posts.',
+    componentSubtitle: 'The CTA block is displayed above the footer on all pages and posts.',
     docs: {
       description: {
         component:

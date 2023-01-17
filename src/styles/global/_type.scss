@@ -30,6 +30,10 @@
   @include type-display-sans;
 }
 
+.tco-type-display--sans-large {
+  @include type-display-sans-large;
+}
+
 .tco-type-display--small {
   @include type-display-small;
 

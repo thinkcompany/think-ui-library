@@ -36,6 +36,12 @@ const displayStyles = [
     textLength: 1
   },
   {
+    name: 'Display Sans Large',
+    class: 'tco-type-display--sans-large',
+    sass: '@include type-display-sans-large',
+    textLength: 1
+  },
+  {
     name: 'Display Sans',
     class: 'tco-type-display--sans',
     sass: '@include type-display-sans',
@@ -93,20 +99,16 @@ const genText = length => {
 };
 
 // wraps a story in the documentation grid list
-const wrapGrid = input =>
-  `<div class="documentation-grid--list">${input}</div>`;
+const wrapGrid = input => `<div class="documentation-grid--list">${input}</div>`;
 
 // wraps the story item's name
-const nameBlock = input =>
-  input.name ? `<p><strong>${input.name}</strong></p>` : '';
+const nameBlock = input => (input.name ? `<p><strong>${input.name}</strong></p>` : '');
 
 // wraps the story item's classes
-const classBlock = input =>
-  input.class ? `<p><code>.${input.class}</code></p>` : '';
+const classBlock = input => (input.class ? `<p><code>.${input.class}</code></p>` : '');
 
 // wraps the story item's sass declarations
-const sassBlock = input =>
-  input.sass ? `<p><code>${input.sass}</code></p>` : '';
+const sassBlock = input => (input.sass ? `<p><code>${input.sass}</code></p>` : '');
 
 /**
  * Generate Story Block
@@ -147,17 +149,11 @@ const typeItem = (input, demoLength, demo = true) => `
 `;
 
 export const all = () =>
-  wrapGrid(
-    [...displayStyles, ...bodyStyles]
-      .map(item => typeItem(item, 8, false))
-      .join('')
-  );
+  wrapGrid([...displayStyles, ...bodyStyles].map(item => typeItem(item, 8, false)).join(''));
 
-export const display = () =>
-  wrapGrid(displayStyles.map(item => typeItem(item, 8)).join(''));
+export const display = () => wrapGrid(displayStyles.map(item => typeItem(item, 8)).join(''));
 
-export const body = () =>
-  wrapGrid(bodyStyles.map(item => typeItem(item, 8)).join(''));
+export const body = () => wrapGrid(bodyStyles.map(item => typeItem(item, 8)).join(''));
 
 all.parameters = {
   controls: { hideNoControlsWarning: true }

@@ -95,11 +95,9 @@ const caseStudyColors = getColorList(
     return item.section === 'case-study';
   })
 );
-const nameBlock = input =>
-  input.name ? `<p><strong>${input.name}</strong></p>` : '';
+const nameBlock = input => (input.name ? `<p><strong>${input.name}</strong></p>` : '');
 const varBlock = input => (input.var ? `<p><code>${input.var}</code></p>` : '');
-const hexBlock = input =>
-  input.color ? `<p><code>${input.color}</code></p>` : '';
+const hexBlock = input => (input.color ? `<p><code>${input.color}</code></p>` : '');
 const a11yBlock = ratio => {
   let a11y = [];
 

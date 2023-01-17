@@ -2,16 +2,8 @@ const alignments = ['left', 'center', 'right'];
 const sizes = ['medium', 'extra-large', 'large', 'small'];
 
 const Template = args => {
-  const {
-    image,
-    bubbleBackground,
-    textAlignment,
-    eyebrow,
-    heading,
-    headingSize,
-    lede,
-    showCta
-  } = args;
+  const { image, bubbleBackground, textAlignment, eyebrow, heading, headingSize, lede, showCta } =
+    args;
 
   return `
   <div class="tco-container-wrapper tco-text-media--page-header">
@@ -65,8 +57,7 @@ export const PageHeader = Template.bind({});
 export default {
   title: 'Components / Page Header',
   args: {
-    image:
-      'https://www.thinkcompany.com/wp-content/uploads/2020/12/events-illustration-1.png',
+    image: 'https://www.thinkcompany.com/wp-content/uploads/2020/12/events-illustration-1.png',
     bubbleBackground: false,
     textAlignment: alignments[0],
     eyebrow: '',

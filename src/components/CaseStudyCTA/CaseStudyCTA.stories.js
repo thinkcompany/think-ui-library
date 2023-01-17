@@ -141,14 +141,8 @@ const caseStudyCard = (input, cardtype) => {
           }.png" />
         </div>
         <div class="tco-card-content-container tco-card-content-container--${cardType} ">
-          ${
-            input.eyebrow
-              ? '<span class="tco-card-eyebrow">' + input.eyebrow + '</span>'
-              : ''
-          }
-          <h2 class="tco-card-content-heading tco-link--dark-theme">${
-            input.heading
-          }</h2>
+          ${input.eyebrow ? '<span class="tco-card-eyebrow">' + input.eyebrow + '</span>' : ''}
+          <h2 class="tco-card-content-heading tco-link--dark-theme">${input.heading}</h2>
           ${
             cardType === 'full-width'
               ? `
@@ -231,8 +225,7 @@ export default {
       }
     },
     cta: {
-      description:
-        'CTA text is editable. Link points to single case study page',
+      description: 'CTA text is editable. Link points to single case study page',
       table: {
         type: { summary: 'text' },
         defaultValue: { summary: 'View case study' }
@@ -240,8 +233,7 @@ export default {
     },
     color: {
       name: 'custom color',
-      description:
-        'Used for background overlay and page header on single case study pages',
+      description: 'Used for background overlay and page header on single case study pages',
       table: {
         type: { summary: 'color picker' }
       }

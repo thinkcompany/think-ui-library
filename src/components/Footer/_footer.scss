@@ -153,10 +153,7 @@ $widget-width: 132px;
     }
 
     a {
-      @include type-link(
-        $font-color: $color-foreground-on-tint,
-        $show-initial: true
-      );
+      @include type-link($font-color: $color-foreground-on-tint, $show-initial: true);
 
       &:nth-of-type(2) {
         margin-left: $spacing-inline-4;

@@ -3,14 +3,7 @@ const alignments = ['center', 'left', 'right'];
 const output = ['shuffle'];
 
 const LogoTemplate = args => {
-  const {
-    eyebrow,
-    heading,
-    headingSize,
-    textAlignment,
-    imageCount,
-    randomize
-  } = args;
+  const { eyebrow, heading, headingSize, textAlignment, imageCount, randomize } = args;
 
   const imageItem = i => {
     const images = [
@@ -177,8 +170,7 @@ export const Grid2 = Grid2Template.bind({});
 Grid2.args = {
   imageA:
     'https://www.thinkcompany.com/wp-content/uploads/2020/12/photo-studios-philly-feature.jpg',
-  imageB:
-    'https://www.thinkcompany.com/wp-content/uploads/2020/12/studios-conshy-header.jpg'
+  imageB: 'https://www.thinkcompany.com/wp-content/uploads/2020/12/studios-conshy-header.jpg'
 };
 
 const Grid3Template = args => {
@@ -207,10 +199,8 @@ export const Grid3 = Grid3Template.bind({});
 Grid3.args = {
   imageA:
     'https://www.thinkcompany.com/wp-content/uploads/2020/12/photo-studios-philly-feature.jpg',
-  imageB:
-    'https://www.thinkcompany.com/wp-content/uploads/2020/12/studios-conshy-header.jpg',
-  imageC:
-    'https://www.thinkcompany.com/wp-content/uploads/2020/12/studios-conshy-header.jpg'
+  imageB: 'https://www.thinkcompany.com/wp-content/uploads/2020/12/studios-conshy-header.jpg',
+  imageC: 'https://www.thinkcompany.com/wp-content/uploads/2020/12/studios-conshy-header.jpg'
 };
 
 const Grid4Template = args => {
@@ -242,12 +232,9 @@ export const Grid4 = Grid4Template.bind({});
 Grid4.args = {
   imageA:
     'https://www.thinkcompany.com/wp-content/uploads/2020/12/photo-studios-philly-feature.jpg',
-  imageB:
-    'https://www.thinkcompany.com/wp-content/uploads/2020/12/studios-conshy-header.jpg',
-  imageC:
-    'https://www.thinkcompany.com/wp-content/uploads/2020/12/studios-conshy-header.jpg',
-  imageD:
-    'https://www.thinkcompany.com/wp-content/uploads/2020/12/photo-studios-philly-feature.jpg'
+  imageB: 'https://www.thinkcompany.com/wp-content/uploads/2020/12/studios-conshy-header.jpg',
+  imageC: 'https://www.thinkcompany.com/wp-content/uploads/2020/12/studios-conshy-header.jpg',
+  imageD: 'https://www.thinkcompany.com/wp-content/uploads/2020/12/photo-studios-philly-feature.jpg'
 };
 
 export default {

@@ -62,8 +62,7 @@ export default {
   title: 'Components / Byline',
   parameters: {
     component: Byline,
-    componentSubtitle:
-      'The Byline component is used for author attribution on blog posts.',
+    componentSubtitle: 'The Byline component is used for author attribution on blog posts.',
     docs: {
       description: {
         component:
@@ -73,8 +72,7 @@ export default {
   },
   args: {
     name: 'Keith Rich',
-    image:
-      'https://thinkcompany.com/wp-content/uploads/2018/05/KeithRich_Web.jpg'
+    image: 'https://thinkcompany.com/wp-content/uploads/2018/05/KeithRich_Web.jpg'
   },
   argTypes: {
     name: {

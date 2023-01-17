@@ -70,16 +70,14 @@ export default {
     componentSubtitle: 'The Bio component is used on Thinker profile pages.',
     docs: {
       description: {
-        component:
-          "Can also be used as a <a href='#speaker'>Speaker component</a> on Event posts."
+        component: "Can also be used as a <a href='#speaker'>Speaker component</a> on Event posts."
       }
     }
   },
   args: {
     name: 'Abby DePrimo',
     title: 'Vice President, Design Operations',
-    image:
-      'https://www.thinkcompany.com/wp-content/uploads/2020/03/AbbyDePrimo_Web.jpg'
+    image: 'https://www.thinkcompany.com/wp-content/uploads/2020/03/AbbyDePrimo_Web.jpg'
   },
   argTypes: {
     name: {
@@ -89,8 +87,7 @@ export default {
       }
     },
     image: {
-      description:
-        '1:1 ratio. Displays at 250 x 250px. Upload @1.5x = 375 x 375px',
+      description: '1:1 ratio. Displays at 250 x 250px. Upload @1.5x = 375 x 375px',
       table: {
         type: { summary: 'image' }
       }

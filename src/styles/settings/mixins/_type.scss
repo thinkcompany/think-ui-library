@@ -266,6 +266,19 @@
   }
 }
 
+@mixin type-display-sans-large($font-color: inherit) {
+  @include type-base-style($font-color);
+  @include clamp(
+    font-size,
+    $breakpoint-phone-portrait,
+    $breakpoint-desktop,
+    $font-size-36,
+    $font-size-64
+  );
+  font-family: $font-stack-sans-serif-bold;
+  line-height: 1.2;
+}
+
 @mixin type-display-sans($font-color: inherit) {
   @include type-base-style($font-color);
   @include clamp(

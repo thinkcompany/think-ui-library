@@ -282,10 +282,7 @@ $device-offset-v: 58px;
     }
 
     .tco-card-link {
-      @include type-link-cta(
-        $padding-right: $spacing-inline-16,
-        $fill: $color-foreground-on-tint
-      );
+      @include type-link-cta($padding-right: $spacing-inline-16, $fill: $color-foreground-on-tint);
       display: flex;
       padding-left: $spacing-inline-16;
 

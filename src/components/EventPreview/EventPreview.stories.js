@@ -1,15 +1,5 @@
 const Template = args => {
-  const {
-    tag,
-    date,
-    location,
-    heading,
-    excerpt,
-    authors,
-    authorHeading,
-    action,
-    image
-  } = args;
+  const { tag, date, location, heading, excerpt, authors, authorHeading, action, image } = args;
 
   return `
     <div class="tco-container-wrapper">
