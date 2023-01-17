@@ -95,6 +95,18 @@
 }
 
 @font-face {
+  font-weight: 400;
+  font-style: normal;
+  font-family: 'Kievit Pro';
+  src: url('./KievitPro-Regular.eot');
+  src: url('./KievitPro-Regular.eot?#iefix') format('embedded-opentype'),
+    url('./KievitPro-Regular.woff2') format('woff2'),
+    url('./KievitPro-Regular.woff') format('woff'),
+    url('./KievitPro-Regular.ttf') format('truetype');
+  font-display: swap;
+}
+
+@font-face {
   font-style: normal;
   font-family: 'KievitWeb W07 Medi'; // KievitPro-Medium
   src: url('./1473295/2adcd26a-1976-42fe-a53b-58b4bb023e71.eot?#iefix');

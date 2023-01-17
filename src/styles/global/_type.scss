@@ -87,6 +87,10 @@
   }
 }
 
+.tco-type-body--large-sans {
+  @include type-body-large-sans;
+}
+
 .tco-type-body--sans-small {
   @include type-body-small;
 

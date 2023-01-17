@@ -81,6 +81,12 @@ const bodyStyles = [
     textLength: 1
   },
   {
+    name: 'Body Text Large Sans',
+    class: 'tco-type-body--large-sans',
+    sass: '@include type-body-large-sans',
+    textLength: 1
+  },
+  {
     name: 'Body Text Large & Tall',
     class: 'tco-type-body--large-tall',
     sass: '@include type-body-large-tall',
