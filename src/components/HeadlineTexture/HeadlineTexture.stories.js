@@ -1,12 +1,24 @@
 const HeadlineTextureTemplate = args => {
-  const { text } = args;
+  const { eyebrow, headline } = args;
 
   return `
   <div class="tco-container-wrapper tco-container-wrapper--glass">
 	  <div class="tco-container" style="max-width:900px;height:80vh;">
-      <div class="tco-text-only">
-        <h2 class="tco-type-display--sans-large">${text}</h2>
-      </div>
+      <article class="tco-statement-block">
+        <header class="tco-statement-block-header tco-texture tco-texture--zig-zag">
+          <p class="tco-type-eyebrow">${eyebrow}</p>
+          <h2 class="tco-type-display--sans-large">${headline}</h2>
+        </header>
+        <div class="tco-statement-block--body tco-text-only">
+          <p class="tco-type-body--large">Our expertise and research combine to deliver rock-solid insights. We use these to build a roadmap for your product or service.</p>
+          <ul class="">
+            <li>Harnessing new and existing research</li>
+            <li>Product & service diagnostics</li>
+            <li>Proof of concept creation</li>
+          </ul>
+          <a href="/" class="tco-btn tco-btn--secondary">Schedule an evaluation</a>
+        </div>
+      </article>
     </div>
   </div>
   `;
@@ -15,7 +27,8 @@ const HeadlineTextureTemplate = args => {
 export const HeadlineTexture = HeadlineTextureTemplate.bind({});
 
 HeadlineTexture.args = {
-  text: 'Not just clients&#8212;</br><span class="tco-type-treatment--circle">partners<svg viewbox="0 0 501 154" fill="none"><path d="M289.5 132c-151 27-283.433 2.741-287.015-34.718C-1.096 59.825 107.105 18.835 244.16 5.73c137.054-13.105 251.063 6.637 254.644 44.095 3.281 34.313-128.312 86.31-248.881 102.402" pathLength="1" /></svg></span>'
+  eyebrow: 'Assessing and Roadmapping',
+  headline: 'Strategy'
 };
 
 export default {
