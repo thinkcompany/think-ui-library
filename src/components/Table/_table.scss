@@ -1,0 +1,32 @@
+$cell-min: 50px;
+
+.tco-table-container {
+  overflow-x: auto;
+  width: auto;
+  margin-bottom: $spacing-stack-24;
+  padding: 0 $spacing-inline-8;
+  border-spacing: 0;
+  text-align: center;
+}
+
+.tco-table {
+  border-collapse: collapse;
+  white-space: nowrap;
+
+  caption {
+    margin-bottom: $spacing-stack-4;
+    color: $color-classic-gray-medium;
+    text-align: left;
+  }
+
+  .tco-table-container--center & {
+    margin: 0 auto;
+  }
+
+  th,
+  td {
+    min-width: $cell-min;
+    padding: $spacing-stack-2 $spacing-inline-8;
+    border: 1px solid $color-classic-gray-medium;
+  }
+}
