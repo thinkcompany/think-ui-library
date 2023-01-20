@@ -8,12 +8,12 @@ document.addEventListener('DOMContentLoaded', () => {
     window.matchMedia(`(prefers-reduced-motion: reduce)`).matches === true;
 
   const initCarousel = () => {
-    const track = carouselCard.querySelector('.tco-motion-track--carousel');
-    const control = carouselCard.querySelector('.tco-motion-control--carousel');
+    const carouselTrack = carouselCard.querySelector('.tco-motion-track--carousel');
+    const carouselControl = carouselCard.querySelector('.tco-motion-control--carousel');
     const pauseClass = 'tco-motion-track--paused';
     const duration = 2000;
 
-    const carousel = new Flickity(track, {
+    const carousel = new Flickity(carouselTrack, {
       freeScroll: true,
       freeScrollFriction: 0.1,
       dragThreshold: 10,
@@ -24,25 +24,26 @@ document.addEventListener('DOMContentLoaded', () => {
       autoPlay: duration
     });
 
-    control.classList.remove(pauseClass);
-
-    const toggleCarousel = () => {
+    carouselControl.classList.remove(pauseClass);
+    console.log(carousel.player.state);
+    carouselControl.addEventListener('click', event => {
+      event.stopPropagation();
       if (carousel.player.state !== 'playing') {
-        carousel.playPlayer();
-        control.classList.remove(pauseClass);
-        console.log('clicked while stopped');
+        carouselControl.classList.remove(pauseClass);
+        carousel.unpausePlayer();
+
+        console.log('clicked while not playing');
       } else {
-        carousel.stopPlayer();
-        control.classList.add(pauseClass);
+        carouselControl.classList.add(pauseClass);
+        carousel.pausePlayer();
+
         console.log('clicked while playing');
       }
-    };
-
-    control.addEventListener('click', toggleCarousel);
+    });
 
     if (prefersReduced) {
       carousel.stopPlayer();
-      control.classList.add(pauseClass);
+      carouselControl.classList.add(pauseClass);
     }
   };
 
