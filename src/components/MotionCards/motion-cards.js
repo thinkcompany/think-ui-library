@@ -7,8 +7,8 @@ document.addEventListener('DOMContentLoaded', () => {
     window.matchMedia(`(prefers-reduced-motion: reduce)`).matches === true;
 
   const initCarousel = () => {
-    const track = document.querySelector('.tco-motion-track--carousel');
-    const control = document.querySelector('.tco-motion-control--carousel');
+    const track = carouselCard.querySelector('.tco-motion-track--carousel');
+    const control = carouselCard.querySelector('.tco-motion-control--carousel');
     const pauseClass = 'tco-motion-track--paused';
     const duration = 2000;
 
@@ -23,18 +23,15 @@ document.addEventListener('DOMContentLoaded', () => {
       autoPlay: duration
     });
 
-    carousel.playPlayer();
     control.classList.remove(pauseClass);
 
-    const toggleCarousel = event => {
-      event.stopPropagation();
-
-      if (carousel.player.state === 'playing') {
-        carousel.stopPlayer();
-        control.classList.add(pauseClass);
-      } else {
+    const toggleCarousel = () => {
+      if (carousel.player.state != 'playing') {
         carousel.playPlayer();
         control.classList.remove(pauseClass);
+      } else {
+        carousel.stopPlayer();
+        control.classList.add(pauseClass);
       }
     };
 
