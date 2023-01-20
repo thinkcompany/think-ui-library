@@ -2,7 +2,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const textUnderline = document.querySelector('.tco-type-treatment--underline');
 
   const observerOptions = {
-    rootMargin: '0px',
+    rootMargin: '0% 0% -20% 0%',
     threshold: 1
   };
 

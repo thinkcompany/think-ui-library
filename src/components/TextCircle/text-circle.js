@@ -2,7 +2,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const textCircle = document.querySelector('.tco-type-treatment--circle');
 
   const observerOptions = {
-    rootMargin: '0px',
+    rootMargin: '0% 0% -20% 0%',
     threshold: 1
   };
 
