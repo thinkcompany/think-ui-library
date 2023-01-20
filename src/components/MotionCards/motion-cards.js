@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 document.addEventListener('DOMContentLoaded', () => {
   const Flickity = require('flickity');
   const carouselCard = document.querySelector('.tco-card--motion-carousel');
@@ -29,9 +30,11 @@ document.addEventListener('DOMContentLoaded', () => {
       if (carousel.player.state !== 'playing') {
         carousel.playPlayer();
         control.classList.remove(pauseClass);
+        console.log('clicked while stopped');
       } else {
         carousel.stopPlayer();
         control.classList.add(pauseClass);
+        console.log('clicked while playing');
       }
     };
 
