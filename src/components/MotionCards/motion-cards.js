@@ -26,7 +26,7 @@ document.addEventListener('DOMContentLoaded', () => {
     control.classList.remove(pauseClass);
 
     const toggleCarousel = () => {
-      if (carousel.player.state != 'playing') {
+      if (carousel.player.state !== 'playing') {
         carousel.playPlayer();
         control.classList.remove(pauseClass);
       } else {
