@@ -1,61 +1,39 @@
-$circle-offset: 0.6em;
-
-[class*='tco-type-treatment--'] {
+.tco-section-arrow {
   position: relative;
-  display: inline;
 
-  svg {
-    position: absolute;
-    stroke: $color-classic-navy;
-    stroke-dasharray: 1;
-    stroke-dashoffset: 1;
+  &--full-right {
+    padding-top: $spacing-stack-50;
 
-    .tco-lights-out & {
-      stroke: $color-dark-theme-blue;
+    @include wider-than($breakpoint-laptop) {
+      padding-top: $spacing-stack-100;
     }
   }
 }
 
-.tco-type-treatment--underline {
-  padding-right: $spacing-inline-8;
-
-  svg {
-    bottom: -0.7em;
-    left: -4px;
-    width: calc(100% + 18px);
-    animation: drawline 0.4s cubic-bezier(0.65, 0.05, 0.36, 1) forwards;
-    animation-play-state: paused;
-    animation-delay: 0.3s;
-    stroke-width: 5px;
-  }
+.tco-arrow {
+  position: absolute;
+  animation: drawline 0.7s cubic-bezier(0.65, 0.05, 0.36, 1) forwards;
+  animation-play-state: paused;
+  animation-delay: 0.3s;
+  stroke-dasharray: 1;
+  stroke-dashoffset: 1;
 
   &.active {
-    svg {
-      animation-play-state: running;
-    }
+    animation-play-state: running;
   }
 }
 
-.tco-type-treatment--circle {
-  margin-right: -$circle-offset;
-  padding-right: $circle-offset;
-  font-weight: 900;
+.tco-arrow--full-right {
+  right: 0;
+  bottom: 0;
+  display: block;
+  height: 100%;
+  stroke: $color-classic-blue;
+  stroke-width: 5px;
+  aspect-ratio: 327 / 819;
 
-  svg {
-    top: 0.09em;
-    left: -0.5em;
-    width: calc(100% + #{$circle-offset});
-    animation: drawline 0.4s cubic-bezier(0.65, 0.05, 0.36, 1) forwards;
-    animation-play-state: paused;
-    animation-delay: 0.3s;
-    stroke-width: 3px;
-    stroke-linecap: round;
-  }
-
-  &.active {
-    svg {
-      animation-play-state: running;
-    }
+  .tco-lights-out & {
+    stroke: $color-dark-theme-blue;
   }
 }
 

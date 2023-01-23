@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-  const textUnderline = document.querySelector('.tco-type-treatment--underline');
+  const arrows = document.querySelectorAll('.tco-arrow');
 
   const observerOptions = {
     rootMargin: '0% 0% -20% 0%',
@@ -9,14 +9,18 @@ document.addEventListener('DOMContentLoaded', () => {
   const observerCallback = entries => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
-        textUnderline.classList.add('active');
+        entry.target.classList.add('active');
       }
     });
   };
 
   const observer = new IntersectionObserver(observerCallback, observerOptions);
 
-  if (textUnderline) {
-    observer.observe(textUnderline);
-  }
+  arrows.forEach(
+    (arrow = arrow => {
+      if (arrow) {
+        observer.observe(arrow);
+      }
+    })
+  );
 });

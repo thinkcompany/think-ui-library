@@ -24,10 +24,6 @@
 
 .tco-type-display--64 {
   @include type-display-64;
-
-  // &-italic {
-  //   @include type-display-medium($italic: true);
-  // }
 }
 
 .tco-type-display--junior {
@@ -72,6 +68,14 @@
 
   &-italic {
     @include type-eyebrow($italic: true);
+  }
+}
+
+.tco-type-eyebrow--space-xl {
+  margin-bottom: $spacing-stack-24;
+
+  @include wider-than($breakpoint-laptop) {
+    margin-bottom: $spacing-stack-40;
   }
 }
 
