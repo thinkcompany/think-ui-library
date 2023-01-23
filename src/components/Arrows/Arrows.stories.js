@@ -5,7 +5,7 @@ const ArrowsTemplate = args => {
   <div class="tco-container-wrapper tco-container-wrapper--glass">
 	  <div class="tco-container tco-container--mid" style="height:80vh;">
       <div class="tco-text-only">
-        <h3 class="tco-type-display--junio">We're experts in <strong>design</strong>, <strong>development</strong>, and <strong>product management</strong>. Here's everything we do to make your products and services succeed.</h3>
+        <h3 class="tco-type-display--64">We're experts in <strong>design</strong>, <strong>development</strong>, and <strong>product management</strong>. Here's everything we do to make your products and services succeed.</h3>
       </div>
     </div>
   </div>
