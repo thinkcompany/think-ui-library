@@ -7,6 +7,7 @@ $img-container: 144px;
 $scale: 0.85;
 $duration: 0.35s;
 $timing-fn: cubic-bezier(0.45, 0.05, 0.55, 0.95);
+$container-offset: 4px;
 
 .tco-card--motion {
   position: relative;
@@ -76,15 +77,18 @@ $timing-fn: cubic-bezier(0.45, 0.05, 0.55, 0.95);
   width: $mini-card;
   height: $track-height;
   margin: 0 $spacing-inline-2;
-  border: 1px solid transparent;
+  border: none;
   perspective: 1000px;
 
   .animation-container {
     position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+    top: $container-offset;
+    left: $container-offset;
+    overflow: hidden;
+    width: calc(100% - #{$container-offset} * 2);
+    height: calc(100% - #{$container-offset} * 2);
+    border-radius: 16px;
+    box-shadow: $box-shadow-mini;
     transition: transform $duration $timing-fn;
     transform: scale3d(#{$scale}, #{$scale}, #{$scale});
   }
@@ -162,20 +166,11 @@ $timing-fn: cubic-bezier(0.45, 0.05, 0.55, 0.95);
   display: block;
   overflow: hidden;
   border-width: 0;
-  border-radius: 16px;
-  background-color: var(--cs-bg-hex);
-  box-shadow: $box-shadow-mini;
 }
 
 .tco-mini-image-container {
   width: 100%;
   height: $img-container;
-  opacity: 0.9;
-  transition: opacity $duration $timing-fn;
-
-  .is-selected & {
-    opacity: 1;
-  }
 }
 
 .tco-mini-image-container,
