@@ -118,7 +118,7 @@ const MotionCardTemplate = args => {
               ${miniCards.map(item => miniCsCard(item)).join('')}
             </div>
             <div class="tco-motion-control-container tco-motion-control-container--carousel">
-              <button class="tco-motion-control tco-motion-track--paused tco-btn">
+              <button class="tco-motion-control tco-motion-control--carousel tco-motion-track--paused tco-btn">
                 <span class="tco-accessibly-hidden">Stop Video</span>
                 <svg class="tco-motion-control-icon tco-motion-control-icon--pause" width="20" height="20" viewBox="0 0 12 12" role="presentation">
                   <use xlink:href="/img/icons.svg#icon-pause"></use>

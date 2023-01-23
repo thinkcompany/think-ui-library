@@ -1,5 +1,4 @@
 document.addEventListener('DOMContentLoaded', () => {
-  const Flickity = require('flickity');
   const carouselCard = document.querySelector('.tco-card--motion-carousel');
   const sliderCard = document.querySelector('.tco-card--motion-slider');
   const prefersReduced =
@@ -7,15 +6,14 @@ document.addEventListener('DOMContentLoaded', () => {
     window.matchMedia(`(prefers-reduced-motion: reduce)`).matches === true;
 
   const initCarousel = () => {
-    const track = document.querySelector('.tco-motion-track--carousel');
-    const control = document.querySelector('.tco-motion-control');
+    const Flickity = require('flickity');
+    const carouselTrack = carouselCard.querySelector('.tco-motion-track--carousel');
+    const carouselControl = carouselCard.querySelector('.tco-motion-control--carousel');
     const pauseClass = 'tco-motion-track--paused';
     const duration = 2000;
 
-    const carousel = new Flickity(track, {
-      freeScroll: true,
-      freeScrollFriction: 0.1,
-      dragThreshold: 10,
+    const carousel = new Flickity(carouselTrack, {
+      dragThreshold: 24,
       wrapAround: true,
       prevNextButtons: false,
       pageDots: false,
@@ -23,24 +21,37 @@ document.addEventListener('DOMContentLoaded', () => {
       autoPlay: duration
     });
 
-    carousel.playPlayer();
-    control.classList.remove(pauseClass);
+    carouselControl.classList.remove(pauseClass);
 
-    const toggleCarousel = () => {
-      if (carousel.player.state === 'playing') {
-        carousel.stopPlayer();
-        control.classList.add(pauseClass);
-      } else {
+    carousel.on('pointerUp', () => {
+      if (carousel.player.state === 'stopped' && !prefersReduced) {
+        carouselControl.classList.remove(pauseClass);
         carousel.playPlayer();
-        control.classList.remove(pauseClass);
       }
-    };
+    });
 
-    control.addEventListener('click', toggleCarousel);
+    carousel.on('dragEnd', () => {
+      if (carousel.player.state === 'stopped' && !prefersReduced) {
+        carouselControl.classList.remove(pauseClass);
+        carousel.playPlayer();
+      }
+    });
+
+    carouselControl.addEventListener('click', event => {
+      event.stopImmediatePropagation();
+
+      if (carousel.player.state === 'playing') {
+        carouselControl.classList.add(pauseClass);
+        carousel.stopPlayer();
+      } else {
+        carouselControl.classList.remove(pauseClass);
+        carousel.playPlayer();
+      }
+    });
 
     if (prefersReduced) {
       carousel.stopPlayer();
-      control.classList.add(pauseClass);
+      carouselControl.classList.add(pauseClass);
     }
   };
 

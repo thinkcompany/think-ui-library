@@ -24,8 +24,15 @@ $circle-offset: 0.6em;
     left: -4px;
     width: calc(100% + 18px);
     animation: drawline 0.4s cubic-bezier(0.65, 0.05, 0.36, 1) forwards;
+    animation-play-state: paused;
     animation-delay: 0.3s;
     stroke-width: 5px;
+  }
+
+  &.active {
+    svg {
+      animation-play-state: running;
+    }
   }
 }
 

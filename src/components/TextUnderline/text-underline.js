@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-  const textCircle = document.querySelector('.tco-type-treatment--circle');
+  const textUnderline = document.querySelector('.tco-type-treatment--underline');
 
   const observerOptions = {
     rootMargin: '0% 0% -20% 0%',
@@ -9,14 +9,14 @@ document.addEventListener('DOMContentLoaded', () => {
   const observerCallback = entries => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
-        textCircle.classList.add('active');
+        textUnderline.classList.add('active');
       }
     });
   };
 
   const observer = new IntersectionObserver(observerCallback, observerOptions);
 
-  if (textCircle) {
-    observer.observe(textCircle);
+  if (textUnderline) {
+    observer.observe(textUnderline);
   }
 });
