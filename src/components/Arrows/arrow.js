@@ -1,5 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
   const arrows = document.querySelectorAll('.tco-arrow');
+  const trigger = document.querySelector('.tco-animation-trigger');
 
   const observerOptions = {
     rootMargin: '0% 0% -20% 0%',
@@ -23,4 +24,18 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     })
   );
+
+  if (trigger) {
+    trigger.addEventListener('click', event => {
+      event.preventDefault();
+      event.stopImmediatePropagation();
+
+      arrows.forEach(arrow => {
+        arrow.getAnimations().forEach(anim => {
+          anim.cancel();
+          anim.play();
+        });
+      });
+    });
+  }
 });
