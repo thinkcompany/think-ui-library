@@ -13,9 +13,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const duration = 2000;
 
     const carousel = new Flickity(carouselTrack, {
-      freeScroll: true,
-      freeScrollFriction: 0.1,
-      dragThreshold: 10,
+      dragThreshold: 24,
       wrapAround: true,
       prevNextButtons: false,
       pageDots: false,
@@ -25,15 +23,29 @@ document.addEventListener('DOMContentLoaded', () => {
 
     carouselControl.classList.remove(pauseClass);
 
+    carousel.on('pointerUp', () => {
+      if (carousel.player.state === 'stopped' && !prefersReduced) {
+        carouselControl.classList.remove(pauseClass);
+        carousel.playPlayer();
+      }
+    });
+
+    carousel.on('dragEnd', () => {
+      if (carousel.player.state === 'stopped' && !prefersReduced) {
+        carouselControl.classList.remove(pauseClass);
+        carousel.playPlayer();
+      }
+    });
+
     carouselControl.addEventListener('click', event => {
       event.stopImmediatePropagation();
 
-      if (carousel.player.state !== 'playing') {
-        carouselControl.classList.remove(pauseClass);
-        carousel.unpausePlayer();
-      } else {
+      if (carousel.player.state === 'playing') {
         carouselControl.classList.add(pauseClass);
-        carousel.pausePlayer();
+        carousel.stopPlayer();
+      } else {
+        carouselControl.classList.remove(pauseClass);
+        carousel.playPlayer();
       }
     });
 
