@@ -98,7 +98,7 @@ const MotionCardTemplate = args => {
   const slideCountB = sliderRowB.length;
 
   return `
-  <div class="tco-container-wrapper" style="margin-top: 50vh;">
+  <div class="tco-container-wrapper">
     <div class="tco-container">
       <div class="tco-card-grid tco-card-grid--2-column">
         <div class="tco-card tco-card--motion tco-card--motion-carousel tco-card-container--${treatment}">

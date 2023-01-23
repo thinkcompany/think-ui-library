@@ -13,10 +13,16 @@ $mobile-max-width: calc(var(--width) * 0.77);
 
 .tco-image-panel {
   position: relative;
-  width: min(#{$panel-width-mobile} * 1vw, #{$panel-mobile-max-px});
+  width: $panel-mobile-max-px;
+  height: $panel-mobile-max-h + px;
   margin: 0 auto;
   transform: translateX(calc(((#{$panel-width-mobile} - 100) / 2) * -1vw));
-  aspect-ratio: $panel-mobile-max / $panel-mobile-max-h;
+
+  @supports (aspect-ratio: $panel-mobile-max / $panel-mobile-max-h) {
+    width: min(#{$panel-width-mobile} * 1vw, #{$panel-mobile-max-px});
+    height: auto;
+    aspect-ratio: $panel-mobile-max / $panel-mobile-max-h;
+  }
 
   @include wider-than($bp-a) {
     transform: translateX(calc((100vw - #{$panel-mobile-max-px}) / 2));
@@ -27,9 +33,15 @@ $mobile-max-width: calc(var(--width) * 0.77);
   }
 
   @include wider-than($breakpoint-tablet-portrait) {
-    width: min(#{$panel-width} * 1vw, #{$panel-max-px});
+    width: 987px; // fallback for aspect ratio on old safari
+    height: 832px;
     transform: translateX(calc(((#{$panel-width} - 100) / 2) * -1vw));
-    aspect-ratio: $panel-max / $panel-max-h;
+
+    @supports (aspect-ratio: $panel-max / $panel-max-h) {
+      width: min(#{$panel-width} * 1vw, #{$panel-max-px});
+      height: auto;
+      aspect-ratio: $panel-max / $panel-max-h;
+    }
   }
 
   @include wider-than($bp-b) {
