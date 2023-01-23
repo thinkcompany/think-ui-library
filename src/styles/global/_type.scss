@@ -22,6 +22,14 @@
   }
 }
 
+.tco-type-display--64 {
+  @include type-display-64;
+
+  // &-italic {
+  //   @include type-display-medium($italic: true);
+  // }
+}
+
 .tco-type-display--junior {
   @include type-display-junior;
 }

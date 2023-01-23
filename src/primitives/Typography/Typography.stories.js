@@ -18,6 +18,12 @@ const displayStyles = [
     textLength: 1
   },
   {
+    name: 'Display 64 ',
+    class: 'tco-type-display--64',
+    sass: '@include type-display-64',
+    textLength: 1
+  },
+  {
     name: 'Display Junior',
     class: 'tco-type-display--junior',
     sass: '@include type-display-junior',
