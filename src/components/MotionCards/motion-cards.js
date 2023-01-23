@@ -1,6 +1,4 @@
-/* eslint-disable no-console */
 document.addEventListener('DOMContentLoaded', () => {
-  const Flickity = require('flickity');
   const carouselCard = document.querySelector('.tco-card--motion-carousel');
   const sliderCard = document.querySelector('.tco-card--motion-slider');
   const prefersReduced =
@@ -8,6 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
     window.matchMedia(`(prefers-reduced-motion: reduce)`).matches === true;
 
   const initCarousel = () => {
+    const Flickity = require('flickity');
     const carouselTrack = carouselCard.querySelector('.tco-motion-track--carousel');
     const carouselControl = carouselCard.querySelector('.tco-motion-control--carousel');
     const pauseClass = 'tco-motion-track--paused';
@@ -25,19 +24,16 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     carouselControl.classList.remove(pauseClass);
-    console.log(carousel.player.state);
+
     carouselControl.addEventListener('click', event => {
-      event.stopPropagation();
+      event.stopImmediatePropagation();
+
       if (carousel.player.state !== 'playing') {
         carouselControl.classList.remove(pauseClass);
         carousel.unpausePlayer();
-
-        console.log('clicked while not playing');
       } else {
         carouselControl.classList.add(pauseClass);
         carousel.pausePlayer();
-
-        console.log('clicked while playing');
       }
     });
 
