@@ -19,7 +19,7 @@ TextCircle.args = {
 };
 
 export default {
-  title: 'Type Treatments / Text Circle',
+  title: 'Motion / Text Circle',
   parameters: {
     component: TextCircle
   }

@@ -1,15 +1,15 @@
-const HeadlineTextureTemplate = args => {
+const SplitPanelTemplate = args => {
   const { eyebrow, headline } = args;
 
   return `
   <div class="tco-container-wrapper tco-container-wrapper--glass tco-container-wrapper--bleed-bottom">
 	  <div class="tco-container">
-      <article class="tco-statement-block">
-        <header class="tco-statement-block-header tco-texture tco-texture--zig-zag">
+      <article class="tco-split-panel">
+        <header class="tco-split-panel-header tco-texture tco-texture--zig-zag">
           <p class="tco-type-eyebrow">${eyebrow}</p>
           <h2 class="tco-type-display--sans-large">${headline}</h2>
         </header>
-        <div class="tco-statement-block-body tco-text-only">
+        <div class="tco-split-panel-body tco-text-only">
           <p class="tco-type-body--large">Our expertise and research combine to deliver rock-solid insights. We use these to build a roadmap for your product or service.</p>
           <ul class="tco-list-sans-large">
             <li class="tco-type-body--large-sans">Harnessing new and existing research</li>
@@ -20,12 +20,12 @@ const HeadlineTextureTemplate = args => {
         </div>
       </article>
 
-      <article class="tco-statement-block">
-        <header class="tco-statement-block-header tco-texture tco-texture--curl">
+      <article class="tco-split-panel">
+        <header class="tco-split-panel-header tco-texture tco-texture--curl">
           <p class="tco-type-eyebrow">Build your next big thing</p>
           <h2 class="tco-type-display--sans-large">Creation</h2>
         </header>
-        <div class="tco-statement-block-body tco-text-only">
+        <div class="tco-split-panel-body tco-text-only">
           <p class="tco-type-body--large">Our cross-functional teams have over 15 years of experience driving projects from concept to launch. Let’s build exactly what your users need.</p>
           <ul class="tco-list-sans-large">
             <li class="tco-type-body--large-sans">Build a new product</li>
@@ -36,12 +36,12 @@ const HeadlineTextureTemplate = args => {
         </div>
       </article>
 
-      <article class="tco-statement-block">
-        <header class="tco-statement-block-header tco-texture tco-texture--curve">
+      <article class="tco-split-panel">
+        <header class="tco-split-panel-header tco-texture tco-texture--curve">
           <p class="tco-type-eyebrow">Continual improvement = Sustainable success</p>
           <h2 class="tco-type-display--sans-large">Growth</h2>
         </header>
-        <div class="tco-statement-block-body tco-text-only">
+        <div class="tco-split-panel-body tco-text-only">
           <p class="tco-type-body--large">Be more than a one-hit wonder. We’ll create the infrastructure that allows your product to improve over time, setting the stage for long-term success.</p>
           <ul class="tco-list-sans-large">
             <li class="tco-type-body--large-sans">Dedicated teams</li>
@@ -56,16 +56,16 @@ const HeadlineTextureTemplate = args => {
   `;
 };
 
-export const HeadlineTexture = HeadlineTextureTemplate.bind({});
+export const SplitPanel = SplitPanelTemplate.bind({});
 
-HeadlineTexture.args = {
+SplitPanel.args = {
   eyebrow: 'Assessing and Roadmapping',
   headline: 'Strategy'
 };
 
 export default {
-  title: 'Type Treatments / Headline Texture',
+  title: 'Components / Split Panel',
   parameters: {
-    component: HeadlineTexture
+    component: SplitPanel
   }
 };

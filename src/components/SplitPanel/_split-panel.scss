@@ -1,9 +1,9 @@
 $header-max: 490px;
 
-.tco-statement-block {
+.tco-split-panel {
   padding-top: min(11vw, 132px);
 
-  + .tco-statement-block {
+  + .tco-split-panel {
     margin-top: $spacing-stack-50;
 
     @include wider-than($breakpoint-tablet-portrait) {
@@ -17,7 +17,7 @@ $header-max: 490px;
   }
 }
 
-.tco-statement-block-header {
+.tco-split-panel-header {
   @include wider-than($breakpoint-phone-landscape) {
     flex: 0 42%;
     max-width: $header-max;
@@ -80,7 +80,7 @@ $header-max: 490px;
   }
 }
 
-.tco-statement-block-body {
+.tco-split-panel-body {
   position: relative;
   z-index: 1;
   margin-bottom: $spacing-stack-16;
