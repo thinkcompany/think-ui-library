@@ -58,13 +58,14 @@
   z-index: 0;
   width: min(28vw, 230px);
   transform: rotate(8deg);
-  animation-duration: 0.5s;
+  animation-duration: 0.8s;
   aspect-ratio: 230 / 335;
 
   @include wider-than($breakpoint-tablet-portrait) {
     top: 80%;
     left: -106px;
     transform: rotate(0);
+    animation-duration: 0.4s;
   }
 }
 
