@@ -17,13 +17,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const observer = new IntersectionObserver(observerCallback, observerOptions);
 
-  arrows.forEach(
-    (arrow = arrow => {
-      if (arrow) {
-        observer.observe(arrow);
-      }
-    })
-  );
+  arrows.forEach(arrow => {
+    observer.observe(arrow);
+  });
 
   if (trigger) {
     trigger.addEventListener('click', event => {
