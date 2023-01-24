@@ -102,11 +102,38 @@ LinkWithArrow.argTypes = {
     name: 'state',
     control: 'inline-radio',
     options: states
+  }
+};
+
+export const LinkWithBigArrow = args => {
+  const { linkText, linkState, containerColor } = args;
+
+  return `
+  <div class="tco-container-wrapper ${containerColor}">
+    <div class="tco-container">
+      <a href="#" class="tco-text-link tco-text-link--big-arrow" ${linkState}>
+        ${linkText}
+        <svg class="tco-text-link-icon" width="20" height="20" viewBox="0 0 20 20" role="presentation">
+          <use xlink:href="/img/icons.svg#icon-arrow-right"></use>
+        </svg>
+      </a>
+    </div>
+  </div>`;
+};
+
+LinkWithBigArrow.args = {
+  linkText: 'Text Link with Big Arrow',
+  linkState: states[0]
+};
+
+LinkWithBigArrow.argTypes = {
+  linkText: {
+    name: 'link text'
   },
-  fontSize: {
-    name: 'font size',
+  linkState: {
+    name: 'state',
     control: 'inline-radio',
-    options: sizes
+    options: states
   }
 };
 

@@ -1,6 +1,8 @@
 /* stylelint-disable selector-max-pseudo-class, max-line-length, selector-max-specificity,  max-nesting-depth, selector-max-combinators, selector-max-compound-selectors, no-duplicate-selectors */
 $color-disabled: #c8d9ea;
 $color-hover: #08519a;
+$big-arrow-width: (31 / 18) * 1em;
+$big-arrow-height: (29 / 18) * 1em;
 
 .tco-btn,
 %tco-btn {
@@ -115,7 +117,8 @@ $color-hover: #08519a;
 }
 
 .tco-text-link {
-  &--arrow {
+  &--arrow,
+  &--big-arrow {
     @include type-link-cta;
     color: $color-classic-blue;
 
@@ -153,6 +156,31 @@ $color-hover: #08519a;
       }
     }
   }
+
+  &.tco-text-link--big-arrow {
+    @include clamp(
+      font-size,
+      $breakpoint-phone-portrait,
+      $breakpoint-desktop,
+      $font-size-16,
+      $font-size-18
+    );
+    border-bottom-width: 0;
+    color: $color-classic-gray-medium;
+
+    svg {
+      width: $big-arrow-width;
+      height: $big-arrow-height;
+      transform: translate(5px, 8px);
+    }
+
+    &:hover,
+    &:focus {
+      svg {
+        transform: translate(10px, 8px);
+      }
+    }
+  }
 }
 
 .tco-btn--space-xl {
@@ -161,6 +189,10 @@ $color-hover: #08519a;
   @include wider-than($breakpoint-laptop) {
     margin-top: $spacing-stack-76;
   }
+}
+
+.tco-btn--space-l {
+  margin-top: $spacing-stack-50;
 }
 
 // hubspot buttons
