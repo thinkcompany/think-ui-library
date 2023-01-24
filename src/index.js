@@ -9,6 +9,7 @@ import './components/Quote/quote-carousel.js';
 
 import './components/TextCircle/text-circle.js';
 import './components/TextUnderline/text-underline.js';
+import './components/Arrows/arrow.js';
 
 // Components for Site
 import Nav from './components/Navigation/navigation';

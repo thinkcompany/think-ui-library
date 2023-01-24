@@ -13,12 +13,9 @@ const config = [
 
 const wrapGrid = input =>
   `<div class="documentation-grid documentation-grid--large">${input}</div>`;
-const nameBlock = input =>
-  input.name ? `<p><strong>${input.name}</strong></p>` : '';
-const classBlock = input =>
-  input.class ? `<p><code>.${input.class}</code></p>` : '';
-const sassBlock = input =>
-  input.sass ? `<p><code>${input.sass}</code></p>` : '';
+const nameBlock = input => (input.name ? `<p><strong>${input.name}</strong></p>` : '');
+const classBlock = input => (input.class ? `<p><code>.${input.class}</code></p>` : '');
+const sassBlock = input => (input.sass ? `<p><code>${input.sass}</code></p>` : '');
 const cardItem = input => `
 <div class="documentation-grid--item documentation-block documentation-card">
     <div class="card-block">
@@ -34,8 +31,7 @@ const cardItem = input => `
 </div>
 `;
 
-export const Cards = () =>
-  wrapGrid(config.map(item => cardItem(item)).join(''));
+export const Cards = () => wrapGrid(config.map(item => cardItem(item)).join(''));
 
 Cards.parameters = {
   controls: { hideNoControlsWarning: true }

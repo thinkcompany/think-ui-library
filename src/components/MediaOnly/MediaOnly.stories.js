@@ -25,8 +25,7 @@ export default {
   args: {
     offset: offsets[0],
     mediaType: mediaTypes[0],
-    imgSrc:
-      'https://www.thinkcompany.com/wp-content/uploads/2021/01/careers-header.jpg',
+    imgSrc: 'https://www.thinkcompany.com/wp-content/uploads/2021/01/careers-header.jpg',
     videoSrc:
       '<iframe width="560" height="315" src="https://www.youtube.com/embed/StKrqfrOkWE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>'
   },

@@ -22,12 +22,20 @@
   }
 }
 
+.tco-type-display--64 {
+  @include type-display-64;
+}
+
 .tco-type-display--junior {
   @include type-display-junior;
 }
 
 .tco-type-display--sans {
   @include type-display-sans;
+}
+
+.tco-type-display--sans-large {
+  @include type-display-sans-large;
 }
 
 .tco-type-display--small {
@@ -63,6 +71,14 @@
   }
 }
 
+.tco-type-eyebrow--space-xl {
+  margin-bottom: $spacing-stack-24;
+
+  @include wider-than($breakpoint-laptop) {
+    margin-bottom: $spacing-stack-40;
+  }
+}
+
 .tco-type-body--default {
   @include type-body-default;
 
@@ -81,6 +97,10 @@
   &-tall {
     @include type-body-large($height: tall);
   }
+}
+
+.tco-type-body--large-sans {
+  @include type-body-large-sans;
 }
 
 .tco-type-body--sans-small {

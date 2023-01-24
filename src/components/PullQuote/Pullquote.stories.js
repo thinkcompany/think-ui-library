@@ -31,8 +31,7 @@ export const PullQuote = Template.bind({});
 export default {
   title: 'Components / Pull Quote',
   args: {
-    quote:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod.',
+    quote: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod.',
     name: 'Name Here',
     alignment: alignments[0],
     style: styles[0]

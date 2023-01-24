@@ -107,6 +107,23 @@
   }
 }
 
+@mixin type-display-64($font-color: inherit, $italic: false) {
+  @include type-base-style($font-color, 400);
+  @include clamp(
+    font-size,
+    $breakpoint-phone-portrait,
+    $breakpoint-desktop,
+    $font-size-36,
+    $font-size-64
+  );
+  font-family: $font-stack-slab-light;
+  line-height: 1.2;
+
+  strong {
+    font-weight: bold;
+  }
+}
+
 @mixin type-display-junior($font-color: inherit) {
   @include type-base-style($font-color, 400);
   @include clamp(
@@ -208,6 +225,19 @@
   }
 }
 
+@mixin type-body-large-sans($font-color: inherit, $italic: false) {
+  @include type-base-style($font-color);
+  @include clamp(
+    font-size,
+    $breakpoint-phone-portrait,
+    $breakpoint-desktop,
+    $font-size-20,
+    $font-size-24
+  );
+  font-family: $font-stack-sans-serif-regular;
+  line-height: 1.3;
+}
+
 @mixin type-body-default($font-color: inherit, $italic: false) {
   @include type-base-style($font-color);
   font-size: $font-size-18;
@@ -264,6 +294,19 @@
   @if $italic {
     font-family: $font-stack-sans-serif-bold-italic;
   }
+}
+
+@mixin type-display-sans-large($font-color: inherit) {
+  @include type-base-style($font-color);
+  @include clamp(
+    font-size,
+    $breakpoint-phone-portrait,
+    $breakpoint-desktop,
+    $font-size-36,
+    $font-size-64
+  );
+  font-family: $font-stack-sans-serif-bold;
+  line-height: 1.2;
 }
 
 @mixin type-display-sans($font-color: inherit) {

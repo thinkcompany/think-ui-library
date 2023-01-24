@@ -79,16 +79,14 @@ $checklist-title-spacing: 25px;
   .tco-lights-out & {
     li {
       &::before {
-        background: url('/svg/checkmark-dark-theme.svg') no-repeat center /
-          cover;
+        background: url('/svg/checkmark-dark-theme.svg') no-repeat center / cover;
       }
     }
 
     &--alt-checkmark {
       li {
         &::before {
-          background: url('/svg/checkmark-alt-dark-theme.svg') no-repeat center /
-            cover;
+          background: url('/svg/checkmark-alt-dark-theme.svg') no-repeat center / cover;
         }
       }
     }

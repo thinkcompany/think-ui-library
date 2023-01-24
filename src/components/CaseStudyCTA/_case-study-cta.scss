@@ -363,8 +363,7 @@ $cs-hero-padding: 130px;
         }
 
         @include wider-than($breakpoint-tablet-portrait) {
-          padding: $spacing-stack-76 $spacing-inline-64 $spacing-stack-64
-            $spacing-inline-32;
+          padding: $spacing-stack-76 $spacing-inline-64 $spacing-stack-64 $spacing-inline-32;
         }
       }
     }
@@ -386,13 +385,7 @@ $cs-hero-padding: 130px;
         }
 
         .tco-case-study-image-container--phone {
-          @include clamp(
-            right,
-            $breakpoint-tablet-portrait,
-            $breakpoint-desktop,
-            -150px,
-            -66px
-          );
+          @include clamp(right, $breakpoint-tablet-portrait, $breakpoint-desktop, -150px, -66px);
         }
       }
     }

@@ -1,0 +1,96 @@
+.tco-section-arrow {
+  position: relative;
+
+  &--full-right {
+    padding-top: $spacing-stack-100;
+
+    @include wider-than($breakpoint-laptop) {
+      padding-top: calc(#{$spacing-stack-100} * 2);
+    }
+  }
+}
+
+.tco-arrow {
+  position: absolute;
+  stroke: $color-classic-blue;
+  animation: drawline 0.7s cubic-bezier(0.65, 0.05, 0.36, 1) forwards;
+  animation-play-state: paused;
+  animation-delay: 0.3s;
+  stroke-dasharray: 1;
+  stroke-dashoffset: 1;
+  stroke-width: 5px;
+
+  &.active {
+    animation-play-state: running;
+  }
+
+  .tco-lights-out & {
+    stroke: $color-dark-theme-blue;
+  }
+}
+
+.tco-arrow--full-right {
+  top: -50px;
+  right: 0;
+  display: block;
+  height: 176px;
+  aspect-ratio: 327 / 819;
+
+  @include wider-than($breakpoint-phone-landscape) {
+    height: 200px;
+  }
+
+  @include wider-than($breakpoint-tablet-portrait) {
+    top: auto;
+    right: 0;
+    bottom: 0;
+    height: 100%;
+  }
+
+  @include wider-than($breakpoint-laptop) {
+    right: min(4vw, 54px);
+  }
+}
+
+.tco-arrow--connector-left {
+  top: 60%;
+  left: 8px;
+  z-index: 0;
+  width: min(28vw, 230px);
+  transform: rotate(8deg);
+  animation-duration: 0.8s;
+  aspect-ratio: 230 / 335;
+
+  @include wider-than($breakpoint-tablet-portrait) {
+    top: 80%;
+    left: -106px;
+    transform: rotate(0);
+    animation-duration: 0.5s;
+  }
+}
+
+@keyframes drawline {
+  0% {
+    opacity: 0.33;
+    stroke-dashoffset: 1;
+  }
+
+  33% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 1;
+    stroke-dashoffset: 0;
+  }
+}
+
+.tco-text-only--capabilities {
+  br {
+    display: none;
+
+    @include wider-than($breakpoint-tablet-portrait) {
+      display: block;
+    }
+  }
+}

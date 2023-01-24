@@ -52,4 +52,10 @@ $offset-xl: 140px;
   video {
     width: 100%;
   }
+
+  video,
+  img {
+    position: relative;
+    z-index: 1;
+  }
 }

@@ -1,0 +1,133 @@
+$header-max: 490px;
+
+.tco-split-panel {
+  padding-top: min(11vw, 132px);
+
+  + .tco-split-panel {
+    margin-top: $spacing-stack-50;
+
+    @include wider-than($breakpoint-tablet-portrait) {
+      margin-top: $spacing-stack-100;
+    }
+  }
+
+  @include wider-than($breakpoint-phone-landscape) {
+    display: flex;
+    flex-flow: row nowrap;
+  }
+}
+
+.tco-split-panel-header {
+  @include wider-than($breakpoint-phone-landscape) {
+    flex: 0 42%;
+    max-width: $header-max;
+    padding-top: calc(#{$spacing-stack-8} - #{$spacing-stack-2});
+    padding-right: min(5vw, 64px);
+    padding-left: min(8vw, 100px);
+  }
+
+  .tco-type-eyebrow {
+    @include wider-than($breakpoint-phone-landscape) {
+      margin-left: 2px;
+    }
+  }
+}
+
+.tco-texture {
+  position: relative;
+
+  .tco-type-eyebrow,
+  .tco-type-display--sans-large {
+    position: relative;
+    z-index: 1;
+  }
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: max(-11vw, -132px);
+    z-index: 0;
+    display: block;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+
+  &--zig-zag {
+    &::before {
+      left: 0;
+      width: min(34vw, 400px);
+      background-image: url('/img/services/zig-zag.png');
+      aspect-ratio: 602 / 701;
+    }
+  }
+
+  &--curl {
+    &::before {
+      left: 10px;
+      width: min(34vw, 440px);
+      background-image: url('/img/services/curl.png');
+      aspect-ratio: 782 / 722;
+    }
+  }
+
+  &--curve {
+    &::before {
+      left: 30px;
+      width: min(34vw, 340px);
+      background-image: url('/img/services/curve.png');
+      aspect-ratio: 560 / 546;
+    }
+  }
+}
+
+.tco-split-panel-body {
+  position: relative;
+  z-index: 1;
+  margin-bottom: $spacing-stack-16;
+
+  @include wider-than($breakpoint-phone-landscape) {
+    width: min(100%, 540px);
+    margin-bottom: 0;
+  }
+
+  .tco-type-body--large {
+    margin-bottom: $spacing-stack-16;
+    line-height: 1.3;
+
+    &:last-of-type {
+      margin-bottom: $spacing-stack-32;
+    }
+  }
+
+  .tco-btn {
+    margin-top: $spacing-stack-50;
+
+    @include wider-than($breakpoint-laptop) {
+      margin-top: $spacing-stack-64;
+    }
+  }
+}
+
+.tco-list-sans-large {
+  padding-left: $spacing-inline-32;
+
+  li {
+    position: relative;
+    margin-bottom: 1em;
+
+    &::before {
+      content: '\00b7';
+      position: absolute;
+      top: 10px;
+      left: -18px;
+      display: inline-block;
+      margin-right: $spacing-stack-16;
+      font-size: 160%;
+      line-height: 0;
+    }
+
+    &:last-of-type {
+      margin-bottom: 0;
+    }
+  }
+}

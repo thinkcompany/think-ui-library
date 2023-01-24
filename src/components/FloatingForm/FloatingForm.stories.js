@@ -124,8 +124,7 @@ const FormTemplate = args => {
 export const Form = FormTemplate.bind({});
 
 Form.args = {
-  intro:
-    'Ask us about our services or a related topic and a Thinker will respond shortly',
+  intro: 'Ask us about our services or a related topic and a Thinker will respond shortly',
   emailLabel: 'Your Email*',
   emailPlaceholder: 'Enter your email address',
   messageLabel: 'Your Message*',

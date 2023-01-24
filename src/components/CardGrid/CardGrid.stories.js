@@ -280,8 +280,7 @@ export default {
       name: 'component container',
       control: 'inline-radio',
       options: containerSizes,
-      description:
-        'Controls width of container surrounding Card Grid Header (Heading + Lede)',
+      description: 'Controls width of container surrounding Card Grid Header (Heading + Lede)',
       table: {
         type: {
           summary: 'radio'

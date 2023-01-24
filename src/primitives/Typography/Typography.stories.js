@@ -18,6 +18,12 @@ const displayStyles = [
     textLength: 1
   },
   {
+    name: 'Display 64 ',
+    class: 'tco-type-display--64',
+    sass: '@include type-display-64',
+    textLength: 1
+  },
+  {
     name: 'Display Junior',
     class: 'tco-type-display--junior',
     sass: '@include type-display-junior',
@@ -33,6 +39,12 @@ const displayStyles = [
     name: 'Display Thin',
     class: 'tco-type-display--thin',
     sass: '@include type-display-thin',
+    textLength: 1
+  },
+  {
+    name: 'Display Sans Large',
+    class: 'tco-type-display--sans-large',
+    sass: '@include type-display-sans-large',
     textLength: 1
   },
   {
@@ -75,6 +87,12 @@ const bodyStyles = [
     textLength: 1
   },
   {
+    name: 'Body Text Large Sans',
+    class: 'tco-type-body--large-sans',
+    sass: '@include type-body-large-sans',
+    textLength: 1
+  },
+  {
     name: 'Body Text Large & Tall',
     class: 'tco-type-body--large-tall',
     sass: '@include type-body-large-tall',
@@ -93,20 +111,16 @@ const genText = length => {
 };
 
 // wraps a story in the documentation grid list
-const wrapGrid = input =>
-  `<div class="documentation-grid--list">${input}</div>`;
+const wrapGrid = input => `<div class="documentation-grid--list">${input}</div>`;
 
 // wraps the story item's name
-const nameBlock = input =>
-  input.name ? `<p><strong>${input.name}</strong></p>` : '';
+const nameBlock = input => (input.name ? `<p><strong>${input.name}</strong></p>` : '');
 
 // wraps the story item's classes
-const classBlock = input =>
-  input.class ? `<p><code>.${input.class}</code></p>` : '';
+const classBlock = input => (input.class ? `<p><code>.${input.class}</code></p>` : '');
 
 // wraps the story item's sass declarations
-const sassBlock = input =>
-  input.sass ? `<p><code>${input.sass}</code></p>` : '';
+const sassBlock = input => (input.sass ? `<p><code>${input.sass}</code></p>` : '');
 
 /**
  * Generate Story Block
@@ -147,17 +161,11 @@ const typeItem = (input, demoLength, demo = true) => `
 `;
 
 export const all = () =>
-  wrapGrid(
-    [...displayStyles, ...bodyStyles]
-      .map(item => typeItem(item, 8, false))
-      .join('')
-  );
+  wrapGrid([...displayStyles, ...bodyStyles].map(item => typeItem(item, 8, false)).join(''));
 
-export const display = () =>
-  wrapGrid(displayStyles.map(item => typeItem(item, 8)).join(''));
+export const display = () => wrapGrid(displayStyles.map(item => typeItem(item, 8)).join(''));
 
-export const body = () =>
-  wrapGrid(bodyStyles.map(item => typeItem(item, 8)).join(''));
+export const body = () => wrapGrid(bodyStyles.map(item => typeItem(item, 8)).join(''));
 
 all.parameters = {
   controls: { hideNoControlsWarning: true }

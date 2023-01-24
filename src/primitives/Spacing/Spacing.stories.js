@@ -46,14 +46,10 @@ const inlineItem = input => `
     </div>
 </div>`;
 
-export const inset = () =>
-  wrapGrid(spacing.inset.map(item => insetItem(item)).join(''));
-export const squish = () =>
-  wrapGrid(spacing.squish.map(item => squishItem(item)).join(''));
-export const stack = () =>
-  wrapGrid(spacing.stack.map(item => stackItem(item)).join(''));
-export const inline = () =>
-  wrapGrid(spacing.inline.map(item => inlineItem(item)).join(''));
+export const inset = () => wrapGrid(spacing.inset.map(item => insetItem(item)).join(''));
+export const squish = () => wrapGrid(spacing.squish.map(item => squishItem(item)).join(''));
+export const stack = () => wrapGrid(spacing.stack.map(item => stackItem(item)).join(''));
+export const inline = () => wrapGrid(spacing.inline.map(item => inlineItem(item)).join(''));
 
 inset.parameters = {
   controls: { hideNoControlsWarning: true }
