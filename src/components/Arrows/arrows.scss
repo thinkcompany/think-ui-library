@@ -2,10 +2,10 @@
   position: relative;
 
   &--full-right {
-    padding-top: $spacing-stack-50;
+    padding-top: $spacing-stack-100;
 
     @include wider-than($breakpoint-laptop) {
-      padding-top: $spacing-stack-100;
+      padding-top: calc(#{$spacing-stack-100} * 2);
     }
   }
 }
@@ -24,16 +24,41 @@
 }
 
 .tco-arrow--full-right {
+  top: -50px;
   right: 0;
-  bottom: 0;
   display: block;
-  height: 100%;
+  height: 176px;
   stroke: $color-classic-blue;
   stroke-width: 5px;
   aspect-ratio: 327 / 819;
 
+  @include wider-than($breakpoint-phone-landscape) {
+    height: 200px;
+  }
+
+  @include wider-than($breakpoint-tablet-portrait) {
+    top: auto;
+    right: 0;
+    bottom: 0;
+    height: 100%;
+  }
+
+  @include wider-than($breakpoint-laptop) {
+    right: min(4vw, 54px);
+  }
+
   .tco-lights-out & {
     stroke: $color-dark-theme-blue;
+  }
+}
+
+.tco-text-only--capabilities {
+  br {
+    display: none;
+
+    @include wider-than($breakpoint-tablet-portrait) {
+      display: block;
+    }
   }
 }
 
