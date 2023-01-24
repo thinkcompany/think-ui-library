@@ -3,22 +3,33 @@ import { IconSet as icons } from '../IconSet/IconSet.stories';
 const treatments = ['flat', 'shadow', 'none'];
 const layouts = ['top', 'side'];
 const versions = ['classic', 'grid'];
+const summaryVersions = ['default', 'reduced'];
 const models = ['classic', 'deluxe-preview', 'deluxe'];
 
 const SummaryCardTemplate = args => {
-  const { heading, summary, image, treatment } = args;
+  const { heading, summary, treatment, summaryVersion } = args;
+
+  let image = 'https://www.thinkcompany.com/wp-content/uploads/2021/10/Be-kind-to-people.png';
+
+  if (summaryVersion === 'reduced') {
+    image = 'img/cards/client-side-apps.png';
+  }
 
   return `
   <div class="tco-container-wrapper">
     <div class="tco-container">
-      <div class="tco-card tco-card--summary tco-card-container--${treatment}">
+      <div class="tco-card tco-card--summary tco-card-container--${treatment} tco-card--summary-${summaryVersion}">
         <a href="#" class="tco-card-link tco-link--dark-theme">
           <div class="tco-card-image-container tco-card-image-container--summary">
             <img class="tco-card-image tco-card-image--summary" alt="Card image" src="${image}" />
           </div>
           <div class="tco-card-content-container">
             <h2 class="tco-card-content-heading tco-link--dark-theme">${heading}</h2>
-            <p class="tco-card-content-description">${summary}</p>
+            ${
+              summaryVersion === 'default'
+                ? `<p class="tco-card-content-description">${summary}</p>`
+                : ''
+            }
           </div>
         </a>
       </div>
@@ -29,11 +40,11 @@ const SummaryCardTemplate = args => {
 export const SummaryCard = SummaryCardTemplate.bind({});
 
 SummaryCard.args = {
-  heading: 'Work Together.',
+  heading: 'Work Together',
   summary:
     'The best experiences are consistent across all channels, so we always consider the entire ecosystem your users interact within—designing for people wherever they click, tap, talk, touch, work, or play.',
-  image: 'https://www.thinkcompany.com/wp-content/uploads/2021/10/Be-kind-to-people.png',
-  treatment: treatments[1]
+  treatment: treatments[1],
+  summaryVersion: summaryVersions[0]
 };
 
 SummaryCard.argTypes = {
@@ -41,6 +52,11 @@ SummaryCard.argTypes = {
     name: 'border treatment (dark theme)',
     control: 'inline-radio',
     options: treatments
+  },
+  summaryVersion: {
+    name: 'version',
+    control: 'inline-radio',
+    options: summaryVersions
   }
 };
 
