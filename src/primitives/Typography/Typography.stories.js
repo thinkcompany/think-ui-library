@@ -24,6 +24,12 @@ const displayStyles = [
     textLength: 1
   },
   {
+    name: 'Display Sans 48 ',
+    class: 'tco-type-display--sans-48',
+    sass: '@include type-display-48',
+    textLength: 1
+  },
+  {
     name: 'Display Junior',
     class: 'tco-type-display--junior',
     sass: '@include type-display-junior',

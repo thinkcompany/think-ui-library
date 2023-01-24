@@ -1,7 +1,8 @@
 $header-max: 490px;
+$circle-offset: 96px;
 
 .tco-split-panel {
-  padding-top: min(11vw, 132px);
+  padding-top: $circle-offset;
 
   + .tco-split-panel {
     margin-top: $spacing-stack-50;
@@ -37,7 +38,7 @@ $header-max: 490px;
   position: relative;
 
   .tco-type-eyebrow,
-  .tco-type-display--sans-large {
+  .tco-split-panel-heading {
     position: relative;
     z-index: 1;
   }
@@ -45,37 +46,31 @@ $header-max: 490px;
   &::before {
     content: '';
     position: absolute;
-    top: max(-11vw, -132px);
+    top: -$circle-offset;
+    left: 0;
     z-index: 0;
     display: block;
+    width: min(34vw, 225px);
+    height: min(34vw, 225px);
     background-size: cover;
     background-repeat: no-repeat;
   }
 
-  &--zig-zag {
+  &--a {
     &::before {
-      left: 0;
-      width: min(34vw, 400px);
-      background-image: url('/img/services/zig-zag.png');
-      aspect-ratio: 602 / 701;
+      background-image: url('/img/split-panel/circle-a.png');
     }
   }
 
-  &--curl {
+  &--b {
     &::before {
-      left: 10px;
-      width: min(34vw, 440px);
-      background-image: url('/img/services/curl.png');
-      aspect-ratio: 782 / 722;
+      background-image: url('/img/split-panel/circle-b.png');
     }
   }
 
-  &--curve {
+  &--c {
     &::before {
-      left: 30px;
-      width: min(34vw, 340px);
-      background-image: url('/img/services/curve.png');
-      aspect-ratio: 560 / 546;
+      background-image: url('/img/split-panel/circle-c.png');
     }
   }
 }

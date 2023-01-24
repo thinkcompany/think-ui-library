@@ -124,6 +124,23 @@
   }
 }
 
+@mixin type-display-48($font-color: inherit, $bold: false) {
+  @include type-base-style($font-color, 400);
+  @include clamp(
+    font-size,
+    $breakpoint-phone-portrait,
+    $breakpoint-desktop,
+    $font-size-30,
+    $font-size-48
+  );
+  font-family: $font-stack-sans-serif-bold;
+  line-height: 1.2;
+
+  @if $bold {
+    font-family: $font-stack-sans-serif-black;
+  }
+}
+
 @mixin type-display-junior($font-color: inherit) {
   @include type-base-style($font-color, 400);
   @include clamp(

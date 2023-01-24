@@ -26,6 +26,10 @@
   @include type-display-64;
 }
 
+.tco-type-display--sans-48 {
+  @include type-display-48;
+}
+
 .tco-type-display--junior {
   @include type-display-junior;
 }

@@ -1,13 +1,11 @@
 const SplitPanelTemplate = args => {
-  const { eyebrow, headline } = args;
-
   return `
   <div class="tco-container-wrapper tco-container-wrapper--glass tco-container-wrapper--bleed-bottom">
 	  <div class="tco-container">
       <article class="tco-split-panel">
-        <header class="tco-split-panel-header tco-texture tco-texture--zig-zag">
-          <p class="tco-type-eyebrow">${eyebrow}</p>
-          <h2 class="tco-type-display--sans-large">${headline}</h2>
+        <header class="tco-split-panel-header tco-texture tco-texture--a">
+          <p class="tco-type-eyebrow">Strategy</p>
+          <h2 class="tco-split-panel-heading tco-type-display--sans-48">Assessing and Roadmapping</h2>
         </header>
         <div class="tco-split-panel-body tco-text-only">
           <p class="tco-type-body--large">Our expertise and research combine to deliver rock-solid insights. We use these to build a roadmap for your product or service.</p>
@@ -21,12 +19,12 @@ const SplitPanelTemplate = args => {
       </article>
 
       <article class="tco-split-panel">
-        <header class="tco-split-panel-header tco-texture tco-texture--curl">
-          <p class="tco-type-eyebrow">Build your next big thing</p>
-          <h2 class="tco-type-display--sans-large">Creation</h2>
+        <header class="tco-split-panel-header tco-texture tco-texture--b">
+          <p class="tco-type-eyebrow">Creation</p>
+          <h2 class="tco-split-panel-heading tco-type-display--sans-48">Build your next big thing</h2>
         </header>
         <div class="tco-split-panel-body tco-text-only">
-          <p class="tco-type-body--large">Our cross-functional teams have over 15 years of experience driving projects from concept to launch. Let’s build exactly what your users need.</p>
+          <p class="tco-type-body--large">Our cross-functional teams have over 15 years of experience driving projects from concept to launch. Let's build exactly what your users need.</p>
           <ul class="tco-list-sans-large">
             <li class="tco-type-body--large-sans">Build a new product</li>
             <li class="tco-type-body--large-sans">Improve an existing product or service</li>
@@ -37,12 +35,12 @@ const SplitPanelTemplate = args => {
       </article>
 
       <article class="tco-split-panel">
-        <header class="tco-split-panel-header tco-texture tco-texture--curve">
-          <p class="tco-type-eyebrow">Continual improvement = Sustainable success</p>
-          <h2 class="tco-type-display--sans-large">Growth</h2>
+        <header class="tco-split-panel-header tco-texture tco-texture--c">
+          <p class="tco-type-eyebrow">Growth</p>
+          <h2 class="tco-split-panel-heading tco-type-display--sans-48">Continual improvement = Sustainable success</h2>
         </header>
         <div class="tco-split-panel-body tco-text-only">
-          <p class="tco-type-body--large">Be more than a one-hit wonder. We’ll create the infrastructure that allows your product to improve over time, setting the stage for long-term success.</p>
+          <p class="tco-type-body--large">Be more than a one-hit wonder. We'll create the infrastructure that allows your product to improve over time, setting the stage for long-term success.</p>
           <ul class="tco-list-sans-large">
             <li class="tco-type-body--large-sans">Dedicated teams</li>
             <li class="tco-type-body--large-sans">A project-by-project approach</li>
@@ -57,11 +55,6 @@ const SplitPanelTemplate = args => {
 };
 
 export const SplitPanel = SplitPanelTemplate.bind({});
-
-SplitPanel.args = {
-  eyebrow: 'Assessing and Roadmapping',
-  headline: 'Strategy'
-};
 
 export default {
   title: 'Components / Split Panel',
