@@ -47,7 +47,7 @@ $circle-offset: 96px;
     content: '';
     position: absolute;
     top: -$circle-offset;
-    left: 0;
+    left: 12px;
     z-index: 0;
     display: block;
     width: min(34vw, 225px);
@@ -113,7 +113,7 @@ $circle-offset: 96px;
     &::before {
       content: '\00b7';
       position: absolute;
-      top: 10px;
+      top: 0.35em;
       left: -18px;
       display: inline-block;
       margin-right: $spacing-stack-16;
