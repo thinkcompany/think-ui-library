@@ -1,6 +1,6 @@
 const FullSectionRightTemplate = args => {
   return `
-  <div class="tco-container-wrapper" style="position:relative;">
+  <div class="tco-container-wrapper" style="position:relative;margin:20vh 0;">
 	  <div class="tco-container">
       <div class="tco-text-only tco-section-arrow tco-section-arrow--full-right tco-text-only--capabilities">
         <p class="tco-type-eyebrow tco-type-eyebrow--space-xl">Capabilities</p>

@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const trigger = document.querySelector('.tco-animation-trigger');
 
   const observerOptions = {
-    rootMargin: '0% 0% -20% 0%',
+    rootMargin: '-20% 0% 0% 0%',
     threshold: 1
   };
 
