@@ -177,3 +177,15 @@
   font-variant-numeric: lining-nums;
   font-display: swap;
 }
+
+@font-face {
+  font-weight: 900;
+  font-style: normal;
+  font-family: 'KievitSlabPro';
+  src: url('./KievitSlabPro-Black.eot');
+  src: url('./KievitSlabPro-Black.eot?#iefix') format('embedded-opentype'),
+    url('./KievitSlabPro-Black.woff2') format('woff2'),
+    url('./KievitSlabPro-Black.woff') format('woff'),
+    url('./KievitSlabPro-Black.ttf') format('truetype');
+  font-display: swap;
+}

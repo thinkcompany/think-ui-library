@@ -72,7 +72,7 @@
   }
 }
 
-@mixin type-display-large($font-color: inherit, $italic: false) {
+@mixin type-display-large($font-color: inherit, $italic: false, $bold: false) {
   @include type-base-style($font-color, 400);
   @include clamp(
     font-size,
@@ -86,6 +86,10 @@
 
   @if $italic {
     font-family: $font-stack-slab-light-italic;
+  }
+
+  @if $bold {
+    font-family: $font-stack-slab-black;
   }
 }
 
