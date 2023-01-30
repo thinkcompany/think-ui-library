@@ -2,7 +2,7 @@ const TextUnderlineTemplate = args => {
   const { text } = args;
 
   return `
-  <div class="tco-container-wrapper tco-container-wrapper--glass">
+  <div class="tco-container-wrapper">
 	  <div class="tco-container" style="max-width:900px;height:80vh;text-align:center;">
       <div class="tco-text-only">
         <h3 class="tco-type-display--sans">${text}</h3>
