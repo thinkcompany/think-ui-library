@@ -2,7 +2,7 @@ const ImagePanelTemplate = () => {
   const imageItem = i => {
     const images = [
       {
-        source: 'img/image-panel/AILA.jpg',
+        source: 'img/image-panel/aila.jpg',
         class: 'tco-panel-item--a',
         width: 489,
         height: 326
@@ -14,7 +14,7 @@ const ImagePanelTemplate = () => {
         height: 326
       },
       {
-        source: 'img/image-panel/CHOP.jpg',
+        source: 'img/image-panel/chop.jpg',
         class: 'tco-panel-item--c',
         width: 178,
         height: 386
@@ -26,13 +26,13 @@ const ImagePanelTemplate = () => {
         height: 326
       },
       {
-        source: 'img/image-panel/Flex.jpg',
+        source: 'img/image-panel/flex.jpg',
         class: 'tco-panel-item--e',
         width: 489,
         height: 326
       },
       {
-        source: 'img/image-panel/Barnes.jpg',
+        source: 'img/image-panel/barnes.jpg',
         class: 'tco-panel-item--f',
         width: 489,
         height: 326
@@ -44,7 +44,7 @@ const ImagePanelTemplate = () => {
         height: 326
       },
       {
-        source: 'img/image-panel/Good-Place.jpg',
+        source: 'img/image-panel/good-place.jpg',
         class: 'tco-panel-item--h',
         width: 178,
         height: 386
