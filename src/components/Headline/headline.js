@@ -1,37 +1,28 @@
 document.addEventListener('DOMContentLoaded', () => {
-  const arrows = document.querySelectorAll('.tco-arrow');
-  const trigger = document.querySelector('.tco-animation-trigger');
+  const fragments = document.querySelectorAll('.tco-headline-fragment');
+  const blurbs = document.querySelectorAll('.tco-headline-statement');
+  const trigger = document.querySelector('.tco-headline-animation-trigger');
 
-  const observerOptions = {
-    rootMargin: '-20% 0% 0% 0%',
-    threshold: 1
-  };
+  const playHeadlineAnimation = () => {
+    fragments.forEach(fragment => {
+      fragment.getAnimations().forEach(animation => {
+        animation.play();
+      });
+    });
 
-  const observerCallback = entries => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('active');
-      }
+    blurbs.forEach(blurb => {
+      blurb.getAnimations().forEach(animation => {
+        animation.play();
+      });
     });
   };
-
-  const observer = new IntersectionObserver(observerCallback, observerOptions);
-
-  arrows.forEach(arrow => {
-    observer.observe(arrow);
-  });
 
   if (trigger) {
     trigger.addEventListener('click', event => {
       event.preventDefault();
       event.stopImmediatePropagation();
 
-      arrows.forEach(arrow => {
-        arrow.getAnimations().forEach(anim => {
-          anim.cancel();
-          anim.play();
-        });
-      });
+      playHeadlineAnimation();
     });
   }
 });

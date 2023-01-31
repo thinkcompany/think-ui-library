@@ -1,5 +1,80 @@
+/* stylelint-disable property-disallowed-list */
+
 $bubble: 856px;
-$duration: 2s;
+$duration: 10s;
+$delay: calc(#{$duration} / 3);
+$start: 3%;
+$end: 30%;
+$support-container: 460px;
+//$timing-fn: cubic-bezier(0.45, 0.05, 0.55, 0.95);
+// $timing-fn: cubic-bezier(0.65, 0.05, 0.36, 1);
+$timing-fn: cubic-bezier(0.37, 0, 0.63, 1); // ease-in-out-sine
+
+@keyframes colorFade {
+  0% {
+    color: $color-classic-navy;
+  }
+
+  #{$start} {
+    color: $color-classic-blue;
+  }
+
+  #{$end} {
+    color: $color-classic-blue;
+  }
+
+  33.3% {
+    color: $color-classic-navy;
+  }
+
+  100% {
+    color: $color-classic-navy;
+  }
+}
+
+@keyframes colorFadeDark {
+  0% {
+    color: $color-foreground-on-tint;
+  }
+
+  #{$start} {
+    color: $color-dark-theme-blue;
+  }
+
+  #{$end} {
+    color: $color-dark-theme-blue;
+  }
+
+  33.3% {
+    color: $color-foreground-on-tint;
+  }
+
+  100% {
+    color: $color-foreground-on-tint;
+  }
+}
+
+@keyframes fadeAway {
+  0% {
+    opacity: 0;
+  }
+
+  #{$start} {
+    opacity: 1;
+  }
+
+  #{$end} {
+    opacity: 1;
+  }
+
+  33.3% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
 
 .tco-page-header-big-bubble {
   position: relative;
@@ -26,9 +101,22 @@ $duration: 2s;
     }
   }
 
-  .tco-text-only {
+  .tco-headline-animation {
     position: relative;
     z-index: 1;
+    padding-top: $spacing-stack-76;
+
+    @include wider-than($breakpoint-tablet-portrait) {
+      padding-top: $spacing-stack-50;
+    }
+
+    @include wider-than($breakpoint-laptop) {
+      padding-top: $spacing-stack-32;
+    }
+
+    @include wider-than($breakpoint-desktop) {
+      padding-top: 0;
+    }
   }
 }
 
@@ -37,42 +125,63 @@ $duration: 2s;
 
   .tco-headline-fragment {
     display: block;
-    color: $color-classic-navy;
-    //animation: colorFade $duration linear;
+    animation-name: colorFade;
+    animation-duration: $duration;
+    animation-play-state: paused;
+    animation-timing-function: $timing-fn;
     animation-iteration-count: infinite;
 
     .tco-lights-out & {
-      color: $color-foreground-on-tint;
+      animation-name: colorFadeDark;
     }
   }
 
-  .tco-headline-fragment--a {
-    animation-delay: 2s;
-  }
-
   .tco-headline-fragment--b {
-    animation-delay: 4s;
+    animation-delay: $delay;
   }
 
   .tco-headline-fragment--c {
-    animation-delay: 6s;
+    animation-delay: calc(#{$delay} * 2);
   }
-
-  // .tco-headline-fragment--a {
-  //   color: $color-classic-blue;
-
-  //   .tco-lights-out & {
-  //     color: $color-dark-theme-blue;
-  //   }
-  // }
 }
 
-@keyframes colorFade {
-  0% {
-    color: $color-classic-navy;
-  }
+.tco-headline-support {
+  position: absolute;
+  top: -20px;
+  right: 0;
+  width: $support-container;
+  text-align: center;
+}
 
-  100% {
-    color: $color-classic-blue;
-  }
+[class*='tco-headline-statement-'] {
+  @include clamp(
+    font-size,
+    $breakpoint-phone-portrait,
+    $breakpoint-desktop,
+    $font-size-20,
+    $font-size-30
+  );
+  position: absolute;
+  top: 0;
+  right: 0;
+  font-weight: 400;
+  font-style: normal;
+  font-family: 'marydale', sans-serif;
+  line-height: 1.4;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  opacity: 0;
+  animation-name: fadeAway;
+  animation-duration: $duration;
+  animation-play-state: paused;
+  animation-timing-function: $timing-fn;
+  animation-iteration-count: infinite;
+}
+
+.tco-headline-statement-b {
+  animation-delay: $delay;
+}
+
+.tco-headline-statement-c {
+  animation-delay: calc(#{$delay} * 2);
 }
