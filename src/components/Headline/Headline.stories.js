@@ -14,7 +14,7 @@ const HeadlineTemplate = args => {
           <p class="tco-headline-statement tco-headline-statement-c">This is better than</br> lorem ipsum?</p>
 
         </div>
-        <a href="/" class="tco-btn tco-btn--primary tco-btn--space-xl tco-headline-animation-trigger">Start animation</a>
+        <a href="/" class="tco-btn tco-btn--primary tco-btn--space-xl">Start a project</a>
       </div>
     </div>
   </div>

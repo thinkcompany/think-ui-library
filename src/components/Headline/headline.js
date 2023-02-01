@@ -17,12 +17,5 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   };
 
-  if (trigger) {
-    trigger.addEventListener('click', event => {
-      event.preventDefault();
-      event.stopImmediatePropagation();
-
-      playHeadlineAnimation();
-    });
-  }
+  setTimeout(playHeadlineAnimation, 1000);
 });
