@@ -1,7 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
   const fragments = document.querySelectorAll('.tco-headline-fragment');
   const blurbs = document.querySelectorAll('.tco-headline-statement');
-  const trigger = document.querySelector('.tco-headline-animation-trigger');
 
   const playHeadlineAnimation = () => {
     fragments.forEach(fragment => {
