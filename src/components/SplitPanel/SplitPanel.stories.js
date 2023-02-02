@@ -1,6 +1,6 @@
 const SplitPanelTemplate = args => {
   return `
-  <div class="tco-container-wrapper tco-container-wrapper--glass tco-container-wrapper--bleed-bottom">
+  <div class="tco-container-wrapper tco-container-wrapper--glass">
 	  <div class="tco-container">
       <article class="tco-split-panel">
         <header class="tco-split-panel-header tco-texture tco-texture--a">

@@ -1,5 +1,5 @@
 $header-max: 490px;
-$circle-offset: 96px;
+$circle-offset: 146px;
 
 .tco-split-panel {
   padding-top: $circle-offset;
@@ -43,34 +43,79 @@ $circle-offset: 96px;
     z-index: 1;
   }
 
+  .tco-split-panel-heading {
+    margin-bottom: $spacing-stack-100;
+
+    @include wider-than($breakpoint-phone-landscape) {
+      margin-bottom: 0;
+    }
+  }
+
   &::before {
     content: '';
     position: absolute;
-    top: -$circle-offset;
-    left: 12px;
+    //top: -$circle-offset;
+    top: -100px;
+    left: -88px;
     z-index: 0;
     display: block;
-    width: min(34vw, 225px);
-    height: min(34vw, 225px);
+    width: 275px;
+    height: 332px;
     background-size: cover;
     background-repeat: no-repeat;
+
+    @include wider-than($breakpoint-phone-landscape) {
+      top: -$circle-offset;
+      left: -28px;
+    }
   }
 
   &--a {
     &::before {
-      background-image: url('/img/split-panel/circle-a.png');
+      background-image: url('/img/split-panel/strategy-light.png');
+    }
+
+    .tco-lights-out & {
+      &::before {
+        background-image: url('/img/split-panel/strategy-dark.png');
+      }
     }
   }
 
   &--b {
     &::before {
-      background-image: url('/img/split-panel/circle-b.png');
+      top: -144px;
+      background-image: url('/img/split-panel/creation-light.png');
+
+      @include wider-than($breakpoint-phone-landscape) {
+        top: calc(-#{$circle-offset} - 20px);
+        left: -8px;
+      }
+    }
+
+    .tco-lights-out & {
+      &::before {
+        background-image: url('/img/split-panel/creation-dark.png');
+      }
     }
   }
 
   &--c {
     &::before {
-      background-image: url('/img/split-panel/circle-c.png');
+      top: calc(-#{$circle-offset} + 10px);
+      left: -128px;
+      background-image: url('/img/split-panel/growth-light.png');
+
+      @include wider-than($breakpoint-phone-landscape) {
+        top: calc(-#{$circle-offset} + 20px);
+        left: -22px;
+      }
+    }
+
+    .tco-lights-out & {
+      &::before {
+        background-image: url('/img/split-panel/growth-dark.png');
+      }
     }
   }
 }
