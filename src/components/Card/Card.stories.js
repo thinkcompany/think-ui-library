@@ -323,9 +323,43 @@ JobCard.argTypes = {
   }
 };
 
+const WorkCardTemplate = args => {
+  const { heading, description } = args;
+
+  return `
+  <div class="tco-container-wrapper">
+    <div class="tco-container">
+      <div class="tco-card tco-card--work tco-card-container--shadow">
+        <div class="tco-card-content-container">
+          <h2 class="tco-type-display--small tco-link--dark-theme">${heading}</h2>
+          <p class="tco-type-body--sans-small">${description}</p>
+          <a href="#" class="tco-text-link tco-text-link--big-arrow" active="">
+            Case studies
+            <svg class="tco-text-link-icon" width="20" height="20" viewBox="0 0 20 20" role="presentation">
+              <use xlink:href="/img/icons.svg#icon-arrow-right"></use>
+            </svg>
+          </a>
+        </div>
+        <picture class="tco-card-work-image">
+          <source srcset="/img/cards/work-grid-s.png" media="(min-width:832px)" />
+          <img src="/img/cards/work-grid.png" alt="Case Study images" />
+        </picture>
+      </div>
+    </div>
+  </div>`;
+};
+
+export const WorkCard = WorkCardTemplate.bind({});
+
+WorkCard.args = {
+  heading: 'See our work',
+  description:
+    'We’ve helped teams like yours delight customers and employees with modern digital tools.'
+};
+
 export default {
   title: 'Components / Card',
-  component: [SummaryCard, PostCard, PersonCard, CalloutCard, MediaCard],
+  component: [SummaryCard, PostCard, PersonCard, CalloutCard, MediaCard, WorkCard],
   parameters: {
     component: SummaryCard,
     componentSubtitle: 'Cards are used on the site via the Post Grid, and Card Grid components.',
