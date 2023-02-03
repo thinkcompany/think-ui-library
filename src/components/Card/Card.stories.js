@@ -341,8 +341,8 @@ const WorkCardTemplate = args => {
           </a>
         </div>
         <picture class="tco-card-work-image">
-          <source srcset="/img/cards/work-grid-s.png" media="(min-width:832px)" />
-          <img src="/img/cards/work-grid.png" alt="Case Study images" />
+          <source srcset="/img/cards/work-grid.png" media="(min-width:608px)" />
+          <img src="/img/cards/work-grid-s.png" alt="Case Study images" />
         </picture>
       </div>
     </div>

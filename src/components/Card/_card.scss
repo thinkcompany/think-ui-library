@@ -1001,14 +1001,15 @@ $icon-size-large: 44px;
 // ========================================================
 // = Work CARD
 // ========================================================
+$card-break: 940px;
+
 .tco-card--work {
   max-width: none;
   min-height: 0;
   padding: 0;
   border-radius: 16px;
-  //background: transparent url('/img/cards/work-grid-s.png') no-repeat center bottom / contain;
 
-  @include wider-than($breakpoint-tablet-portrait) {
+  @include wider-than($card-break) {
     display: flex;
     flex-flow: row nowrap;
     align-items: center;
@@ -1021,10 +1022,15 @@ $icon-size-large: 44px;
     width: 100%;
     max-width: 448px;
     height: 100%;
-    padding: $spacing-stack-64 $spacing-inline-40 $spacing-stack-40;
+    padding: $spacing-stack-64 $spacing-inline-40 0;
 
-    @include wider-than($breakpoint-tablet-portrait) {
-      width: 38%;
+    @include wider-than($breakpoint-phone-landscape) {
+      padding-bottom: $spacing-stack-40;
+    }
+
+    @include wider-than($card-break) {
+      width: 50%;
+      padding: $spacing-stack-20 $spacing-inline-40;
     }
   }
 
@@ -1034,5 +1040,9 @@ $icon-size-large: 44px;
 
   .tco-type-body--sans-small {
     margin-bottom: $spacing-stack-24;
+  }
+
+  .tco-text-link--big-arrow {
+    color: $color-classic-blue;
   }
 }
