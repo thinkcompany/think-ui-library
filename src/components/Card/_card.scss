@@ -389,6 +389,13 @@ $device-offset-v: 58px;
     }
 
     .tco-card-content-heading {
+      @include clamp(
+        font-size,
+        $breakpoint-phone-portrait,
+        $breakpoint-desktop,
+        $font-size-28,
+        $font-size-32
+      );
       color: $color-classic-gray-dark;
 
       .tco-lights-out & {

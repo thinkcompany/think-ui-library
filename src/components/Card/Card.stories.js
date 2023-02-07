@@ -40,7 +40,7 @@ const SummaryCardTemplate = args => {
 export const SummaryCard = SummaryCardTemplate.bind({});
 
 SummaryCard.args = {
-  heading: 'Work Together',
+  heading: 'Technology, Strategy & Consulting',
   summary:
     'The best experiences are consistent across all channels, so we always consider the entire ecosystem your users interact within—designing for people wherever they click, tap, talk, touch, work, or play.',
   treatment: treatments[1],
