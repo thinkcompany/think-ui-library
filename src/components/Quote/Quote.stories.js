@@ -44,6 +44,13 @@ const QuoteCarouselTemplate = args => {
         <div class="tco-quote-carousel">
           <div class="tco-quote-wrapper tco-quote-wrapper--carousel tco-quote-wrapper-center">
             <blockquote class="tco-quote tco-quote--slide">
+              <p class="tco-type-display--small">We needed a top-caliber agency that could work at a very high level of perfection. Also, we needed a firm with a culture that matched ours: no big egos and service-oriented; a small town feel with a big city mind. Think Company offered us elite service, but without the usual superior attitude that comes with that. They're wonderful people.</p>
+              <div class="tco-quote-footer">
+                <cite class="tco-type-body--large">Jody Myers</cite>
+                <span class="tco-type-eyebrow">VP Digital at Ascensus</span>
+              </div>
+            </blockquote>
+            <blockquote class="tco-quote tco-quote--slide">
               <p class="tco-type-display--small">I love helping to cultivate a culture that sets people up to succeed, gives people the space to work through challenges, and values the diverse perspectives everyone brings to the work.</p>
               <div class="tco-quote-footer">
                 <cite class="tco-type-body--large">Neha Agarwal</cite>

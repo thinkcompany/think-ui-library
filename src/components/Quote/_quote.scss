@@ -98,12 +98,26 @@ $bullet-size: 12px;
   }
 
   .tco-type-display--small {
+    @include clamp(
+      font-size,
+      $breakpoint-phone-portrait,
+      $breakpoint-desktop,
+      $font-size-24,
+      $font-size-32
+    );
     position: relative;
     z-index: 3;
     margin-bottom: 0;
   }
 
   .tco-type-body--large {
+    @include clamp(
+      font-size,
+      $breakpoint-phone-portrait,
+      $breakpoint-desktop,
+      $font-size-20,
+      $font-size-28
+    );
     display: block;
     margin-bottom: $spacing-stack-4;
     font-style: normal;
