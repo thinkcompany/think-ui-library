@@ -404,9 +404,15 @@ $device-offset-v: 58px;
     }
 
     .tco-card-image-container {
+      display: grid;
       width: min(30vw, 138px);
       margin: 0 auto $spacing-stack-40;
       padding: 0;
+      aspect-ratio: 1 / 1;
+    }
+
+    .tco-card-image {
+      margin: auto;
     }
   }
 }
