@@ -3,7 +3,7 @@ const TextCircleTemplate = args => {
 
   return `
   <div class="tco-container-wrapper tco-container-wrapper--blue">
-	  <div class="tco-container" style="max-width:900px;height:80vh; text-align:center;">
+	  <div class="tco-container" style="max-width:900px;height:80vh; text-align:center;margin-top:100vh;">
       <div class="tco-text-only">
         <h3 class="tco-type-display--large">${text}</h3>
       </div>

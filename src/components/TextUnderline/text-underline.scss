@@ -55,6 +55,12 @@ $circle-offset: 0.6em;
     stroke-linecap: round;
   }
 
+  .tco-lights-out & {
+    svg {
+      stroke: transparent;
+    }
+  }
+
   &.active {
     svg {
       stroke: $color-classic-gray-dark;
