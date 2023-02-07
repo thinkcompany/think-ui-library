@@ -1,6 +1,10 @@
 document.addEventListener('DOMContentLoaded', () => {
   const fragments = document.querySelectorAll('.tco-headline-fragment');
   const blurbs = document.querySelectorAll('.tco-headline-statement');
+  const blurbContainer = document.querySelector('.tco-headline-animation');
+  const prefersReduced =
+    window.matchMedia(`(prefers-reduced-motion: reduce)`) === true ||
+    window.matchMedia(`(prefers-reduced-motion: reduce)`).matches === true;
 
   const playHeadlineAnimation = () => {
     fragments.forEach(fragment => {
@@ -16,5 +20,9 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   };
 
-  setTimeout(playHeadlineAnimation, 1000);
+  if (!prefersReduced) {
+    setTimeout(playHeadlineAnimation, 1000);
+  } else {
+    blurbContainer.classList.add('tco-prefers-reduced');
+  }
 });

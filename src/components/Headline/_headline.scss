@@ -5,8 +5,8 @@ $duration: 10s;
 $delay: calc(#{$duration} / 3);
 $start: 3%;
 $end: 30%;
-$support-container: 460px;
 $timing-fn: cubic-bezier(0.37, 0, 0.63, 1); // ease-in-out-sine
+$description-max: 800px;
 
 @keyframes colorFade {
   0% {
@@ -115,6 +115,10 @@ $timing-fn: cubic-bezier(0.37, 0, 0.63, 1); // ease-in-out-sine
     @include wider-than($breakpoint-desktop) {
       padding-top: 0;
     }
+
+    &.tco-prefers-reduced {
+      padding-top: 0;
+    }
   }
 }
 
@@ -144,14 +148,6 @@ $timing-fn: cubic-bezier(0.37, 0, 0.63, 1); // ease-in-out-sine
 }
 
 .tco-headline-support {
-  position: absolute;
-  top: -20px;
-  right: 0;
-  width: $support-container;
-  text-align: center;
-}
-
-[class*='tco-headline-statement-'] {
   @include clamp(
     font-size,
     $breakpoint-phone-portrait,
@@ -160,20 +156,49 @@ $timing-fn: cubic-bezier(0.37, 0, 0.63, 1); // ease-in-out-sine
     $font-size-30
   );
   position: absolute;
-  top: 0;
+  top: -20px;
   right: 0;
+  display: grid;
   font-weight: 400;
   font-style: normal;
   font-family: 'marydale', sans-serif;
   line-height: 1.4;
   letter-spacing: 0.07em;
+  text-align: center;
   text-transform: uppercase;
+
+  .tco-prefers-reduced & {
+    position: relative;
+    top: initial;
+    right: initial;
+    display: block;
+    max-width: $description-max;
+    margin-top: $spacing-stack-24;
+    text-align: left;
+  }
+}
+
+[class*='tco-headline-statement-'] {
+  grid-row: 1;
+  grid-column: 1;
+  align-self: center;
   opacity: 0;
   animation-name: fadeAway;
   animation-duration: $duration;
   animation-play-state: paused;
   animation-timing-function: $timing-fn;
   animation-iteration-count: infinite;
+
+  .tco-prefers-reduced & {
+    opacity: 1;
+    animation-name: none;
+  }
+
+  br {
+    .tco-prefers-reduced & {
+      display: none;
+    }
+  }
 }
 
 .tco-headline-statement-b {
