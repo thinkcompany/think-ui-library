@@ -139,7 +139,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const obsvrOptions = {
     rootMargin: '0px',
-    threshold: 1
+    threshold: 0.5
   };
 
   const obsvrCallback = entries => {
