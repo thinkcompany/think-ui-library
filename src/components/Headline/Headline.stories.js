@@ -9,9 +9,9 @@ const HeadlineTemplate = args => {
           <span class="tco-headline-fragment tco-headline-fragment--c">for every user</span>
         </h1>
         <p class="tco-headline-support">
-          <span class="tco-headline-statement tco-headline-statement-a">Award winning</span>
-          <span class="tco-headline-statement tco-headline-statement-b">apps, websites,</br> and portals</span>
-          <span class="tco-headline-statement tco-headline-statement-c">built for real people</br> and their needs</span>
+          <span class="tco-headline-statement tco-headline-statement-a">High-performing</br> and award winning</span>
+          <span class="tco-headline-statement tco-headline-statement-b">apps, websites,</br> systems and tools</span>
+          <span class="tco-headline-statement tco-headline-statement-c">designed for real</br> people and their needs</span>
         </p>
         <a href="/" class="tco-btn tco-btn--primary tco-btn--space-xl">Start a project</a>
       </div>

@@ -124,6 +124,11 @@ $description-max: 800px;
 
 .tco-motion-headline {
   @include type-display-large($bold: true);
+  color: $color-classic-navy;
+
+  .tco-lights-out & {
+    color: $color-foreground-on-tint;
+  }
 
   .tco-headline-fragment {
     display: block;
@@ -132,6 +137,7 @@ $description-max: 800px;
     animation-play-state: paused;
     animation-timing-function: $timing-fn;
     animation-iteration-count: infinite;
+    animation-fill-mode: forwards;
 
     .tco-lights-out & {
       animation-name: colorFadeDark;
