@@ -27,6 +27,11 @@ $circle-offset: 0.6em;
     animation-play-state: paused;
     animation-delay: 0.3s;
     stroke-width: 5px;
+
+    @media (prefers-reduced-motion) {
+      animation: none;
+      stroke-dashoffset: 0;
+    }
   }
 
   &.active {
@@ -53,6 +58,13 @@ $circle-offset: 0.6em;
     animation-delay: 0.3s;
     stroke-width: 3px;
     stroke-linecap: round;
+
+    @media (prefers-reduced-motion) {
+      opacity: 1;
+      stroke: $color-classic-gray-dark;
+      animation: none;
+      stroke-dashoffset: 0;
+    }
   }
 
   .tco-lights-out & {

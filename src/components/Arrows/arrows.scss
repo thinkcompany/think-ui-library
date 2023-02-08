@@ -20,6 +20,11 @@
   stroke-dashoffset: 1;
   stroke-width: 5px;
 
+  @media (prefers-reduced-motion) {
+    animation: none;
+    stroke-dashoffset: 0;
+  }
+
   &.active {
     animation-play-state: running;
   }

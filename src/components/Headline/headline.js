@@ -46,6 +46,8 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     }
   } else {
-    blurbContainer.classList.add('tco-prefers-reduced');
+    if (blurbContainer) {
+      blurbContainer.classList.add('tco-prefers-reduced');
+    }
   }
 });
