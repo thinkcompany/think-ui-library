@@ -45,9 +45,7 @@ document.addEventListener('DOMContentLoaded', () => {
         setTimeout(playHeadlineAnimation('restart'), 1000);
       });
     }
-  } else {
-    if (blurbContainer) {
-      blurbContainer.classList.add('tco-prefers-reduced');
-    }
+  } else if (blurbContainer) {
+    blurbContainer.classList.add('tco-prefers-reduced');
   }
 });
