@@ -166,16 +166,6 @@ $color-hover: #08519a;
   }
 }
 
-.gfield_label,
-.gfield_radio label,
-.gfield_checkbox label {
-  @extend %tco-form-label;
-}
-
-.gfield_label_before_complex {
-  margin-bottom: $spacing-stack-12;
-}
-
 /* ----------------------------------------------*\
       Controls for pseudo element inputs
 \*---------------------------------------------- */
@@ -258,73 +248,6 @@ $color-hover: #08519a;
   .tco-lights-out & {
     color: $color-dark-theme-error;
   }
-}
-
-// gravity forms
-.gform_fields {
-  @include list-plain;
-  display: flex;
-  flex-flow: row wrap;
-  justify-content: space-between;
-}
-
-.gfield {
-  @extend %tco-form-row;
-  margin-bottom: $spacing-stack-16;
-
-  > * {
-    display: block;
-    text-align: left;
-  }
-}
-
-.gfield_label {
-  @extend %tco-form-label;
-}
-
-.ginput_container {
-  > input,
-  textarea,
-  select {
-    @extend %tco-form-input;
-  }
-}
-
-.gfield_select {
-  height: $select-height;
-  color: $color-foreground-tertiary;
-}
-
-.ginput_container_radio {
-  margin-top: $spacing-stack-12;
-}
-
-.gfield_error {
-  > .ginput_container > input,
-  textarea {
-    padding: $spacing-stack-16 $spacing-inline-12;
-    border: 1px solid $color-tint-red-primary;
-  }
-
-  .validation_message {
-    @include type-body-small($color-tint-red-primary);
-  }
-}
-
-.gform_button {
-  @extend %tco-btn;
-  @extend %tco-btn--primary;
-}
-
-.gform_footer {
-  display: flex;
-  align-items: flex-end;
-  justify-content: flex-start;
-  margin-bottom: $spacing-stack-16;
-}
-
-.gform_validation_container {
-  @extend %tco-accessibly-hidden;
 }
 
 // hubspot forms
@@ -434,69 +357,5 @@ $color-hover: #08519a;
 
   .submitted-message {
     @include type-display-small;
-  }
-
-  &.tco-newsletter-form-container {
-    .hs-form {
-      display: flex;
-      flex-flow: column nowrap;
-
-      @include wider-than($breakpoint-tablet-portrait) {
-        flex-flow: row nowrap;
-      }
-    }
-
-    .hs-email {
-      position: relative;
-      flex-grow: 2;
-      margin-bottom: $spacing-stack-16;
-
-      @include wider-than($breakpoint-tablet-portrait) {
-        margin-bottom: $spacing-stack-24;
-      }
-    }
-
-    .hs-submit {
-      display: flex;
-      align-items: flex-end;
-      justify-content: flex-start;
-      margin: 0 0 $spacing-stack-16;
-
-      @include wider-than($breakpoint-tablet-portrait) {
-        justify-content: center;
-        margin: 0 0 $spacing-stack-24 $spacing-inline-16;
-      }
-    }
-
-    .hs-button {
-      padding: $spacing-stack-12 $spacing-inline-18;
-      border: 1px solid $color-classic-blue;
-      background-color: transparent;
-      color: $color-classic-blue;
-
-      &:hover {
-        background-color: $color-classic-blue;
-        color: $color-foreground-on-tint;
-      }
-
-      .tco-lights-out & {
-        border-color: $color-foreground-on-tint;
-        color: $color-foreground-on-tint;
-
-        &:hover {
-          border-color: $color-hover;
-        }
-      }
-    }
-
-    .submitted-message {
-      @include type-body-small;
-    }
-
-    .hs-error-msgs {
-      position: absolute;
-      left: 0;
-      margin: 0;
-    }
   }
 }
