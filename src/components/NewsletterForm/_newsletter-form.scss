@@ -57,6 +57,10 @@ $blurb-max: 300px;
       transform: rotateY(180deg);
       aspect-ratio: 466 / 180;
 
+      .tco-lights-out & {
+        background-image: url('/img/newsletter/squiggly-arrow-dark.png');
+      }
+
       @include wider-than($breakpoint-tablet-portrait) {
         right: auto;
         bottom: 50%;
