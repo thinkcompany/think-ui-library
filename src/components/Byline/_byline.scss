@@ -4,7 +4,7 @@ $byline-img-width--l: 66px;
 .tco-byline {
   display: grid;
   grid-template-columns: $byline-img-width 1fr;
-  grid-gap: $spacing-inline-16;
+  gap: $spacing-inline-16;
   align-items: center;
   margin-top: $spacing-stack-16;
   color: $color-classic-gray-dark;
@@ -60,7 +60,7 @@ $byline-img-width--l: 66px;
   &--multiple {
     display: flex;
     flex-flow: column nowrap;
-    grid-gap: 0;
+    gap: 0;
     margin: 0;
 
     .tco-byline-image-container {

@@ -11,7 +11,7 @@ $widget-width: 132px;
 
   @include wider-than($breakpoint-tablet-portrait) {
     grid-template-columns: repeat(3, calc(33.33% - (80px / 3)));
-    grid-gap: $spacing-stack-40;
+    gap: $spacing-stack-40;
   }
 
   &-menu {
@@ -42,12 +42,20 @@ $widget-width: 132px;
         'disclaimer disclaimer';
       grid-template-rows: repeat(2, 100%);
       grid-column: 1 / span 3;
-      align-items: start;
+      //align-items: start;
+
+      .tco-site-footer-content-group--icons {
+        align-self: start;
+      }
     }
 
     @include wider-than($breakpoint-laptop) {
       grid-template-areas: 'icons disclaimer';
       grid-template-rows: auto;
+
+      .tco-site-footer-content-group--icons {
+        align-self: center;
+      }
     }
   }
 

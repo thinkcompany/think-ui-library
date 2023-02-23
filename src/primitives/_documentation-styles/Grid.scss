@@ -34,7 +34,7 @@
     display: grid;
     grid-template-rows: 1fr;
     grid-template-columns: 1fr 2fr;
-    grid-gap: $documentation-padding / 2;
+    gap: $documentation-padding / 2;
     width: 100%;
   }
 }
@@ -42,5 +42,5 @@
 .documentation-grid-container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(158px, 1fr));
-  grid-gap: 1em;
+  gap: 1em;
 }

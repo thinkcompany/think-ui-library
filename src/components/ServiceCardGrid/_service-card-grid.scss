@@ -1,5 +1,5 @@
 .tco-card-grid--service {
-  grid-gap: 0;
+  gap: 0;
 
   @include wider-than($breakpoint-phone-landscape) {
     grid-template-columns: repeat(2, 1fr);
