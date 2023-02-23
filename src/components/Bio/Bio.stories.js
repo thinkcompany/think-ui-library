@@ -1,7 +1,7 @@
 import { SocialIcons as icons } from '../SocialIcons/social-icons.stories';
 
 const AuthorTemplate = args => {
-  const { name, title, image, bio, socialLabel, showSocial } = args;
+  const { name, title, image, bio, showSocial } = args;
 
   return `
   <div class="tco-container-wrapper">

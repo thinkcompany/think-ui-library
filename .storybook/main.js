@@ -4,6 +4,7 @@ module.exports = {
     '../src/primitives/**/*.stories.@(js|mdx)',
     '../src/components/**/*.stories.@(js|mdx)'
   ],
+  staticDirs: ['../src/assets'],
   addons: [
     '@storybook/addon-a11y',
     {

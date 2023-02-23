@@ -1,4 +1,4 @@
-const HeadlineTemplate = args => {
+const HeadlineTemplate = () => {
   return `
   <div class="tco-container-wrapper">
 	  <div class="tco-container tco-page-header-big-bubble">

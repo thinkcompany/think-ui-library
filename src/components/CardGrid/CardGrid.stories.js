@@ -168,7 +168,7 @@ const Template = args => {
     containerClose = '</div>';
   }
 
-  if (cardMax == 'no max width') {
+  if (cardMax === 'no max width') {
     maxWidth = 'tco-card-no-max';
   }
 

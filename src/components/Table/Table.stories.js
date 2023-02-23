@@ -40,8 +40,6 @@ const Template = args => {
     return output;
   };
 
-  if (headers === true) {
-  }
   return `
     <div class="tco-post-body">
       <div class="tco-container-wrapper">

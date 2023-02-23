@@ -3,13 +3,14 @@ $byline-img-width--l: 66px;
 
 .tco-byline {
   display: grid;
+  grid-template-rows: auto;
   grid-template-columns: $byline-img-width 1fr;
-  grid-gap: $spacing-inline-16;
-  align-items: center;
+  gap: $spacing-inline-16;
   margin-top: $spacing-stack-16;
   color: $color-classic-gray-dark;
 
   &--l {
+    grid-template-rows: auto;
     grid-template-columns: $byline-img-width--l 1fr;
   }
 
@@ -22,6 +23,7 @@ $byline-img-width--l: 66px;
   }
 
   &-image-container {
+    align-self: center;
     overflow: hidden;
     width: $byline-img-width;
     border-radius: $border-radius-round;
@@ -60,7 +62,7 @@ $byline-img-width--l: 66px;
   &--multiple {
     display: flex;
     flex-flow: column nowrap;
-    grid-gap: 0;
+    gap: 0;
     margin: 0;
 
     .tco-byline-image-container {
@@ -77,6 +79,7 @@ $byline-img-width--l: 66px;
 
   &--no-image {
     display: block;
+    grid-template-rows: auto;
     grid-template-columns: 1fr;
 
     ul {

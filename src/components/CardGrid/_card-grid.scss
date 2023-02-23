@@ -1,10 +1,13 @@
 .tco-card-grid {
   display: grid;
-  grid-gap: $spacing-inline-16;
-  justify-items: center;
+  gap: $spacing-inline-16;
+
+  .tco-card {
+    justify-self: center;
+  }
 
   @include wider-than($breakpoint-desktop) {
-    grid-gap: $spacing-inline-32;
+    gap: $spacing-inline-32;
   }
 
   &-header {
@@ -17,19 +20,20 @@
   }
 
   @include wider-than($breakpoint-phone-landscape) {
+    grid-template-rows: auto;
     grid-template-columns: repeat(2, 1fr);
-    justify-items: center;
   }
 
   &--1-column {
+    grid-template-rows: auto;
     grid-template-columns: 1fr;
   }
 
   &--2-column {
     @include wider-than($breakpoint-phone-landscape) {
-      justify-items: start;
-
       .tco-card {
+        justify-self: start;
+
         &:nth-of-type(odd) {
           justify-self: end;
         }
@@ -39,43 +43,49 @@
 
   &--3-column {
     @include wider-than($breakpoint-tablet-portrait) {
+      grid-template-rows: auto;
       grid-template-columns: repeat(3, 1fr);
     }
   }
 
   &--4-column {
     @include wider-than($breakpoint-tablet-portrait) {
+      grid-template-rows: auto;
       grid-template-columns: repeat(4, 1fr);
     }
   }
 
   &--5-column,
   &--person {
+    grid-template-rows: auto;
     grid-template-columns: repeat(2, 1fr);
 
     @include wider-than($breakpoint-phone-landscape) {
+      grid-template-rows: auto;
       grid-template-columns: repeat(3, 1fr);
     }
 
     @include wider-than($breakpoint-tablet-portrait) {
+      grid-template-rows: auto;
       grid-template-columns: repeat(4, 1fr);
     }
 
     @include wider-than($breakpoint-laptop) {
+      grid-template-rows: auto;
       grid-template-columns: repeat(5, 1fr);
     }
 
     @include wider-than($breakpoint-desktop) {
-      grid-gap: $spacing-inline-16;
+      gap: $spacing-inline-16;
     }
   }
 
   &--case-study {
     &.tco-card-grid--1-column {
-      grid-gap: $spacing-stack-32;
+      gap: $spacing-stack-32;
 
       @include wider-than($breakpoint-tablet-portrait) {
-        grid-gap: $spacing-stack-100;
+        gap: $spacing-stack-100;
       }
     }
   }
