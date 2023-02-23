@@ -61,7 +61,7 @@ const LogoTemplate = args => {
 
     let image = images[i];
 
-    if (randomize == 'shuffle') {
+    if (randomize === 'shuffle') {
       image = images[Math.floor(Math.random() * images.length)];
     }
 
@@ -72,13 +72,13 @@ const LogoTemplate = args => {
   };
 
   const imageItems = () => {
-    let output = '';
+    let imageOutput = '';
 
     for (let index = 0; index < imageCount; index++) {
-      output += imageItem(index);
+      imageOutput += imageItem(index);
     }
 
-    return output;
+    return imageOutput;
   };
 
   return `

@@ -20,10 +20,12 @@
   }
 
   @include wider-than($breakpoint-phone-landscape) {
+    grid-template-rows: auto;
     grid-template-columns: repeat(2, 1fr);
   }
 
   &--1-column {
+    grid-template-rows: auto;
     grid-template-columns: 1fr;
   }
 
@@ -41,29 +43,35 @@
 
   &--3-column {
     @include wider-than($breakpoint-tablet-portrait) {
+      grid-template-rows: auto;
       grid-template-columns: repeat(3, 1fr);
     }
   }
 
   &--4-column {
     @include wider-than($breakpoint-tablet-portrait) {
+      grid-template-rows: auto;
       grid-template-columns: repeat(4, 1fr);
     }
   }
 
   &--5-column,
   &--person {
+    grid-template-rows: auto;
     grid-template-columns: repeat(2, 1fr);
 
     @include wider-than($breakpoint-phone-landscape) {
+      grid-template-rows: auto;
       grid-template-columns: repeat(3, 1fr);
     }
 
     @include wider-than($breakpoint-tablet-portrait) {
+      grid-template-rows: auto;
       grid-template-columns: repeat(4, 1fr);
     }
 
     @include wider-than($breakpoint-laptop) {
+      grid-template-rows: auto;
       grid-template-columns: repeat(5, 1fr);
     }
 

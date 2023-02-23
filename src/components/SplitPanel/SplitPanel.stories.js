@@ -1,4 +1,4 @@
-const SplitPanelTemplate = args => {
+const SplitPanelTemplate = () => {
   return `
   <div class="tco-container-wrapper tco-container-wrapper--glass">
 	  <div class="tco-container">

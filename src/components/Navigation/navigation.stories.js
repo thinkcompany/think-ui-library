@@ -1,6 +1,4 @@
-export const Header = args => {
-  const { searchStyle } = args;
-
+export const Header = () => {
   return `
   <style>
     .sb-page-background {

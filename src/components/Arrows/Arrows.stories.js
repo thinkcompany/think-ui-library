@@ -1,4 +1,4 @@
-const FullSectionRightTemplate = args => {
+const FullSectionRightTemplate = () => {
   return `
   <div class="tco-container-wrapper" style="position:relative;margin:20vh 0;">
 	  <div class="tco-container">
@@ -16,7 +16,7 @@ const FullSectionRightTemplate = args => {
 
 export const FullSectionRight = FullSectionRightTemplate.bind({});
 
-const ConnectorLeftTemplate = args => {
+const ConnectorLeftTemplate = () => {
   return `
   <div class="tco-container-wrapper tco-container-wrapper--glass tco-container-wrapper--bleed-bottom">
     <div class="tco-container">

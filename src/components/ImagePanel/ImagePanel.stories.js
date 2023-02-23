@@ -51,7 +51,7 @@ const ImagePanelTemplate = () => {
       }
     ];
 
-    let image = images[i];
+    const image = images[i];
 
     return `
       <figure class="tco-panel-item ${image.class}" style="--width:${image.width} ">

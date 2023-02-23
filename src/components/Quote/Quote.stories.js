@@ -37,7 +37,7 @@ const QuoteTemplate = args => {
 
 export const Quote = QuoteTemplate.bind({});
 
-const QuoteCarouselTemplate = args => {
+const QuoteCarouselTemplate = () => {
   return `
     <div class="tco-container-wrapper tco-container-wrapper--glass">
       <div class="tco-container tco-container--narrow">
