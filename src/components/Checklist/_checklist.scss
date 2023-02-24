@@ -33,14 +33,14 @@ $checklist-title-spacing: 25px;
       width: $check;
       height: $check;
       margin-right: $spacing-inline-18;
-      background: url('/svg/checkmark.svg') no-repeat center / cover;
+      background: url('./assets/svg/checkmark.svg') no-repeat center / cover;
     }
   }
 
   &--alt-checkmark {
     li {
       &::before {
-        background: url('/svg/checkmark-alt.svg') no-repeat center / cover;
+        background: url('./assets/svg/checkmark-alt.svg') no-repeat center / cover;
       }
     }
   }
@@ -79,14 +79,14 @@ $checklist-title-spacing: 25px;
   .tco-lights-out & {
     li {
       &::before {
-        background: url('/svg/checkmark-dark-theme.svg') no-repeat center / cover;
+        background: url('./assets/svg/checkmark-dark-theme.svg') no-repeat center / cover;
       }
     }
 
     &--alt-checkmark {
       li {
         &::before {
-          background: url('/svg/checkmark-alt-dark-theme.svg') no-repeat center / cover;
+          background: url('./assets/svg/checkmark-alt-dark-theme.svg') no-repeat center / cover;
         }
       }
     }

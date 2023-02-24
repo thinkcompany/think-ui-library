@@ -192,7 +192,7 @@ $container-max: 1168px;
       display: block;
       width: 97px;
       height: 32px;
-      background: transparent url('/img/think-logo-white.svg') no-repeat center / cover;
+      background: transparent url('./assets/img/think-logo-white.svg') no-repeat center / cover;
 
       @include wider-than($breakpoint-phone-landscape) {
         top: -108px;

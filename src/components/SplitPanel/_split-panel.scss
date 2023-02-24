@@ -72,12 +72,12 @@ $circle-offset: 146px;
 
   &--a {
     &::before {
-      background-image: url('/img/split-panel/strategy-light.png');
+      background-image: url('./assets/img/split-panel/strategy-light.png');
     }
 
     .tco-lights-out & {
       &::before {
-        background-image: url('/img/split-panel/strategy-dark.png');
+        background-image: url('./assets/img/split-panel/strategy-dark.png');
       }
     }
   }
@@ -85,7 +85,7 @@ $circle-offset: 146px;
   &--b {
     &::before {
       top: -144px;
-      background-image: url('/img/split-panel/creation-light.png');
+      background-image: url('./assets/img/split-panel/creation-light.png');
 
       @include wider-than($breakpoint-phone-landscape) {
         top: calc(-#{$circle-offset} - 20px);
@@ -95,7 +95,7 @@ $circle-offset: 146px;
 
     .tco-lights-out & {
       &::before {
-        background-image: url('/img/split-panel/creation-dark.png');
+        background-image: url('./assets/img/split-panel/creation-dark.png');
       }
     }
   }
@@ -104,7 +104,7 @@ $circle-offset: 146px;
     &::before {
       top: calc(-#{$circle-offset} + 10px);
       left: -128px;
-      background-image: url('/img/split-panel/growth-light.png');
+      background-image: url('./assets/img/split-panel/growth-light.png');
 
       @include wider-than($breakpoint-phone-landscape) {
         top: calc(-#{$circle-offset} + 20px);
@@ -114,7 +114,7 @@ $circle-offset: 146px;
 
     .tco-lights-out & {
       &::before {
-        background-image: url('/img/split-panel/growth-dark.png');
+        background-image: url('./assets/img/split-panel/growth-dark.png');
       }
     }
   }

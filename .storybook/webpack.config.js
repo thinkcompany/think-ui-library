@@ -1,7 +1,7 @@
 const path = require('path');
-const StylelintPlugin = require('stylelint-webpack-plugin');
+const common = require('../build/config/webpack.common');
 
-module.exports = async ({ config }) => {
+module.exports = ({ config }) => {
   config.module.rules.push({
     test: /\.scss$/,
     use: [
@@ -16,20 +16,16 @@ module.exports = async ({ config }) => {
       }
     ]
   });
+  config.plugins.push(...common.plugins);
 
-  config.plugins.push(
-    new StylelintPlugin({
-      configFile: '.stylelintrc.json',
-      context: 'src',
-      failOnError: false,
-      emitWarning: true,
-      emitErrors: false,
-      lintDirtyModulesOnly: true,
-      fix: true,
-      quiet: true,
-      syntax: 'scss'
-    })
-  );
+  // Required for Webpack v5 issue
+  config.resolve.fallback = {
+    ...config.resolve.fallback,
+    crypto: require.resolve('crypto-browserify'),
+    stream: require.resolve('stream-browserify'),
+    constants: require.resolve('constants-browserify'),
+    fs: false
+  };
 
   config.resolve.modules.push(
     path.resolve(__dirname, '../src'),
