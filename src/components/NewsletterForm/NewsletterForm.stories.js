@@ -14,7 +14,7 @@ export const NewsletterForm = () => {
         <div class="tco-newsletter-form-container tco-form--hubspot">
           ${renderForm()}
           <p class="tco-newsletter-form-disclaimer">We keep it brief, make it easy to unsubscribe, and never share your information.</p>
-          <p class="tco-newsletter-form-disclaimer">This site is protected by reCAPTCHA and the Google <a href="https://policies.google.com/privacy" target="_blank" >Privacy Policy</a> and <a href="https://policies.google.com/terms" target="_blank">Terms of Service</a> apply.</p>
+          <p class="tco-newsletter-form-disclaimer">This site is protected by reCAPTCHA and the Google <a href="https://policies.google.com/privacy" target="_blank" >Privacy Policy</a> and <a href="https://policies.google.com/terms" target="_blank">Terms of Service</a> apply.</p>
         </div>
       </div>
     </div>

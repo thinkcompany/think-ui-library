@@ -62,7 +62,7 @@ $bullet-size: 12px;
     display: block;
     width: $quote-width-mobile;
     height: auto;
-    background: url('/svg/lquo.svg') no-repeat center / cover;
+    background: url('./assets/svg/lquo.svg') no-repeat center / cover;
     aspect-ratio: 197 / 154;
 
     @include wider-than($breakpoint-tablet-portrait) {
@@ -71,7 +71,7 @@ $bullet-size: 12px;
     }
 
     .tco-lights-out & {
-      background: url('/svg/lquo-dark.svg') no-repeat center / cover;
+      background: url('./assets/svg/lquo-dark.svg') no-repeat center / cover;
     }
   }
 }

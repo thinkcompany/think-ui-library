@@ -17,31 +17,29 @@
     "build-storybook": "build-storybook",
     "tokens": "node ./build/scripts/tokens.js && npm run format",
     "icons": "node ./build/scripts/combine-svg.js",
-    "build": "webpack -p --config build/config/webpack.config.babel.js",
+    "build": "NODE_ENV=production webpack --config build/config/webpack.config.babel.js",
     "lint": "npm run lint:sass && npm run lint:js",
     "lint:sass": "stylelint '**/*.scss' --fix",
-    "lint:js": "eslint 'src/**/*.js'",
+    "lint:js": "eslint --ext .jsx,.js src/",
     "format": "prettier --config ./prettier.config.js --ignore-path ./.prettierignore \"src/**/*.{js,json,scss,css}\" --write",
     "ci": "npm install",
-    "chromatic": "chromatic --exit-zero-on-changes",
+    "chromatic": "npx chromatic --project-token=8e2767946d07 --exit-zero-on-changes",
     "prepublishOnly": "npm run build"
   },
   "keywords": [],
   "author": "",
   "license": "",
   "dependencies": {
-    "@mdx-js/react": "^1.6.22",
     "@storybook/addon-google-analytics": "^6.2.9",
     "chromatic": "^6.5.3",
-    "css-loader": "^3.6.0",
     "eslint-plugin-prettier": "^3.3.1",
     "flickity": "^3.0.0",
     "flickity-fade": "^2.0.0",
     "normalize.css": "^8.0.1",
     "sass": "1.25.0",
-    "sass-loader": "^8.0.2",
+    "sass-loader": "^11.1.1",
     "save-dev": "^0.0.1-security",
-    "style-loader": "^1.3.0"
+    "style-loader": "^2.0.0"
   },
   "devDependencies": {
     "@babel/cli": "^7.12.10",
@@ -51,31 +49,34 @@
     "@stormid/storybook-html-addon-markup": "^0.1.1",
     "@storybook/addon-a11y": "^6.5.16",
     "@storybook/addon-backgrounds": "^6.5.16",
-    "@storybook/addon-controls": "^6.5.16",
     "@storybook/addon-docs": "^6.5.16",
     "@storybook/addon-essentials": "^6.5.16",
     "@storybook/addon-postcss": "^2.0.0",
     "@storybook/addon-viewport": "^6.5.16",
+    "@storybook/builder-webpack5": "^6.5.16",
     "@storybook/html": "^6.5.16",
+    "@storybook/manager-webpack5": "^6.5.16",
     "@whitespace/storybook-addon-html": "^5.1.1",
-    "autoprefixer": "^9.8.6",
+    "autoprefixer": "^10.2.6",
     "babel-eslint": "^10.1.0",
     "babel-loader": "^8.2.2",
     "clean-webpack-plugin": "^3.0.0",
-    "copy-webpack-plugin": "^6.4.1",
-    "eslint": "^6.8.0",
-    "eslint-loader": "^3.0.4",
+    "copy-webpack-plugin": "^8.1.1",
+    "crypto-browserify": "^3.12.0",
+    "css-loader": "^5.2.6",
+    "css-minimizer-webpack-plugin": "^3.0.0",
+    "eslint": "^7.27.0",
+    "eslint-loader": "^4.0.2",
     "eslint-plugin-storybook": "^0.6.11",
     "file-loader": "^6.2.0",
     "fs-extra": "^9.0.1",
     "html-webpack-plugin": "^4.5.1",
     "husky": "^4.3.7",
-    "lint-staged": "^10.4.0",
-    "mini-css-extract-plugin": "^0.9.0",
-    "optimize-css-assets-webpack-plugin": "^5.0.4",
-    "postcss": "^7.0.35",
-    "postcss-flexbugs-fixes": "^4.2.1",
-    "postcss-loader": "^3.0.0",
+    "lint-staged": "^11.0.0",
+    "mini-css-extract-plugin": "^1.6.0",
+    "postcss": "^8.3.0",
+    "postcss-flexbugs-fixes": "^5.0.2",
+    "postcss-loader": "^5.3.0",
     "prettier": "^2.2.1",
     "react-syntax-highlighter": "^15.5.0",
     "storybook-dark-mode": "^2.1.1",
@@ -87,9 +88,9 @@
     "stylelint-scss": "^3.18.0",
     "stylelint-webpack-plugin": "^1.2.3",
     "svg-sprite": "^1.5.0",
-    "terser-webpack-plugin": "^2.3.5",
-    "webpack": "^4.45.0",
-    "webpack-cli": "^3.3.12"
+    "terser-webpack-plugin": "^5.1.2",
+    "webpack": "^5.75.0",
+    "webpack-cli": "^4.7.0"
   },
   "husky": {
     "hooks": {
@@ -97,14 +98,7 @@
     }
   },
   "lint-staged": {
-    "src/**/*.{js,scss}": [
-      "prettier --config ./prettier.config.js --ignore-path ./.prettierignore --write"
-    ],
-    "*.scss": [
-      "stylelint --syntax=scss --fix"
-    ],
-    "*.{js}": [
-      "eslint --ext .js.,jsx --fix"
-    ]
+    "*.js": "eslint --cache --fix",
+    "*.scss": "stylelint --syntax=scss --fix"
   }
 }
