@@ -1,0 +1,95 @@
+.tco-accordion-item {
+  width: 100%;
+  margin-bottom: $spacing-stack-12;
+  border-bottom: 1px solid $color-classic-gray-dark;
+  transition: border-color 0.2s linear;
+
+  .tco-lights-out & {
+    border-bottom-color: $color-classic-gray-light;
+  }
+
+  &:last-of-type {
+    border-bottom-color: transparent;
+  }
+}
+
+.tco-accordion-button {
+  display: flex;
+  flex-flow: row nowrap;
+  gap: $spacing-inline-20;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 0 0 $spacing-stack-12 0;
+  border: none;
+  border-radius: 0;
+  background: none;
+  text-align: left;
+  text-decoration: none;
+  cursor: pointer;
+  appearance: none;
+
+  @include wider-than($breakpoint-phone-landscape) {
+    padding-right: $spacing-inline-20;
+  }
+
+  .tco-accordion-title {
+    margin-bottom: 0;
+    color: $color-classic-gray-dark;
+
+    .tco-lights-out & {
+      color: $color-foreground-on-tint;
+    }
+  }
+
+  .tco-icon--plus {
+    display: block;
+  }
+
+  .tco-icon--minus {
+    display: none;
+  }
+
+  &.tco-accordion-button--active {
+    .tco-accordion-title {
+      color: $color-classic-blue;
+    }
+
+    .tco-icon--plus {
+      display: none;
+    }
+
+    .tco-icon--minus {
+      display: block;
+    }
+
+    + .tco-accordion-content {
+      display: block;
+    }
+
+    .tco-lights-out & {
+      .tco-accordion-title {
+        color: $color-dark-theme-blue;
+      }
+    }
+  }
+}
+
+.tco-icon--accordion {
+  width: 24px;
+  height: 24px;
+  fill: $color-classic-navy;
+
+  .tco-lights-out & {
+    fill: $color-classic-gray-light;
+  }
+}
+
+.tco-accordion-content {
+  display: none;
+  padding: $spacing-stack-16 $spacing-inline-20 $spacing-stack-16 0;
+
+  p {
+    margin-bottom: $spacing-stack-8;
+  }
+}
