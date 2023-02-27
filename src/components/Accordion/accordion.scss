@@ -1,6 +1,6 @@
 .tco-accordion-item {
   width: 100%;
-  margin-bottom: $spacing-stack-12;
+  margin-bottom: $spacing-stack-24;
   border-bottom: 1px solid $color-classic-gray-dark;
   transition: border-color 0.2s linear;
 
@@ -20,7 +20,7 @@
   align-items: center;
   justify-content: space-between;
   width: 100%;
-  padding: 0 0 $spacing-stack-12 0;
+  padding: 0 0 $spacing-stack-24 0;
   border: none;
   border-radius: 0;
   background: none;
@@ -74,6 +74,27 @@
         color: $color-dark-theme-blue;
       }
     }
+
+    &:hover {
+      .tco-icon--minus {
+        fill: $color-classic-blue;
+      }
+    }
+  }
+
+  &:hover {
+    .tco-icon--plus {
+      fill: $color-classic-blue;
+    }
+  }
+
+  .tco-lights-out & {
+    &:hover {
+      .tco-icon--plus,
+      .tco-icon--minus {
+        fill: $color-dark-theme-blue;
+      }
+    }
   }
 }
 
@@ -91,7 +112,7 @@
 
 .tco-accordion-content {
   display: none;
-  padding: $spacing-stack-16 $spacing-inline-20 $spacing-stack-16 0;
+  padding: 0 $spacing-inline-20 $spacing-stack-16 0;
 
   p {
     margin-bottom: $spacing-stack-8;
