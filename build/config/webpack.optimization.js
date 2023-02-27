@@ -1,24 +1,21 @@
-import OptimizeCSSAssetsPlugin from 'optimize-css-assets-webpack-plugin';
+import CssMinimizerPlugin  from 'css-minimizer-webpack-plugin';
 import TerserPlugin from 'terser-webpack-plugin';
 
+const isDev = process.env.NODE_ENV !== 'production';
+
 export default {
+  minimize: isDev ? false : true,
   minimizer: [
     new TerserPlugin({
-      cache: true,
+      extractComments: {
+        filename: 'LICENSE.txt'
+      },
       parallel: true,
-      sourceMap: true,
       terserOptions: {
         /* eslint-disable-next-line camelcase */
         keep_fnames: true
-      }
+      },
     }),
-    new OptimizeCSSAssetsPlugin({
-      cssProcessorOptions: {
-        map: {
-          inline: false,
-          annotation: true,
-        }
-      }
-    })
+    new CssMinimizerPlugin()
   ]
 };
