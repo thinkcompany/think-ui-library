@@ -74,6 +74,43 @@
   }
 }
 
+.tco-headline-left-container {
+  position: relative;
+
+  .tco-headline--arrow {
+    br {
+      display: none;
+
+      @include wider-than($breakpoint-phone-portrait) {
+        display: block;
+      }
+    }
+  }
+}
+
+.tco-headline-left-container,
+.tco-headline--arrow {
+  display: inline-block;
+}
+
+.tco-arrow--headline-left {
+  display: none;
+
+  @include wider-than($breakpoint-phone-landscape) {
+    top: -32%;
+    right: calc(100% + #{$spacing-inline-32});
+    z-index: 0;
+    display: block;
+    width: min(28vw, 240px);
+    animation-duration: 0.8s;
+    aspect-ratio: 296 / 236;
+  }
+
+  @include wider-than($breakpoint-tablet-portrait) {
+    right: calc(100% + #{$spacing-inline-60});
+  }
+}
+
 @keyframes drawline {
   0% {
     opacity: 0.33;

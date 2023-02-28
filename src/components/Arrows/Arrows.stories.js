@@ -44,9 +44,27 @@ const ConnectorLeftTemplate = () => {
 
 export const ConnectorLeft = ConnectorLeftTemplate.bind({});
 
+const HeadlineLeftTemplate = () => {
+  return `
+  <div class="tco-container-wrapper" style="margin:20vh 0;">
+    <div class="tco-container tco-container--center tco-container--mid">
+      <div class="tco-text-only tco-headline-left-container">
+        <h2 class="tco-type-display--medium tco-headline--arrow">What makes our </br>process unique</h2>
+        <svg class="tco-arrow tco-arrow--headline-left" viewbox="0 0 296 236" fill="none"><path d="M-2.147 66.281c25.829-32.906 88.724-89.107 133.68-50.66 56.195 48.057-34.322 159.375 2.63 191.849 36.951 32.474 172.16-19.921 123.283-15.824-48.878 4.096-33.423-1.684 19.279-10.116 42.162-6.745-4.998 32.05-33.847 52.29" pathLength="1" /></svg>
+      </div>
+    </div>
+    <div class="tco-text-only tco-text-only--center">
+      <a href="/" class="tco-btn tco-btn--primary tco-btn--space-xl tco-animation-trigger">Replay animation</a>
+    </div>
+  </div>
+  `;
+};
+
+export const HeadlineLeft = HeadlineLeftTemplate.bind({});
+
 export default {
   title: 'Motion / Arrows',
-  component: [FullSectionRight, ConnectorLeftTemplate],
+  component: [FullSectionRight, ConnectorLeft, HeadlineLeft],
   parameters: {
     component: FullSectionRight,
     controls: { hideNoControlsWarning: true }
