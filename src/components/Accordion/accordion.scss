@@ -1,0 +1,120 @@
+.tco-accordion-item {
+  width: 100%;
+  margin-bottom: $spacing-stack-24;
+  border-bottom: 1px solid $color-classic-gray-dark;
+  transition: border-color 0.2s linear;
+
+  .tco-lights-out & {
+    border-bottom-color: $color-classic-gray-light;
+  }
+
+  &:last-of-type {
+    border-bottom-color: transparent;
+  }
+}
+
+.tco-accordion-button {
+  display: grid;
+  grid-template-areas: 'a b';
+  gap: $spacing-inline-20;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 0 0 $spacing-stack-24 0;
+  border: none;
+  border-radius: 0;
+  background: none;
+  text-align: left;
+  text-decoration: none;
+  cursor: pointer;
+  appearance: none;
+
+  @include wider-than($breakpoint-phone-landscape) {
+    padding-right: $spacing-inline-20;
+  }
+
+  .tco-accordion-title {
+    grid-area: a;
+    margin-bottom: 0;
+    color: $color-classic-gray-dark;
+    transition: color 0.2s linear;
+
+    .tco-lights-out & {
+      color: $color-foreground-on-tint;
+    }
+  }
+
+  .tco-icon--plus {
+    opacity: 1;
+  }
+
+  .tco-icon--minus {
+    opacity: 0;
+  }
+
+  &.tco-accordion-button--active {
+    .tco-accordion-title {
+      color: $color-classic-blue;
+    }
+
+    .tco-icon--plus {
+      opacity: 0;
+    }
+
+    .tco-icon--minus {
+      opacity: 1;
+    }
+
+    + .tco-accordion-content {
+      display: block;
+    }
+
+    .tco-lights-out & {
+      .tco-accordion-title {
+        color: $color-dark-theme-blue;
+      }
+    }
+
+    &:hover {
+      .tco-icon--minus {
+        fill: $color-classic-blue;
+      }
+    }
+  }
+
+  &:hover {
+    .tco-icon--plus {
+      fill: $color-classic-blue;
+    }
+  }
+
+  .tco-lights-out & {
+    &:hover {
+      .tco-icon--plus,
+      .tco-icon--minus {
+        fill: $color-dark-theme-blue;
+      }
+    }
+  }
+}
+
+.tco-icon--accordion {
+  grid-area: b;
+  width: 24px;
+  height: 24px;
+  fill: $color-classic-navy;
+  transition: fill 0.2s linear, opacity 0.2s linear;
+
+  .tco-lights-out & {
+    fill: $color-classic-gray-light;
+  }
+}
+
+.tco-accordion-content {
+  display: none;
+  padding: 0 $spacing-inline-20 $spacing-stack-16 0;
+
+  p {
+    margin-bottom: $spacing-stack-8;
+  }
+}

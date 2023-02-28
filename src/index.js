@@ -12,6 +12,7 @@ import './components/Navigation/global-search.js';
 import './components/Quote/quote-carousel.js';
 import './components/Arrows/arrow.js';
 import './components/Tabs/tabs.js';
+import './components/Accordion/accordion.js';
 
 // Load Components
 const nav = new Nav();
