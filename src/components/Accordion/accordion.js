@@ -3,9 +3,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const toggleAccordion = () => {
     accordionButtons.forEach(button => {
-      button.addEventListener('click', event => {
-        event.stopImmediatePropagation();
-
+      button.addEventListener('click', () => {
         const toggleState = button.getAttribute('aria-expanded');
 
         if (toggleState === 'true') {
