@@ -54,7 +54,24 @@ const Template = args => {
     `;
 };
 
+const WelcomeTemplate = () => {
+  return `
+    <div class="tco-container-wrapper tco-container-wrapper--glass" style="min-height:calc(100vh - 2px);">
+      <div class="tco-container tco-storybook-welcome">
+        <div class="tco-text-only tco-text-only--left">
+          <p class="tco-type-eyebrow tco-type-eyebrow--space-xl">Welcome to the</p>
+          <h1 class="tco-text-only-heading tco-type-display--extra-large">Think Company </br>Design System</h1>
+        </div>
+        <img class="tco-sb-welcome-img" src="/img/welcome.png" role="presentation">
+        <img class="tco-sb-welcome-img tco-sb-welcome-img--dark" src="/img/welcome-dark.png" role="presentation">
+      </div>
+    </div>
+
+    `;
+};
+
 export const TextOnly = Template.bind({});
+export const Welcome = WelcomeTemplate.bind({});
 
 export default {
   title: 'Components / Text Only',
