@@ -46,7 +46,7 @@ export const ConnectorLeft = ConnectorLeftTemplate.bind({});
 
 const HeadlineLeftTemplate = () => {
   return `
-  <div class="tco-container-wrapper" style="margin:100vh 0;">
+  <div class="tco-container-wrapper">
     <div class="tco-container tco-container--center tco-container--mid">
       <div class="tco-text-only tco-headline-left-container">
         <h2 class="tco-type-display--medium tco-headline--arrow">What makes our </br>process unique</h2>
