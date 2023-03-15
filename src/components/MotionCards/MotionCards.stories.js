@@ -64,6 +64,165 @@ const sliderRowB = [
   }
 ];
 
+const fullWidthCards = [
+  {
+    name: 'Industry A',
+    imageA: {
+      url: 'img/logos/logo-andesa.svg',
+      width: 270,
+      height: 259,
+      name: 'Andesa'
+    },
+    imageB: {
+      url: 'img/logos/logo-aws.svg',
+      width: 1080,
+      height: 404.6,
+      name: 'AWS'
+    },
+    imageC: {
+      url: 'img/logos/logo-nemours.svg',
+      width: 335,
+      height: 113,
+      name: 'Nemours'
+    },
+    imageD: {
+      url: 'img/logos/logo-salesforce.svg',
+      width: 1080,
+      height: 754.2,
+      name: 'Salesforce'
+    },
+    imageE: {
+      url: 'img/logos/logo-whyy.svg',
+      width: 335,
+      height: 112,
+      name: 'WHYY'
+    },
+    imageF: {
+      url: 'img/logos/logo-whyy.svg',
+      width: 335,
+      height: 112,
+      name: 'WHYY'
+    }
+  },
+  {
+    name: 'Industry B',
+    imageA: {
+      url: 'img/logos/logo-andesa.svg',
+      width: 270,
+      height: 259,
+      name: 'Andesa'
+    },
+    imageB: {
+      url: 'img/logos/logo-aws.svg',
+      width: 1080,
+      height: 404.6,
+      name: 'AWS'
+    },
+    imageC: {
+      url: 'img/logos/logo-nemours.svg',
+      width: 335,
+      height: 113,
+      name: 'Nemours'
+    },
+    imageD: {
+      url: 'img/logos/logo-salesforce.svg',
+      width: 1080,
+      height: 754.2,
+      name: 'Salesforce'
+    },
+    imageE: {
+      url: 'img/logos/logo-whyy.svg',
+      width: 335,
+      height: 112,
+      name: 'WHYY'
+    },
+    imageF: {
+      url: 'img/logos/logo-whyy.svg',
+      width: 335,
+      height: 112,
+      name: 'WHYY'
+    }
+  },
+  {
+    name: 'Industry C',
+    imageA: {
+      url: 'img/logos/logo-andesa.svg',
+      width: 270,
+      height: 259,
+      name: 'Andesa'
+    },
+    imageB: {
+      url: 'img/logos/logo-aws.svg',
+      width: 1080,
+      height: 404.6,
+      name: 'AWS'
+    },
+    imageC: {
+      url: 'img/logos/logo-nemours.svg',
+      width: 335,
+      height: 113,
+      name: 'Nemours'
+    },
+    imageD: {
+      url: 'img/logos/logo-salesforce.svg',
+      width: 1080,
+      height: 754.2,
+      name: 'Salesforce'
+    },
+    imageE: {
+      url: 'img/logos/logo-whyy.svg',
+      width: 335,
+      height: 112,
+      name: 'WHYY'
+    },
+    imageF: {
+      url: 'img/logos/logo-whyy.svg',
+      width: 335,
+      height: 112,
+      name: 'WHYY'
+    }
+  },
+  {
+    name: 'Industry D',
+    imageA: {
+      url: 'img/logos/logo-andesa.svg',
+      width: 270,
+      height: 259,
+      name: 'Andesa'
+    },
+    imageB: {
+      url: 'img/logos/logo-aws.svg',
+      width: 1080,
+      height: 404.6,
+      name: 'AWS'
+    },
+    imageC: {
+      url: 'img/logos/logo-nemours.svg',
+      width: 335,
+      height: 113,
+      name: 'Nemours'
+    },
+    imageD: {
+      url: 'img/logos/logo-salesforce.svg',
+      width: 1080,
+      height: 754.2,
+      name: 'Salesforce'
+    },
+    imageE: {
+      url: 'img/logos/logo-whyy.svg',
+      width: 335,
+      height: 112,
+      name: 'WHYY'
+    },
+    imageF: {
+      url: 'img/logos/logo-whyy.svg',
+      width: 335,
+      height: 112,
+      name: 'WHYY'
+    }
+  }
+];
+
 const miniCsCard = input => {
   return `
     <article class="tco-mini-card" style="--cs-bg-hex:${input.bg}">
@@ -88,6 +247,37 @@ const miniSliderRow = input => {
     <figure class="tco-mini-slide">
       <img src="${input.image}" alt="This is alt text" width="174" height="116" class="tco-mini-slide-image" />
     </figure>
+  `;
+};
+
+const fullCard = input => {
+  return `
+    <div class="tco-carousel-card-full">
+      <div class="tco-animation-container">
+        <h3 class="tco-carousel-title tco-type-display--sans-48">${input.name}</h3>
+        <div class="tco-grid">
+          <div class="tco-grid-item">
+            <img src="${input.imageA.url}" class="tco-grid-item-image" width="${input.imageA.width}" height="${input.imageA.height}" alt="${input.imageA.name} logo">
+          </div>
+          <div class="tco-grid-item">
+            <img src="${input.imageB.url}" class="tco-grid-item-image" width="${input.imageB.width}" height="${input.imageB.height}" alt="${input.imageB.name} logo">
+          </div>
+          <div class="tco-grid-item">
+            <img src="${input.imageC.url}" class="tco-grid-item-image" width="${input.imageCwidth}" height="${input.imageC.height}" alt="${input.imageC.name} logo">
+          </div>
+          <div class="tco-grid-item">
+            <img src="${input.imageD.url}" class="tco-grid-item-image" width="${input.imageD.width}" height="${input.imageD.height}" alt="${input.imageD.name} logo">
+          </div>
+          <div class="tco-grid-item">
+            <img src="${input.imageE.url}" class="tco-grid-item-image" width="${input.imageE.width}" height="${input.imageE.height}" alt="${input.imageE.name} logo">
+          </div>
+          <div class="tco-grid-item">
+            <img src="${input.imageF.url}" class="tco-grid-item-image" width="${input.imageF.width}" height="${input.imageF.height}" alt="${input.imageF.name} logo">
+          </div>
+        </div>
+        <a href="/" class="tco-btn tco-btn--primary">Button</a>
+      </div>
+    </div>
   `;
 };
 
@@ -170,7 +360,29 @@ const MotionCardTemplate = args => {
   </div>`;
 };
 
+const FullWidthTemplate = args => {
+  const { fullCards } = args;
+  const fullCount = fullWidthCards.length;
+
+  return `
+  <div class="tco-container-wrapper tco-container-wrapper--bleed">
+    <div class="tco-container tco-container--full">
+        <div class="tco-carousel-full">
+          <div class="tco-carousel-full-header">
+            <h3 class="tco-type-display--medium">Hey look at our Industries</h3>
+          </div>
+          <div class="tco-motion-container">
+            <div class="tco-motion-track tco-motion-track--carousel tco-motion-track--paused" style="--card-count:${fullCount}">
+              ${fullCards.map(item => fullCard(item)).join('')}
+            </div>
+          </div>
+        </div>
+    </div>
+  </div>`;
+};
+
 export const MotionCards = MotionCardTemplate.bind({});
+export const FullWidth = FullWidthTemplate.bind({});
 
 export default {
   title: 'Components / Motion Cards',
@@ -181,7 +393,8 @@ export default {
       "Take a look at how we've helped teams like yours delight customers and employees with modern digital tools.",
     summaryB:
       'See how we launch exceptional digital experiences— even in the most challenging regulated environments.',
-    miniCards: miniContent
+    miniCards: miniContent,
+    fullCards: fullWidthCards
   },
   parameters: {
     component: MotionCards,

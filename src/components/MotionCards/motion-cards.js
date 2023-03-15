@@ -1,6 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
   const carouselCard = document.querySelector('.tco-card--motion-carousel');
   const sliderCard = document.querySelector('.tco-card--motion-slider');
+  const carouselFullWidth = document.querySelector('.tco-carousel-full');
   const prefersReduced =
     window.matchMedia(`(prefers-reduced-motion: reduce)`) === true ||
     window.matchMedia(`(prefers-reduced-motion: reduce)`).matches === true;
@@ -137,6 +138,40 @@ document.addEventListener('DOMContentLoaded', () => {
     track.style.width = widestRow;
   };
 
+  const initCarouselFull = () => {
+    const Flickity = require('flickity');
+    const carouselTrack = carouselFullWidth.querySelector('.tco-motion-track--carousel');
+    const duration = 3000;
+
+    const carousel = new Flickity(carouselTrack, {
+      dragThreshold: 24,
+      wrapAround: true,
+      prevNextButtons: false,
+      pageDots: true,
+      cellSelector: '.tco-carousel-card-full',
+      autoPlay: duration
+    });
+
+    carousel.on('pointerUp', () => {
+      // if (carousel.player.state === 'stopped' && !prefersReduced) {
+      //   carouselControl.classList.remove(pauseClass);
+      //   carousel.playPlayer();
+      // }
+    });
+
+    // carousel.on('dragEnd', () => {
+    //   if (carousel.player.state === 'stopped' && !prefersReduced) {
+    //     carouselControl.classList.remove(pauseClass);
+    //     carousel.playPlayer();
+    //   }
+    // });
+
+    // if (prefersReduced) {
+    //   carousel.stopPlayer();
+    //   carouselControl.classList.add(pauseClass);
+    // }
+  };
+
   const obsvrOptions = {
     rootMargin: '0px',
     threshold: 0.5
@@ -158,8 +193,17 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   };
 
+  const obsvrCallbackFullCarousel = entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        initCarouselFull();
+      }
+    });
+  };
+
   const obsvr = new IntersectionObserver(obsvrCallback, obsvrOptions);
   const obsvrSlider = new IntersectionObserver(obsvrCallbackSlider, obsvrOptions);
+  const obsvrCarouselFull = new IntersectionObserver(obsvrCallbackFullCarousel, obsvrOptions);
 
   if (carouselCard) {
     obsvr.observe(carouselCard);
@@ -167,5 +211,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
   if (sliderCard) {
     obsvrSlider.observe(sliderCard);
+  }
+
+  if (carouselFullWidth) {
+    obsvrCarouselFull.observe(carouselFullWidth);
   }
 });
