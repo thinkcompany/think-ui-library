@@ -95,6 +95,10 @@ $color-hover-blue-blue: #09509a;
     &--left {
       text-align: left;
     }
+
+    &--full {
+      max-width: none;
+    }
   }
 
   // Color variants
