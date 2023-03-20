@@ -24,12 +24,6 @@ const displayStyles = [
     textLength: 1
   },
   {
-    name: 'Display Sans 48 ',
-    class: 'tco-type-display--sans-48',
-    sass: '@include type-display-48',
-    textLength: 1
-  },
-  {
     name: 'Display Junior',
     class: 'tco-type-display--junior',
     sass: '@include type-display-junior',
@@ -48,6 +42,12 @@ const displayStyles = [
     textLength: 1
   },
   {
+    name: 'Display Sans 80 ',
+    class: 'tco-type-display--sans-80',
+    sass: '@include type-display-80',
+    textLength: 1
+  },
+  {
     name: 'Display Sans Large',
     class: 'tco-type-display--sans-large',
     sass: '@include type-display-sans-large',
@@ -57,6 +57,12 @@ const displayStyles = [
     name: 'Display Sans',
     class: 'tco-type-display--sans',
     sass: '@include type-display-sans',
+    textLength: 1
+  },
+  {
+    name: 'Display Sans 48 ',
+    class: 'tco-type-display--sans-48',
+    sass: '@include type-display-48',
     textLength: 1
   },
   {

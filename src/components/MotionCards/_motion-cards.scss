@@ -5,7 +5,7 @@ $mini-slide-h: 116px;
 $track-height: 240px;
 $img-container: 144px;
 $scale: 0.85;
-$scale-full: 1.1;
+$scale-full: 0.9;
 $duration: 0.35s;
 $duration-full: 0.55s;
 $timing-fn: cubic-bezier(0.45, 0.05, 0.55, 0.95);
@@ -260,55 +260,65 @@ $container-offset: 4px;
 }
 
 .tco-carousel-full {
+  position: relative;
+
   .tco-motion-container {
     width: 100%;
+  }
+
+  .tco-motion-control-container {
+    position: absolute;
+    right: 0;
+    bottom: -16px;
   }
 
   .flickity-viewport {
     overflow: visible;
   }
 
-  .flickity-page-dots .flickity-page-dot {
-    &.is-selected {
-      &::before {
-        background: $color-classic-blue;
-      }
+  .flickity-page-dots {
+    @include wider-than($breakpoint-tablet-portrait) {
+      margin-top: $spacing-stack-50;
     }
 
-    &::before {
-      border-color: $color-classic-blue;
+    .flickity-page-dot {
+      &.is-selected {
+        &::before {
+          background: $color-classic-blue;
+        }
+      }
+
+      &::before {
+        border-color: $color-classic-blue;
+      }
     }
   }
 }
 
 .tco-carousel-card-full {
   position: absolute;
-  width: min(54vw, 644px);
-  padding: 0 $spacing-inline-24;
+  padding: 0;
   text-align: center;
   perspective: 1000px;
 
-  @include wider-than($breakpoint-tablet-portrait) {
-    padding: 0 $spacing-inline-50;
-  }
-
   .tco-animation-container {
     overflow: hidden;
+    width: min((100vw - 100px), 770px);
     padding: $spacing-stack-24 $spacing-inline-24;
     border-radius: 20px;
     box-shadow: 0 0 40px rgba(0, 0, 0, 0.1);
     transition: transform $duration-full $timing-fn;
-    transform: scale3d(1, 1, 1);
+    transform: scale3d(#{$scale-full}, #{$scale-full}, #{$scale-full});
 
     @include wider-than($breakpoint-tablet-portrait) {
-      padding: $spacing-stack-50 $spacing-inline-76;
+      padding: $spacing-stack-50 $spacing-inline-60;
     }
   }
 
   &.is-selected {
     .tco-animation-container {
       opacity: 1;
-      transform: scale3d(#{$scale-full}, #{$scale-full}, #{$scale-full});
+      transform: scale3d(1, 1, 1);
     }
   }
 
@@ -335,7 +345,8 @@ $container-offset: 4px;
 
   .tco-grid-item-image {
     width: 100%;
-    height: auto;
+    height: 100%;
+    max-height: 62px;
   }
 
   .tco-btn {
