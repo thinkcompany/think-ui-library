@@ -6,11 +6,47 @@ document.addEventListener('DOMContentLoaded', () => {
     window.matchMedia(`(prefers-reduced-motion: reduce)`) === true ||
     window.matchMedia(`(prefers-reduced-motion: reduce)`).matches === true;
 
+  const playPause = (carouselSet, control) => {
+    const pauseClass = 'tco-motion-track--paused';
+
+    control.classList.remove(pauseClass);
+
+    carouselSet.on('pointerUp', () => {
+      if (carouselSet.player.state === 'stopped' && !prefersReduced) {
+        control.classList.remove(pauseClass);
+        carouselSet.playPlayer();
+      }
+    });
+
+    carouselSet.on('dragEnd', () => {
+      if (carouselSet.player.state === 'stopped' && !prefersReduced) {
+        control.classList.remove(pauseClass);
+        carouselSet.playPlayer();
+      }
+    });
+
+    control.addEventListener('click', event => {
+      event.stopImmediatePropagation();
+
+      if (carouselSet.player.state === 'playing') {
+        control.classList.add(pauseClass);
+        carouselSet.stopPlayer();
+      } else {
+        control.classList.remove(pauseClass);
+        carouselSet.playPlayer();
+      }
+    });
+
+    if (prefersReduced) {
+      carouselSet.stopPlayer();
+      control.classList.add(pauseClass);
+    }
+  };
+
   const initCarousel = () => {
     const Flickity = require('flickity');
     const carouselTrack = carouselCard.querySelector('.tco-motion-track--carousel');
     const carouselControl = carouselCard.querySelector('.tco-motion-control--carousel');
-    const pauseClass = 'tco-motion-track--paused';
     const duration = 2000;
 
     const carousel = new Flickity(carouselTrack, {
@@ -22,38 +58,7 @@ document.addEventListener('DOMContentLoaded', () => {
       autoPlay: duration
     });
 
-    carouselControl.classList.remove(pauseClass);
-
-    carousel.on('pointerUp', () => {
-      if (carousel.player.state === 'stopped' && !prefersReduced) {
-        carouselControl.classList.remove(pauseClass);
-        carousel.playPlayer();
-      }
-    });
-
-    carousel.on('dragEnd', () => {
-      if (carousel.player.state === 'stopped' && !prefersReduced) {
-        carouselControl.classList.remove(pauseClass);
-        carousel.playPlayer();
-      }
-    });
-
-    carouselControl.addEventListener('click', event => {
-      event.stopImmediatePropagation();
-
-      if (carousel.player.state === 'playing') {
-        carouselControl.classList.add(pauseClass);
-        carousel.stopPlayer();
-      } else {
-        carouselControl.classList.remove(pauseClass);
-        carousel.playPlayer();
-      }
-    });
-
-    if (prefersReduced) {
-      carousel.stopPlayer();
-      carouselControl.classList.add(pauseClass);
-    }
+    playPause(carousel, carouselControl);
   };
 
   const sliderControls = () => {
@@ -141,6 +146,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const initCarouselFull = () => {
     const Flickity = require('flickity');
     const carouselTrack = carouselFullWidth.querySelector('.tco-motion-track--carousel');
+    const carouselControl = carouselFullWidth.querySelector('.tco-motion-control--carousel');
     const duration = 3000;
 
     const carousel = new Flickity(carouselTrack, {
@@ -152,24 +158,7 @@ document.addEventListener('DOMContentLoaded', () => {
       autoPlay: duration
     });
 
-    carousel.on('pointerUp', () => {
-      // if (carousel.player.state === 'stopped' && !prefersReduced) {
-      //   carouselControl.classList.remove(pauseClass);
-      //   carousel.playPlayer();
-      // }
-    });
-
-    // carousel.on('dragEnd', () => {
-    //   if (carousel.player.state === 'stopped' && !prefersReduced) {
-    //     carouselControl.classList.remove(pauseClass);
-    //     carousel.playPlayer();
-    //   }
-    // });
-
-    // if (prefersReduced) {
-    //   carousel.stopPlayer();
-    //   carouselControl.classList.add(pauseClass);
-    // }
+    playPause(carousel, carouselControl);
   };
 
   const obsvrOptions = {

@@ -80,16 +80,16 @@ const fullWidthCards = [
       name: 'AWS'
     },
     imageC: {
-      url: 'img/logos/logo-nemours.svg',
-      width: 335,
-      height: 113,
-      name: 'Nemours'
-    },
-    imageD: {
       url: 'img/logos/logo-salesforce.svg',
       width: 1080,
       height: 754.2,
       name: 'Salesforce'
+    },
+    imageD: {
+      url: 'img/logos/logo-nemours.svg',
+      width: 335,
+      height: 113,
+      name: 'Nemours'
     },
     imageE: {
       url: 'img/logos/logo-whyy.svg',
@@ -367,16 +367,27 @@ const FullWidthTemplate = args => {
   return `
   <div class="tco-container-wrapper tco-container-wrapper--bleed">
     <div class="tco-container tco-container--full">
-        <div class="tco-carousel-full">
-          <div class="tco-carousel-full-header">
-            <h3 class="tco-type-display--medium">Hey look at our Industries</h3>
-          </div>
-          <div class="tco-motion-container">
-            <div class="tco-motion-track tco-motion-track--carousel tco-motion-track--paused" style="--card-count:${fullCount}">
-              ${fullCards.map(item => fullCard(item)).join('')}
-            </div>
+      <div class="tco-carousel-full">
+        <div class="tco-carousel-full-header">
+          <h3 class="tco-type-display--medium">Hey look at our Industries</h3>
+        </div>
+        <div class="tco-motion-container">
+          <div class="tco-motion-track tco-motion-track--carousel tco-motion-track--paused" style="--card-count:${fullCount}">
+            ${fullCards.map(item => fullCard(item)).join('')}
           </div>
         </div>
+        <div class="tco-motion-control-container tco-motion-control-container--carousel">
+          <button class="tco-motion-control tco-motion-control--carousel tco-motion-track--paused tco-btn">
+            <span class="tco-accessibly-hidden">Stop Video</span>
+            <svg class="tco-motion-control-icon tco-motion-control-icon--pause" width="20" height="20" viewBox="0 0 12 12" role="presentation">
+              <use xlink:href="/img/icons.svg#icon-pause"></use>
+            </svg>
+            <svg class="tco-motion-control-icon tco-motion-control-icon--play" width="20" height="20" viewBox="0 0 12 12" role="presentation">
+              <use xlink:href="/img/icons.svg#icon-play"></use>
+            </svg>
+          </button>
+        </div>
+      </div>
     </div>
   </div>`;
 };
