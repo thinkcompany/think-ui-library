@@ -251,28 +251,51 @@ const miniSliderRow = input => {
 };
 
 const fullCard = input => {
+  const { imageA, imageB, imageC, imageD, imageE, imageF } = input;
+
   return `
     <div class="tco-carousel-card-full">
       <div class="tco-animation-container">
         <h3 class="tco-carousel-title tco-type-display--sans-48">${input.name}</h3>
-        <div class="tco-grid">
+        <div class="tco-grid"  style="--logo-count:">
+          ${
+            imageA
+              ? `
+            <div class="tco-grid-item">
+              <img src="${imageA.url}" class="tco-grid-item-image" width="${imageA.width}" height="${imageA.height}" alt="${imageA.name} logo">
+            </div>`
+              : ''
+          }
+          ${
+            imageB
+              ? `
+            <div class="tco-grid-item">
+              <img src="${imageB.url}" class="tco-grid-item-image" width="${imageB.width}" height="${imageB.height}" alt="${imageB.name} logo">
+            </div>`
+              : ''
+          }
+          ${
+            imageC
+              ? `
+            <div class="tco-grid-item">
+              <img src="${imageC.url}" class="tco-grid-item-image" width="${imageC.width}" height="${imageC.height}" alt="${imageC.name} logo">
+            </div>`
+              : ''
+          }
           <div class="tco-grid-item">
-            <img src="${input.imageA.url}" class="tco-grid-item-image" width="${input.imageA.width}" height="${input.imageA.height}" alt="${input.imageA.name} logo">
+            <img src="${imageD.url}" class="tco-grid-item-image" width="${imageD.width}" height="${
+    imageD.height
+  }" alt="${imageD.name} logo">
           </div>
           <div class="tco-grid-item">
-            <img src="${input.imageB.url}" class="tco-grid-item-image" width="${input.imageB.width}" height="${input.imageB.height}" alt="${input.imageB.name} logo">
+            <img src="${imageE.url}" class="tco-grid-item-image" width="${imageE.width}" height="${
+    imageE.height
+  }" alt="${imageE.name} logo">
           </div>
           <div class="tco-grid-item">
-            <img src="${input.imageC.url}" class="tco-grid-item-image" width="${input.imageCwidth}" height="${input.imageC.height}" alt="${input.imageC.name} logo">
-          </div>
-          <div class="tco-grid-item">
-            <img src="${input.imageD.url}" class="tco-grid-item-image" width="${input.imageD.width}" height="${input.imageD.height}" alt="${input.imageD.name} logo">
-          </div>
-          <div class="tco-grid-item">
-            <img src="${input.imageE.url}" class="tco-grid-item-image" width="${input.imageE.width}" height="${input.imageE.height}" alt="${input.imageE.name} logo">
-          </div>
-          <div class="tco-grid-item">
-            <img src="${input.imageF.url}" class="tco-grid-item-image" width="${input.imageF.width}" height="${input.imageF.height}" alt="${input.imageF.name} logo">
+            <img src="${imageF.url}" class="tco-grid-item-image" width="${imageF.width}" height="${
+    imageF.height
+  }" alt="${imageF.name} logo">
           </div>
         </div>
         <a href="/" class="tco-btn tco-btn--primary">Button</a>

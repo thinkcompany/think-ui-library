@@ -306,6 +306,7 @@ $container-offset: 4px;
     width: min((100vw - 100px), 770px);
     padding: $spacing-stack-24 $spacing-inline-24;
     border-radius: 20px;
+    background-color: $color-foreground-on-tint;
     box-shadow: 0 0 40px rgba(0, 0, 0, 0.1);
     transition: transform $duration-full $timing-fn;
     transform: scale3d(#{$scale-full}, #{$scale-full}, #{$scale-full});
