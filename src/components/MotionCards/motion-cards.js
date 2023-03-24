@@ -155,7 +155,8 @@ document.addEventListener('DOMContentLoaded', () => {
       prevNextButtons: false,
       pageDots: true,
       cellSelector: '.tco-carousel-card-full',
-      autoPlay: duration
+      autoPlay: duration,
+      adaptiveHeight: false
     });
 
     playPause(carousel, carouselControl);

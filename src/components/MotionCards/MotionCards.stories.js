@@ -67,24 +67,24 @@ const sliderRowB = [
 const fullWidthCards = [
   {
     name: 'Industry A',
-    imageA: {
-      url: 'img/logos/logo-andesa.svg',
-      width: 270,
-      height: 259,
-      name: 'Andesa'
-    },
-    imageB: {
-      url: 'img/logos/logo-aws.svg',
-      width: 1080,
-      height: 404.6,
-      name: 'AWS'
-    },
-    imageC: {
-      url: 'img/logos/logo-salesforce.svg',
-      width: 1080,
-      height: 754.2,
-      name: 'Salesforce'
-    },
+    // imageA: {
+    //   url: 'img/logos/logo-andesa.svg',
+    //   width: 270,
+    //   height: 259,
+    //   name: 'Andesa'
+    // },
+    // imageB: {
+    //   url: 'img/logos/logo-aws.svg',
+    //   width: 1080,
+    //   height: 404.6,
+    //   name: 'AWS'
+    // },
+    // imageC: {
+    //   url: 'img/logos/logo-salesforce.svg',
+    //   width: 1080,
+    //   height: 754.2,
+    //   name: 'Salesforce'
+    // },
     imageD: {
       url: 'img/logos/logo-nemours.svg',
       width: 335,

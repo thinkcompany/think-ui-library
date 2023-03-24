@@ -302,14 +302,20 @@ $container-offset: 4px;
   perspective: 1000px;
 
   .tco-animation-container {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    justify-content: center;
     overflow: hidden;
     width: min((100vw - 100px), 770px);
+    height: 100%;
     padding: $spacing-stack-24 $spacing-inline-24;
     border-radius: 20px;
     background-color: $color-foreground-on-tint;
     box-shadow: 0 0 40px rgba(0, 0, 0, 0.1);
     transition: transform $duration-full $timing-fn;
     transform: scale3d(#{$scale-full}, #{$scale-full}, #{$scale-full});
+    transform-origin: center;
 
     @include wider-than($breakpoint-tablet-portrait) {
       padding: $spacing-stack-50 $spacing-inline-60;
