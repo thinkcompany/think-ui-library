@@ -1,32 +1,102 @@
-$container-max: 220px;
+/* stylelint-disable selector-max-specificity */
+$image-max: 156px;
 
 .tco-image-grid {
   display: flex;
   flex-flow: row wrap;
+  gap: $spacing-stack-50 $spacing-inline-32;
   align-items: center;
   justify-content: center;
   padding: $spacing-stack-50 0 $spacing-stack-40;
-  padding-top: $spacing-stack-50;
 
   &-container {
-    width: 50%;
-    max-width: $container-max;
-    margin-bottom: $spacing-stack-32;
-    padding: 0 $spacing-inline-32;
+    display: flex;
+    width: calc(50% - #{$spacing-inline-16});
 
     @include wider-than($breakpoint-phone-landscape) {
-      width: 33.3%;
-      margin-bottom: $spacing-stack-50;
+      width: calc(33.3% - #{$spacing-inline-24});
     }
 
     @include wider-than($breakpoint-tablet-portrait) {
-      width: 20%;
+      width: calc(25% - #{$spacing-inline-32});
+    }
+
+    @include wider-than($breakpoint-laptop) {
+      width: calc(20% - #{$spacing-inline-32});
+    }
+  }
+
+  &.tco-image-grid--4 {
+    .tco-image-grid-container {
+      @include wider-than($breakpoint-phone-landscape) {
+        width: calc(50% - #{$spacing-inline-16});
+      }
+
+      @include wider-than($breakpoint-tablet-portrait) {
+        width: calc(25% - #{$spacing-inline-24});
+      }
+    }
+  }
+
+  &.tco-image-grid--5,
+  &.tco-image-grid--6 {
+    .tco-image-grid-container {
+      @include wider-than($breakpoint-tablet-portrait) {
+        width: calc(33.3% - #{$spacing-inline-24});
+      }
+    }
+  }
+
+  &.tco-image-grid--5 {
+    .tco-image-grid-container {
+      @include wider-than($breakpoint-laptop) {
+        width: calc(20% - #{$spacing-inline-32});
+      }
+    }
+  }
+
+  &.tco-image-grid--7,
+  &.tco-image-grid--8 {
+    .tco-image-grid-container {
+      @include wider-than($breakpoint-laptop) {
+        width: calc(25% - #{$spacing-inline-24});
+      }
+    }
+  }
+
+  &.tco-image-grid--9 {
+    .tco-image-grid-container {
+      @include wider-than($breakpoint-tablet-portrait) {
+        width: calc(33.3% - #{$spacing-inline-24});
+      }
+
+      @include wider-than($breakpoint-tablet-portrait) {
+        width: calc(25% - #{$spacing-inline-32});
+      }
+
+      &:nth-last-child(-n+5) {
+        @include wider-than($breakpoint-tablet-portrait) {
+          width: calc(33.3% - #{$spacing-inline-32});
+        }
+      }
+    }
+  }
+
+  &.tco-image-grid--11,
+  &.tco-image-grid--12,
+  &.tco-image-grid--16 {
+    .tco-image-grid-container {
+      @include wider-than($breakpoint-laptop) {
+        width: calc(25% - #{$spacing-inline-32});
+      }
     }
   }
 
   img {
     width: 100%;
+    max-width: $image-max;
     height: auto;
+    margin: auto;
   }
 }
 

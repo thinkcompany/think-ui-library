@@ -56,6 +56,61 @@ const LogoTemplate = args => {
         logo: 'vanguard',
         width: 250,
         height: 54
+      },
+      {
+        logo: 'comcast',
+        width: 250,
+        height: 88
+      },
+      {
+        logo: 'amerisourcebergen',
+        width: 250,
+        height: 26
+      },
+      {
+        logo: 'johnsonandjohnson',
+        width: 250,
+        height: 46
+      },
+      {
+        logo: 'templeuniversity',
+        width: 250,
+        height: 55
+      },
+      {
+        logo: 'unitedway',
+        width: 250,
+        height: 106
+      },
+      {
+        logo: 'vanguard',
+        width: 250,
+        height: 54
+      },
+      {
+        logo: 'amerisourcebergen',
+        width: 250,
+        height: 26
+      },
+      {
+        logo: 'johnsonandjohnson',
+        width: 250,
+        height: 46
+      },
+      {
+        logo: 'templeuniversity',
+        width: 250,
+        height: 55
+      },
+      {
+        logo: 'unitedway',
+        width: 250,
+        height: 106
+      },
+      {
+        logo: 'vanguard',
+        width: 250,
+        height: 54
       }
     ];
 
@@ -98,7 +153,7 @@ const LogoTemplate = args => {
       `
         : ''
     }
-      <div class="tco-image-grid" style="--image-count: ${imageCount}">
+      <div class="tco-image-grid tco-image-grid--${imageCount}" >
         ${imageItems()}
       </div>
     </div>
