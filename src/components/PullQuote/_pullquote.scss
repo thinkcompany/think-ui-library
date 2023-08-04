@@ -83,3 +83,44 @@
     color: $color-dark-theme-blue;
   }
 }
+
+.tco-pull-quote-link {
+  letter-spacing: initial;
+
+  .tco-pull-quote--alt & {
+    a {
+      border-bottom-color: $color-classic-navy;
+      color: $color-classic-navy;
+
+      &:hover {
+        border-bottom-color: transparent;
+      }
+    }
+  }
+}
+
+.tco-pull-quote--alt {
+  .tco-lights-out & {
+    a {
+      border-color: $color-foreground-on-tint;
+      color: $color-foreground-on-tint;
+
+      &:hover {
+        border-bottom-color: transparent;
+      }
+    }
+  }
+}
+
+.tco-pull-quote--default {
+  .tco-lights-out & {
+    a {
+      border-color: $color-dark-theme-blue;
+      color: $color-dark-theme-blue;
+
+      &:hover {
+        border-bottom-color: transparent;
+      }
+    }
+  }
+}

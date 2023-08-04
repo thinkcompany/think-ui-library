@@ -14,7 +14,9 @@ const Template = args => {
       <blockquote class="tco-pull-quote tco-pull-quote--${side} tco-pull-quote--${style}">
         <p class="tco-pull-quote-text">${quote}</p>
         <div class="tco-pull-quote-footer">
-          <cite class="tco-pull-quote-name">${name}</cite>
+          <cite class="tco-pull-quote-name">${name},<span class="tco-pull-quote-link tco-type-body--sans-small
+
+"> <a href="/" class="tco-link--dark-theme">An Optional Link</a></span></cite>
         </div>
       </blockquote>
 
