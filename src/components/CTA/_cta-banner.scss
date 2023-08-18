@@ -1,3 +1,5 @@
+@use 'sass:math';
+
 .tco-text-only {
   &.tco-text-only-cta {
     .tco-text-only-heading {
@@ -21,8 +23,8 @@
   &--left {
     top: -4px;
     left: -72px;
-    width: (107 / 16) * 1em;
-    height: (84 / 16) * 1em;
+    width: math.div(107, 16) * 1em;
+    height: math.div(84, 16) * 1em;
 
     @include wider-than($breakpoint-laptop) {
       top: 36px;
@@ -37,8 +39,8 @@
   &--right {
     right: -96px;
     bottom: 0;
-    width: (157 / 16) * 1em;
-    height: (129 / 16) * 1em;
+    width: math.div(157, 16) * 1em;
+    height: math.div(129, 16) * 1em;
 
     @include wider-than($breakpoint-laptop) {
       right: -130px;

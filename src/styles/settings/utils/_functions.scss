@@ -1,3 +1,5 @@
+@use 'sass:math';
+
 @function strip-unit($number) {
   @if type-of($number) == 'number' and not unitless($number) {
     @return $number / ($number * 0 + 1);
@@ -7,9 +9,9 @@
 }
 
 @function em($target) {
-  @return (strip-unit($target) / 16) * 1em;
+  @return math.div(strip-unit($target), 16) * 1em;
 }
 
 @function rem($target) {
-  @return (strip-unit($target) / 16) * 1rem;
+  @return math.div(strip-unit($target), 16) * 1rem;
 }
