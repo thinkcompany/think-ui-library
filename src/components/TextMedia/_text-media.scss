@@ -312,12 +312,12 @@ $bubble-max: 600px;
       &-media {
         grid-area: media;
         max-width: 140px;
-        padding: 0 $spacing-stack-50 / 4;
+        padding: 0 calc(#{$spacing-stack-50} / 4);
 
         @include wider-than($breakpoint-tablet-portrait) {
           width: 100%;
           max-width: none;
-          padding: 0 $spacing-stack-50 / 2;
+          padding: 0 calc(#{$spacing-stack-50} / 2);
         }
       }
     }

@@ -1,3 +1,4 @@
+@use 'sass:math';
 // ========================================================
 // = CONTACT FORM
 // ========================================================
@@ -72,7 +73,7 @@ $max-width-fine-print: 380px;
   &--full {
     input,
     textarea {
-      padding-top: $spacing-stack-20 / 2;
+      padding-top: calc(#{$spacing-stack-20} / 2);
     }
 
     .gform_footer {

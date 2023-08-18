@@ -1,3 +1,4 @@
+@use 'sass:math';
 /* stylelint-disable selector-max-pseudo-class, max-line-length, selector-max-specificity,  max-nesting-depth, selector-max-combinators, selector-max-compound-selectors, selector-max-class */
 // ========================================================
 // = BASE CARD
@@ -186,11 +187,7 @@ $device-offset-v: 58px;
   }
 
   .tco-card-image-container {
-    @include aspect-ratio-box(
-      $ratio: (
-        4 / 5
-      ) * 100%
-    );
+    @include aspect-ratio-box($ratio: 80%);
     margin: 0 auto;
 
     .tco-lights-out & {
@@ -468,7 +465,7 @@ $device-offset-v: 58px;
     &-heading {
       display: inline;
       color: $color-foreground-on-tint;
-      line-height: (32 / 28);
+      line-height: math.div(32, 28);
     }
 
     &-description {
@@ -502,7 +499,7 @@ $device-offset-v: 58px;
   }
 
   .tco-type-body--large {
-    line-height: (36 / 28);
+    line-height: math.div(36, 28);
   }
 
   .tco-card-image-container {

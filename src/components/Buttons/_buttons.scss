@@ -1,8 +1,9 @@
+@use 'sass:math';
 /* stylelint-disable selector-max-pseudo-class, max-line-length, selector-max-specificity,  max-nesting-depth, selector-max-combinators, selector-max-compound-selectors, no-duplicate-selectors */
 $color-disabled: #c8d9ea;
 $color-hover: #08519a;
-$big-arrow-width: (31 / 18) * 1em;
-$big-arrow-height: (29 / 18) * 1em;
+$big-arrow-width: math.div(31, 18) * 1em;
+$big-arrow-height: math.div(29, 18) * 1em;
 
 .tco-btn,
 %tco-btn {

@@ -1,3 +1,4 @@
+@use "sass:math";
 /* ----------------------------------------------*\
      Compositional mixins
 \*---------------------------------------------- */
@@ -49,7 +50,7 @@
 }
 
 @function strip-unit($value) {
-  @return $value / ($value * 0 + 1);
+  @return math.div($value, $value * 0 + 1);
 }
 
 /* ----------------------------------------------*\
@@ -426,8 +427,8 @@
   }
 }
 
-$arrow-width: (16 / 18) * 1em;
-$arrow-height: (14 / 18) * 1em;
+$arrow-width: math.div(16, 18) * 1em;
+$arrow-height: math.div(14, 18) * 1em;
 $arrow-offset: 5px;
 $arrow-translate: 10px;
 

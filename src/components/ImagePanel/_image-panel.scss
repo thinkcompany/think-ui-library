@@ -1,3 +1,5 @@
+@use 'sass:math';
+
 $panel-mobile-max: 794;
 $panel-mobile-max-h: 1026;
 $panel-mobile-max-px: $panel-mobile-max + px;
@@ -18,10 +20,10 @@ $mobile-max-width: calc(var(--width) * 0.77);
   margin: 0 auto;
   transform: translateX(calc(((#{$panel-width-mobile} - 100) / 2) * -1vw));
 
-  @supports (aspect-ratio: $panel-mobile-max / $panel-mobile-max-h) {
+  @supports (aspect-ratio: math.div($panel-mobile-max, $panel-mobile-max-h)) {
     width: min(#{$panel-width-mobile} * 1vw, #{$panel-mobile-max-px});
     height: auto;
-    aspect-ratio: $panel-mobile-max / $panel-mobile-max-h;
+    aspect-ratio: math.div($panel-mobile-max, $panel-mobile-max-h);
   }
 
   @include wider-than($bp-a) {
@@ -37,10 +39,10 @@ $mobile-max-width: calc(var(--width) * 0.77);
     height: 832px;
     transform: translateX(calc(((#{$panel-width} - 100) / 2) * -1vw));
 
-    @supports (aspect-ratio: $panel-max / $panel-max-h) {
+    @supports (aspect-ratio: math.div($panel-max, $panel-max-h)) {
       width: min(#{$panel-width} * 1vw, #{$panel-max-px});
       height: auto;
-      aspect-ratio: $panel-max / $panel-max-h;
+      aspect-ratio: math.div($panel-max, $panel-max-h);
     }
   }
 
