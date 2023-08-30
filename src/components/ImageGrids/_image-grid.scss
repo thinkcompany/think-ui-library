@@ -74,7 +74,7 @@ $image-max: 156px;
         width: calc(25% - #{$spacing-inline-32});
       }
 
-      &:nth-last-child(-n+5) {
+      &:nth-last-child(-n + 5) {
         @include wider-than($breakpoint-tablet-portrait) {
           width: calc(33.3% - #{$spacing-inline-32});
         }

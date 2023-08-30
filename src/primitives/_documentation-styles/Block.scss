@@ -1,3 +1,4 @@
+@use 'sass:math';
 /* stylelint-disable property-disallowed-list */
 
 .documentation-block {
@@ -16,7 +17,7 @@
     justify-self: flex-end;
     width: 100%;
     margin-top: $documentation-padding;
-    padding: $documentation-padding / 2;
+    padding: math.div($documentation-padding, 2);
     border-top: 1px solid $documentation-gray-2;
     background: rgba($documentation-gray, 0.8);
     font-size: 12px;
@@ -208,7 +209,7 @@
     overflow: hidden;
 
     > * {
-      border-width: 0!important;
+      border-width: 0 !important;
     }
   }
 }
