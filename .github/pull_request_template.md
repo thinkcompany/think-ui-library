@@ -1,5 +1,6 @@
 ### Feature Status
-- [ ]  Complete, ready for QA
+- [ ]  Complete, ready to be merged
+- [ ]  Blocked
 - [ ]  In Progress
 
 ### Description of Changes
@@ -32,8 +33,3 @@ If no dependencies were added or changed, this heading can be removed
 - [ ] I have removed any commented out code.
 - [ ] I have run `npm run format` and `npm run lint` and both run without errors or warnings.
 - [ ] `npm run build` runs without failure.
-
-### GIF Description
-Share a fun gif that describes this PR & how it makes you feel.
-
-![Welcome](https://media.giphy.com/media/OkJat1YNdoD3W/giphy.gif)
