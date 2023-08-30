@@ -53,7 +53,8 @@ $blurb-max: 300px;
       bottom: 62%;
       display: block;
       width: min(30vw, 280px);
-      background: transparent url('./assets/img/newsletter/squiggly-arrow.png') no-repeat center / cover;
+      background: transparent url('./assets/img/newsletter/squiggly-arrow.png') no-repeat center /
+        cover;
       transform: rotateY(180deg);
       aspect-ratio: 466 / 180;
 

@@ -1,12 +1,14 @@
+@use 'sass:math';
+
 /* stylelint-disable declaration-block-no-duplicate-properties */
 .documentation-grid {
   display: flex;
   flex-wrap: wrap;
-  margin-left: -($documentation-padding / 2);
+  margin-left: - math.div($documentation-padding, 2);
 
   > .documentation-grid--item {
     flex: 0 0 240px;
-    margin: 0 0 ($documentation-padding / 2) ($documentation-padding / 2);
+    margin: 0 0 math.div($documentation-padding, 2) math.div($documentation-padding, 2);
   }
 
   &--list {
@@ -34,7 +36,7 @@
     display: grid;
     grid-template-rows: 1fr;
     grid-template-columns: 1fr 2fr;
-    gap: $documentation-padding / 2;
+    gap: math.div($documentation-padding, 2);
     width: 100%;
   }
 }
