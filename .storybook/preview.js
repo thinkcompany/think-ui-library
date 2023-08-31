@@ -1,6 +1,6 @@
 import { addParameters } from '@storybook/html';
 import { INITIAL_VIEWPORTS } from '@storybook/addon-viewport';
-import { withMarkup } from '@stormid/storybook-html-addon-markup';
+//import { withMarkup } from '@stormid/storybook-html-addon-markup';
 import { themes } from '@storybook/theming';
 
 // Styles just for Storybook
@@ -63,4 +63,4 @@ addParameters({
   }
 });
 
-export const decorators = [withMarkup];
+//export const decorators = [withMarkup];
