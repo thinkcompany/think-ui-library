@@ -1,6 +1,5 @@
 import { addParameters } from '@storybook/html';
 import { INITIAL_VIEWPORTS } from '@storybook/addon-viewport';
-//import { withMarkup } from '@stormid/storybook-html-addon-markup';
 import { themes } from '@storybook/theming';
 
 // Styles just for Storybook
@@ -55,7 +54,10 @@ addParameters({
     darkClass: 'tco-lights-out',
     lightClass: 'tco-lights-on',
     stylePreview: true
+  },
+  html: {
+    prettier: {
+      printWidth: 120
+    }
   }
 });
-
-//export const decorators = [withMarkup];

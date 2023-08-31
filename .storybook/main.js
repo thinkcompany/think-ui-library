@@ -1,12 +1,7 @@
 module.exports = {
   addons: [
     '@storybook/addon-a11y',
-    {
-      name: '@storybook/addon-essentials',
-      options: {
-        actions: false
-      }
-    },
+    '@storybook/addon-essentials',
     '@storybook/addon-postcss',
     '@whitespace/storybook-addon-html',
     'storybook-dark-mode',
