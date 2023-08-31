@@ -55,11 +55,6 @@ addParameters({
     darkClass: 'tco-lights-out',
     lightClass: 'tco-lights-on',
     stylePreview: true
-  },
-  html: {
-    prettier: {
-      printWidth: 120
-    }
   }
 });
 
