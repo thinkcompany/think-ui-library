@@ -86,6 +86,48 @@ $widget-width: 132px;
       }
     }
 
+    .tco-footer-badges {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      order: 1;
+      width: 100%;
+      margin: 0 auto $spacing-stack-40;
+      padding-bottom: $spacing-stack-32;
+      border-bottom: 1px solid lighten($color-classic-navy, 6);
+
+      @include wider-than($breakpoint-tablet-portrait) {
+        width: initial;
+        margin: initial;
+        margin-right: $spacing-stack-32;
+        padding-bottom: unset;
+        border-right: 1px solid lighten($color-classic-navy, 6);
+        border-bottom: none;
+      }
+    }
+
+    .tco-top-workplace-footer-logo {
+      display: flex;
+      justify-content: center;
+      width: 132px;
+      border-bottom: none;
+
+      @include wider-than($breakpoint-tablet-portrait) {
+        position: relative;
+        order: 1;
+        width: unset;
+        height: 40px;
+        margin-right: $spacing-inline-32;
+        padding-right: 18px;
+
+        img {
+          position: absolute;
+          top: -2px;
+          max-width: 38px;
+        }
+      }
+    }
+
     .tco-social-icons {
       order: 0;
 
@@ -222,10 +264,6 @@ $widget-width: 132px;
 
 .tco-clutch-widget {
   order: 1;
-  width: 100%;
-  margin: 0 auto $spacing-stack-40;
-  padding-bottom: $spacing-stack-40 - 4px;
-  border-bottom: 1px solid lighten($color-classic-navy, 6);
 
   @include wider-than($breakpoint-tablet-portrait) {
     position: relative;
@@ -257,7 +295,7 @@ $widget-width: 132px;
   }
 
   @include wider-than($breakpoint-tablet-portrait) {
-    margin-right: $spacing-inline-32;
+    margin-right: 51px;
 
     &::before {
       left: 0;
