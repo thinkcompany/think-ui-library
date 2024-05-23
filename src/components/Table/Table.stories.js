@@ -12,6 +12,7 @@ const Template = args => {
 
   const tableCols = () => {
     let col = `<th scope="col">Col header</th>`;
+
     let output = '';
 
     if (!headers) {
@@ -27,6 +28,7 @@ const Template = args => {
 
   const tableRows = () => {
     let cellOutput = '';
+
     let output = '';
 
     for (let i = 0; i < cols; i++) {

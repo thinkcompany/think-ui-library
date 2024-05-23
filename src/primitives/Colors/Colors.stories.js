@@ -186,31 +186,31 @@ const genColorType = list => {
   return response;
 };
 
-export const all = () => genAllColors(allColors);
-export const tints = () => genColorType(tintColors);
-export const foregrounds = () => genColorType(foregroundColors);
-export const backgrounds = () => genColorType(backgroundColors);
-export const thinkClassic = () => genColorType(thinkColors);
-export const caseStudies = () => genColorType(caseStudyColors);
+export const All = () => genAllColors(allColors);
+export const Tints = () => genColorType(tintColors);
+export const Foregrounds = () => genColorType(foregroundColors);
+export const Backgrounds = () => genColorType(backgroundColors);
+export const ThinkClassic = () => genColorType(thinkColors);
+export const CaseStudies = () => genColorType(caseStudyColors);
 
-all.parameters = {
+All.parameters = {
   controls: { hideNoControlsWarning: true }
 };
-tints.parameters = {
+Tints.parameters = {
   controls: { hideNoControlsWarning: true },
   // disables Chromatic visual testing for the component
   chromatic: { disable: true }
 };
-foregrounds.parameters = {
+Foregrounds.parameters = {
   controls: { hideNoControlsWarning: true }
 };
-backgrounds.parameters = {
+Backgrounds.parameters = {
   controls: { hideNoControlsWarning: true }
 };
-thinkClassic.parameters = {
+ThinkClassic.parameters = {
   controls: { hideNoControlsWarning: true }
 };
-caseStudies.parameters = {
+CaseStudies.parameters = {
   controls: { hideNoControlsWarning: true },
   // disables Chromatic visual testing for the component
   chromatic: { disable: true }
