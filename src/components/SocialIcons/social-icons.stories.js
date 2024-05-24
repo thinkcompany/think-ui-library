@@ -55,7 +55,7 @@ export const SocialIconsSmall = () => {
       include: true
     },
     {
-      name: 'twitter',
+      name: 'x',
       include: true
     },
     {
