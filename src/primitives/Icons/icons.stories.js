@@ -96,8 +96,8 @@ const config = [
     id: 'icon-trash'
   },
   {
-    name: 'Twitter',
-    id: 'icon-twitter'
+    name: 'X',
+    id: 'icon-x'
   },
   {
     name: 'Warning',
