@@ -4,11 +4,11 @@
 .documentation-grid {
   display: flex;
   flex-wrap: wrap;
-  margin-left: - math.div($documentation-padding, 2);
+  margin-left: calc(#{$documentation-padding} / 2);
 
   > .documentation-grid--item {
     flex: 0 0 240px;
-    margin: 0 0 math.div($documentation-padding, 2) math.div($documentation-padding, 2);
+    margin: 0 0 calc(#{$documentation-padding} / 2) calc(#{$documentation-padding} / 2);
   }
 
   &--list {
@@ -36,7 +36,7 @@
     display: grid;
     grid-template-rows: 1fr;
     grid-template-columns: 1fr 2fr;
-    gap: math.div($documentation-padding, 2);
+    gap: calc(#{$documentation-padding} / 2);
     width: 100%;
   }
 }
