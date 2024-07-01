@@ -1,7 +1,7 @@
 $icon-size-mobile: 32px;
 $icon-size: 48px;
 $icon-size-small: 19px;
-$icon-size-twitter: 22px;
+$icon-size-x: 22px;
 $icon-size-yt-w: 21px;
 $icon-size-yt-h: 15px;
 $icon-list-max-width: 278px;
@@ -58,8 +58,8 @@ $icon-list-max-width: 278px;
       height: $icon-size-small;
       fill: $color-foreground-on-tint;
 
-      &--twitter {
-        width: $icon-size-twitter;
+      &--x {
+        width: $icon-size-x;
       }
 
       &--youtube {
