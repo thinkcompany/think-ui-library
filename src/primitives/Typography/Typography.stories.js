@@ -172,22 +172,22 @@ const typeItem = (input, demoLength, demo = true) => `
 </div>
 `;
 
-export const all = () =>
+export const All = () =>
   wrapGrid([...displayStyles, ...bodyStyles].map(item => typeItem(item, 8, false)).join(''));
 
-export const display = () => wrapGrid(displayStyles.map(item => typeItem(item, 8)).join(''));
+export const Display = () => wrapGrid(displayStyles.map(item => typeItem(item, 8)).join(''));
 
-export const body = () => wrapGrid(bodyStyles.map(item => typeItem(item, 8)).join(''));
+export const Body = () => wrapGrid(bodyStyles.map(item => typeItem(item, 8)).join(''));
 
-all.parameters = {
+All.parameters = {
   controls: { hideNoControlsWarning: true }
 };
 
-display.parameters = {
+Display.parameters = {
   controls: { hideNoControlsWarning: true }
 };
 
-body.parameters = {
+Body.parameters = {
   controls: { hideNoControlsWarning: true }
 };
 

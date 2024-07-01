@@ -62,11 +62,16 @@ export const Footer = () => {
                     <use xlink:href="/img/icons.svg#icon-think-logo"></use>
                   </svg>
                 </a>
-                <div class="tco-clutch-widget">
-                  <div class="tco-clutch-widget-container">
-                    <script type="text/javascript" src="https://widget.clutch.co/static/js/widget.js" async></script>
-                    <div class="clutch-widget" data-url="https://widget.clutch.co" data-widget-type="1" data-height="40" data-theme="white" data-clutchcompany-id="35649"></div>
+                <div class="tco-footer-badges">
+                  <div class="tco-clutch-widget">
+                    <div class="tco-clutch-widget-container">
+                      <script type="text/javascript" src="https://widget.clutch.co/static/js/widget.js" async></script>
+                      <div class="clutch-widget" data-url="https://widget.clutch.co" data-widget-type="1" data-height="40" data-theme="white" data-clutchcompany-id="35649"></div>
+                    </div>
                   </div>
+                  <a href="https://www.thinkcompany.com/news/usa-today-names-think-company-a-top-workplace/" class="tco-top-workplace-footer-logo">
+                    <img src="/img/top-workplaces-2024.png" alt="Top Workplaces 2024 USA Today" width="38" height="50" />
+                  </a>
                 </div>
                 ${icons()}
 
