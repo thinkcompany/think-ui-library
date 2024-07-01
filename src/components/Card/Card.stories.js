@@ -150,8 +150,11 @@ const CalloutCardTemplate = args => {
   const { heading, description, treatment, version } = args;
 
   let container = '<a href="#" class="tco-card-link tco-link--dark-theme">';
+
   let containerClose = '</a>';
+
   let link = 'p';
+
   let linkClose = '</p>';
 
   if (version === 'grid') {
@@ -256,8 +259,11 @@ const JobCardTemplate = args => {
   const { heading, location, treatment, model } = args;
 
   let container = '<a href="#" class="tco-card-link tco-link--dark-theme">';
+
   let containerClose = '</a>';
+
   let link = '<span';
+
   let linkClose = '</span>';
 
   if (model === 'deluxe-preview') {

@@ -79,7 +79,7 @@ export const Header = () => {
             <p class="tco-type-eyebrow">Social</p>
             <ul class="tco-site-nav-menu tco-site-nav-menu--secondary">
               <li class="tco-site-nav-menu-item"><a class="tco-site-nav-link tco-link--dark-theme tco-link--dark-theme" href="#">Linkedin</a>
-              <li class="tco-site-nav-menu-item"><a class="tco-site-nav-link tco-link--dark-theme" href="#">Twitter</a>
+              <li class="tco-site-nav-menu-item"><a class="tco-site-nav-link tco-link--dark-theme" href="#">X</a>
               <li class="tco-site-nav-menu-item"><a class="tco-site-nav-link tco-link--dark-theme" href="#">Instagram</a>
               <li class="tco-site-nav-menu-item"><a class="tco-site-nav-link tco-link--dark-theme" href="#">YouTube</a>
               <li class="tco-site-nav-menu-item"><a class="tco-site-nav-link tco-link--dark-theme" href="#">Facebook</a>

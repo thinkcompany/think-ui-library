@@ -46,21 +46,21 @@ const inlineItem = input => `
     </div>
 </div>`;
 
-export const inset = () => wrapGrid(spacing.inset.map(item => insetItem(item)).join(''));
-export const squish = () => wrapGrid(spacing.squish.map(item => squishItem(item)).join(''));
-export const stack = () => wrapGrid(spacing.stack.map(item => stackItem(item)).join(''));
-export const inline = () => wrapGrid(spacing.inline.map(item => inlineItem(item)).join(''));
+export const Inset = () => wrapGrid(spacing.inset.map(item => insetItem(item)).join(''));
+export const Squish = () => wrapGrid(spacing.squish.map(item => squishItem(item)).join(''));
+export const Stack = () => wrapGrid(spacing.stack.map(item => stackItem(item)).join(''));
+export const Inline = () => wrapGrid(spacing.inline.map(item => inlineItem(item)).join(''));
 
-inset.parameters = {
+Inset.parameters = {
   controls: { hideNoControlsWarning: true }
 };
-squish.parameters = {
+Squish.parameters = {
   controls: { hideNoControlsWarning: true }
 };
-stack.parameters = {
+Stack.parameters = {
   controls: { hideNoControlsWarning: true }
 };
-inline.parameters = {
+Inline.parameters = {
   controls: { hideNoControlsWarning: true }
 };
 

@@ -20,9 +20,9 @@ const Template = args => {
         </li>
         <li>
           <a href="#">
-          <span class="tco-accessibly-hidden">Twitter</span>
+          <span class="tco-accessibly-hidden">X</span>
             <svg class="tco-icon" role="presentation" width="16" height="16" viewBox="0 0 16 16">
-              <use xlink:href="img/icons.svg#icon-twitter"></use>
+              <use xlink:href="img/icons.svg#icon-X"></use>
             </svg>
           </a>
         </li>

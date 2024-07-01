@@ -6,7 +6,7 @@ export const SocialIcons = () => {
       include: true
     },
     {
-      name: 'twitter',
+      name: 'x',
       include: true
     },
     {
@@ -55,7 +55,7 @@ export const SocialIconsSmall = () => {
       include: true
     },
     {
-      name: 'twitter',
+      name: 'x',
       include: true
     },
     {
