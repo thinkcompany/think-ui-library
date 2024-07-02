@@ -34,6 +34,10 @@
   @include type-display-48;
 }
 
+.tco-type-display--sans-48-black {
+  @include type-display-48-black;
+}
+
 .tco-type-display--junior {
   @include type-display-junior;
 }
