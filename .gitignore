@@ -4,7 +4,6 @@
 .eslintcache
 .scannerwork
 .vscode
-package-lock.json
 
 coverage/
 dist/
