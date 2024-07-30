@@ -291,7 +291,11 @@ $container-max: 1168px;
       @include type-link;
       @include type-display-medium;
       @include wider-than($breakpoint-desktop) {
-        @include type-body-default($font-color: $color-classic-gray-dark, $weight: 500, $size: $font-size-18);
+        @include type-body-default(
+          $font-color: $color-classic-gray-dark,
+          $weight: 500,
+          $size: $font-size-18
+        );
       }
       display: block;
       margin-bottom: $spacing-stack-20;
