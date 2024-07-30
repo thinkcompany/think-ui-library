@@ -25,8 +25,12 @@
     @include type-display-medium($italic: true);
   }
 
-  &-small {
-    @include type-display-medium($small: true);
+  &-48 {
+    @include type-display-medium($med48: true);
+  }
+
+  &-36 {
+    @include type-display-medium($med36: true);
   }
 }
 
@@ -64,6 +68,10 @@
   &-italic {
     @include type-display-small($italic: true);
   }
+
+  &-24 {
+    @include type-display-small($small24: true);
+  }
 }
 
 .tco-type-display--thin {
@@ -89,6 +97,10 @@
   &-italic {
     @include type-eyebrow($italic: true);
   }
+
+  &--small {
+    @include type-eyebrow($small: true);
+  }
 }
 
 .tco-type-eyebrow--space-xl {
@@ -99,11 +111,30 @@
   }
 }
 
-.tco-type-body--default {
+.tco-type-body--default,
+.tco-type-body {
   @include type-body-default;
 
-  &-italic {
+  &-italic,
+  em {
     @include type-body-default($italic: true);
+  }
+}
+
+.tco-type-body--small {
+  @include type-body-small;
+
+  &-italic {
+    @include type-body-large($italic: true);
+  }
+
+  &-14 {
+    @include type-body-small($font-size-14);
+  }
+
+  &-10 {
+    @include type-body-small($font-size-10);
+    line-height: 2;
   }
 }
 
@@ -116,6 +147,24 @@
 
   &-tall {
     @include type-body-large($height: tall);
+  }
+}
+
+.tco-type-body--x-large {
+  @include type-body-large($xl: true);
+
+  &-italic {
+    @include type-body-large($italic: true, $xl: true);
+  }
+}
+
+.tco-type-body--medium {
+  font-weight: 400;
+  line-height: 1.5;
+  @include type-eyebrow;
+
+  &-italic {
+    @include type-eyebrow($italic: true);
   }
 }
 

@@ -290,7 +290,8 @@ $container-max: 1168px;
       @include type-link;
       @include type-display-medium;
       @include wider-than($breakpoint-desktop) {
-        @include type-eyebrow($font-color: $color-classic-gray-dark, $font-size: $font-size-18);
+        @include type-eyebrow($font-color: $color-classic-gray-dark);
+        font-size: $font-size-18;
       }
       display: block;
       margin-bottom: $spacing-stack-20;
