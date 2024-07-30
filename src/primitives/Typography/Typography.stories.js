@@ -12,9 +12,21 @@ const displayStyles = [
     textLength: 1
   },
   {
-    name: 'Display Medium ',
+    name: 'Display Large 80',
+    class: 'tco-type-display--large-small',
+    sass: '@include type-display-large($small: true)',
+    textLength: 1
+  },
+  {
+    name: 'Display Medium',
     class: 'tco-type-display--medium',
     sass: '@include type-display-medium',
+    textLength: 1
+  },
+  {
+    name: 'Display Medium 48',
+    class: 'tco-type-display--medium-small',
+    sass: '@include type-display-medium($small: true)',
     textLength: 1
   },
   {

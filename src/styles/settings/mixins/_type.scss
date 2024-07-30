@@ -9,7 +9,15 @@
   color: $font-color;
   font-weight: $font-weight;
   font-size: $font-size-16;
-  font-family: $font-stack-slab-book;
+  font-family: $font-stack-inter;
+}
+
+@mixin type-base-display($font-color: inherit, $font-weight: normal) {
+  color: $font-color;
+  font-family: $font-stack-newsreader;
+  font-weight: $font-weight;
+  font-optical-sizing: auto;
+  font-variant-numeric: lining-nums proportional-nums;
 }
 
 /* ----------------------------------------------*\
@@ -57,24 +65,10 @@
     Type mixins
 \*---------------------------------------------- */
 @mixin type-display-extra-large($font-color: inherit, $italic: false) {
-  @include type-base-style($font-color, 400);
-  @include clamp(
-    font-size,
-    $breakpoint-phone-portrait,
-    $breakpoint-desktop,
-    $font-size-53,
-    $font-size-160
-  );
-  @include clamp(line-height, $breakpoint-phone-portrait, $breakpoint-desktop, 60px, 175px);
-  font-family: $font-stack-slab-light;
+  @include type-base-display($font-color, 300);
+  font-variation-settings: "wght" 300, "slnt" 0;
+  line-height: 1.1;
 
-  @if $italic {
-    font-family: $font-stack-slab-light-italic;
-  }
-}
-
-@mixin type-display-large($font-color: inherit, $italic: false, $bold: false) {
-  @include type-base-style($font-color, 400);
   @include clamp(
     font-size,
     $breakpoint-phone-portrait,
@@ -82,33 +76,56 @@
     $font-size-53,
     $font-size-120
   );
-  @include clamp(line-height, $breakpoint-phone-portrait, $breakpoint-desktop, 60px, 128px);
-  font-family: $font-stack-slab-light;
-
-  @if $italic {
-    font-family: $font-stack-slab-light-italic;
-  }
-
-  @if $bold {
-    font-family: $font-stack-slab-black;
-  }
 }
 
-@mixin type-display-medium($font-color: inherit, $italic: false) {
-  @include type-base-style($font-color, 400);
+@mixin type-display-large($font-color: inherit, $italic: false, $bold: false, $small: false) {
+  @include type-base-display($font-color, 300);
+  font-variation-settings: "wght" 300, "slnt" 0;
+  line-height: 1.07;
+
   @include clamp(
     font-size,
     $breakpoint-phone-portrait,
     $breakpoint-desktop,
-    $font-size-43,
-    $font-size-80
+    $font-size-48,
+    $font-size-90
   );
-  @include clamp(line-height, $breakpoint-phone-portrait, $breakpoint-desktop, 52px, 92px);
-  font-family: $font-stack-slab-light;
-  letter-spacing: 0;
 
-  @if $italic {
-    font-family: $font-stack-slab-light-italic;
+  @if $small {
+    line-height: 1.16;
+    @include clamp(
+      font-size,
+      $breakpoint-phone-portrait,
+      $breakpoint-desktop,
+      $font-size-48,
+      $font-size-80
+    );
+  }
+
+}
+
+@mixin type-display-medium($font-color: inherit, $italic: false, $small: false) {
+  @include type-base-display($font-color, 400);
+  font-variation-settings: "wght" 400, "slnt" 0;
+  line-height: 1.16;
+
+  @include clamp(
+    font-size,
+    $breakpoint-phone-portrait,
+    $breakpoint-desktop,
+    $font-size-36,
+    $font-size-52
+  );
+
+  @if $small {
+    line-height: 1.1;
+    @include clamp(
+      font-size,
+      $breakpoint-phone-portrait,
+      $breakpoint-desktop,
+      $font-size-36,
+      $font-size-48
+    );
   }
 }
 

@@ -12,6 +12,10 @@
   &-italic {
     @include type-display-large($italic: true);
   }
+
+  &-small {
+    @include type-display-large($small: true);
+  }
 }
 
 .tco-type-display--medium {
@@ -19,6 +23,10 @@
 
   &-italic {
     @include type-display-medium($italic: true);
+  }
+
+  &-small {
+    @include type-display-medium($small: true);
   }
 }
 
