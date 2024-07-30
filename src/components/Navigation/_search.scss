@@ -59,10 +59,12 @@ $search-h: 20px;
       opacity: 1;
 
       @include wider-than($max-width) {
-        right: 1px;
+        top: -2px;
+        right: 3px;
       }
 
       @include wider-than($breakpoint-desktop) {
+        top: 0;
         right: 28px;
         width: $search-w + 4px;
         height: $search-h + 4px;
@@ -112,7 +114,7 @@ $search-h: 20px;
       padding: $spacing-stack-2 $spacing-inline-24;
       border-bottom: 3px solid $color-classic-navy;
       color: $color-classic-navy;
-      font-size: $font-size-24;
+      font-size: $font-size-20;
     }
   }
 }
