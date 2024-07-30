@@ -230,7 +230,7 @@
   @include type-base-style($font-color, $weight);
   font-size: $size;
   font-variation-settings: 'wght' $weight, 'slnt' 0;
-  line-height: 1.2;
+  line-height: 1.25;
 
   @if $italic {
     font-style: italic;

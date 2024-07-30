@@ -4,6 +4,7 @@
     "small": "4px",
     "medium": "10px",
     "large": "16px",
+    "radius30": "30px",
     "round": "50%"
   },
   "shadow": {

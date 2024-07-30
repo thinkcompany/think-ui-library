@@ -7,14 +7,14 @@ $big-arrow-height: math.div(29, 18) * 1em;
 
 .tco-btn,
 %tco-btn {
-  @include type-eyebrow;
+  @include type-body-default($weight: 500);
   position: relative;
+  padding: calc(#{$spacing-stack-12} - 3px) $spacing-stack-24 calc(#{$spacing-stack-12} - 1px);
   border: none;
-  border-radius: 0;
+  border-radius: $border-radius-radius30;
   background: none;
   text-align: center;
   text-decoration: none;
-  text-transform: uppercase;
   cursor: pointer;
   transition: all 0.2s linear;
   appearance: none;
@@ -51,7 +51,6 @@ $big-arrow-height: math.div(29, 18) * 1em;
 
 .tco-btn--primary,
 %tco-btn--primary {
-  padding: $spacing-stack-12 $spacing-stack-18;
   border: 1px solid $color-classic-blue;
   background: $color-classic-blue;
   color: $color-foreground-on-tint;
@@ -79,7 +78,6 @@ $big-arrow-height: math.div(29, 18) * 1em;
 
 .tco-btn--secondary,
 %tco-btn--secondary {
-  padding: $spacing-stack-12 $spacing-stack-18;
   border: 1px solid $color-classic-blue;
   background: transparent;
   color: $color-classic-blue;
