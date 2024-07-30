@@ -21,14 +21,6 @@ $widget-width: 132px;
     columns: 2 120px;
   }
 
-  &-content:first-of-type {
-    padding-top: $spacing-stack-32;
-
-    @include wider-than($breakpoint-tablet-portrait) {
-      padding-top: 0;
-    }
-  }
-
   &-content--full {
     padding-top: $spacing-stack-32;
     border-top: 1px solid lighten($color-classic-navy, 6);
@@ -222,10 +214,11 @@ $widget-width: 132px;
   }
 
   &-heading {
-    @include type-eyebrow;
+    @include type-body-small;
     display: block;
     margin-bottom: $spacing-stack-20;
     color: $color-foreground-on-tint;
+    opacity: 0.65;
   }
 
   &-logo svg {
@@ -234,7 +227,7 @@ $widget-width: 132px;
   }
 
   &-cta {
-    @include type-body-large;
+    @include type-display-small;
     margin-bottom: $spacing-stack-12;
 
     a {
@@ -249,7 +242,7 @@ $widget-width: 132px;
   }
 
   &-post-meta {
-    @include type-body-small;
+    @include type-body-small($size: $font-size-14);
     color: $color-foreground-on-tint;
   }
 

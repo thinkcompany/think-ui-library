@@ -3,15 +3,15 @@ import { SocialIconsSmall as icons } from '../SocialIcons/social-icons.stories';
 export const Footer = () => {
   return `
     <footer id="footer" class="tco-footer">
-      <div class="tco-container-wrapper tco-container-wrapper--curve tco-container-wrapper--footer" style="margin-top: 10em;">
+      <div class="tco-container-wrapper tco-container-wrapper--footer" style="margin-top: 10em;">
         <div class="tco-container">
           <div class="tco-site-footer">
             <div class="tco-site-footer-content">
-              <p class="tco-site-footer-heading">Our Offices</p>
+              <p class="tco-site-footer-heading">Expertise across complex industries</p>
               <ul>
                 <li class="tco-site-footer-cta">
                   <a href="#" class="tco-link-cta tco-link--dark-theme">
-                  Philadelphia
+                  Financial Services
                   <svg class="tco-text-link-icon tco-text-link-icon--alt" width="20" height="20" viewBox="0 0 20 20" role="presentation">
                     <use xlink:href="/img/icons.svg#icon-arrow-right"></use>
                   </svg>
@@ -19,7 +19,23 @@ export const Footer = () => {
                 </li>
                 <li class="tco-site-footer-cta">
                   <a href="#" class="tco-link-cta tco-link--dark-theme">
-                  Conshohocken
+                  Pharmaceuticals
+                  <svg class="tco-text-link-icon tco-text-link-icon--alt" width="20" height="20" viewBox="0 0 20 20" role="presentation">
+                    <use xlink:href="/img/icons.svg#icon-arrow-right"></use>
+                  </svg>
+                  </a>
+                </li>
+                <li class="tco-site-footer-cta">
+                  <a href="#" class="tco-link-cta tco-link--dark-theme">
+                  Telecommunications
+                  <svg class="tco-text-link-icon tco-text-link-icon--alt" width="20" height="20" viewBox="0 0 20 20" role="presentation">
+                    <use xlink:href="/img/icons.svg#icon-arrow-right"></use>
+                  </svg>
+                  </a>
+                </li>
+                <li class="tco-site-footer-cta">
+                  <a href="#" class="tco-link-cta tco-link--dark-theme">
+                  Healthcare
                   <svg class="tco-text-link-icon tco-text-link-icon--alt" width="20" height="20" viewBox="0 0 20 20" role="presentation">
                     <use xlink:href="/img/icons.svg#icon-arrow-right"></use>
                   </svg>
@@ -44,16 +60,16 @@ export const Footer = () => {
 
             </div>
             <div class="tco-site-footer-content">
-              <p class="tco-site-footer-heading">Upcoming Event</p>
+              <p class="tco-site-footer-heading">Featured blog post</p>
               <h5 class="tco-site-footer-post tco-site-footer-cta">
                 <a href="#" class="tco-link--dark-theme">
-                  Putting Humanity at the Center of Design
+                  4 key priorities for  smart AI implementation in regulated industries
                   <svg class="tco-text-link-icon tco-text-link-icon--alt" width="20" height="20" viewBox="0 0 20 20" role="presentation">
                     <use xlink:href="/img/icons.svg#icon-arrow-right"></use>
                   </svg>
                 </a>
               </h5>
-              <p class="tco-site-footer-post-meta">February 14, 2021</p>
+              <p class="tco-site-footer-post-meta">March 7, 2024</p>
             </div>
             <div class="tco-site-footer-content tco-site-footer-content--full">
               <div class="tco-site-footer-content-group tco-site-footer-content-group--icons">
@@ -82,7 +98,7 @@ export const Footer = () => {
 
               </div>
               <div class="tco-site-footer-content-group tco-site-footer-content-group--fine-print">
-                <p>&copy; 2022 Think Company, Inc. All rights reserved. <span><a class="tco-btn-link tco-link--dark-theme" href="#"> Privacy policy</a>. <a class="tco-btn-link tco-link--dark-theme" href="#">Accessibility statement</a>.</span></p>
+                <p>&copy; 2024 Think Company, Inc. All rights reserved. <span><a class="tco-btn-link tco-link--dark-theme" href="#"> Privacy policy</a>. <a class="tco-btn-link tco-link--dark-theme" href="#">Accessibility statement</a>.</span></p>
               </div>
             </div>
           </div>
