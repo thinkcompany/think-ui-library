@@ -117,14 +117,14 @@ const bodyStyles = [
   {
     name: 'Body Text Small 14',
     class: 'tco-type-body--small-14',
-    sass: '@include type-body-small($font-size-14)',
+    sass: '@include type-body-small($size: $font-size-14)',
     textLength: 1,
     size: '14px'
   },
   {
     name: 'Body Text Small 10',
     class: 'tco-type-body--small-10',
-    sass: '@include type-body-small($font-size-10)',
+    sass: '@include type-body-small($size: $font-size-10)',
     textLength: 1,
     size: '10px'
   }

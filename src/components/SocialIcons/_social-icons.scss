@@ -47,6 +47,10 @@ $icon-list-max-width: 278px;
         }
 
         @include wider-than($breakpoint-laptop) {
+          margin-left: $spacing-inline-32;
+        }
+
+        @include wider-than($breakpoint-desktop) {
           margin-left: $spacing-inline-40;
         }
       }

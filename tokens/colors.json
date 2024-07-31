@@ -83,12 +83,12 @@
   {
     "name": "tertiary",
     "section": "background",
-    "color": "#173145"
+    "color": "#072235"
   },
   {
     "name": "primary",
     "section": "foreground",
-    "color": "#173145"
+    "color": "#072235"
   },
   {
     "name": "secondary",
@@ -138,7 +138,7 @@
   {
     "name": "navy",
     "section": "classic",
-    "color": "#173145"
+    "color": "#072235"
   },
   {
     "name": "black",

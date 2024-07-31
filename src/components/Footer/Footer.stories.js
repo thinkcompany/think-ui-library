@@ -9,7 +9,7 @@ export const Footer = () => {
             <div class="tco-site-footer-content">
               <p class="tco-site-footer-heading">Expertise across complex industries</p>
               <ul>
-                <li class="tco-site-footer-cta">
+                <li class="tco-site-footer-cta tco-site-footer-cta--big-links">
                   <a href="#" class="tco-link-cta tco-link--dark-theme">
                   Financial Services
                   <svg class="tco-text-link-icon tco-text-link-icon--alt" width="20" height="20" viewBox="0 0 20 20" role="presentation">
@@ -17,7 +17,7 @@ export const Footer = () => {
                   </svg>
                   </a>
                 </li>
-                <li class="tco-site-footer-cta">
+                <li class="tco-site-footer-cta tco-site-footer-cta--big-links">
                   <a href="#" class="tco-link-cta tco-link--dark-theme">
                   Pharmaceuticals
                   <svg class="tco-text-link-icon tco-text-link-icon--alt" width="20" height="20" viewBox="0 0 20 20" role="presentation">
@@ -25,7 +25,7 @@ export const Footer = () => {
                   </svg>
                   </a>
                 </li>
-                <li class="tco-site-footer-cta">
+                <li class="tco-site-footer-cta tco-site-footer-cta--big-links">
                   <a href="#" class="tco-link-cta tco-link--dark-theme">
                   Telecommunications
                   <svg class="tco-text-link-icon tco-text-link-icon--alt" width="20" height="20" viewBox="0 0 20 20" role="presentation">
@@ -33,7 +33,7 @@ export const Footer = () => {
                   </svg>
                   </a>
                 </li>
-                <li class="tco-site-footer-cta">
+                <li class="tco-site-footer-cta tco-site-footer-cta--big-links">
                   <a href="#" class="tco-link-cta tco-link--dark-theme">
                   Healthcare
                   <svg class="tco-text-link-icon tco-text-link-icon--alt" width="20" height="20" viewBox="0 0 20 20" role="presentation">
