@@ -5,6 +5,7 @@ import './main.scss';
 import Nav from './components/Navigation/navigation';
 import './components/Headline/headline.js';
 import './components/TextCircle/text-circle.js';
+import './components/TextHighlight/text-highlight.js';
 import './components/TextUnderline/text-underline.js';
 import './components/MotionCards/motion-cards.js';
 import './components/TextInput/inputexpand.js';
