@@ -4,6 +4,7 @@ $menu-max-width: 372px;
 $widget-width: 132px;
 
 .tco-site-footer {
+  position: relative;
   display: grid;
   grid-template-rows: auto;
   grid-template-columns: 100%;
@@ -12,12 +13,13 @@ $widget-width: 132px;
   @include wider-than($breakpoint-tablet-portrait) {
     grid-template-rows: auto;
     grid-template-columns: repeat(3, calc(33.33% - (80px / 3)));
-    gap: $spacing-stack-40;
+    grid-gap: $spacing-stack-50 $spacing-inline-40;
   }
 
   &-menu {
     display: block;
     max-width: $menu-max-width;
+    padding-top: $spacing-stack-2;
     columns: 2 120px;
   }
 
@@ -216,9 +218,10 @@ $widget-width: 132px;
   &-heading {
     @include type-body-small;
     display: block;
-    margin-bottom: $spacing-stack-20;
+    margin-bottom: calc(#{$spacing-stack-12} - #{$spacing-stack-2});
     color: $color-foreground-on-tint;
     opacity: 0.65;
+    font-variation-settings: 'wght' 450;
   }
 
   &-logo svg {
@@ -228,7 +231,7 @@ $widget-width: 132px;
 
   &-cta {
     @include type-display-small;
-    margin-bottom: $spacing-stack-12;
+    margin-bottom: $spacing-stack-20;
 
     a {
       @include type-link-cta($fill: $color-foreground-on-tint);
@@ -241,13 +244,19 @@ $widget-width: 132px;
     }
   }
 
+  &-post {
+    line-height: 1.65;
+  }
+
   &-post-meta {
-    @include type-body-small($size: $font-size-14);
-    color: $color-foreground-on-tint;
+    @include type-body-small($size: $font-size-16);
+    color: $color-tint-blue-light;
   }
 
   .tco-menu-item {
-    @include type-body-default;
+    @extend .tco-type-body--medium;
+    margin-bottom: $spacing-stack-16;
+    font-weight: 400;
 
     &-link {
       @include type-link($font-color: $color-foreground-on-tint);

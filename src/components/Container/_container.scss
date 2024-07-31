@@ -39,10 +39,6 @@ $color-hover-blue-blue: #09509a;
       @include wider-than($breakpoint-tablet-portrait) {
         padding: $spacing-stack-40 0 $spacing-stack-50;
       }
-
-      @include wider-than($breakpoint-laptop) {
-        padding: $spacing-stack-40 0 $spacing-stack-32;
-      }
     }
   }
 

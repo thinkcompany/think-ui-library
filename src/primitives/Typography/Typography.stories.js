@@ -15,7 +15,7 @@ const displayStyles = [
   },
   {
     name: 'Display Large 80',
-    class: 'tco-type-display--large-small',
+    class: 'tco-type-display--large-80',
     sass: '@include type-display-large($small: true)',
     textLength: 1,
     size: '48px / 80px'
@@ -33,6 +33,13 @@ const displayStyles = [
     sass: '@include type-display-medium($med48: true)',
     textLength: 1,
     size: '36px / 48px'
+  },
+  {
+    name: 'Display Medium 42',
+    class: 'tco-type-display--medium-42',
+    sass: '@include type-display-medium($med42: true)',
+    textLength: 1,
+    size: '32px / 42px'
   },
   {
     name: 'Display Medium 36',
@@ -74,7 +81,7 @@ const bodyStyles = [
   },
   {
     name: 'Body Text X-Large',
-    class: 'tco-type-body--x-large',
+    class: 'tco-type-body--extra-large',
     sass: '@include type-body-large($xl: true)',
     textLength: 1,
     size: '24px / 28px'
@@ -85,6 +92,13 @@ const bodyStyles = [
     sass: '@include type-body-large',
     textLength: 1,
     size: '20px / 24px'
+  },
+  {
+    name: 'Body Text Large 22',
+    class: 'tco-type-body--large-22',
+    sass: '@include type-body-large($small: true)',
+    textLength: 1,
+    size: '18px / 22px'
   },
   {
     name: 'Body Text Medium',

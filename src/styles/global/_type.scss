@@ -1,3 +1,4 @@
+/* Display classes */
 .tco-type-display--extra-large {
   @include type-display-extra-large;
 
@@ -13,7 +14,7 @@
     @include type-display-large($italic: true);
   }
 
-  &-small {
+  &-80 {
     @include type-display-large($small: true);
   }
 }
@@ -25,6 +26,10 @@
     @include type-display-medium($italic: true);
   }
 
+  &-42 {
+    @include type-display-medium($med42: true);
+  }
+
   &-48 {
     @include type-display-medium($med48: true);
   }
@@ -32,34 +37,6 @@
   &-36 {
     @include type-display-medium($med36: true);
   }
-}
-
-.tco-type-display--64 {
-  @include type-display-64;
-}
-
-.tco-type-display--sans-80 {
-  @include type-display-80;
-}
-
-.tco-type-display--sans-48 {
-  @include type-display-48;
-}
-
-.tco-type-display--sans-48-black {
-  @include type-display-48-black;
-}
-
-.tco-type-display--junior {
-  @include type-display-junior;
-}
-
-.tco-type-display--sans {
-  @include type-display-sans;
-}
-
-.tco-type-display--sans-large {
-  @include type-display-sans-large;
 }
 
 .tco-type-display--small {
@@ -74,23 +51,6 @@
   }
 }
 
-.tco-type-display--thin {
-  @include type-display-thin;
-}
-
-.tco-type-display--extra-small {
-  @include type-display-extra-small;
-
-  &-italic {
-    @include type-display-extra-small($italic: true);
-  }
-}
-
-.tco-type-cursive--large {
-  @include type-cursive;
-  font-size: $font-size-36;
-}
-
 .tco-type-eyebrow {
   @include type-eyebrow;
 
@@ -103,11 +63,38 @@
   }
 }
 
-.tco-type-eyebrow--space-xl {
-  margin-bottom: $spacing-stack-24;
+/* Body classes */
+.tco-type-body--extra-large {
+  @include type-body-large($xl: true);
 
-  @include wider-than($breakpoint-laptop) {
-    margin-bottom: $spacing-stack-40;
+  &-italic {
+    @include type-body-large($italic: true, $xl: true);
+  }
+}
+
+.tco-type-body--large {
+  @include type-body-large;
+
+  &-italic {
+    @include type-body-large($italic: true);
+  }
+
+  &-tall {
+    @include type-body-large($height: tall);
+  }
+
+  &-22 {
+    @include type-body-large($small: true);
+  }
+}
+
+.tco-type-body--medium {
+  font-weight: 400;
+  line-height: 1.5;
+  @include type-eyebrow;
+
+  &-italic {
+    @include type-eyebrow($italic: true);
   }
 }
 
@@ -138,33 +125,65 @@
   }
 }
 
-.tco-type-body--large {
-  @include type-body-large;
-
-  &-italic {
-    @include type-body-large($italic: true);
-  }
-
-  &-tall {
-    @include type-body-large($height: tall);
-  }
+/* Utility classes */
+.tco-type-style--bold {
+  @include type-style-bold;
 }
 
-.tco-type-body--x-large {
-  @include type-body-large($xl: true);
-
-  &-italic {
-    @include type-body-large($italic: true, $xl: true);
-  }
+.tco-type--align-left {
+  text-align: left;
 }
 
-.tco-type-body--medium {
-  font-weight: 400;
-  line-height: 1.5;
-  @include type-eyebrow;
+.tco-type--align-right {
+  text-align: right;
+}
+
+.tco-type--align-center {
+  text-align: center;
+}
+
+.tco-type-eyebrow--space-l {
+  margin-bottom: $spacing-stack-32;
+}
+
+/* Secondary/archive */
+.tco-type-display--64 {
+  @include type-display-64;
+}
+
+.tco-type-display--sans-80 {
+  @include type-display-80;
+}
+
+.tco-type-display--sans-48 {
+  @include type-display-48;
+}
+
+.tco-type-display--sans-48-black {
+  @include type-display-48-black;
+}
+
+.tco-type-display--junior {
+  @include type-display-junior;
+}
+
+.tco-type-display--sans {
+  @include type-display-sans;
+}
+
+.tco-type-display--sans-large {
+  @include type-display-sans-large;
+}
+
+.tco-type-display--thin {
+  @include type-display-thin;
+}
+
+.tco-type-display--extra-small {
+  @include type-display-extra-small;
 
   &-italic {
-    @include type-eyebrow($italic: true);
+    @include type-display-extra-small($italic: true);
   }
 }
 
@@ -192,22 +211,15 @@
   }
 }
 
-.tco-type-style--bold {
-  @include type-style-bold;
+.tco-type-cursive--large {
+  @include type-cursive;
+  font-size: $font-size-36;
 }
 
-.tco-type--align-left {
-  text-align: left;
-}
+.tco-type-eyebrow--space-xl {
+  margin-bottom: $spacing-stack-24;
 
-.tco-type--align-right {
-  text-align: right;
-}
-
-.tco-type--align-center {
-  text-align: center;
-}
-
-.tco-type-eyebrow--space-l {
-  margin-bottom: $spacing-stack-32;
+  @include wider-than($breakpoint-laptop) {
+    margin-bottom: $spacing-stack-40;
+  }
 }

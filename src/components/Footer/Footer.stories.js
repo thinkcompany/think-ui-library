@@ -47,16 +47,17 @@ export const Footer = () => {
               <p class="tco-site-footer-heading">Explore More</p>
               <ul class="tco-site-footer-menu tco-menu">
                 <li class="tco-menu-item"><a href="#" class="tco-menu-item-link tco-link--dark-theme">Our Work</a></li>
-                <li class="tco-menu-item"><a href="#" class="tco-menu-item-link tco-link--dark-theme">Services</a></li>
-                <li class="tco-menu-item"><a href="#" class="tco-menu-item-link tco-link--dark-theme">Process</a></li>
-                <li class="tco-menu-item"><a href="#" class="tco-menu-item-link tco-link--dark-theme">Guides</a></li>
-                <li class="tco-menu-item"><a href="#" class="tco-menu-item-link tco-link--dark-theme">Blog</a></li>
-                <li class="tco-menu-item"><a href="#" class="tco-menu-item-link tco-link--dark-theme">Contact</a></li>
                 <li class="tco-menu-item"><a href="#" class="tco-menu-item-link tco-link--dark-theme">About</a></li>
+                <li class="tco-menu-item"><a href="#" class="tco-menu-item-link tco-link--dark-theme">Services</a></li>
                 <li class="tco-menu-item"><a href="#" class="tco-menu-item-link tco-link--dark-theme">Team</a></li>
+                <li class="tco-menu-item"><a href="#" class="tco-menu-item-link tco-link--dark-theme">Process</a></li>
                 <li class="tco-menu-item"><a href="#" class="tco-menu-item-link tco-link--dark-theme">Events</a></li>
+                <li class="tco-menu-item"><a href="#" class="tco-menu-item-link tco-link--dark-theme">Guides</a></li>
                 <li class="tco-menu-item"><a href="#" class="tco-menu-item-link tco-link--dark-theme">News</a></li>
+                <li class="tco-menu-item"><a href="#" class="tco-menu-item-link tco-link--dark-theme">Blog</a></li>
                 <li class="tco-menu-item"><a href="#" class="tco-menu-item-link tco-link--dark-theme">Careers</a></li>
+                <li class="tco-menu-item"><a href="#" class="tco-menu-item-link tco-link--dark-theme">Alumni</a></li>
+                <li class="tco-menu-item"><a href="#" class="tco-menu-item-link tco-link--dark-theme">Contact</a></li>
 
             </div>
             <div class="tco-site-footer-content">
