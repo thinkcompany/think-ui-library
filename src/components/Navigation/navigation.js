@@ -15,14 +15,14 @@ export default class Nav {
   menuState() {
     let vw = window.innerWidth;
 
-    if (vw >= 1280) {
+    if (vw >= 1080) {
       this.$searchOpen.after(this.$search);
     }
 
     window.addEventListener('resize', () => {
       vw = window.innerWidth;
 
-      if (vw >= 1280) {
+      if (vw >= 1080) {
         this.$body.classList.remove('tco-body--freeze');
         this.$mobileMenuBtnClose.classList.add('tco-site-header-toggle--hide');
         this.$mobileMenuBtn.classList.remove('tco-site-header-toggle--hide');

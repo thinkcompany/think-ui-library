@@ -110,7 +110,7 @@ $container-max: 1168px;
         }
       }
 
-      @include wider-than($breakpoint-desktop) {
+      @include wider-than($breakpoint-laptop) {
         display: none;
       }
     }
@@ -166,7 +166,7 @@ $container-max: 1168px;
   }
 
   .tco-site-nav-wrapper {
-    @include wider-than($breakpoint-desktop) {
+    @include wider-than($breakpoint-laptop) {
       position: initial;
       overflow: initial;
       width: 100%;
@@ -238,7 +238,7 @@ $container-max: 1168px;
       }
     }
 
-    @include wider-than($breakpoint-desktop) {
+    @include wider-than($breakpoint-laptop) {
       display: flex;
       width: 100%;
       margin-right: calc(#{$spacing-inline-50} + #{$spacing-inline-20});
@@ -293,7 +293,7 @@ $container-max: 1168px;
     .tco-site-nav-link {
       @include type-link;
       @include type-display-medium;
-      @include wider-than($breakpoint-desktop) {
+      @include wider-than($breakpoint-laptop) {
         @include type-body-default(
           $font-color: $color-classic-gray-dark,
           $weight: 500,
@@ -403,7 +403,7 @@ $container-max: 1168px;
       padding-top: $spacing-stack-50 + $spacing-stack-16;
     }
 
-    @include wider-than($breakpoint-desktop) {
+    @include wider-than($breakpoint-laptop) {
       display: none;
     }
   }

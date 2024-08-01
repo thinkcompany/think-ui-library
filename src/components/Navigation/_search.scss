@@ -25,7 +25,7 @@ $search-h: 20px;
     top: -42px;
   }
 
-  @include wider-than($breakpoint-desktop) {
+  @include wider-than($breakpoint-laptop) {
     top: 57px;
     right: -28px;
     left: auto;
@@ -63,7 +63,7 @@ $search-h: 20px;
         right: 3px;
       }
 
-      @include wider-than($breakpoint-desktop) {
+      @include wider-than($breakpoint-laptop) {
         top: 0;
         right: 28px;
         width: $search-w + 4px;
@@ -82,7 +82,7 @@ $search-h: 20px;
   width: 100%;
   max-width: $max-width;
 
-  @include wider-than($breakpoint-desktop) {
+  @include wider-than($breakpoint-laptop) {
     transition: transform 0.2s ease-out;
     transform: translateY(-2px);
   }
@@ -105,12 +105,12 @@ $search-h: 20px;
     .tco-lights-out & {
       border-bottom-color: $color-foreground-on-tint;
 
-      @include wider-than($breakpoint-desktop) {
+      @include wider-than($breakpoint-laptop) {
         color: $color-foreground-on-tint;
       }
     }
 
-    @include wider-than($breakpoint-desktop) {
+    @include wider-than($breakpoint-laptop) {
       padding: $spacing-stack-2 $spacing-inline-24;
       border-bottom: 3px solid $color-classic-navy;
       color: $color-classic-navy;
@@ -134,7 +134,7 @@ $search-h: 20px;
     visibility: hidden;
   }
 
-  @include wider-than($breakpoint-desktop) {
+  @include wider-than($breakpoint-laptop) {
     display: block;
   }
 
@@ -143,7 +143,7 @@ $search-h: 20px;
     height: $search-h;
     fill: $color-classic-blue;
 
-    @include wider-than($breakpoint-desktop) {
+    @include wider-than($breakpoint-laptop) {
       width: $search-w + 2px;
       height: $search-h + 2px;
     }
@@ -182,7 +182,7 @@ $search-h: 20px;
     top: -62px;
   }
 
-  @include wider-than($breakpoint-desktop) {
+  @include wider-than($breakpoint-laptop) {
     display: block;
   }
 
