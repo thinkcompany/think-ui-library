@@ -156,9 +156,5 @@ $color-hover-blue-blue: #09509a;
         color: $color-foreground-primary;
       }
     }
-
-    a {
-      @include type-link;
-    }
   }
 }
