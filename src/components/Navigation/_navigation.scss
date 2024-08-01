@@ -36,11 +36,14 @@ $container-max: 1168px;
     svg {
       display: block;
       width: 97px;
-      height: 32px;
+      height: auto;
 
       @include wider-than($breakpoint-phone-landscape) {
         width: 151px;
-        height: 50px;
+      }
+
+      @include wider-than($breakpoint-laptop) {
+        width: 168px;
       }
     }
 
