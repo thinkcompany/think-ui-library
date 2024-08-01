@@ -108,7 +108,7 @@ const PostCardTemplate = args => {
             <img class="tco-card-image" alt="Card image" src="${image}" />
           </div>
           <div class="tco-card-content-container">
-            <p class="tco-card--post-date tco-body-default">November 2, 2020</p>
+            <p class="tco-card--post-date tco-body-default">July 17, 2024</p>
             <h2 class="tco-card--post-title tco-text-link tco-type-display--small">${heading}
               <svg class="tco-text-link-icon" width="20" height="20" viewBox="0 0 20 20" role="presentation">
                 <use xlink:href="/img/icons.svg#icon-arrow-right"></use>

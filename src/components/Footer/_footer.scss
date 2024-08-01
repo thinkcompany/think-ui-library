@@ -271,7 +271,7 @@ $widget-width: 132px;
 
   .tco-menu-item {
     @extend .tco-type-body--medium;
-    margin-bottom: $spacing-stack-16;
+    margin-bottom: calc(#{$spacing-stack-16} / 2);
     font-weight: 400;
 
     &-link {

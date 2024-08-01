@@ -146,7 +146,7 @@ $color-hover: #08519a;
 
 .tco-form-label,
 %tco-form-label {
-  @include type-eyebrow;
+  @include type-eyebrow($font-color: $color-classic-navy);
   position: relative;
   display: block;
   padding: 0 $spacing-inline-4;
