@@ -33,18 +33,11 @@ $color-hover-blue-blue: #09509a;
   }
 
   &--footer {
-    @include pseudo-curve;
     background-color: $color-classic-navy;
 
     > .tco-container {
-      @include pseudo-think-bubble;
-
       @include wider-than($breakpoint-tablet-portrait) {
-        padding: calc(#{$spacing-stack-50} + #{$spacing-stack-32}) 0 $spacing-stack-50;
-      }
-
-      @include wider-than($breakpoint-laptop) {
-        padding: calc(#{$spacing-stack-50} + #{$spacing-stack-32}) 0 $spacing-stack-32;
+        padding: $spacing-stack-40 0 $spacing-stack-50;
       }
     }
   }
@@ -105,6 +98,10 @@ $color-hover-blue-blue: #09509a;
   &--tan {
     background-color: $color-background-secondary;
     color: $color-foreground-primary;
+  }
+
+  &--soft-white {
+    background-color: $color-classic-soft-white;
   }
 
   &--glass {

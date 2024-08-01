@@ -30,20 +30,19 @@ const postCard = () => {
   <div class="tco-card tco-card--post">
     <a href="#" class="tco-card-link tco-link--dark-theme">
       <div class="tco-card-image-container">
-        <img class="tco-card-image" alt="Card image" src="https://www.thinkcompany.com/wp-content/uploads/2021/07/Airtable-Illustration-5-1-500x262.jpg" />
+        <img class="tco-card-image" alt="Card image" src="https://www.thinkcompany.com/wp-content/uploads/2024/07/Congfig-blog-post_Hero-Image-Full-Width-Image-1920x1080-1-1536x864.png" />
       </div>
       <div class="tco-card-content-container">
-        <p class="tco-type-body--sans-small">November 2, 2020</p>
-        <h2 class="tco-text-link tco-type-body--large">The Benefits of Using Airtable as a Content Management System and Collaboration Platform
+        <p class="tco-card--post-date tco-body-default">July 17, 2024</p>
+        <h2 class="tco-card--post-title tco-text-link tco-type-display--small">Designing with intention: Our Config 2024 takeaways
           <svg class="tco-text-link-icon" width="20" height="20" viewBox="0 0 20 20" role="presentation">
             <use xlink:href="/img/icons.svg#icon-arrow-right"></use>
           </svg>
         </h2>
         <div class="tco-byline tco-byline--no-image">
           <ul>
-            <li class="tco-byline-name">By</li>
-            <li class="tco-byline-name">Ian McPhail,</li>
-            <li class="tco-byline-name">Keith Rich</li>
+            <li class="tco-byline-name">By </li>
+            <li class="tco-byline-name">Mackenzie Alleman</li>
           </ul>
         </div>
       </div>

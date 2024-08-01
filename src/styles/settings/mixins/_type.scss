@@ -9,7 +9,17 @@
   color: $font-color;
   font-weight: $font-weight;
   font-size: $font-size-16;
-  font-family: $font-stack-slab-book;
+  font-family: $font-stack-inter;
+  font-optical-sizing: auto;
+  font-variant-numeric: lining-nums proportional-nums;
+}
+
+@mixin type-base-display($font-color: inherit, $font-weight: normal) {
+  color: $font-color;
+  font-family: $font-stack-newsreader;
+  font-weight: $font-weight;
+  font-optical-sizing: auto;
+  font-variant-numeric: lining-nums proportional-nums;
 }
 
 /* ----------------------------------------------*\
@@ -57,24 +67,10 @@
     Type mixins
 \*---------------------------------------------- */
 @mixin type-display-extra-large($font-color: inherit, $italic: false) {
-  @include type-base-style($font-color, 400);
-  @include clamp(
-    font-size,
-    $breakpoint-phone-portrait,
-    $breakpoint-desktop,
-    $font-size-53,
-    $font-size-160
-  );
-  @include clamp(line-height, $breakpoint-phone-portrait, $breakpoint-desktop, 60px, 175px);
-  font-family: $font-stack-slab-light;
+  @include type-base-display($font-color, 300);
+  font-variation-settings: 'wght' 300, 'slnt' 0;
+  line-height: 1.1;
 
-  @if $italic {
-    font-family: $font-stack-slab-light-italic;
-  }
-}
-
-@mixin type-display-large($font-color: inherit, $italic: false, $bold: false) {
-  @include type-base-style($font-color, 400);
   @include clamp(
     font-size,
     $breakpoint-phone-portrait,
@@ -82,38 +78,217 @@
     $font-size-53,
     $font-size-120
   );
-  @include clamp(line-height, $breakpoint-phone-portrait, $breakpoint-desktop, 60px, 128px);
-  font-family: $font-stack-slab-light;
+}
+
+@mixin type-display-large($font-color: inherit, $italic: false, $bold: false, $small: false) {
+  @include type-base-display($font-color, 300);
+  font-variation-settings: 'wght' 300, 'slnt' 0;
+  line-height: 1.07;
+
+  @if $small {
+    line-height: 1.16;
+    @include clamp(
+      font-size,
+      $breakpoint-phone-portrait,
+      $breakpoint-desktop,
+      $font-size-48,
+      $font-size-80
+    );
+  } @else {
+    @include clamp(
+      font-size,
+      $breakpoint-phone-portrait,
+      $breakpoint-desktop,
+      $font-size-48,
+      $font-size-90
+    );
+  }
+}
+
+@mixin type-display-medium(
+  $font-color: inherit,
+  $italic: false,
+  $med48: false,
+  $med42: false,
+  $med36: false
+) {
+  @include type-base-display($font-color, 400);
+  font-variation-settings: 'wght' 400, 'slnt' 0;
+  line-height: 1.16;
+
+  @if $med48 {
+    line-height: 1.1;
+    @include clamp(
+      font-size,
+      $breakpoint-phone-portrait,
+      $breakpoint-desktop,
+      $font-size-36,
+      $font-size-48
+    );
+  } @else if $med42 {
+    line-height: 1.3;
+    @include clamp(
+      font-size,
+      $breakpoint-phone-portrait,
+      $breakpoint-desktop,
+      $font-size-32,
+      $font-size-42
+    );
+  } @else if $med36 {
+    line-height: 1.25;
+    @include clamp(
+      font-size,
+      $breakpoint-phone-portrait,
+      $breakpoint-desktop,
+      $font-size-24,
+      $font-size-36
+    );
+  } @else {
+    @include clamp(
+      font-size,
+      $breakpoint-phone-portrait,
+      $breakpoint-desktop,
+      $font-size-36,
+      $font-size-52
+    );
+  }
+}
+
+@mixin type-display-small($font-color: inherit, $italic: false, $small24: false, $weight: 400) {
+  @include type-base-display($font-color, $weight);
+  font-variation-settings: 'wght' $weight, 'slnt' 0;
+  line-height: 1.28;
+
+  @if $small24 {
+    line-height: 1.25;
+    @include clamp(
+      font-size,
+      $breakpoint-phone-portrait,
+      $breakpoint-desktop,
+      $font-size-20,
+      $font-size-24
+    );
+  } @else {
+    @include clamp(
+      font-size,
+      $breakpoint-phone-portrait,
+      $breakpoint-desktop,
+      $font-size-24,
+      $font-size-28
+    );
+  }
+}
+
+@mixin type-eyebrow($font-color: $color-classic-blue, $italic: false, $small: false, $weight: 500) {
+  @include type-base-style($font-color, $weight);
+  line-height: 1;
+  color: $font-color;
+  font-variation-settings: 'wght' $weight, 'slnt' 0;
+
+  @if $small {
+    font-size: $font-size-16;
+  } @else {
+    @include clamp(
+      font-size,
+      $breakpoint-phone-portrait,
+      $breakpoint-desktop,
+      $font-size-16,
+      $font-size-18
+    );
+  }
+}
+
+@mixin type-body-large(
+  $font-color: inherit,
+  $height: default,
+  $italic: false,
+  $bold: false,
+  $weight: 400,
+  $xl: false,
+  $small: false
+) {
+  @include type-base-style($font-color, $weight);
+  font-variation-settings: 'wght' $weight, 'slnt' 0;
+  line-height: 1.5;
 
   @if $italic {
-    font-family: $font-stack-slab-light-italic;
+    font-style: italic;
+    font-variation-settings: 'wght' $weight, 'slnt' 10;
+    /*
+    Slant (slnt)
+    "Adjust the style from upright to slanted, also known to typographers as an 'oblique' style. Rarely, slant can work in the other direction, called a 'backslanted' or 'reverse oblique' style."
+    This is basically font-style: italic;
+    */
   }
 
   @if $bold {
-    font-family: $font-stack-slab-black;
+    font-family: $font-stack-slab-bold;
+  }
+
+  @if $xl {
+    @include clamp(
+      font-size,
+      $breakpoint-phone-portrait,
+      $breakpoint-desktop,
+      $font-size-24,
+      $font-size-28
+    );
+  } @else if $small {
+    @include clamp(
+      font-size,
+      $breakpoint-phone-portrait,
+      $breakpoint-desktop,
+      $font-size-18,
+      $font-size-22
+    );
+  } @else {
+    @include clamp(
+      font-size,
+      $breakpoint-phone-portrait,
+      $breakpoint-desktop,
+      $font-size-20,
+      $font-size-24
+    );
   }
 }
 
-@mixin type-display-medium($font-color: inherit, $italic: false) {
-  @include type-base-style($font-color, 400);
-  @include clamp(
-    font-size,
-    $breakpoint-phone-portrait,
-    $breakpoint-desktop,
-    $font-size-43,
-    $font-size-80
-  );
-  @include clamp(line-height, $breakpoint-phone-portrait, $breakpoint-desktop, 52px, 92px);
-  font-family: $font-stack-slab-light;
-  letter-spacing: 0;
+@mixin type-body-default($font-color: inherit, $italic: false, $weight: 400, $size: $font-size-16) {
+  @include type-base-style($font-color, $weight);
+  font-size: $size;
+  font-variation-settings: 'wght' $weight, 'slnt' 0;
+  line-height: 1.25;
 
   @if $italic {
-    font-family: $font-stack-slab-light-italic;
+    font-style: italic;
+    font-variation-settings: 'wght' $weight, 'slnt' 10;
+    /*
+    Slant (slnt)
+    "Adjust the style from upright to slanted, also known to typographers as an 'oblique' style. Rarely, slant can work in the other direction, called a 'backslanted' or 'reverse oblique' style."
+    This is basically font-style: italic;
+    */
   }
 }
 
+@mixin type-body-small($font-color: inherit, $italic: false, $size: $font-size-15) {
+  @include type-base-style($font-color, 500);
+  font-size: $size;
+  font-variation-settings: 'wght' 500, 'slnt' 0;
+  line-height: 1.2;
+
+  @if $italic {
+    font-style: italic;
+    font-variation-settings: 'wght' 500, 'slnt' 10;
+  }
+}
+
+/*
+  mixins that are being sunset. once newsreader and inter are the only fonts
+  used, these mixins can probably be removed
+ */
 @mixin type-display-80($font-color: inherit, $italic: false) {
   @include type-base-style($font-color, 400);
+  font-family: $font-stack-sans-serif-bold;
+  line-height: 1.2;
   @include clamp(
     font-size,
     $breakpoint-phone-portrait,
@@ -121,12 +296,12 @@
     $font-size-36,
     $font-size-80
   );
-  font-family: $font-stack-sans-serif-bold;
-  line-height: 1.2;
 }
 
 @mixin type-display-64($font-color: inherit, $italic: false) {
   @include type-base-style($font-color, 400);
+  font-family: $font-stack-slab-light;
+  line-height: 1.2;
   @include clamp(
     font-size,
     $breakpoint-phone-portrait,
@@ -134,8 +309,6 @@
     $font-size-36,
     $font-size-64
   );
-  font-family: $font-stack-slab-light;
-  line-height: 1.2;
 
   strong {
     font-weight: bold;
@@ -144,6 +317,8 @@
 
 @mixin type-display-48($font-color: inherit, $bold: false) {
   @include type-base-style($font-color, 400);
+  font-family: $font-stack-sans-serif-bold;
+  line-height: 1.2;
   @include clamp(
     font-size,
     $breakpoint-phone-portrait,
@@ -151,8 +326,6 @@
     $font-size-36,
     $font-size-48
   );
-  font-family: $font-stack-sans-serif-bold;
-  line-height: 1.2;
 
   @if $bold {
     font-family: $font-stack-sans-serif-black;
@@ -161,6 +334,8 @@
 
 @mixin type-display-48-black($font-color: inherit) {
   @include type-base-style($font-color, 400);
+  font-family: $font-stack-sans-serif-black;
+  line-height: 1.2;
   @include clamp(
     font-size,
     $breakpoint-phone-portrait,
@@ -168,12 +343,13 @@
     $font-size-36,
     $font-size-48
   );
-  font-family: $font-stack-sans-serif-black;
-  line-height: 1.2;
 }
 
 @mixin type-display-junior($font-color: inherit) {
   @include type-base-style($font-color, 400);
+  line-height: 1.2;
+  font-family: $font-stack-slab;
+  letter-spacing: 0;
   @include clamp(
     font-size,
     $breakpoint-phone-portrait,
@@ -181,26 +357,6 @@
     $font-size-36,
     $font-size-48
   );
-  line-height: 1.2;
-  font-family: $font-stack-slab;
-  letter-spacing: 0;
-}
-
-@mixin type-display-small($font-color: inherit, $italic: false) {
-  @include type-base-style($font-color, 400);
-  @include clamp(
-    font-size,
-    $breakpoint-phone-portrait,
-    $breakpoint-desktop,
-    $font-size-30,
-    $font-size-36
-  );
-  @include clamp(line-height, $breakpoint-phone-portrait, $breakpoint-desktop, 40px, 46px);
-  font-family: $font-stack-slab-book;
-
-  @if $italic {
-    font-family: $font-stack-slab-book-italic;
-  }
 }
 
 @mixin type-display-thin($font-color: inherit) {
@@ -231,50 +387,10 @@
   line-height: 1.45;
 }
 
-@mixin type-eyebrow($font-color: inherit, $italic: false, $font-size: $font-size-14) {
-  @include type-base-style($font-color, 900);
-  font-size: $font-size;
-  font-family: $font-stack-sans-serif-black;
-  line-height: 1.3;
-  letter-spacing: 3px;
-  text-transform: uppercase;
-
-  @if $italic {
-    font-family: $font-stack-sans-serif-black-italic;
-  }
-}
-
-@mixin type-body-large($font-color: inherit, $height: default, $italic: false, $bold: false) {
-  @include type-base-style($font-color, 400);
-  @include clamp(
-    font-size,
-    $breakpoint-phone-portrait,
-    $breakpoint-desktop,
-    $font-size-24,
-    $font-size-28
-  );
-  @include clamp(line-height, $breakpoint-phone-portrait, $breakpoint-desktop, 32px, 46px);
-  font-family: $font-stack-slab;
-
-  @if $height != default {
-    @include clamp(line-height, $breakpoint-phone-portrait, $breakpoint-desktop, 38px, 46px);
-  }
-
-  @if $italic {
-    font-family: $font-stack-slab-italic;
-  }
-
-  @if $bold {
-    font-family: $font-stack-slab-bold;
-  }
-
-  strong {
-    font-family: $font-stack-slab-bold;
-  }
-}
-
 @mixin type-body-large-sans($font-color: inherit, $italic: false) {
   @include type-base-style($font-color);
+  font-family: $font-stack-sans-serif-regular;
+  line-height: 1.3;
   @include clamp(
     font-size,
     $breakpoint-phone-portrait,
@@ -282,19 +398,6 @@
     $font-size-20,
     $font-size-24
   );
-  font-family: $font-stack-sans-serif-regular;
-  line-height: 1.3;
-}
-
-@mixin type-body-default($font-color: inherit, $italic: false) {
-  @include type-base-style($font-color);
-  font-size: $font-size-18;
-  font-family: $font-stack-slab-book;
-  line-height: 1.78;
-
-  @if $italic {
-    font-family: $font-stack-slab-book-italic;
-  }
 }
 
 @mixin type-body-medium($font-color: inherit, $font-weight: 500) {
@@ -302,17 +405,6 @@
   font-size: $font-size-24;
   font-family: $font-stack-sans-serif;
   line-height: 1.25;
-}
-
-@mixin type-body-small($font-color: inherit, $italic: false) {
-  @include type-base-style($font-color, 500);
-  font-size: $font-size-16;
-  font-family: $font-stack-sans-serif;
-  line-height: 1.25;
-
-  @if $italic {
-    font-family: $font-stack-sans-serif-italic;
-  }
 }
 
 @mixin type-body-small-light($font-color: inherit) {
@@ -346,6 +438,8 @@
 
 @mixin type-display-sans-large($font-color: inherit) {
   @include type-base-style($font-color);
+  font-family: $font-stack-sans-serif-bold;
+  line-height: 1.2;
   @include clamp(
     font-size,
     $breakpoint-phone-portrait,
@@ -353,8 +447,6 @@
     $font-size-36,
     $font-size-64
   );
-  font-family: $font-stack-sans-serif-bold;
-  line-height: 1.2;
 }
 
 @mixin type-display-sans($font-color: inherit) {
@@ -369,6 +461,7 @@
   font-family: $font-stack-sans-serif-bold;
   line-height: 1.2;
 }
+/* end archive */
 
 @mixin type-cursive($font-color: inherit) {
   @include type-base-style($font-color, 400);
@@ -440,8 +533,8 @@
   }
 }
 
-$arrow-width: math.div(16, 18) * 1em;
-$arrow-height: math.div(14, 18) * 1em;
+$arrow-width: 19px;
+$arrow-height: 17px;
 $arrow-offset: 5px;
 $arrow-translate: 10px;
 
@@ -454,6 +547,8 @@ $arrow-translate: 10px;
   padding-right: $padding-right;
   color: $font-color;
   text-decoration: none;
+  font-weight: 500;
+  font-variation-settings: 'wght' 500;
 
   .tco-text-link-icon,
   svg {
@@ -462,7 +557,7 @@ $arrow-translate: 10px;
     height: $arrow-height;
     fill: $fill;
     transition: transform 0.2s linear;
-    transform: translate($arrow-offset, 0px);
+    transform: translate($arrow-offset, 2px);
     transform-origin: left center;
 
     &:not(.tco-text-link-icon--alt) {
@@ -476,7 +571,7 @@ $arrow-translate: 10px;
   &:focus {
     .tco-text-link--icon,
     svg {
-      transform: translate($arrow-translate, 0px);
+      transform: translate($arrow-translate, 2px);
     }
   }
 

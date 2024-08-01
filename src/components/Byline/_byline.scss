@@ -46,7 +46,6 @@ $byline-img-width--l: 66px;
   }
 
   &-name {
-    @include type-sans-bold;
     line-height: 1.25;
   }
 
@@ -89,10 +88,9 @@ $byline-img-width--l: 66px;
     }
 
     .tco-byline-name {
-      @include type-body-small;
       display: inline;
       margin-right: 3px;
-      color: $color-classic-gray-dark;
+      color: $color-classic-blue;
       list-style-type: none;
     }
   }

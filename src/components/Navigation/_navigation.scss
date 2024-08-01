@@ -238,7 +238,7 @@ $container-max: 1168px;
     @include wider-than($breakpoint-desktop) {
       display: flex;
       width: 100%;
-      margin-right: $spacing-inline-50;
+      margin-right: calc(#{$spacing-inline-50} + #{$spacing-inline-20});
       margin-bottom: 0;
       padding-top: 0;
 
@@ -252,6 +252,7 @@ $container-max: 1168px;
             margin: 0;
             padding: $spacing-stack-4 $spacing-inline-12;
             border: 2px solid $color-classic-blue;
+            border-radius: $border-radius-radius30;
             background-color: transparent;
             color: $color-classic-blue;
 
@@ -290,7 +291,11 @@ $container-max: 1168px;
       @include type-link;
       @include type-display-medium;
       @include wider-than($breakpoint-desktop) {
-        @include type-eyebrow($font-color: $color-classic-gray-dark, $font-size: $font-size-18);
+        @include type-body-default(
+          $font-color: $color-classic-gray-dark,
+          $weight: 500,
+          $size: $font-size-18
+        );
       }
       display: block;
       margin-bottom: $spacing-stack-20;

@@ -1,54 +1,21 @@
-@use 'sass:math';
+.tco-cta-banner {
+  display: flex;
+  flex-flow: column nowrap;
+  gap: min(5.5vw, calc(#{$spacing-stack-32} - #{$spacing-stack-2}));
+  align-items: center;
+  justify-content: center;
+  text-align: center;
 
-.tco-text-only {
-  &.tco-text-only-cta {
-    .tco-text-only-heading {
-      margin-bottom: $spacing-stack-12;
-    }
-  }
-}
-
-.tco-container--cta {
-  position: relative;
-}
-
-.tco-speech-bubble {
-  position: absolute;
-  font-size: 84%;
-
-  @include wider-than($breakpoint-laptop) {
-    font-size: 100%;
+  &--headline,
+  &--eyebrow {
+    margin-bottom: 0;
   }
 
-  &--left {
-    top: -4px;
-    left: -72px;
-    width: math.div(107, 16) * 1em;
-    height: math.div(84, 16) * 1em;
-
-    @include wider-than($breakpoint-laptop) {
-      top: 36px;
-      left: -108px;
-    }
-
-    @include wider-than($breakpoint-desktop) {
-      top: 86px;
-    }
-  }
-
-  &--right {
-    right: -96px;
-    bottom: 0;
-    width: math.div(157, 16) * 1em;
-    height: math.div(129, 16) * 1em;
-
-    @include wider-than($breakpoint-laptop) {
-      right: -130px;
-      bottom: 24px;
-    }
-
-    @include wider-than($breakpoint-desktop) {
-      bottom: 74px;
+  &--lede {
+    p {
+      &:last-of-type {
+        margin-bottom: 0;
+      }
     }
   }
 }

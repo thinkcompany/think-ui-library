@@ -14,6 +14,10 @@
       {
         "name": "tertiary",
         "color": "#f2f8fa"
+      },
+      {
+        "name": "light",
+        "color": "#89D8FF"
       }
     ]
   },
@@ -79,12 +83,12 @@
   {
     "name": "tertiary",
     "section": "background",
-    "color": "#173145"
+    "color": "#072235"
   },
   {
     "name": "primary",
     "section": "foreground",
-    "color": "#173145"
+    "color": "#072235"
   },
   {
     "name": "secondary",
@@ -106,6 +110,11 @@
     "section": "foreground",
     "color": "#ffffff"
   },
+   {
+    "name": "soft-white",
+    "section": "classic",
+    "color": "#f6f3eb"
+  },
   {
     "name": "gray-light",
     "section": "classic",
@@ -119,7 +128,7 @@
   {
     "name": "gray-dark",
     "section": "classic",
-    "color": "#262c30"
+    "color": "#072235"
   },
   {
     "name": "glass",
@@ -134,7 +143,7 @@
   {
     "name": "navy",
     "section": "classic",
-    "color": "#173145"
+    "color": "#072235"
   },
   {
     "name": "black",

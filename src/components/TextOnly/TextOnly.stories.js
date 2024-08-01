@@ -1,7 +1,7 @@
 const alignments = ['left', 'center', 'right'];
 const sizes = ['small', 'medium', 'large', 'extra-large'];
 
-const ledeSizes = ['large', 'default', 'sans-small'];
+const ledeSizes = ['extra-large', 'large', 'medium', 'default', 'small'];
 const containerSizes = ['default', 'mid', 'narrow', 'none'];
 
 const Template = args => {
@@ -26,7 +26,7 @@ const Template = args => {
         ${
           eyebrow
             ? `
-          <span class="tco-text-only-eyebrow">${eyebrow}</span>
+          <p class="tco-text-only-eyebrow">${eyebrow}</p>
           `
             : ''
         }
@@ -81,11 +81,11 @@ export default {
     textAlignment: alignments[0],
     showCta: false,
     eyebrow: 'Welcome',
-    heading: 'Think Company Design System',
-    headingSize: sizes[1],
-    lede: "The Think Company Design System includes styles, components, and patterns for various UI elements within the Think Company website. This library is intended to be used as a reference and guide for the design and development teams. What's included:</br><strong>Primitives</strong> are the foundational styles and components used throughout the Design System, including colors, typography, and spacing. <strong>Controls & Inputs </strong> enable users to take actions, typically within a form. <strong>Components</strong> are the higher level building blocks of the Think Company site.",
-    ledeSize: ledeSizes[1],
-    ledeContainer: containerSizes[0]
+    heading: 'Think Company </br>Design System',
+    headingSize: sizes[2],
+    lede: 'The Think Company Design System includes styles, components, and patterns for various UI elements within the Think Company website. This library is intended to be used as a reference and guide for the design and development teams. </br></br><strong>Primitives</strong> are the foundational styles and components used throughout the Design System, including colors, typography, and spacing. <strong>Controls & Inputs </strong> enable users to take actions, typically within a form. <strong>Components</strong> are the higher level building blocks of the Think Company site.',
+    ledeSize: sizes[4],
+    ledeContainer: containerSizes[1]
   },
   argTypes: {
     textAlignment: {

@@ -8,7 +8,7 @@ module.exports = {
       }
     },
     '@storybook/addon-postcss',
-    '@whitespace/storybook-addon-html',
+    // '@whitespace/storybook-addon-html',
     'storybook-dark-mode',
     '@storybook/addon-google-analytics'
   ],

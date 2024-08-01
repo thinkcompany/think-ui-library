@@ -19,6 +19,10 @@ $bubble-max: 600px;
 
   &-content {
     width: 100%;
+
+    p {
+      line-height: 1.78;
+    }
   }
 
   &-cta {
@@ -29,6 +33,10 @@ $bubble-max: 600px;
     @include type-eyebrow;
     display: block;
     margin-bottom: $spacing-stack-12;
+
+    .tco-lights-out & {
+      color: $color-dark-theme-blue;
+    }
   }
 
   &-heading {
