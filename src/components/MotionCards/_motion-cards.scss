@@ -54,6 +54,10 @@ $container-offset: 4px;
 
   &-cta {
     @include type-eyebrow;
+
+    &:hover {
+      border-bottom-color: transparent;
+    }
   }
 }
 
