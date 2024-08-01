@@ -232,8 +232,8 @@ const miniCsCard = input => {
             <img src="${input.image}" alt="Example of work" width="234" height="130" />
           </div>
           <div class="tco-mini-content">
-            <h3 class="tco-type-eyebrow">${input.name}</h3>
-            <p class="tco-type-body">${input.project}</p>
+            <h3 class="tco-type-display--small-24">${input.name}</h3>
+            <p class="tco-type-body--small-14">${input.project}</p>
           </div>
         </div>
       </div>
@@ -316,11 +316,11 @@ const MotionCardTemplate = args => {
       <div class="tco-card-grid tco-card-grid--2-column">
         <div class="tco-card tco-card--motion tco-card--motion-carousel tco-card-container--${treatment}">
           <div class="tco-card-content-container">
-            <h2 class="tco-type-display--medium">${heading}</h2>
-            <p class="tco-card-description tco-type-body--sans-small">${summary}</p>
-            <a class="tco-text-link-motion tco-type-body">
+            <h2 class="tco-card--motion-title tco-type-display--large-80">${heading}</h2>
+            <p class="tco-card-description tco-type-body--default">${summary}</p>
+            <a href="#" class="tco-card--motion-cta tco-tco-text-link tco-text-link--arrow">
               See our work
-              <svg class="tco-text-link-icon tco-text-link-icon--alt" width="20" height="20" viewBox="0 0 20 20" role="presentation">
+              <svg class="tco-text-link-icon" width="20" height="20" viewBox="0 0 20 20" role="presentation">
                 <use xlink:href="/img/icons.svg#icon-arrow-right"></use>
               </svg>
             </a>
@@ -346,11 +346,11 @@ const MotionCardTemplate = args => {
 
         <div class="tco-card tco-card--motion tco-card--motion-slider tco-card-container--${treatment}">
           <div class="tco-card-content-container">
-            <h2 class="tco-type-display--medium">${headingB}</h2>
-            <p class="tco-card-description tco-type-body--sans-small">${summaryB}</p>
-            <a class="tco-text-link-motion tco-type-body">
+            <h2 class="tco-card--motion-title tco-type-display--large-80">${headingB}</h2>
+            <p class="tco-card-description tco-type-body--default">${summaryB}</p>
+            <a href="#" class="tco-card--motion-cta tco-tco-text-link tco-text-link--arrow">
               How we do it
-              <svg class="tco-text-link-icon tco-text-link-icon--alt" width="20" height="20" viewBox="0 0 20 20" role="presentation">
+              <svg class="tco-text-link-icon" width="20" height="20" viewBox="0 0 20 20" role="presentation">
                 <use xlink:href="/img/icons.svg#icon-arrow-right"></use>
               </svg>
             </a>
@@ -424,7 +424,7 @@ export default {
     heading: 'Work',
     headingB: 'Process',
     summary:
-      "Take a look at how we've helped teams like yours delight customers and employees with modern digital tools.",
+      "We've helped teams like yours delight customers and employees with modern digital tools.",
     summaryB:
       'See how we launch exceptional digital experiences— even in the most challenging regulated environments.',
     miniCards: miniContent,

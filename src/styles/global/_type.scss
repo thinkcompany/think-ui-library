@@ -117,18 +117,18 @@
 }
 
 .tco-type-body--small {
-  @include type-body-small;
+  @include type-body-small($font-color: $color-classic-navy);
 
   &-italic {
     @include type-body-large($italic: true);
   }
 
   &-14 {
-    @include type-body-small($font-size-14);
+    @include type-body-small($size: $font-size-14);
   }
 
   &-10 {
-    @include type-body-small($font-size-10);
+    @include type-body-small($size: $font-size-10);
     line-height: 2;
   }
 }
