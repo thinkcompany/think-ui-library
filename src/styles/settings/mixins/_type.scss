@@ -533,8 +533,8 @@
   }
 }
 
-$arrow-width: math.div(16, 18) * 1em;
-$arrow-height: math.div(14, 18) * 1em;
+$arrow-width: 19px;
+$arrow-height: 17px;
 $arrow-offset: 5px;
 $arrow-translate: 10px;
 
@@ -547,6 +547,8 @@ $arrow-translate: 10px;
   padding-right: $padding-right;
   color: $font-color;
   text-decoration: none;
+  font-weight: 500;
+  font-variation-settings: 'wght' 500;
 
   .tco-text-link-icon,
   svg {
@@ -555,7 +557,7 @@ $arrow-translate: 10px;
     height: $arrow-height;
     fill: $fill;
     transition: transform 0.2s linear;
-    transform: translate($arrow-offset, 0px);
+    transform: translate($arrow-offset, 2px);
     transform-origin: left center;
 
     &:not(.tco-text-link-icon--alt) {
@@ -569,7 +571,7 @@ $arrow-translate: 10px;
   &:focus {
     .tco-text-link--icon,
     svg {
-      transform: translate($arrow-translate, 0px);
+      transform: translate($arrow-translate, 2px);
     }
   }
 

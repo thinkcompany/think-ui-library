@@ -119,7 +119,7 @@ $big-arrow-height: math.div(29, 18) * 1em;
   &--arrow,
   &--big-arrow {
     @include type-link-cta;
-    color: $color-classic-blue;
+    color: $color-classic-navy;
 
     .tco-lights-out & {
       border-bottom-color: transparent;
@@ -165,7 +165,7 @@ $big-arrow-height: math.div(29, 18) * 1em;
       $font-size-18
     );
     border-bottom-width: 0;
-    color: $color-classic-gray-medium;
+    color: $color-classic-navy;
 
     svg {
       width: $big-arrow-width;
