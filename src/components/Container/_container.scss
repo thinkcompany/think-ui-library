@@ -143,18 +143,6 @@ $color-hover-blue-blue: #09509a;
   }
 
   &--navy {
-    @include type-base-style($color-foreground-on-tint);
     background-color: $color-background-tertiary;
-
-    .tco-btn {
-      &--secondary {
-        border-color: $color-foreground-primary;
-        color: $color-foreground-primary;
-      }
-
-      &--tertiary {
-        color: $color-foreground-primary;
-      }
-    }
   }
 }
