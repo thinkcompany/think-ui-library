@@ -279,7 +279,10 @@
   }
 }
 
-/* unchanged, not new */
+/*
+  mixins that are being sunset. once newsreader and inter are the only fonts
+  used, these mixins can probably be removed
+ */
 @mixin type-display-80($font-color: inherit, $italic: false) {
   @include type-base-style($font-color, 400);
   font-family: $font-stack-sans-serif-bold;
@@ -456,7 +459,7 @@
   font-family: $font-stack-sans-serif-bold;
   line-height: 1.2;
 }
-/* end not new */
+/* end archive */
 
 @mixin type-cursive($font-color: inherit) {
   @include type-base-style($font-color, 400);

@@ -2,7 +2,8 @@ const TextHighlightTemplate = args => {
   const { text } = args;
 
   return `
-  <div class="tco-container-wrapper" style="margin-top:80em;">
+  <p style="text-align:center">Scroll</p>
+  <div class="tco-container-wrapper" style="margin-top:100vh;">
 	  <div class="tco-container" style="max-width:900px;height:80vh;text-align:center;">
       <div class="tco-text-only">
         <h3 class="tco-type-display--medium">${text}</h3>
