@@ -364,6 +364,10 @@ $bubble-max: 600px;
     @include type-eyebrow;
     display: block;
     margin-bottom: $spacing-stack-12;
+
+    .tco-lights-out & {
+      color: $color-dark-theme-blue;
+    }
   }
 
   &-heading {
@@ -373,5 +377,6 @@ $bubble-max: 600px;
   &-lede {
     @include type-body-default;
     margin: 0 auto $spacing-stack-32;
+    line-height: 1.77;
   }
 }
