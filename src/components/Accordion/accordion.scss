@@ -20,7 +20,7 @@
   align-items: center;
   justify-content: space-between;
   width: 100%;
-  padding: 0 0 $spacing-stack-24 0;
+  padding: 0 0 $spacing-stack-20 0;
   border: none;
   border-radius: 0;
   background: none;
@@ -115,6 +115,6 @@
   padding: 0 $spacing-inline-20 $spacing-stack-16 0;
 
   p {
-    margin-bottom: $spacing-stack-8;
+    margin-bottom: $spacing-stack-16;
   }
 }

@@ -1,4 +1,3 @@
-@use 'sass:math';
 /* stylelint-disable selector-max-pseudo-class, max-line-length, selector-max-specificity,  max-nesting-depth, selector-max-combinators, selector-max-compound-selectors, selector-max-class */
 // ========================================================
 // = BASE CARD
@@ -465,7 +464,7 @@ $device-offset-v: 58px;
     &-heading {
       display: inline;
       color: $color-foreground-on-tint;
-      line-height: math.div(32, 28);
+      line-height: calc(32 / 28);
     }
 
     &-description {
@@ -492,27 +491,36 @@ $device-offset-v: 58px;
 .tco-card--post {
   max-width: 480px;
 
+  &-date,
+  &-title,
+  .tco-byline {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+
   .tco-card-content {
     &-heading {
       @include type-display-small($font-color: $color-classic-blue);
     }
-  }
 
-  .tco-type-body--large {
-    line-height: math.div(36, 28);
+    &-container {
+      display: flex;
+      flex-flow: column nowrap;
+      gap: $spacing-stack-16;
+
+      @include wider-than($breakpoint-desktop) {
+        padding: $spacing-stack-32;
+      }
+    }
   }
 
   .tco-card-image-container {
     position: relative;
     width: 100%;
-    height: 0;
-    padding-bottom: 56.25%;
+    aspect-ratio: 16 / 9;
   }
 
-  .tco-type-body--sans-small,
   .tco-byline--no-image .tco-byline-name {
-    color: $color-classic-gray-medium;
-
     .tco-lights-out & {
       color: $color-foreground-on-tint;
     }

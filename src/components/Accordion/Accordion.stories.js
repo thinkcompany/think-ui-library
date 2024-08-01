@@ -15,6 +15,12 @@ const AccordionTemplate = () => {
           </button>
           <div id="accordion-panel-A" class="tco-accordion-content">
             <p class="tco-type-body--medium">We'll dive into your business, uncovering any hidden issues that could affect your success. We'll know your business inside and out, and you'll have a clear strategy to meet your goals.</p>
+            <a href="" class="tco-text-link tco-text-link--arrow">
+              Check it out
+              <svg class="tco-text-link-icon" width="20" height="20" viewBox="0 0 20 20" role="presentation">
+                <use xlink:href="/img/icons.svg#icon-arrow-right"></use>
+              </svg>
+            </a>
           </div>
         </div>
 

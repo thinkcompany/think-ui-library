@@ -100,6 +100,10 @@ $color-hover-blue-blue: #09509a;
     color: $color-foreground-primary;
   }
 
+  &--soft-white {
+    background-color: $color-classic-soft-white;
+  }
+
   &--glass {
     background-color: $color-tint-blue-tertiary;
     color: $color-foreground-primary;

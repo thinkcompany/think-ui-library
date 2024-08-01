@@ -140,7 +140,7 @@ $big-arrow-height: math.div(29, 18) * 1em;
 
   .tco-lights-out & {
     border-bottom-color: $color-dark-theme-blue;
-    color: $color-dark-theme-blue;
+    color: $color-foreground-on-tint;
 
     &:hover,
     &:focus {

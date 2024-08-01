@@ -110,6 +110,11 @@
     "section": "foreground",
     "color": "#ffffff"
   },
+   {
+    "name": "soft-white",
+    "section": "classic",
+    "color": "#f6f3eb"
+  },
   {
     "name": "gray-light",
     "section": "classic",
