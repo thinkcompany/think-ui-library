@@ -179,9 +179,11 @@
   }
 }
 
-@mixin type-eyebrow($font-color: inherit, $italic: false, $small: false) {
-  @include type-base-style($font-color, 500);
+@mixin type-eyebrow($font-color: $color-classic-blue, $italic: false, $small: false, $weight: 500) {
+  @include type-base-style($font-color, $weight);
   line-height: 1;
+  color: $font-color;
+  font-variation-settings: 'wght' $weight, 'slnt' 0;
 
   @if $small {
     font-size: $font-size-16;
