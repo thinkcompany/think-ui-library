@@ -144,5 +144,6 @@ $color-hover-blue-blue: #09509a;
 
   &--navy {
     background-color: $color-background-tertiary;
+    color: $color-foreground-on-tint;
   }
 }
