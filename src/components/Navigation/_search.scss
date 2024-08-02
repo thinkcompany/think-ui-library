@@ -27,12 +27,17 @@ $search-h: 20px;
 
   @include wider-than($breakpoint-laptop) {
     top: 57px;
-    right: -28px;
+    //right: -28px;
+    right: -16px;
     left: auto;
     justify-content: flex-end;
     opacity: 0;
     visibility: hidden;
     transition: opacity 0.15s ease-out, visibility 0.15s ease-out;
+  }
+
+  @include wider-than($breakpoint-desktop) {
+    right: -28px;
   }
 
   &.tco-global-search--open {
@@ -65,10 +70,14 @@ $search-h: 20px;
 
       @include wider-than($breakpoint-laptop) {
         top: 0;
-        right: 28px;
+        right: 16px;
         width: $search-w + 4px;
         height: $search-h + 4px;
         background-image: url("data:image/svg+xml,%3Csvg width='27' height='27' viewBox='0 0 27 27' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M18.6 10.8a7.8 7.8 0 1 1-15.6 0 7.8 7.8 0 0 1 15.6 0Zm-1.408 8.706c-1.79 1.316-4 2.094-6.392 2.094C4.835 21.6 0 16.765 0 10.8 0 4.835 4.835 0 10.8 0c5.965 0 10.8 4.835 10.8 10.8 0 2.49-.843 4.785-2.26 6.612l7.467 7.467L24.686 27l-7.494-7.494Z' fill='%230062C3'/%3E%3C/svg%3E");
+      }
+
+      @include wider-than($breakpoint-desktop) {
+        right: 28px;
       }
 
       .tco-lights-out & {
@@ -183,7 +192,12 @@ $search-h: 20px;
   }
 
   @include wider-than($breakpoint-laptop) {
+    right: 14px;
     display: block;
+  }
+
+  @include wider-than($breakpoint-desktop) {
+    right: 26px;
   }
 
   .tco-global-search--open & {
