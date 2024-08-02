@@ -201,8 +201,7 @@ $container-offset: 4px;
   color: $color-foreground-on-tint;
   text-align: left;
 
-  .tco-type-eyebrow,
-  .tco-type-body {
+  * {
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
