@@ -1,4 +1,4 @@
-const styles = ['primary', 'secondary'];
+const styles = ['primary', 'secondary', 'tertiary'];
 const states = ['active', 'disabled'];
 
 const sizes = [
@@ -14,9 +14,10 @@ const sizes = [
 
 export const Button = args => {
   const { buttonText, buttonState, buttonStyle } = args;
+  const containerClass = buttonStyle === 'tertiary' ? 'tco-container-wrapper--navy' : '';
 
   return `
-  <div class="tco-container-wrapper">
+  <div class="tco-container-wrapper ${containerClass}">
     <div class="tco-container">
       <button type="button" class="tco-btn tco-btn--${buttonStyle}" ${buttonState}>
         ${buttonText}
