@@ -315,7 +315,7 @@ $container-max: 1168px;
       }
 
       @include wider-than($breakpoint-laptop) {
-        margin-right: $spacing-inline-50;
+        margin-right: calc(#{$spacing-inline-50} - #{$spacing-inline-8});
         margin-bottom: 0;
 
         .tco-lights-out & {
