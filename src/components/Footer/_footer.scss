@@ -240,7 +240,7 @@ $widget-width: 132px;
     line-height: 1.3;
 
     a {
-      @include type-link-cta($fill: $color-foreground-on-tint);
+      @include type-link-cta($fill: $color-foreground-on-tint, $weight: 400);
       color: $color-foreground-on-tint;
 
       &:hover,
