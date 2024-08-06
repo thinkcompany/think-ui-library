@@ -187,7 +187,7 @@ const CaseStudyCardsTemplate = args => {
 export const CaseStudyCards = CaseStudyCardsTemplate.bind({});
 
 export default {
-  title: 'Components / Case Study Cards',
+  title: 'Archive / Case Study Cards',
   args: {
     type: types[0],
     itemList: cardContents

@@ -19,7 +19,7 @@ TextUnderline.args = {
 };
 
 export default {
-  title: 'Motion / Text Underline',
+  title: 'Archive / Text Underline',
   parameters: {
     component: TextUnderline
   }

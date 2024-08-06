@@ -153,5 +153,5 @@ Form.argTypes = {
 };
 
 export default {
-  title: 'Components / Floating Form'
+  title: 'Archive / Floating Form'
 };

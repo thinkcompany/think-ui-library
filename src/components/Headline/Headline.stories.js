@@ -23,7 +23,7 @@ const HeadlineTemplate = () => {
 export const Headline = HeadlineTemplate.bind({});
 
 export default {
-  title: 'Motion / Headline',
+  title: 'Archive / Headline',
   component: Headline,
   parameters: {
     component: Headline,

@@ -63,7 +63,7 @@ const HeadlineLeftTemplate = () => {
 export const HeadlineLeft = HeadlineLeftTemplate.bind({});
 
 export default {
-  title: 'Motion / Arrows',
+  title: 'Archive / Arrows',
   component: [FullSectionRight, ConnectorLeft, HeadlineLeft],
   parameters: {
     component: FullSectionRight,
