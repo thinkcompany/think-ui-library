@@ -127,7 +127,33 @@ const PostCardTemplate = args => {
   </div>`;
 };
 
+const CaseStudyCardTemplate = args => {
+  const { image, heading, treatment } = args;
+
+  return `
+  <div class="tco-container-wrapper">
+    <div class="tco-container">
+      <div class="tco-card tco-card--post tco-card-container--${treatment}">
+        <a href="#" class="tco-card-link tco-link--dark-theme">
+          <div class="tco-card-image-container">
+            <img class="tco-card-image" alt="Card image" src="${image}" />
+          </div>
+          <div class="tco-card-content-container">
+            <p class="tco-card--post-date tco-body-default">July 17, 2024</p>
+            <h3 class="tco-card--post-title tco-text-link tco-type-display--small">${heading}
+              <svg class="tco-text-link-icon" width="20" height="20" viewBox="0 0 20 20" role="presentation">
+                <use xlink:href="/img/icons.svg#icon-arrow-right"></use>
+              </svg>
+            </h3>
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>`;
+};
+
 export const PostCard = PostCardTemplate.bind({});
+export const CaseStudyCard = CaseStudyCardTemplate.bind({});
 
 PostCard.args = {
   heading: 'Designing with intention: Our Config 2024 takeaways',
@@ -137,6 +163,22 @@ PostCard.args = {
 };
 
 PostCard.argTypes = {
+  treatment: {
+    name: 'border treatment (dark theme)',
+    control: 'inline-radio',
+    options: treatments
+  }
+};
+
+CaseStudyCard.args = {
+  eyebrow: 'Penn Mutual',
+  heading: 'Using technology to improve how financial professionals service customers',
+  image:
+    'https://www.thinkcompany.com/wp-content/uploads/2022/05/Penn-Mu-featured-image-800x800-1.png',
+  treatment: treatments[1]
+};
+
+CaseStudyCard.argTypes = {
   treatment: {
     name: 'border treatment (dark theme)',
     control: 'inline-radio',

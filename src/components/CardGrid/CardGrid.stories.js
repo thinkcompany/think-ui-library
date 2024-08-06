@@ -50,6 +50,26 @@ const postCard = () => {
   </div>`;
 };
 
+const caseStudyCard = () => {
+  return `
+  <div class="tco-card tco-card--post">
+        <a href="#" class="tco-card-link tco-link--dark-theme">
+          <div class="tco-card-image-container">
+            <img class="tco-card-image" alt="Card image" src="https://www.thinkcompany.com/wp-content/uploads/2022/05/Penn-Mu-featured-image-800x800-1.png" />
+          </div>
+          <div class="tco-card-content-container">
+            <p class="tco-card--post-date tco-body-default">Penn Mutual</p>
+            <h3 class="tco-card--post-title tco-text-link tco-type-display--small">
+              Using technology to improve how financial professionals service customers
+              <svg class="tco-text-link-icon" width="20" height="20" viewBox="0 0 20 20" role="presentation">
+                <use xlink:href="/img/icons.svg#icon-arrow-right"></use>
+              </svg>
+            </h3>
+          </div>
+        </a>
+      </div>`;
+};
+
 const calloutCard = () => {
   return `
   <div class="tco-card tco-card--callout">
@@ -102,7 +122,7 @@ const jobCard = () => {
 };
 
 const colors = ['default', 'glass'];
-const cardTypes = ['post', 'summary', 'person', 'callout', 'media', 'job'];
+const cardTypes = ['post', 'summary', 'person', 'callout', 'media', 'job', 'casestudy'];
 const alignments = ['center', 'left', 'right'];
 const sizes = ['medium', 'extra-large', 'large', 'small'];
 const ledeSizes = ['default', 'large', 'sans-small'];
@@ -142,6 +162,8 @@ const Template = args => {
       card = mediaCard();
     } else if (cardType === 'job') {
       card = jobCard();
+    } else if (cardType === 'casestudy') {
+      card = caseStudyCard();
     }
 
     for (let i = 0; i < count; i++) {
