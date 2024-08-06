@@ -1,8 +1,19 @@
 const offsets = ['none', 'top', 'bottom'];
 const mediaTypes = ['image', 'video'];
 
+const ytLite = (videoId, videoTitle) => {
+  return `
+      <script defer src="https://cdnjs.cloudflare.com/ajax/libs/lite-youtube-embed/0.3.2/lite-yt-embed.js"></script>
+      <lite-youtube videoid="${videoId}" params="&rel=0" style="background-image: url('https://i.ytimg.com/vi_webp/${videoId}/maxresdefault.webp');">
+        <a href="https://youtube.com/watch?v=${videoId}&rel=0" class="lty-playbtn" title="Play Video">
+          <span class="tco-type-body--medium tco-video-ytlite--title">${videoTitle}</span>
+        </a>
+      </lite-youtube>
+    `;
+};
+
 const Template = args => {
-  const { offset, imgSrc, videoSrc, mediaType } = args;
+  const { offset, imgSrc, videoSrc, videoTitle, mediaType } = args;
 
   return `
   <div class="tco-container-wrapper">
@@ -11,7 +22,7 @@ const Template = args => {
         ${
           mediaType === 'image'
             ? `<img class="tco-image-only-image" alt="A brief description of the image" src="${imgSrc}" />`
-            : `${videoSrc}`
+            : `${ytLite(videoSrc, videoTitle)}`
         }
       </div>
     </div>
@@ -26,8 +37,8 @@ export default {
     offset: offsets[0],
     mediaType: mediaTypes[0],
     imgSrc: 'https://www.thinkcompany.com/wp-content/uploads/2021/01/careers-header.jpg',
-    videoSrc:
-      '<iframe width="560" height="315" src="https://www.youtube.com/embed/StKrqfrOkWE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>'
+    videoSrc: 'JogGfX6DTUk',
+    videoTitle: 'Improving the donor journey | Chenora Burkett and Think Company | Client Stories'
   },
   argTypes: {
     imgSrc: {
@@ -35,7 +46,11 @@ export default {
       control: 'text'
     },
     videoSrc: {
-      name: 'video source'
+      name: 'video embed id'
+    },
+    videoTitle: {
+      name: 'video title',
+      control: 'text'
     },
     mediaType: {
       name: 'media type',
