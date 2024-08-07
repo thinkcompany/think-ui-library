@@ -4,9 +4,9 @@ const mediaTypes = ['image', 'video'];
 const ytLite = (videoId, videoTitle) => {
   return `
       <script defer src="https://cdnjs.cloudflare.com/ajax/libs/lite-youtube-embed/0.3.2/lite-yt-embed.js"></script>
-      <lite-youtube videoid="${videoId}" params="&rel=0" style="background-image: url('https://i.ytimg.com/vi_webp/${videoId}/maxresdefault.webp');">
+      <lite-youtube videoid="${videoId}" params="&rel=0" style="background-image: url('https://i.ytimg.com/vi_webp/${videoId}/maxresdefault.webp');" title="${videoTitle}">
         <a href="https://youtube.com/watch?v=${videoId}&rel=0" class="lty-playbtn" title="Play Video">
-          <span class="tco-type-body--medium tco-video-ytlite--title">${videoTitle}</span>
+          <span class="tco-accessibly-hidden">${videoTitle}</span>
         </a>
       </lite-youtube>
     `;
