@@ -3,6 +3,59 @@
      Compositional mixins
 \*---------------------------------------------- */
 
+/*
+  Font fallbacks
+  tldr; use system fonts as fallbacks and normalize their glyph ascent and descent to match the web font
+  the calculations relatively straightforward, but the values for all google font are available in the
+  font-metric-overrides.csv file in the repo
+
+  https://github.com/khempenius/font-fallbacks-dataset/blob/main/font-metric-overrides.csv
+  https://developer.chrome.com/blog/font-fallbacks/
+
+  Font Metric Overrides
+  Newsreader
+  ascent-override: 0.735;
+  descent-override: 0.265;
+  line-gap-override: 0.0;
+
+  Inter
+  ascent-override: 0.96875;
+  descent-override: 0.2415;
+  line-gap-override: 0.0;
+*/
+
+@font-face {
+  font-family: 'newsreader-fallback';
+  src: local('Times New Roman');
+  ascent-override: 73.5%;
+  descent-override: 26.5%;
+  line-gap-override: 0;
+}
+
+@font-face {
+  font-family: 'inter-fallback';
+  src: local('Arial');
+  ascent-override: 96.9%;
+  descent-override: 24.2%;
+  line-gap-override: 0;
+}
+
+@font-face {
+  font-family: 'newsreader-fallback-android';
+  src: local('Roboto');
+  ascent-override: 73.5%;
+  descent-override: 26.5%;
+  line-gap-override: 0;
+}
+
+@font-face {
+  font-family: 'inter-fallback-android';
+  src: local('Roboto');
+  ascent-override: 96.9%;
+  descent-override: 24.2%;
+  line-gap-override: 0;
+}
+
 // The base style for all fonts.
 // Accepts an optional font color parameter and font weight (defaults to normal)
 @mixin type-base-style($font-color: inherit, $font-weight: normal) {

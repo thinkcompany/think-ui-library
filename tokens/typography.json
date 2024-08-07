@@ -20,7 +20,7 @@
     "sans-serif-bold-italic": "'KievitWeb W07 BoldIta', helvetica, sans-serif",
     "sans-serif-black": "'KievitWeb W07 Black', georgia, serif",
     "sans-serif-black-italic": "'KievitWeb W07 BlackIta', georgia, serif",
-    "newsreader": "'Newsreader', georgia, serif",
-    "inter": "'Inter', helvetica, sans-serif"
+    "newsreader": "'Newsreader', newsreader-fallback, newsreader-fallback-android, serif",
+    "inter": "'Inter', inter-fallback, inter-fallback-android, sans-serif"
   }
 }

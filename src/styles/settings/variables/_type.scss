@@ -48,5 +48,5 @@ $font-stack-sans-serif-bold: 'KievitWeb W07 Bold', helvetica, sans-serif;
 $font-stack-sans-serif-bold-italic: 'KievitWeb W07 BoldIta', helvetica, sans-serif;
 $font-stack-sans-serif-black: 'KievitWeb W07 Black', georgia, serif;
 $font-stack-sans-serif-black-italic: 'KievitWeb W07 BlackIta', georgia, serif;
-$font-stack-newsreader: 'Newsreader', georgia, serif;
-$font-stack-inter: 'Inter', helvetica, sans-serif;
+$font-stack-newsreader: 'Newsreader', newsreader-fallback, newsreader-fallback-android, serif;
+$font-stack-inter: 'Inter', inter-fallback, inter-fallback-android, sans-serif;
