@@ -64,7 +64,7 @@ Speaker.args = {
 };
 
 export default {
-  title: 'Components / Bio',
+  title: 'Archive / Bio',
   parameters: {
     component: Author,
     componentSubtitle: 'The Bio component is used on Thinker profile pages.',

@@ -94,5 +94,5 @@ ServiceCardGrid.parameters = {
 };
 
 export default {
-  title: 'Components / Service Card Grid'
+  title: 'Archive / Service Card Grid'
 };

@@ -1,0 +1,41 @@
+/* stylelint-disable property-no-unknown, function-calc-no-invalid */
+$container-max: 442px;
+$circle-max: 248px;
+$circle: calc(($circle-max / $container-max) * 100%);
+
+.tco-venn-diagram {
+  position: relative;
+  display: block;
+  width: min(100%, $container-max);
+  aspect-ratio: 1 / 1;
+
+  &--circle {
+    position: absolute;
+    display: flex;
+    width: $circle;
+    border: 1.5px solid $color-classic-blue;
+    border-radius: 50%;
+    aspect-ratio: 1 / 1;
+  }
+
+  &--circle-a {
+    top: 0;
+    left: 0;
+  }
+
+  &--circle-b {
+    top: calc(54px / $container-max * 100%);
+    right: 0;
+  }
+
+  &--circle-c {
+    bottom: calc(6px / $container-max * 100%);
+    left: calc(54px / $container-max * 100%);
+  }
+
+  &--label {
+    @include type-body-large($weight: 400, $small: true);
+    margin: auto;
+    color: $color-classic-blue;
+  }
+}
