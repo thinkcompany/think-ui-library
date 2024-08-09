@@ -377,11 +377,11 @@ const WorkCardTemplate = args => {
     <div class="tco-container">
       <div class="tco-card tco-card--work tco-card-container--shadow">
         <div class="tco-card-content-container">
-          <h2 class="tco-type-display--small tco-link--dark-theme">${heading}</h2>
-          <p class="tco-type-body--sans-small">${description}</p>
+          <h2 class="tco-type-display--medium-36 tco-link--dark-theme tco-card--work-title">${heading}</h2>
+          <p class="tco-type-body tco-card--work-body">${description}</p>
           <a href="#" class="tco-text-link tco-text-link--big-arrow" active="">
             Case studies
-            <svg class="tco-text-link-icon" width="20" height="20" viewBox="0 0 20 20" role="presentation">
+            <svg class="tco-text-link-icon" viewBox="0 0 31 29" role="presentation">
               <use xlink:href="/img/icons.svg#icon-arrow-right"></use>
             </svg>
           </a>

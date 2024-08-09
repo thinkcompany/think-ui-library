@@ -1036,10 +1036,9 @@ $card-break: 940px;
   .tco-card-content-container {
     display: flex;
     flex-flow: column nowrap;
+    gap: $spacing-stack-16;
     justify-content: center;
     width: 100%;
-    max-width: 448px;
-    height: 100%;
     padding: $spacing-stack-64 $spacing-inline-40 0;
 
     @include wider-than($breakpoint-phone-landscape) {
@@ -1048,19 +1047,22 @@ $card-break: 940px;
 
     @include wider-than($card-break) {
       width: 50%;
-      padding: $spacing-stack-20 $spacing-inline-40;
+      padding: $spacing-stack-20 $spacing-inline-8 $spacing-stack-20 $spacing-inline-40;
     }
   }
 
-  .tco-type-display--small {
-    margin-bottom: $spacing-stack-16;
-  }
-
-  .tco-type-body--sans-small {
-    margin-bottom: $spacing-stack-24;
-  }
-
   .tco-text-link--big-arrow {
+    margin-top: $spacing-stack-24;
     color: $color-classic-blue;
+  }
+
+  &-title,
+  &-body {
+    margin-bottom: 0;
+  }
+
+  &-body {
+    font-weight: $font-weight-500;
+    font-variation-settings: 'wght' $font-weight-500;
   }
 }
