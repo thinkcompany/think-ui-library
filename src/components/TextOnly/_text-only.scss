@@ -1,10 +1,13 @@
 $bubble-max: 600px;
 
 .tco-text-only {
-  &--right,
-  &--center {
-    display: flex;
-    flex-flow: column nowrap;
+  display: flex;
+  flex-flow: column nowrap;
+  gap: $spacing-stack-24;
+  align-items: flex-start;
+
+  @include wider-than($breakpoint-tablet-portrait) {
+    gap: $spacing-stack-32;
   }
 
   &--right {
@@ -21,22 +24,25 @@ $bubble-max: 600px;
     width: 100%;
   }
 
-  &-cta {
-    margin-top: $spacing-stack-24;
+  &--heading,
+  &--eyebrow,
+  &--lede:last-of-type {
+    margin-top: 0;
+    margin-bottom: 0;
   }
 
-  &-eyebrow {
-    @include type-eyebrow;
-    display: block;
-    margin-bottom: $spacing-stack-12;
+  &--cta {
+    margin-top: $spacing-stack-12;
 
-    .tco-lights-out & {
-      color: $color-dark-theme-blue;
+    @include wider-than($breakpoint-tablet-portrait) {
+      margin-top: $spacing-stack-16;
     }
   }
 
-  &-heading {
-    margin-bottom: $spacing-stack-12;
+  &-eyebrow {
+    .tco-lights-out & {
+      color: $color-dark-theme-blue;
+    }
   }
 
   &--bubble {
