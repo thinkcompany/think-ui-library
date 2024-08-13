@@ -74,16 +74,8 @@ $bubble-max: 600px;
     }
   }
 
-  &--align-left {
-    @include wider-than($breakpoint-tablet-portrait) {
-      padding-left: $spacing-inline-24;
-    }
-  }
-
   &--align-right {
     @include wider-than($breakpoint-tablet-portrait) {
-      padding-right: $spacing-inline-24;
-
       .tco-text-media-content {
         &-text {
           order: 0;
