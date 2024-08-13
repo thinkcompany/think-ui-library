@@ -16,9 +16,16 @@ const displayStyles = [
   {
     name: 'Display Large 80',
     class: 'tco-type-display--large-80',
-    sass: '@include type-display-large($small: true)',
+    sass: '@include type-display-large($lrg80: true)',
     textLength: 1,
     size: '48px / 80px'
+  },
+  {
+    name: 'Display Large 64',
+    class: 'tco-type-display--large-64',
+    sass: '@include type-display-large($lrg64: true)',
+    textLength: 1,
+    size: '42px / 64px'
   },
   {
     name: 'Display Medium',
@@ -78,6 +85,13 @@ const bodyStyles = [
     sass: '@include type-body',
     textLength: 10,
     size: '16px'
+  },
+  {
+    name: 'Body Text Jumbo',
+    class: 'tco-type-body--jumbo',
+    sass: '@include type-body-large($jumbo: true)',
+    textLength: 1,
+    size: '28px / 40px'
   },
   {
     name: 'Body Text X-Large',

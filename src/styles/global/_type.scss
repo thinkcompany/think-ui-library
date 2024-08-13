@@ -14,8 +14,12 @@
     @include type-display-large($italic: true);
   }
 
+  &-64 {
+    @include type-display-large($lrg64: true);
+  }
+
   &-80 {
-    @include type-display-large($small: true);
+    @include type-display-large($lrg80: true);
   }
 }
 

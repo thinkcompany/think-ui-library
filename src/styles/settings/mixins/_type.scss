@@ -133,12 +133,22 @@
   );
 }
 
-@mixin type-display-large($font-color: inherit, $italic: false, $bold: false, $small: false) {
+@mixin type-display-large($font-color: inherit, $italic: false, $bold: false, $lrg80: false, $lrg64: false) {
   @include type-base-display($font-color, 300);
   font-variation-settings: 'wght' 300, 'slnt' 0;
   line-height: 1.07;
 
-  @if $small {
+  @if $lrg64 {
+    line-height: 1.2;
+
+    @include clamp(
+      font-size,
+      $breakpoint-phone-portrait,
+      $breakpoint-desktop,
+      $font-size-42,
+      $font-size-64
+    );
+  } @if $lrg80 {
     line-height: 1.16;
     @include clamp(
       font-size,
