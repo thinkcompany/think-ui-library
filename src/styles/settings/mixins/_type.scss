@@ -258,6 +258,7 @@
   $bold: false,
   $weight: 400,
   $xl: false,
+  $jumbo: false,
   $small: false
 ) {
   @include type-base-style($font-color, $weight);
@@ -278,7 +279,15 @@
     font-family: $font-stack-slab-bold;
   }
 
-  @if $xl {
+  @if $jumbo {
+    @include clamp(
+      font-size,
+      $breakpoint-phone-portrait,
+      $breakpoint-desktop,
+      $font-size-28,
+      $font-size-40
+    );
+  } @else if $xl {
     @include clamp(
       font-size,
       $breakpoint-phone-portrait,
@@ -578,7 +587,7 @@
       border-bottom-color: transparent;
     }
 
-    &:not(.tco-btn):not(.tco-link--dark-theme) {
+    &:not(.tco-btn):not(.tco-link--dark-theme):not(.tco-card--text) {
       .tco-lights-out & {
         border-bottom-color: transparent;
       }

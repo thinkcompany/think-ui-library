@@ -403,9 +403,49 @@ WorkCard.args = {
     'We’ve helped teams like yours delight customers and employees with modern digital tools.'
 };
 
+const TextCardTemplate = args => {
+  const { heading } = args;
+
+  return `
+  <div class="tco-container-wrapper">
+    <div class="tco-container">
+      <div class="tco-card-grid tco-card-grid--3-column">
+
+        <a href="#" class="tco-card tco-card--text">
+          <h2 class="tco-card--text-title tco-type-body--jumbo tco-link--dark-theme">${heading}</h2>
+          <svg class="tco-card--text-icon" viewBox="0 0 31 29" role="presentation">
+            <use xlink:href="/img/icons.svg#icon-arrow-right"></use>
+          </svg>
+        </a>
+
+        <a href="#" class="tco-card tco-card--text">
+          <h2 class="tco-card--text-title tco-type-body--jumbo tco-link--dark-theme">Technology strategy & consulting</h2>
+          <svg class="tco-card--text-icon" viewBox="0 0 31 29" role="presentation">
+            <use xlink:href="/img/icons.svg#icon-arrow-right"></use>
+          </svg>
+        </a>
+
+        <a href="#" class="tco-card tco-card--text">
+          <h2 class="tco-card--text-title tco-type-body--jumbo tco-link--dark-theme">Accessibility & inclusion</h2>
+          <svg class="tco-card--text-icon" viewBox="0 0 31 29" role="presentation">
+            <use xlink:href="/img/icons.svg#icon-arrow-right"></use>
+          </svg>
+        </a>
+
+      </div>
+    </div>
+  </div>`;
+};
+
+export const TextCard = TextCardTemplate.bind({});
+
+TextCard.args = {
+  heading: 'Service Design'
+};
+
 export default {
   title: 'Components / Card',
-  component: [SummaryCard, PostCard, PersonCard, CalloutCard, MediaCard, WorkCard],
+  component: [SummaryCard, PostCard, PersonCard, CalloutCard, MediaCard, WorkCard, TextCard],
   parameters: {
     component: SummaryCard,
     componentSubtitle: 'Cards are used on the site via the Post Grid, and Card Grid components.',

@@ -1066,3 +1066,56 @@ $card-break: 940px;
     font-variation-settings: 'wght' $font-weight-500;
   }
 }
+
+
+// ========================================================
+// = Text CARD
+// ========================================================
+.tco-card--text {
+  display: flex;
+  flex-flow: column nowrap;
+  gap: $spacing-stack-40;
+  justify-content: space-between;
+  min-height: 0;
+  padding: $spacing-stack-16 $spacing-inline-20;
+  border: 1.5px solid $color-classic-blue;
+  border-radius: $border-radius-large;
+  text-decoration: none;
+
+  @include wider-than($breakpoint-tablet-portrait) {
+    padding: $spacing-stack-24 $spacing-inline-32;
+    aspect-ratio: 1 / 1;
+  }
+
+  &:hover,
+  &:focus {
+    border-bottom-color: inherit;
+
+    .tco-card--text-icon {
+      transform: translateX(10px);
+    }
+  }
+
+  &-title {
+    line-height: 1.25;
+  }
+
+  &-icon {
+    width: 40px;
+    fill: $color-classic-blue;
+    transition: transform 0.4s ease;
+    transform: translateX(0);
+
+    .tco-lights-out & {
+      border-bottom-color: $color-dark-theme-blue;
+      fill: $color-dark-theme-blue;
+    }
+  }
+
+  .tco-lights-out & {
+    &:hover,
+    &:focus {
+      border-bottom-color: $color-dark-theme-blue;
+    }
+  }
+}

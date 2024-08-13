@@ -68,6 +68,10 @@
 }
 
 /* Body classes */
+.tco-type-body--jumbo {
+  @include type-body-large($jumbo: true);
+}
+
 .tco-type-body--extra-large {
   @include type-body-large($xl: true);
 
