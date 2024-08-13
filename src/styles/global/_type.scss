@@ -70,6 +70,7 @@
 /* Body classes */
 .tco-type-body--jumbo {
   @include type-body-large($jumbo: true);
+  line-height: 1.25;
 }
 
 .tco-type-body--extra-large {

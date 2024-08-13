@@ -5,7 +5,7 @@ const SplitPanelTemplate = () => {
       <article class="tco-split-panel">
         <header class="tco-split-panel--header">
           <p class="tco-type-eyebrow tco-split-panel--eyebrow">Strategy</p>
-          <h2 class="tco-split-panel--title tco-type-display--medium-48">Assessing and </br>roadmapping</h2>
+          <h2 class="tco-split-panel--title tco-type-display--medium-48">Assessing and roadmapping</h2>
         </header>
         <div class="tco-split-panel-body tco-text-only">
           <p class="tco-type-body--extra-large">Our expertise and research combine to deliver rock-solid insights. We use these to build a roadmap for your product or service.</p>
