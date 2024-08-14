@@ -57,6 +57,7 @@
 
 .tco-type-eyebrow {
   @include type-eyebrow;
+  margin-bottom: 0;
 
   &-italic {
     @include type-eyebrow($italic: true);
