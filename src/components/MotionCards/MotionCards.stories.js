@@ -256,7 +256,7 @@ const fullCard = input => {
   return `
     <div class="tco-carousel-card-full">
       <div class="tco-animation-container">
-        <h3 class="tco-carousel-title tco-type-display--sans-48">${input.name}</h3>
+        <h3 class="tco-carousel-title tco-type-display--medium-48">${input.name}</h3>
         <div class="tco-grid">
           ${
             imageA
@@ -392,7 +392,7 @@ const FullWidthTemplate = args => {
     <div class="tco-container tco-container--full">
       <div class="tco-carousel-full">
         <div class="tco-carousel-full-header">
-          <h3 class="tco-type-display--medium">We work in industries like yours</h3>
+          <h3 class="tco-type-display--large-80">We work in industries like yours</h3>
         </div>
         <div class="tco-motion-container">
           <div class="tco-motion-track tco-motion-track--carousel tco-motion-track--paused" style="--card-count:${fullCount}">
