@@ -121,8 +121,18 @@ const jobCard = () => {
     </div>`;
 };
 
+const textCard = () => {
+  return `
+  <a href="#" class="tco-card tco-card--text">
+    <h2 class="tco-card--text-title tco-type-body--jumbo tco-link--dark-theme">Technology, Strategy & Consulting</h2>
+    <svg class="tco-card--text-icon" viewBox="0 0 31 29" role="presentation">
+      <use xlink:href="/img/icons.svg#icon-arrow-right"></use>
+    </svg>
+  </a>`;
+};
+
 const colors = ['default', 'glass'];
-const cardTypes = ['post', 'summary', 'person', 'callout', 'media', 'job', 'casestudy'];
+const cardTypes = ['post', 'summary', 'person', 'callout', 'media', 'job', 'casestudy', 'text'];
 const alignments = ['center', 'left', 'right'];
 const sizes = ['medium', 'extra-large', 'large', 'small'];
 const ledeSizes = ['default', 'large', 'sans-small'];
@@ -164,6 +174,8 @@ const Template = args => {
       card = jobCard();
     } else if (cardType === 'casestudy') {
       card = caseStudyCard();
+    } else if (cardType === 'text') {
+      card = textCard();
     }
 
     for (let i = 0; i < count; i++) {

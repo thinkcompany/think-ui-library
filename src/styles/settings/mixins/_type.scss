@@ -133,7 +133,13 @@
   );
 }
 
-@mixin type-display-large($font-color: inherit, $italic: false, $bold: false, $lrg80: false, $lrg64: false) {
+@mixin type-display-large(
+  $font-color: inherit,
+  $italic: false,
+  $bold: false,
+  $lrg80: false,
+  $lrg64: false
+) {
   @include type-base-display($font-color, 300);
   font-variation-settings: 'wght' 300, 'slnt' 0;
   line-height: 1.07;
@@ -269,6 +275,7 @@
   $weight: 400,
   $xl: false,
   $jumbo: false,
+  $mega: false,
   $small: false
 ) {
   @include type-base-style($font-color, $weight);
@@ -289,7 +296,15 @@
     font-family: $font-stack-slab-bold;
   }
 
-  @if $jumbo {
+  @if $mega {
+    @include clamp(
+      font-size,
+      $breakpoint-phone-portrait,
+      $breakpoint-desktop,
+      $font-size-32,
+      $font-size-50
+    );
+  } @else if $jumbo {
     @include clamp(
       font-size,
       $breakpoint-phone-portrait,

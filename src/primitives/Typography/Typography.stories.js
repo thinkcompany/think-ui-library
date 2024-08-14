@@ -87,6 +87,13 @@ const bodyStyles = [
     size: '16px'
   },
   {
+    name: 'Body Text Mega',
+    class: 'tco-type-body--mega',
+    sass: '@include type-body-large($mega: true)',
+    textLength: 1,
+    size: '32px / 50px'
+  },
+  {
     name: 'Body Text Jumbo',
     class: 'tco-type-body--jumbo',
     sass: '@include type-body-large($jumbo: true)',
