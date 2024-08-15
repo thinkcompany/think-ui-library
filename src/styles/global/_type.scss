@@ -105,6 +105,10 @@
   &-22 {
     @include type-body-large($small: true);
   }
+
+  &-20 {
+    @include type-body-large($lrg20: true, $weight: $font-weight-700);
+  }
 }
 
 .tco-type-body--medium {
