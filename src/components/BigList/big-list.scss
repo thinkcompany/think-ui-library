@@ -1,13 +1,13 @@
 .tco-big-list {
   margin: 0;
   padding: 0;
-  list-style: none;
 
   &--item {
     position: relative;
-    padding: $spacing-stack-12 calc(#{$spacing-inline-4} + #{$spacing-inline-2}) $spacing-stack-24 $spacing-inline-32;
+    padding: 0 calc(#{$spacing-inline-4} + #{$spacing-inline-2}) 0 $spacing-inline-32;
     border-top: 1px solid $color-classic-blue;
     color: $color-classic-navy;
+    list-style: none;
     counter-increment: item;
 
     @include wider-than($breakpoint-tablet-portrait) {
@@ -17,8 +17,10 @@
     &::before {
       content: counter(item, decimal-leading-zero);
       position: absolute;
-      top: 30%;
+      top: 50%;
       left: 1px;
+      line-height: 1;
+      transform: translateY(-50%);
       @include type-body-large($lrg20: true, $weight: $font-weight-700, $font-color: $color-classic-blue);
 
       .tco-lights-out & {
@@ -32,8 +34,10 @@
   }
 
   &--heading {
-    margin-bottom: 0;
+    margin: 0;
+    padding: calc((2 / 5) * 1em) 0;
     color: $color-classic-navy;
+    line-height: 1.2;
     transition: color 0.2s linear;
 
     .tco-lights-out & {
