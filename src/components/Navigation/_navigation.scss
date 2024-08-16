@@ -11,6 +11,14 @@ $container-max: 1168px;
   background-color: transparent;
   transition: background-color 0.2s linear;
 
+  &--soft-white {
+    background-color: $color-classic-soft-white;
+  }
+
+  &--glass {
+    background-color: $color-classic-glass;
+  }
+
   @include wider-than($breakpoint-laptop) {
     padding: $spacing-stack-16 $spacing-inline-24;
   }
