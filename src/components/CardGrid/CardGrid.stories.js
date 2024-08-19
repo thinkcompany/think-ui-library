@@ -209,18 +209,19 @@ const Template = args => {
     <div class="tco-container-wrapper tco-container-wrapper--${bg}">
       <div class="tco-container">
         ${containerOpen}
+          <p class="tco-type-eyebrow tco-card-grid--eyebrow">Card Grid</p>
           ${
             introHeading
               ? `
-              <h1 class="tco-card-grid-heading tco-type-display--${headingSize}">${introHeading}</h1>
+              <h1 class="tco-card-grid--heading tco-type-display--${headingSize}">${introHeading}</h1>
             `
               : ''
           }
           ${
             lede
               ? `
-              <div class="tco-card-grid-lede-container tco-container tco-container--${ledeContainer}">
-                <p class="tco-card-grid-lede tco-type-body--${ledeSize}">${lede}</p>
+              <div class="tco-card-grid--lede-container tco-container tco-container--${ledeContainer}">
+                <p class="tco-card-grid--lede tco-type-body--${ledeSize}">${lede}</p>
               </div>
             `
               : ''

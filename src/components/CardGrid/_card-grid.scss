@@ -11,12 +11,30 @@
   }
 
   &-header {
+    display: flex;
+    flex-flow: column nowrap;
+    gap: $spacing-stack-20;
     margin: 0 auto;
     padding-bottom: $spacing-stack-40;
   }
 
-  &-heading {
-    margin-bottom: $spacing-stack-12;
+  &--heading {
+    margin-bottom: 0;
+  }
+
+  &--lede-container {
+    width: 100%;
+    padding-top: $spacing-stack-4;
+
+    @include wider-than($breakpoint-tablet-portrait) {
+      padding-top: $spacing-stack-12;
+    }
+  }
+
+  &--lede {
+    &:last-of-type {
+      margin-bottom: 0;
+    }
   }
 
   @include wider-than($breakpoint-phone-landscape) {
