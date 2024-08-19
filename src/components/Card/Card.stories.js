@@ -5,6 +5,7 @@ const layouts = ['top', 'side'];
 const versions = ['classic', 'grid'];
 const summaryVersions = ['default', 'reduced'];
 const models = ['classic', 'deluxe-preview', 'deluxe'];
+const textCardType = ['headline', 'small'];
 
 const SummaryCardTemplate = args => {
   const { heading, summary, treatment, summaryVersion } = args;
@@ -400,37 +401,60 @@ export const WorkCard = WorkCardTemplate.bind({});
 WorkCard.args = {
   heading: 'See our work',
   description:
-    'We’ve helped teams like yours delight customers and employees with modern digital tools.'
+    "We've helped teams like yours delight customers and employees with modern digital tools."
 };
 
 const TextCardTemplate = args => {
-  const { heading } = args;
+  const { heading, treatment } = args;
+
+  const headlineType = `
+    <a href="#" class="tco-card tco-card--text tco-card--text-headline">
+      <h2 class="tco-card--text-title tco-type-body--jumbo tco-link--dark-theme">${heading}</h2>
+      <svg class="tco-card--text-icon" viewBox="0 0 31 29" role="presentation">
+        <use xlink:href="/img/icons.svg#icon-arrow-right"></use>
+      </svg>
+    </a>
+  `;
+
+  const altType = `
+    <a href="" class="tco-card tco-card--text tco-card--text-alt">
+      <h2 class="tco-card--text-title tco-type-display--medium-36">Reports</h2>
+      <p class="tco-type-body--medium tco-card--text-content">Read custom research reports, papers, and more for a deeper dive into industry and practice insights.</p>
+      <p class="tco-type-eyebrow tco-card--text-cta">
+        <span class="tco-text-link tco-text-link--arrow">
+          Read our reports
+          <svg class="tco-text-link-icon" width="20" height="20" viewBox="0 0 20 20" role="presentation">
+            <use xlink:href="/img/icons.svg#icon-arrow-right"></use>
+          </svg>
+        </span>
+      </p>
+    </a>
+  `;
+
+  const cardOutput = () => {
+    let output = '';
+
+    let card = '';
+
+    if (treatment === 'small') {
+      card = altType;
+    } else {
+      card = headlineType;
+    }
+
+    for (let i = 0; i < 3; i++) {
+      output += card;
+    }
+
+    return output;
+  };
 
   return `
   <div class="tco-container-wrapper">
     <div class="tco-container">
       <div class="tco-card-grid tco-card-grid--3-column">
 
-        <a href="#" class="tco-card tco-card--text">
-          <h2 class="tco-card--text-title tco-type-body--jumbo tco-link--dark-theme">${heading}</h2>
-          <svg class="tco-card--text-icon" viewBox="0 0 31 29" role="presentation">
-            <use xlink:href="/img/icons.svg#icon-arrow-right"></use>
-          </svg>
-        </a>
-
-        <a href="#" class="tco-card tco-card--text">
-          <h2 class="tco-card--text-title tco-type-body--jumbo tco-link--dark-theme">Technology strategy & consulting</h2>
-          <svg class="tco-card--text-icon" viewBox="0 0 31 29" role="presentation">
-            <use xlink:href="/img/icons.svg#icon-arrow-right"></use>
-          </svg>
-        </a>
-
-        <a href="#" class="tco-card tco-card--text">
-          <h2 class="tco-card--text-title tco-type-body--jumbo tco-link--dark-theme">Accessibility & inclusion</h2>
-          <svg class="tco-card--text-icon" viewBox="0 0 31 29" role="presentation">
-            <use xlink:href="/img/icons.svg#icon-arrow-right"></use>
-          </svg>
-        </a>
+        ${cardOutput(treatment)}
 
       </div>
     </div>
@@ -440,7 +464,16 @@ const TextCardTemplate = args => {
 export const TextCard = TextCardTemplate.bind({});
 
 TextCard.args = {
-  heading: 'Service Design'
+  heading: 'Technology strategy & consulting',
+  treatment: textCardType[0]
+};
+
+TextCard.argTypes = {
+  treatment: {
+    name: 'card style',
+    control: 'inline-radio',
+    options: textCardType
+  }
 };
 
 export default {

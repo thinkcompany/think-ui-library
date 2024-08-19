@@ -1073,47 +1073,93 @@ $card-break: 940px;
 .tco-card--text {
   display: flex;
   flex-flow: column nowrap;
-  gap: $spacing-stack-40;
-  justify-content: space-between;
   min-height: 0;
-  padding: $spacing-stack-16 $spacing-inline-20;
-  border: 1.5px solid $color-classic-blue;
   border-radius: $border-radius-large;
   text-decoration: none;
 
-  @include wider-than($breakpoint-tablet-portrait) {
-    padding: $spacing-stack-24 $spacing-inline-32;
-    aspect-ratio: 1 / 1;
-  }
+  &-headline {
+    gap: $spacing-stack-40;
+    justify-content: space-between;
+    padding: $spacing-stack-16 $spacing-inline-20;
+    border: 1.5px solid $color-classic-blue;
 
-  &:hover,
-  &:focus {
-    border-bottom-color: inherit;
+    @include wider-than($breakpoint-tablet-portrait) {
+      padding: $spacing-stack-24 $spacing-inline-32;
+      aspect-ratio: 1 / 1;
+    }
+
+    .tco-card--text-title {
+      line-height: 1.25;
+    }
 
     .tco-card--text-icon {
-      transform: translateX(10px);
+      width: 40px;
+      fill: $color-classic-blue;
+      transition: transform 0.4s ease;
+      transform: translateX(0);
+
+      .tco-lights-out & {
+        fill: $color-dark-theme-blue;
+      }
     }
-  }
 
-  &-title {
-    line-height: 1.25;
-  }
-
-  &-icon {
-    width: 40px;
-    fill: $color-classic-blue;
-    transition: transform 0.4s ease;
-    transform: translateX(0);
-
-    .tco-lights-out & {
-      fill: $color-dark-theme-blue;
-    }
-  }
-
-  .tco-lights-out & {
     &:hover,
     &:focus {
-      border-bottom-color: $color-dark-theme-blue;
+      border-bottom-color: inherit;
+
+      .tco-card--text-icon {
+        transform: translateX(10px);
+      }
+    }
+
+    .tco-lights-out & {
+      &:hover,
+      &:focus {
+        border-bottom-color: $color-dark-theme-blue;
+      }
+    }
+  }
+
+  &-alt {
+    gap: $spacing-stack-20;
+    padding: $spacing-stack-24 $spacing-inline-24;
+    border-bottom-width: 0;
+    background-color: $color-classic-soft-white;
+
+    @include wider-than($breakpoint-tablet-portrait) {
+      padding: $spacing-stack-32 $spacing-inline-32;
+    }
+
+    .tco-card--text-title {
+      color: $color-classic-navy;
+
+      .tco-lights-out & {
+        color: $color-foreground-on-tint;
+      }
+    }
+
+    .tco-card--text-title,
+    .tco-card--text-content {
+      margin-bottom: 0;
+    }
+
+    .tco-card--text-cta {
+      margin-top: $spacing-stack-4;
+
+      @include wider-than($breakpoint-tablet-portrait) {
+        margin-top: $spacing-stack-12;
+      }
+    }
+
+    &:hover,
+    &:focus {
+      .tco-text-link--arrow {
+        border-bottom-color: $color-classic-blue;
+
+        svg {
+          transform: translate(10px, 3px);
+        }
+      }
     }
   }
 }
