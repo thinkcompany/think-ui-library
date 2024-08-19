@@ -1071,13 +1071,14 @@ $card-break: 940px;
 // = Text CARD
 // ========================================================
 .tco-card--text {
-  display: flex;
-  flex-flow: column nowrap;
+  display: grid;
+  grid-template-columns: 1fr;
   min-height: 0;
   border-radius: $border-radius-large;
   text-decoration: none;
 
   &-headline {
+    grid-template-rows: 1fr auto;
     gap: $spacing-stack-40;
     justify-content: space-between;
     padding: $spacing-stack-16 $spacing-inline-20;
@@ -1121,6 +1122,7 @@ $card-break: 940px;
   }
 
   &-alt {
+    grid-template-rows: auto 1fr auto;
     gap: $spacing-stack-20;
     padding: $spacing-stack-24 $spacing-inline-24;
     border-bottom-width: 0;
