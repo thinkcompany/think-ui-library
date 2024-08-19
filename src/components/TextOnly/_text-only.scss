@@ -3,12 +3,8 @@ $bubble-max: 600px;
 .tco-text-only {
   display: flex;
   flex-flow: column nowrap;
-  gap: $spacing-stack-24;
+  gap: $spacing-stack-20;
   align-items: flex-start;
-
-  @include wider-than($breakpoint-tablet-portrait) {
-    gap: $spacing-stack-32;
-  }
 
   &--right {
     align-items: flex-end;
@@ -20,8 +16,14 @@ $bubble-max: 600px;
     text-align: center;
   }
 
-  &-content {
+  &-content,
+  &--content {
     width: 100%;
+    padding-top: $spacing-stack-4;
+
+    @include wider-than($breakpoint-tablet-portrait) {
+      padding-top: $spacing-stack-12;
+    }
   }
 
   &--heading,
