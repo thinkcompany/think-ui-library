@@ -28,9 +28,37 @@ $pagination-break-point: 518px;
         border-bottom-color: transparent;
         color: $color-classic-gray-dark;
 
+        .tco-container-wrapper--navy &,
+        .tco-container-wrapper--blue & {
+          color: $color-foreground-on-tint;
+        }
+
         &:hover {
           border-bottom-color: transparent;
+        }
+
+        .tco-lights-out & {
+          color: $color-dark-theme-blue;
+        }
+      }
+
+      &--current {
+        display: flex;
+        width: $current-size;
+        height: $current-size;
+        border-radius: $border-radius-round;
+        background-color: $color-tint-blue-primary;
+        color: $color-foreground-on-tint;
+
+        .tco-container-wrapper--navy &,
+        .tco-container-wrapper--blue & {
+          background: $color-foreground-on-tint;
           color: $color-classic-blue;
+        }
+
+        .tco-lights-out & {
+          background-color: $color-foreground-on-tint;
+          color: $color-dark-theme-blue;
         }
       }
     }
@@ -49,10 +77,22 @@ $pagination-break-point: 518px;
 
     a {
       @include type-link-cta;
+      border-bottom-color: transparent;
       color: $color-classic-blue;
 
       &:hover {
         border-bottom-color: transparent;
+      }
+    }
+
+    svg {
+      .tco-container-wrapper--navy &,
+      .tco-container-wrapper--blue & {
+        fill: $color-foreground-on-tint;
+      }
+
+      .tco-lights-out & {
+        fill: $color-dark-theme-blue;
       }
     }
   }
@@ -70,18 +110,17 @@ $pagination-break-point: 518px;
   }
 
   &-page--current {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: $current-size;
-    height: $current-size;
-    border-radius: $border-radius-round;
-    background-color: $color-tint-blue-primary;
-    color: $color-foreground-on-tint;
+    margin: auto;
+  }
 
+  &-page--ellipsis {
     .tco-container-wrapper--navy &,
     .tco-container-wrapper--blue & {
-      background: $color-foreground-on-tint;
+      color: $color-foreground-on-tint;
+    }
+
+    .tco-lights-out & {
+      color: $color-dark-theme-blue;
     }
   }
 }

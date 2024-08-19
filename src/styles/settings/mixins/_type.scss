@@ -600,7 +600,7 @@
   &:not(.tco-btn):not(.tco-link--dark-theme):not(.tco-text-link-motion) {
     .tco-lights-out & {
       color: $color-dark-theme-blue;
-      border-bottom-color: $color-dark-theme-blue;
+      //border-bottom-color: $color-dark-theme-blue;
     }
   }
 
@@ -668,7 +668,7 @@ $arrow-translate: 10px;
   &:focus {
     .tco-text-link--icon,
     svg {
-      transform: translate($arrow-translate, 2px);
+      transform: translate($arrow-translate, 3px);
     }
   }
 
