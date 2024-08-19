@@ -654,7 +654,7 @@ $arrow-translate: 10px;
     height: $arrow-height;
     fill: $fill;
     transition: transform 0.2s linear;
-    transform: translate($arrow-offset, 2px);
+    transform: translate($arrow-offset, 3px);
     transform-origin: left center;
 
     &:not(.tco-text-link-icon--alt) {

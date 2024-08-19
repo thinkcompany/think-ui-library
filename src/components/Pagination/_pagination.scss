@@ -1,27 +1,87 @@
-.tco-pagination-list {
-  @include list-plain;
-  @include type-display-small;
-  display: flex;
-  justify-content: center;
-}
+$current-size: 28px;
+$list-space-mobile: 10px;
+$list-space: 14px;
+$pagination-break-point: 518px;
 
-.tco-pagination-list-item {
-  margin: 0 $spacing-inline-16;
-}
+.tco-pagination {
+  margin-top: $spacing-stack-50;
 
-.tco-pagination-page--current {
-  @include type-body-medium($color-foreground-on-tint, $font-weight-600);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: $spacing-stack-32;
-  height: $spacing-stack-32;
-  border-radius: $border-radius-round;
-  background-color: $color-tint-blue-primary;
+  &-list {
+    @include list-plain;
+    display: flex;
+    flex-flow: row wrap;
+    gap: $spacing-inline-20;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    padding-left: 0;
 
-  .tco-container-wrapper--navy &,
-  .tco-container-wrapper--blue & {
-    @include type-body-medium($color-foreground-primary, $font-weight-600);
-    background: $color-foreground-on-tint;
+    @include wider-than($breakpoint-phone-landscape) {
+      gap: $spacing-inline-24;
+    }
+
+    &-item {
+      @include type-eyebrow;
+      list-style: none;
+
+      a {
+        border-bottom-color: transparent;
+        color: $color-classic-gray-dark;
+
+        &:hover {
+          border-bottom-color: transparent;
+          color: $color-classic-blue;
+        }
+      }
+    }
+  }
+
+  &-list-item--next,
+  &-list-item--prev {
+    width: 100%;
+    margin: $list-space-mobile;
+    text-align: center;
+
+    @include wider-than($breakpoint-tablet-portrait) {
+      width: auto;
+      margin: 0 $list-space;
+    }
+
+    a {
+      @include type-link-cta;
+      color: $color-classic-blue;
+
+      &:hover {
+        border-bottom-color: transparent;
+      }
+    }
+  }
+
+  &-list-item--prev a {
+    svg {
+      transform: scaleX(-1) translate(-12px, 3px);
+    }
+
+    &:hover {
+      svg {
+        transform: scaleX(-1) translate(-7px, 3px);
+      }
+    }
+  }
+
+  &-page--current {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: $current-size;
+    height: $current-size;
+    border-radius: $border-radius-round;
+    background-color: $color-tint-blue-primary;
+    color: $color-foreground-on-tint;
+
+    .tco-container-wrapper--navy &,
+    .tco-container-wrapper--blue & {
+      background: $color-foreground-on-tint;
+    }
   }
 }
