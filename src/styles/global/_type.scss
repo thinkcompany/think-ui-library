@@ -102,6 +102,10 @@
     @include type-body-large($height: tall);
   }
 
+  &-36 {
+    @include type-body-large($lrg36: true);
+  }
+
   &-22 {
     @include type-body-large($small: true);
   }

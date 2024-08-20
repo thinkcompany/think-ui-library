@@ -277,7 +277,8 @@
   $jumbo: false,
   $mega: false,
   $small: false,
-  $lrg20: false
+  $lrg20: false,
+  $lrg36: false
 ) {
   @include type-base-style($font-color, $weight);
   font-variation-settings: 'wght' $weight, 'slnt' 0;
@@ -320,6 +321,14 @@
       $breakpoint-desktop,
       $font-size-24,
       $font-size-28
+    );
+  } @else if $lrg36 {
+    @include clamp(
+      font-size,
+      $breakpoint-phone-portrait,
+      $breakpoint-desktop,
+      $font-size-28,
+      $font-size-36
     );
   } @else if $lrg20 {
     @include clamp(

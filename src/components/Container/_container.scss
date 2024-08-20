@@ -104,6 +104,14 @@ $color-hover-blue-blue: #09509a;
     background-color: $color-classic-soft-white;
   }
 
+  &--purple {
+    background-color: $color-classic-purple;
+  }
+
+  &--yellow {
+    background-color: $color-classic-yellow;
+  }
+
   &--glass {
     background-color: $color-tint-blue-tertiary;
     color: $color-foreground-primary;

@@ -1,0 +1,150 @@
+.tco-numbered-list {
+  margin: 0;
+  padding: 0;
+
+  &--item {
+    position: relative;
+    padding: 0 calc(#{$spacing-inline-4} + #{$spacing-inline-2}) 0 $spacing-inline-32;
+    border-top: 1px solid $color-classic-blue;
+    color: $color-classic-navy;
+    list-style: none;
+    counter-increment: item;
+
+    @include wider-than($breakpoint-tablet-portrait) {
+      padding-left: $spacing-inline-50;
+    }
+
+    &::before {
+      content: counter(item, decimal-leading-zero);
+      position: absolute;
+      top: 50%;
+      left: 1px;
+      line-height: 1;
+      transform: translateY(-50%);
+      @include type-body-large(
+        $lrg20: true,
+        $weight: $font-weight-700,
+        $font-color: $color-classic-blue
+      );
+
+      .tco-lights-out & {
+        color: $color-dark-theme-blue;
+      }
+    }
+
+    .tco-lights-out & {
+      border-top-color: $color-dark-theme-blue;
+    }
+  }
+
+  &--heading {
+    margin: 0;
+    padding: calc((2 / 5) * 1em) 0;
+    color: $color-classic-navy;
+    line-height: 1.2;
+    transition: color 0.2s linear;
+
+    .tco-lights-out & {
+      color: $color-classic-soft-white;
+    }
+  }
+}
+
+
+.tco-description-list {
+  &--item {
+    display: grid;
+    grid-template-rows: auto;
+    grid-template-columns: 1fr;
+    padding-bottom: $spacing-stack-16;
+    border-bottom: 1.5px solid $color-classic-navy;
+
+    @include wider-than($breakpoint-tablet-portrait) {
+      grid-template-columns: repeat(2, auto);
+    }
+  }
+
+  &--item-partial {
+    grid-template-columns: 1fr;
+    gap: $spacing-stack-12;
+    padding-top: min(7vw, $spacing-stack-76 + $spacing-stack-12);
+
+    @include wider-than($breakpoint-tablet-portrait) {
+      grid-template-columns: minmax(40%, 470px) 1fr minmax(35%, 418px);
+      gap: $spacing-stack-24;
+      align-items: end;
+      padding-bottom: $spacing-stack-24;
+    }
+
+    .tco-description-list {
+      &--heading {
+        line-height: 1;
+      }
+
+      &--content {
+        @include wider-than($breakpoint-tablet-portrait) {
+          grid-column: 3 / 4;
+        }
+      }
+    }
+  }
+
+  &--item-full {
+    gap: $spacing-stack-4;
+
+    @include wider-than($breakpoint-tablet-portrait) {
+      grid-template-rows: 1fr;
+      grid-template-columns: 52% auto;
+      gap: $spacing-stack-4 5%;
+      align-items: end;
+      justify-items: start;
+      padding-bottom: $spacing-stack-32;
+    }
+
+    .tco-description-list {
+      &--eyebrow,
+      &--content,
+      &--heading {
+        @include wider-than($breakpoint-tablet-portrait) {
+          grid-column: 1 / 2;
+        }
+      }
+
+      &--eyebrow {
+        margin-bottom: $spacing-stack-12;
+      }
+
+      &--heading {
+        line-height: 1.2;
+      }
+
+      &--content {
+        margin: $spacing-stack-4 0 $spacing-stack-12;
+
+        @include wider-than($breakpoint-laptop) {
+          max-width: 80%;
+          margin-bottom: 0;
+        }
+      }
+
+      &--image {
+        width: 100%;
+        height: auto;
+
+        @include wider-than($breakpoint-tablet-portrait) {
+          grid-row: 1 / 4;
+          grid-column: 2 / 3;
+        }
+      }
+    }
+  }
+
+  &--eyebrow {
+    color: $color-classic-navy;
+  }
+
+  &--heading,
+  &--content {
+    margin: 0;
+  }
+}
