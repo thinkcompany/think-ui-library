@@ -146,6 +146,16 @@
     "color": "#072235"
   },
   {
+    "name": "purple",
+    "section": "classic",
+    "color": "#C797DE"
+  },
+  {
+    "name": "yellow",
+    "section": "classic",
+    "color": "#FCBB01"
+  },
+  {
     "name": "black",
     "section": "dark-theme",
     "color": "#23272A"
