@@ -101,8 +101,8 @@ const Template = args => {
             </button>
           </div>
           <footer class="tco-contact-form-footer">
-            <p class="tco-contact-form-footer-text">By submitting this form, you’re allowing us to store the information you submit.</p>
-            <p class="tco-contact-form-footer-text">We promise we’ll never, ever, ever share it though.</p>
+            <p class="tco-contact-form-footer-text">By submitting this form, you're allowing us to store the information you submit.</p>
+            <p class="tco-contact-form-footer-text">We promise we'll never, ever, ever share it though.</p>
             <p class="tco-contact-form-footer-text">Please read our <a href="#">Privacy Policy</a> to learn more.</p>
           </footer>
         </form>
@@ -124,8 +124,8 @@ export default {
     emailPlaceholder: 'Enter your email address',
     companyLabel: 'Your Company',
     companyPlaceholder: "Enter your company's name",
-    messageLabel: 'What do you have in mind?',
-    messagePlaceholder: 'Bitcoin server farm',
+    messageLabel: 'How can we help you?',
+    messagePlaceholder: 'Starting a new project? Questions?',
     submitLabel: 'Send message',
     timingLabel: 'When would you like to get started?',
     timingPlaceholder: 'Enter a date or time frame',

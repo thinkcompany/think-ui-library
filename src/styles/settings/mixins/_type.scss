@@ -374,15 +374,15 @@
   }
 }
 
-@mixin type-body-small($font-color: inherit, $italic: false, $size: $font-size-15) {
-  @include type-base-style($font-color, 500);
+@mixin type-body-small($font-color: inherit, $italic: false, $size: $font-size-15, $weight: $font-weight-500) {
+  @include type-base-style($font-color, $weight);
   font-size: $size;
-  font-variation-settings: 'wght' 500, 'slnt' 0;
+  font-variation-settings: 'wght' $weight, 'slnt' 0;
   line-height: 1.5;
 
   @if $italic {
     font-style: italic;
-    font-variation-settings: 'wght' 500, 'slnt' 10;
+    font-variation-settings: 'wght' $weight, 'slnt' 10;
   }
 }
 

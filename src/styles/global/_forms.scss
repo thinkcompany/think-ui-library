@@ -78,7 +78,7 @@ $color-hover: #08519a;
 
 .tco-form-input,
 %tco-form-input {
-  @include type-body-default;
+  @include type-eyebrow($weight: $font-weight-400);
   width: 100%;
   padding: 1px 2px;
   border: 0;
@@ -146,11 +146,10 @@ $color-hover: #08519a;
 
 .tco-form-label,
 %tco-form-label {
-  @include type-eyebrow($font-color: $color-classic-navy);
+  @include type-eyebrow($font-color: $color-classic-blue);
   position: relative;
   display: block;
   padding: 0 $spacing-inline-4;
-  font-weight: $font-weight-600;
 
   .tco-form-label-text {
     display: block;
@@ -175,11 +174,10 @@ $color-hover: #08519a;
   }
 
   + label {
+    @include type-eyebrow($font-color: $color-classic-blue);
     position: relative;
     margin-right: $spacing-inline-32;
     padding-left: rem(24px);
-    font-weight: 400;
-    font-size: $font-size-14;
 
     @include wider-than($breakpoint-phone-landscape) {
       line-height: initial;
@@ -312,12 +310,11 @@ $color-hover: #08519a;
 
   .hs-fieldtype-booleancheckbox {
     > .hs-field-desc {
-      @include type-eyebrow;
+      @include type-eyebrow($font-color: $color-classic-blue);
       position: relative;
       display: block;
       margin-bottom: $spacing-stack-12;
       padding: 0 $spacing-inline-4;
-      font-weight: $font-weight-600;
     }
   }
 
@@ -333,7 +330,7 @@ $color-hover: #08519a;
   }
 
   .hs-form-required {
-    color: $color-classic-blue;
+    color: $color-tint-red-primary;
   }
 
   ul {
