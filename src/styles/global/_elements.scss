@@ -9,6 +9,12 @@ body {
   background-color: $color-foreground-on-tint;
 }
 
+@supports (overflow-x: clip) {
+  body {
+    overflow-x: clip;
+  }
+}
+
 p,
 h1,
 h2,
