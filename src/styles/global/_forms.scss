@@ -81,6 +81,8 @@ $color-hover: #08519a;
   @include type-eyebrow($weight: $font-weight-400);
   width: 100%;
   padding: 1px 2px;
+  padding-top: calc(#{$spacing-stack-20} + #{$spacing-stack-2});
+  padding-bottom: calc(#{$spacing-stack-4} + #{$spacing-stack-2});
   border: 0;
   border-bottom: $border-default;
   border-radius: 0;
@@ -174,7 +176,7 @@ $color-hover: #08519a;
   }
 
   + label {
-    @include type-eyebrow($font-color: $color-classic-blue);
+    @include type-eyebrow($font-color: $color-classic-navy);
     position: relative;
     margin-right: $spacing-inline-32;
     padding-left: rem(24px);
@@ -204,11 +206,10 @@ $color-hover: #08519a;
   }
 
   + span {
+    @include type-eyebrow($font-color: $color-classic-navy);
     position: relative;
     margin-right: $spacing-inline-32;
     padding-left: rem(24px);
-    font-weight: 400;
-    font-size: $font-size-14;
 
     @include wider-than($breakpoint-phone-landscape) {
       line-height: initial;

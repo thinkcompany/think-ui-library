@@ -61,10 +61,6 @@ $max-width-fine-print: 380px;
       padding-top: calc(#{$spacing-stack-20} + #{$spacing-stack-2});
       padding-bottom: calc(#{$spacing-stack-4} + #{$spacing-stack-2});
     }
-
-    .gform_footer {
-      margin-top: 0;
-    }
   }
 }
 
@@ -79,10 +75,10 @@ $max-width-fine-print: 380px;
 }
 
 .tco-contact-form-footer {
-  padding: $spacing-stack-16 0 $spacing-stack-24;
+  padding: $spacing-stack-16 $spacing-inline-16 $spacing-stack-24;
 
   @include wider-than($breakpoint-tablet-portrait) {
-    padding: $spacing-stack-40 0 $spacing-stack-50;
+    padding: $spacing-stack-40 $spacing-inline-32 $spacing-stack-50;
   }
 }
 

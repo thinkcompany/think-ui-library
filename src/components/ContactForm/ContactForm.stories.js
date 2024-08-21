@@ -100,12 +100,12 @@ const Template = args => {
               ${submitLabel}
             </button>
           </div>
-          <footer class="tco-contact-form-footer">
-            <p class="tco-contact-form-footer-text">By submitting this form, you're allowing us to store the information you submit.</p>
-            <p class="tco-contact-form-footer-text">We promise we'll never, ever, ever share it though.</p>
-            <p class="tco-contact-form-footer-text">Please read our <a href="#">Privacy Policy</a> to learn more.</p>
-          </footer>
         </form>
+        <footer class="tco-contact-form-footer">
+          <p class="tco-contact-form-footer-text">By submitting this form, you're allowing us to store the information you submit.</p>
+          <p class="tco-contact-form-footer-text">We promise we'll never, ever, ever share it though.</p>
+          <p class="tco-contact-form-footer-text">Please read our <a href="#">Privacy Policy</a> to learn more.</p>
+        </footer>
       </section>
     </div>
   </div>
