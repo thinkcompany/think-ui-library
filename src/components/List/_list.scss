@@ -172,13 +172,11 @@
     top: 0;
     gap: $spacing-stack-12;
     width: 100%;
-    padding-top: $spacing-stack-50;
     padding-bottom: $spacing-stack-24;
     background-color: $color-foreground-on-tint;
 
     @include wider-than($breakpoint-tablet-portrait) {
       top: 100px;
-      padding-top: 0;
     }
   }
 
