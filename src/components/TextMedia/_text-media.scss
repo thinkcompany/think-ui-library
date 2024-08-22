@@ -10,8 +10,17 @@ $bubble-max: 600px;
     align-items: center;
   }
 
+  &--content,
   &-content {
+    display: flex;
+    flex-flow: column nowrap;
+    gap: $spacing-stack-12;
+    align-items: flex-start;
     width: 100%;
+
+    @include wider-than($breakpoint-tablet-portrait) {
+      gap: $spacing-stack-16
+    }
 
     &-text {
       order: 1;
@@ -25,6 +34,7 @@ $bubble-max: 600px;
       }
     }
 
+    &--media,
     &-media {
       position: relative;
       display: flex;
@@ -58,6 +68,7 @@ $bubble-max: 600px;
       justify-content: space-between;
     }
 
+    .tco-text-media--content,
     .tco-text-media-content {
       @include wider-than($breakpoint-tablet-portrait) {
         flex: 0 auto;
@@ -76,6 +87,7 @@ $bubble-max: 600px;
 
   &--align-right {
     @include wider-than($breakpoint-tablet-portrait) {
+      .tco-text-media--content,
       .tco-text-media-content {
         &-text {
           order: 0;
@@ -88,6 +100,7 @@ $bubble-max: 600px;
     }
   }
 
+  &--content-media--background,
   &-content-media--background {
     &.tco-text-media-content-media--tall {
       width: calc(100% - #{$spacing-inline-60});
@@ -103,6 +116,7 @@ $bubble-max: 600px;
     }
   }
 
+  &--container,
   &-container {
     width: 100%;
 
@@ -352,6 +366,11 @@ $bubble-max: 600px;
     margin-top: $spacing-stack-24;
   }
 
+  &--cta {
+    margin-top: $spacing-stack-24;
+  }
+
+  &--eyebrow,
   &-eyebrow {
     @include type-eyebrow;
     display: block;
@@ -362,13 +381,9 @@ $bubble-max: 600px;
     }
   }
 
-  &-heading {
-    margin-bottom: $spacing-stack-12;
-  }
-
-  &-lede {
-    @include type-body-default;
-    margin: 0 auto $spacing-stack-32;
-    line-height: 1.77;
+  &--heading,
+  &--eyebrow,
+  &--lede:last-of-type {
+    margin-bottom: 0;
   }
 }

@@ -1,6 +1,17 @@
 const colors = ['default', 'glass'];
 const alignments = ['left', 'center', 'right'];
-const sizes = ['small', 'medium', 'large', 'extra-large'];
+const sizes = [
+  'small-24',
+  'small',
+  'medium-36',
+  'medium-42',
+  'medium-48',
+  'medium',
+  'large-64',
+  'large-80',
+  'large',
+  'extra-large'
+];
 
 export const TextAndMedia = args => {
   const {
@@ -14,8 +25,7 @@ export const TextAndMedia = args => {
     headingSize,
     lede,
     showCta,
-    showTeaser,
-    numbered
+    showTeaser
   } = args;
 
   const url = new URL(image);
@@ -37,33 +47,21 @@ export const TextAndMedia = args => {
   <div class="tco-container-wrapper tco-container-wrapper--${containerColor}">
     <div class="tco-container tco-container--default">
       <div class="tco-text-media tco-text-media--align-${alignment}">
-        <div class="tco-text-media-content tco-text-media-content-text tco-text-media-content-text--${textAlignment}">
-          ${
-            numbered
-              ? `
-            <div class="tco-background-blob">
-              <span class="tco-background-blob-content">1</span>
-              <svg class="tco-background-blob-icon" width="40" viewBox="0 0 40 40" role="img" aria-labelledby="1">
-                <use xlink:href="/img/icons.svg#icon-blob-1"></use>
-              </svg>
-            </div>
-          `
-              : ''
-          }
+        <div class="tco-text-media--content tco-text-media--content-text tco-text-media--content-text--${textAlignment}">
           ${
             eyebrow
               ? `
-            <p class="tco-text-media-eyebrow">${eyebrow}</p>
+            <p class="tco-text-media--eyebrow tco-type-eyebrow">${eyebrow}</p>
             `
               : ''
           }
 
-          <h1 class="tco-text-media-heading tco-type-display--${headingSize}">${heading}</h1>
-          <p class="tco-text-media-lede">${lede}</p>
+          <h2 class="tco-text-media--heading tco-type-display--${headingSize}">${heading}</h2>
+          <p class="tco-text-media--lede tco-type-body--medium">${lede}</p>
           ${
             showCta
               ? `
-            <a href="#" class="tco-btn tco-btn--primary">Learn More</a>
+            <a href="#" class="tco-text-media--cta tco-btn tco-btn--primary">Learn More</a>
           `
               : ''
           }
@@ -81,7 +79,7 @@ export const TextAndMedia = args => {
               : ''
           }
         </div>
-        <div class="tco-text-media-content tco-text-media-content-media tco-text-media-content-media--${mediaOrientation} ${
+        <div class="tco-text-media--content tco-text-media--content-media tco-text-media--content-media--${mediaOrientation} ${
     bubbleBackground ? 'tco-text-media-content-media--background' : ''
   }">
           ${
@@ -111,10 +109,9 @@ export default {
     textAlignment: alignments[0],
     showCta: true,
     showTeaser: false,
-    numbered: false,
     eyebrow: 'Text and Image',
     heading: 'Technology Integration',
-    headingSize: sizes[0],
+    headingSize: sizes[2],
     image: 'https://picsum.photos/id/1025/524/320',
     lede: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas pellentesque nunc vel turpis tempor tincidunt. Maecenas in felis suscipit, ornare felis at, posuere eros.'
   },
