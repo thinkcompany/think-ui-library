@@ -1121,7 +1121,42 @@ $card-break: 940px;
     }
   }
 
-  &[class*='tco-card--text-headline-copy'] {
+  &-headline-filled {
+    display: block;
+    border-radius: 8px;
+    background-color: $color-classic-blue;
+
+    .tco-card--text-title {
+      display: inline;
+      border-bottom: 1px solid transparent;
+      color: $color-foreground-on-tint;
+      line-height: 1.1;
+      transition: border-color 0.2s ease;
+    }
+
+    .tco-card--text-icon {
+      display: inline;
+      width: 21px;
+      fill: $color-foreground-on-tint;
+      transition: transform 0.2s ease;
+      transform: translate(5px, 2px);
+    }
+
+    &:hover,
+    &:focus {
+      .tco-card--text-title {
+        border-color: $color-foreground-on-tint;
+      }
+
+      .tco-card--text-icon {
+        transform: translate(10px, 2px);
+      }
+    }
+  }
+
+
+  &[class*='tco-card--text-headline-copy'],
+  &-headline-filled {
     padding: $spacing-stack-24 $spacing-inline-24;
 
     .tco-card--text-title,

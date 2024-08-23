@@ -5,7 +5,12 @@ const layouts = ['top', 'side'];
 const versions = ['classic', 'grid'];
 const summaryVersions = ['default', 'reduced'];
 const models = ['classic', 'deluxe-preview', 'deluxe'];
-const textCardType = ['headline-only', 'headline-copy', 'headline-copy-cta'];
+const textCardType = [
+  'headline-only',
+  'headline-only-filled',
+  'headline-copy',
+  'headline-copy-cta'
+];
 
 const SummaryCardTemplate = args => {
   const { heading, summary, treatment, summaryVersion } = args;
@@ -416,6 +421,15 @@ const TextCardTemplate = args => {
     </a>
   `;
 
+  const headlineOnlyFilled = `
+    <a href="#" class="tco-card tco-card--text tco-card--text-headline-filled">
+      <h2 class="tco-card--text-title tco-type-display--medium-36 tco-link--dark-theme">${heading}</h2>
+      <svg class="tco-card--text-icon" viewBox="0 0 31 29" role="presentation">
+        <use xlink:href="/img/icons.svg#icon-arrow-right"></use>
+      </svg>
+    </a>
+  `;
+
   const headlineCopy = `
     <a href="#" class="tco-card tco-card--text tco-card--text-headline-copy">
       <h2 class="tco-card--text-title tco-type-display--medium-36 tco-link--dark-theme">Digital product design & development</h2>
@@ -447,6 +461,8 @@ const TextCardTemplate = args => {
       card = headlineCopyCta;
     } else if (treatment === 'headline-copy') {
       card = headlineCopy;
+    } else if (treatment === 'headline-only-filled') {
+      card = headlineOnlyFilled;
     } else {
       card = headlineOnly;
     }
