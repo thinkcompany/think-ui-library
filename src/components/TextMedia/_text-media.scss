@@ -286,7 +286,8 @@ $bubble-max: 600px;
         row-gap: $spacing-stack-40;
       }
 
-      &-lede {
+      &-lede,
+      &--lede {
         margin: 0;
       }
     }
