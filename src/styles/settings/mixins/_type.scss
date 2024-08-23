@@ -374,7 +374,12 @@
   }
 }
 
-@mixin type-body-small($font-color: inherit, $italic: false, $size: $font-size-15, $weight: $font-weight-500) {
+@mixin type-body-small(
+  $font-color: inherit,
+  $italic: false,
+  $size: $font-size-15,
+  $weight: $font-weight-500
+) {
   @include type-base-style($font-color, $weight);
   font-size: $size;
   font-variation-settings: 'wght' $weight, 'slnt' 0;

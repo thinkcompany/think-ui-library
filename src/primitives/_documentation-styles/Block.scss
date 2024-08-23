@@ -118,7 +118,7 @@
 
         input[type='radio'] {
           + span {
-            background-color: #23272a;
+            background-color: #010d15;
           }
         }
       }
@@ -136,7 +136,7 @@
   .docblock-argstable-head {
     button {
       .tco-lights-out & {
-        background-color: #23272a;
+        background-color: #010d15;
       }
     }
 
@@ -230,6 +230,6 @@
 
 .tco-lights-out .tco-container-wrapper--glass {
   &:has(.tco-storybook-welcome) {
-    background-color: #23272a;
+    background-color: #010d15;
   }
 }

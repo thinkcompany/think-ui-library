@@ -1154,7 +1154,6 @@ $card-break: 940px;
     }
   }
 
-
   &[class*='tco-card--text-headline-copy'],
   &-headline-filled {
     padding: $spacing-stack-24 $spacing-inline-24;
@@ -1203,7 +1202,6 @@ $card-break: 940px;
     gap: $spacing-stack-20;
     border-bottom-width: 0;
     background-color: $color-classic-soft-white;
-
 
     .tco-card--text-title {
       color: $color-classic-navy;

@@ -19,7 +19,7 @@ $bubble-max: 600px;
     width: 100%;
 
     @include wider-than($breakpoint-tablet-portrait) {
-      gap: $spacing-stack-16
+      gap: $spacing-stack-16;
     }
 
     &-text {

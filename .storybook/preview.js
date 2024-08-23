@@ -44,7 +44,7 @@ addParameters({
       base: 'dark',
       appBg: '#181c1f',
       appContentBg: '#181c1f',
-      barBg: '#23272a',
+      barBg: '#010D15',
       brandImage: '/img/think-logo-white.svg',
     },
     light: {

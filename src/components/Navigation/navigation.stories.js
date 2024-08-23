@@ -6,7 +6,7 @@ export const Header = () => {
       background-color: #fff;
     }
     .tco-lights-out .sb-page-background {
-      background-color: #23272a;
+      background-color: #010D15;
     }
   </style>
   <div class="sb-page-background">
