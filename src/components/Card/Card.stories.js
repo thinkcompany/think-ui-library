@@ -5,7 +5,7 @@ const layouts = ['top', 'side'];
 const versions = ['classic', 'grid'];
 const summaryVersions = ['default', 'reduced'];
 const models = ['classic', 'deluxe-preview', 'deluxe'];
-const textCardType = ['headline', 'small'];
+const textCardType = ['headline-only', 'headline-copy', 'headline-copy-cta'];
 
 const SummaryCardTemplate = args => {
   const { heading, summary, treatment, summaryVersion } = args;
@@ -407,7 +407,7 @@ WorkCard.args = {
 const TextCardTemplate = args => {
   const { heading, treatment } = args;
 
-  const headlineType = `
+  const headlineOnly = `
     <a href="#" class="tco-card tco-card--text tco-card--text-headline">
       <h2 class="tco-card--text-title tco-type-body--jumbo tco-link--dark-theme">${heading}</h2>
       <svg class="tco-card--text-icon" viewBox="0 0 31 29" role="presentation">
@@ -416,8 +416,15 @@ const TextCardTemplate = args => {
     </a>
   `;
 
-  const altType = `
-    <a href="" class="tco-card tco-card--text tco-card--text-alt">
+  const headlineCopy = `
+    <a href="#" class="tco-card tco-card--text tco-card--text-headline-copy">
+      <h2 class="tco-card--text-title tco-type-display--medium-36 tco-link--dark-theme">Digital product design & development</h2>
+      <p class="tco-type-body tco-card--text-content">Design, develop, and enhance digital products that are easy to use and increase customer engagement.</p>
+    </a>
+  `;
+
+  const headlineCopyCta = `
+    <a href="" class="tco-card tco-card--text tco-card--text-headline-copy-cta">
       <h2 class="tco-card--text-title tco-type-display--medium-36">Reports</h2>
       <p class="tco-type-body--medium tco-card--text-content">Read custom research reports, papers, and more for a deeper dive into industry and practice insights.</p>
       <p class="tco-type-eyebrow tco-card--text-cta">
@@ -436,10 +443,12 @@ const TextCardTemplate = args => {
 
     let card = '';
 
-    if (treatment === 'small') {
-      card = altType;
+    if (treatment === 'headline-copy-cta') {
+      card = headlineCopyCta;
+    } else if (treatment === 'headline-copy') {
+      card = headlineCopy;
     } else {
-      card = headlineType;
+      card = headlineOnly;
     }
 
     for (let i = 0; i < 3; i++) {

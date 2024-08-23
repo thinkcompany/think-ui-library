@@ -1121,16 +1121,54 @@ $card-break: 940px;
     }
   }
 
-  &-alt {
-    grid-template-rows: auto 1fr auto;
-    gap: $spacing-stack-20;
+  &[class*='tco-card--text-headline-copy'] {
     padding: $spacing-stack-24 $spacing-inline-24;
-    border-bottom-width: 0;
-    background-color: $color-classic-soft-white;
+
+    .tco-card--text-title,
+    .tco-card--text-content {
+      margin-bottom: 0;
+    }
 
     @include wider-than($breakpoint-tablet-portrait) {
       padding: $spacing-stack-32 $spacing-inline-32;
     }
+  }
+
+  &-headline-copy {
+    display: block;
+    border: 1.5px solid $color-classic-blue;
+    box-shadow: none;
+    transition: background-color 0.2s ease;
+
+    .tco-card--text-title {
+      display: inline;
+      border-bottom: 1px solid transparent;
+      line-height: 1.1;
+      transition: border-color 0.2s ease;
+    }
+
+    .tco-card--text-content {
+      margin-top: $spacing-stack-8;
+      color: $color-classic-navy;
+    }
+
+    &:hover,
+    &:focus {
+      border-color: $color-classic-blue;
+      background-color: $color-classic-glass;
+
+      .tco-card--text-title {
+        border-color: $color-classic-blue;
+      }
+    }
+  }
+
+  &-headline-copy-cta {
+    grid-template-rows: auto 1fr auto;
+    gap: $spacing-stack-20;
+    border-bottom-width: 0;
+    background-color: $color-classic-soft-white;
+
 
     .tco-card--text-title {
       color: $color-classic-navy;
@@ -1138,11 +1176,6 @@ $card-break: 940px;
       .tco-lights-out & {
         color: $color-foreground-on-tint;
       }
-    }
-
-    .tco-card--text-title,
-    .tco-card--text-content {
-      margin-bottom: 0;
     }
 
     .tco-card--text-cta {
