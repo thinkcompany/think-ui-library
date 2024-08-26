@@ -611,10 +611,10 @@
   border-bottom-color: transparent;
   transition: border-color 0.2s linear, color 0.2s linear;
 
-  &:not(.tco-btn):not(.tco-link--dark-theme):not(.tco-text-link-motion) {
+  &:not(.tco-btn):not(.tco-link--dark-theme):not(.tco-text-link-motion):not(.tco-card--text-headline-filled) {
     .tco-lights-out & {
       color: $color-dark-theme-blue;
-      //border-bottom-color: $color-dark-theme-blue;
+      border-bottom-color: $color-dark-theme-blue;
     }
   }
 

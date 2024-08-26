@@ -142,7 +142,7 @@
 
     svg {
       .tco-lights-out & {
-        fill: #478eeb;
+        fill: #89D8FF;
       }
     }
   }
@@ -151,19 +151,19 @@
   [title='Zoom out'],
   [title='Reset zoom'] {
     svg path {
-      fill: #478eeb;
+      fill: #89D8FF;
     }
   }
 
   .docblock-code-toggle {
     .tco-lights-out & {
-      color: #478eeb;
+      color: #89D8FF;
     }
   }
 
   .sbdocs-expandable {
     .tco-lights-out & {
-      color: #478eeb;
+      color: #89D8FF;
     }
   }
 }

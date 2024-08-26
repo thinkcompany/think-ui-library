@@ -1054,6 +1054,10 @@ $card-break: 940px;
   .tco-text-link--big-arrow {
     margin-top: $spacing-stack-24;
     color: $color-classic-blue;
+
+    .tco-lights-out & {
+      color: $color-foreground-on-tint;
+    }
   }
 
   &-title,
@@ -1114,6 +1118,8 @@ $card-break: 940px;
     }
 
     .tco-lights-out & {
+      border-color: $color-dark-theme-blue;
+
       &:hover,
       &:focus {
         border-bottom-color: $color-dark-theme-blue;
@@ -1150,6 +1156,26 @@ $card-break: 940px;
 
       .tco-card--text-icon {
         transform: translate(10px, 2px);
+      }
+    }
+
+    .tco-lights-out & {
+      border-bottom-color: transparent;
+      background-color: $color-dark-theme-black;
+
+      .tco-card--text-title {
+        color: $color-dark-theme-blue;
+      }
+
+      .tco-card--text-icon {
+        fill: $color-dark-theme-blue;
+      }
+
+      &:hover,
+      &:focus {
+        .tco-card--text-title {
+          border-color: $color-dark-theme-blue;
+        }
       }
     }
   }
@@ -1195,6 +1221,26 @@ $card-break: 940px;
         border-color: $color-classic-blue;
       }
     }
+
+    .tco-lights-out & {
+      border-color: $color-dark-theme-blue;
+      background-color: $color-dark-theme-black;
+
+      .tco-card--text-title,
+      .tco-card--text-content {
+        color: $color-foreground-on-tint;
+      }
+
+      &:hover,
+      &:focus {
+        border-color: $color-dark-theme-blue;
+        background-color: lighten($color-dark-theme-black, 3);
+
+        .tco-card--text-title {
+          border-color: $color-dark-theme-blue;
+        }
+      }
+    }
   }
 
   &-headline-copy-cta {
@@ -1226,6 +1272,17 @@ $card-break: 940px;
 
         svg {
           transform: translate(10px, 3px);
+        }
+      }
+    }
+
+    .tco-lights-out & {
+      color: $color-foreground-on-tint;
+
+      &:hover,
+      &:focus {
+        .tco-text-link--arrow {
+          border-bottom-color: $color-dark-theme-blue;
         }
       }
     }

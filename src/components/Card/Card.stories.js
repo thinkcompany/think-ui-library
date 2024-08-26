@@ -385,7 +385,7 @@ const WorkCardTemplate = args => {
         <div class="tco-card-content-container">
           <h2 class="tco-type-display--medium-36 tco-link--dark-theme tco-card--work-title">${heading}</h2>
           <p class="tco-type-body tco-card--work-body">${description}</p>
-          <a href="#" class="tco-text-link tco-text-link--big-arrow" active="">
+          <a href="#" class="tco-text-link tco-text-link--big-arrow tco-link--dark-theme" active="">
             Case studies
             <svg class="tco-text-link-icon" viewBox="0 0 31 29" role="presentation">
               <use xlink:href="/img/icons.svg#icon-arrow-right"></use>
@@ -442,7 +442,7 @@ const TextCardTemplate = args => {
       <h2 class="tco-card--text-title tco-type-display--medium-36">Reports</h2>
       <p class="tco-type-body--medium tco-card--text-content">Read custom research reports, papers, and more for a deeper dive into industry and practice insights.</p>
       <p class="tco-type-eyebrow tco-card--text-cta">
-        <span class="tco-text-link tco-text-link--arrow">
+        <span class="tco-text-link tco-text-link--arrow tco-link--dark-theme">
           Read our reports
           <svg class="tco-text-link-icon" width="20" height="20" viewBox="0 0 20 20" role="presentation">
             <use xlink:href="/img/icons.svg#icon-arrow-right"></use>
