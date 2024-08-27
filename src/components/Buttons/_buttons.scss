@@ -222,6 +222,10 @@ $big-arrow-width: calc(21 / 18) * 1em;
         transform: translate(10px, 4px);
       }
     }
+
+    .tco-lights-out & {
+      color: $color-foreground-on-tint;
+    }
   }
 }
 

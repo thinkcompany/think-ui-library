@@ -112,7 +112,7 @@ export const LinkWithBigArrow = args => {
   return `
   <div class="tco-container-wrapper ${containerColor}">
     <div class="tco-container">
-      <a href="#" class="tco-text-link tco-text-link--big-arrow" ${linkState}>
+      <a href="#" class="tco-text-link tco-text-link--big-arrow tco-link--dark-theme" ${linkState}>
         ${linkText}
         <svg class="tco-text-link-icon" width="20" height="20" viewBox="0 0 20 20" role="presentation">
           <use xlink:href="/img/icons.svg#icon-arrow-right"></use>
