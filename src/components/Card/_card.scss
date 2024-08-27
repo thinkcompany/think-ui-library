@@ -535,8 +535,8 @@ $device-offset-v: 58px;
       color: $color-foreground-on-tint;
     }
 
-    .tco-text-link-icon {
-      fill: $color-foreground-on-tint;
+    .tco-text-link-icon:not(.tco-text-link-icon--alt) {
+      fill: $color-classic-blue;
     }
   }
 }
