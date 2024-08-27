@@ -1,3 +1,5 @@
+/* stylelint-disable selector-max-combinators, selector-max-compound-selectors */
+
 $motion-content-max: 464px;
 $mini-card: 260px;
 $mini-slide: 174px;
@@ -50,6 +52,11 @@ $container-offset: 4px;
 
     .tco-card--motion-cta {
       border-bottom-color: transparent;
+      color: $color-classic-blue;
+
+      .tco-text-link--arrow {
+        fill: $color-classic-blue;
+      }
     }
   }
 

@@ -320,7 +320,7 @@ const MotionCardTemplate = args => {
             <p class="tco-card-description tco-type-body--default">${summary}</p>
             <a href="#" class="tco-text-link-motion tco-card--motion-cta tco-tco-text-link tco-text-link--arrow">
               See our work
-              <svg class="tco-text-link-icon" width="20" height="20" viewBox="0 0 20 20" role="presentation">
+              <svg class="tco-text-link-icon tco-text-link-icon--alt" width="20" height="20" viewBox="0 0 20 20" role="presentation">
                 <use xlink:href="/img/icons.svg#icon-arrow-right"></use>
               </svg>
             </a>
@@ -350,7 +350,7 @@ const MotionCardTemplate = args => {
             <p class="tco-card-description tco-type-body--default">${summaryB}</p>
             <a href="#" class="tco-text-link-motion tco-card--motion-cta tco-tco-text-link tco-text-link--arrow">
               How we do it
-              <svg class="tco-text-link-icon" width="20" height="20" viewBox="0 0 20 20" role="presentation">
+              <svg class="tco-text-link-icon tco-text-link-icon--alt" width="20" height="20" viewBox="0 0 20 20" role="presentation">
                 <use xlink:href="/img/icons.svg#icon-arrow-right"></use>
               </svg>
             </a>
