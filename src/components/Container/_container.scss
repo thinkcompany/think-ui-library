@@ -102,6 +102,10 @@ $color-hover-blue-blue: #09509a;
 
   &--soft-white {
     background-color: $color-classic-soft-white;
+
+    .tco-lights-out & {
+      background-color: $color-dark-theme-black;
+    }
   }
 
   &--purple {

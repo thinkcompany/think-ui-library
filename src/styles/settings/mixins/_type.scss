@@ -265,6 +265,10 @@
       $font-size-18
     );
   }
+
+  .tco-lights-out & {
+    color: $color-dark-theme-blue;
+  }
 }
 
 @mixin type-body-large(

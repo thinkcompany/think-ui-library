@@ -78,7 +78,7 @@ export const LinkWithArrow = args => {
   <div class="tco-container-wrapper ${containerColor}">
     <div class="tco-container">
       <h3 class="tco-type-${fontSize}">
-        <a href="#" class="tco-text-link tco-text-link--arrow" ${linkState}>
+        <a href="#" class="tco-text-link tco-text-link--arrow tco-link--dark-theme" ${linkState}>
           ${linkText}
           <svg class="tco-text-link-icon" width="20" height="20" viewBox="0 0 20 20" role="presentation">
             <use xlink:href="/img/icons.svg#icon-arrow-right"></use>

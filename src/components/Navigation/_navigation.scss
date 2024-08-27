@@ -329,8 +329,11 @@ $container-max: 1168px;
         .tco-lights-out & {
           color: $color-foreground-on-tint;
 
-          &:hover {
-            border-bottom-color: $color-foreground-on-tint;
+          &:hover,
+          &:focus,
+          .current-menu-item & {
+            border-bottom-color: $color-dark-theme-blue;
+            color: $color-dark-theme-blue;
           }
         }
       }

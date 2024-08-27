@@ -1087,6 +1087,7 @@ $card-break: 940px;
     justify-content: space-between;
     padding: $spacing-stack-16 $spacing-inline-20;
     border: 1.5px solid $color-classic-blue;
+    cursor: pointer;
 
     @include wider-than($breakpoint-tablet-portrait) {
       padding: $spacing-stack-24 $spacing-inline-32;

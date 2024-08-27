@@ -28,12 +28,12 @@
       );
 
       .tco-lights-out & {
-        color: $color-dark-theme-blue;
+        color: $color-foreground-on-tint;
       }
     }
 
     .tco-lights-out & {
-      border-top-color: $color-dark-theme-blue;
+      border-top-color: $color-foreground-on-tint;
     }
   }
 
@@ -60,6 +60,10 @@
 
     @include wider-than($breakpoint-tablet-portrait) {
       grid-template-columns: repeat(2, auto);
+    }
+
+    .tco-lights-out & {
+      border-bottom-color: $color-foreground-on-tint;
     }
   }
 
@@ -176,6 +180,10 @@
     @include wider-than($breakpoint-tablet-portrait) {
       top: 100px;
     }
+
+    .tco-lights-out & {
+      background-color: $color-dark-theme-black;
+    }
   }
 
   &--list {
@@ -196,6 +204,10 @@
 
     @include wider-than($breakpoint-tablet-portrait) {
       padding-bottom: $spacing-stack-24;
+    }
+
+    .tco-lights-out & {
+      border-bottom-color: $color-foreground-on-tint;
     }
 
     .tco-sticky-list {

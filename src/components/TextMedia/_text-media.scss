@@ -387,4 +387,12 @@ $bubble-max: 600px;
   &--lede:last-of-type {
     margin-bottom: 0;
   }
+
+  &--lede {
+    p {
+      .tco-lights-out & {
+        color: $color-foreground-on-tint;
+      }
+    }
+  }
 }
