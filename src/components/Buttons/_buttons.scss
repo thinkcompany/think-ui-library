@@ -1,7 +1,6 @@
 /* stylelint-disable selector-max-pseudo-class, max-line-length, selector-max-specificity,  max-nesting-depth, selector-max-combinators, selector-max-compound-selectors, no-duplicate-selectors */
 
 $color-disabled: #c8d9ea;
-$color-hover: #08519a;
 $big-arrow-width: calc(21 / 18) * 1em;
 
 .tco-btn,
@@ -26,20 +25,20 @@ $big-arrow-width: calc(21 / 18) * 1em;
   }
 
   &:hover {
-    border-color: $color-hover;
-    background: $color-hover;
+    border-color: $color-classic-blue;
+    background: $color-classic-blue;
   }
 
   &:focus {
-    box-shadow: 0 0 20px 0 rgba($color-hover, 0.5);
-    outline: 2px solid $color-hover;
+    box-shadow: 0 0 20px 0 rgba($color-classic-blue, 0.5);
+    outline: 2px solid $color-classic-blue;
     outline-offset: 2px;
   }
 
   &:active,
   &:focus {
-    border-color: $color-hover;
-    background-color: $color-hover;
+    border-color: $color-classic-blue;
+    background-color: $color-classic-blue;
   }
 
   &[disabled] {
@@ -65,8 +64,8 @@ $big-arrow-width: calc(21 / 18) * 1em;
     background: $color-dark-theme-dark-blue;
 
     &:hover {
-      border-color: $color-hover;
-      background: $color-hover;
+      border-color: $color-classic-blue;
+      background: $color-classic-blue;
     }
 
     &:disabled {
@@ -88,7 +87,7 @@ $big-arrow-width: calc(21 / 18) * 1em;
   }
 
   &:active {
-    border-color: $color-hover;
+    border-color: $color-classic-blue;
   }
 
   &:focus {
@@ -104,8 +103,8 @@ $big-arrow-width: calc(21 / 18) * 1em;
     color: $color-foreground-on-tint;
 
     &:hover {
-      border-color: $color-hover;
-      background: $color-hover;
+      border-color: $color-classic-blue;
+      background: $color-classic-blue;
     }
 
     &:disabled {
@@ -129,7 +128,7 @@ $big-arrow-width: calc(21 / 18) * 1em;
   }
 
   &:active {
-    border-color: $color-hover;
+    border-color: $color-classic-blue;
   }
 
   &:focus {
@@ -145,8 +144,8 @@ $big-arrow-width: calc(21 / 18) * 1em;
     color: $color-classic-blue;
 
     &:hover {
-      border-color: $color-hover;
-      background: $color-hover;
+      border-color: $color-classic-blue;
+      background: $color-classic-blue;
       color: $color-foreground-on-tint;
     }
 
@@ -163,26 +162,17 @@ $big-arrow-width: calc(21 / 18) * 1em;
   &--big-arrow {
     @include type-link-cta;
     color: $color-classic-navy;
-
-    .tco-lights-out & {
-      border-bottom-color: transparent;
-
-      &:hover {
-        border-bottom-color: $color-dark-theme-blue;
-      }
-    }
   }
 
   &:active {
-    color: $color-hover;
+    color: $color-classic-blue;
 
     .tco-text-link-icon {
-      fill: $color-hover;
+      fill: $color-classic-blue;
     }
   }
 
   .tco-lights-out & {
-    border-bottom-color: $color-dark-theme-blue;
     color: $color-foreground-on-tint;
 
     &:hover,
@@ -194,7 +184,7 @@ $big-arrow-width: calc(21 / 18) * 1em;
       border-bottom-color: transparent;
 
       &:hover {
-        border-bottom-color: $color-dark-theme-blue;
+        border-bottom-color: $color-classic-blue;
       }
     }
   }
