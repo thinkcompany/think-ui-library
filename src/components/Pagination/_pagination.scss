@@ -1,3 +1,5 @@
+/* stylelint-disable selector-max-pseudo-class, max-line-length, selector-max-specificity,  max-nesting-depth, selector-max-combinators, selector-max-compound-selectors, no-duplicate-selectors */
+
 $current-size: 28px;
 $list-space-mobile: 10px;
 $list-space: 14px;
@@ -38,7 +40,12 @@ $pagination-break-point: 518px;
         }
 
         .tco-lights-out & {
-          color: $color-dark-theme-blue;
+          border-bottom-color: transparent;
+          color: $color-foreground-on-tint;
+
+          .tco-icon {
+            fill: $color-classic-blue;
+          }
         }
       }
 
@@ -58,7 +65,7 @@ $pagination-break-point: 518px;
 
         .tco-lights-out & {
           background-color: $color-foreground-on-tint;
-          color: $color-dark-theme-blue;
+          color: $color-classic-blue;
         }
       }
     }
@@ -120,7 +127,7 @@ $pagination-break-point: 518px;
     }
 
     .tco-lights-out & {
-      color: $color-dark-theme-blue;
+      color: $color-foreground-on-tint;
     }
   }
 }
