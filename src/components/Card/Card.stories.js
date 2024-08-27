@@ -413,7 +413,7 @@ const TextCardTemplate = args => {
   const { heading, treatment } = args;
 
   const headlineOnly = `
-    <a href="#" class="tco-card tco-card--text tco-card--text-headline">
+    <a href="#" class="tco-card tco-card--text tco-card--text-headline tco-link--dark-theme">
       <h2 class="tco-card--text-title tco-type-body--jumbo tco-link--dark-theme">${heading}</h2>
       <svg class="tco-card--text-icon" viewBox="0 0 31 29" role="presentation">
         <use xlink:href="/img/icons.svg#icon-arrow-right"></use>

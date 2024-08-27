@@ -225,6 +225,10 @@ $big-arrow-width: calc(21 / 18) * 1em;
 
     .tco-lights-out & {
       color: $color-foreground-on-tint;
+
+      svg {
+        fill: $color-classic-blue;
+      }
     }
   }
 }

@@ -1105,7 +1105,7 @@ $card-break: 940px;
       transform: translateX(0);
 
       .tco-lights-out & {
-        fill: $color-dark-theme-blue;
+        fill: $color-classic-blue;
       }
     }
 
@@ -1119,11 +1119,12 @@ $card-break: 940px;
     }
 
     .tco-lights-out & {
-      border-color: $color-dark-theme-blue;
+      //border-color: $color-dark-theme-blue;
+      color: $color-foreground-on-tint;
 
       &:hover,
       &:focus {
-        border-bottom-color: $color-dark-theme-blue;
+        border-bottom-color: $color-classic-blue;
       }
     }
   }
