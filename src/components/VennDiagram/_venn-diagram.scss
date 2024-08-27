@@ -16,6 +16,10 @@ $circle: calc(($circle-max / $container-max) * 100%);
     border: 1.5px solid $color-classic-blue;
     border-radius: 50%;
     aspect-ratio: 1 / 1;
+
+    .tco-lights-out & {
+      border-color: $color-dark-theme-blue;
+    }
   }
 
   &--circle-a {
@@ -37,5 +41,9 @@ $circle: calc(($circle-max / $container-max) * 100%);
     @include type-body-large($weight: 400, $small: true);
     margin: auto;
     color: $color-classic-blue;
+
+    .tco-lights-out & {
+      color: $color-dark-theme-blue;
+    }
   }
 }

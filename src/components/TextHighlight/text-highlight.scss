@@ -31,10 +31,6 @@ $timing-fn: cubic-bezier(0.25, 1, 0.5, 1);
 
   .tco-lights-out & {
     .tco-type-treatment--highlight {
-      // span {
-      //   color: $color-foreground-on-tint;
-      // }
-
       &.active {
         span.active {
           color: $color-classic-navy;
