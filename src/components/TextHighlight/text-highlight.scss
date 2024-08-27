@@ -1,5 +1,8 @@
+/* stylelint-disable selector-max-combinators, selector-max-compound-selectors, selector-max-class, selector-max-specificity, selector-no-qualifying-type, max-line-length */
+
 $color-highlight: #eeff89;
 $duration: 0.9s;
+//$duration: 2s;
 $timing-fn: cubic-bezier(0.25, 1, 0.5, 1);
 
 .tco-type-treatment--highlight {
@@ -8,9 +11,35 @@ $timing-fn: cubic-bezier(0.25, 1, 0.5, 1);
   background-image: linear-gradient($color-highlight, $color-highlight);
   background-size: 0 100%;
   background-repeat: no-repeat;
+  color: inherit;
   transition: background-color $duration $timing-fn, background-size $duration $timing-fn;
+
+  span {
+    color: inherit;
+    transition: color 0.1s ease;
+  }
 
   &.active {
     background-size: 100% 100%;
+
+    .tco-lights-out & {
+      .active {
+        color: $color-classic-navy;
+      }     // color: $color-classic-navy;
+    }
+  }
+
+  .tco-lights-out & {
+    .tco-type-treatment--highlight {
+      // span {
+      //   color: $color-foreground-on-tint;
+      // }
+
+      &.active {
+        span.active {
+          color: $color-classic-navy;
+        }
+      }
+    }
   }
 }
