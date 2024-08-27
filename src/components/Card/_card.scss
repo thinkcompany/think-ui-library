@@ -1224,7 +1224,7 @@ $card-break: 940px;
     }
 
     .tco-lights-out & {
-      border-color: $color-dark-theme-blue;
+      border-color: $color-classic-blue;
       background-color: $color-dark-theme-black;
 
       .tco-card--text-title,
@@ -1234,11 +1234,10 @@ $card-break: 940px;
 
       &:hover,
       &:focus {
-        border-color: $color-dark-theme-blue;
         background-color: lighten($color-dark-theme-black, 3);
 
         .tco-card--text-title {
-          border-color: $color-dark-theme-blue;
+          border-color: $color-foreground-on-tint;
         }
       }
     }

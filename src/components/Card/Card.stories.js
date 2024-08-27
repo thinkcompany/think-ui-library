@@ -431,7 +431,7 @@ const TextCardTemplate = args => {
   `;
 
   const headlineCopy = `
-    <a href="#" class="tco-card tco-card--text tco-card--text-headline-copy">
+    <a href="#" class="tco-card tco-card--text tco-card--text-headline-copy tco-link--dark-theme">
       <h2 class="tco-card--text-title tco-type-display--medium-36 tco-link--dark-theme">Digital product design & development</h2>
       <p class="tco-type-body tco-card--text-content">Design, develop, and enhance digital products that are easy to use and increase customer engagement.</p>
     </a>
