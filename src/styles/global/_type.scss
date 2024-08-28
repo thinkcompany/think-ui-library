@@ -1,3 +1,5 @@
+/* stylelint-disable no-duplicate-selectors */
+
 /* Display classes */
 .tco-type-display--extra-large {
   @include type-display-extra-large;
@@ -57,7 +59,10 @@
 
 .tco-type-eyebrow {
   @include type-eyebrow;
-  margin-bottom: 0;
+
+  & {
+    margin-bottom: 0;
+  }
 
   &-italic {
     @include type-eyebrow($italic: true);
@@ -75,7 +80,10 @@
 /* Body classes */
 .tco-type-body--mega {
   @include type-body-large($mega: true);
-  line-height: 1.25;
+
+  & {
+    line-height: 1.25;
+  }
 }
 
 .tco-type-body--jumbo {
