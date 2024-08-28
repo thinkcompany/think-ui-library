@@ -1,18 +1,18 @@
 /* stylelint-disable selector-max-pseudo-class, max-line-length, selector-max-specificity,  max-nesting-depth, selector-max-combinators, selector-max-compound-selectors, no-duplicate-selectors */
 
 $color-disabled: #c8d9ea;
+$color-hover: #08519a;
 $big-arrow-width: calc(21 / 18) * 1em;
+
 
 .tco-btn,
 %tco-btn {
   @include type-body-default($weight: 500);
   position: relative;
-  padding: calc(#{$spacing-stack-12} - #{$spacing-stack-4}) $spacing-stack-24
-    calc(#{$spacing-stack-12} - #{$spacing-stack-2});
+  padding: calc(#{$spacing-stack-12} - #{$spacing-stack-4}) $spacing-stack-24 calc(#{$spacing-stack-12} - #{$spacing-stack-2});
   border: none;
   border-radius: $border-radius-radius30;
   background: none;
-  line-height: 1.25;
   text-align: center;
   text-decoration: none;
   cursor: pointer;
@@ -25,20 +25,20 @@ $big-arrow-width: calc(21 / 18) * 1em;
   }
 
   &:hover {
-    border-color: $color-classic-blue;
-    background: $color-classic-blue;
+    border-color: $color-hover;
+    background: $color-hover;
   }
 
   &:focus {
-    box-shadow: 0 0 20px 0 rgba($color-classic-blue, 0.5);
-    outline: 2px solid $color-classic-blue;
+    box-shadow: 0 0 20px 0 rgba($color-hover, 0.5);
+    outline: 2px solid $color-hover;
     outline-offset: 2px;
   }
 
   &:active,
   &:focus {
-    border-color: $color-classic-blue;
-    background-color: $color-classic-blue;
+    border-color: $color-hover;
+    background-color: $color-hover;
   }
 
   &[disabled] {
