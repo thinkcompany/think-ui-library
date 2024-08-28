@@ -60,7 +60,7 @@ const FormTemplate = args => {
           </svg>
           </button>
           <img class="tco-floating-logo-img" src="${thinkBubble}" alt="Close contact form" />
-          <h2 class="tco-type-cursive--large">Hi there!</h2>
+          <h2 class="tco-type-body">Hi there!</h2>
           <p class="tco-type-body">${intro}</p>
         </header>
         <form class="tco-floating-form">

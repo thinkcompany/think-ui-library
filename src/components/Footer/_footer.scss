@@ -369,12 +369,11 @@ $widget-width: 132px;
     }
 
     + label {
-      @include type-body-xsmall;
+      @include type-body-small($size: $font-size-10);
       margin: 0;
       padding-top: $spacing-stack-4;
       padding-left: $spacing-inline-50 - $spacing-inline-8;
       color: $color-foreground-on-tint;
-      line-height: 1.9;
       text-align: left;
 
       &::before {

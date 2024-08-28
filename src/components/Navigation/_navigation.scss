@@ -359,7 +359,7 @@ $container-max: 1168px;
 
     .tco-site-nav-link {
       @include type-link($underline: $color-foreground-on-tint);
-      @include type-body-medium;
+      @include type-body-large;
       text-transform: initial;
     }
   }

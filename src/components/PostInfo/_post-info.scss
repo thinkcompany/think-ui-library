@@ -22,7 +22,7 @@
   }
 
   &-label {
-    @include type-body-medium;
+    @include type-body-large;
     display: block;
   }
 
@@ -33,7 +33,7 @@
 
 .tco-post-info-share {
   &-label {
-    @include type-body-medium;
+    @include type-body-large;
     margin-bottom: $spacing-stack-16;
 
     @include wider-than($breakpoint-phone-landscape) {
