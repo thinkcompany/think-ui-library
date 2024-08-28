@@ -1051,7 +1051,13 @@ $card-break: 940px;
   max-width: none;
   min-height: 0;
   padding: 0;
-  border-radius: 16px;
+  border: 1.5px solid $color-classic-blue;
+  border-radius: 8px;
+  box-shadow: none;
+
+  .tco-lights-out & {
+    box-shadow: none;
+  }
 
   @include wider-than($card-break) {
     display: flex;
