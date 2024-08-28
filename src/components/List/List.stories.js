@@ -146,27 +146,27 @@ const stickyListTemplate = args => {
             </div>
             <ul class="tco-sticky-list--list">
               <li class="tco-sticky-list--item">
-                <h4 class="tco-sticky-list--heading tco-type-body--extra-large">${titleA}</h4>
+                <h4 class="tco-sticky-list--heading tco-type-body--large">${titleA}</h4>
                 <p class="tco-sticky-list--content tco-type-body">${copyA}</p>
               </li>
               <li class="tco-sticky-list--item">
-                <h4 class="tco-sticky-list--heading tco-type-body--extra-large">${titleB}</h4>
+                <h4 class="tco-sticky-list--heading tco-type-body--large">${titleB}</h4>
                 <p class="tco-sticky-list--content tco-type-body">${copyB}</p>
               </li>
               <li class="tco-sticky-list--item">
-                <h4 class="tco-sticky-list--heading tco-type-body--extra-large">${titleC}</h4>
+                <h4 class="tco-sticky-list--heading tco-type-body--large">${titleC}</h4>
                 <p class="tco-sticky-list--content tco-type-body">${copyC}</p>
               </li>
               <li class="tco-sticky-list--item">
-                <h4 class="tco-sticky-list--heading tco-type-body--extra-large">${titleD}</h4>
+                <h4 class="tco-sticky-list--heading tco-type-body--large">${titleD}</h4>
                 <p class="tco-sticky-list--content tco-type-body">${copyD}</p>
               </li>
               <li class="tco-sticky-list--item">
-                <h4 class="tco-sticky-list--heading tco-type-body--extra-large">${titleE}</h4>
+                <h4 class="tco-sticky-list--heading tco-type-body--large">${titleE}</h4>
                 <p class="tco-sticky-list--content tco-type-body">${copyE}</p>
               </li>
               <li class="tco-sticky-list--item">
-                <h4 class="tco-sticky-list--heading tco-type-body--extra-large">${titleF}</h4>
+                <h4 class="tco-sticky-list--heading tco-type-body--large">${titleF}</h4>
                 <p class="tco-sticky-list--content tco-type-body">${copyF}</p>
               </li>
             </ul>
