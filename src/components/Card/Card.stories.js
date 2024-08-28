@@ -1,6 +1,7 @@
 import { IconSet as icons } from '../IconSet/IconSet.stories';
 
 const treatments = ['flat', 'shadow', 'none'];
+const postStyles = ['default', 'border'];
 const layouts = ['top', 'side'];
 const versions = ['classic', 'grid'];
 const summaryVersions = ['default', 'reduced'];
@@ -103,12 +104,13 @@ PersonCard.argTypes = {
 };
 
 const PostCardTemplate = args => {
-  const { image, heading, treatment } = args;
+  const { image, heading, treatment, style } = args;
+  const styleClass = style === 'border' ? 'tco-card--post-alt' : '';
 
   return `
   <div class="tco-container-wrapper">
     <div class="tco-container">
-      <div class="tco-card tco-card--post tco-card-container--${treatment}">
+      <div class="tco-card tco-card--post tco-card-container--${treatment} ${styleClass}">
         <a href="#" class="tco-card-link tco-link--dark-theme">
           <div class="tco-card-image-container">
             <img class="tco-card-image" alt="Card image" src="${image}" />
@@ -165,7 +167,8 @@ PostCard.args = {
   heading: 'Designing with intention: Our Config 2024 takeaways',
   image:
     'https://www.thinkcompany.com/wp-content/uploads/2024/07/Congfig-blog-post_Hero-Image-Full-Width-Image-1920x1080-1-1536x864.png',
-  treatment: treatments[1]
+  treatment: treatments[1],
+  style: postStyles[0]
 };
 
 PostCard.argTypes = {
@@ -173,6 +176,11 @@ PostCard.argTypes = {
     name: 'border treatment (dark theme)',
     control: 'inline-radio',
     options: treatments
+  },
+  style: {
+    name: 'card style',
+    control: 'inline-radio',
+    options: postStyles
   }
 };
 

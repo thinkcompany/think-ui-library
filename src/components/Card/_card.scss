@@ -491,11 +491,37 @@ $device-offset-v: 58px;
 .tco-card--post {
   max-width: 480px;
 
+  &.tco-card--post-alt {
+    border: 1.5px solid $color-classic-blue;
+    border-radius: 8px;
+    box-shadow: none;
+
+    &:hover,
+    &:focus {
+      .tco-card--post-title {
+        color: $color-classic-blue;
+      }
+    }
+
+    .tco-lights-out & {
+      &:hover,
+      &:focus {
+        .tco-card--post-title {
+          color: $color-dark-theme-blue;
+        }
+      }
+    }
+  }
+
   &-date,
   &-title,
   .tco-byline {
     margin-top: 0;
     margin-bottom: 0;
+  }
+
+  &-title {
+    transition: color 0.2s ease;
   }
 
   .tco-card-content {
