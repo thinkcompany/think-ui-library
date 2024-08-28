@@ -1087,7 +1087,9 @@ $card-break: 940px;
     justify-content: space-between;
     padding: $spacing-stack-16 $spacing-inline-20;
     border: 1.5px solid $color-classic-blue;
+    box-shadow: none;
     cursor: pointer;
+    transition: background-color 0.2s ease;
 
     @include wider-than($breakpoint-tablet-portrait) {
       padding: $spacing-stack-24 $spacing-inline-32;
@@ -1112,6 +1114,7 @@ $card-break: 940px;
     &:hover,
     &:focus {
       border-bottom-color: inherit;
+      background-color: $color-classic-glass;
 
       .tco-card--text-icon {
         transform: translateX(10px);
@@ -1120,10 +1123,12 @@ $card-break: 940px;
 
     .tco-lights-out & {
       color: $color-foreground-on-tint;
+      box-shadow: none;
 
       &:hover,
       &:focus {
         border-bottom-color: $color-classic-blue;
+        background-color: transparent;
       }
     }
   }
