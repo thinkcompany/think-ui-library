@@ -7,8 +7,9 @@ $max-width-fine-print: 380px;
 .tco-contact-form-container {
   position: relative;
   z-index: 2;
+  border: 1.5px solid $color-classic-blue;
+  border-radius: 8px;
   background-color: $color-foreground-on-tint;
-  box-shadow: $box-shadow-card;
 
   .tco-lights-out & {
     background-color: $color-dark-theme-black;

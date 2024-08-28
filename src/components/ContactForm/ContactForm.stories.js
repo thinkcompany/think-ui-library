@@ -1,5 +1,3 @@
-const treatments = ['flat', 'shadow', 'none'];
-
 const Template = args => {
   const {
     nameLabel,
@@ -13,8 +11,7 @@ const Template = args => {
     timingLabel,
     timingPlaceholder,
     submitLabel,
-    smallForm,
-    treatment
+    smallForm
   } = args;
 
   let formVersion = 'full';
@@ -26,7 +23,7 @@ const Template = args => {
   return `
   <div class="tco-container-wrapper">
     <div class="tco-container">
-      <section class="tco-contact-form-container tco-card-container--${treatment}">
+      <section class="tco-contact-form-container">
         <form class="tco-contact-form tco-contact-form--${formVersion}">
           <div class="tco-form-row">
             <label for="contact-name" class="tco-form-label">
@@ -117,7 +114,6 @@ export const ContactForm = Template.bind({});
 export default {
   title: 'Components / Contact Form',
   args: {
-    treatment: treatments[1],
     nameLabel: 'Your Name',
     namePlaceholder: 'Enter your first and last name',
     emailLabel: 'Your Email',
@@ -132,11 +128,6 @@ export default {
     smallForm: false
   },
   argTypes: {
-    treatment: {
-      name: 'border treatment',
-      control: 'inline-radio',
-      options: treatments
-    },
     nameLabel: {
       name: 'name label'
     },

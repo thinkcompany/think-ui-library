@@ -26,7 +26,7 @@ export const IconSet = args => {
     }" viewBox="0 0 100 100">
           <use xlink:href="/img/icons.svg#icon-${item.icon.toLowerCase()}"></use>
         </svg>
-        <span class="tco-type-body--sans-small">${item.name}</span>
+        <span class="tco-type-body--small">${item.name}</span>
       </li>
     `);
   });

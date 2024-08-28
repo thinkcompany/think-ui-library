@@ -1,12 +1,13 @@
 $icon-size: 18px;
-$icon-size-small: 14px;
-$color-icon-orange: #fd8a5b;
-$color-icon-green: #00998e;
+$icon-size-small: 16px;
+$color-icon-green: #004638;
 
 .tco-icon-set {
   display: flex;
   flex-flow: column nowrap;
+  gap: $spacing-stack-16;
   align-items: flex-start;
+  margin-bottom: $spacing-stack-16;
   list-style: none;
 
   &.tco-icon-set--horizontal {
@@ -21,9 +22,12 @@ $color-icon-green: #00998e;
 }
 
 .tco-icon-meta {
-  display: flex;
+  display: grid;
+  grid-template-rows: auto;
+  grid-template-columns: $icon-size 1fr;
+  gap: $spacing-inline-16;
   align-items: center;
-  margin-bottom: $spacing-stack-16;
+  justify-items: center;
 
   .tco-icon-set--horizontal &,
   .tco-card--job & {
@@ -35,25 +39,20 @@ $color-icon-green: #00998e;
   }
 
   .tco-icon {
-    flex: 1 0 auto;
     width: $icon-size;
-    height: $icon-size;
+    height: auto;
   }
 
   .tco-icon--clock {
     width: $icon-size-small;
-    fill: $color-classic-blue;
+    fill: $color-classic-purple;
   }
 
   .tco-icon--location-alt {
-    fill: $color-icon-orange;
+    fill: $color-dark-theme-blue;
   }
 
   .tco-icon--dollar-bill {
     fill: $color-icon-green;
-  }
-
-  .tco-type-body--sans-small {
-    margin-left: $spacing-inline-12;
   }
 }
