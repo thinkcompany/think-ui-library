@@ -299,7 +299,6 @@
   }
 
   @if $bold {
-    font-family: $font-stack-slab-bold;
     font-variation-settings: 'wght' $font-weight-500, 'slnt' 0;
     font-weight: $font-weight-500;
   }
