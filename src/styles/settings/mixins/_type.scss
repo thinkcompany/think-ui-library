@@ -300,6 +300,8 @@
 
   @if $bold {
     font-family: $font-stack-slab-bold;
+    font-variation-settings: 'wght' $font-weight-500, 'slnt' 0;
+    font-weight: $font-weight-500;
   }
 
   @if $mega {
@@ -394,7 +396,6 @@
     font-variation-settings: 'wght' $weight, 'slnt' 10;
   }
 }
-
 
 @mixin type-cursive($font-color: inherit) {
   @include type-base-style($font-color, 400);

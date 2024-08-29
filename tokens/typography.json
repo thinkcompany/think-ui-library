@@ -3,7 +3,6 @@
   "weight": [400, 500, 600, 700, 900],
   "stack": {
     "system": "system, -apple-system,'Kievit Pro' ",
-    "cursive": "'Caveat', 'Comic Sans MS', cursive",
     "newsreader": "'Newsreader', newsreader-fallback, newsreader-fallback-android, serif",
     "inter": "'Inter', inter-fallback, inter-fallback-android, sans-serif"
   }

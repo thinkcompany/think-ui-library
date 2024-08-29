@@ -17,10 +17,7 @@
   }
 
   &-link {
-    @include type-link(
-      $line-height: 1.5,
-      $show-initial: true
-    );
+    @include type-link($line-height: 1.5, $show-initial: true);
     @include type-body-small($font-color: $color-classic-blue);
     display: block;
   }
