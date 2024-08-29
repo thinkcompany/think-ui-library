@@ -9,9 +9,9 @@ const BylineTemplate = args => {
             <img src="${image}" alt="${name}">
           </div>
           <div class="tco-byline-content-container">
-            <p class="tco-byline-name"><a href="#">By ${name}</a></p>
-            <p class="tco-byline-description">${title}</p>
-            <p class="tco-byline-description">${date}</p>
+            <p class="tco-byline-name tco-type-body--small">By ${name}</p>
+            <p class="tco-byline-description tco-type-body--small-14">${title}</p>
+            <p class="tco-byline-description tco-type-body--small-14">${date}</p>
           </div>
         </div>
       </div>
@@ -48,7 +48,7 @@ const MultipleTemplate = args => {
           </div>
         </div>
         <div class="tco-byline-content-container tco-byline-content-container--multiple">
-          <p class="tco-type-body--sans-small">By <a href="#" class="tco-byline-link--multiple">${name}</a>, <a href="#" class="tco-byline-link--multiple">${name}</a>, <a href="#" class="tco-byline-link--multiple">${name}</a>, and <a href="#" class="tco-byline-link--multiple">${name}</a></p>
+          <p class="tco-type-body--small">By ${name}, ${name}, ${name}, and ${name}</p>
         </div>
       </div>
     </div>
