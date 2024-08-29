@@ -750,6 +750,10 @@ $icon-size-large: 44px;
         }
       }
     }
+
+    .tco-type-body--small {
+      color: $color-foreground-on-tint;
+    }
   }
 
   .tco-card-link {

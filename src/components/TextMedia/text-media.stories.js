@@ -105,7 +105,7 @@ export default {
   args: {
     containerColor: colors[0],
     alignment: alignments[0],
-    bubbleBackground: true,
+    bubbleBackground: false,
     textAlignment: alignments[0],
     showCta: true,
     showTeaser: false,

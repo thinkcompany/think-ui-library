@@ -48,6 +48,10 @@ $byline-img-width--l: 66px;
   &-name,
   &-description {
     margin-bottom: 0;
+
+    .tco-lights-out & {
+      color: $color-foreground-on-tint;
+    }
   }
 
   &--multiple {

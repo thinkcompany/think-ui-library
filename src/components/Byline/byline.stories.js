@@ -48,7 +48,7 @@ const MultipleTemplate = args => {
           </div>
         </div>
         <div class="tco-byline-content-container tco-byline-content-container--multiple">
-          <p class="tco-type-body--small">By ${name}, ${name}, ${name}, and ${name}</p>
+          <p class="tco-byline-name tco-type-body--small">By ${name}, ${name}, ${name}, and ${name}</p>
         </div>
       </div>
     </div>
