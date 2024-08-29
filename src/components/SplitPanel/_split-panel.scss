@@ -10,11 +10,7 @@ $circle-offset: 146px;
     display: grid;
     grid-template-rows: auto;
     grid-template-columns: 1fr;
-    gap: $spacing-stack-50;
-
-    @include wider-than($breakpoint-tablet-portrait) {
-      gap: $spacing-stack-100;
-    }
+    gap: $spacing-stack-100;
   }
 
   @include wider-than($breakpoint-tablet-portrait) {
