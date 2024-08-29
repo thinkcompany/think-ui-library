@@ -25,7 +25,7 @@ $circle-offset: 146px;
   &--header {
     @include wider-than($breakpoint-tablet-portrait) {
       justify-self: end;
-      width: min(88%, $header-max);
+      width: min(88%, #{$header-max});
     }
   }
 

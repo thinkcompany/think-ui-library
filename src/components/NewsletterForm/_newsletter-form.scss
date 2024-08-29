@@ -149,7 +149,7 @@ $blurb-max: 300px;
   }
 
   &-disclaimer {
-    @include type-body-xsmall($font-size: $font-size-14);
+    @include type-body-small($size: $font-size-14);
     color: $color-classic-gray-medium;
 
     .tco-lights-out & {

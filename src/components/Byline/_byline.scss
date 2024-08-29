@@ -41,28 +41,25 @@ $byline-img-width--l: 66px;
 
     &--multiple {
       flex-flow: row wrap;
-      align-self: center;
     }
   }
 
-  &-name {
-    line-height: 1.25;
-  }
-
-  &-description {
-    @include type-body-small;
-  }
 
   &-name,
   &-description {
     margin-bottom: 0;
+
+    .tco-lights-out & {
+      color: $color-foreground-on-tint;
+    }
   }
 
   &--multiple {
     display: flex;
     flex-flow: column nowrap;
     gap: 0;
-    margin: 0;
+    align-items: flex-start;
+    margin-top: $spacing-stack-24;
 
     .tco-byline-image-container {
       margin: 0 $spacing-inline-8 $spacing-stack-16;

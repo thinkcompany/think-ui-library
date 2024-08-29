@@ -151,77 +151,6 @@ const bodyStyles = [
   }
 ];
 
-const archive = [
-  {
-    name: 'Display 64 ',
-    class: 'tco-type-display--64',
-    sass: '@include type-display-64',
-    textLength: 1
-  },
-  {
-    name: 'Display Junior',
-    class: 'tco-type-display--junior',
-    sass: '@include type-display-junior',
-    textLength: 1
-  },
-
-  {
-    name: 'Display Thin',
-    class: 'tco-type-display--thin',
-    sass: '@include type-display-thin',
-    textLength: 1
-  },
-  {
-    name: 'Display Sans 80 ',
-    class: 'tco-type-display--sans-80',
-    sass: '@include type-display-80',
-    textLength: 1
-  },
-  {
-    name: 'Display Sans Large',
-    class: 'tco-type-display--sans-large',
-    sass: '@include type-display-sans-large',
-    textLength: 1
-  },
-  {
-    name: 'Display Sans',
-    class: 'tco-type-display--sans',
-    sass: '@include type-display-sans',
-    textLength: 1
-  },
-  {
-    name: 'Display Sans 48 ',
-    class: 'tco-type-display--sans-48',
-    sass: '@include type-display-48',
-    textLength: 1
-  },
-  {
-    name: 'Body Text Sans Small',
-    class: 'tco-type-body--sans-small',
-    sass: '@include type-body-small',
-    textLength: 1
-  },
-  {
-    name: 'Body Text Sans Small Light',
-    class: 'tco-type-body--sans-small-light',
-    sass: '@include type-body-small-light',
-    textLength: 1
-  },
-
-  {
-    name: 'Body Text Large Sans',
-    class: 'tco-type-body--large-sans',
-    sass: '@include type-body-large-sans',
-    textLength: 1
-  },
-  {
-    name: 'Body Text Large & Tall',
-    class: 'tco-type-body--large-tall',
-    sass: '@include type-body-large-tall',
-    textLength: 1
-  }
-];
-
 // builds a text example where `length` is the number of sentences included
 const genText = length => {
   const text =
@@ -292,8 +221,6 @@ export const Display = () => wrapGrid(displayStyles.map(item => typeItem(item, 8
 
 export const Body = () => wrapGrid(bodyStyles.map(item => typeItem(item, 8)).join(''));
 
-export const Archive = () => wrapGrid(archive.map(item => typeItem(item, 8)).join(''));
-
 All.parameters = {
   controls: { hideNoControlsWarning: true }
 };
@@ -303,10 +230,6 @@ Display.parameters = {
 };
 
 Body.parameters = {
-  controls: { hideNoControlsWarning: true }
-};
-
-Archive.parameters = {
   controls: { hideNoControlsWarning: true }
 };
 

@@ -4,22 +4,6 @@
   "stack": {
     "system": "system, -apple-system,'Kievit Pro' ",
     "cursive": "'Caveat', 'Comic Sans MS', cursive",
-    "slab": "'KievitSlabWeb W03 Regul1473175', georgia, serif",
-    "slab-bold": "'Kievit Slab W05 Bold', georgia, serif",
-    "slab-italic": "'Kievit Slab W05 Italic', georgia, serif",
-    "slab-light": "'Kievit Slab W05 Extralight', georgia, serif",
-    "slab-light-italic": "'Kievit Slab W05 Extralight It', georgia, serif",
-    "slab-book": "'Kievit Slab W05 Book', georgia, serif",
-    "slab-book-italic": "'Kievit Slab W05 Book Italic', georgia, serif",
-    "slab-black": "'KievitSlabPro', georgia, serif",
-    "sans-serif-light": "'Kievit Pro Light', helvetica, sans-serif",
-    "sans-serif": "'KievitWeb W07 Medi', helvetica, sans-serif",
-    "sans-serif-regular": "'Kievit Pro', helvetica, sans-serif",
-    "sans-serif-italic": "'KievitWeb W07 MediIta', helvetica, sans-serif",
-    "sans-serif-bold": "'KievitWeb W07 Bold', helvetica, sans-serif",
-    "sans-serif-bold-italic": "'KievitWeb W07 BoldIta', helvetica, sans-serif",
-    "sans-serif-black": "'KievitWeb W07 Black', georgia, serif",
-    "sans-serif-black-italic": "'KievitWeb W07 BlackIta', georgia, serif",
     "newsreader": "'Newsreader', newsreader-fallback, newsreader-fallback-android, serif",
     "inter": "'Inter', inter-fallback, inter-fallback-android, sans-serif"
   }

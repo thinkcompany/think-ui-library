@@ -2,14 +2,14 @@
 
 $color-disabled: #c8d9ea;
 $color-hover: #08519a;
-$big-arrow-width: calc(21 / 18) * 1em;
-
+$big-arrow-width: calc((21 / 18) * 1em);
 
 .tco-btn,
 %tco-btn {
   @include type-body-default($weight: 500);
   position: relative;
-  padding: calc(#{$spacing-stack-12} - #{$spacing-stack-4}) $spacing-stack-24 calc(#{$spacing-stack-12} - #{$spacing-stack-2});
+  padding: calc(#{$spacing-stack-12} - #{$spacing-stack-4}) $spacing-stack-24
+    calc(#{$spacing-stack-12} - #{$spacing-stack-2});
   border: none;
   border-radius: $border-radius-radius30;
   background: none;

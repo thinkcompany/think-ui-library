@@ -1,3 +1,5 @@
+/* stylelint-disable no-duplicate-selectors */
+
 /* Display classes */
 .tco-type-display--extra-large {
   @include type-display-extra-large;
@@ -57,7 +59,10 @@
 
 .tco-type-eyebrow {
   @include type-eyebrow;
-  margin-bottom: 0;
+
+  & {
+    margin-bottom: 0;
+  }
 
   &-italic {
     @include type-eyebrow($italic: true);
@@ -75,7 +80,10 @@
 /* Body classes */
 .tco-type-body--mega {
   @include type-body-large($mega: true);
-  line-height: 1.25;
+
+  & {
+    line-height: 1.25;
+  }
 }
 
 .tco-type-body--jumbo {
@@ -117,7 +125,6 @@
 
 .tco-type-body--medium {
   @include type-eyebrow($font-color: $color-classic-navy, $weight: 400);
-  font-weight: 400;
   line-height: 1.5;
 
   &-italic {
@@ -175,82 +182,4 @@
 
 .tco-type-eyebrow--space-l {
   margin-bottom: $spacing-stack-32;
-}
-
-/* Secondary/archive */
-.tco-type-display--64 {
-  @include type-display-64;
-}
-
-.tco-type-display--sans-80 {
-  @include type-display-80;
-}
-
-.tco-type-display--sans-48 {
-  @include type-display-48;
-}
-
-.tco-type-display--sans-48-black {
-  @include type-display-48-black;
-}
-
-.tco-type-display--junior {
-  @include type-display-junior;
-}
-
-.tco-type-display--sans {
-  @include type-display-sans;
-}
-
-.tco-type-display--sans-large {
-  @include type-display-sans-large;
-}
-
-.tco-type-display--thin {
-  @include type-display-thin;
-}
-
-.tco-type-display--extra-small {
-  @include type-display-extra-small;
-
-  &-italic {
-    @include type-display-extra-small($italic: true);
-  }
-}
-
-.tco-type-body--large-sans {
-  @include type-body-large-sans;
-}
-
-.tco-type-body--sans-small {
-  @include type-body-small;
-
-  &-italic {
-    @include type-body-small($italic: true);
-  }
-}
-
-.tco-type-body--sans-small-light {
-  @include type-body-small-light;
-}
-
-.tco-type-body--sans-xsmall {
-  @include type-body-xsmall;
-
-  &-italic {
-    @include type-body-xsmall($italic: true);
-  }
-}
-
-.tco-type-cursive--large {
-  @include type-cursive;
-  font-size: $font-size-36;
-}
-
-.tco-type-eyebrow--space-xl {
-  margin-bottom: $spacing-stack-24;
-
-  @include wider-than($breakpoint-laptop) {
-    margin-bottom: $spacing-stack-40;
-  }
 }
