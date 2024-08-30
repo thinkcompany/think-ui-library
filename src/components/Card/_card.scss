@@ -721,8 +721,6 @@ $icon-size-large: 44px;
   transform-origin: center;
   backface-visibility: hidden;
   will-change: transform;
-  // -webkit-font-smoothing: antialiased;
-  // -moz-osx-font-smoothing: grayscale;
 
   &:not(.tco-card--job-deluxe-preview) {
     &:hover,
