@@ -42,9 +42,12 @@
   font-family: 'inter-fallback';
   font-display: swap;
   src: local('Arial');
-  ascent-override: 96.9%;
-  descent-override: 24.2%;
-  line-gap-override: 0;
+  // ascent-override: 96.9%;
+	// descent-override: 24.2%;
+	size-adjust: 107.5%;
+	ascent-override: calc(96.9% - 3.2%);
+	descent-override: calc(24.2% - 0.8%);
+	line-gap-override: 0;
 }
 
 @font-face {
