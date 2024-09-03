@@ -13,7 +13,7 @@ $circle: calc(($circle-max / $container-max) * 100%);
     position: absolute;
     display: flex;
     width: $circle;
-    border: 1.5px solid $color-classic-blue;
+    border: 1px solid $color-classic-blue;
     border-radius: 50%;
     aspect-ratio: 1 / 1;
 

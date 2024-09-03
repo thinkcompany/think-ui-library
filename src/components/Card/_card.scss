@@ -492,7 +492,7 @@ $device-offset-v: 58px;
   max-width: 480px;
 
   &.tco-card--post-alt {
-    border: 1.5px solid $color-classic-blue;
+    border: 1px solid $color-classic-blue;
     border-radius: 8px;
     box-shadow: none;
 
@@ -1058,7 +1058,7 @@ $card-break: 940px;
   max-width: none;
   min-height: 0;
   padding: 0;
-  border: 1.5px solid $color-classic-blue;
+  border: 1px solid $color-classic-blue;
   border-radius: 8px;
   box-shadow: none;
 
@@ -1125,7 +1125,7 @@ $card-break: 940px;
     gap: $spacing-stack-40;
     justify-content: space-between;
     padding: $spacing-stack-16 $spacing-inline-20;
-    border: 1.5px solid $color-classic-blue;
+    border: 1px solid $color-classic-blue;
     box-shadow: none;
     cursor: pointer;
     transition: background-color 0.2s ease;
@@ -1241,7 +1241,7 @@ $card-break: 940px;
 
   &-headline-copy {
     display: block;
-    border: 1.5px solid $color-classic-blue;
+    border: 1px solid $color-classic-blue;
     box-shadow: none;
     transition: background-color 0.2s ease;
 
