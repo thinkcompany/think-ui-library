@@ -11,7 +11,7 @@ $color-hover-blue-blue: #09509a;
   > .tco-container {
     padding: $spacing-stack-50 0;
 
-    @include wider-than($breakpoint-desktop) {
+    @include wider-than($breakpoint-laptop) {
       padding: $spacing-stack-100 0;
     }
   }
