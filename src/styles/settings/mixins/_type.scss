@@ -187,7 +187,8 @@
   $italic: false,
   $med48: false,
   $med42: false,
-  $med36: false
+  $med36: false,
+  $med32: false
 ) {
   @include type-base-display($font-color, 400);
   font-variation-settings: 'wght' 400, 'slnt' 0;
@@ -219,6 +220,15 @@
       $breakpoint-desktop,
       $font-size-24,
       $font-size-36
+    );
+  } @else if $med32 {
+    line-height: 1.25;
+    @include clamp(
+      font-size,
+      $breakpoint-phone-portrait,
+      $breakpoint-desktop,
+      $font-size-20,
+      $font-size-32
     );
   } @else {
     @include clamp(
