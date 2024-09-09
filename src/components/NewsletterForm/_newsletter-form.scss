@@ -1,7 +1,7 @@
 /* stylelint-disable selector-max-combinators, selector-max-compound-selectors */
 
 $color-hover: #08519a;
-$blurb-max: 300px;
+$blurb-max: 334px;
 
 .tco-newsletter-form {
   position: relative;
@@ -10,7 +10,8 @@ $blurb-max: 300px;
   flex-flow: column nowrap;
   overflow: hidden;
   padding: $spacing-stack-24 $spacing-inline-24;
-  border: $border-card;
+  border: 1px solid $color-classic-blue;
+  border-radius: 8px;
   background-color: $color-foreground-on-tint;
 
   .tco-lights-out & {
@@ -26,7 +27,6 @@ $blurb-max: 300px;
     gap: $spacing-inline-24;
     align-items: center;
     justify-content: space-between;
-    transform: translateY(-20px);
   }
 
   .tco-container-wrapper--glass & {
@@ -44,40 +44,6 @@ $blurb-max: 300px;
       flex: 1 0 46%;
       max-width: $blurb-max;
       margin-bottom: 0;
-    }
-
-    &::after {
-      content: '';
-      position: absolute;
-      right: 0;
-      bottom: 62%;
-      display: block;
-      width: min(30vw, 280px);
-      background: transparent url('./assets/img/newsletter/squiggly-arrow.png') no-repeat center /
-        cover;
-      transform: rotateY(180deg);
-      aspect-ratio: 466 / 180;
-
-      .tco-lights-out & {
-        background-image: url('./assets/img/newsletter/squiggly-arrow-dark.png');
-      }
-
-      @include wider-than($breakpoint-tablet-portrait) {
-        right: auto;
-        bottom: 50%;
-        left: min(28vw, 280px);
-        width: 8vw;
-        transform: rotate(342deg);
-      }
-
-      @include wider-than($breakpoint-laptop) {
-        bottom: 36%;
-        width: 14vw;
-      }
-
-      @include wider-than($breakpoint-desktop) {
-        width: 210px;
-      }
     }
 
     p {
@@ -190,5 +156,17 @@ $blurb-max: 300px;
     &:first-of-type {
       margin-bottom: $spacing-stack-4;
     }
+  }
+
+  &--heading {
+    color: $color-classic-blue;
+
+    .tco-lights-out & {
+      color: $color-dark-theme-blue;
+    }
+  }
+
+  &--lede {
+    margin-bottom: 0;
   }
 }

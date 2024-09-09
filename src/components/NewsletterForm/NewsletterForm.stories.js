@@ -6,10 +6,10 @@ export const NewsletterForm = () => {
   return `
   <div class="tco-container-wrapper">
     <div class="tco-container tco-container--default">
-      <div class="tco-newsletter-form tco-card-container--shadow">
+      <div class="tco-newsletter-form">
         <div class="tco-newsletter-form-content-container">
-          <h2 class="tco-type-display--small">Stay in the know</h2>
-            <p class="tco-type-body--sans-small">Receive blog posts, useful tools, and company updates straight to your inbox.</p>
+          <h2 class="tco-newsletter-form--heading tco-type-display--large-80">Stay in the know</h2>
+          <p class="tco-newsletter-form--lede tco-type-body--default">Receive blog posts, useful tools, and company updates straight to your inbox.</p>
         </div>
         <div class="tco-newsletter-form-container tco-form--hubspot">
           ${renderForm()}
