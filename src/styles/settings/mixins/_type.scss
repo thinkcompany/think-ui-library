@@ -28,23 +28,17 @@
   font-family: 'newsreader-fallback';
   font-display: swap;
   src: local('Times New Roman');
-  // ascent-override: 73.5%;
-  // descent-override: 26.5%;
-  // line-gap-override: 0;
   /* ascent-override (with size-adjust) = ascent-override - (ascent-override / (UPM * size-adjust)) */
-  size-adjust: 106.5%;
-  ascent-override: calc(73.45% - 3.45%);
-  descent-override: calc(26.5% - 1.24%);
+  size-adjust: 105%;
+  ascent-override: calc(73.45% - 3.5%);
+  descent-override: calc(26.5% - 1.26%);
   line-gap-override: 0;
-  letter-spacing: -0.2px;
 }
 
 @font-face {
   font-family: 'inter-fallback';
   font-display: swap;
   src: local('Arial');
-  // ascent-override: 96.9%;
-	// descent-override: 24.2%;
 	size-adjust: 107.5%;
 	ascent-override: calc(96.9% - 3.2%);
 	descent-override: calc(24.2% - 0.8%);
