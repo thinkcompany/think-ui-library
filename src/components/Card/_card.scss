@@ -1375,6 +1375,7 @@ $card-break: 940px;
       margin-top: $spacing-stack-12;
       transition: 0.3s ease grid-template-rows;
 
+
       > * {
         overflow: hidden;
       }
@@ -1414,11 +1415,12 @@ $card-break: 940px;
           background-color: lighten($color-dark-theme-black, 3);
         }
       }
+    }
+  }
 
-      // &-title {
-      //   border-color: $color-foreground-on-tint;
-      //   color: $color-foreground-on-tint;
-      // }
+  &.tco-card--expanded {
+    .tco-card--post-content {
+      grid-template-rows: 1fr;
     }
   }
 }
