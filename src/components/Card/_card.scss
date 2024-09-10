@@ -1372,6 +1372,8 @@ $card-break: 940px;
       display: grid;
       grid-template-rows: 0fr;
       grid-template-columns: auto;
+      gap: $spacing-stack-12;
+      justify-items: start;
       margin-top: $spacing-stack-12;
       transition: 0.3s ease grid-template-rows;
 
@@ -1382,6 +1384,19 @@ $card-break: 940px;
 
       p {
         margin-bottom: 0;
+      }
+    }
+
+    &--pill {
+      padding: $spacing-stack-8 $spacing-inline-20;
+      border-radius: $border-radius-radius30;
+      background-color: $color-classic-glass;
+      color: $color-classic-navy;
+      transition: 0.3s ease background-color, 0.3s ease color;
+
+      .tco-lights-out & {
+        background-color: lighten($color-dark-theme-black, 3);
+        color: $color-foreground-on-tint;
       }
     }
   }
@@ -1395,6 +1410,10 @@ $card-break: 940px;
 
       &--post-content {
         grid-template-rows: 1fr;
+      }
+
+      &--pill {
+        background-color: $color-foreground-on-tint;
       }
     }
 
@@ -1413,6 +1432,10 @@ $card-break: 940px;
       .tco-card {
         &-link {
           background-color: lighten($color-dark-theme-black, 3);
+        }
+
+        &--pill {
+          background-color: $color-dark-theme-black;
         }
       }
     }
