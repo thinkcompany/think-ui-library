@@ -1444,6 +1444,7 @@ $card-break: 940px;
   &.tco-card--expanded {
     .tco-card--post-content {
       grid-template-rows: 1fr;
+      gap: $spacing-stack-24;
     }
   }
 }
