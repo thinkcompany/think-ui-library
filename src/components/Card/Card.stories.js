@@ -1,7 +1,6 @@
 import { IconSet as icons } from '../IconSet/IconSet.stories';
 
 const treatments = ['flat', 'shadow', 'none'];
-const postStyles = ['default', 'border'];
 const layouts = ['top', 'side'];
 const versions = ['classic', 'grid'];
 const summaryVersions = ['default', 'reduced'];
@@ -67,56 +66,19 @@ SummaryCard.argTypes = {
   }
 };
 
-const PersonCardTemplate = args => {
-  const { name, title, image, treatment } = args;
-
-  return `
-  <div class="tco-container-wrapper">
-    <div class="tco-container">
-      <div class="tco-card tco-card--person tco-card-container--${treatment}">
-        <a href="#" class="tco-card-link">
-          <div class="tco-card-content-container">
-            <h2 class="tco-card-content-heading tco-link--dark-theme">${name}</h2>
-            <p class="tco-card-content-description">${title}</p>
-          </div>
-          <img class="tco-person-image" alt="${name}" src="${image}" loading="lazy" />
-        </a>
-      </div>
-    </div>
-  </div>`;
-};
-
-export const PersonCard = PersonCardTemplate.bind({});
-
-PersonCard.args = {
-  name: 'Abby DePrimo',
-  title: 'Vice President, Design Operations',
-  image: 'https://www.thinkcompany.com/wp-content/uploads/2020/03/AbbyDePrimo_Web.jpg',
-  treatment: treatments[1]
-};
-
-PersonCard.argTypes = {
-  treatment: {
-    name: 'border treatment (dark theme)',
-    control: 'inline-radio',
-    options: treatments
-  }
-};
-
 const PostCardTemplate = args => {
-  const { image, heading, treatment, style } = args;
-  const styleClass = style === 'border' ? 'tco-card--post-alt' : '';
+  const { image, heading } = args;
 
   return `
   <div class="tco-container-wrapper">
     <div class="tco-container">
-      <div class="tco-card tco-card--post tco-card-container--${treatment} ${styleClass}">
+      <div class="tco-card tco-card--post tco-card--post-alt">
         <a href="#" class="tco-card-link tco-link--dark-theme">
           <div class="tco-card-image-container">
             <img class="tco-card-image" alt="Card image" src="${image}" />
           </div>
           <div class="tco-card-content-container">
-            <p class="tco-card--post-date tco-body-default">July 17, 2024</p>
+            <p class="tco-card--post-date tco-type-body">July 17, 2024</p>
             <h2 class="tco-card--post-title tco-text-link tco-type-display--small">${heading}
               <svg class="tco-text-link-icon" width="20" height="20" viewBox="0 0 20 20" role="presentation">
                 <use xlink:href="/img/icons.svg#icon-arrow-right"></use>
@@ -136,12 +98,12 @@ const PostCardTemplate = args => {
 };
 
 const CaseStudyCardTemplate = args => {
-  const { image, heading, treatment } = args;
+  const { image, heading } = args;
 
   return `
   <div class="tco-container-wrapper">
     <div class="tco-container">
-      <div class="tco-card tco-card--post tco-card-container--${treatment}">
+      <div class="tco-card tco-card--post tco-card--post-alt">
         <a href="#" class="tco-card-link tco-link--dark-theme">
           <div class="tco-card-image-container">
             <img class="tco-card-image" alt="Card image" src="${image}" />
@@ -160,28 +122,38 @@ const CaseStudyCardTemplate = args => {
   </div>`;
 };
 
+const ExpandingCardTemplate = args => {
+  const { image, heading, content, eyebrow } = args;
+
+  return `
+  <div class="tco-container-wrapper">
+    <div class="tco-container">
+      <div class="tco-card tco-card--post tco-card--post-alt tco-card--expanding">
+        <a href="#" class="tco-card-link tco-link--dark-theme">
+          <div class="tco-card-image-container">
+            <img class="tco-card-image" alt="Card image" src="${image}" />
+          </div>
+          <div class="tco-card-content-container">
+            ${eyebrow ? `<p class="tco-card--eyebrow tco-type-body">${eyebrow}</p>` : ''}
+            <h2 class="tco-card--expanding-title tco-text-link tco-type-display--small">${heading}</h2>
+            <div class="tco-card--post-content">
+              <p class="tco-type-body">${content}</p>
+            </div>
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>`;
+};
+
 export const PostCard = PostCardTemplate.bind({});
 export const CaseStudyCard = CaseStudyCardTemplate.bind({});
+export const ExpandingCard = ExpandingCardTemplate.bind({});
 
 PostCard.args = {
   heading: 'Designing with intention: Our Config 2024 takeaways',
   image:
-    'https://www.thinkcompany.com/wp-content/uploads/2024/07/Congfig-blog-post_Hero-Image-Full-Width-Image-1920x1080-1-1536x864.png',
-  treatment: treatments[1],
-  style: postStyles[0]
-};
-
-PostCard.argTypes = {
-  treatment: {
-    name: 'border treatment (dark theme)',
-    control: 'inline-radio',
-    options: treatments
-  },
-  style: {
-    name: 'card style',
-    control: 'inline-radio',
-    options: postStyles
-  }
+    'https://www.thinkcompany.com/wp-content/uploads/2024/07/Congfig-blog-post_Hero-Image-Full-Width-Image-1920x1080-1-1536x864.png'
 };
 
 CaseStudyCard.args = {
@@ -198,6 +170,14 @@ CaseStudyCard.argTypes = {
     control: 'inline-radio',
     options: treatments
   }
+};
+
+ExpandingCard.args = {
+  eyebrow: 'UX Design',
+  heading: 'A guide to amplifying customer satisfaction in call centers',
+  content:
+    'The call center is at the heart of customer service, and consumer expectations are sky high. This guide outlines the CX fundamentals that companies must know and implment to operate a successful call center while reducing costs.',
+  image: 'http://localhost:3000/wp-content/uploads/2021/03/events-at-think-company.jpg'
 };
 
 const CalloutCardTemplate = args => {
@@ -511,7 +491,7 @@ TextCard.argTypes = {
 
 export default {
   title: 'Components / Card',
-  component: [SummaryCard, PostCard, PersonCard, CalloutCard, MediaCard, WorkCard, TextCard],
+  component: [SummaryCard, PostCard, CalloutCard, MediaCard, WorkCard, TextCard],
   parameters: {
     component: SummaryCard,
     componentSubtitle: 'Cards are used on the site via the Post Grid, and Card Grid components.',
@@ -533,13 +513,6 @@ export default {
         'Summary: Display width 302px. Upload @1.5x = 451px<br>Person: Display width 250px. Upload @1.5x = 375px<br>Post: Display width 478px. Upload @1.5x = 717px<br>Callout: Display width: 44px. Upload @1.5x = 66px<br>Media: Display width 328px. Upload @1.5x = 492px',
       table: {
         type: { summary: 'image' }
-      }
-    },
-    treatment: {
-      description: 'Cards have 3 border treatment options <em>for Dark mode only</em>',
-      table: {
-        type: { summary: 'select' },
-        defaultValue: { summary: 'flat' }
       }
     }
   }

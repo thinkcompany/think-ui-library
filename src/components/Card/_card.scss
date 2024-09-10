@@ -1325,3 +1325,100 @@ $card-break: 940px;
     }
   }
 }
+
+
+// ========================================================
+// = Expanding card
+// ========================================================
+.tco-card--expanding {
+  .tco-card-link {
+    background-color: $color-foreground-on-tint;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+
+    .tco-lights-out & {
+      background-color: $color-dark-theme-black;
+    }
+  }
+
+  &-title {
+    display: inline;
+    border-bottom: 1px solid transparent;
+    color: $color-classic-blue;
+    transition: border-color 0.2s ease;
+
+    .tco-lights-out & {
+      color: $color-foreground-on-tint;
+    }
+  }
+
+  .tco-card {
+    &-content-container {
+      display: block;
+    }
+
+    &--eyebrow {
+      margin-bottom: $spacing-stack-8;
+      color: $color-classic-blue;
+      font-weight: $font-weight-500;
+      font-variation-settings: 'wght' 500;
+
+      .tco-lights-out & {
+        color: $color-foreground-on-tint;
+      }
+    }
+
+    &--post-content {
+      display: grid;
+      grid-template-rows: 0fr;
+      grid-template-columns: auto;
+      margin-top: $spacing-stack-12;
+      transition: 0.3s ease grid-template-rows;
+
+      > * {
+        overflow: hidden;
+      }
+
+      p {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  &:hover,
+  &:focus {
+    .tco-card {
+      &-link {
+        background: $color-classic-glass;
+      }
+
+      &--post-content {
+        grid-template-rows: 1fr;
+      }
+    }
+
+    .tco-card--expanding-title {
+      border-color: $color-classic-blue;
+
+      .tco-lights-out & {
+        border-color: $color-foreground-on-tint;
+      }
+    }
+  }
+
+  .tco-lights-out & {
+    &:hover,
+    &:focus {
+      .tco-card {
+        &-link {
+          background-color: lighten($color-dark-theme-black, 3);
+        }
+      }
+
+      // &-title {
+      //   border-color: $color-foreground-on-tint;
+      //   color: $color-foreground-on-tint;
+      // }
+    }
+  }
+}
