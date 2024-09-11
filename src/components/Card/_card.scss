@@ -1354,6 +1354,7 @@ $card-break: 940px;
 
   .tco-card {
     &-content-container {
+      position: relative;
       display: block;
     }
 
@@ -1374,9 +1375,8 @@ $card-break: 940px;
       grid-template-columns: auto;
       gap: $spacing-stack-12;
       justify-items: start;
-      margin-top: $spacing-stack-12;
-      transition: 0.3s ease grid-template-rows;
-
+      margin-top: 0;
+      transition: 0.3s ease grid-template-rows, 0.3s ease margin-top;
 
       > * {
         overflow: hidden;
@@ -1410,6 +1410,7 @@ $card-break: 940px;
 
       &--post-content {
         grid-template-rows: 1fr;
+        margin-top: $spacing-stack-12;
       }
 
       &--pill {
@@ -1445,6 +1446,7 @@ $card-break: 940px;
     .tco-card--post-content {
       grid-template-rows: 1fr;
       gap: $spacing-stack-24;
+      margin-top: $spacing-stack-12;
     }
   }
 }
