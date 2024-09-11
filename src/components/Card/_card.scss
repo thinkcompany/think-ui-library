@@ -1425,7 +1425,6 @@ $easingFn: ease-in-out;
             margin-bottom: 0;
             opacity: 0;
             transition: 0.3s $easingFn opacity;
-            transform: translateY(-12px);
           }
         }
       }
@@ -1504,12 +1503,12 @@ $easingFn: ease-in-out;
       &--post-content:not(.tco-card--post-content-expanded) {
         @include wider-than($breakpoint-laptop) {
           max-height: 200px;
-          padding-bottom: $spacing-stack-12;
+          padding-bottom: $spacing-stack-24;
           background-color: $color-classic-glass;
         }
 
         @include wider-than($breakpoint-desktop) {
-          padding-bottom: $spacing-stack-20;
+          padding-bottom: $spacing-stack-32;
         }
 
         p {
