@@ -1336,9 +1336,11 @@ $easingFn: ease-in-out;
 
 .tco-card--expanding {
   &:not(.tco-card--expanded) {
-    overflow: visible;
-    padding-bottom: $padding-offset;
-    transition: transform 0.3s $easingFn;
+    @include wider-than($breakpoint-laptop) {
+      overflow: visible;
+      padding-bottom: $padding-offset;
+      transition: transform 0.3s $easingFn;
+    }
 
     @include wider-than($breakpoint-desktop) {
       padding-bottom: $padding-offset-b;
@@ -1348,54 +1350,67 @@ $easingFn: ease-in-out;
       &-content-container,
       &-image-container,
       &--post-content {
-        border-style: solid;
-        border-color: $color-classic-blue;
+        @include wider-than($breakpoint-laptop) {
+          border-style: solid;
+          border-color: $color-classic-blue;
+        }
       }
 
       &-content-container {
-        position: relative;
-        padding-bottom: 0;
-        border-width: 0 1px;
+        @include wider-than($breakpoint-laptop) {
+          position: relative;
+          padding-bottom: 0;
+          border-width: 0 1px;
+        }
       }
 
       &-image-container {
-        overflow: hidden;
-        border-width: 1px 1px 0;
-        border-top-left-radius: 8px;
-        border-top-right-radius: 8px;
+        @include wider-than($breakpoint-laptop) {
+          overflow: hidden;
+          border-width: 1px 1px 0;
+          border-top-left-radius: 8px;
+          border-top-right-radius: 8px;
+        }
       }
 
       &--expanding-title {
-        margin-bottom: $spacing-stack-12;
+        @include wider-than($breakpoint-laptop) {
+          margin-bottom: $spacing-stack-12;
 
-        &::after {
-          content: '';
-          display: block;
-          width: 100%;
-          height: 8px;
+          &::after {
+            content: '';
+            display: block;
+            width: 100%;
+            height: 8px;
 
-          @include wider-than($breakpoint-desktop) {
-            height: 12px;
+            @include wider-than($breakpoint-desktop) {
+              height: 12px;
+            }
           }
         }
       }
 
       &--post-content {
-        position: absolute;
-        top: 100%;
-        left: 0;
-        z-index: 1;
-        overflow: hidden;
-        width: calc(100% + 2px);
-        max-height: 0;
-        padding: $spacing-stack-12 $spacing-inline-24 0;
-        border-width: 0 1px 1px;
-        border-bottom-right-radius: 8px;
-        border-bottom-left-radius: 8px;
-        background-color: $color-foreground-on-tint;
-        transition: 0.3s $easingFn max-height, 0.3s $easingFn padding, 0.3s $easingFn background-color;
-        transform: translateX(-1px);
-        transform-origin: center top;
+        margin-top: $spacing-stack-12;
+
+        @include wider-than($breakpoint-laptop) {
+          position: absolute;
+          top: 100%;
+          left: 0;
+          z-index: 1;
+          overflow: hidden;
+          width: calc(100% + 2px);
+          max-height: 0;
+          margin-top: 0;
+          padding: $spacing-stack-12 $spacing-inline-24 0;
+          border-width: 0 1px 1px;
+          border-bottom-right-radius: 8px;
+          border-bottom-left-radius: 8px;
+          background-color: $color-foreground-on-tint;
+          transition: 0.3s $easingFn max-height, 0.3s $easingFn padding, 0.3s $easingFn background-color;
+          transform: translateX(-1px);
+          transform-origin: center top;
+        }
 
         @include wider-than($breakpoint-desktop) {
           padding: $spacing-stack-12 $spacing-inline-32 0;
@@ -1406,30 +1421,21 @@ $easingFn: ease-in-out;
         }
 
         p {
-          margin-bottom: 0;
-          opacity: 0;
-          transition: 0.3s $easingFn opacity;
-          transform: translateY(-12px);
-        }
-      }
-
-      &--pill {
-        padding: $spacing-stack-8 $spacing-inline-20;
-        border-radius: $border-radius-radius30;
-        background-color: $color-classic-glass;
-        color: $color-classic-navy;
-        transition: 0.3s $easingFn background-color, 0.3s $easingFn color;
-
-        .tco-lights-out & {
-          background-color: lighten($color-dark-theme-black, 3);
-          color: $color-foreground-on-tint;
+          @include wider-than($breakpoint-laptop) {
+            margin-bottom: 0;
+            opacity: 0;
+            transition: 0.3s $easingFn opacity;
+            transform: translateY(-12px);
+          }
         }
       }
     }
   }
 
   &.tco-card--post:not(.tco-card--expanded) {
-    border-width: 0;
+    @include wider-than($breakpoint-laptop) {
+      border-width: 0;
+    }
   }
 
   .tco-card-link {
@@ -1496,9 +1502,11 @@ $easingFn: ease-in-out;
       }
 
       &--post-content:not(.tco-card--post-content-expanded) {
-        max-height: 200px;
-        padding-bottom: $spacing-stack-12;
-        background-color: $color-classic-glass;
+        @include wider-than($breakpoint-laptop) {
+          max-height: 200px;
+          padding-bottom: $spacing-stack-12;
+          background-color: $color-classic-glass;
+        }
 
         @include wider-than($breakpoint-desktop) {
           padding-bottom: $spacing-stack-20;
