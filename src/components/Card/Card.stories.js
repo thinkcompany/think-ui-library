@@ -143,6 +143,25 @@ const ExpandingCardTemplate = args => {
         </a>
       </div>
     </div>
+  </div>
+  <div class="tco-container-wrapper">
+    <div class="tco-container">
+      <div class="tco-card tco-card--post tco-card--post-alt tco-card--expanding tco-card--expanded">
+        <a href="#" class="tco-card-link tco-link--dark-theme">
+          <div class="tco-card-image-container">
+            <img class="tco-card-image" alt="Card image" src="${image}" />
+          </div>
+          <div class="tco-card-content-container">
+            ${eyebrow ? `<p class="tco-card--eyebrow tco-type-body">${eyebrow}</p>` : ''}
+            <h2 class="tco-card--expanding-title tco-text-link tco-type-display--small">${heading}</h2>
+            <div class="tco-card--post-content tco-card--post-content-expanded">
+              <p class="tco-type-body">${content}</p>
+              <p class="tco-card--pill tco-type-body--small">e-Book</p>
+            </div>
+          </div>
+        </a>
+      </div>
+    </div>
   </div>`;
 };
 

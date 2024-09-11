@@ -1521,8 +1521,10 @@ $easingFn: ease-in-out;
 
   &.tco-card--expanded {
     .tco-card--post-content {
+      display: grid;
       grid-template-rows: 1fr;
       gap: $spacing-stack-24;
+      justify-items: start;
       margin-top: $spacing-stack-12;
     }
   }
