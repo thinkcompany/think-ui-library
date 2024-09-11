@@ -1330,11 +1330,26 @@ $card-break: 940px;
 // ========================================================
 // = Expanding card
 // ========================================================
+$padding-offset: $spacing-stack-20;
+$padding-offset-b: calc(#{$padding-offset} + #{$spacing-inline-8});
+$easingFn: ease-in-out;
+
 .tco-card--expanding {
+  overflow: visible;
+  padding-bottom: $padding-offset;
+  transition: transform 0.3s $easingFn;
+
+  @include wider-than($breakpoint-desktop) {
+    padding-bottom: $padding-offset-b;
+  }
+
+  &.tco-card--post {
+    border-width: 0;
+  }
+
   .tco-card-link {
     background-color: $color-foreground-on-tint;
-    cursor: pointer;
-    transition: background-color 0.2s ease;
+    transition: background-color 0.2s $easingFn;
 
     .tco-lights-out & {
       background-color: $color-dark-theme-black;
@@ -1345,7 +1360,7 @@ $card-break: 940px;
     display: inline;
     border-bottom: 1px solid transparent;
     color: $color-classic-blue;
-    transition: border-color 0.2s ease;
+    transition: border-color 0.2s $easingFn;
 
     .tco-lights-out & {
       color: $color-foreground-on-tint;
@@ -1353,9 +1368,25 @@ $card-break: 940px;
   }
 
   .tco-card {
+    &-content-container,
+    &-image-container,
+    &--post-content {
+      border-style: solid;
+      border-color: $color-classic-blue;
+    }
+
     &-content-container {
       position: relative;
       display: block;
+      padding-bottom: 0;
+      border-width: 0 1px;
+    }
+
+    &-image-container {
+      overflow: hidden;
+      border-width: 1px 1px 0;
+      border-top-left-radius: 8px;
+      border-top-right-radius: 8px;
     }
 
     &--eyebrow {
@@ -1370,16 +1401,27 @@ $card-break: 940px;
     }
 
     &--post-content {
-      display: grid;
-      grid-template-rows: 0fr;
-      grid-template-columns: auto;
-      gap: $spacing-stack-12;
-      justify-items: start;
-      margin-top: 0;
-      transition: 0.3s ease grid-template-rows, 0.3s ease margin-top;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      z-index: 1;
+      overflow: hidden;
+      width: calc(100% + 2px);
+      max-height: 0;
+      padding: $padding-offset $spacing-inline-24 0;
+      border-width: 0 1px 1px;
+      border-bottom-right-radius: 8px;
+      border-bottom-left-radius: 8px;
+      background-color: $color-foreground-on-tint;
+      transition: 0.3s $easingFn max-height, 0.3s $easingFn padding, 0.3s $easingFn background-color;
+      transform: translateX(-1px);
 
-      > * {
-        overflow: hidden;
+      @include wider-than($breakpoint-desktop) {
+        padding: $padding-offset-b $spacing-inline-32 0;
+      }
+
+      .tco-lights-out & {
+        background-color: $color-dark-theme-black;
       }
 
       p {
@@ -1392,7 +1434,7 @@ $card-break: 940px;
       border-radius: $border-radius-radius30;
       background-color: $color-classic-glass;
       color: $color-classic-navy;
-      transition: 0.3s ease background-color, 0.3s ease color;
+      transition: 0.3s $easingFn background-color, 0.3s $easingFn color;
 
       .tco-lights-out & {
         background-color: lighten($color-dark-theme-black, 3);
@@ -1409,8 +1451,13 @@ $card-break: 940px;
       }
 
       &--post-content {
-        grid-template-rows: 1fr;
-        margin-top: $spacing-stack-12;
+        max-height: 200px;
+        padding-bottom: $spacing-stack-24;
+        background-color: $color-classic-glass;
+
+        @include wider-than($breakpoint-desktop) {
+          padding-bottom: $spacing-stack-32;
+        }
       }
 
       &--pill {
@@ -1437,6 +1484,10 @@ $card-break: 940px;
 
         &--pill {
           background-color: $color-dark-theme-black;
+        }
+
+        &--post-content {
+          background-color: lighten($color-dark-theme-black, 3);
         }
       }
     }
