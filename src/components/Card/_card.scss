@@ -1333,13 +1333,14 @@ $card-break: 940px;
 $padding-offset: $spacing-stack-20;
 $padding-offset-b: calc(#{$padding-offset} + #{$spacing-inline-8});
 $easingFn: ease-in-out;
+$duration: 0.3s;
 
 .tco-card--expanding {
   &:not(.tco-card--expanded) {
     @include wider-than($breakpoint-laptop) {
       overflow: visible;
       padding-bottom: $padding-offset;
-      transition: transform 0.3s $easingFn;
+      transition: transform $duration $easingFn;
     }
 
     @include wider-than($breakpoint-desktop) {
@@ -1407,7 +1408,7 @@ $easingFn: ease-in-out;
           border-bottom-right-radius: 8px;
           border-bottom-left-radius: 8px;
           background-color: $color-foreground-on-tint;
-          transition: 0.3s $easingFn max-height, 0.3s $easingFn padding, 0.3s $easingFn background-color;
+          transition: $duration $easingFn max-height, $duration $easingFn padding, $duration $easingFn background-color;
           transform: translateX(-1px);
           transform-origin: center top;
         }
@@ -1424,7 +1425,7 @@ $easingFn: ease-in-out;
           @include wider-than($breakpoint-laptop) {
             margin-bottom: 0;
             opacity: 0;
-            transition: 0.3s $easingFn opacity;
+            transition: $duration $easingFn opacity;
           }
         }
       }
@@ -1439,7 +1440,7 @@ $easingFn: ease-in-out;
 
   .tco-card-link {
     background-color: $color-foreground-on-tint;
-    transition: background-color 0.2s $easingFn;
+    transition: background-color $duration $easingFn;
 
     .tco-lights-out & {
       background-color: $color-dark-theme-black;
@@ -1450,7 +1451,7 @@ $easingFn: ease-in-out;
     display: inline;
     border-bottom: 1px solid transparent;
     color: $color-classic-blue;
-    transition: border-color 0.2s $easingFn;
+    transition: border-bottom-color $duration $easingFn;
 
     .tco-lights-out & {
       color: $color-foreground-on-tint;
@@ -1484,7 +1485,7 @@ $easingFn: ease-in-out;
       border-radius: $border-radius-radius30;
       background-color: $color-classic-glass;
       color: $color-classic-navy;
-      transition: 0.3s $easingFn background-color, 0.3s $easingFn color;
+      transition: $duration $easingFn background-color, $duration $easingFn color;
 
       .tco-lights-out & {
         background-color: lighten($color-dark-theme-black, 3);
