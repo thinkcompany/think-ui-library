@@ -1445,20 +1445,6 @@ $outline-width: 3px;
 
     &:focus {
       outline: none;
-
-      .tco-card-image-container {
-        border-width: $outline-width $outline-width 0;
-      }
-
-      .tco-card-content-container {
-        border-width: 0 $outline-width $outline-width;
-      }
-
-      .tco-card--post-content {
-        left: -2px;
-        width: calc(100% + $outline-width * 2);
-        border-width: 0 $outline-width $outline-width;
-      }
     }
 
     .tco-lights-out & {
@@ -1569,8 +1555,6 @@ $outline-width: 3px;
 
   &.tco-card--expanded {
     &:has(.tco-card-link:focus) {
-      border-width: $outline-width;
-
       .tco-card-link:focus {
         border-bottom-color: transparent;
       }
