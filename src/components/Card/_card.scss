@@ -1332,7 +1332,7 @@ $card-break: 940px;
 // ========================================================
 $padding-offset: $spacing-stack-20;
 $padding-offset-b: calc(#{$padding-offset} + #{$spacing-inline-8});
-$easingFn: ease-in-out;
+$easingFn: linear;
 $duration: 0.3s;
 
 .tco-card--expanding {
