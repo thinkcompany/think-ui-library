@@ -1334,6 +1334,7 @@ $padding-offset: $spacing-stack-20;
 $padding-offset-b: calc(#{$padding-offset} + #{$spacing-inline-8});
 $easingFn: linear;
 $duration: 0.3s;
+$outline-width: 3px;
 
 .tco-card--expanding {
   &:not(.tco-card--expanded) {
@@ -1442,6 +1443,24 @@ $duration: 0.3s;
     background-color: $color-foreground-on-tint;
     transition: background-color $duration $easingFn;
 
+    &:focus {
+      outline: none;
+
+      .tco-card-image-container {
+        border-width: $outline-width $outline-width 0;
+      }
+
+      .tco-card-content-container {
+        border-width: 0 $outline-width $outline-width;
+      }
+
+      .tco-card--post-content {
+        left: -2px;
+        width: calc(100% + $outline-width * 2);
+        border-width: 0 $outline-width $outline-width;
+      }
+    }
+
     .tco-lights-out & {
       background-color: $color-dark-theme-black;
     }
@@ -1495,12 +1514,11 @@ $duration: 0.3s;
   }
 
   &:hover,
-  &:focus {
-    .tco-card {
-      &-link {
-        background: $color-classic-glass;
-      }
+  &:hover .tco-card-link,
+  .tco-card-link:focus {
+    background: $color-classic-glass;
 
+    .tco-card {
       &--post-content:not(.tco-card--post-content-expanded) {
         @include wider-than($breakpoint-laptop) {
           max-height: 200px;
@@ -1533,12 +1551,11 @@ $duration: 0.3s;
 
   .tco-lights-out & {
     &:hover,
-    &:focus {
-      .tco-card {
-        &-link {
-          background-color: lighten($color-dark-theme-black, 3);
-        }
+    .tco-card-link:focus,
+    &:hover .tco-card-link {
+      background-color: lighten($color-dark-theme-black, 3);
 
+      .tco-card {
         &--pill {
           background-color: $color-dark-theme-black;
         }
@@ -1551,12 +1568,30 @@ $duration: 0.3s;
   }
 
   &.tco-card--expanded {
+    &:has(.tco-card-link:focus) {
+      border-width: $outline-width;
+
+      .tco-card-link:focus {
+        border-bottom-color: transparent;
+      }
+    }
+
     .tco-card--post-content {
       display: grid;
       grid-template-rows: 1fr;
       gap: $spacing-stack-24;
       justify-items: start;
       margin-top: $spacing-stack-12;
+    }
+
+    .tco-lights-out & {
+      &:hover .tco-card-link {
+        .tco-card {
+          &--post-content {
+            background-color: transparent;
+          }
+        }
+      }
     }
   }
 }
