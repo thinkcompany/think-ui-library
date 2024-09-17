@@ -1360,7 +1360,6 @@ $outline-width: 3px;
 
       &-content-container {
         @include wider-than($breakpoint-laptop) {
-          position: relative;
           padding-bottom: 0;
           border-width: 0 1px;
         }
@@ -1398,19 +1397,19 @@ $outline-width: 3px;
         @include wider-than($breakpoint-laptop) {
           position: absolute;
           top: 100%;
+          right: 0;
           left: 0;
           z-index: 1;
           overflow: hidden;
-          width: calc(100% + 2px);
+          width: 100%;
           max-height: 0;
           margin-top: 0;
           padding: $spacing-stack-12 $spacing-inline-24 0;
           border-width: 0 1px 1px;
           border-bottom-right-radius: 8px;
           border-bottom-left-radius: 8px;
-          background-color: $color-foreground-on-tint;
+          background-color: transparent;
           transition: $duration $easingFn max-height, $duration $easingFn padding, $duration $easingFn background-color;
-          transform: translateX(-1px);
           transform-origin: center top;
         }
 
@@ -1442,6 +1441,10 @@ $outline-width: 3px;
   .tco-card-link {
     background-color: $color-foreground-on-tint;
     transition: background-color $duration $easingFn;
+
+    @include wider-than($breakpoint-laptop) {
+      position: relative;
+    }
 
     &:focus {
       outline: none;
