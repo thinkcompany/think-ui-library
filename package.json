@@ -30,6 +30,7 @@
   "author": "",
   "license": "",
   "dependencies": {
+    "@storybook/addon-designs": "^7.0.9",
     "chromatic": "^6.5.3",
     "flickity": "^3.0.0",
     "flickity-fade": "^2.0.0",

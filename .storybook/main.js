@@ -5,6 +5,7 @@ module.exports = {
     '@storybook/addon-mdx-gfm',
     '@storybook/addon-docs',
     '@storybook/addon-viewport',
+    '@storybook/addon-designs',
     'storybook-dark-mode'
   ],
 

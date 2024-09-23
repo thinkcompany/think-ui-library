@@ -529,7 +529,11 @@ export default {
       CalloutCard
     ],
     componentSubtitle:
-      'Cards are used on the site in the Post Grid and Card Grid components. The Post Grid component is used to display content from a single post type. Only one type of card can be used within the Post Grid. Different card types can be used within the same Card Grid component, and content is manually input.'
+      'Cards are used on the site in the Post Grid and Card Grid components. The Post Grid component is used to display content from a single post type. Only one type of card can be used within the Post Grid. Different card types can be used within the same Card Grid component, and content is manually input.',
+    design: {
+      type: 'figma',
+      url: 'https://www.figma.com/file/ct2FjvVgu901FLjKWzdFlP/Redlining?node-id=15-1260&m=dev'
+    }
   },
   argTypes: {
     heading: {

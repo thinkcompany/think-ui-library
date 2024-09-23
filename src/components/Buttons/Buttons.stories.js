@@ -139,5 +139,12 @@ LinkWithBigArrow.argTypes = {
 };
 
 export default {
-  title: 'Controls & Inputs / Buttons'
+  title: 'Controls & Inputs / Buttons',
+  component: Button,
+  parameters: {
+    design: {
+      type: 'figma',
+      url: 'https://www.figma.com/file/ct2FjvVgu901FLjKWzdFlP/Redlining?node-id=62-148&m=dev'
+    }
+  }
 };

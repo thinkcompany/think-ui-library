@@ -66,7 +66,11 @@ export const Accordion = AccordionTemplate.bind({});
 export default {
   title: 'Components / Accordion',
   parameters: {
-    component: Accordion
+    component: Accordion,
+    design: {
+      type: 'figma',
+      url: 'https://www.figma.com/file/ct2FjvVgu901FLjKWzdFlP/Redlining?node-id=15-1239&m=dev'
+    }
   },
   args: {
     titleA: 'Learn and strategize',
