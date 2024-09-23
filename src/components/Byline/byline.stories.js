@@ -60,15 +60,11 @@ export const BylineMultiple = MultipleTemplate.bind({});
 
 export default {
   title: 'Components / Byline',
+  tags: ['autodocs'],
   parameters: {
     component: Byline,
-    componentSubtitle: 'The Byline component is used for author attribution on blog posts.',
-    docs: {
-      description: {
-        component:
-          "When a blog post has > 1 author, the <a href='#byline-multiple'>Byline Multiple</a> component is used. This component is programmatically added to blog posts, and is not available as a standalone component in the CMS.<br>Data is sourced from Thinker user profiles in WordPress"
-      }
-    }
+    componentSubtitle:
+      'The Byline component is used for author attribution on blog posts. When a blog post has > 1 author, the Byline Multiple component is used. This component is programmatically added to blog posts, and is not available as a standalone component in the CMS. Data is sourced from Thinker user profiles in WordPress'
   },
   args: {
     name: 'Keith Rich',

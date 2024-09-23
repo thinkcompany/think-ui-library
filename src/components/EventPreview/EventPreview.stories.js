@@ -57,7 +57,7 @@ const Template = args => {
 export const EventPreview = Template.bind({});
 
 export default {
-  title: 'Components / Event Preview',
+  title: 'Archive / Event Preview',
   args: {
     tag: 'Workshop',
     date: 'June 2, 2020',

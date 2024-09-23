@@ -1,11 +1,13 @@
-const AccordionTemplate = () => {
+const AccordionTemplate = args => {
+  const { titleA, titleB, titleC } = args;
+
   return `
   <div class="tco-container-wrapper">
 	  <div class="tco-container">
       <div class="tco-accordion" style="max-width:580px;">
         <div class="tco-accordion-item">
           <button class="tco-accordion-button tco-accordion-button--active" type="button" aria-expanded="true" aria-controls="accordion-panel-A">
-            <h4 class="tco-accordion-title tco-type-display--medium-36">Learn and strategize</h4>
+            <h4 class="tco-accordion-title tco-type-display--medium-36">${titleA}</h4>
             <svg class="tco-icon tco-icon--accordion tco-icon--plus" width="24" height="24" viewBox="0 0 24 24" role="presentation">
               <use xlink:href="/img/icons.svg#icon-plus"></use>
             </svg>
@@ -26,7 +28,7 @@ const AccordionTemplate = () => {
 
         <div class="tco-accordion-item">
           <button class="tco-accordion-button" type="button" aria-expanded="false" aria-controls="accordion-panel-B">
-            <h4 class="tco-accordion-title tco-type-display--medium-36">Concept and iterate</h4>
+            <h4 class="tco-accordion-title tco-type-display--medium-36">${titleB}</h4>
             <svg class="tco-icon tco-icon--accordion tco-icon--plus" width="24" height="24" viewBox="0 0 24 24" role="presentation">
               <use xlink:href="/img/icons.svg#icon-plus"></use>
             </svg>
@@ -41,7 +43,7 @@ const AccordionTemplate = () => {
 
         <div class="tco-accordion-item">
           <button class="tco-accordion-button" type="button" aria-expanded="false" aria-controls="accordion-panel-C">
-            <h4 class="tco-accordion-title tco-type-display--medium-36">Build and implement</h4>
+            <h4 class="tco-accordion-title tco-type-display--medium-36">${titleC}</h4>
             <svg class="tco-icon tco-icon--accordion tco-icon--plus" width="24" height="24" viewBox="0 0 24 24" role="presentation">
               <use xlink:href="/img/icons.svg#icon-plus"></use>
             </svg>
@@ -63,9 +65,12 @@ export const Accordion = AccordionTemplate.bind({});
 
 export default {
   title: 'Components / Accordion',
-  component: [Accordion],
   parameters: {
-    component: Accordion,
-    controls: { hideNoControlsWarning: true }
+    component: Accordion
+  },
+  args: {
+    titleA: 'Learn and strategize',
+    titleB: 'Concept and iterate',
+    titleC: 'Build and implement'
   }
 };

@@ -2,15 +2,7 @@ const rules = [
   {
     test: /\.js$/,
     exclude: /node_modules/,
-    use: [
-      'babel-loader',
-      {
-        loader: 'eslint-loader',
-        options: {
-          fix: true
-        }
-      }
-    ]
+    use: 'babel-loader'
   },
   {
     test: /\.(png|jpe?g|gif|svg)$/i,

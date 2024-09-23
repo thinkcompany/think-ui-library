@@ -80,8 +80,8 @@ export const TextAndMedia = args => {
           }
         </div>
         <div class="tco-text-media--content tco-text-media--content-media tco-text-media--content-media--${mediaOrientation} ${
-    bubbleBackground ? 'tco-text-media-content-media--background' : ''
-  }">
+          bubbleBackground ? 'tco-text-media-content-media--background' : ''
+        }">
           ${
             bubbleBackground
               ? `
