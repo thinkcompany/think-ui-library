@@ -22,6 +22,10 @@ TextHighlight.args = {
 export default {
   title: 'Motion / Text Highlight',
   parameters: {
-    component: TextHighlight
+    component: TextHighlight,
+    design: {
+      type: 'figma',
+      url: 'https://www.figma.com/file/ct2FjvVgu901FLjKWzdFlP/Redlining?node-id=15-1166'
+    }
   }
 };

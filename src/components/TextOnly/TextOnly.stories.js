@@ -32,8 +32,8 @@ const Template = args => {
     <div class="tco-container-wrapper">
       <div class="tco-container">
         <div class="tco-text-only tco-text-only--${textAlignment} ${
-    bubble ? ` tco-text-only--bubble` : ''
-  }">
+          bubble ? ` tco-text-only--bubble` : ''
+        }">
         ${
           eyebrow
             ? `

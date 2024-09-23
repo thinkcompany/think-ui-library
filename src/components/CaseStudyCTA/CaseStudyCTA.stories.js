@@ -130,8 +130,8 @@ const caseStudyCard = (input, cardtype) => {
 
   return `
     <div class="tco-card tco-card--case-study tco-card--case-study-${cardType} tco-card--case-study-${
-    input.id
-  }">
+      input.id
+    }">
       <a href="#" class="tco-card-link tco-link--dark-theme">
         <div class="tco-case-study-image-container tco-case-study-image-container--case-study tco-case-study-image-container--${
           input.device

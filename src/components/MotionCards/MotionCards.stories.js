@@ -284,18 +284,18 @@ const fullCard = input => {
           }
           <div class="tco-grid-item">
             <img src="${imageD.url}" class="tco-grid-item-image" width="${imageD.width}" height="${
-    imageD.height
-  }" alt="${imageD.name} logo">
+              imageD.height
+            }" alt="${imageD.name} logo">
           </div>
           <div class="tco-grid-item">
             <img src="${imageE.url}" class="tco-grid-item-image" width="${imageE.width}" height="${
-    imageE.height
-  }" alt="${imageE.name} logo">
+              imageE.height
+            }" alt="${imageE.name} logo">
           </div>
           <div class="tco-grid-item">
             <img src="${imageF.url}" class="tco-grid-item-image" width="${imageF.width}" height="${
-    imageF.height
-  }" alt="${imageF.name} logo">
+              imageF.height
+            }" alt="${imageF.name} logo">
           </div>
         </div>
         <a href="/" class="tco-btn tco-btn--primary">Button</a>

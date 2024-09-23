@@ -1,53 +1,39 @@
-const alignments = ['left', 'center', 'right'];
-const sizes = ['medium', 'extra-large', 'large', 'small'];
+const sizes = ['medium-36', 'medium', 'large-80', 'extra-large'];
 
 const Template = args => {
-  const { image, bubbleBackground, textAlignment, eyebrow, heading, headingSize, lede, showCta } =
-    args;
+  const { eyebrow, heading, headingSize, lede, showCta } = args;
 
   return `
-  <div class="tco-container-wrapper tco-text-media--page-header">
+  <div class="tco-container-wrapper">
     <div class="tco-container tco-container--default">
-      <div class="tco-text-media tco-text-media--align-left">
-        <div class="tco-text-media-content tco-text-media-content-text tco-text-media-content-text--${textAlignment}">
+      <div class="tco-page-header tco-page-header--reduced tco-text-only tco-text-only--align-right ">
+        <div class="tco-text-media-content tco-text-media-content-text">
           ${
             eyebrow
               ? `
-            <p class="tco-text-media-eyebrow">${eyebrow}</p>
+            <p class="tco-page-header--eyebrow tco-type-eyebrow">${eyebrow}</p>
             `
               : ''
           }
-
-          <h1 class="tco-text-media-heading tco-type-display--${headingSize}">${heading}</h1>
-          <div class="tco-text-media-lede">
-            <p>${lede}</p>
+          <h1 class="tco-type-display--${headingSize} tco-page-header--headline">${heading}</h1>
+          <div class="tco-container--mid tco-container--left">
+            <p class="tco-page-header--lede tco-type-body--extra-large">${lede}</p>
           </div>
           ${
             showCta
               ? `
-            <a href="#" class="tco-btn tco-btn--primary">Learn More</a>
+            <div class="tco-page-header--reduced-cta-group">
+              <a href="#career-posts" class="tco-text-only-cta tco-btn tco-btn--primary tco-text-only-cta tco-careers-posts--end">See open roles</a>
+            </div>
           `
               : ''
           }
-        </div>
-
-        <div class="tco-text-media-content tco-text-media-content-media ${
-          bubbleBackground ? 'tco-text-media-content-media--background' : ''
-        }">
-          ${
-            bubbleBackground
-              ? `
-            <div class="tco-text-media-container">
-              <img class="tco-text-media-image" alt="An adorable kitten" src="${image}" />
-            </div>
-          `
-              : `
-            <img class="tco-text-media-image" alt="An adorable kitten" src="${image}" />
-          `
-          }
-
-        </div>
       </div>
+		</div>
+
+
+
+
     </div>
   </div>`;
 };
@@ -59,19 +45,13 @@ export default {
   args: {
     image: 'https://www.thinkcompany.com/wp-content/uploads/2020/12/events-illustration-1.png',
     bubbleBackground: false,
-    textAlignment: alignments[0],
-    eyebrow: '',
-    heading: 'Adapting your digital experience is critical',
-    headingSize: sizes[0],
-    lede: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas pellentesque nunc vel turpis tempor tincidunt at, posuere eros.',
+    eyebrow: 'Careers at Think',
+    heading: 'Think with us',
+    headingSize: sizes[2],
+    lede: "What's the best thing about working at Think Company? Easy: the people. Come join our curious, creative, and diverse team.",
     showCta: true
   },
   argTypes: {
-    textAlignment: {
-      name: 'text alignment',
-      control: 'inline-radio',
-      options: alignments
-    },
     headingSize: {
       name: 'heading size',
       control: 'inline-radio',

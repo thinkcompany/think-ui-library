@@ -22,8 +22,8 @@ export const IconSet = args => {
     iconSet.push(`
       <li class="tco-icon-meta">
         <svg class="tco-icon tco-icon--${item.icon.toLowerCase()}" title="${
-      item.name
-    }" viewBox="0 0 100 100">
+          item.name
+        }" viewBox="0 0 100 100">
           <use xlink:href="/img/icons.svg#icon-${item.icon.toLowerCase()}"></use>
         </svg>
         <span class="tco-type-body--small">${item.name}</span>

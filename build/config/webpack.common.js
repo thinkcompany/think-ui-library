@@ -24,13 +24,12 @@ const plugins = [
 ];
 
 const rules = [{
-    test: /\.(sa|sc|c)ss$/,
-    use: [
-      isDev ? 'style-loader' :  MiniCSSExtractPlugin.loader,
-      'css-loader',
-      'postcss-loader',
-      'sass-loader'
-    ]
+  test: /\.(sa|sc|c)ss$/,
+  use: [
+    isDev ? 'style-loader' :  MiniCSSExtractPlugin.loader,
+    'css-loader',
+    'sass-loader'
+  ]
 }];
 
 module.exports = {

@@ -19,13 +19,13 @@ module.exports = ({ config }) => {
   config.plugins.push(...common.plugins);
 
   // Required for Webpack v5 issue
-  config.resolve.fallback = {
-    ...config.resolve.fallback,
-    crypto: require.resolve('crypto-browserify'),
-    stream: require.resolve('stream-browserify'),
-    constants: require.resolve('constants-browserify'),
-    fs: false
-  };
+  // config.resolve.fallback = {
+  //   ...config.resolve.fallback,
+  //   crypto: require.resolve('crypto-browserify'),
+  //   //stream: require.resolve('stream-browserify'),
+  //   constants: require.resolve('constants-browserify'),
+  //   fs: false
+  // };
 
   config.resolve.modules.push(
     path.resolve(__dirname, '../src'),
