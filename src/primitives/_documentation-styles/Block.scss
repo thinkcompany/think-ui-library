@@ -204,6 +204,14 @@
   }
 }
 
+#stories {
+  margin-left: calc($documentation-padding * 2);
+
+  a {
+    border-bottom-width: 0;
+  }
+}
+
 .sbdocs .innerZoomElementWrapper {
   &:has(.tco-storybook-welcome) {
     overflow: hidden;
