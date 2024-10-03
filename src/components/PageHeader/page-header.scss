@@ -59,6 +59,31 @@ $nav-desktop-height: 82px;
     }
   }
 
+  &--home {
+    position: relative;
+    z-index: 1;
+
+    &-title {
+      margin-bottom: calc(56 / 118 * 1em);
+
+      br {
+        @include wider-than($breakpoint-laptop) {
+          display: none;
+        }
+      }
+    }
+
+
+    span {
+      display: block;
+      color: $color-classic-blue;
+
+      .tco-lights-out & {
+        color: $color-dark-theme-blue;
+      }
+    }
+  }
+
 
   // contact pg
   &--contact {
