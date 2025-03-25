@@ -16,6 +16,37 @@ $color-hover-blue-blue: #09509a;
     }
   }
 
+  // Slimmer Vertical spacing
+  &--slim {
+    > .tco-container {
+      padding: $spacing-stack-32 0;
+
+      @include wider-than($breakpoint-laptop) {
+        padding: $spacing-stack-76 0;
+      }
+    }
+  }
+
+  &--slim-top {
+    > .tco-container {
+      padding-top: $spacing-stack-32;
+
+      @include wider-than($breakpoint-laptop) {
+        padding-top: $spacing-stack-76;
+      }
+    }
+  }
+
+  &--slim-bottom {
+    > .tco-container {
+      padding-bottom: $spacing-stack-32;
+
+      @include wider-than($breakpoint-laptop) {
+        padding-top: $spacing-stack-76;
+      }
+    }
+  }
+
   &--bleed {
     padding: 0;
   }
