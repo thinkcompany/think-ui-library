@@ -514,9 +514,10 @@
   }
 }
 
-$arrow-width: 19px;
-$arrow-height: 17px;
+// Ensures icons scales properly when font-size changes without complicated math
+$arrow-size: 0.9em;
 $arrow-offset: 5px;
+// 👇 Appears to be used in a deprecated component tco-card-link.
 $arrow-translate: 10px;
 
 @mixin type-link-cta(
@@ -527,7 +528,9 @@ $arrow-translate: 10px;
 ) {
   // BMac wanted to remove the underline altogether for Arrow links
   @include type-link($show-initial: false, $underline: transparent);
-  padding-right: $padding-right;
+  display: inline-flex;
+  align-items: center;
+  gap: $padding-right;
   color: $font-color;
   text-decoration: none;
   font-weight: $weight;
@@ -536,11 +539,11 @@ $arrow-translate: 10px;
   .tco-text-link-icon,
   svg {
     display: inline-block;
-    width: $arrow-width;
-    height: $arrow-height;
+    width: $arrow-size;
+    height: $arrow-size;
     fill: $fill;
     transition: transform 0.2s linear;
-    transform: translate($arrow-offset, 3px);
+    transform: translateX(0);
     transform-origin: left center;
 
     &:not(.tco-text-link-icon--alt) {
@@ -554,7 +557,7 @@ $arrow-translate: 10px;
   &:focus {
     .tco-text-link--icon,
     svg {
-      transform: translate($arrow-translate, 3px);
+      transform: translateX($arrow-offset);
     }
   }
 
@@ -563,7 +566,6 @@ $arrow-translate: 10px;
     .tco-text-link-icon,
     svg {
       fill: $color-disabled;
-      transform: translate($arrow-offset, 0px);
     }
   }
 
