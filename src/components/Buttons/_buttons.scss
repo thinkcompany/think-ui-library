@@ -161,7 +161,7 @@ $big-arrow-width: calc((21 / 18) * 1em);
   &--arrow,
   &--big-arrow {
     @include type-link-cta;
-    color: $color-classic-navy;
+    color: $color-classic-blue;
   }
 
   &:active {
@@ -174,19 +174,6 @@ $big-arrow-width: calc((21 / 18) * 1em);
 
   .tco-lights-out & {
     color: $color-foreground-on-tint;
-
-    &:hover,
-    &:focus {
-      border-bottom-color: transparent;
-    }
-
-    &--arrow {
-      border-bottom-color: transparent;
-
-      &:hover {
-        border-bottom-color: $color-classic-blue;
-      }
-    }
   }
 
   &.tco-text-link--big-arrow {

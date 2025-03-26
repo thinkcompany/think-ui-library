@@ -525,7 +525,8 @@ $arrow-translate: 10px;
   $fill: $color-tint-blue-primary,
   $weight: 500
 ) {
-  @include type-link($show-initial: false);
+  // BMac wanted to remove the underline altogether for Arrow links
+  @include type-link($show-initial: false, $underline: transparent);
   padding-right: $padding-right;
   color: $font-color;
   text-decoration: none;
