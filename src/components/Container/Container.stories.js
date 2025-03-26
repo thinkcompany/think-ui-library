@@ -1,10 +1,12 @@
 const sizes = ['default', 'mid', 'narrow', 'max'];
+const verticalSpaces = ['default', 'slim', 'slim-top', 'slim-bottom'];
+const colors = ['default', 'navy', 'blue', 'glass', 'tan', 'soft-white', 'purple', 'yellow'];
 
 const Template = args => {
-  const { containerSize } = args;
+  const { color, containerSize, verticalSpace } = args;
 
   return `
-  <div class="tco-container-wrapper">
+  <div class="tco-container-wrapper tco-container-wrapper--${verticalSpace} tco-container-wrapper--${color}">
     <div class="tco-container tco-container--${containerSize}">
       <div class="tco-text-only tco-text-only--left ">
         <span class="tco-text-only-eyebrow">Text Only</span>
@@ -26,10 +28,20 @@ export default {
     containerSize: sizes[0]
   },
   argTypes: {
+    color: {
+      name: 'colors',
+      control: 'inline-radio',
+      options: colors
+    },
     containerSize: {
       name: 'container size',
       control: 'inline-radio',
       options: sizes
+    },
+    verticalSpace: {
+      name: 'vertical spacing',
+      control: 'inline-radio',
+      options: verticalSpaces
     }
   }
 };
