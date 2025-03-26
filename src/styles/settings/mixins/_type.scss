@@ -515,7 +515,7 @@
 }
 
 // Ensures icons scales properly when font-size changes without complicated math
-$arrow-size: 0.9em;
+$arrow-size: 1rem;
 $arrow-offset: 5px;
 // 👇 Appears to be used in a deprecated component tco-card-link.
 $arrow-translate: 10px;
@@ -529,7 +529,7 @@ $arrow-translate: 10px;
   // BMac wanted to remove the underline altogether for Arrow links
   @include type-link($show-initial: false, $underline: transparent);
   display: inline-flex;
-  align-items: center;
+  align-items: anchor-center;
   gap: $padding-right;
   color: $font-color;
   text-decoration: none;
