@@ -35,6 +35,13 @@ const displayStyles = [
     size: '36px / 52px'
   },
   {
+    name: 'Display Medium',
+    class: 'tco-type-display--medium-thin',
+    sass: '@include type-display-medium($weight:300)',
+    textLength: 1,
+    size: '36px / 52px'
+  },
+  {
     name: 'Display Medium 48',
     class: 'tco-type-display--medium-48',
     sass: '@include type-display-medium($med48: true)',

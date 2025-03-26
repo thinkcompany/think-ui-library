@@ -39,10 +39,10 @@
   font-family: 'inter-fallback';
   font-display: swap;
   src: local('Arial');
-	size-adjust: 107.5%;
-	ascent-override: calc(96.9% - 3.2%);
-	descent-override: calc(24.2% - 0.8%);
-	line-gap-override: 0;
+  size-adjust: 107.5%;
+  ascent-override: calc(96.9% - 3.2%);
+  descent-override: calc(24.2% - 0.8%);
+  line-gap-override: 0;
 }
 
 @font-face {
@@ -80,7 +80,6 @@
   font-weight: $font-weight;
   font-optical-sizing: auto;
   font-variant-numeric: lining-nums proportional-nums;
-
 }
 
 /* ----------------------------------------------*\
@@ -129,7 +128,9 @@
 \*---------------------------------------------- */
 @mixin type-display-extra-large($font-color: inherit, $italic: false) {
   @include type-base-display($font-color, 300);
-  font-variation-settings: 'wght' 300, 'slnt' 0;
+  font-variation-settings:
+    'wght' 300,
+    'slnt' 0;
   line-height: 1.1;
 
   @include clamp(
@@ -149,7 +150,9 @@
   $lrg64: false
 ) {
   @include type-base-display($font-color, 300);
-  font-variation-settings: 'wght' 300, 'slnt' 0;
+  font-variation-settings:
+    'wght' 300,
+    'slnt' 0;
   line-height: 1.07;
 
   @if $lrg64 {
@@ -188,10 +191,13 @@
   $med48: false,
   $med42: false,
   $med36: false,
-  $med32: false
+  $med32: false,
+  $weight: 400
 ) {
   @include type-base-display($font-color, 400);
-  font-variation-settings: 'wght' 400, 'slnt' 0;
+  font-variation-settings:
+    'wght' $weight,
+    'slnt' 0;
   line-height: 1.16;
 
   @if $med48 {
@@ -243,7 +249,9 @@
 
 @mixin type-display-small($font-color: inherit, $italic: false, $small24: false, $weight: 400) {
   @include type-base-display($font-color, $weight);
-  font-variation-settings: 'wght' $weight, 'slnt' 0;
+  font-variation-settings:
+    'wght' $weight,
+    'slnt' 0;
   line-height: 1.28;
 
   @if $small24 {
@@ -270,7 +278,9 @@
   @include type-base-style($font-color, $weight);
   line-height: 1;
   color: $font-color;
-  font-variation-settings: 'wght' $weight, 'slnt' 0;
+  font-variation-settings:
+    'wght' $weight,
+    'slnt' 0;
 
   @if $small {
     font-size: $font-size-16;
@@ -303,12 +313,16 @@
   $lrg36: false
 ) {
   @include type-base-style($font-color, $weight);
-  font-variation-settings: 'wght' $weight, 'slnt' 0;
+  font-variation-settings:
+    'wght' $weight,
+    'slnt' 0;
   line-height: 1.5;
 
   @if $italic {
     font-style: italic;
-    font-variation-settings: 'wght' $weight, 'slnt' 10;
+    font-variation-settings:
+      'wght' $weight,
+      'slnt' 10;
     /*
     Slant (slnt)
     "Adjust the style from upright to slanted, also known to typographers as an 'oblique' style. Rarely, slant can work in the other direction, called a 'backslanted' or 'reverse oblique' style."
@@ -317,7 +331,9 @@
   }
 
   @if $bold {
-    font-variation-settings: 'wght' $font-weight-500, 'slnt' 0;
+    font-variation-settings:
+      'wght' $font-weight-500,
+      'slnt' 0;
     font-weight: $font-weight-500;
   }
 
@@ -383,12 +399,16 @@
 @mixin type-body-default($font-color: inherit, $italic: false, $weight: 400, $size: $font-size-16) {
   @include type-base-style($font-color, $weight);
   font-size: $size;
-  font-variation-settings: 'wght' $weight, 'slnt' 0;
+  font-variation-settings:
+    'wght' $weight,
+    'slnt' 0;
   line-height: 1.5;
 
   @if $italic {
     font-style: italic;
-    font-variation-settings: 'wght' $weight, 'slnt' 10;
+    font-variation-settings:
+      'wght' $weight,
+      'slnt' 10;
     /*
     Slant (slnt)
     "Adjust the style from upright to slanted, also known to typographers as an 'oblique' style. Rarely, slant can work in the other direction, called a 'backslanted' or 'reverse oblique' style."
@@ -405,12 +425,16 @@
 ) {
   @include type-base-style($font-color, $weight);
   font-size: $size;
-  font-variation-settings: 'wght' $weight, 'slnt' 0;
+  font-variation-settings:
+    'wght' $weight,
+    'slnt' 0;
   line-height: 1.5;
 
   @if $italic {
     font-style: italic;
-    font-variation-settings: 'wght' $weight, 'slnt' 10;
+    font-variation-settings:
+      'wght' $weight,
+      'slnt' 10;
   }
 }
 
@@ -427,7 +451,9 @@
 
 @mixin type-highlight($font-color: $color-tint-blue-primary) {
   color: $font-color;
-  transition: text-decoration 0.4s ease, color 0.4s ease;
+  transition:
+    text-decoration 0.4s ease,
+    color 0.4s ease;
 }
 
 @mixin type-link(
@@ -450,7 +476,9 @@
   border-bottom-width: 1px;
   border-bottom-style: solid;
   border-bottom-color: transparent;
-  transition: border-color 0.2s linear, color 0.2s linear;
+  transition:
+    border-color 0.2s linear,
+    color 0.2s linear;
 
   &:not(.tco-btn):not(.tco-link--dark-theme):not(.tco-text-link-motion):not(
       .tco-card--text-headline-filled
@@ -497,7 +525,8 @@ $arrow-translate: 10px;
   $fill: $color-tint-blue-primary,
   $weight: 500
 ) {
-  @include type-link($show-initial: false);
+  // BMac wanted to remove the underline altogether for Arrow links
+  @include type-link($show-initial: false, $underline: transparent);
   padding-right: $padding-right;
   color: $font-color;
   text-decoration: none;

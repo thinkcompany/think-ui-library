@@ -28,6 +28,10 @@
 .tco-type-display--medium {
   @include type-display-medium;
 
+  &-thin {
+    @include type-display-medium($weight: 300);
+  }
+
   &-italic {
     @include type-display-medium($italic: true);
   }
