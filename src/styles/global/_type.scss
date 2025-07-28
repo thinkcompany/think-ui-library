@@ -95,6 +95,14 @@
   line-height: 1.25;
 }
 
+.tco-type-body--xxlarge {
+  @include type-body-large($xxl: true);
+
+  &-italic {
+    @include type-body-large($italic: true, $xxl: true);
+  }
+}
+
 .tco-type-body--extra-large {
   @include type-body-large($xl: true);
 

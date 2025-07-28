@@ -108,6 +108,13 @@ const bodyStyles = [
     size: '28px / 40px'
   },
   {
+    name: 'Body Text XX-Large',
+    class: 'tco-type-body--xxlarge',
+    sass: '@include type-body-large($xxl: true)',
+    textLength: 1,
+    size: '24px / 32px'
+  },
+  {
     name: 'Body Text X-Large',
     class: 'tco-type-body--extra-large',
     sass: '@include type-body-large($xl: true)',
