@@ -47,6 +47,10 @@
   &-36 {
     @include type-display-medium($med36: true);
   }
+
+  &-32 {
+    @include type-display-medium($med32: true);
+  }
 }
 
 .tco-type-display--small {
