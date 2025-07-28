@@ -1,3 +1,4 @@
+@use 'sass:color';
 /* stylelint-disable selector-max-pseudo-class, max-line-length, selector-max-specificity,  max-nesting-depth, selector-max-combinators, selector-max-compound-selectors, selector-max-class */
 // ========================================================
 // = BASE CARD
@@ -1278,7 +1279,7 @@ $card-break: 940px;
 
       &:hover,
       &:focus {
-        background-color: lighten($color-dark-theme-black, 3);
+        background-color: color.adjust($color-dark-theme-black, $lightness: 3%);
 
         .tco-card--text-title {
           border-color: $color-foreground-on-tint;
@@ -1485,6 +1486,7 @@ $outline-width: 3px;
       }
     }
 
+
     &--pill {
       padding: $spacing-stack-8 $spacing-inline-20;
       border-radius: $border-radius-radius30;
@@ -1493,7 +1495,7 @@ $outline-width: 3px;
       transition: $duration $easingFn background-color, $duration $easingFn color;
 
       .tco-lights-out & {
-        background-color: lighten($color-dark-theme-black, 3);
+        background-color: color.adjust($color-dark-theme-black, $lightness: 3%);
         color: $color-foreground-on-tint;
       }
     }
@@ -1539,7 +1541,7 @@ $outline-width: 3px;
     &:hover,
     .tco-card-link:focus,
     &:hover .tco-card-link {
-      background-color: lighten($color-dark-theme-black, 3);
+      background-color: color.adjust($color-dark-theme-black, $lightness: 3%);
 
       .tco-card {
         &--pill {
@@ -1547,7 +1549,7 @@ $outline-width: 3px;
         }
 
         &--post-content {
-          background-color: lighten($color-dark-theme-black, 3);
+          background-color: color.adjust($color-dark-theme-black, $lightness: 3%);
         }
       }
     }

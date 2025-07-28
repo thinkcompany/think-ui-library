@@ -1,4 +1,4 @@
-import { useEffect } from '@storybook/client-api';
+// import { useEffect } from '@storybook/client-api';
 
 const stateOptions = {
   unchecked: '',
@@ -10,11 +10,11 @@ const stateOptions = {
 export const Checkbox = args => {
   const { label, state } = args;
 
-  useEffect(() => {
-    if (state === stateOptions.indeterminate) {
-      document.getElementById('checkbox-1').indeterminate = true;
-    }
-  });
+  // useEffect(() => {
+  //   if (state === stateOptions.indeterminate) {
+  //     document.getElementById('checkbox-1').indeterminate = true;
+  //   }
+  // });
 
   return `
   <div class="tco-container-wrapper">

@@ -18,7 +18,6 @@ export const parameters = {
     viewports: INITIAL_VIEWPORTS
   },
   backgrounds: {
-    default: 'white',
     values: [
       {
         name: 'white',
@@ -37,12 +36,11 @@ export const parameters = {
       appBg: '#181c1f',
       appContentBg: '#181c1f',
       barBg: '#010D15',
-      brandImage: '/img/think-logo-white.svg'
-    },
-    light: {
-      ...themes.light,
-      appBg: '#f2f8fa',
-      brandImage: '/img/think-company-logo-stacked.svg'
+      textColor: '#ffffff',
+      textMutedColor: '#ffffff',
+      textInverseColor: '#ffffff',
+      brandImage: '/img/think-logo-white.svg',
+      fontBase: '"Inter", sans-serif'
     },
     darkClass: 'tco-lights-out',
     lightClass: 'tco-lights-on',
@@ -60,55 +58,4 @@ export const parameters = {
   // },
 };
 
-// addParameters({
-//   options: {
-//     showPanel: true,
-//     panelPosition: 'bottom'
-//   },
-//   viewport: {
-//     viewports: INITIAL_VIEWPORTS
-//   },
-//   backgrounds: {
-//     default: 'white',
-//     values: [
-//       {
-//         name: 'white',
-//         value: '#ffffff',
-//       },
-//       {
-//         name: 'glass',
-//         value: '#f2f8fa',
-//       },
-//     ],
-//   },
-//   docs: {
-//     source: {
-//       state: 'close'
-//     }
-//   },
-//   darkMode: {
-//     dark: {
-//       ...themes.dark,
-//       base: 'dark',
-//       appBg: '#181c1f',
-//       appContentBg: '#181c1f',
-//       barBg: '#010D15',
-//       brandImage: '/img/think-logo-white.svg',
-//     },
-//     light: {
-//       ...themes.light,
-//       appBg: '#f2f8fa',
-//       brandImage: '/img/think-company-logo-stacked.svg'
-//     },
-//     darkClass: 'tco-lights-out',
-//     lightClass: 'tco-lights-on',
-//     stylePreview: true
-//   },
-//   html: {
-//     prettier: {
-//       printWidth: 120
-//     }
-//   }
-// });
-
-// export const decorators = [withMarkup];
+export const tags = ['autodocs'];

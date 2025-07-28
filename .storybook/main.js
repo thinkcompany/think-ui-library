@@ -6,13 +6,15 @@ module.exports = {
     '@storybook/addon-docs',
     '@storybook/addon-viewport',
     '@storybook/addon-designs',
-    'storybook-dark-mode'
+    'storybook-dark-mode',
+    '@storybook/addon-webpack5-compiler-babel',
+    '@chromatic-com/storybook'
   ],
 
   stories: [
-    './*.stories.@(js|jsx|mdx|ts|tsx)',
-    '../src/primitives/**/*.stories.@(js|jsx|mdx|ts|tsx)',
-    '../src/components/**/*.stories.@(js|jsx|mdx|ts|tsx)'
+    './*.@(mdx|stories.@(js|jsx|ts|tsx))',
+    '../src/primitives/**/*.@(mdx|stories.@(js|jsx|ts|tsx))',
+    '../src/components/**/*.@(mdx|stories.@(js|jsx|ts|tsx))'
   ],
 
   staticDirs: ['../src/assets'],
@@ -22,7 +24,5 @@ module.exports = {
     options: {}
   },
 
-  docs: {
-    autodocs: 'tag'
-  }
+  docs: {}
 };
