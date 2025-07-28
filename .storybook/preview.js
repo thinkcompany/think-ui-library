@@ -44,7 +44,8 @@ export const parameters = {
     },
     darkClass: 'tco-lights-out',
     lightClass: 'tco-lights-on',
-    stylePreview: true
+    stylePreview: true,
+    brandImage: '/img/think-company-logo-stacked.svg'
   },
   docs: {
     source: {
