@@ -36,6 +36,10 @@
     @include type-display-medium($italic: true);
   }
 
+  &-64 {
+    @include type-display-medium($med64: true);
+  }
+
   &-42 {
     @include type-display-medium($med42: true);
   }

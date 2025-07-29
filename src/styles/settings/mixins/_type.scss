@@ -200,7 +200,16 @@
     'slnt' 0;
   line-height: 1.16;
 
-  @if $med48 {
+  @if $med64 {
+    line-height: 1.1;
+    @include clamp(
+      font-size,
+      $breakpoint-phone-portrait,
+      $breakpoint-desktop,
+      $font-size-42,
+      $font-size-64
+    );
+  } @else if $med48 {
     line-height: 1.1;
     @include clamp(
       font-size,
