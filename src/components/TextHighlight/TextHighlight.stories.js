@@ -1,4 +1,4 @@
-const TextHighlightTemplate = args => {
+const TextHighlightTemplate = (args) => {
   const { text } = args;
 
   return `
@@ -16,16 +16,16 @@ const TextHighlightTemplate = args => {
 export const TextHighlight = TextHighlightTemplate.bind({});
 
 TextHighlight.args = {
-  text: 'We drive value and engagement for billion-dollar companies.</br><mark class="tco-type-treatment--highlight">We can do it for you, too.</mark>'
+  text: 'We drive value and engagement for billion-dollar companies.</br><mark class="tco-type-treatment--highlight">We can do it for you, too.</mark>',
 };
 
 export default {
-  title: 'Motion / Text Highlight',
+  title: 'Archive / Text Highlight',
   parameters: {
     component: TextHighlight,
     design: {
       type: 'figma',
-      url: 'https://www.figma.com/file/ct2FjvVgu901FLjKWzdFlP/Redlining?node-id=15-1166'
-    }
-  }
+      url: 'https://www.figma.com/file/ct2FjvVgu901FLjKWzdFlP/Redlining?node-id=15-1166',
+    },
+  },
 };
