@@ -1,15 +1,32 @@
-// The values provided below are the defaults.
-// If you don't specify one of these properties,
-// the default value will be applied.
-//Ref -> https://medium.com/ngconf/ultimate-prettier-angular-cheatsheet-777c9515f4fb
-
 module.exports = {
-	printWidth: 100,
-	tabWidth: 2,
-	useTabs: false,
-	semi: true,
-	singleQuote: true,
-	trailingComma: "none", // other options `es5` or `all`
-	bracketSpacing: true,
-	arrowParens: "avoid", // other option 'always'
+  arrowParens: 'always',
+  bracketSameLine: false,
+  bracketSpacing: true,
+  jsxSingleQuote: false,
+  importOrder: ['<THIRD_PARTY_MODULES>', '^ui/(.*)$', '^types/(.*)$', '^[./]'],
+  importOrderCaseInsensitive: true,
+  importOrderSeparation: true,
+  importOrderSideEffects: false,
+  importOrderSortSpecifiers: true,
+  overrides: [
+    {
+      files: '*.scss',
+      options: {
+        semi: true,
+        printWidth: 100,
+        tabWidth: 2,
+        cursorOffset: -1,
+        singleQuote: false,
+      },
+    },
+    {
+      files: '.prettierrc',
+      options: { parser: 'json' },
+    },
+  ],
+  semi: true,
+  singleQuote: true,
+  tabWidth: 2,
+  trailingComma: 'es5',
+  useTabs: false,
 };

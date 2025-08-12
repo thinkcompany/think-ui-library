@@ -1,0 +1,434 @@
+$cranium-width: 376px;
+
+/* stylelint-disable max-line-length */
+.tco-fade-move {
+  position: relative;
+  display: grid;
+  grid-template-rows: auto;
+  grid-template-columns: 1fr;
+  gap: $spacing-stack-50;
+  justify-items: center;
+
+  @include wider-than($breakpoint-tablet-portrait) {
+    grid-template-columns: repeat(2, 1fr);
+    gap: $spacing-inline-50;
+    align-items: center;
+  }
+
+  @include wider-than($breakpoint-laptop) {
+    gap: $spacing-inline-100;
+  }
+
+  @include wider-than($breakpoint-desktop) {
+    gap: calc(#{$spacing-inline-100} * 1.5);
+  }
+
+  &-image {
+    width: $cranium-width;
+    margin: $spacing-stack-20 auto 0;
+
+    @include wider-than($breakpoint-tablet-portrait) {
+      justify-self: start;
+      margin: 0;
+    }
+
+    svg {
+      display: block;
+      margin: 0 auto;
+
+      @include wider-than($breakpoint-tablet-portrait) {
+        margin: 0;
+      }
+    }
+  }
+
+  .tco-svg-brain--group {
+    &-a,
+    &-b,
+    &-c {
+      &[stroke] {
+        stroke: $color-classic-gray-dark;
+
+        .tco-lights-out & {
+          stroke: $color-foreground-on-tint;
+        }
+      }
+
+      &[fill] {
+        fill: $color-classic-gray-dark;
+
+        .tco-lights-out & {
+          fill: $color-foreground-on-tint;
+        }
+      }
+    }
+  }
+
+  /* stylelint-disable selector-no-qualifying-type */
+  path:not([class*='tco-svg-brain--group-'], .tco-svg-brain--right) {
+    &[stroke] {
+      stroke: $color-classic-gray-dark;
+
+      .tco-lights-out & {
+        stroke: $color-foreground-on-tint;
+      }
+    }
+
+    &[fill] {
+      fill: $color-classic-gray-dark;
+
+      .tco-lights-out & {
+        fill: $color-foreground-on-tint;
+      }
+    }
+  }
+}
+
+.tco-tag-list {
+  display: grid;
+  grid-template-rows: auto;
+  grid-template-columns: 1fr;
+  gap: $spacing-stack-20;
+
+  @include wider-than($breakpoint-tablet-portrait) {
+    justify-self: end;
+  }
+
+  &-item {
+    display: grid;
+    grid-template-rows: repeat(2, auto);
+    grid-template-columns: 1fr;
+    gap: $spacing-stack-12;
+    justify-items: center;
+    padding: $spacing-stack-20 $spacing-inline-20;
+    border: 3px solid $color-classic-gray-dark;
+    border-radius: 14px;
+
+    @include wider-than($breakpoint-tablet-portrait) {
+      padding: $spacing-stack-32 $spacing-inline-32;
+    }
+
+    &:first-of-type {
+      border-color: $color-tint-green-secondary;
+    }
+
+    &:nth-child(2) {
+      border-color: $color-classic-yellow;
+    }
+
+    &:nth-child(3) {
+      border-color: $color-classic-purple;
+    }
+
+    &:nth-child(4) {
+      border-color: $color-tint-blue-light;
+    }
+
+    &:last-of-type {
+      border-color: $color-classic-blue;
+      background-color: $color-classic-blue;
+      color: $color-foreground-on-tint;
+
+      .tco-tag-list-item--support {
+        color: $color-foreground-on-tint;
+      }
+    }
+
+    &--lede,
+    &--support {
+      margin: 0;
+      line-height: normal;
+    }
+
+    &--lede {
+      @include type-body-large($weight: $font-weight-500);
+    }
+
+    &--support {
+      @include type-eyebrow($weight: 300);
+      color: $color-classic-gray-dark;
+
+      .tco-lights-out & {
+        color: $color-foreground-on-tint;
+      }
+    }
+  }
+}
+
+/* animation styles */
+:root {
+  --duration-a: 0.45s; /* lead-in and fade-outs */
+  --duration-b: 0.25s; /* fade-in for non-lead items */
+  --duration-display: 2s; /* how long the active item is visible */
+  --duration-overlap: 0.05s; /* overlap between items */
+  --easing-fn: cubic-bezier(0.4, 0, 0.2, 1);
+  --easing-fn-node: ease;
+
+  --y-floor: 100%; /* start position for lead, end for caboose */
+  --y-home: -50%; /* display position */
+  --y-ceiling: -125%; /* final position after fading out */
+  --scale-initial: 0.9;
+  --scale-end: 0.8;
+
+  /* additional x offset to account for grid gap */
+  @include wider-than($breakpoint-tablet-portrait) {
+    --offset: 25px;
+  }
+
+  @include wider-than($breakpoint-laptop) {
+    --offset: 50px;
+  }
+
+  @include wider-than($breakpoint-desktop) {
+    --offset: 75px;
+  }
+
+  /*
+    lead item
+    fade in/up + display + fade out
+  */
+  --lifecycle-lead: calc(var(--duration-a) + var(--duration-display) + var(--duration-a));
+
+  /*
+    non-lead items
+    fade in + display + fade out
+  */
+  --lifecycle-n: calc(var(--duration-b) + var(--duration-display) + var(--duration-a));
+
+  /*
+    last item
+    fade in and slide down and right
+  */
+  --lifecycle-last: calc(var(--duration-b) + var(--duration-a));
+
+  /* brain nodes */
+  --lifecycle-node: calc(var(--duration-b) + var(--duration-display));
+
+  /* delay before second item starts */
+  --delay-start-n: calc(var(--duration-a) + var(--duration-display) - var(--duration-overlap));
+
+  /* delay before 3rd + items */
+  --stagger-n: calc(var(--duration-b) + var(--duration-display) - var(--duration-overlap));
+
+  /* delay before node starts */
+  --delay-start-node: calc(var(--duration-a) + var(--duration-display));
+}
+
+@keyframes lifecycle-lead {
+  0% {
+    opacity: 0;
+    transform: translateY(var(--y-floor)) scale(var(--scale-initial));
+  }
+
+  /*
+    fade-in (complete at 15.5%)
+    fade-in duration / lead lifecycle duration
+    0.45s / 2.9s = 15.5%
+  */
+  15.5% {
+    opacity: 1;
+    transform: translateY(var(--y-home)) scale(1);
+  }
+
+  /*
+    hold display (complete at 84.5%)
+    (fade-in duration + display duration) / lifecycle-lead duration
+    (0.45s + 2s) / 2.9s = 84.5%
+  */
+  84.5% {
+    opacity: 1;
+    transform: translateY(var(--y-home)) scale(1);
+  }
+
+  /* fade out complete */
+  100% {
+    opacity: 0;
+    transform: translateY(var(--y-ceiling)) scale(var(--scale-end));
+  }
+}
+
+@keyframes lifecycle-item-n {
+  0% {
+    opacity: 0;
+    transform: translateY(var(--y-home)) scale(1);
+  }
+
+  /*
+    fade-in complete
+    fade-in duration / lifecycle-n duration
+    0.25s / 2.7s = 9.25%
+  */
+  9.25% {
+    opacity: 1;
+    transform: translateY(var(--y-home)) scale(1);
+  }
+
+  /*
+    hold display (complete at 83.3)
+    (fade-in duration + display duration) / lifecycle-n duration
+    (0.25s + 2s) / 2.7s = 83.3%
+  */
+  83.3% {
+    opacity: 1;
+    transform: translateY(var(--y-home)) scale(1);
+  }
+
+  /* fade out */
+  100% {
+    opacity: 0;
+    transform: translateY(var(--y-ceiling)) scale(var(--scale-end));
+  }
+}
+
+@keyframes lifecycle-item-last {
+  0% {
+    opacity: 0;
+    transform: translate(0, var(--y-home)) scale(1);
+  }
+
+  /* fade in and move down and right */
+  100% {
+    opacity: 1;
+    transform: translate(calc(50% + var(--offset)), var(--y-floor)) scale(1);
+  }
+}
+
+@keyframes lifecycle-node {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes lifecycle-brain {
+  0% {
+    transform: translate(0, 0);
+  }
+
+  100% {
+    transform: translate(calc(-50% - var(--offset)), calc(var(--y-home) / 2));
+  }
+}
+
+/* stylelint-disable-next-line no-duplicate-selectors */
+@media (prefers-reduced-motion: no-preference) {
+  .tco-fade-move {
+    &-list {
+      position: relative;
+      width: 100%;
+      height: 100%;
+    }
+
+    &-list-item {
+      position: absolute;
+      top: 50%;
+      left: 0;
+      z-index: 1;
+      width: 100%;
+      opacity: 0;
+      transition: transform 0.3s ease;
+      transform: translateY(-50%) translateX(-50%);
+      animation-play-state: paused;
+      animation-timing-function: var(--easing-fn);
+      animation-fill-mode: forwards;
+
+      &:first-of-type {
+        animation-name: lifecycle-lead;
+        animation-duration: var(--lifecycle-lead);
+      }
+
+      &:nth-of-type(2) {
+        --i: 0;
+      }
+
+      &:nth-of-type(3) {
+        --i: 1;
+      }
+
+      &:nth-of-type(4) {
+        --i: 2;
+      }
+
+      &:nth-of-type(5) {
+        --i: 3;
+      }
+
+      &:not(:first-of-type, :last-of-type) {
+        animation-name: lifecycle-item-n;
+        animation-duration: var(--lifecycle-n);
+        animation-delay: calc(var(--delay-start-n) + var(--i) * var(--stagger-n));
+      }
+
+      &:last-of-type {
+        animation-name: lifecycle-item-last;
+        animation-duration: var(--lifecycle-last);
+        animation-delay: calc(var(--delay-start-n) + var(--i) * var(--stagger-n) + var(--duration-overlap));
+      }
+
+      .active & {
+        animation-play-state: running;
+      }
+    }
+
+    .tco-svg-brain--group {
+      &-a {
+        --i: 0;
+      }
+
+      &-b {
+        --i: 1;
+      }
+
+      &-c {
+        --i: 2;
+      }
+    }
+
+    [class*='tco-svg-brain--group-'] {
+      opacity: 0;
+      animation-name: lifecycle-node;
+      animation-duration: var(--duration-display);
+      animation-play-state: paused;
+      animation-timing-function: var(--easing-fn-node);
+      animation-delay: calc(var(--delay-start-node) + var(--i) * var(--stagger-n));
+      animation-fill-mode: forwards;
+    }
+
+    &.active [class*='tco-svg-brain--group-'] {
+      animation-play-state: running;
+    }
+
+    /* stylelint-disable-next-line no-duplicate-selectors */
+    &-image {
+      margin: $spacing-stack-100 auto 0;
+
+      @include wider-than($breakpoint-tablet-portrait) {
+        justify-self: start;
+        margin: 0;
+      }
+
+      &-svg {
+        position: relative;
+        display: block;
+        margin: auto;
+        animation-name: lifecycle-brain;
+        animation-duration: calc(var(--duration-display) / 2.5);
+        animation-play-state: paused;
+        animation-timing-function: var(--easing-fn);
+        animation-delay: calc(var(--delay-start-node) + 3 * var(--stagger-n));
+        animation-fill-mode: forwards;
+
+        @include wider-than($breakpoint-tablet-portrait) {
+          margin: 0;
+        }
+
+        .active & {
+          animation-play-state: running;
+        }
+      }
+    }
+  }
+}
