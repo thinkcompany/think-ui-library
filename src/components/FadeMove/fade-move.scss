@@ -138,6 +138,7 @@ $cranium-width: 376px;
     &--support {
       margin: 0;
       line-height: normal;
+      text-align: center;
     }
 
     &--lede {
@@ -332,7 +333,7 @@ $cranium-width: 376px;
     &-list-item {
       position: absolute;
       top: 50%;
-      left: 0;
+      right: 0;
       z-index: 1;
       width: 100%;
       opacity: 0;
@@ -341,6 +342,10 @@ $cranium-width: 376px;
       animation-play-state: paused;
       animation-timing-function: var(--easing-fn);
       animation-fill-mode: forwards;
+
+      @include wider-than($breakpoint-tablet-portrait) {
+        width: min(100%, 358px);
+      }
 
       &:first-of-type {
         animation-name: lifecycle-lead;
