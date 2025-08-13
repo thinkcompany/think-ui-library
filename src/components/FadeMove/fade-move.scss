@@ -157,6 +157,7 @@ $cranium-width: 376px;
 
 /* animation styles */
 :root {
+  --duration-prelude: 0.4s; /* The time for the brain to rise BEFORE anything else. */
   --duration-a: 0.45s; /* lead-in and fade-outs */
   --duration-b: 0.25s; /* fade-in for non-lead items */
   --duration-display: 2s; /* how long the active item is visible */
@@ -303,13 +304,19 @@ $cranium-width: 376px;
   }
 }
 
-@keyframes lifecycle-brain {
+@keyframes brain-slide-up-left {
   0% {
     transform: translate(0, 0);
   }
 
   100% {
     transform: translate(calc(-50% - var(--offset)), calc(var(--y-home) / 2));
+  }
+}
+
+@keyframes brain-rise {
+  to {
+    transform: translateY(0);
   }
 }
 
@@ -338,6 +345,7 @@ $cranium-width: 376px;
       &:first-of-type {
         animation-name: lifecycle-lead;
         animation-duration: var(--lifecycle-lead);
+        animation-delay: var(--duration-prelude);
       }
 
       &:nth-of-type(2) {
@@ -359,13 +367,14 @@ $cranium-width: 376px;
       &:not(:first-of-type, :last-of-type) {
         animation-name: lifecycle-item-n;
         animation-duration: var(--lifecycle-n);
-        animation-delay: calc(var(--delay-start-n) + var(--i) * var(--stagger-n));
+        animation-delay: calc(var(--delay-start-n) + var(--duration-prelude) + var(--i) * var(--stagger-n));
       }
 
       &:last-of-type {
         animation-name: lifecycle-item-last;
         animation-duration: var(--lifecycle-last);
-        animation-delay: calc(var(--delay-start-n) + var(--i) * var(--stagger-n) + var(--duration-overlap));
+        animation-delay: calc(var(--delay-start-n) + var(--duration-prelude) + var(--i) * var(--stagger-n) +
+        var(--duration-overlap));
       }
 
       .active & {
@@ -393,7 +402,7 @@ $cranium-width: 376px;
       animation-duration: var(--duration-display);
       animation-play-state: paused;
       animation-timing-function: var(--easing-fn-node);
-      animation-delay: calc(var(--delay-start-node) + var(--i) * var(--stagger-n));
+      animation-delay: calc(var(--delay-start-node) + var(--duration-prelude) + var(--i) * var(--stagger-n));
       animation-fill-mode: forwards;
     }
 
@@ -409,17 +418,15 @@ $cranium-width: 376px;
         justify-self: start;
         margin: 0;
       }
-
-      &-svg {
+      
+      &-brain {
         position: relative;
         display: block;
         margin: auto;
-        animation-name: lifecycle-brain;
-        animation-duration: calc(var(--duration-display) / 2.5);
-        animation-play-state: paused;
-        animation-timing-function: var(--easing-fn);
-        animation-delay: calc(var(--delay-start-node) + 3 * var(--stagger-n));
-        animation-fill-mode: forwards;
+        transform: translateY(50%);
+        animation: brain-rise var(--duration-a) var(--easing-fn-node) 0s forwards,
+          brain-slide-up-left calc(var(--duration-display) / 2.5) var(--easing-fn)
+          calc(var(--duration-prelude) + var(--delay-start-node) + 3 * var(--stagger-n)) forwards;
 
         @include wider-than($breakpoint-tablet-portrait) {
           margin: 0;
