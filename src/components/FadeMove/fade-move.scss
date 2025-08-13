@@ -212,7 +212,7 @@ $cranium-width: 376px;
   --stagger-n: calc(var(--duration-b) + var(--duration-display) - var(--duration-overlap));
 
   /* delay before node starts */
-  --delay-start-node: calc(var(--duration-a) + var(--duration-display)); // 0.45s + 2s = 2.45s
+  --delay-start-node: calc(var(--duration-a) + var(--duration-display));
 }
 
 @keyframes lifecycle-lead {
@@ -418,7 +418,7 @@ $cranium-width: 376px;
         justify-self: start;
         margin: 0;
       }
-
+      
       &-brain {
         position: relative;
         display: block;
