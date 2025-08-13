@@ -424,9 +424,10 @@ $cranium-width: 376px;
         display: block;
         margin: auto;
         transform: translateY(50%);
-        animation: brain-rise var(--duration-a) var(--easing-fn-node) 0s forwards,
-          brain-slide-up-left calc(var(--duration-display) / 2.5) var(--easing-fn)
-          calc(var(--duration-prelude) + var(--delay-start-node) + 3 * var(--stagger-n)) forwards;
+        animation: var(--duration-a) var(--easing-fn-node) 0s forwards paused brain-rise,
+          calc(var(--duration-display) / 2.5) var(--easing-fn)
+          calc(var(--duration-prelude) + var(--delay-start-node) + 3 * var(--stagger-n)) forwards
+          paused brain-slide-up-left;
 
         @include wider-than($breakpoint-tablet-portrait) {
           margin: 0;
