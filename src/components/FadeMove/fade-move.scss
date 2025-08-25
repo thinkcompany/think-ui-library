@@ -1,13 +1,14 @@
 $cranium-width: 376px;
 
 /* stylelint-disable max-line-length */
-.tco-fade-move {
+.tco-list-image {
   position: relative;
   display: grid;
   grid-template-rows: auto;
   grid-template-columns: 1fr;
   gap: $spacing-stack-50;
   justify-items: center;
+  border: 1px solid $color-classic-navy;
 
   @include wider-than($breakpoint-tablet-portrait) {
     grid-template-columns: repeat(2, 1fr);
@@ -23,7 +24,7 @@ $cranium-width: 376px;
     gap: calc(#{$spacing-inline-100} * 1.5);
   }
 
-  &-image {
+  &--image {
     width: $cranium-width;
     margin: $spacing-stack-20 auto 0;
 
@@ -249,6 +250,39 @@ $cranium-width: 376px;
   }
 }
 
+@keyframes lifecycle-lead-stack {
+  0% {
+    opacity: 0;
+    transform: translateY(var(--y-floor)) scale(var(--scale-initial));
+  }
+
+  /*
+    fade-in (complete at 15.5%)
+    fade-in duration / lead lifecycle duration
+    0.45s / 2.9s = 15.5%
+  */
+  15.5% {
+    opacity: 1;
+    transform: translateY(var(--y-home)) scale(1);
+  }
+
+  /*
+    hold display (complete at 84.5%)
+    (fade-in duration + display duration) / lifecycle-lead duration
+    (0.45s + 2s) / 2.9s = 84.5%
+  */
+  84.5% {
+    opacity: 1;
+    transform: translateY(var(--y-home)) scale(1);
+  }
+
+  /* slide up complete */
+  100% {
+    opacity: 1;
+    transform: translateY(var(--y-ceiling)) scale(1);
+  }
+}
+
 @keyframes lifecycle-item-n {
   0% {
     opacity: 0;
@@ -278,6 +312,39 @@ $cranium-width: 376px;
   /* fade out */
   100% {
     opacity: 0;
+    transform: translateY(var(--y-ceiling)) scale(var(--scale-end));
+  }
+}
+
+@keyframes lifecycle-item-n-stack {
+  0% {
+    opacity: 0;
+    transform: translateY(var(--y-home)) scale(1);
+  }
+
+  /*
+    fade-in complete
+    fade-in duration / lifecycle-n duration
+    0.25s / 2.7s = 9.25%
+  */
+  9.25% {
+    opacity: 1;
+    transform: translateY(var(--y-home)) scale(1);
+  }
+
+  /*
+    hold display (complete at 83.3)
+    (fade-in duration + display duration) / lifecycle-n duration
+    (0.25s + 2s) / 2.7s = 83.3%
+  */
+  83.3% {
+    opacity: 1;
+    transform: translateY(var(--y-home)) scale(1);
+  }
+
+  /* fade out */
+  100% {
+    opacity: 1;
     transform: translateY(var(--y-ceiling)) scale(var(--scale-end));
   }
 }
@@ -323,7 +390,8 @@ $cranium-width: 376px;
 
 /* stylelint-disable-next-line no-duplicate-selectors */
 @media (prefers-reduced-motion: no-preference) {
-  .tco-fade-move {
+  // shared animation styles
+  .tco-list-image-motion {
     &-list {
       position: relative;
       width: 100%;
@@ -336,16 +404,42 @@ $cranium-width: 376px;
       right: 0;
       z-index: 1;
       width: 100%;
+
+      @include wider-than($breakpoint-tablet-portrait) {
+        width: min(100%, 358px);
+      }
+    }
+
+    /* stylelint-disable-next-line no-duplicate-selectors */
+    &-image {
+      margin: $spacing-stack-100 auto 0;
+
+      @include wider-than($breakpoint-tablet-portrait) {
+        justify-self: start;
+        margin: 0;
+      }
+
+      &-brain {
+        position: relative;
+        display: block;
+        margin: auto;
+
+        @include wider-than($breakpoint-tablet-portrait) {
+          margin: 0;
+        }
+      }
+    }
+  }
+
+  /* fade & move animation */
+  .tco-fade-move {
+    &-list-item {
       opacity: 0;
       transition: transform 0.3s ease;
       transform: translateY(-50%) translateX(-50%);
       animation-play-state: paused;
       animation-timing-function: var(--easing-fn);
       animation-fill-mode: forwards;
-
-      @include wider-than($breakpoint-tablet-portrait) {
-        width: min(100%, 358px);
-      }
 
       &:first-of-type {
         animation-name: lifecycle-lead;
@@ -417,26 +511,106 @@ $cranium-width: 376px;
 
     /* stylelint-disable-next-line no-duplicate-selectors */
     &-image {
-      margin: $spacing-stack-100 auto 0;
-
-      @include wider-than($breakpoint-tablet-portrait) {
-        justify-self: start;
-        margin: 0;
-      }
-
       &-brain {
-        position: relative;
-        display: block;
-        margin: auto;
         transform: translateY(50%);
         animation: var(--duration-a) var(--easing-fn-node) 0s forwards paused brain-rise,
           calc(var(--duration-display) / 2.5) var(--easing-fn)
           calc(var(--duration-prelude) + var(--delay-start-node) + 3 * var(--stagger-n)) forwards
           paused brain-slide-up-left;
 
-        @include wider-than($breakpoint-tablet-portrait) {
-          margin: 0;
+        .active & {
+          animation-play-state: running;
         }
+      }
+    }
+  }
+
+  /* stack & move animation */
+  .tco-stack-move {
+    &-list-item {
+      opacity: 0;
+      transition: transform 0.3s ease;
+      transform: translateY(-50%) translateX(-50%);
+      animation-play-state: paused;
+      animation-timing-function: var(--easing-fn);
+      animation-fill-mode: forwards;
+
+      &:first-of-type {
+        animation-name: lifecycle-lead-stack;
+        animation-duration: var(--lifecycle-lead);
+        animation-delay: var(--duration-prelude);
+      }
+
+      &:nth-of-type(2) {
+        --i: 0;
+      }
+
+      &:nth-of-type(3) {
+        --i: 1;
+      }
+
+      &:nth-of-type(4) {
+        --i: 2;
+      }
+
+      &:nth-of-type(5) {
+        --i: 3;
+      }
+
+      &:not(:first-of-type, :last-of-type) {
+        animation-name: lifecycle-item-n;
+        animation-duration: var(--lifecycle-n);
+        animation-delay: calc(var(--delay-start-n) + var(--duration-prelude) + var(--i) * var(--stagger-n));
+      }
+
+      &:last-of-type {
+        animation-name: lifecycle-item-last;
+        animation-duration: var(--lifecycle-last);
+        animation-delay: calc(var(--delay-start-n) + var(--duration-prelude) + var(--i) * var(--stagger-n) +
+        var(--duration-overlap));
+      }
+
+      .active & {
+        animation-play-state: running;
+      }
+    }
+
+    .tco-svg-brain--group {
+      &-a {
+        --i: 0;
+      }
+
+      &-b {
+        --i: 1;
+      }
+
+      &-c {
+        --i: 2;
+      }
+    }
+
+    [class*='tco-svg-brain--group-'] {
+      opacity: 0;
+      animation-name: lifecycle-node;
+      animation-duration: var(--duration-display);
+      animation-play-state: paused;
+      animation-timing-function: var(--easing-fn-node);
+      animation-delay: calc(var(--delay-start-node) + var(--duration-prelude) + var(--i) * var(--stagger-n));
+      animation-fill-mode: forwards;
+    }
+
+    &.active [class*='tco-svg-brain--group-'] {
+      animation-play-state: running;
+    }
+
+    /* stylelint-disable-next-line no-duplicate-selectors */
+    &-image {
+      &-brain {
+        transform: translateY(50%);
+        animation: var(--duration-a) var(--easing-fn-node) 0s forwards paused brain-rise,
+          calc(var(--duration-display) / 2.5) var(--easing-fn)
+          calc(var(--duration-prelude) + var(--delay-start-node) + 3 * var(--stagger-n)) forwards
+          paused brain-slide-up-left;
 
         .active & {
           animation-play-state: running;

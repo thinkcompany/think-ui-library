@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-  const fadeMove = document.querySelector('.tco-fade-move');
+  const listImageMotion = document.querySelector('.tco-list-image-motion');
 
   const observerOptions = {
     root: null,
@@ -10,14 +10,14 @@ document.addEventListener('DOMContentLoaded', () => {
   const observerCallback = (entries) => {
     entries.forEach((entry) => {
       if (entry.isIntersecting) {
-        fadeMove.classList.add('active');
+        listImageMotion.classList.add('active');
       }
     });
   };
 
   const observer = new IntersectionObserver(observerCallback, observerOptions);
 
-  if (fadeMove) {
-    observer.observe(fadeMove);
+  if (listImageMotion) {
+    observer.observe(listImageMotion);
   }
 });
