@@ -26,8 +26,8 @@ const ListImageTemplate = (args) => {
 
   return `
   <div class="tco-container-wrapper" style="margin-top: 100px;">
-    <div class="tco-container">
-      <div class="tco-list-image tco-${type} tco-list-image-motion">
+    <div class="tco-container" style="height: 760px; display: flex; align-items: center; justify-content: center; background-color: #f4f4f4; padding-top: 0;padding-bottom: 0;">
+      <div class="tco-list-image tco-${type} tco-list-image-motion" style="margin: auto;">
         <ul class="tco-tag-list tco-${type}-list tco-list-image-motion-list">
           ${cards
             .map(
