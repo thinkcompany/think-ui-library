@@ -1,0 +1,105 @@
+/* stylelint-disable max-line-length */
+:root {
+  --duration-prelude: 0.4s;
+  --duration-a: 0.45s;
+  --duration-b: 0.25s;
+  --duration-display: 2s;
+  --duration-overlap: 0.05s;
+  --easing-fn: cubic-bezier(0.4, 0, 0.2, 1);
+  --easing-fn-node: ease;
+  --y-floor: 100%;
+  --y-basement: 150%;
+  --y-home: -50%;
+  --y-ceiling: -125%;
+  --scale-initial: 0.9;
+  --scale-end: 0.8;
+
+  /* additional x offset to account for grid gap */
+  @include wider-than($breakpoint-tablet-portrait) {
+    --offset: 25px;
+  }
+
+  @include wider-than($breakpoint-laptop) {
+    --offset: 50px;
+  }
+
+  @include wider-than($breakpoint-desktop) {
+    --offset: 75px;
+  }
+
+  /*
+    fade n move
+    original animation style
+  */
+
+  /* lead item - fade in/up + display + fade out  */
+  --lifecycle-lead: calc(var(--duration-a) + var(--duration-display) + var(--duration-a));
+
+  /* non-lead items fade in + display + fade out */
+  --lifecycle-n: calc(var(--duration-b) + var(--duration-display) + var(--duration-a));
+
+  /* last item fade in and slide down and right */
+  --lifecycle-last: calc(var(--duration-b) + var(--duration-a));
+
+  /* delay before node starts */
+  --delay-start-node: calc(var(--duration-a) + var(--duration-display));
+
+  /* delay before second item starts */
+  --delay-start-n: calc(var(--duration-a) + var(--duration-display) - var(--duration-overlap));
+
+  /* delay before 3rd + items */
+  --stagger-n: calc(var(--duration-b) + var(--duration-display) - var(--duration-overlap));
+
+  /*
+    stack n move
+    new animation style
+  */
+  --y-stack-ceiling: calc(var(--y-ceiling) - (var(--item-height) * 1.5));
+  --item-height: 156px;
+
+  /*
+  lead: duration-a + display + duration-a + display + duration-a + display + duration-a + display
+  */
+  --lifecycle-stack-a: calc(var(--lifecycle-last) + (var(--duration-a) + var(--duration-display)) * 4);
+  --delay-stack-a: var(--duration-prelude);
+
+  /*
+    2nd stack item
+    duration: duration-a + display + duration-a + display + duration-a + display + lifecycle-last (duration-b + duration-a)
+    delay: duration-prelude + duration-a + display
+  */
+  --lifecycle-stack-b: calc(var(--lifecycle-last) + (var(--duration-a) + var(--duration-display)) * 3);
+  --delay-stack-b: calc(var(--duration-prelude) + var(--duration-a) + var(--duration-display));
+
+  /*
+    3rd stack item
+    duration: duration-a + display + duration-a + display + lifecycle-last (duration-b + duration-a)
+    delay: duration-prelude + duration-a + display + duration-a + display
+  */
+  --lifecycle-stack-c: calc(var(--lifecycle-last) + (var(--duration-a) + var(--duration-display)) * 2);
+  --delay-stack-c: calc(var(--duration-prelude) + (var(--duration-a) + var(--duration-display)) * 2);
+
+  /*
+    4th stack item
+    duration: duration-a + display + lifecycle-last (duration-b + duration-a)
+    delay: duration-prelude + duration-a + display + duration-a + display + duration-a + display
+  */
+  --lifecycle-stack-d: calc(var(--lifecycle-last) + var(--duration-a) + var(--duration-display));
+  --delay-stack-d: calc(var(--duration-prelude) + (var(--duration-a) + var(--duration-display)) * 3);
+
+  /*
+    last stack item
+    duration: --lifecycle-last: duration-b + --duration-a
+    delay: duration-prelude + duration-a + display + duration-a + display + duration-a + display + duration-a + display
+  */
+  --delay-stack-last: calc(var(--duration-prelude) + (var(--duration-a) + var(--duration-display)) * 4);
+
+  --stagger-stack-nodes: calc(var(--duration-a) + var(--duration-display));
+
+  /* brain nodes */
+  --lifecycle-node: calc(var(--duration-b) + var(--duration-display));
+
+  --total-sequence-duration: calc(var(--lifecycle-last) + var(--delay-stack-last));
+
+  --cranium-width: 376px;
+}

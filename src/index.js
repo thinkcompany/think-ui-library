@@ -14,7 +14,7 @@ import './components/Quote/quote-carousel.js';
 import './components/Arrows/arrow.js';
 import './components/Tabs/tabs.js';
 import './components/Accordion/accordion.js';
-import './components/FadeMove/list-image-motion.js';
+import './components/ListImage/list-image-motion.js';
 
 // Load Components
 const nav = new Nav();

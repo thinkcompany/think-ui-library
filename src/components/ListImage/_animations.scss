@@ -1,0 +1,218 @@
+/* stylelint-disable property-no-unknown */
+/* stylelint-disable no-unknown-animations */
+/* stylelint-disable-next-line no-duplicate-selectors */
+/* stylelint-disable max-line-length */
+@import './_keyframes';
+
+@media (prefers-reduced-motion: no-preference) and (min-width: $breakpoint-tablet-portrait) {
+  body {
+    min-height: 200vh;
+  }
+
+  // shared animation styles
+  .tco-list-image-motion {
+    min-height: 50vh;
+
+    &-list {
+      position: relative;
+      width: 100%;
+      height: 100%;
+    }
+
+    &-list-item {
+      position: absolute;
+      top: 50%;
+      right: 0;
+      z-index: 1;
+      width: min(100%, 358px);
+    }
+
+    /* stylelint-disable-next-line no-duplicate-selectors */
+    &-image {
+      justify-self: start;
+      margin: 0;
+
+      &-brain {
+        position: relative;
+        display: block;
+        margin: 0;
+      }
+    }
+  }
+
+  /* fade & move animation */
+  .tco-fade-move {
+    &-list-item {
+      //opacity: 0;
+      animation-play-state: paused;
+      animation-timing-function: var(--easing-fn);
+      animation-fill-mode: forwards;
+
+      &:first-of-type {
+        animation-name: lifecycle-lead;
+        animation-duration: var(--lifecycle-lead);
+        animation-delay: var(--duration-prelude);
+      }
+
+      &:nth-of-type(2) {
+        --i: 0;
+      }
+
+      &:nth-of-type(3) {
+        --i: 1;
+      }
+
+      &:nth-of-type(4) {
+        --i: 2;
+      }
+
+      &:nth-of-type(5) {
+        --i: 3;
+      }
+
+      &:not(:first-of-type, :last-of-type) {
+        animation-name: lifecycle-item-n;
+        animation-duration: var(--lifecycle-n);
+        animation-delay: calc(var(--delay-start-n) + var(--duration-prelude) + var(--i) * var(--stagger-n));
+      }
+
+      &:last-of-type {
+        animation-name: lifecycle-item-last;
+        animation-duration: var(--lifecycle-last);
+        animation-delay: calc(var(--delay-start-n) + var(--duration-prelude) + var(--i) * var(--stagger-n) +
+        var(--duration-overlap));
+      }
+
+      .active & {
+        animation-play-state: running;
+      }
+    }
+
+    .tco-svg-brain--group {
+      &-a {
+        --i: 0;
+      }
+
+      &-b {
+        --i: 1;
+      }
+
+      &-c {
+        --i: 2;
+      }
+    }
+
+    [class*='tco-svg-brain--group-'] {
+      opacity: 0;
+      animation-name: lifecycle-node;
+      animation-duration: var(--duration-display);
+      animation-play-state: paused;
+      animation-timing-function: var(--easing-fn-node);
+      animation-delay: calc(var(--delay-start-node) + var(--duration-prelude) + var(--i) * var(--stagger-n));
+      animation-fill-mode: forwards;
+    }
+
+    &.active [class*='tco-svg-brain--group-'] {
+      animation-play-state: running;
+    }
+
+    /* stylelint-disable-next-line no-duplicate-selectors */
+    &-image {
+      &-brain {
+        transform: translateY(50%);
+        animation: var(--duration-a) var(--easing-fn-node) 0s forwards paused brain-rise,
+          calc(var(--duration-display) / 2.5) var(--easing-fn)
+          calc(var(--duration-prelude) + var(--delay-start-node) + 3 * var(--stagger-n)) forwards
+          paused brain-slide-up-left;
+
+        .active & {
+          animation-play-state: running;
+        }
+      }
+    }
+  }
+
+  /* stack & move animation */
+  .tco-stack-move {
+    &-list-item,
+    .tco-list-image--image,
+    [class*='tco-svg-brain--group-'] {
+      opacity: 0;
+    }
+
+    &.active {
+      .tco-stack-move-list-item {
+        animation-timing-function: var(--easing-fn);
+        animation-fill-mode: forwards;
+
+        &:first-of-type {
+          animation-name: lifecycle-stack-lead;
+          animation-duration: var(--lifecycle-stack-a);
+          animation-delay: var(--delay-stack-a);
+        }
+
+        &:nth-of-type(2) {
+          animation-name: lifecycle-stack-b;
+          animation-duration: var(--lifecycle-stack-b);
+          animation-delay: var(--delay-stack-b);
+        }
+
+        &:nth-of-type(3) {
+          animation-name: lifecycle-stack-c;
+          animation-duration: var(--lifecycle-stack-c);
+          animation-delay: var(--delay-stack-c);
+        }
+
+        &:nth-of-type(4) {
+          animation-name: lifecycle-stack-d;
+          animation-duration: var(--lifecycle-stack-d);
+          animation-delay: var(--delay-stack-d);
+        }
+
+        &:nth-of-type(5) {
+          animation-name: lifecycle-stack-last;
+          animation-duration: calc(var(--lifecycle-last) + var(--duration-display));
+          animation-delay: var(--delay-stack-last);
+        }
+      }
+
+      .tco-svg-brain--group {
+        &-a {
+          --i: 0;
+        }
+
+        &-b {
+          --i: 1;
+        }
+
+        &-c {
+          --i: 2;
+        }
+      }
+
+      /* brain nodes */
+      [class*='tco-svg-brain--group-'] {
+        animation-name: lifecycle-node;
+        animation-duration: var(--duration-display);
+        animation-timing-function: var(--easing-fn-node);
+        animation-delay: calc(var(--delay-stack-b) + var(--i) * var(--stagger-stack-nodes));
+        animation-fill-mode: forwards;
+      }
+
+      /* stylelint-disable-next-line no-duplicate-selectors */
+      .tco-list-image--image {
+        animation-name: brain-reveal;
+        animation-duration: 0.2s;
+        animation-timing-function: var(--easing-fn);
+        animation-fill-mode: forwards;
+      }
+
+      .tco-stack-move-image-brain {
+        animation-name: brain-slide-up-left;
+        animation-duration: calc(var(--lifecycle-last) + var(--duration-display));
+        animation-timing-function: var(--easing-fn);
+        animation-delay: calc(var(--delay-stack-b) + 3 * var(--stagger-stack-nodes));
+      }
+    }
+  }
+}
