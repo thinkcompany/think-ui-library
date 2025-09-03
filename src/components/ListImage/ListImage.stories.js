@@ -21,25 +21,30 @@ const cards = [
   },
 ];
 
-const FadeMoveTemplate = () => {
+const ListImageTemplate = (args) => {
+  const { type } = args;
+  const animationType = type === 'fade-out' ? 'fade-out' : 'stack-move';
+  const repeatClass =
+    type === 'stack-move-repeat' ? 'tco-animation-repeat' : '';
+
   return `
   <div class="tco-container-wrapper" style="margin-top: 100px;">
     <div class="tco-container">
-  <div class="tco-ai-approach-list tco-fade-move">
-    <ul class="tco-tag-list tco-fade-move-list">
-      ${cards
-        .map(
-          (card) => `
-        <li class="tco-tag-list-item tco-fade-move-list-item">
-          <h4 class="tco-type-body--large tco-tag-list-item--lede">${card.lede}</h4>
-          <p class="tco-type-body--medium tco-tag-list-item--support">${card.support}</p>
-        </li>
-      `
-        )
-        .join('')}
-      </ul>
-        <div class="tco-image-container tco-fade-move-image">
-          <svg class="tco-fade-move-image-brain" width="288" height="287" viewBox="0 0 288 287" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <div class="tco-list-image tco-${animationType} ${repeatClass} tco-list-image-motion" style="margin: auto;">
+        <ul class="tco-tag-list tco-${animationType}-list tco-list-image-motion-list">
+          ${cards
+            .map(
+              (card) => `
+            <li class="tco-tag-list-item tco-${animationType}-list-item tco-list-image-motion-list-item">
+              <h4 class="tco-type-body--large tco-tag-list-item--lede">${card.lede}</h4>
+              <p class="tco-type-body--medium tco-tag-list-item--support">${card.support}</p>
+            </li>
+          `
+            )
+            .join('')}
+        </ul>
+        <div class="tco-image-container tco-list-image--image tco-list-image-motion-image">
+          <svg class="tco-${animationType}-image-brain" width="288" height="287" viewBox="0 0 288 287" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path class="tco-svg-brain--right" d="M171.835 3.8275C180.223 1.9295 190.456 3.9759 197.703 12.9012C201.526 17.6104 203.265 23.0014 203.589 28.2732C205.289 28.0949 207.014 28.0025 208.759 28.0025C235.789 28.0025 257.701 49.9143 257.702 76.943C257.702 84.535 255.972 91.728 252.885 98.144C252.749 98.426 252.536 98.647 252.286 98.796C273.696 111.832 288 135.393 288 162.298C288 188.587 274.344 211.686 253.745 224.891C254.181 227.082 254.411 229.348 254.411 231.667C254.411 250.772 238.923 266.26 219.818 266.26C216.617 266.26 213.515 265.826 210.569 265.01C204.202 277.992 191.053 282.756 179.469 281.732C167.648 280.687 156.543 273.426 156.543 261.785C156.543 -4.3727 156.543 98.144 156.543 19.0405C156.544 11.5624 163.618 5.6869 171.835 3.8275Z" fill="#82D9FC"/>
             <path d="M171.684 3.7816C180.072 1.8836 190.306 3.93 197.552 12.8553C201.376 17.5645 203.114 22.9555 203.438 28.2273C205.138 28.049 206.863 27.9566 208.609 27.9566C235.639 27.9566 257.551 49.8684 257.551 76.897C257.551 84.49 255.822 91.682 252.734 98.098C252.598 98.38 252.386 98.601 252.135 98.75C273.546 111.786 287.849 135.347 287.849 162.252C287.849 188.542 274.193 211.641 253.595 224.845C254.03 227.036 254.261 229.302 254.261 231.621C254.261 250.726 238.772 266.214 219.667 266.214C216.466 266.214 213.364 265.78 210.419 264.964C204.051 277.946 190.902 282.71 179.319 281.686C167.498 280.642 156.393 273.38 156.393 261.74V18.9981C156.393 18.9981 156.443 18.9946 157.929 18.9946C159.416 18.9946 159.466 18.9981 159.466 18.9981V261.74C159.466 271.012 168.443 277.639 179.589 278.624C190.579 279.595 202.779 274.897 208.227 262.382C208.566 261.604 209.472 261.248 210.251 261.586C210.394 261.649 210.522 261.731 210.635 261.827C213.495 262.681 216.526 263.14 219.667 263.14C237.074 263.14 251.186 249.028 251.186 231.621C251.185 214.214 237.074 200.103 219.667 200.103C218.818 200.103 218.131 199.414 218.131 198.565C218.131 197.716 218.819 197.028 219.667 197.028C224.319 197.028 228.755 197.949 232.806 199.613C241.665 194.031 247.549 184.167 247.549 172.929C247.549 172.08 248.237 171.391 249.085 171.391C249.934 171.391 250.622 172.08 250.622 172.929C250.622 184.577 244.861 194.875 236.042 201.142C244.046 205.451 250.155 212.821 252.809 221.685C272.073 208.934 284.774 187.077 284.774 162.252C284.774 134.585 268.999 110.599 245.945 98.805C237.57 94.521 228.235 91.847 218.346 91.19C217.499 91.134 216.858 90.401 216.914 89.554C216.97 88.707 217.702 88.066 218.549 88.122C228.864 88.807 238.606 91.598 247.345 96.069C248.177 96.495 248.999 96.937 249.812 97.393C249.818 97.181 249.866 96.967 249.963 96.764C252.855 90.755 254.476 84.018 254.476 76.897C254.476 51.5665 233.941 31.0303 208.609 31.0303C206.872 31.0303 205.157 31.1282 203.471 31.316C203.443 31.998 203.395 32.6753 203.325 33.3459C202.621 40.0971 199.812 46.3168 196.27 50.2191C195.7 50.8475 194.727 50.8944 194.099 50.3239C193.47 49.7533 193.423 48.7809 193.994 48.1523C197.048 44.7867 199.623 39.2011 200.268 33.0268C200.909 26.8834 199.628 20.2907 195.165 14.7942C188.756 6.9004 179.775 5.1021 172.363 6.7793C164.779 8.4953 159.467 13.6144 159.466 18.9946H156.393C156.393 11.5165 163.467 5.641 171.684 3.7816Z" fill="#012B57"/>
             <path d="M194.132 187.029C194.73 186.427 195.703 186.423 196.306 187.021C196.908 187.619 196.912 188.593 196.314 189.195C189.455 196.107 188.286 206.529 192.791 214.636C198.411 220.704 201.371 229.146 200.164 237.979C200.049 238.82 199.274 239.409 198.433 239.294C197.592 239.179 197.003 238.403 197.118 237.562C199.028 223.578 189.24 210.693 175.255 208.783C174.414 208.667 173.826 207.892 173.941 207.051C174.056 206.21 174.831 205.62 175.672 205.735C180.171 206.35 184.28 207.981 187.805 210.361C185.734 202.294 187.838 193.372 194.132 187.029Z" fill="#012B57"/>
@@ -205,26 +210,55 @@ const FadeMoveTemplate = () => {
             <path class="tco-svg-brain--group-c" d="M113.139 245.337C113.139 246.85 111.914 248.075 110.401 248.075C108.89 248.075 107.664 246.85 107.664 245.337C107.664 243.826 108.89 242.6 110.401 242.6C111.914 242.6 113.139 243.826 113.139 245.337Z" stroke="#012B57" stroke-width="2.56214" stroke-miterlimit="10"/>
           </svg>
         </div>
+        </div>
       </div>
     </div>
-  </div>
 
   `;
 };
 
-export const FadeMove = FadeMoveTemplate.bind({});
+export const FadeOut = ListImageTemplate.bind({});
 
-FadeMove.args = {
-  text: 'We drive value and engagement for billion-dollar companies.</br><mark class="tco-type-treatment--highlight">We can do it for you, too.</mark>',
+FadeOut.args = {
+  type: 'fade-move',
+};
+
+FadeOut.parameters = {
+  component: FadeOut,
+  design: {
+    type: 'figma',
+    url: 'https://www.figma.com/design/Rme3H7OeSkbVYH4zM2gNMg/Information-Strategy-One-Pager?node-id=2850-4165&m=dev',
+  },
+};
+
+export const StackAndMove = ListImageTemplate.bind({});
+
+StackAndMove.args = {
+  type: 'stack-move',
+};
+
+StackAndMove.parameters = {
+  component: StackAndMove,
+  design: {
+    type: 'figma',
+    url: 'https://www.figma.com/design/Rme3H7OeSkbVYH4zM2gNMg/Information-Strategy-One-Pager?node-id=3270-1804&t=odHR1r7BJbuU6qiN-4',
+  },
+};
+
+export const StackAndMoveRepeat = ListImageTemplate.bind({});
+
+StackAndMoveRepeat.args = {
+  type: 'stack-move-repeat',
+};
+
+StackAndMoveRepeat.parameters = {
+  component: StackAndMoveRepeat,
+  design: {
+    type: 'figma',
+    url: 'https://www.figma.com/design/Rme3H7OeSkbVYH4zM2gNMg/Information-Strategy-One-Pager?node-id=3270-1804&t=odHR1r7BJbuU6qiN-4',
+  },
 };
 
 export default {
-  title: 'Motion / Fade & Move',
-  parameters: {
-    component: FadeMove,
-    design: {
-      type: 'figma',
-      url: 'https://www.figma.com/design/Rme3H7OeSkbVYH4zM2gNMg/Information-Strategy-One-Pager?node-id=2850-4165&m=dev',
-    },
-  },
+  title: 'Motion / List Image',
 };
